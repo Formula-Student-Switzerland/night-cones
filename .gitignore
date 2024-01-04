@@ -1,2 +1,14 @@
 # Ki-Cad backup files
 schematics/night-cones/night-cones-backups/
+#
+# Altium
+__Previews
+History
+Project Logs*
+Project Outputs*
+*.NET
+*.htm
+*.Harness
+*.PrjPCBStructure
+*.x_t
+*_loc
