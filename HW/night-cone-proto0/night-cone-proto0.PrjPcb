@@ -168,7 +168,7 @@ GenerateClassCluster=0
 DocumentUniqueId=RLKMKIFL
 
 [Document8]
-DocumentPath=SCH\[6] OnOff Control.SchDoc
+DocumentPath=SCH\[6] Power.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -185,31 +185,31 @@ GenerateClassCluster=0
 DocumentUniqueId=LNVWJBXE
 
 [Parameter1]
-Name=Schema_Designer
+Name=Author
 Value=ahorat / daniw
 
 [Parameter2]
-Name=Project
-Value=NightCone
+Name=Index_Main
+Value=A
 
 [Parameter3]
-Name=PCB_NAME
-Value=NC1-1
+Name=Index_Sub
+Value=A
 
 [Parameter4]
 Name=Layout_Designer
 Value=daniw
 
 [Parameter5]
-Name=Index_Sub
-Value=A
+Name=PCB_NAME
+Value=NC1-1
 
 [Parameter6]
-Name=Index_Main
-Value=A
+Name=Project
+Value=NightCone
 
 [Parameter7]
-Name=Author
+Name=Schema_Designer
 Value=ahorat / daniw
 
 [Configuration1]
