@@ -134,7 +134,7 @@ GenerateClassCluster=0
 DocumentUniqueId=DWGPLVWK
 
 [Document6]
-DocumentPath=SCH\[4] LED.SchDoc
+DocumentPath=SCH\[4] Lights.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -151,7 +151,7 @@ GenerateClassCluster=0
 DocumentUniqueId=YCBEXBRH
 
 [Document7]
-DocumentPath=SCH\[5] Charger.SchDoc
+DocumentPath=SCH\[6] Charger.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -168,7 +168,7 @@ GenerateClassCluster=0
 DocumentUniqueId=RLKMKIFL
 
 [Document8]
-DocumentPath=SCH\[6] Power.SchDoc
+DocumentPath=SCH\[7] Power.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
