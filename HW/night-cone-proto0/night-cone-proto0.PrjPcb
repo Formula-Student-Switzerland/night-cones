@@ -288,31 +288,31 @@ Variation60=Designator=R3_LED11|UniqueId=\FYQSFHEG\MMTKBMXE\JRXFDWCZ|Kind=1|Alte
 ParamVariationCount=0
 
 [Parameter1]
-Name=Schema_Designer
+Name=Author
 Value=ahorat / daniw
 
 [Parameter2]
-Name=Project
-Value=NightCone
+Name=Index_Main
+Value=A
 
 [Parameter3]
-Name=PCB_NAME
-Value=NC1-1
+Name=Index_Sub
+Value=A
 
 [Parameter4]
 Name=Layout_Designer
 Value=daniw
 
 [Parameter5]
-Name=Index_Sub
-Value=A
+Name=PCB_NAME
+Value=NC1-1
 
 [Parameter6]
-Name=Index_Main
-Value=A
+Name=Project
+Value=NightCone
 
 [Parameter7]
-Name=Author
+Name=Schema_Designer
 Value=ahorat / daniw
 
 [Configuration1]
