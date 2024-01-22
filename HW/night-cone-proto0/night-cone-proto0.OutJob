@@ -380,9 +380,9 @@ Configuration13_Item3=Comment=True|Footprint=True
 Configuration13_Name4=SortOrder
 Configuration13_Item4=Designator=Up|Comment=Up|Footprint=Up
 Configuration13_Name5=VisibleOrder
-Configuration13_Item5=Comment=120|Description=120|Designator=120|Footprint=120|LibRef=120|Quantity=120|Supplier 3=100|Manufacturer 3=100|Manufacturer Part Number 3=100|Supplier Part Number 3=100|JLC Type=100
+Configuration13_Item5=Comment=120|Description=120|Designator=120|Footprint=120|LibRef=120|Quantity=120|Manufacturer 3=100|Manufacturer Part Number 3=100|Supplier 3=100|Supplier Part Number 3=100|JLC Type=100|Pins=100
 Configuration13_Name6=VisibleOrder_Flat
-Configuration13_Item6=Comment=120|Description=120|Designator=120|Footprint=120|LibRef=120|Quantity=120|Supplier 3=100|Manufacturer 3=100|Manufacturer Part Number 3=100|Supplier Part Number 3=100|JLC Type=100
+Configuration13_Item6=Comment=120|Description=120|Designator=120|Footprint=120|LibRef=120|Quantity=120|Manufacturer 3=100|Manufacturer Part Number 3=100|Supplier 3=100|Supplier Part Number 3=100|JLC Type=100|Pins=100
 
 [PublishSettings]
 OutputFilePath2=C:\Daten\Daniel\fsch\night-cones\HW\night-cone-proto0\Manufacturing\01 - PCB Manufacturing\
@@ -394,11 +394,11 @@ OutputPathOutputer2=
 OutputPathOutputerPrefix2=
 OutputPathOutputerValue2=
 OutputFileName2=
-OutputFileNameMulti2==ProjectName+'_'+CurrentDate
+OutputFileNameMulti2==PCB_Name+Index_Main+Index_Sub+'_'+CurrentDate
 UseOutputNameForMulti2=0
 OutputFileNameSpecial2=
 OpenOutput2=0
-OutputFilePath3=C:\Daten\Daniel\studium\amz\inverter_wr_2023\PCB\Ctrl\Manufacturing\03 PCB Assembly\
+OutputFilePath3=C:\Daten\Daniel\fsch\night-cones\HW\night-cone-proto0\Manufacturing\04 - PCB Assembly\
 ReleaseManaged3=0
 OutputBasePath3=Manufacturing\
 OutputPathMedia3=04 - PCB Assembly
@@ -407,7 +407,7 @@ OutputPathOutputer3=
 OutputPathOutputerPrefix3=
 OutputPathOutputerValue3=
 OutputFileName3=Job1.PDF
-OutputFileNameMulti3==ProjectName+'_'+OutputName+'_'+CurrentDate+'.pdf'
+OutputFileNameMulti3==PCB_Name+Index_Main+Index_Sub+'_'+OutputName+'_'+CurrentDate+'.pdf'
 UseOutputNameForMulti3=0
 OutputFileNameSpecial3=
 OpenOutput3=1
@@ -434,7 +434,7 @@ OutputPathOutputer4=
 OutputPathOutputerPrefix4=
 OutputPathOutputerValue4=
 OutputFileName4=
-OutputFileNameMulti4==ProjectName+'_'+OutputName+'_'+CurrentDate
+OutputFileNameMulti4==PCB_Name+Index_Main+Index_Sub+'_'+OutputName+'_'+CurrentDate
 UseOutputNameForMulti4=0
 OutputFileNameSpecial4=
 OpenOutput4=1
@@ -447,7 +447,7 @@ OutputPathOutputer5=
 OutputPathOutputerPrefix5=
 OutputPathOutputerValue5=
 OutputFileName5=
-OutputFileNameMulti5==ProjectName+'_'+OutputName+'_'+CurrentDate
+OutputFileNameMulti5==PCB_Name+Index_Main+Index_Sub+'_'+OutputName+'_'+CurrentDate
 UseOutputNameForMulti5=0
 OutputFileNameSpecial5=
 OpenOutput5=0
@@ -463,7 +463,7 @@ OpenGerberOutput2=1
 OpenNCDrillOutput2=1
 OpenIPCOutput2=0
 EnableReload2=0
-RelativeOutputPath3=C:\Daten\Daniel\studium\amz\inverter_wr_2023\PCB\Ctrl\Manufacturing\03 PCB Assembly\
+RelativeOutputPath3=C:\Daten\Daniel\fsch\night-cones\HW\night-cone-proto0\Manufacturing\04 - PCB Assembly\
 OpenOutputs3=1
 RelativeOutputPath4=C:\Daten\Daniel\fsch\night-cones\HW\night-cone-proto0\Manufacturing\04 - PCB Assembly\
 OpenOutputs4=1
