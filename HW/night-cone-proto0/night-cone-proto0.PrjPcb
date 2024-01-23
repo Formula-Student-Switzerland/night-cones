@@ -237,71 +237,2671 @@ DocumentUniqueId=
 
 [ProjectVariant1]
 UniqueID=7A46826C-A31E-46C2-9B69-375325446CEB
+Description=WS2813B-B
+AllowFabrication=1
+ParameterCount=1
+VariationCount=40
+Variation1=Designator=R15|UniqueId=\FYQSFHEG\TKEMSLII\HGUCYFFL|Kind=1|AlternatePart= 
+Variation2=Designator=R27|UniqueId=\FYQSFHEG\MZBUBEAV\HGUCYFFL|Kind=1|AlternatePart= 
+Variation3=Designator=R21|UniqueId=\FYQSFHEG\XLENUFJX\HGUCYFFL|Kind=1|AlternatePart= 
+Variation4=Designator=R30|UniqueId=\FYQSFHEG\UBYVCMAG\HGUCYFFL|Kind=1|AlternatePart= 
+Variation5=Designator=R24|UniqueId=\FYQSFHEG\XLXDOQCU\HGUCYFFL|Kind=1|AlternatePart= 
+Variation6=Designator=R18|UniqueId=\FYQSFHEG\IOVQKARY\HGUCYFFL|Kind=1|AlternatePart= 
+Variation7=Designator=R72|UniqueId=\FYQSFHEG\ITCNZRDD\HGUCYFFL|Kind=1|AlternatePart= 
+Variation8=Designator=R66|UniqueId=\FYQSFHEG\ZWYOLWGR\HGUCYFFL|Kind=1|AlternatePart= 
+Variation9=Designator=R36|UniqueId=\FYQSFHEG\ABAPEJJD\HGUCYFFL|Kind=1|AlternatePart= 
+Variation10=Designator=R63|UniqueId=\FYQSFHEG\IKDVEBSM\HGUCYFFL|Kind=1|AlternatePart= 
+Variation11=Designator=R33|UniqueId=\FYQSFHEG\CIIJGTKZ\HGUCYFFL|Kind=1|AlternatePart= 
+Variation12=Designator=R69|UniqueId=\FYQSFHEG\UIVROOYL\HGUCYFFL|Kind=1|AlternatePart= 
+Variation13=Designator=R60|UniqueId=\FYQSFHEG\AROKUIPJ\HGUCYFFL|Kind=1|AlternatePart= 
+Variation14=Designator=R45|UniqueId=\FYQSFHEG\PXXVBESD\HGUCYFFL|Kind=1|AlternatePart= 
+Variation15=Designator=R57|UniqueId=\FYQSFHEG\EPUNFBGK\HGUCYFFL|Kind=1|AlternatePart= 
+Variation16=Designator=R51|UniqueId=\FYQSFHEG\JWAILDQK\HGUCYFFL|Kind=1|AlternatePart= 
+Variation17=Designator=R54|UniqueId=\FYQSFHEG\HSICOQDH\HGUCYFFL|Kind=1|AlternatePart= 
+Variation18=Designator=R42|UniqueId=\FYQSFHEG\MMTKBMXE\HGUCYFFL|Kind=1|AlternatePart= 
+Variation19=Designator=R39|UniqueId=\FYQSFHEG\KRUXYDTE\HGUCYFFL|Kind=1|AlternatePart= 
+Variation20=Designator=R48|UniqueId=\FYQSFHEG\MGKTSPAI\HGUCYFFL|Kind=1|AlternatePart= 
+Variation21=Designator=U6|UniqueId=\FYQSFHEG\TKEMSLII\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation1=ParameterName=Comment|VariantValue=WS2813B-B
+ParamDesignator1=U6
+ParamVariation2=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator2=U6
+ParamVariation3=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator3=U6
+ParamVariation4=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator4=U6
+ParamVariation5=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator5=U6
+ParamVariation6=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
+ParamDesignator6=U6
+ParamVariation7=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator7=U6
+ParamVariation8=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator8=U6
+ParamVariation9=ParameterName=Library Reference|VariantValue=WS2813B-B
+ParamDesignator9=U6
+ParamVariation10=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator10=U6
+ParamVariation11=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator11=U6
+ParamVariation12=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813B-B
+ParamDesignator12=U6
+ParamVariation13=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator13=U6
+ParamVariation14=ParameterName=Part Number|VariantValue=WS2813B-B
+ParamDesignator14=U6
+ParamVariation15=ParameterName=PCB3D|VariantValue= 
+ParamDesignator15=U6
+ParamVariation16=ParameterName=Pin Info|VariantValue= 
+ParamDesignator16=U6
+ParamVariation17=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator17=U6
+ParamVariation18=ParameterName=Simulation|VariantValue= 
+ParamDesignator18=U6
+ParamVariation19=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator19=U6
+ParamVariation20=ParameterName=Supplier Part Number 3|VariantValue=C114592
+ParamDesignator20=U6
+Variation22=Designator=U13|UniqueId=\FYQSFHEG\ABAPEJJD\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation21=ParameterName=Comment|VariantValue=WS2813B-B
+ParamDesignator21=U13
+ParamVariation22=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator22=U13
+ParamVariation23=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator23=U13
+ParamVariation24=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator24=U13
+ParamVariation25=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator25=U13
+ParamVariation26=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
+ParamDesignator26=U13
+ParamVariation27=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator27=U13
+ParamVariation28=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator28=U13
+ParamVariation29=ParameterName=Library Reference|VariantValue=WS2813B-B
+ParamDesignator29=U13
+ParamVariation30=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator30=U13
+ParamVariation31=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator31=U13
+ParamVariation32=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813B-B
+ParamDesignator32=U13
+ParamVariation33=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator33=U13
+ParamVariation34=ParameterName=Part Number|VariantValue=WS2813B-B
+ParamDesignator34=U13
+ParamVariation35=ParameterName=PCB3D|VariantValue= 
+ParamDesignator35=U13
+ParamVariation36=ParameterName=Pin Info|VariantValue= 
+ParamDesignator36=U13
+ParamVariation37=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator37=U13
+ParamVariation38=ParameterName=Simulation|VariantValue= 
+ParamDesignator38=U13
+ParamVariation39=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator39=U13
+ParamVariation40=ParameterName=Supplier Part Number 3|VariantValue=C114592
+ParamDesignator40=U13
+Variation23=Designator=U14|UniqueId=\FYQSFHEG\KRUXYDTE\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation41=ParameterName=Comment|VariantValue=WS2813B-B
+ParamDesignator41=U14
+ParamVariation42=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator42=U14
+ParamVariation43=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator43=U14
+ParamVariation44=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator44=U14
+ParamVariation45=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator45=U14
+ParamVariation46=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
+ParamDesignator46=U14
+ParamVariation47=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator47=U14
+ParamVariation48=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator48=U14
+ParamVariation49=ParameterName=Library Reference|VariantValue=WS2813B-B
+ParamDesignator49=U14
+ParamVariation50=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator50=U14
+ParamVariation51=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator51=U14
+ParamVariation52=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813B-B
+ParamDesignator52=U14
+ParamVariation53=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator53=U14
+ParamVariation54=ParameterName=Part Number|VariantValue=WS2813B-B
+ParamDesignator54=U14
+ParamVariation55=ParameterName=PCB3D|VariantValue= 
+ParamDesignator55=U14
+ParamVariation56=ParameterName=Pin Info|VariantValue= 
+ParamDesignator56=U14
+ParamVariation57=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator57=U14
+ParamVariation58=ParameterName=Simulation|VariantValue= 
+ParamDesignator58=U14
+ParamVariation59=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator59=U14
+ParamVariation60=ParameterName=Supplier Part Number 3|VariantValue=C114592
+ParamDesignator60=U14
+Variation24=Designator=U15|UniqueId=\FYQSFHEG\MMTKBMXE\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation61=ParameterName=Comment|VariantValue=WS2813B-B
+ParamDesignator61=U15
+ParamVariation62=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator62=U15
+ParamVariation63=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator63=U15
+ParamVariation64=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator64=U15
+ParamVariation65=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator65=U15
+ParamVariation66=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
+ParamDesignator66=U15
+ParamVariation67=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator67=U15
+ParamVariation68=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator68=U15
+ParamVariation69=ParameterName=Library Reference|VariantValue=WS2813B-B
+ParamDesignator69=U15
+ParamVariation70=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator70=U15
+ParamVariation71=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator71=U15
+ParamVariation72=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813B-B
+ParamDesignator72=U15
+ParamVariation73=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator73=U15
+ParamVariation74=ParameterName=Part Number|VariantValue=WS2813B-B
+ParamDesignator74=U15
+ParamVariation75=ParameterName=PCB3D|VariantValue= 
+ParamDesignator75=U15
+ParamVariation76=ParameterName=Pin Info|VariantValue= 
+ParamDesignator76=U15
+ParamVariation77=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator77=U15
+ParamVariation78=ParameterName=Simulation|VariantValue= 
+ParamDesignator78=U15
+ParamVariation79=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator79=U15
+ParamVariation80=ParameterName=Supplier Part Number 3|VariantValue=C114592
+ParamDesignator80=U15
+Variation25=Designator=U16|UniqueId=\FYQSFHEG\PXXVBESD\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation81=ParameterName=Comment|VariantValue=WS2813B-B
+ParamDesignator81=U16
+ParamVariation82=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator82=U16
+ParamVariation83=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator83=U16
+ParamVariation84=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator84=U16
+ParamVariation85=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator85=U16
+ParamVariation86=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
+ParamDesignator86=U16
+ParamVariation87=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator87=U16
+ParamVariation88=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator88=U16
+ParamVariation89=ParameterName=Library Reference|VariantValue=WS2813B-B
+ParamDesignator89=U16
+ParamVariation90=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator90=U16
+ParamVariation91=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator91=U16
+ParamVariation92=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813B-B
+ParamDesignator92=U16
+ParamVariation93=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator93=U16
+ParamVariation94=ParameterName=Part Number|VariantValue=WS2813B-B
+ParamDesignator94=U16
+ParamVariation95=ParameterName=PCB3D|VariantValue= 
+ParamDesignator95=U16
+ParamVariation96=ParameterName=Pin Info|VariantValue= 
+ParamDesignator96=U16
+ParamVariation97=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator97=U16
+ParamVariation98=ParameterName=Simulation|VariantValue= 
+ParamDesignator98=U16
+ParamVariation99=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator99=U16
+ParamVariation100=ParameterName=Supplier Part Number 3|VariantValue=C114592
+ParamDesignator100=U16
+Variation26=Designator=U17|UniqueId=\FYQSFHEG\MGKTSPAI\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation101=ParameterName=Comment|VariantValue=WS2813B-B
+ParamDesignator101=U17
+ParamVariation102=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator102=U17
+ParamVariation103=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator103=U17
+ParamVariation104=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator104=U17
+ParamVariation105=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator105=U17
+ParamVariation106=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
+ParamDesignator106=U17
+ParamVariation107=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator107=U17
+ParamVariation108=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator108=U17
+ParamVariation109=ParameterName=Library Reference|VariantValue=WS2813B-B
+ParamDesignator109=U17
+ParamVariation110=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator110=U17
+ParamVariation111=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator111=U17
+ParamVariation112=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813B-B
+ParamDesignator112=U17
+ParamVariation113=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator113=U17
+ParamVariation114=ParameterName=Part Number|VariantValue=WS2813B-B
+ParamDesignator114=U17
+ParamVariation115=ParameterName=PCB3D|VariantValue= 
+ParamDesignator115=U17
+ParamVariation116=ParameterName=Pin Info|VariantValue= 
+ParamDesignator116=U17
+ParamVariation117=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator117=U17
+ParamVariation118=ParameterName=Simulation|VariantValue= 
+ParamDesignator118=U17
+ParamVariation119=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator119=U17
+ParamVariation120=ParameterName=Supplier Part Number 3|VariantValue=C114592
+ParamDesignator120=U17
+Variation27=Designator=U18|UniqueId=\FYQSFHEG\JWAILDQK\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation121=ParameterName=Comment|VariantValue=WS2813B-B
+ParamDesignator121=U18
+ParamVariation122=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator122=U18
+ParamVariation123=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator123=U18
+ParamVariation124=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator124=U18
+ParamVariation125=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator125=U18
+ParamVariation126=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
+ParamDesignator126=U18
+ParamVariation127=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator127=U18
+ParamVariation128=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator128=U18
+ParamVariation129=ParameterName=Library Reference|VariantValue=WS2813B-B
+ParamDesignator129=U18
+ParamVariation130=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator130=U18
+ParamVariation131=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator131=U18
+ParamVariation132=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813B-B
+ParamDesignator132=U18
+ParamVariation133=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator133=U18
+ParamVariation134=ParameterName=Part Number|VariantValue=WS2813B-B
+ParamDesignator134=U18
+ParamVariation135=ParameterName=PCB3D|VariantValue= 
+ParamDesignator135=U18
+ParamVariation136=ParameterName=Pin Info|VariantValue= 
+ParamDesignator136=U18
+ParamVariation137=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator137=U18
+ParamVariation138=ParameterName=Simulation|VariantValue= 
+ParamDesignator138=U18
+ParamVariation139=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator139=U18
+ParamVariation140=ParameterName=Supplier Part Number 3|VariantValue=C114592
+ParamDesignator140=U18
+Variation28=Designator=U19|UniqueId=\FYQSFHEG\HSICOQDH\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation141=ParameterName=Comment|VariantValue=WS2813B-B
+ParamDesignator141=U19
+ParamVariation142=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator142=U19
+ParamVariation143=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator143=U19
+ParamVariation144=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator144=U19
+ParamVariation145=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator145=U19
+ParamVariation146=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
+ParamDesignator146=U19
+ParamVariation147=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator147=U19
+ParamVariation148=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator148=U19
+ParamVariation149=ParameterName=Library Reference|VariantValue=WS2813B-B
+ParamDesignator149=U19
+ParamVariation150=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator150=U19
+ParamVariation151=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator151=U19
+ParamVariation152=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813B-B
+ParamDesignator152=U19
+ParamVariation153=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator153=U19
+ParamVariation154=ParameterName=Part Number|VariantValue=WS2813B-B
+ParamDesignator154=U19
+ParamVariation155=ParameterName=PCB3D|VariantValue= 
+ParamDesignator155=U19
+ParamVariation156=ParameterName=Pin Info|VariantValue= 
+ParamDesignator156=U19
+ParamVariation157=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator157=U19
+ParamVariation158=ParameterName=Simulation|VariantValue= 
+ParamDesignator158=U19
+ParamVariation159=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator159=U19
+ParamVariation160=ParameterName=Supplier Part Number 3|VariantValue=C114592
+ParamDesignator160=U19
+Variation29=Designator=U20|UniqueId=\FYQSFHEG\EPUNFBGK\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation161=ParameterName=Comment|VariantValue=WS2813B-B
+ParamDesignator161=U20
+ParamVariation162=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator162=U20
+ParamVariation163=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator163=U20
+ParamVariation164=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator164=U20
+ParamVariation165=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator165=U20
+ParamVariation166=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
+ParamDesignator166=U20
+ParamVariation167=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator167=U20
+ParamVariation168=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator168=U20
+ParamVariation169=ParameterName=Library Reference|VariantValue=WS2813B-B
+ParamDesignator169=U20
+ParamVariation170=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator170=U20
+ParamVariation171=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator171=U20
+ParamVariation172=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813B-B
+ParamDesignator172=U20
+ParamVariation173=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator173=U20
+ParamVariation174=ParameterName=Part Number|VariantValue=WS2813B-B
+ParamDesignator174=U20
+ParamVariation175=ParameterName=PCB3D|VariantValue= 
+ParamDesignator175=U20
+ParamVariation176=ParameterName=Pin Info|VariantValue= 
+ParamDesignator176=U20
+ParamVariation177=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator177=U20
+ParamVariation178=ParameterName=Simulation|VariantValue= 
+ParamDesignator178=U20
+ParamVariation179=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator179=U20
+ParamVariation180=ParameterName=Supplier Part Number 3|VariantValue=C114592
+ParamDesignator180=U20
+Variation30=Designator=U21|UniqueId=\FYQSFHEG\AROKUIPJ\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation181=ParameterName=Comment|VariantValue=WS2813B-B
+ParamDesignator181=U21
+ParamVariation182=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator182=U21
+ParamVariation183=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator183=U21
+ParamVariation184=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator184=U21
+ParamVariation185=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator185=U21
+ParamVariation186=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
+ParamDesignator186=U21
+ParamVariation187=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator187=U21
+ParamVariation188=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator188=U21
+ParamVariation189=ParameterName=Library Reference|VariantValue=WS2813B-B
+ParamDesignator189=U21
+ParamVariation190=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator190=U21
+ParamVariation191=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator191=U21
+ParamVariation192=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813B-B
+ParamDesignator192=U21
+ParamVariation193=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator193=U21
+ParamVariation194=ParameterName=Part Number|VariantValue=WS2813B-B
+ParamDesignator194=U21
+ParamVariation195=ParameterName=PCB3D|VariantValue= 
+ParamDesignator195=U21
+ParamVariation196=ParameterName=Pin Info|VariantValue= 
+ParamDesignator196=U21
+ParamVariation197=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator197=U21
+ParamVariation198=ParameterName=Simulation|VariantValue= 
+ParamDesignator198=U21
+ParamVariation199=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator199=U21
+ParamVariation200=ParameterName=Supplier Part Number 3|VariantValue=C114592
+ParamDesignator200=U21
+Variation31=Designator=U22|UniqueId=\FYQSFHEG\IKDVEBSM\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation201=ParameterName=Comment|VariantValue=WS2813B-B
+ParamDesignator201=U22
+ParamVariation202=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator202=U22
+ParamVariation203=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator203=U22
+ParamVariation204=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator204=U22
+ParamVariation205=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator205=U22
+ParamVariation206=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
+ParamDesignator206=U22
+ParamVariation207=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator207=U22
+ParamVariation208=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator208=U22
+ParamVariation209=ParameterName=Library Reference|VariantValue=WS2813B-B
+ParamDesignator209=U22
+ParamVariation210=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator210=U22
+ParamVariation211=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator211=U22
+ParamVariation212=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813B-B
+ParamDesignator212=U22
+ParamVariation213=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator213=U22
+ParamVariation214=ParameterName=Part Number|VariantValue=WS2813B-B
+ParamDesignator214=U22
+ParamVariation215=ParameterName=PCB3D|VariantValue= 
+ParamDesignator215=U22
+ParamVariation216=ParameterName=Pin Info|VariantValue= 
+ParamDesignator216=U22
+ParamVariation217=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator217=U22
+ParamVariation218=ParameterName=Simulation|VariantValue= 
+ParamDesignator218=U22
+ParamVariation219=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator219=U22
+ParamVariation220=ParameterName=Supplier Part Number 3|VariantValue=C114592
+ParamDesignator220=U22
+Variation32=Designator=U23|UniqueId=\FYQSFHEG\ZWYOLWGR\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation221=ParameterName=Comment|VariantValue=WS2813B-B
+ParamDesignator221=U23
+ParamVariation222=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator222=U23
+ParamVariation223=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator223=U23
+ParamVariation224=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator224=U23
+ParamVariation225=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator225=U23
+ParamVariation226=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
+ParamDesignator226=U23
+ParamVariation227=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator227=U23
+ParamVariation228=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator228=U23
+ParamVariation229=ParameterName=Library Reference|VariantValue=WS2813B-B
+ParamDesignator229=U23
+ParamVariation230=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator230=U23
+ParamVariation231=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator231=U23
+ParamVariation232=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813B-B
+ParamDesignator232=U23
+ParamVariation233=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator233=U23
+ParamVariation234=ParameterName=Part Number|VariantValue=WS2813B-B
+ParamDesignator234=U23
+ParamVariation235=ParameterName=PCB3D|VariantValue= 
+ParamDesignator235=U23
+ParamVariation236=ParameterName=Pin Info|VariantValue= 
+ParamDesignator236=U23
+ParamVariation237=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator237=U23
+ParamVariation238=ParameterName=Simulation|VariantValue= 
+ParamDesignator238=U23
+ParamVariation239=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator239=U23
+ParamVariation240=ParameterName=Supplier Part Number 3|VariantValue=C114592
+ParamDesignator240=U23
+Variation33=Designator=U24|UniqueId=\FYQSFHEG\UIVROOYL\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation241=ParameterName=Comment|VariantValue=WS2813B-B
+ParamDesignator241=U24
+ParamVariation242=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator242=U24
+ParamVariation243=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator243=U24
+ParamVariation244=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator244=U24
+ParamVariation245=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator245=U24
+ParamVariation246=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
+ParamDesignator246=U24
+ParamVariation247=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator247=U24
+ParamVariation248=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator248=U24
+ParamVariation249=ParameterName=Library Reference|VariantValue=WS2813B-B
+ParamDesignator249=U24
+ParamVariation250=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator250=U24
+ParamVariation251=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator251=U24
+ParamVariation252=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813B-B
+ParamDesignator252=U24
+ParamVariation253=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator253=U24
+ParamVariation254=ParameterName=Part Number|VariantValue=WS2813B-B
+ParamDesignator254=U24
+ParamVariation255=ParameterName=PCB3D|VariantValue= 
+ParamDesignator255=U24
+ParamVariation256=ParameterName=Pin Info|VariantValue= 
+ParamDesignator256=U24
+ParamVariation257=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator257=U24
+ParamVariation258=ParameterName=Simulation|VariantValue= 
+ParamDesignator258=U24
+ParamVariation259=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator259=U24
+ParamVariation260=ParameterName=Supplier Part Number 3|VariantValue=C114592
+ParamDesignator260=U24
+Variation34=Designator=U25|UniqueId=\FYQSFHEG\ITCNZRDD\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation261=ParameterName=Comment|VariantValue=WS2813B-B
+ParamDesignator261=U25
+ParamVariation262=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator262=U25
+ParamVariation263=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator263=U25
+ParamVariation264=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator264=U25
+ParamVariation265=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator265=U25
+ParamVariation266=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
+ParamDesignator266=U25
+ParamVariation267=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator267=U25
+ParamVariation268=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator268=U25
+ParamVariation269=ParameterName=Library Reference|VariantValue=WS2813B-B
+ParamDesignator269=U25
+ParamVariation270=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator270=U25
+ParamVariation271=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator271=U25
+ParamVariation272=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813B-B
+ParamDesignator272=U25
+ParamVariation273=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator273=U25
+ParamVariation274=ParameterName=Part Number|VariantValue=WS2813B-B
+ParamDesignator274=U25
+ParamVariation275=ParameterName=PCB3D|VariantValue= 
+ParamDesignator275=U25
+ParamVariation276=ParameterName=Pin Info|VariantValue= 
+ParamDesignator276=U25
+ParamVariation277=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator277=U25
+ParamVariation278=ParameterName=Simulation|VariantValue= 
+ParamDesignator278=U25
+ParamVariation279=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator279=U25
+ParamVariation280=ParameterName=Supplier Part Number 3|VariantValue=C114592
+ParamDesignator280=U25
+Variation35=Designator=U7|UniqueId=\FYQSFHEG\IOVQKARY\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation281=ParameterName=Comment|VariantValue=WS2813B-B
+ParamDesignator281=U7
+ParamVariation282=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator282=U7
+ParamVariation283=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator283=U7
+ParamVariation284=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator284=U7
+ParamVariation285=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator285=U7
+ParamVariation286=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
+ParamDesignator286=U7
+ParamVariation287=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator287=U7
+ParamVariation288=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator288=U7
+ParamVariation289=ParameterName=Library Reference|VariantValue=WS2813B-B
+ParamDesignator289=U7
+ParamVariation290=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator290=U7
+ParamVariation291=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator291=U7
+ParamVariation292=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813B-B
+ParamDesignator292=U7
+ParamVariation293=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator293=U7
+ParamVariation294=ParameterName=Part Number|VariantValue=WS2813B-B
+ParamDesignator294=U7
+ParamVariation295=ParameterName=PCB3D|VariantValue= 
+ParamDesignator295=U7
+ParamVariation296=ParameterName=Pin Info|VariantValue= 
+ParamDesignator296=U7
+ParamVariation297=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator297=U7
+ParamVariation298=ParameterName=Simulation|VariantValue= 
+ParamDesignator298=U7
+ParamVariation299=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator299=U7
+ParamVariation300=ParameterName=Supplier Part Number 3|VariantValue=C114592
+ParamDesignator300=U7
+Variation36=Designator=U8|UniqueId=\FYQSFHEG\XLENUFJX\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation301=ParameterName=Comment|VariantValue=WS2813B-B
+ParamDesignator301=U8
+ParamVariation302=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator302=U8
+ParamVariation303=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator303=U8
+ParamVariation304=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator304=U8
+ParamVariation305=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator305=U8
+ParamVariation306=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
+ParamDesignator306=U8
+ParamVariation307=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator307=U8
+ParamVariation308=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator308=U8
+ParamVariation309=ParameterName=Library Reference|VariantValue=WS2813B-B
+ParamDesignator309=U8
+ParamVariation310=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator310=U8
+ParamVariation311=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator311=U8
+ParamVariation312=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813B-B
+ParamDesignator312=U8
+ParamVariation313=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator313=U8
+ParamVariation314=ParameterName=Part Number|VariantValue=WS2813B-B
+ParamDesignator314=U8
+ParamVariation315=ParameterName=PCB3D|VariantValue= 
+ParamDesignator315=U8
+ParamVariation316=ParameterName=Pin Info|VariantValue= 
+ParamDesignator316=U8
+ParamVariation317=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator317=U8
+ParamVariation318=ParameterName=Simulation|VariantValue= 
+ParamDesignator318=U8
+ParamVariation319=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator319=U8
+ParamVariation320=ParameterName=Supplier Part Number 3|VariantValue=C114592
+ParamDesignator320=U8
+Variation37=Designator=U9|UniqueId=\FYQSFHEG\XLXDOQCU\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation321=ParameterName=Comment|VariantValue=WS2813B-B
+ParamDesignator321=U9
+ParamVariation322=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator322=U9
+ParamVariation323=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator323=U9
+ParamVariation324=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator324=U9
+ParamVariation325=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator325=U9
+ParamVariation326=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
+ParamDesignator326=U9
+ParamVariation327=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator327=U9
+ParamVariation328=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator328=U9
+ParamVariation329=ParameterName=Library Reference|VariantValue=WS2813B-B
+ParamDesignator329=U9
+ParamVariation330=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator330=U9
+ParamVariation331=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator331=U9
+ParamVariation332=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813B-B
+ParamDesignator332=U9
+ParamVariation333=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator333=U9
+ParamVariation334=ParameterName=Part Number|VariantValue=WS2813B-B
+ParamDesignator334=U9
+ParamVariation335=ParameterName=PCB3D|VariantValue= 
+ParamDesignator335=U9
+ParamVariation336=ParameterName=Pin Info|VariantValue= 
+ParamDesignator336=U9
+ParamVariation337=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator337=U9
+ParamVariation338=ParameterName=Simulation|VariantValue= 
+ParamDesignator338=U9
+ParamVariation339=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator339=U9
+ParamVariation340=ParameterName=Supplier Part Number 3|VariantValue=C114592
+ParamDesignator340=U9
+Variation38=Designator=U10|UniqueId=\FYQSFHEG\MZBUBEAV\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation341=ParameterName=Comment|VariantValue=WS2813B-B
+ParamDesignator341=U10
+ParamVariation342=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator342=U10
+ParamVariation343=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator343=U10
+ParamVariation344=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator344=U10
+ParamVariation345=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator345=U10
+ParamVariation346=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
+ParamDesignator346=U10
+ParamVariation347=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator347=U10
+ParamVariation348=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator348=U10
+ParamVariation349=ParameterName=Library Reference|VariantValue=WS2813B-B
+ParamDesignator349=U10
+ParamVariation350=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator350=U10
+ParamVariation351=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator351=U10
+ParamVariation352=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813B-B
+ParamDesignator352=U10
+ParamVariation353=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator353=U10
+ParamVariation354=ParameterName=Part Number|VariantValue=WS2813B-B
+ParamDesignator354=U10
+ParamVariation355=ParameterName=PCB3D|VariantValue= 
+ParamDesignator355=U10
+ParamVariation356=ParameterName=Pin Info|VariantValue= 
+ParamDesignator356=U10
+ParamVariation357=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator357=U10
+ParamVariation358=ParameterName=Simulation|VariantValue= 
+ParamDesignator358=U10
+ParamVariation359=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator359=U10
+ParamVariation360=ParameterName=Supplier Part Number 3|VariantValue=C114592
+ParamDesignator360=U10
+Variation39=Designator=U11|UniqueId=\FYQSFHEG\UBYVCMAG\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation361=ParameterName=Comment|VariantValue=WS2813B-B
+ParamDesignator361=U11
+ParamVariation362=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator362=U11
+ParamVariation363=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator363=U11
+ParamVariation364=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator364=U11
+ParamVariation365=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator365=U11
+ParamVariation366=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
+ParamDesignator366=U11
+ParamVariation367=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator367=U11
+ParamVariation368=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator368=U11
+ParamVariation369=ParameterName=Library Reference|VariantValue=WS2813B-B
+ParamDesignator369=U11
+ParamVariation370=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator370=U11
+ParamVariation371=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator371=U11
+ParamVariation372=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813B-B
+ParamDesignator372=U11
+ParamVariation373=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator373=U11
+ParamVariation374=ParameterName=Part Number|VariantValue=WS2813B-B
+ParamDesignator374=U11
+ParamVariation375=ParameterName=PCB3D|VariantValue= 
+ParamDesignator375=U11
+ParamVariation376=ParameterName=Pin Info|VariantValue= 
+ParamDesignator376=U11
+ParamVariation377=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator377=U11
+ParamVariation378=ParameterName=Simulation|VariantValue= 
+ParamDesignator378=U11
+ParamVariation379=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator379=U11
+ParamVariation380=ParameterName=Supplier Part Number 3|VariantValue=C114592
+ParamDesignator380=U11
+Variation40=Designator=U12|UniqueId=\FYQSFHEG\CIIJGTKZ\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation381=ParameterName=Comment|VariantValue=WS2813B-B
+ParamDesignator381=U12
+ParamVariation382=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator382=U12
+ParamVariation383=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator383=U12
+ParamVariation384=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator384=U12
+ParamVariation385=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator385=U12
+ParamVariation386=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
+ParamDesignator386=U12
+ParamVariation387=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator387=U12
+ParamVariation388=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator388=U12
+ParamVariation389=ParameterName=Library Reference|VariantValue=WS2813B-B
+ParamDesignator389=U12
+ParamVariation390=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator390=U12
+ParamVariation391=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator391=U12
+ParamVariation392=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813B-B
+ParamDesignator392=U12
+ParamVariation393=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator393=U12
+ParamVariation394=ParameterName=Part Number|VariantValue=WS2813B-B
+ParamDesignator394=U12
+ParamVariation395=ParameterName=PCB3D|VariantValue= 
+ParamDesignator395=U12
+ParamVariation396=ParameterName=Pin Info|VariantValue= 
+ParamDesignator396=U12
+ParamVariation397=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator397=U12
+ParamVariation398=ParameterName=Simulation|VariantValue= 
+ParamDesignator398=U12
+ParamVariation399=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator399=U12
+ParamVariation400=ParameterName=Supplier Part Number 3|VariantValue=C114592
+ParamDesignator400=U12
+ParamVariationCount=400
+
+[Parameter2_1]
+Name=PCB_Name
+Value=NC1-11
+
+[ProjectVariant2]
+UniqueID=BA0F52E3-0EDB-4A9E-A898-C4DF2CEEC255
 Description=WS2813B-V5
 AllowFabrication=1
-ParameterCount=0
+ParameterCount=1
 VariationCount=60
-Variation1=Designator=C2_LED1|UniqueId=\FYQSFHEG\ITCNZRDD\LZGUBYJD|Kind=1|AlternatePart= 
-Variation2=Designator=C2_LED8|UniqueId=\FYQSFHEG\JWAILDQK\LZGUBYJD|Kind=1|AlternatePart= 
-Variation3=Designator=C2_LED3|UniqueId=\FYQSFHEG\ZWYOLWGR\LZGUBYJD|Kind=1|AlternatePart= 
-Variation4=Designator=C2_LED4|UniqueId=\FYQSFHEG\IKDVEBSM\LZGUBYJD|Kind=1|AlternatePart= 
-Variation5=Designator=C2_LED5|UniqueId=\FYQSFHEG\AROKUIPJ\LZGUBYJD|Kind=1|AlternatePart= 
-Variation6=Designator=C2_LED2|UniqueId=\FYQSFHEG\UIVROOYL\LZGUBYJD|Kind=1|AlternatePart= 
-Variation7=Designator=R3_LED13|UniqueId=\FYQSFHEG\ABAPEJJD\JRXFDWCZ|Kind=1|AlternatePart= 
-Variation8=Designator=C2_LED6|UniqueId=\FYQSFHEG\EPUNFBGK\LZGUBYJD|Kind=1|AlternatePart= 
-Variation9=Designator=R3_LED14|UniqueId=\FYQSFHEG\CIIJGTKZ\JRXFDWCZ|Kind=1|AlternatePart= 
-Variation10=Designator=R3_LED15|UniqueId=\FYQSFHEG\UBYVCMAG\JRXFDWCZ|Kind=1|AlternatePart= 
-Variation11=Designator=C2_LED7|UniqueId=\FYQSFHEG\HSICOQDH\LZGUBYJD|Kind=1|AlternatePart= 
-Variation12=Designator=R3_LED16|UniqueId=\FYQSFHEG\MZBUBEAV\JRXFDWCZ|Kind=1|AlternatePart= 
-Variation13=Designator=R3_LED17|UniqueId=\FYQSFHEG\XLXDOQCU\JRXFDWCZ|Kind=1|AlternatePart= 
-Variation14=Designator=R3_LED18|UniqueId=\FYQSFHEG\XLENUFJX\JRXFDWCZ|Kind=1|AlternatePart= 
-Variation15=Designator=C2_LED9|UniqueId=\FYQSFHEG\MGKTSPAI\LZGUBYJD|Kind=1|AlternatePart= 
-Variation16=Designator=R3_LED19|UniqueId=\FYQSFHEG\IOVQKARY\JRXFDWCZ|Kind=1|AlternatePart= 
-Variation17=Designator=C2_LED10|UniqueId=\FYQSFHEG\PXXVBESD\LZGUBYJD|Kind=1|AlternatePart= 
-Variation18=Designator=R3_LED20|UniqueId=\FYQSFHEG\TKEMSLII\JRXFDWCZ|Kind=1|AlternatePart= 
-Variation19=Designator=R5_LED1|UniqueId=\FYQSFHEG\ITCNZRDD\NKAFNTLQ|Kind=1|AlternatePart= 
-Variation20=Designator=C2_LED11|UniqueId=\FYQSFHEG\MMTKBMXE\LZGUBYJD|Kind=1|AlternatePart= 
-Variation21=Designator=R5_LED2|UniqueId=\FYQSFHEG\UIVROOYL\NKAFNTLQ|Kind=1|AlternatePart= 
-Variation22=Designator=C2_LED12|UniqueId=\FYQSFHEG\KRUXYDTE\LZGUBYJD|Kind=1|AlternatePart= 
-Variation23=Designator=R5_LED3|UniqueId=\FYQSFHEG\ZWYOLWGR\NKAFNTLQ|Kind=1|AlternatePart= 
-Variation24=Designator=R5_LED4|UniqueId=\FYQSFHEG\IKDVEBSM\NKAFNTLQ|Kind=1|AlternatePart= 
-Variation25=Designator=C2_LED13|UniqueId=\FYQSFHEG\ABAPEJJD\LZGUBYJD|Kind=1|AlternatePart= 
-Variation26=Designator=R5_LED5|UniqueId=\FYQSFHEG\AROKUIPJ\NKAFNTLQ|Kind=1|AlternatePart= 
-Variation27=Designator=C2_LED14|UniqueId=\FYQSFHEG\CIIJGTKZ\LZGUBYJD|Kind=1|AlternatePart= 
-Variation28=Designator=R3_LED10|UniqueId=\FYQSFHEG\PXXVBESD\JRXFDWCZ|Kind=1|AlternatePart= 
-Variation29=Designator=R5_LED19|UniqueId=\FYQSFHEG\IOVQKARY\NKAFNTLQ|Kind=1|AlternatePart= 
-Variation30=Designator=R3_LED9|UniqueId=\FYQSFHEG\MGKTSPAI\JRXFDWCZ|Kind=1|AlternatePart= 
-Variation31=Designator=R3_LED8|UniqueId=\FYQSFHEG\JWAILDQK\JRXFDWCZ|Kind=1|AlternatePart= 
-Variation32=Designator=R5_LED18|UniqueId=\FYQSFHEG\XLENUFJX\NKAFNTLQ|Kind=1|AlternatePart= 
-Variation33=Designator=R3_LED7|UniqueId=\FYQSFHEG\HSICOQDH\JRXFDWCZ|Kind=1|AlternatePart= 
-Variation34=Designator=R3_LED6|UniqueId=\FYQSFHEG\EPUNFBGK\JRXFDWCZ|Kind=1|AlternatePart= 
-Variation35=Designator=R5_LED17|UniqueId=\FYQSFHEG\XLXDOQCU\NKAFNTLQ|Kind=1|AlternatePart= 
-Variation36=Designator=R3_LED5|UniqueId=\FYQSFHEG\AROKUIPJ\JRXFDWCZ|Kind=1|AlternatePart= 
-Variation37=Designator=R3_LED4|UniqueId=\FYQSFHEG\IKDVEBSM\JRXFDWCZ|Kind=1|AlternatePart= 
-Variation38=Designator=R5_LED16|UniqueId=\FYQSFHEG\MZBUBEAV\NKAFNTLQ|Kind=1|AlternatePart= 
-Variation39=Designator=R3_LED3|UniqueId=\FYQSFHEG\ZWYOLWGR\JRXFDWCZ|Kind=1|AlternatePart= 
-Variation40=Designator=R3_LED2|UniqueId=\FYQSFHEG\UIVROOYL\JRXFDWCZ|Kind=1|AlternatePart= 
-Variation41=Designator=R5_LED15|UniqueId=\FYQSFHEG\UBYVCMAG\NKAFNTLQ|Kind=1|AlternatePart= 
-Variation42=Designator=R3_LED1|UniqueId=\FYQSFHEG\ITCNZRDD\JRXFDWCZ|Kind=1|AlternatePart= 
-Variation43=Designator=R5_LED14|UniqueId=\FYQSFHEG\CIIJGTKZ\NKAFNTLQ|Kind=1|AlternatePart= 
-Variation44=Designator=C2_LED20|UniqueId=\FYQSFHEG\TKEMSLII\LZGUBYJD|Kind=1|AlternatePart= 
-Variation45=Designator=C2_LED19|UniqueId=\FYQSFHEG\IOVQKARY\LZGUBYJD|Kind=1|AlternatePart= 
-Variation46=Designator=R5_LED13|UniqueId=\FYQSFHEG\ABAPEJJD\NKAFNTLQ|Kind=1|AlternatePart= 
-Variation47=Designator=R5_LED12|UniqueId=\FYQSFHEG\KRUXYDTE\NKAFNTLQ|Kind=1|AlternatePart= 
-Variation48=Designator=C2_LED18|UniqueId=\FYQSFHEG\XLENUFJX\LZGUBYJD|Kind=1|AlternatePart= 
-Variation49=Designator=R5_LED11|UniqueId=\FYQSFHEG\MMTKBMXE\NKAFNTLQ|Kind=1|AlternatePart= 
-Variation50=Designator=C2_LED17|UniqueId=\FYQSFHEG\XLXDOQCU\LZGUBYJD|Kind=1|AlternatePart= 
-Variation51=Designator=R5_LED10|UniqueId=\FYQSFHEG\PXXVBESD\NKAFNTLQ|Kind=1|AlternatePart= 
-Variation52=Designator=R5_LED9|UniqueId=\FYQSFHEG\MGKTSPAI\NKAFNTLQ|Kind=1|AlternatePart= 
-Variation53=Designator=C2_LED16|UniqueId=\FYQSFHEG\MZBUBEAV\LZGUBYJD|Kind=1|AlternatePart= 
-Variation54=Designator=R5_LED8|UniqueId=\FYQSFHEG\JWAILDQK\NKAFNTLQ|Kind=1|AlternatePart= 
-Variation55=Designator=R5_LED6|UniqueId=\FYQSFHEG\EPUNFBGK\NKAFNTLQ|Kind=1|AlternatePart= 
-Variation56=Designator=R5_LED7|UniqueId=\FYQSFHEG\HSICOQDH\NKAFNTLQ|Kind=1|AlternatePart= 
-Variation57=Designator=C2_LED15|UniqueId=\FYQSFHEG\UBYVCMAG\LZGUBYJD|Kind=1|AlternatePart= 
-Variation58=Designator=R3_LED12|UniqueId=\FYQSFHEG\KRUXYDTE\JRXFDWCZ|Kind=1|AlternatePart= 
-Variation59=Designator=R5_LED20|UniqueId=\FYQSFHEG\TKEMSLII\NKAFNTLQ|Kind=1|AlternatePart= 
-Variation60=Designator=R3_LED11|UniqueId=\FYQSFHEG\MMTKBMXE\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation1=Designator=C12|UniqueId=\FYQSFHEG\TKEMSLII\LZGUBYJD|Kind=1|AlternatePart= 
+Variation2=Designator=C40|UniqueId=\FYQSFHEG\EPUNFBGK\LZGUBYJD|Kind=1|AlternatePart= 
+Variation3=Designator=C38|UniqueId=\FYQSFHEG\HSICOQDH\LZGUBYJD|Kind=1|AlternatePart= 
+Variation4=Designator=C36|UniqueId=\FYQSFHEG\JWAILDQK\LZGUBYJD|Kind=1|AlternatePart= 
+Variation5=Designator=C34|UniqueId=\FYQSFHEG\MGKTSPAI\LZGUBYJD|Kind=1|AlternatePart= 
+Variation6=Designator=C32|UniqueId=\FYQSFHEG\PXXVBESD\LZGUBYJD|Kind=1|AlternatePart= 
+Variation7=Designator=C30|UniqueId=\FYQSFHEG\MMTKBMXE\LZGUBYJD|Kind=1|AlternatePart= 
+Variation8=Designator=C28|UniqueId=\FYQSFHEG\KRUXYDTE\LZGUBYJD|Kind=1|AlternatePart= 
+Variation9=Designator=C24|UniqueId=\FYQSFHEG\CIIJGTKZ\LZGUBYJD|Kind=1|AlternatePart= 
+Variation10=Designator=C16|UniqueId=\FYQSFHEG\XLENUFJX\LZGUBYJD|Kind=1|AlternatePart= 
+Variation11=Designator=C14|UniqueId=\FYQSFHEG\IOVQKARY\LZGUBYJD|Kind=1|AlternatePart= 
+Variation12=Designator=C18|UniqueId=\FYQSFHEG\XLXDOQCU\LZGUBYJD|Kind=1|AlternatePart= 
+Variation13=Designator=C22|UniqueId=\FYQSFHEG\UBYVCMAG\LZGUBYJD|Kind=1|AlternatePart= 
+Variation14=Designator=C20|UniqueId=\FYQSFHEG\MZBUBEAV\LZGUBYJD|Kind=1|AlternatePart= 
+Variation15=Designator=C26|UniqueId=\FYQSFHEG\ABAPEJJD\LZGUBYJD|Kind=1|AlternatePart= 
+Variation16=Designator=R55|UniqueId=\FYQSFHEG\HSICOQDH\NKAFNTLQ|Kind=1|AlternatePart= 
+Variation17=Designator=R41|UniqueId=\FYQSFHEG\MMTKBMXE\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation18=Designator=R40|UniqueId=\FYQSFHEG\KRUXYDTE\NKAFNTLQ|Kind=1|AlternatePart= 
+Variation19=Designator=R38|UniqueId=\FYQSFHEG\KRUXYDTE\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation20=Designator=R37|UniqueId=\FYQSFHEG\ABAPEJJD\NKAFNTLQ|Kind=1|AlternatePart= 
+Variation21=Designator=R35|UniqueId=\FYQSFHEG\ABAPEJJD\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation22=Designator=R34|UniqueId=\FYQSFHEG\CIIJGTKZ\NKAFNTLQ|Kind=1|AlternatePart= 
+Variation23=Designator=R32|UniqueId=\FYQSFHEG\CIIJGTKZ\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation24=Designator=R31|UniqueId=\FYQSFHEG\UBYVCMAG\NKAFNTLQ|Kind=1|AlternatePart= 
+Variation25=Designator=R29|UniqueId=\FYQSFHEG\UBYVCMAG\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation26=Designator=R28|UniqueId=\FYQSFHEG\MZBUBEAV\NKAFNTLQ|Kind=1|AlternatePart= 
+Variation27=Designator=R26|UniqueId=\FYQSFHEG\MZBUBEAV\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation28=Designator=R25|UniqueId=\FYQSFHEG\XLXDOQCU\NKAFNTLQ|Kind=1|AlternatePart= 
+Variation29=Designator=R23|UniqueId=\FYQSFHEG\XLXDOQCU\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation30=Designator=R22|UniqueId=\FYQSFHEG\XLENUFJX\NKAFNTLQ|Kind=1|AlternatePart= 
+Variation31=Designator=R20|UniqueId=\FYQSFHEG\XLENUFJX\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation32=Designator=R19|UniqueId=\FYQSFHEG\IOVQKARY\NKAFNTLQ|Kind=1|AlternatePart= 
+Variation33=Designator=R17|UniqueId=\FYQSFHEG\IOVQKARY\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation34=Designator=R16|UniqueId=\FYQSFHEG\TKEMSLII\NKAFNTLQ|Kind=1|AlternatePart= 
+Variation35=Designator=R14|UniqueId=\FYQSFHEG\TKEMSLII\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation36=Designator=C50|UniqueId=\FYQSFHEG\ITCNZRDD\LZGUBYJD|Kind=1|AlternatePart= 
+Variation37=Designator=C48|UniqueId=\FYQSFHEG\UIVROOYL\LZGUBYJD|Kind=1|AlternatePart= 
+Variation38=Designator=C46|UniqueId=\FYQSFHEG\ZWYOLWGR\LZGUBYJD|Kind=1|AlternatePart= 
+Variation39=Designator=C44|UniqueId=\FYQSFHEG\IKDVEBSM\LZGUBYJD|Kind=1|AlternatePart= 
+Variation40=Designator=C42|UniqueId=\FYQSFHEG\AROKUIPJ\LZGUBYJD|Kind=1|AlternatePart= 
+Variation41=Designator=R58|UniqueId=\FYQSFHEG\EPUNFBGK\NKAFNTLQ|Kind=1|AlternatePart= 
+Variation42=Designator=R56|UniqueId=\FYQSFHEG\EPUNFBGK\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation43=Designator=R61|UniqueId=\FYQSFHEG\AROKUIPJ\NKAFNTLQ|Kind=1|AlternatePart= 
+Variation44=Designator=R62|UniqueId=\FYQSFHEG\IKDVEBSM\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation45=Designator=R65|UniqueId=\FYQSFHEG\ZWYOLWGR\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation46=Designator=R59|UniqueId=\FYQSFHEG\AROKUIPJ\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation47=Designator=R64|UniqueId=\FYQSFHEG\IKDVEBSM\NKAFNTLQ|Kind=1|AlternatePart= 
+Variation48=Designator=R68|UniqueId=\FYQSFHEG\UIVROOYL\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation49=Designator=R67|UniqueId=\FYQSFHEG\ZWYOLWGR\NKAFNTLQ|Kind=1|AlternatePart= 
+Variation50=Designator=R73|UniqueId=\FYQSFHEG\ITCNZRDD\NKAFNTLQ|Kind=1|AlternatePart= 
+Variation51=Designator=R70|UniqueId=\FYQSFHEG\UIVROOYL\NKAFNTLQ|Kind=1|AlternatePart= 
+Variation52=Designator=R71|UniqueId=\FYQSFHEG\ITCNZRDD\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation53=Designator=R46|UniqueId=\FYQSFHEG\PXXVBESD\NKAFNTLQ|Kind=1|AlternatePart= 
+Variation54=Designator=R47|UniqueId=\FYQSFHEG\MGKTSPAI\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation55=Designator=R49|UniqueId=\FYQSFHEG\MGKTSPAI\NKAFNTLQ|Kind=1|AlternatePart= 
+Variation56=Designator=R44|UniqueId=\FYQSFHEG\PXXVBESD\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation57=Designator=R52|UniqueId=\FYQSFHEG\JWAILDQK\NKAFNTLQ|Kind=1|AlternatePart= 
+Variation58=Designator=R53|UniqueId=\FYQSFHEG\HSICOQDH\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation59=Designator=R50|UniqueId=\FYQSFHEG\JWAILDQK\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation60=Designator=R43|UniqueId=\FYQSFHEG\MMTKBMXE\NKAFNTLQ|Kind=1|AlternatePart= 
 ParamVariationCount=0
+
+[Parameter3_1]
+Name=PCB_Name
+Value=NC1-12
+
+[ProjectVariant3]
+UniqueID=02225B31-4BAA-4F39-A894-27D81145EF88
+Description=WS2813C
+AllowFabrication=1
+ParameterCount=1
+VariationCount=40
+Variation1=Designator=R15|UniqueId=\FYQSFHEG\TKEMSLII\HGUCYFFL|Kind=1|AlternatePart= 
+Variation2=Designator=R27|UniqueId=\FYQSFHEG\MZBUBEAV\HGUCYFFL|Kind=1|AlternatePart= 
+Variation3=Designator=R21|UniqueId=\FYQSFHEG\XLENUFJX\HGUCYFFL|Kind=1|AlternatePart= 
+Variation4=Designator=R30|UniqueId=\FYQSFHEG\UBYVCMAG\HGUCYFFL|Kind=1|AlternatePart= 
+Variation5=Designator=R24|UniqueId=\FYQSFHEG\XLXDOQCU\HGUCYFFL|Kind=1|AlternatePart= 
+Variation6=Designator=R18|UniqueId=\FYQSFHEG\IOVQKARY\HGUCYFFL|Kind=1|AlternatePart= 
+Variation7=Designator=R72|UniqueId=\FYQSFHEG\ITCNZRDD\HGUCYFFL|Kind=1|AlternatePart= 
+Variation8=Designator=R66|UniqueId=\FYQSFHEG\ZWYOLWGR\HGUCYFFL|Kind=1|AlternatePart= 
+Variation9=Designator=R36|UniqueId=\FYQSFHEG\ABAPEJJD\HGUCYFFL|Kind=1|AlternatePart= 
+Variation10=Designator=R63|UniqueId=\FYQSFHEG\IKDVEBSM\HGUCYFFL|Kind=1|AlternatePart= 
+Variation11=Designator=R33|UniqueId=\FYQSFHEG\CIIJGTKZ\HGUCYFFL|Kind=1|AlternatePart= 
+Variation12=Designator=R69|UniqueId=\FYQSFHEG\UIVROOYL\HGUCYFFL|Kind=1|AlternatePart= 
+Variation13=Designator=R60|UniqueId=\FYQSFHEG\AROKUIPJ\HGUCYFFL|Kind=1|AlternatePart= 
+Variation14=Designator=R45|UniqueId=\FYQSFHEG\PXXVBESD\HGUCYFFL|Kind=1|AlternatePart= 
+Variation15=Designator=R57|UniqueId=\FYQSFHEG\EPUNFBGK\HGUCYFFL|Kind=1|AlternatePart= 
+Variation16=Designator=R51|UniqueId=\FYQSFHEG\JWAILDQK\HGUCYFFL|Kind=1|AlternatePart= 
+Variation17=Designator=R54|UniqueId=\FYQSFHEG\HSICOQDH\HGUCYFFL|Kind=1|AlternatePart= 
+Variation18=Designator=R42|UniqueId=\FYQSFHEG\MMTKBMXE\HGUCYFFL|Kind=1|AlternatePart= 
+Variation19=Designator=R39|UniqueId=\FYQSFHEG\KRUXYDTE\HGUCYFFL|Kind=1|AlternatePart= 
+Variation20=Designator=R48|UniqueId=\FYQSFHEG\MGKTSPAI\HGUCYFFL|Kind=1|AlternatePart= 
+Variation21=Designator=U6|UniqueId=\FYQSFHEG\TKEMSLII\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation1=ParameterName=Comment|VariantValue=WS2813C
+ParamDesignator1=U6
+ParamVariation2=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator2=U6
+ParamVariation3=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator3=U6
+ParamVariation4=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamDesignator4=U6
+ParamVariation5=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator5=U6
+ParamVariation6=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator6=U6
+ParamVariation7=ParameterName=Library Reference|VariantValue=WS2813C
+ParamDesignator7=U6
+ParamVariation8=ParameterName=PCB3D|VariantValue= 
+ParamDesignator8=U6
+ParamVariation9=ParameterName=Pin Info|VariantValue= 
+ParamDesignator9=U6
+ParamVariation10=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator10=U6
+ParamVariation11=ParameterName=Simulation|VariantValue= 
+ParamDesignator11=U6
+ParamVariation12=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamDesignator12=U6
+ParamVariation13=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamDesignator13=U6
+ParamVariation14=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamDesignator14=U6
+ParamVariation15=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamDesignator15=U6
+ParamVariation16=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamDesignator16=U6
+ParamVariation17=ParameterName=Package|VariantValue=<no parameter>
+ParamDesignator17=U6
+ParamVariation18=ParameterName=Part Number|VariantValue=<no parameter>
+ParamDesignator18=U6
+ParamVariation19=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamDesignator19=U6
+ParamVariation20=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamDesignator20=U6
+Variation22=Designator=U13|UniqueId=\FYQSFHEG\ABAPEJJD\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation21=ParameterName=Comment|VariantValue=WS2813C
+ParamDesignator21=U13
+ParamVariation22=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator22=U13
+ParamVariation23=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator23=U13
+ParamVariation24=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamDesignator24=U13
+ParamVariation25=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator25=U13
+ParamVariation26=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator26=U13
+ParamVariation27=ParameterName=Library Reference|VariantValue=WS2813C
+ParamDesignator27=U13
+ParamVariation28=ParameterName=PCB3D|VariantValue= 
+ParamDesignator28=U13
+ParamVariation29=ParameterName=Pin Info|VariantValue= 
+ParamDesignator29=U13
+ParamVariation30=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator30=U13
+ParamVariation31=ParameterName=Simulation|VariantValue= 
+ParamDesignator31=U13
+ParamVariation32=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamDesignator32=U13
+ParamVariation33=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamDesignator33=U13
+ParamVariation34=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamDesignator34=U13
+ParamVariation35=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamDesignator35=U13
+ParamVariation36=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamDesignator36=U13
+ParamVariation37=ParameterName=Package|VariantValue=<no parameter>
+ParamDesignator37=U13
+ParamVariation38=ParameterName=Part Number|VariantValue=<no parameter>
+ParamDesignator38=U13
+ParamVariation39=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamDesignator39=U13
+ParamVariation40=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamDesignator40=U13
+Variation23=Designator=U14|UniqueId=\FYQSFHEG\KRUXYDTE\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation41=ParameterName=Comment|VariantValue=WS2813C
+ParamDesignator41=U14
+ParamVariation42=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator42=U14
+ParamVariation43=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator43=U14
+ParamVariation44=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamDesignator44=U14
+ParamVariation45=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator45=U14
+ParamVariation46=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator46=U14
+ParamVariation47=ParameterName=Library Reference|VariantValue=WS2813C
+ParamDesignator47=U14
+ParamVariation48=ParameterName=PCB3D|VariantValue= 
+ParamDesignator48=U14
+ParamVariation49=ParameterName=Pin Info|VariantValue= 
+ParamDesignator49=U14
+ParamVariation50=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator50=U14
+ParamVariation51=ParameterName=Simulation|VariantValue= 
+ParamDesignator51=U14
+ParamVariation52=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamDesignator52=U14
+ParamVariation53=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamDesignator53=U14
+ParamVariation54=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamDesignator54=U14
+ParamVariation55=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamDesignator55=U14
+ParamVariation56=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamDesignator56=U14
+ParamVariation57=ParameterName=Package|VariantValue=<no parameter>
+ParamDesignator57=U14
+ParamVariation58=ParameterName=Part Number|VariantValue=<no parameter>
+ParamDesignator58=U14
+ParamVariation59=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamDesignator59=U14
+ParamVariation60=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamDesignator60=U14
+Variation24=Designator=U15|UniqueId=\FYQSFHEG\MMTKBMXE\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation61=ParameterName=Comment|VariantValue=WS2813C
+ParamDesignator61=U15
+ParamVariation62=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator62=U15
+ParamVariation63=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator63=U15
+ParamVariation64=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamDesignator64=U15
+ParamVariation65=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator65=U15
+ParamVariation66=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator66=U15
+ParamVariation67=ParameterName=Library Reference|VariantValue=WS2813C
+ParamDesignator67=U15
+ParamVariation68=ParameterName=PCB3D|VariantValue= 
+ParamDesignator68=U15
+ParamVariation69=ParameterName=Pin Info|VariantValue= 
+ParamDesignator69=U15
+ParamVariation70=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator70=U15
+ParamVariation71=ParameterName=Simulation|VariantValue= 
+ParamDesignator71=U15
+ParamVariation72=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamDesignator72=U15
+ParamVariation73=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamDesignator73=U15
+ParamVariation74=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamDesignator74=U15
+ParamVariation75=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamDesignator75=U15
+ParamVariation76=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamDesignator76=U15
+ParamVariation77=ParameterName=Package|VariantValue=<no parameter>
+ParamDesignator77=U15
+ParamVariation78=ParameterName=Part Number|VariantValue=<no parameter>
+ParamDesignator78=U15
+ParamVariation79=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamDesignator79=U15
+ParamVariation80=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamDesignator80=U15
+Variation25=Designator=U16|UniqueId=\FYQSFHEG\PXXVBESD\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation81=ParameterName=Comment|VariantValue=WS2813C
+ParamDesignator81=U16
+ParamVariation82=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator82=U16
+ParamVariation83=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator83=U16
+ParamVariation84=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamDesignator84=U16
+ParamVariation85=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator85=U16
+ParamVariation86=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator86=U16
+ParamVariation87=ParameterName=Library Reference|VariantValue=WS2813C
+ParamDesignator87=U16
+ParamVariation88=ParameterName=PCB3D|VariantValue= 
+ParamDesignator88=U16
+ParamVariation89=ParameterName=Pin Info|VariantValue= 
+ParamDesignator89=U16
+ParamVariation90=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator90=U16
+ParamVariation91=ParameterName=Simulation|VariantValue= 
+ParamDesignator91=U16
+ParamVariation92=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamDesignator92=U16
+ParamVariation93=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamDesignator93=U16
+ParamVariation94=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamDesignator94=U16
+ParamVariation95=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamDesignator95=U16
+ParamVariation96=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamDesignator96=U16
+ParamVariation97=ParameterName=Package|VariantValue=<no parameter>
+ParamDesignator97=U16
+ParamVariation98=ParameterName=Part Number|VariantValue=<no parameter>
+ParamDesignator98=U16
+ParamVariation99=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamDesignator99=U16
+ParamVariation100=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamDesignator100=U16
+Variation26=Designator=U17|UniqueId=\FYQSFHEG\MGKTSPAI\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation101=ParameterName=Comment|VariantValue=WS2813C
+ParamDesignator101=U17
+ParamVariation102=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator102=U17
+ParamVariation103=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator103=U17
+ParamVariation104=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamDesignator104=U17
+ParamVariation105=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator105=U17
+ParamVariation106=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator106=U17
+ParamVariation107=ParameterName=Library Reference|VariantValue=WS2813C
+ParamDesignator107=U17
+ParamVariation108=ParameterName=PCB3D|VariantValue= 
+ParamDesignator108=U17
+ParamVariation109=ParameterName=Pin Info|VariantValue= 
+ParamDesignator109=U17
+ParamVariation110=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator110=U17
+ParamVariation111=ParameterName=Simulation|VariantValue= 
+ParamDesignator111=U17
+ParamVariation112=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamDesignator112=U17
+ParamVariation113=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamDesignator113=U17
+ParamVariation114=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamDesignator114=U17
+ParamVariation115=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamDesignator115=U17
+ParamVariation116=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamDesignator116=U17
+ParamVariation117=ParameterName=Package|VariantValue=<no parameter>
+ParamDesignator117=U17
+ParamVariation118=ParameterName=Part Number|VariantValue=<no parameter>
+ParamDesignator118=U17
+ParamVariation119=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamDesignator119=U17
+ParamVariation120=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamDesignator120=U17
+Variation27=Designator=U18|UniqueId=\FYQSFHEG\JWAILDQK\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation121=ParameterName=Comment|VariantValue=WS2813C
+ParamDesignator121=U18
+ParamVariation122=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator122=U18
+ParamVariation123=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator123=U18
+ParamVariation124=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamDesignator124=U18
+ParamVariation125=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator125=U18
+ParamVariation126=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator126=U18
+ParamVariation127=ParameterName=Library Reference|VariantValue=WS2813C
+ParamDesignator127=U18
+ParamVariation128=ParameterName=PCB3D|VariantValue= 
+ParamDesignator128=U18
+ParamVariation129=ParameterName=Pin Info|VariantValue= 
+ParamDesignator129=U18
+ParamVariation130=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator130=U18
+ParamVariation131=ParameterName=Simulation|VariantValue= 
+ParamDesignator131=U18
+ParamVariation132=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamDesignator132=U18
+ParamVariation133=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamDesignator133=U18
+ParamVariation134=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamDesignator134=U18
+ParamVariation135=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamDesignator135=U18
+ParamVariation136=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamDesignator136=U18
+ParamVariation137=ParameterName=Package|VariantValue=<no parameter>
+ParamDesignator137=U18
+ParamVariation138=ParameterName=Part Number|VariantValue=<no parameter>
+ParamDesignator138=U18
+ParamVariation139=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamDesignator139=U18
+ParamVariation140=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamDesignator140=U18
+Variation28=Designator=U19|UniqueId=\FYQSFHEG\HSICOQDH\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation141=ParameterName=Comment|VariantValue=WS2813C
+ParamDesignator141=U19
+ParamVariation142=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator142=U19
+ParamVariation143=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator143=U19
+ParamVariation144=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamDesignator144=U19
+ParamVariation145=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator145=U19
+ParamVariation146=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator146=U19
+ParamVariation147=ParameterName=Library Reference|VariantValue=WS2813C
+ParamDesignator147=U19
+ParamVariation148=ParameterName=PCB3D|VariantValue= 
+ParamDesignator148=U19
+ParamVariation149=ParameterName=Pin Info|VariantValue= 
+ParamDesignator149=U19
+ParamVariation150=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator150=U19
+ParamVariation151=ParameterName=Simulation|VariantValue= 
+ParamDesignator151=U19
+ParamVariation152=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamDesignator152=U19
+ParamVariation153=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamDesignator153=U19
+ParamVariation154=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamDesignator154=U19
+ParamVariation155=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamDesignator155=U19
+ParamVariation156=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamDesignator156=U19
+ParamVariation157=ParameterName=Package|VariantValue=<no parameter>
+ParamDesignator157=U19
+ParamVariation158=ParameterName=Part Number|VariantValue=<no parameter>
+ParamDesignator158=U19
+ParamVariation159=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamDesignator159=U19
+ParamVariation160=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamDesignator160=U19
+Variation29=Designator=U20|UniqueId=\FYQSFHEG\EPUNFBGK\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation161=ParameterName=Comment|VariantValue=WS2813C
+ParamDesignator161=U20
+ParamVariation162=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator162=U20
+ParamVariation163=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator163=U20
+ParamVariation164=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamDesignator164=U20
+ParamVariation165=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator165=U20
+ParamVariation166=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator166=U20
+ParamVariation167=ParameterName=Library Reference|VariantValue=WS2813C
+ParamDesignator167=U20
+ParamVariation168=ParameterName=PCB3D|VariantValue= 
+ParamDesignator168=U20
+ParamVariation169=ParameterName=Pin Info|VariantValue= 
+ParamDesignator169=U20
+ParamVariation170=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator170=U20
+ParamVariation171=ParameterName=Simulation|VariantValue= 
+ParamDesignator171=U20
+ParamVariation172=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamDesignator172=U20
+ParamVariation173=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamDesignator173=U20
+ParamVariation174=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamDesignator174=U20
+ParamVariation175=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamDesignator175=U20
+ParamVariation176=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamDesignator176=U20
+ParamVariation177=ParameterName=Package|VariantValue=<no parameter>
+ParamDesignator177=U20
+ParamVariation178=ParameterName=Part Number|VariantValue=<no parameter>
+ParamDesignator178=U20
+ParamVariation179=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamDesignator179=U20
+ParamVariation180=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamDesignator180=U20
+Variation30=Designator=U21|UniqueId=\FYQSFHEG\AROKUIPJ\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation181=ParameterName=Comment|VariantValue=WS2813C
+ParamDesignator181=U21
+ParamVariation182=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator182=U21
+ParamVariation183=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator183=U21
+ParamVariation184=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamDesignator184=U21
+ParamVariation185=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator185=U21
+ParamVariation186=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator186=U21
+ParamVariation187=ParameterName=Library Reference|VariantValue=WS2813C
+ParamDesignator187=U21
+ParamVariation188=ParameterName=PCB3D|VariantValue= 
+ParamDesignator188=U21
+ParamVariation189=ParameterName=Pin Info|VariantValue= 
+ParamDesignator189=U21
+ParamVariation190=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator190=U21
+ParamVariation191=ParameterName=Simulation|VariantValue= 
+ParamDesignator191=U21
+ParamVariation192=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamDesignator192=U21
+ParamVariation193=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamDesignator193=U21
+ParamVariation194=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamDesignator194=U21
+ParamVariation195=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamDesignator195=U21
+ParamVariation196=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamDesignator196=U21
+ParamVariation197=ParameterName=Package|VariantValue=<no parameter>
+ParamDesignator197=U21
+ParamVariation198=ParameterName=Part Number|VariantValue=<no parameter>
+ParamDesignator198=U21
+ParamVariation199=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamDesignator199=U21
+ParamVariation200=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamDesignator200=U21
+Variation31=Designator=U22|UniqueId=\FYQSFHEG\IKDVEBSM\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation201=ParameterName=Comment|VariantValue=WS2813C
+ParamDesignator201=U22
+ParamVariation202=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator202=U22
+ParamVariation203=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator203=U22
+ParamVariation204=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamDesignator204=U22
+ParamVariation205=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator205=U22
+ParamVariation206=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator206=U22
+ParamVariation207=ParameterName=Library Reference|VariantValue=WS2813C
+ParamDesignator207=U22
+ParamVariation208=ParameterName=PCB3D|VariantValue= 
+ParamDesignator208=U22
+ParamVariation209=ParameterName=Pin Info|VariantValue= 
+ParamDesignator209=U22
+ParamVariation210=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator210=U22
+ParamVariation211=ParameterName=Simulation|VariantValue= 
+ParamDesignator211=U22
+ParamVariation212=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamDesignator212=U22
+ParamVariation213=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamDesignator213=U22
+ParamVariation214=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamDesignator214=U22
+ParamVariation215=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamDesignator215=U22
+ParamVariation216=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamDesignator216=U22
+ParamVariation217=ParameterName=Package|VariantValue=<no parameter>
+ParamDesignator217=U22
+ParamVariation218=ParameterName=Part Number|VariantValue=<no parameter>
+ParamDesignator218=U22
+ParamVariation219=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamDesignator219=U22
+ParamVariation220=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamDesignator220=U22
+Variation32=Designator=U23|UniqueId=\FYQSFHEG\ZWYOLWGR\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation221=ParameterName=Comment|VariantValue=WS2813C
+ParamDesignator221=U23
+ParamVariation222=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator222=U23
+ParamVariation223=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator223=U23
+ParamVariation224=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamDesignator224=U23
+ParamVariation225=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator225=U23
+ParamVariation226=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator226=U23
+ParamVariation227=ParameterName=Library Reference|VariantValue=WS2813C
+ParamDesignator227=U23
+ParamVariation228=ParameterName=PCB3D|VariantValue= 
+ParamDesignator228=U23
+ParamVariation229=ParameterName=Pin Info|VariantValue= 
+ParamDesignator229=U23
+ParamVariation230=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator230=U23
+ParamVariation231=ParameterName=Simulation|VariantValue= 
+ParamDesignator231=U23
+ParamVariation232=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamDesignator232=U23
+ParamVariation233=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamDesignator233=U23
+ParamVariation234=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamDesignator234=U23
+ParamVariation235=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamDesignator235=U23
+ParamVariation236=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamDesignator236=U23
+ParamVariation237=ParameterName=Package|VariantValue=<no parameter>
+ParamDesignator237=U23
+ParamVariation238=ParameterName=Part Number|VariantValue=<no parameter>
+ParamDesignator238=U23
+ParamVariation239=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamDesignator239=U23
+ParamVariation240=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamDesignator240=U23
+Variation33=Designator=U24|UniqueId=\FYQSFHEG\UIVROOYL\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation241=ParameterName=Comment|VariantValue=WS2813C
+ParamDesignator241=U24
+ParamVariation242=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator242=U24
+ParamVariation243=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator243=U24
+ParamVariation244=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamDesignator244=U24
+ParamVariation245=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator245=U24
+ParamVariation246=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator246=U24
+ParamVariation247=ParameterName=Library Reference|VariantValue=WS2813C
+ParamDesignator247=U24
+ParamVariation248=ParameterName=PCB3D|VariantValue= 
+ParamDesignator248=U24
+ParamVariation249=ParameterName=Pin Info|VariantValue= 
+ParamDesignator249=U24
+ParamVariation250=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator250=U24
+ParamVariation251=ParameterName=Simulation|VariantValue= 
+ParamDesignator251=U24
+ParamVariation252=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamDesignator252=U24
+ParamVariation253=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamDesignator253=U24
+ParamVariation254=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamDesignator254=U24
+ParamVariation255=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamDesignator255=U24
+ParamVariation256=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamDesignator256=U24
+ParamVariation257=ParameterName=Package|VariantValue=<no parameter>
+ParamDesignator257=U24
+ParamVariation258=ParameterName=Part Number|VariantValue=<no parameter>
+ParamDesignator258=U24
+ParamVariation259=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamDesignator259=U24
+ParamVariation260=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamDesignator260=U24
+Variation34=Designator=U25|UniqueId=\FYQSFHEG\ITCNZRDD\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation261=ParameterName=Comment|VariantValue=WS2813C
+ParamDesignator261=U25
+ParamVariation262=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator262=U25
+ParamVariation263=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator263=U25
+ParamVariation264=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamDesignator264=U25
+ParamVariation265=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator265=U25
+ParamVariation266=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator266=U25
+ParamVariation267=ParameterName=Library Reference|VariantValue=WS2813C
+ParamDesignator267=U25
+ParamVariation268=ParameterName=PCB3D|VariantValue= 
+ParamDesignator268=U25
+ParamVariation269=ParameterName=Pin Info|VariantValue= 
+ParamDesignator269=U25
+ParamVariation270=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator270=U25
+ParamVariation271=ParameterName=Simulation|VariantValue= 
+ParamDesignator271=U25
+ParamVariation272=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamDesignator272=U25
+ParamVariation273=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamDesignator273=U25
+ParamVariation274=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamDesignator274=U25
+ParamVariation275=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamDesignator275=U25
+ParamVariation276=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamDesignator276=U25
+ParamVariation277=ParameterName=Package|VariantValue=<no parameter>
+ParamDesignator277=U25
+ParamVariation278=ParameterName=Part Number|VariantValue=<no parameter>
+ParamDesignator278=U25
+ParamVariation279=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamDesignator279=U25
+ParamVariation280=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamDesignator280=U25
+Variation35=Designator=U7|UniqueId=\FYQSFHEG\IOVQKARY\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation281=ParameterName=Comment|VariantValue=WS2813C
+ParamDesignator281=U7
+ParamVariation282=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator282=U7
+ParamVariation283=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator283=U7
+ParamVariation284=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamDesignator284=U7
+ParamVariation285=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator285=U7
+ParamVariation286=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator286=U7
+ParamVariation287=ParameterName=Library Reference|VariantValue=WS2813C
+ParamDesignator287=U7
+ParamVariation288=ParameterName=PCB3D|VariantValue= 
+ParamDesignator288=U7
+ParamVariation289=ParameterName=Pin Info|VariantValue= 
+ParamDesignator289=U7
+ParamVariation290=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator290=U7
+ParamVariation291=ParameterName=Simulation|VariantValue= 
+ParamDesignator291=U7
+ParamVariation292=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamDesignator292=U7
+ParamVariation293=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamDesignator293=U7
+ParamVariation294=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamDesignator294=U7
+ParamVariation295=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamDesignator295=U7
+ParamVariation296=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamDesignator296=U7
+ParamVariation297=ParameterName=Package|VariantValue=<no parameter>
+ParamDesignator297=U7
+ParamVariation298=ParameterName=Part Number|VariantValue=<no parameter>
+ParamDesignator298=U7
+ParamVariation299=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamDesignator299=U7
+ParamVariation300=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamDesignator300=U7
+Variation36=Designator=U8|UniqueId=\FYQSFHEG\XLENUFJX\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation301=ParameterName=Comment|VariantValue=WS2813C
+ParamDesignator301=U8
+ParamVariation302=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator302=U8
+ParamVariation303=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator303=U8
+ParamVariation304=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamDesignator304=U8
+ParamVariation305=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator305=U8
+ParamVariation306=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator306=U8
+ParamVariation307=ParameterName=Library Reference|VariantValue=WS2813C
+ParamDesignator307=U8
+ParamVariation308=ParameterName=PCB3D|VariantValue= 
+ParamDesignator308=U8
+ParamVariation309=ParameterName=Pin Info|VariantValue= 
+ParamDesignator309=U8
+ParamVariation310=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator310=U8
+ParamVariation311=ParameterName=Simulation|VariantValue= 
+ParamDesignator311=U8
+ParamVariation312=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamDesignator312=U8
+ParamVariation313=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamDesignator313=U8
+ParamVariation314=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamDesignator314=U8
+ParamVariation315=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamDesignator315=U8
+ParamVariation316=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamDesignator316=U8
+ParamVariation317=ParameterName=Package|VariantValue=<no parameter>
+ParamDesignator317=U8
+ParamVariation318=ParameterName=Part Number|VariantValue=<no parameter>
+ParamDesignator318=U8
+ParamVariation319=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamDesignator319=U8
+ParamVariation320=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamDesignator320=U8
+Variation37=Designator=U9|UniqueId=\FYQSFHEG\XLXDOQCU\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation321=ParameterName=Comment|VariantValue=WS2813C
+ParamDesignator321=U9
+ParamVariation322=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator322=U9
+ParamVariation323=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator323=U9
+ParamVariation324=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamDesignator324=U9
+ParamVariation325=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator325=U9
+ParamVariation326=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator326=U9
+ParamVariation327=ParameterName=Library Reference|VariantValue=WS2813C
+ParamDesignator327=U9
+ParamVariation328=ParameterName=PCB3D|VariantValue= 
+ParamDesignator328=U9
+ParamVariation329=ParameterName=Pin Info|VariantValue= 
+ParamDesignator329=U9
+ParamVariation330=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator330=U9
+ParamVariation331=ParameterName=Simulation|VariantValue= 
+ParamDesignator331=U9
+ParamVariation332=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamDesignator332=U9
+ParamVariation333=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamDesignator333=U9
+ParamVariation334=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamDesignator334=U9
+ParamVariation335=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamDesignator335=U9
+ParamVariation336=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamDesignator336=U9
+ParamVariation337=ParameterName=Package|VariantValue=<no parameter>
+ParamDesignator337=U9
+ParamVariation338=ParameterName=Part Number|VariantValue=<no parameter>
+ParamDesignator338=U9
+ParamVariation339=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamDesignator339=U9
+ParamVariation340=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamDesignator340=U9
+Variation38=Designator=U10|UniqueId=\FYQSFHEG\MZBUBEAV\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation341=ParameterName=Comment|VariantValue=WS2813C
+ParamDesignator341=U10
+ParamVariation342=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator342=U10
+ParamVariation343=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator343=U10
+ParamVariation344=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamDesignator344=U10
+ParamVariation345=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator345=U10
+ParamVariation346=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator346=U10
+ParamVariation347=ParameterName=Library Reference|VariantValue=WS2813C
+ParamDesignator347=U10
+ParamVariation348=ParameterName=PCB3D|VariantValue= 
+ParamDesignator348=U10
+ParamVariation349=ParameterName=Pin Info|VariantValue= 
+ParamDesignator349=U10
+ParamVariation350=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator350=U10
+ParamVariation351=ParameterName=Simulation|VariantValue= 
+ParamDesignator351=U10
+ParamVariation352=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamDesignator352=U10
+ParamVariation353=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamDesignator353=U10
+ParamVariation354=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamDesignator354=U10
+ParamVariation355=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamDesignator355=U10
+ParamVariation356=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamDesignator356=U10
+ParamVariation357=ParameterName=Package|VariantValue=<no parameter>
+ParamDesignator357=U10
+ParamVariation358=ParameterName=Part Number|VariantValue=<no parameter>
+ParamDesignator358=U10
+ParamVariation359=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamDesignator359=U10
+ParamVariation360=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamDesignator360=U10
+Variation39=Designator=U11|UniqueId=\FYQSFHEG\UBYVCMAG\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation361=ParameterName=Comment|VariantValue=WS2813C
+ParamDesignator361=U11
+ParamVariation362=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator362=U11
+ParamVariation363=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator363=U11
+ParamVariation364=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamDesignator364=U11
+ParamVariation365=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator365=U11
+ParamVariation366=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator366=U11
+ParamVariation367=ParameterName=Library Reference|VariantValue=WS2813C
+ParamDesignator367=U11
+ParamVariation368=ParameterName=PCB3D|VariantValue= 
+ParamDesignator368=U11
+ParamVariation369=ParameterName=Pin Info|VariantValue= 
+ParamDesignator369=U11
+ParamVariation370=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator370=U11
+ParamVariation371=ParameterName=Simulation|VariantValue= 
+ParamDesignator371=U11
+ParamVariation372=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamDesignator372=U11
+ParamVariation373=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamDesignator373=U11
+ParamVariation374=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamDesignator374=U11
+ParamVariation375=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamDesignator375=U11
+ParamVariation376=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamDesignator376=U11
+ParamVariation377=ParameterName=Package|VariantValue=<no parameter>
+ParamDesignator377=U11
+ParamVariation378=ParameterName=Part Number|VariantValue=<no parameter>
+ParamDesignator378=U11
+ParamVariation379=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamDesignator379=U11
+ParamVariation380=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamDesignator380=U11
+Variation40=Designator=U12|UniqueId=\FYQSFHEG\CIIJGTKZ\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation381=ParameterName=Comment|VariantValue=WS2813C
+ParamDesignator381=U12
+ParamVariation382=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator382=U12
+ParamVariation383=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator383=U12
+ParamVariation384=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamDesignator384=U12
+ParamVariation385=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator385=U12
+ParamVariation386=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator386=U12
+ParamVariation387=ParameterName=Library Reference|VariantValue=WS2813C
+ParamDesignator387=U12
+ParamVariation388=ParameterName=PCB3D|VariantValue= 
+ParamDesignator388=U12
+ParamVariation389=ParameterName=Pin Info|VariantValue= 
+ParamDesignator389=U12
+ParamVariation390=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator390=U12
+ParamVariation391=ParameterName=Simulation|VariantValue= 
+ParamDesignator391=U12
+ParamVariation392=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamDesignator392=U12
+ParamVariation393=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamDesignator393=U12
+ParamVariation394=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamDesignator394=U12
+ParamVariation395=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamDesignator395=U12
+ParamVariation396=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamDesignator396=U12
+ParamVariation397=ParameterName=Package|VariantValue=<no parameter>
+ParamDesignator397=U12
+ParamVariation398=ParameterName=Part Number|VariantValue=<no parameter>
+ParamDesignator398=U12
+ParamVariation399=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamDesignator399=U12
+ParamVariation400=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamDesignator400=U12
+ParamVariationCount=400
+
+[Parameter4_1]
+Name=PCB_Name
+Value=NC1-13
+
+[ProjectVariant4]
+UniqueID=423EACDA-0C88-4F9E-AC5D-3A909E8A70E9
+Description=WS2813E
+AllowFabrication=1
+ParameterCount=1
+VariationCount=80
+Variation1=Designator=C12|UniqueId=\FYQSFHEG\TKEMSLII\LZGUBYJD|Kind=1|AlternatePart= 
+Variation2=Designator=R60|UniqueId=\FYQSFHEG\AROKUIPJ\HGUCYFFL|Kind=1|AlternatePart= 
+Variation3=Designator=R44|UniqueId=\FYQSFHEG\PXXVBESD\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation4=Designator=R71|UniqueId=\FYQSFHEG\ITCNZRDD\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation5=Designator=R51|UniqueId=\FYQSFHEG\JWAILDQK\HGUCYFFL|Kind=1|AlternatePart= 
+Variation6=Designator=R66|UniqueId=\FYQSFHEG\ZWYOLWGR\HGUCYFFL|Kind=1|AlternatePart= 
+Variation7=Designator=R62|UniqueId=\FYQSFHEG\IKDVEBSM\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation8=Designator=R56|UniqueId=\FYQSFHEG\EPUNFBGK\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation9=Designator=R54|UniqueId=\FYQSFHEG\HSICOQDH\HGUCYFFL|Kind=1|AlternatePart= 
+Variation10=Designator=R48|UniqueId=\FYQSFHEG\MGKTSPAI\HGUCYFFL|Kind=1|AlternatePart= 
+Variation11=Designator=R53|UniqueId=\FYQSFHEG\HSICOQDH\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation12=Designator=R69|UniqueId=\FYQSFHEG\UIVROOYL\HGUCYFFL|Kind=1|AlternatePart= 
+Variation13=Designator=R59|UniqueId=\FYQSFHEG\AROKUIPJ\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation14=Designator=R72|UniqueId=\FYQSFHEG\ITCNZRDD\HGUCYFFL|Kind=1|AlternatePart= 
+Variation15=Designator=R65|UniqueId=\FYQSFHEG\ZWYOLWGR\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation16=Designator=R57|UniqueId=\FYQSFHEG\EPUNFBGK\HGUCYFFL|Kind=1|AlternatePart= 
+Variation17=Designator=R50|UniqueId=\FYQSFHEG\JWAILDQK\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation18=Designator=R68|UniqueId=\FYQSFHEG\UIVROOYL\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation19=Designator=R45|UniqueId=\FYQSFHEG\PXXVBESD\HGUCYFFL|Kind=1|AlternatePart= 
+Variation20=Designator=R63|UniqueId=\FYQSFHEG\IKDVEBSM\HGUCYFFL|Kind=1|AlternatePart= 
+Variation21=Designator=R47|UniqueId=\FYQSFHEG\MGKTSPAI\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation22=Designator=R39|UniqueId=\FYQSFHEG\KRUXYDTE\HGUCYFFL|Kind=1|AlternatePart= 
+Variation23=Designator=R42|UniqueId=\FYQSFHEG\MMTKBMXE\HGUCYFFL|Kind=1|AlternatePart= 
+Variation24=Designator=R41|UniqueId=\FYQSFHEG\MMTKBMXE\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation25=Designator=R29|UniqueId=\FYQSFHEG\UBYVCMAG\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation26=Designator=R27|UniqueId=\FYQSFHEG\MZBUBEAV\HGUCYFFL|Kind=1|AlternatePart= 
+Variation27=Designator=C22|UniqueId=\FYQSFHEG\UBYVCMAG\LZGUBYJD|Kind=1|AlternatePart= 
+Variation28=Designator=C40|UniqueId=\FYQSFHEG\EPUNFBGK\LZGUBYJD|Kind=1|AlternatePart= 
+Variation29=Designator=C20|UniqueId=\FYQSFHEG\MZBUBEAV\LZGUBYJD|Kind=1|AlternatePart= 
+Variation30=Designator=C38|UniqueId=\FYQSFHEG\HSICOQDH\LZGUBYJD|Kind=1|AlternatePart= 
+Variation31=Designator=R15|UniqueId=\FYQSFHEG\TKEMSLII\HGUCYFFL|Kind=1|AlternatePart= 
+Variation32=Designator=R14|UniqueId=\FYQSFHEG\TKEMSLII\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation33=Designator=C28|UniqueId=\FYQSFHEG\KRUXYDTE\LZGUBYJD|Kind=1|AlternatePart= 
+Variation34=Designator=R38|UniqueId=\FYQSFHEG\KRUXYDTE\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation35=Designator=C44|UniqueId=\FYQSFHEG\IKDVEBSM\LZGUBYJD|Kind=1|AlternatePart= 
+Variation36=Designator=C34|UniqueId=\FYQSFHEG\MGKTSPAI\LZGUBYJD|Kind=1|AlternatePart= 
+Variation37=Designator=R17|UniqueId=\FYQSFHEG\IOVQKARY\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation38=Designator=R30|UniqueId=\FYQSFHEG\UBYVCMAG\HGUCYFFL|Kind=1|AlternatePart= 
+Variation39=Designator=R24|UniqueId=\FYQSFHEG\XLXDOQCU\HGUCYFFL|Kind=1|AlternatePart= 
+Variation40=Designator=R23|UniqueId=\FYQSFHEG\XLXDOQCU\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation41=Designator=C50|UniqueId=\FYQSFHEG\ITCNZRDD\LZGUBYJD|Kind=1|AlternatePart= 
+Variation42=Designator=C30|UniqueId=\FYQSFHEG\MMTKBMXE\LZGUBYJD|Kind=1|AlternatePart= 
+Variation43=Designator=R26|UniqueId=\FYQSFHEG\MZBUBEAV\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation44=Designator=C48|UniqueId=\FYQSFHEG\UIVROOYL\LZGUBYJD|Kind=1|AlternatePart= 
+Variation45=Designator=C26|UniqueId=\FYQSFHEG\ABAPEJJD\LZGUBYJD|Kind=1|AlternatePart= 
+Variation46=Designator=C16|UniqueId=\FYQSFHEG\XLENUFJX\LZGUBYJD|Kind=1|AlternatePart= 
+Variation47=Designator=C18|UniqueId=\FYQSFHEG\XLXDOQCU\LZGUBYJD|Kind=1|AlternatePart= 
+Variation48=Designator=R21|UniqueId=\FYQSFHEG\XLENUFJX\HGUCYFFL|Kind=1|AlternatePart= 
+Variation49=Designator=R20|UniqueId=\FYQSFHEG\XLENUFJX\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation50=Designator=R35|UniqueId=\FYQSFHEG\ABAPEJJD\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation51=Designator=R36|UniqueId=\FYQSFHEG\ABAPEJJD\HGUCYFFL|Kind=1|AlternatePart= 
+Variation52=Designator=C46|UniqueId=\FYQSFHEG\ZWYOLWGR\LZGUBYJD|Kind=1|AlternatePart= 
+Variation53=Designator=R32|UniqueId=\FYQSFHEG\CIIJGTKZ\JRXFDWCZ|Kind=1|AlternatePart= 
+Variation54=Designator=C32|UniqueId=\FYQSFHEG\PXXVBESD\LZGUBYJD|Kind=1|AlternatePart= 
+Variation55=Designator=C36|UniqueId=\FYQSFHEG\JWAILDQK\LZGUBYJD|Kind=1|AlternatePart= 
+Variation56=Designator=C24|UniqueId=\FYQSFHEG\CIIJGTKZ\LZGUBYJD|Kind=1|AlternatePart= 
+Variation57=Designator=C42|UniqueId=\FYQSFHEG\AROKUIPJ\LZGUBYJD|Kind=1|AlternatePart= 
+Variation58=Designator=R18|UniqueId=\FYQSFHEG\IOVQKARY\HGUCYFFL|Kind=1|AlternatePart= 
+Variation59=Designator=C14|UniqueId=\FYQSFHEG\IOVQKARY\LZGUBYJD|Kind=1|AlternatePart= 
+Variation60=Designator=R33|UniqueId=\FYQSFHEG\CIIJGTKZ\HGUCYFFL|Kind=1|AlternatePart= 
+Variation61=Designator=U6|UniqueId=\FYQSFHEG\TKEMSLII\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation1=ParameterName=Comment|VariantValue=WS2813E
+ParamDesignator1=U6
+ParamVariation2=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator2=U6
+ParamVariation3=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator3=U6
+ParamVariation4=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator4=U6
+ParamVariation5=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator5=U6
+ParamVariation6=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
+ParamDesignator6=U6
+ParamVariation7=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator7=U6
+ParamVariation8=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator8=U6
+ParamVariation9=ParameterName=Library Reference|VariantValue=WS2813E
+ParamDesignator9=U6
+ParamVariation10=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator10=U6
+ParamVariation11=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator11=U6
+ParamVariation12=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813E
+ParamDesignator12=U6
+ParamVariation13=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator13=U6
+ParamVariation14=ParameterName=Part Number|VariantValue=WS2813E
+ParamDesignator14=U6
+ParamVariation15=ParameterName=PCB3D|VariantValue= 
+ParamDesignator15=U6
+ParamVariation16=ParameterName=Pin Info|VariantValue= 
+ParamDesignator16=U6
+ParamVariation17=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator17=U6
+ParamVariation18=ParameterName=Simulation|VariantValue= 
+ParamDesignator18=U6
+ParamVariation19=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator19=U6
+ParamVariation20=ParameterName=Supplier Part Number 3|VariantValue=C160214
+ParamDesignator20=U6
+Variation62=Designator=U13|UniqueId=\FYQSFHEG\ABAPEJJD\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation21=ParameterName=Comment|VariantValue=WS2813E
+ParamDesignator21=U13
+ParamVariation22=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator22=U13
+ParamVariation23=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator23=U13
+ParamVariation24=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator24=U13
+ParamVariation25=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator25=U13
+ParamVariation26=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
+ParamDesignator26=U13
+ParamVariation27=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator27=U13
+ParamVariation28=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator28=U13
+ParamVariation29=ParameterName=Library Reference|VariantValue=WS2813E
+ParamDesignator29=U13
+ParamVariation30=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator30=U13
+ParamVariation31=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator31=U13
+ParamVariation32=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813E
+ParamDesignator32=U13
+ParamVariation33=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator33=U13
+ParamVariation34=ParameterName=Part Number|VariantValue=WS2813E
+ParamDesignator34=U13
+ParamVariation35=ParameterName=PCB3D|VariantValue= 
+ParamDesignator35=U13
+ParamVariation36=ParameterName=Pin Info|VariantValue= 
+ParamDesignator36=U13
+ParamVariation37=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator37=U13
+ParamVariation38=ParameterName=Simulation|VariantValue= 
+ParamDesignator38=U13
+ParamVariation39=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator39=U13
+ParamVariation40=ParameterName=Supplier Part Number 3|VariantValue=C160214
+ParamDesignator40=U13
+Variation63=Designator=U14|UniqueId=\FYQSFHEG\KRUXYDTE\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation41=ParameterName=Comment|VariantValue=WS2813E
+ParamDesignator41=U14
+ParamVariation42=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator42=U14
+ParamVariation43=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator43=U14
+ParamVariation44=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator44=U14
+ParamVariation45=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator45=U14
+ParamVariation46=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
+ParamDesignator46=U14
+ParamVariation47=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator47=U14
+ParamVariation48=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator48=U14
+ParamVariation49=ParameterName=Library Reference|VariantValue=WS2813E
+ParamDesignator49=U14
+ParamVariation50=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator50=U14
+ParamVariation51=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator51=U14
+ParamVariation52=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813E
+ParamDesignator52=U14
+ParamVariation53=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator53=U14
+ParamVariation54=ParameterName=Part Number|VariantValue=WS2813E
+ParamDesignator54=U14
+ParamVariation55=ParameterName=PCB3D|VariantValue= 
+ParamDesignator55=U14
+ParamVariation56=ParameterName=Pin Info|VariantValue= 
+ParamDesignator56=U14
+ParamVariation57=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator57=U14
+ParamVariation58=ParameterName=Simulation|VariantValue= 
+ParamDesignator58=U14
+ParamVariation59=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator59=U14
+ParamVariation60=ParameterName=Supplier Part Number 3|VariantValue=C160214
+ParamDesignator60=U14
+Variation64=Designator=U15|UniqueId=\FYQSFHEG\MMTKBMXE\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation61=ParameterName=Comment|VariantValue=WS2813E
+ParamDesignator61=U15
+ParamVariation62=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator62=U15
+ParamVariation63=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator63=U15
+ParamVariation64=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator64=U15
+ParamVariation65=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator65=U15
+ParamVariation66=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
+ParamDesignator66=U15
+ParamVariation67=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator67=U15
+ParamVariation68=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator68=U15
+ParamVariation69=ParameterName=Library Reference|VariantValue=WS2813E
+ParamDesignator69=U15
+ParamVariation70=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator70=U15
+ParamVariation71=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator71=U15
+ParamVariation72=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813E
+ParamDesignator72=U15
+ParamVariation73=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator73=U15
+ParamVariation74=ParameterName=Part Number|VariantValue=WS2813E
+ParamDesignator74=U15
+ParamVariation75=ParameterName=PCB3D|VariantValue= 
+ParamDesignator75=U15
+ParamVariation76=ParameterName=Pin Info|VariantValue= 
+ParamDesignator76=U15
+ParamVariation77=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator77=U15
+ParamVariation78=ParameterName=Simulation|VariantValue= 
+ParamDesignator78=U15
+ParamVariation79=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator79=U15
+ParamVariation80=ParameterName=Supplier Part Number 3|VariantValue=C160214
+ParamDesignator80=U15
+Variation65=Designator=U16|UniqueId=\FYQSFHEG\PXXVBESD\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation81=ParameterName=Comment|VariantValue=WS2813E
+ParamDesignator81=U16
+ParamVariation82=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator82=U16
+ParamVariation83=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator83=U16
+ParamVariation84=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator84=U16
+ParamVariation85=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator85=U16
+ParamVariation86=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
+ParamDesignator86=U16
+ParamVariation87=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator87=U16
+ParamVariation88=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator88=U16
+ParamVariation89=ParameterName=Library Reference|VariantValue=WS2813E
+ParamDesignator89=U16
+ParamVariation90=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator90=U16
+ParamVariation91=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator91=U16
+ParamVariation92=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813E
+ParamDesignator92=U16
+ParamVariation93=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator93=U16
+ParamVariation94=ParameterName=Part Number|VariantValue=WS2813E
+ParamDesignator94=U16
+ParamVariation95=ParameterName=PCB3D|VariantValue= 
+ParamDesignator95=U16
+ParamVariation96=ParameterName=Pin Info|VariantValue= 
+ParamDesignator96=U16
+ParamVariation97=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator97=U16
+ParamVariation98=ParameterName=Simulation|VariantValue= 
+ParamDesignator98=U16
+ParamVariation99=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator99=U16
+ParamVariation100=ParameterName=Supplier Part Number 3|VariantValue=C160214
+ParamDesignator100=U16
+Variation66=Designator=U17|UniqueId=\FYQSFHEG\MGKTSPAI\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation101=ParameterName=Comment|VariantValue=WS2813E
+ParamDesignator101=U17
+ParamVariation102=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator102=U17
+ParamVariation103=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator103=U17
+ParamVariation104=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator104=U17
+ParamVariation105=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator105=U17
+ParamVariation106=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
+ParamDesignator106=U17
+ParamVariation107=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator107=U17
+ParamVariation108=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator108=U17
+ParamVariation109=ParameterName=Library Reference|VariantValue=WS2813E
+ParamDesignator109=U17
+ParamVariation110=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator110=U17
+ParamVariation111=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator111=U17
+ParamVariation112=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813E
+ParamDesignator112=U17
+ParamVariation113=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator113=U17
+ParamVariation114=ParameterName=Part Number|VariantValue=WS2813E
+ParamDesignator114=U17
+ParamVariation115=ParameterName=PCB3D|VariantValue= 
+ParamDesignator115=U17
+ParamVariation116=ParameterName=Pin Info|VariantValue= 
+ParamDesignator116=U17
+ParamVariation117=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator117=U17
+ParamVariation118=ParameterName=Simulation|VariantValue= 
+ParamDesignator118=U17
+ParamVariation119=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator119=U17
+ParamVariation120=ParameterName=Supplier Part Number 3|VariantValue=C160214
+ParamDesignator120=U17
+Variation67=Designator=U18|UniqueId=\FYQSFHEG\JWAILDQK\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation121=ParameterName=Comment|VariantValue=WS2813E
+ParamDesignator121=U18
+ParamVariation122=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator122=U18
+ParamVariation123=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator123=U18
+ParamVariation124=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator124=U18
+ParamVariation125=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator125=U18
+ParamVariation126=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
+ParamDesignator126=U18
+ParamVariation127=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator127=U18
+ParamVariation128=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator128=U18
+ParamVariation129=ParameterName=Library Reference|VariantValue=WS2813E
+ParamDesignator129=U18
+ParamVariation130=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator130=U18
+ParamVariation131=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator131=U18
+ParamVariation132=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813E
+ParamDesignator132=U18
+ParamVariation133=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator133=U18
+ParamVariation134=ParameterName=Part Number|VariantValue=WS2813E
+ParamDesignator134=U18
+ParamVariation135=ParameterName=PCB3D|VariantValue= 
+ParamDesignator135=U18
+ParamVariation136=ParameterName=Pin Info|VariantValue= 
+ParamDesignator136=U18
+ParamVariation137=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator137=U18
+ParamVariation138=ParameterName=Simulation|VariantValue= 
+ParamDesignator138=U18
+ParamVariation139=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator139=U18
+ParamVariation140=ParameterName=Supplier Part Number 3|VariantValue=C160214
+ParamDesignator140=U18
+Variation68=Designator=U19|UniqueId=\FYQSFHEG\HSICOQDH\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation141=ParameterName=Comment|VariantValue=WS2813E
+ParamDesignator141=U19
+ParamVariation142=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator142=U19
+ParamVariation143=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator143=U19
+ParamVariation144=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator144=U19
+ParamVariation145=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator145=U19
+ParamVariation146=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
+ParamDesignator146=U19
+ParamVariation147=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator147=U19
+ParamVariation148=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator148=U19
+ParamVariation149=ParameterName=Library Reference|VariantValue=WS2813E
+ParamDesignator149=U19
+ParamVariation150=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator150=U19
+ParamVariation151=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator151=U19
+ParamVariation152=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813E
+ParamDesignator152=U19
+ParamVariation153=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator153=U19
+ParamVariation154=ParameterName=Part Number|VariantValue=WS2813E
+ParamDesignator154=U19
+ParamVariation155=ParameterName=PCB3D|VariantValue= 
+ParamDesignator155=U19
+ParamVariation156=ParameterName=Pin Info|VariantValue= 
+ParamDesignator156=U19
+ParamVariation157=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator157=U19
+ParamVariation158=ParameterName=Simulation|VariantValue= 
+ParamDesignator158=U19
+ParamVariation159=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator159=U19
+ParamVariation160=ParameterName=Supplier Part Number 3|VariantValue=C160214
+ParamDesignator160=U19
+Variation69=Designator=U20|UniqueId=\FYQSFHEG\EPUNFBGK\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation161=ParameterName=Comment|VariantValue=WS2813E
+ParamDesignator161=U20
+ParamVariation162=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator162=U20
+ParamVariation163=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator163=U20
+ParamVariation164=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator164=U20
+ParamVariation165=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator165=U20
+ParamVariation166=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
+ParamDesignator166=U20
+ParamVariation167=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator167=U20
+ParamVariation168=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator168=U20
+ParamVariation169=ParameterName=Library Reference|VariantValue=WS2813E
+ParamDesignator169=U20
+ParamVariation170=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator170=U20
+ParamVariation171=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator171=U20
+ParamVariation172=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813E
+ParamDesignator172=U20
+ParamVariation173=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator173=U20
+ParamVariation174=ParameterName=Part Number|VariantValue=WS2813E
+ParamDesignator174=U20
+ParamVariation175=ParameterName=PCB3D|VariantValue= 
+ParamDesignator175=U20
+ParamVariation176=ParameterName=Pin Info|VariantValue= 
+ParamDesignator176=U20
+ParamVariation177=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator177=U20
+ParamVariation178=ParameterName=Simulation|VariantValue= 
+ParamDesignator178=U20
+ParamVariation179=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator179=U20
+ParamVariation180=ParameterName=Supplier Part Number 3|VariantValue=C160214
+ParamDesignator180=U20
+Variation70=Designator=U21|UniqueId=\FYQSFHEG\AROKUIPJ\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation181=ParameterName=Comment|VariantValue=WS2813E
+ParamDesignator181=U21
+ParamVariation182=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator182=U21
+ParamVariation183=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator183=U21
+ParamVariation184=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator184=U21
+ParamVariation185=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator185=U21
+ParamVariation186=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
+ParamDesignator186=U21
+ParamVariation187=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator187=U21
+ParamVariation188=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator188=U21
+ParamVariation189=ParameterName=Library Reference|VariantValue=WS2813E
+ParamDesignator189=U21
+ParamVariation190=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator190=U21
+ParamVariation191=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator191=U21
+ParamVariation192=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813E
+ParamDesignator192=U21
+ParamVariation193=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator193=U21
+ParamVariation194=ParameterName=Part Number|VariantValue=WS2813E
+ParamDesignator194=U21
+ParamVariation195=ParameterName=PCB3D|VariantValue= 
+ParamDesignator195=U21
+ParamVariation196=ParameterName=Pin Info|VariantValue= 
+ParamDesignator196=U21
+ParamVariation197=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator197=U21
+ParamVariation198=ParameterName=Simulation|VariantValue= 
+ParamDesignator198=U21
+ParamVariation199=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator199=U21
+ParamVariation200=ParameterName=Supplier Part Number 3|VariantValue=C160214
+ParamDesignator200=U21
+Variation71=Designator=U22|UniqueId=\FYQSFHEG\IKDVEBSM\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation201=ParameterName=Comment|VariantValue=WS2813E
+ParamDesignator201=U22
+ParamVariation202=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator202=U22
+ParamVariation203=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator203=U22
+ParamVariation204=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator204=U22
+ParamVariation205=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator205=U22
+ParamVariation206=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
+ParamDesignator206=U22
+ParamVariation207=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator207=U22
+ParamVariation208=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator208=U22
+ParamVariation209=ParameterName=Library Reference|VariantValue=WS2813E
+ParamDesignator209=U22
+ParamVariation210=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator210=U22
+ParamVariation211=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator211=U22
+ParamVariation212=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813E
+ParamDesignator212=U22
+ParamVariation213=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator213=U22
+ParamVariation214=ParameterName=Part Number|VariantValue=WS2813E
+ParamDesignator214=U22
+ParamVariation215=ParameterName=PCB3D|VariantValue= 
+ParamDesignator215=U22
+ParamVariation216=ParameterName=Pin Info|VariantValue= 
+ParamDesignator216=U22
+ParamVariation217=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator217=U22
+ParamVariation218=ParameterName=Simulation|VariantValue= 
+ParamDesignator218=U22
+ParamVariation219=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator219=U22
+ParamVariation220=ParameterName=Supplier Part Number 3|VariantValue=C160214
+ParamDesignator220=U22
+Variation72=Designator=U23|UniqueId=\FYQSFHEG\ZWYOLWGR\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation221=ParameterName=Comment|VariantValue=WS2813E
+ParamDesignator221=U23
+ParamVariation222=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator222=U23
+ParamVariation223=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator223=U23
+ParamVariation224=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator224=U23
+ParamVariation225=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator225=U23
+ParamVariation226=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
+ParamDesignator226=U23
+ParamVariation227=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator227=U23
+ParamVariation228=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator228=U23
+ParamVariation229=ParameterName=Library Reference|VariantValue=WS2813E
+ParamDesignator229=U23
+ParamVariation230=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator230=U23
+ParamVariation231=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator231=U23
+ParamVariation232=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813E
+ParamDesignator232=U23
+ParamVariation233=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator233=U23
+ParamVariation234=ParameterName=Part Number|VariantValue=WS2813E
+ParamDesignator234=U23
+ParamVariation235=ParameterName=PCB3D|VariantValue= 
+ParamDesignator235=U23
+ParamVariation236=ParameterName=Pin Info|VariantValue= 
+ParamDesignator236=U23
+ParamVariation237=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator237=U23
+ParamVariation238=ParameterName=Simulation|VariantValue= 
+ParamDesignator238=U23
+ParamVariation239=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator239=U23
+ParamVariation240=ParameterName=Supplier Part Number 3|VariantValue=C160214
+ParamDesignator240=U23
+Variation73=Designator=U24|UniqueId=\FYQSFHEG\UIVROOYL\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation241=ParameterName=Comment|VariantValue=WS2813E
+ParamDesignator241=U24
+ParamVariation242=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator242=U24
+ParamVariation243=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator243=U24
+ParamVariation244=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator244=U24
+ParamVariation245=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator245=U24
+ParamVariation246=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
+ParamDesignator246=U24
+ParamVariation247=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator247=U24
+ParamVariation248=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator248=U24
+ParamVariation249=ParameterName=Library Reference|VariantValue=WS2813E
+ParamDesignator249=U24
+ParamVariation250=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator250=U24
+ParamVariation251=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator251=U24
+ParamVariation252=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813E
+ParamDesignator252=U24
+ParamVariation253=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator253=U24
+ParamVariation254=ParameterName=Part Number|VariantValue=WS2813E
+ParamDesignator254=U24
+ParamVariation255=ParameterName=PCB3D|VariantValue= 
+ParamDesignator255=U24
+ParamVariation256=ParameterName=Pin Info|VariantValue= 
+ParamDesignator256=U24
+ParamVariation257=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator257=U24
+ParamVariation258=ParameterName=Simulation|VariantValue= 
+ParamDesignator258=U24
+ParamVariation259=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator259=U24
+ParamVariation260=ParameterName=Supplier Part Number 3|VariantValue=C160214
+ParamDesignator260=U24
+Variation74=Designator=U25|UniqueId=\FYQSFHEG\ITCNZRDD\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation261=ParameterName=Comment|VariantValue=WS2813E
+ParamDesignator261=U25
+ParamVariation262=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator262=U25
+ParamVariation263=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator263=U25
+ParamVariation264=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator264=U25
+ParamVariation265=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator265=U25
+ParamVariation266=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
+ParamDesignator266=U25
+ParamVariation267=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator267=U25
+ParamVariation268=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator268=U25
+ParamVariation269=ParameterName=Library Reference|VariantValue=WS2813E
+ParamDesignator269=U25
+ParamVariation270=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator270=U25
+ParamVariation271=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator271=U25
+ParamVariation272=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813E
+ParamDesignator272=U25
+ParamVariation273=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator273=U25
+ParamVariation274=ParameterName=Part Number|VariantValue=WS2813E
+ParamDesignator274=U25
+ParamVariation275=ParameterName=PCB3D|VariantValue= 
+ParamDesignator275=U25
+ParamVariation276=ParameterName=Pin Info|VariantValue= 
+ParamDesignator276=U25
+ParamVariation277=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator277=U25
+ParamVariation278=ParameterName=Simulation|VariantValue= 
+ParamDesignator278=U25
+ParamVariation279=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator279=U25
+ParamVariation280=ParameterName=Supplier Part Number 3|VariantValue=C160214
+ParamDesignator280=U25
+Variation75=Designator=U7|UniqueId=\FYQSFHEG\IOVQKARY\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation281=ParameterName=Comment|VariantValue=WS2813E
+ParamDesignator281=U7
+ParamVariation282=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator282=U7
+ParamVariation283=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator283=U7
+ParamVariation284=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator284=U7
+ParamVariation285=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator285=U7
+ParamVariation286=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
+ParamDesignator286=U7
+ParamVariation287=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator287=U7
+ParamVariation288=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator288=U7
+ParamVariation289=ParameterName=Library Reference|VariantValue=WS2813E
+ParamDesignator289=U7
+ParamVariation290=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator290=U7
+ParamVariation291=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator291=U7
+ParamVariation292=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813E
+ParamDesignator292=U7
+ParamVariation293=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator293=U7
+ParamVariation294=ParameterName=Part Number|VariantValue=WS2813E
+ParamDesignator294=U7
+ParamVariation295=ParameterName=PCB3D|VariantValue= 
+ParamDesignator295=U7
+ParamVariation296=ParameterName=Pin Info|VariantValue= 
+ParamDesignator296=U7
+ParamVariation297=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator297=U7
+ParamVariation298=ParameterName=Simulation|VariantValue= 
+ParamDesignator298=U7
+ParamVariation299=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator299=U7
+ParamVariation300=ParameterName=Supplier Part Number 3|VariantValue=C160214
+ParamDesignator300=U7
+Variation76=Designator=U8|UniqueId=\FYQSFHEG\XLENUFJX\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation301=ParameterName=Comment|VariantValue=WS2813E
+ParamDesignator301=U8
+ParamVariation302=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator302=U8
+ParamVariation303=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator303=U8
+ParamVariation304=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator304=U8
+ParamVariation305=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator305=U8
+ParamVariation306=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
+ParamDesignator306=U8
+ParamVariation307=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator307=U8
+ParamVariation308=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator308=U8
+ParamVariation309=ParameterName=Library Reference|VariantValue=WS2813E
+ParamDesignator309=U8
+ParamVariation310=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator310=U8
+ParamVariation311=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator311=U8
+ParamVariation312=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813E
+ParamDesignator312=U8
+ParamVariation313=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator313=U8
+ParamVariation314=ParameterName=Part Number|VariantValue=WS2813E
+ParamDesignator314=U8
+ParamVariation315=ParameterName=PCB3D|VariantValue= 
+ParamDesignator315=U8
+ParamVariation316=ParameterName=Pin Info|VariantValue= 
+ParamDesignator316=U8
+ParamVariation317=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator317=U8
+ParamVariation318=ParameterName=Simulation|VariantValue= 
+ParamDesignator318=U8
+ParamVariation319=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator319=U8
+ParamVariation320=ParameterName=Supplier Part Number 3|VariantValue=C160214
+ParamDesignator320=U8
+Variation77=Designator=U9|UniqueId=\FYQSFHEG\XLXDOQCU\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation321=ParameterName=Comment|VariantValue=WS2813E
+ParamDesignator321=U9
+ParamVariation322=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator322=U9
+ParamVariation323=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator323=U9
+ParamVariation324=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator324=U9
+ParamVariation325=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator325=U9
+ParamVariation326=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
+ParamDesignator326=U9
+ParamVariation327=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator327=U9
+ParamVariation328=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator328=U9
+ParamVariation329=ParameterName=Library Reference|VariantValue=WS2813E
+ParamDesignator329=U9
+ParamVariation330=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator330=U9
+ParamVariation331=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator331=U9
+ParamVariation332=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813E
+ParamDesignator332=U9
+ParamVariation333=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator333=U9
+ParamVariation334=ParameterName=Part Number|VariantValue=WS2813E
+ParamDesignator334=U9
+ParamVariation335=ParameterName=PCB3D|VariantValue= 
+ParamDesignator335=U9
+ParamVariation336=ParameterName=Pin Info|VariantValue= 
+ParamDesignator336=U9
+ParamVariation337=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator337=U9
+ParamVariation338=ParameterName=Simulation|VariantValue= 
+ParamDesignator338=U9
+ParamVariation339=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator339=U9
+ParamVariation340=ParameterName=Supplier Part Number 3|VariantValue=C160214
+ParamDesignator340=U9
+Variation78=Designator=U10|UniqueId=\FYQSFHEG\MZBUBEAV\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation341=ParameterName=Comment|VariantValue=WS2813E
+ParamDesignator341=U10
+ParamVariation342=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator342=U10
+ParamVariation343=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator343=U10
+ParamVariation344=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator344=U10
+ParamVariation345=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator345=U10
+ParamVariation346=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
+ParamDesignator346=U10
+ParamVariation347=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator347=U10
+ParamVariation348=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator348=U10
+ParamVariation349=ParameterName=Library Reference|VariantValue=WS2813E
+ParamDesignator349=U10
+ParamVariation350=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator350=U10
+ParamVariation351=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator351=U10
+ParamVariation352=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813E
+ParamDesignator352=U10
+ParamVariation353=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator353=U10
+ParamVariation354=ParameterName=Part Number|VariantValue=WS2813E
+ParamDesignator354=U10
+ParamVariation355=ParameterName=PCB3D|VariantValue= 
+ParamDesignator355=U10
+ParamVariation356=ParameterName=Pin Info|VariantValue= 
+ParamDesignator356=U10
+ParamVariation357=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator357=U10
+ParamVariation358=ParameterName=Simulation|VariantValue= 
+ParamDesignator358=U10
+ParamVariation359=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator359=U10
+ParamVariation360=ParameterName=Supplier Part Number 3|VariantValue=C160214
+ParamDesignator360=U10
+Variation79=Designator=U11|UniqueId=\FYQSFHEG\UBYVCMAG\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation361=ParameterName=Comment|VariantValue=WS2813E
+ParamDesignator361=U11
+ParamVariation362=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator362=U11
+ParamVariation363=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator363=U11
+ParamVariation364=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator364=U11
+ParamVariation365=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator365=U11
+ParamVariation366=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
+ParamDesignator366=U11
+ParamVariation367=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator367=U11
+ParamVariation368=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator368=U11
+ParamVariation369=ParameterName=Library Reference|VariantValue=WS2813E
+ParamDesignator369=U11
+ParamVariation370=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator370=U11
+ParamVariation371=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator371=U11
+ParamVariation372=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813E
+ParamDesignator372=U11
+ParamVariation373=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator373=U11
+ParamVariation374=ParameterName=Part Number|VariantValue=WS2813E
+ParamDesignator374=U11
+ParamVariation375=ParameterName=PCB3D|VariantValue= 
+ParamDesignator375=U11
+ParamVariation376=ParameterName=Pin Info|VariantValue= 
+ParamDesignator376=U11
+ParamVariation377=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator377=U11
+ParamVariation378=ParameterName=Simulation|VariantValue= 
+ParamDesignator378=U11
+ParamVariation379=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator379=U11
+ParamVariation380=ParameterName=Supplier Part Number 3|VariantValue=C160214
+ParamDesignator380=U11
+Variation80=Designator=U12|UniqueId=\FYQSFHEG\CIIJGTKZ\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+ParamVariation381=ParameterName=Comment|VariantValue=WS2813E
+ParamDesignator381=U12
+ParamVariation382=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator382=U12
+ParamVariation383=ParameterName=Database Table Name|VariantValue=Integrated$
+ParamDesignator383=U12
+ParamVariation384=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
+ParamDesignator384=U12
+ParamVariation385=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamDesignator385=U12
+ParamVariation386=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
+ParamDesignator386=U12
+ParamVariation387=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator387=U12
+ParamVariation388=ParameterName=JLC Type|VariantValue=Extended
+ParamDesignator388=U12
+ParamVariation389=ParameterName=Library Reference|VariantValue=WS2813E
+ParamDesignator389=U12
+ParamVariation390=ParameterName=Manufacturer|VariantValue=WorldSemi
+ParamDesignator390=U12
+ParamVariation391=ParameterName=Manufacturer 3|VariantValue=WorldSemi
+ParamDesignator391=U12
+ParamVariation392=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813E
+ParamDesignator392=U12
+ParamVariation393=ParameterName=Package|VariantValue=SMD5050
+ParamDesignator393=U12
+ParamVariation394=ParameterName=Part Number|VariantValue=WS2813E
+ParamDesignator394=U12
+ParamVariation395=ParameterName=PCB3D|VariantValue= 
+ParamDesignator395=U12
+ParamVariation396=ParameterName=Pin Info|VariantValue= 
+ParamDesignator396=U12
+ParamVariation397=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator397=U12
+ParamVariation398=ParameterName=Simulation|VariantValue= 
+ParamDesignator398=U12
+ParamVariation399=ParameterName=Supplier 3|VariantValue=LCSC
+ParamDesignator399=U12
+ParamVariation400=ParameterName=Supplier Part Number 3|VariantValue=C160214
+ParamDesignator400=U12
+ParamVariationCount=400
+
+[Parameter5_1]
+Name=PCB_Name
+Value=NC1-14
 
 [Parameter1]
 Name=Author
@@ -1318,99 +3918,99 @@ MatchStrictly2=1
 PhysicalNamingFormat=$ComponentPrefix$GlobalIndex
 GlobalIndexSortOrder=3
 GlobalIndexSortLocation=0
-UniqueIDPath0=\FYQSFHEG\XLXDOQCU
-DocumentName0=[5] LED.SchDoc
+UniqueIDPath0=\OPVNZNGZ
+DocumentName0=[3] FailSafe.SchDoc
 IsEnabled0=1
 SelectionScope0=All
-Order0=8
+Order0=3
 IndexEnabled0=0
 IndexStartValue0=1
 Suffix0=
-UniqueIDPath1=\FYQSFHEG\KRUXYDTE
+UniqueIDPath1=\FYQSFHEG\MGKTSPAI
 DocumentName1=[5] LED.SchDoc
 IsEnabled1=1
 SelectionScope1=All
-Order1=13
+Order1=16
 IndexEnabled1=0
 IndexStartValue1=1
 Suffix1=
-UniqueIDPath2=\FYQSFHEG
-DocumentName2=[4] Lights.SchDoc
+UniqueIDPath2=\FYQSFHEG\PXXVBESD
+DocumentName2=[5] LED.SchDoc
 IsEnabled2=1
 SelectionScope2=All
-Order2=4
+Order2=15
 IndexEnabled2=0
 IndexStartValue2=1
 Suffix2=
-UniqueIDPath3=\FYQSFHEG\HSICOQDH
+UniqueIDPath3=\FYQSFHEG\ITCNZRDD
 DocumentName3=[5] LED.SchDoc
 IsEnabled3=1
 SelectionScope3=All
-Order3=18
+Order3=24
 IndexEnabled3=0
 IndexStartValue3=1
 Suffix3=
-UniqueIDPath4=\DMUNOPTP
-DocumentName4=[7] Power.SchDoc
+UniqueIDPath4=\FYQSFHEG\HSICOQDH
+DocumentName4=[5] LED.SchDoc
 IsEnabled4=1
 SelectionScope4=All
-Order4=26
+Order4=18
 IndexEnabled4=0
 IndexStartValue4=1
 Suffix4=
-UniqueIDPath5=\FYQSFHEG\TKEMSLII
+UniqueIDPath5=\FYQSFHEG\MZBUBEAV
 DocumentName5=[5] LED.SchDoc
 IsEnabled5=1
 SelectionScope5=All
-Order5=5
+Order5=9
 IndexEnabled5=0
 IndexStartValue5=1
 Suffix5=
-UniqueIDPath6=\FYQSFHEG\IOVQKARY
+UniqueIDPath6=\FYQSFHEG\ABAPEJJD
 DocumentName6=[5] LED.SchDoc
 IsEnabled6=1
 SelectionScope6=All
-Order6=6
+Order6=12
 IndexEnabled6=0
 IndexStartValue6=1
 Suffix6=
-UniqueIDPath7=\FYQSFHEG\PXXVBESD
-DocumentName7=[5] LED.SchDoc
+UniqueIDPath7=\AYMDKEDG
+DocumentName7=[6] Charger.SchDoc
 IsEnabled7=1
 SelectionScope7=All
-Order7=15
+Order7=25
 IndexEnabled7=0
 IndexStartValue7=1
 Suffix7=
-UniqueIDPath8=\FYQSFHEG\MZBUBEAV
+UniqueIDPath8=\FYQSFHEG\CIIJGTKZ
 DocumentName8=[5] LED.SchDoc
 IsEnabled8=1
 SelectionScope8=All
-Order8=9
+Order8=11
 IndexEnabled8=0
 IndexStartValue8=1
 Suffix8=
-UniqueIDPath9=\FYQSFHEG\UBYVCMAG
-DocumentName9=[5] LED.SchDoc
+UniqueIDPath9=\DMUNOPTP
+DocumentName9=[7] Power.SchDoc
 IsEnabled9=1
 SelectionScope9=All
-Order9=10
+Order9=26
 IndexEnabled9=0
 IndexStartValue9=1
 Suffix9=
-UniqueIDPath10=\FYQSFHEG\AROKUIPJ
+UniqueIDPath10=\FYQSFHEG\TKEMSLII
 DocumentName10=[5] LED.SchDoc
 IsEnabled10=1
 SelectionScope10=All
-Order10=20
+Order10=5
 IndexEnabled10=0
 IndexStartValue10=1
 Suffix10=
-UniqueIDPath11=\KUKTWLSW
-DocumentName11=[2] Control.SchDoc
+UniqueIDPath11=\FYQSFHEG\XLENUFJX
+DocumentName11=[5] LED.SchDoc
 IsEnabled11=1
 SelectionScope11=All
-Order11=2
+Order11=7
 IndexEnabled11=0
 IndexStartValue11=1
 Suffix11=
@@ -1422,83 +4022,83 @@ Order12=14
 IndexEnabled12=0
 IndexStartValue12=1
 Suffix12=
-UniqueIDPath13=\OPVNZNGZ
-DocumentName13=[3] FailSafe.SchDoc
+UniqueIDPath13=\FYQSFHEG\IOVQKARY
+DocumentName13=[5] LED.SchDoc
 IsEnabled13=1
 SelectionScope13=All
-Order13=3
+Order13=6
 IndexEnabled13=0
 IndexStartValue13=1
 Suffix13=
-UniqueIDPath14=
-DocumentName14=[1] night-cone-proto0-Top.SchDoc
+UniqueIDPath14=\FYQSFHEG\EPUNFBGK
+DocumentName14=[5] LED.SchDoc
 IsEnabled14=1
 SelectionScope14=All
-Order14=1
+Order14=19
 IndexEnabled14=0
 IndexStartValue14=1
 Suffix14=
-UniqueIDPath15=\FYQSFHEG\XLENUFJX
+UniqueIDPath15=\FYQSFHEG\AROKUIPJ
 DocumentName15=[5] LED.SchDoc
 IsEnabled15=1
 SelectionScope15=All
-Order15=7
+Order15=20
 IndexEnabled15=0
 IndexStartValue15=1
 Suffix15=
-UniqueIDPath16=\FYQSFHEG\MGKTSPAI
+UniqueIDPath16=\FYQSFHEG\IKDVEBSM
 DocumentName16=[5] LED.SchDoc
 IsEnabled16=1
 SelectionScope16=All
-Order16=16
+Order16=21
 IndexEnabled16=0
 IndexStartValue16=1
 Suffix16=
-UniqueIDPath17=\FYQSFHEG\IKDVEBSM
-DocumentName17=[5] LED.SchDoc
+UniqueIDPath17=\FYQSFHEG
+DocumentName17=[4] Lights.SchDoc
 IsEnabled17=1
 SelectionScope17=All
-Order17=21
+Order17=4
 IndexEnabled17=0
 IndexStartValue17=1
 Suffix17=
-UniqueIDPath18=\AYMDKEDG
-DocumentName18=[6] Charger.SchDoc
+UniqueIDPath18=\FYQSFHEG\UBYVCMAG
+DocumentName18=[5] LED.SchDoc
 IsEnabled18=1
 SelectionScope18=All
-Order18=25
+Order18=10
 IndexEnabled18=0
 IndexStartValue18=1
 Suffix18=
-UniqueIDPath19=\FYQSFHEG\EPUNFBGK
-DocumentName19=[5] LED.SchDoc
+UniqueIDPath19=
+DocumentName19=[1] night-cone-proto0-Top.SchDoc
 IsEnabled19=1
 SelectionScope19=All
-Order19=19
+Order19=1
 IndexEnabled19=0
 IndexStartValue19=1
 Suffix19=
-UniqueIDPath20=\FYQSFHEG\ITCNZRDD
+UniqueIDPath20=\FYQSFHEG\XLXDOQCU
 DocumentName20=[5] LED.SchDoc
 IsEnabled20=1
 SelectionScope20=All
-Order20=24
+Order20=8
 IndexEnabled20=0
 IndexStartValue20=1
 Suffix20=
-UniqueIDPath21=\FYQSFHEG\UIVROOYL
+UniqueIDPath21=\FYQSFHEG\KRUXYDTE
 DocumentName21=[5] LED.SchDoc
 IsEnabled21=1
 SelectionScope21=All
-Order21=23
+Order21=13
 IndexEnabled21=0
 IndexStartValue21=1
 Suffix21=
-UniqueIDPath22=\FYQSFHEG\CIIJGTKZ
-DocumentName22=[5] LED.SchDoc
+UniqueIDPath22=\KUKTWLSW
+DocumentName22=[2] Control.SchDoc
 IsEnabled22=1
 SelectionScope22=All
-Order22=11
+Order22=2
 IndexEnabled22=0
 IndexStartValue22=1
 Suffix22=
@@ -1510,19 +4110,19 @@ Order23=17
 IndexEnabled23=0
 IndexStartValue23=1
 Suffix23=
-UniqueIDPath24=\FYQSFHEG\ABAPEJJD
+UniqueIDPath24=\FYQSFHEG\ZWYOLWGR
 DocumentName24=[5] LED.SchDoc
 IsEnabled24=1
 SelectionScope24=All
-Order24=12
+Order24=22
 IndexEnabled24=0
 IndexStartValue24=1
 Suffix24=
-UniqueIDPath25=\FYQSFHEG\ZWYOLWGR
+UniqueIDPath25=\FYQSFHEG\UIVROOYL
 DocumentName25=[5] LED.SchDoc
 IsEnabled25=1
 SelectionScope25=All
-Order25=22
+Order25=23
 IndexEnabled25=0
 IndexStartValue25=1
 Suffix25=
@@ -1541,12 +4141,6 @@ SelectedOnly=1
 UpdateVariants=1
 UpdateToLatestRevision=1
 PartTypes=0
-ComponentLibIdentifierKind0=Library Name And Type
-ComponentLibraryIdentifier0=daniw_altium_lib.DbLib/C$
-ComponentDesignItemID0=470P/0603/50V/X7R
-ComponentSymbolReference0=C
-ComponentUpdate0=1
-ComponentIsDeviceSheet0=0
 FullReplace=1
 UpdateDesignatorLock=1
 UpdatePartIDLock=1
@@ -1560,47 +4154,6 @@ RemoveParameters=0
 AddModels=1
 RemoveModels=1
 UpdateCurrentModels=1
-ParameterName0=Absolute Value
-ParameterUpdate0=1
-ParameterName1=Comment
-ParameterUpdate1=1
-ParameterName2=Component Kind
-ParameterUpdate2=1
-ParameterName3=Description
-ParameterUpdate3=1
-ParameterName4=HelpURL
-ParameterUpdate4=1
-ParameterName5=Library Reference
-ParameterUpdate5=1
-ParameterName6=Manufacturer
-ParameterUpdate6=1
-ParameterName7=Manufacturer 1
-ParameterUpdate7=1
-ParameterName8=Manufacturer 2
-ParameterUpdate8=1
-ParameterName9=Manufacturer Part Number 1
-ParameterUpdate9=1
-ParameterName10=Manufacturer Part Number 2
-ParameterUpdate10=1
-ParameterName11=Package
-ParameterUpdate11=1
-ParameterName12=Part Number
-ParameterUpdate12=1
-ParameterName13=Supplier 1
-ParameterUpdate13=1
-ParameterName14=Supplier 2
-ParameterUpdate14=1
-ParameterName15=Supplier Part Number 1
-ParameterUpdate15=1
-ParameterName16=Supplier Part Number 2
-ParameterUpdate16=1
-ParameterName17=Value
-ParameterUpdate17=1
-ModelTypeGroup0=PCBLIB
-ModelTypeUpdate0=1
-ModelType0=PCBLIB
-ModelName0=CAP0603_X7R
-ModelUpdate0=1
 
 [DatabaseUpdateOptions]
 SelectedOnly=0
