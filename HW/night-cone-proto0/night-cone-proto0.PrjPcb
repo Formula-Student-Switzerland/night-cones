@@ -262,7 +262,7 @@ Variation17=Designator=R54|UniqueId=\FYQSFHEG\HSICOQDH\HGUCYFFL|Kind=1|Alternate
 Variation18=Designator=R42|UniqueId=\FYQSFHEG\MMTKBMXE\HGUCYFFL|Kind=1|AlternatePart= 
 Variation19=Designator=R39|UniqueId=\FYQSFHEG\KRUXYDTE\HGUCYFFL|Kind=1|AlternatePart= 
 Variation20=Designator=R48|UniqueId=\FYQSFHEG\MGKTSPAI\HGUCYFFL|Kind=1|AlternatePart= 
-Variation21=Designator=U6|UniqueId=\FYQSFHEG\TKEMSLII\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation21=Designator=U6|UniqueId=\FYQSFHEG\TKEMSLII\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation1=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator1=U6
 ParamVariation2=ParameterName=Component Kind|VariantValue=Standard
@@ -271,7 +271,7 @@ ParamVariation3=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator3=U6
 ParamVariation4=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator4=U6
-ParamVariation5=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation5=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator5=U6
 ParamVariation6=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
 ParamDesignator6=U6
@@ -303,7 +303,7 @@ ParamVariation19=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator19=U6
 ParamVariation20=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator20=U6
-Variation22=Designator=U13|UniqueId=\FYQSFHEG\ABAPEJJD\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation22=Designator=U13|UniqueId=\FYQSFHEG\ABAPEJJD\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation21=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator21=U13
 ParamVariation22=ParameterName=Component Kind|VariantValue=Standard
@@ -312,7 +312,7 @@ ParamVariation23=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator23=U13
 ParamVariation24=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator24=U13
-ParamVariation25=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation25=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator25=U13
 ParamVariation26=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
 ParamDesignator26=U13
@@ -344,7 +344,7 @@ ParamVariation39=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator39=U13
 ParamVariation40=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator40=U13
-Variation23=Designator=U14|UniqueId=\FYQSFHEG\KRUXYDTE\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation23=Designator=U14|UniqueId=\FYQSFHEG\KRUXYDTE\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation41=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator41=U14
 ParamVariation42=ParameterName=Component Kind|VariantValue=Standard
@@ -353,7 +353,7 @@ ParamVariation43=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator43=U14
 ParamVariation44=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator44=U14
-ParamVariation45=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation45=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator45=U14
 ParamVariation46=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
 ParamDesignator46=U14
@@ -385,7 +385,7 @@ ParamVariation59=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator59=U14
 ParamVariation60=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator60=U14
-Variation24=Designator=U15|UniqueId=\FYQSFHEG\MMTKBMXE\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation24=Designator=U15|UniqueId=\FYQSFHEG\MMTKBMXE\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation61=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator61=U15
 ParamVariation62=ParameterName=Component Kind|VariantValue=Standard
@@ -394,7 +394,7 @@ ParamVariation63=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator63=U15
 ParamVariation64=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator64=U15
-ParamVariation65=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation65=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator65=U15
 ParamVariation66=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
 ParamDesignator66=U15
@@ -426,7 +426,7 @@ ParamVariation79=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator79=U15
 ParamVariation80=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator80=U15
-Variation25=Designator=U16|UniqueId=\FYQSFHEG\PXXVBESD\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation25=Designator=U16|UniqueId=\FYQSFHEG\PXXVBESD\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation81=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator81=U16
 ParamVariation82=ParameterName=Component Kind|VariantValue=Standard
@@ -435,7 +435,7 @@ ParamVariation83=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator83=U16
 ParamVariation84=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator84=U16
-ParamVariation85=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation85=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator85=U16
 ParamVariation86=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
 ParamDesignator86=U16
@@ -467,7 +467,7 @@ ParamVariation99=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator99=U16
 ParamVariation100=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator100=U16
-Variation26=Designator=U17|UniqueId=\FYQSFHEG\MGKTSPAI\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation26=Designator=U17|UniqueId=\FYQSFHEG\MGKTSPAI\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation101=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator101=U17
 ParamVariation102=ParameterName=Component Kind|VariantValue=Standard
@@ -476,7 +476,7 @@ ParamVariation103=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator103=U17
 ParamVariation104=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator104=U17
-ParamVariation105=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation105=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator105=U17
 ParamVariation106=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
 ParamDesignator106=U17
@@ -508,7 +508,7 @@ ParamVariation119=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator119=U17
 ParamVariation120=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator120=U17
-Variation27=Designator=U18|UniqueId=\FYQSFHEG\JWAILDQK\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation27=Designator=U18|UniqueId=\FYQSFHEG\JWAILDQK\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation121=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator121=U18
 ParamVariation122=ParameterName=Component Kind|VariantValue=Standard
@@ -517,7 +517,7 @@ ParamVariation123=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator123=U18
 ParamVariation124=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator124=U18
-ParamVariation125=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation125=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator125=U18
 ParamVariation126=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
 ParamDesignator126=U18
@@ -549,7 +549,7 @@ ParamVariation139=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator139=U18
 ParamVariation140=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator140=U18
-Variation28=Designator=U19|UniqueId=\FYQSFHEG\HSICOQDH\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation28=Designator=U19|UniqueId=\FYQSFHEG\HSICOQDH\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation141=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator141=U19
 ParamVariation142=ParameterName=Component Kind|VariantValue=Standard
@@ -558,7 +558,7 @@ ParamVariation143=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator143=U19
 ParamVariation144=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator144=U19
-ParamVariation145=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation145=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator145=U19
 ParamVariation146=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
 ParamDesignator146=U19
@@ -590,7 +590,7 @@ ParamVariation159=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator159=U19
 ParamVariation160=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator160=U19
-Variation29=Designator=U20|UniqueId=\FYQSFHEG\EPUNFBGK\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation29=Designator=U20|UniqueId=\FYQSFHEG\EPUNFBGK\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation161=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator161=U20
 ParamVariation162=ParameterName=Component Kind|VariantValue=Standard
@@ -599,7 +599,7 @@ ParamVariation163=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator163=U20
 ParamVariation164=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator164=U20
-ParamVariation165=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation165=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator165=U20
 ParamVariation166=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
 ParamDesignator166=U20
@@ -631,7 +631,7 @@ ParamVariation179=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator179=U20
 ParamVariation180=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator180=U20
-Variation30=Designator=U21|UniqueId=\FYQSFHEG\AROKUIPJ\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation30=Designator=U21|UniqueId=\FYQSFHEG\AROKUIPJ\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation181=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator181=U21
 ParamVariation182=ParameterName=Component Kind|VariantValue=Standard
@@ -640,7 +640,7 @@ ParamVariation183=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator183=U21
 ParamVariation184=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator184=U21
-ParamVariation185=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation185=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator185=U21
 ParamVariation186=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
 ParamDesignator186=U21
@@ -672,7 +672,7 @@ ParamVariation199=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator199=U21
 ParamVariation200=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator200=U21
-Variation31=Designator=U22|UniqueId=\FYQSFHEG\IKDVEBSM\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation31=Designator=U22|UniqueId=\FYQSFHEG\IKDVEBSM\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation201=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator201=U22
 ParamVariation202=ParameterName=Component Kind|VariantValue=Standard
@@ -681,7 +681,7 @@ ParamVariation203=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator203=U22
 ParamVariation204=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator204=U22
-ParamVariation205=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation205=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator205=U22
 ParamVariation206=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
 ParamDesignator206=U22
@@ -713,7 +713,7 @@ ParamVariation219=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator219=U22
 ParamVariation220=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator220=U22
-Variation32=Designator=U23|UniqueId=\FYQSFHEG\ZWYOLWGR\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation32=Designator=U23|UniqueId=\FYQSFHEG\ZWYOLWGR\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation221=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator221=U23
 ParamVariation222=ParameterName=Component Kind|VariantValue=Standard
@@ -722,7 +722,7 @@ ParamVariation223=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator223=U23
 ParamVariation224=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator224=U23
-ParamVariation225=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation225=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator225=U23
 ParamVariation226=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
 ParamDesignator226=U23
@@ -754,7 +754,7 @@ ParamVariation239=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator239=U23
 ParamVariation240=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator240=U23
-Variation33=Designator=U24|UniqueId=\FYQSFHEG\UIVROOYL\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation33=Designator=U24|UniqueId=\FYQSFHEG\UIVROOYL\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation241=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator241=U24
 ParamVariation242=ParameterName=Component Kind|VariantValue=Standard
@@ -763,7 +763,7 @@ ParamVariation243=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator243=U24
 ParamVariation244=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator244=U24
-ParamVariation245=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation245=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator245=U24
 ParamVariation246=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
 ParamDesignator246=U24
@@ -795,7 +795,7 @@ ParamVariation259=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator259=U24
 ParamVariation260=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator260=U24
-Variation34=Designator=U25|UniqueId=\FYQSFHEG\ITCNZRDD\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation34=Designator=U25|UniqueId=\FYQSFHEG\ITCNZRDD\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation261=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator261=U25
 ParamVariation262=ParameterName=Component Kind|VariantValue=Standard
@@ -804,7 +804,7 @@ ParamVariation263=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator263=U25
 ParamVariation264=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator264=U25
-ParamVariation265=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation265=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator265=U25
 ParamVariation266=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
 ParamDesignator266=U25
@@ -836,7 +836,7 @@ ParamVariation279=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator279=U25
 ParamVariation280=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator280=U25
-Variation35=Designator=U7|UniqueId=\FYQSFHEG\IOVQKARY\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation35=Designator=U7|UniqueId=\FYQSFHEG\IOVQKARY\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation281=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator281=U7
 ParamVariation282=ParameterName=Component Kind|VariantValue=Standard
@@ -845,7 +845,7 @@ ParamVariation283=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator283=U7
 ParamVariation284=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator284=U7
-ParamVariation285=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation285=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator285=U7
 ParamVariation286=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
 ParamDesignator286=U7
@@ -877,7 +877,7 @@ ParamVariation299=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator299=U7
 ParamVariation300=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator300=U7
-Variation36=Designator=U8|UniqueId=\FYQSFHEG\XLENUFJX\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation36=Designator=U8|UniqueId=\FYQSFHEG\XLENUFJX\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation301=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator301=U8
 ParamVariation302=ParameterName=Component Kind|VariantValue=Standard
@@ -886,7 +886,7 @@ ParamVariation303=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator303=U8
 ParamVariation304=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator304=U8
-ParamVariation305=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation305=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator305=U8
 ParamVariation306=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
 ParamDesignator306=U8
@@ -918,7 +918,7 @@ ParamVariation319=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator319=U8
 ParamVariation320=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator320=U8
-Variation37=Designator=U9|UniqueId=\FYQSFHEG\XLXDOQCU\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation37=Designator=U9|UniqueId=\FYQSFHEG\XLXDOQCU\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation321=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator321=U9
 ParamVariation322=ParameterName=Component Kind|VariantValue=Standard
@@ -927,7 +927,7 @@ ParamVariation323=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator323=U9
 ParamVariation324=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator324=U9
-ParamVariation325=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation325=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator325=U9
 ParamVariation326=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
 ParamDesignator326=U9
@@ -959,7 +959,7 @@ ParamVariation339=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator339=U9
 ParamVariation340=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator340=U9
-Variation38=Designator=U10|UniqueId=\FYQSFHEG\MZBUBEAV\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation38=Designator=U10|UniqueId=\FYQSFHEG\MZBUBEAV\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation341=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator341=U10
 ParamVariation342=ParameterName=Component Kind|VariantValue=Standard
@@ -968,7 +968,7 @@ ParamVariation343=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator343=U10
 ParamVariation344=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator344=U10
-ParamVariation345=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation345=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator345=U10
 ParamVariation346=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
 ParamDesignator346=U10
@@ -1000,7 +1000,7 @@ ParamVariation359=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator359=U10
 ParamVariation360=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator360=U10
-Variation39=Designator=U11|UniqueId=\FYQSFHEG\UBYVCMAG\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation39=Designator=U11|UniqueId=\FYQSFHEG\UBYVCMAG\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation361=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator361=U11
 ParamVariation362=ParameterName=Component Kind|VariantValue=Standard
@@ -1009,7 +1009,7 @@ ParamVariation363=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator363=U11
 ParamVariation364=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator364=U11
-ParamVariation365=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation365=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator365=U11
 ParamVariation366=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
 ParamDesignator366=U11
@@ -1041,7 +1041,7 @@ ParamVariation379=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator379=U11
 ParamVariation380=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator380=U11
-Variation40=Designator=U12|UniqueId=\FYQSFHEG\CIIJGTKZ\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation40=Designator=U12|UniqueId=\FYQSFHEG\CIIJGTKZ\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation381=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator381=U12
 ParamVariation382=ParameterName=Component Kind|VariantValue=Standard
@@ -1050,7 +1050,7 @@ ParamVariation383=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator383=U12
 ParamVariation384=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator384=U12
-ParamVariation385=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation385=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator385=U12
 ParamVariation386=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809261040_Worldsemi-WS2813B-B_C114592.pdf
 ParamDesignator386=U12
@@ -1082,7 +1082,7 @@ ParamVariation399=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator399=U12
 ParamVariation400=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator400=U12
-Variation41=Designator=Q?|UniqueId=\OPVNZNGZ\RYCFEGNJ|Kind=1|AlternatePart= 
+Variation41=Designator=Q7|UniqueId=\OPVNZNGZ\RYCFEGNJ|Kind=1|AlternatePart= 
 Variation42=Designator=C61|UniqueId=\DMUNOPTP\ZDLHJMGF|Kind=1|AlternatePart= 
 ParamVariationCount=400
 
@@ -1258,7 +1258,7 @@ ParamVariation49=ParameterName=Supplier Part Number 2|VariantValue=13-RC0603FR-1
 ParamDesignator49=R9
 ParamVariation50=ParameterName=Value|VariantValue=1K2
 ParamDesignator50=R9
-Variation63=Designator=Q?|UniqueId=\OPVNZNGZ\RYCFEGNJ|Kind=1|AlternatePart= 
+Variation63=Designator=Q7|UniqueId=\OPVNZNGZ\RYCFEGNJ|Kind=1|AlternatePart= 
 Variation64=Designator=C61|UniqueId=\DMUNOPTP\ZDLHJMGF|Kind=1|AlternatePart= 
 ParamVariationCount=50
 
@@ -1292,16 +1292,16 @@ Variation17=Designator=R54|UniqueId=\FYQSFHEG\HSICOQDH\HGUCYFFL|Kind=1|Alternate
 Variation18=Designator=R42|UniqueId=\FYQSFHEG\MMTKBMXE\HGUCYFFL|Kind=1|AlternatePart= 
 Variation19=Designator=R39|UniqueId=\FYQSFHEG\KRUXYDTE\HGUCYFFL|Kind=1|AlternatePart= 
 Variation20=Designator=R48|UniqueId=\FYQSFHEG\MGKTSPAI\HGUCYFFL|Kind=1|AlternatePart= 
-Variation21=Designator=U6|UniqueId=\FYQSFHEG\TKEMSLII\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation21=Designator=U6|UniqueId=\FYQSFHEG\TKEMSLII\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation1=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator1=U6
 ParamVariation2=ParameterName=Component Kind|VariantValue=Standard
 ParamDesignator2=U6
 ParamVariation3=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator3=U6
-ParamVariation4=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamVariation4=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator4=U6
-ParamVariation5=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation5=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator5=U6
 ParamVariation6=ParameterName=Ibis Model|VariantValue= 
 ParamDesignator6=U6
@@ -1315,34 +1315,34 @@ ParamVariation10=ParameterName=Signal Integrity|VariantValue=
 ParamDesignator10=U6
 ParamVariation11=ParameterName=Simulation|VariantValue= 
 ParamDesignator11=U6
-ParamVariation12=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamVariation12=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809291530_Worldsemi-WS2813C_C194323.pdf
 ParamDesignator12=U6
-ParamVariation13=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamVariation13=ParameterName=JLC Type|VariantValue=Extended
 ParamDesignator13=U6
-ParamVariation14=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamVariation14=ParameterName=Manufacturer|VariantValue=WorldSemi
 ParamDesignator14=U6
-ParamVariation15=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamVariation15=ParameterName=Manufacturer 3|VariantValue=WorldSemi
 ParamDesignator15=U6
-ParamVariation16=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamVariation16=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813C
 ParamDesignator16=U6
-ParamVariation17=ParameterName=Package|VariantValue=<no parameter>
+ParamVariation17=ParameterName=Package|VariantValue=SMD5050
 ParamDesignator17=U6
-ParamVariation18=ParameterName=Part Number|VariantValue=<no parameter>
+ParamVariation18=ParameterName=Part Number|VariantValue=WS2813C
 ParamDesignator18=U6
-ParamVariation19=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamVariation19=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator19=U6
-ParamVariation20=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamVariation20=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator20=U6
-Variation22=Designator=U13|UniqueId=\FYQSFHEG\ABAPEJJD\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation22=Designator=U13|UniqueId=\FYQSFHEG\ABAPEJJD\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation21=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator21=U13
 ParamVariation22=ParameterName=Component Kind|VariantValue=Standard
 ParamDesignator22=U13
 ParamVariation23=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator23=U13
-ParamVariation24=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamVariation24=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator24=U13
-ParamVariation25=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation25=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator25=U13
 ParamVariation26=ParameterName=Ibis Model|VariantValue= 
 ParamDesignator26=U13
@@ -1356,34 +1356,34 @@ ParamVariation30=ParameterName=Signal Integrity|VariantValue=
 ParamDesignator30=U13
 ParamVariation31=ParameterName=Simulation|VariantValue= 
 ParamDesignator31=U13
-ParamVariation32=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamVariation32=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809291530_Worldsemi-WS2813C_C194323.pdf
 ParamDesignator32=U13
-ParamVariation33=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamVariation33=ParameterName=JLC Type|VariantValue=Extended
 ParamDesignator33=U13
-ParamVariation34=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamVariation34=ParameterName=Manufacturer|VariantValue=WorldSemi
 ParamDesignator34=U13
-ParamVariation35=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamVariation35=ParameterName=Manufacturer 3|VariantValue=WorldSemi
 ParamDesignator35=U13
-ParamVariation36=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamVariation36=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813C
 ParamDesignator36=U13
-ParamVariation37=ParameterName=Package|VariantValue=<no parameter>
+ParamVariation37=ParameterName=Package|VariantValue=SMD5050
 ParamDesignator37=U13
-ParamVariation38=ParameterName=Part Number|VariantValue=<no parameter>
+ParamVariation38=ParameterName=Part Number|VariantValue=WS2813C
 ParamDesignator38=U13
-ParamVariation39=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamVariation39=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator39=U13
-ParamVariation40=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamVariation40=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator40=U13
-Variation23=Designator=U14|UniqueId=\FYQSFHEG\KRUXYDTE\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation23=Designator=U14|UniqueId=\FYQSFHEG\KRUXYDTE\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation41=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator41=U14
 ParamVariation42=ParameterName=Component Kind|VariantValue=Standard
 ParamDesignator42=U14
 ParamVariation43=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator43=U14
-ParamVariation44=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamVariation44=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator44=U14
-ParamVariation45=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation45=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator45=U14
 ParamVariation46=ParameterName=Ibis Model|VariantValue= 
 ParamDesignator46=U14
@@ -1397,34 +1397,34 @@ ParamVariation50=ParameterName=Signal Integrity|VariantValue=
 ParamDesignator50=U14
 ParamVariation51=ParameterName=Simulation|VariantValue= 
 ParamDesignator51=U14
-ParamVariation52=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamVariation52=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809291530_Worldsemi-WS2813C_C194323.pdf
 ParamDesignator52=U14
-ParamVariation53=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamVariation53=ParameterName=JLC Type|VariantValue=Extended
 ParamDesignator53=U14
-ParamVariation54=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamVariation54=ParameterName=Manufacturer|VariantValue=WorldSemi
 ParamDesignator54=U14
-ParamVariation55=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamVariation55=ParameterName=Manufacturer 3|VariantValue=WorldSemi
 ParamDesignator55=U14
-ParamVariation56=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamVariation56=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813C
 ParamDesignator56=U14
-ParamVariation57=ParameterName=Package|VariantValue=<no parameter>
+ParamVariation57=ParameterName=Package|VariantValue=SMD5050
 ParamDesignator57=U14
-ParamVariation58=ParameterName=Part Number|VariantValue=<no parameter>
+ParamVariation58=ParameterName=Part Number|VariantValue=WS2813C
 ParamDesignator58=U14
-ParamVariation59=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamVariation59=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator59=U14
-ParamVariation60=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamVariation60=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator60=U14
-Variation24=Designator=U15|UniqueId=\FYQSFHEG\MMTKBMXE\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation24=Designator=U15|UniqueId=\FYQSFHEG\MMTKBMXE\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation61=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator61=U15
 ParamVariation62=ParameterName=Component Kind|VariantValue=Standard
 ParamDesignator62=U15
 ParamVariation63=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator63=U15
-ParamVariation64=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamVariation64=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator64=U15
-ParamVariation65=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation65=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator65=U15
 ParamVariation66=ParameterName=Ibis Model|VariantValue= 
 ParamDesignator66=U15
@@ -1438,34 +1438,34 @@ ParamVariation70=ParameterName=Signal Integrity|VariantValue=
 ParamDesignator70=U15
 ParamVariation71=ParameterName=Simulation|VariantValue= 
 ParamDesignator71=U15
-ParamVariation72=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamVariation72=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809291530_Worldsemi-WS2813C_C194323.pdf
 ParamDesignator72=U15
-ParamVariation73=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamVariation73=ParameterName=JLC Type|VariantValue=Extended
 ParamDesignator73=U15
-ParamVariation74=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamVariation74=ParameterName=Manufacturer|VariantValue=WorldSemi
 ParamDesignator74=U15
-ParamVariation75=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamVariation75=ParameterName=Manufacturer 3|VariantValue=WorldSemi
 ParamDesignator75=U15
-ParamVariation76=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamVariation76=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813C
 ParamDesignator76=U15
-ParamVariation77=ParameterName=Package|VariantValue=<no parameter>
+ParamVariation77=ParameterName=Package|VariantValue=SMD5050
 ParamDesignator77=U15
-ParamVariation78=ParameterName=Part Number|VariantValue=<no parameter>
+ParamVariation78=ParameterName=Part Number|VariantValue=WS2813C
 ParamDesignator78=U15
-ParamVariation79=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamVariation79=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator79=U15
-ParamVariation80=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamVariation80=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator80=U15
-Variation25=Designator=U16|UniqueId=\FYQSFHEG\PXXVBESD\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation25=Designator=U16|UniqueId=\FYQSFHEG\PXXVBESD\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation81=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator81=U16
 ParamVariation82=ParameterName=Component Kind|VariantValue=Standard
 ParamDesignator82=U16
 ParamVariation83=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator83=U16
-ParamVariation84=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamVariation84=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator84=U16
-ParamVariation85=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation85=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator85=U16
 ParamVariation86=ParameterName=Ibis Model|VariantValue= 
 ParamDesignator86=U16
@@ -1479,34 +1479,34 @@ ParamVariation90=ParameterName=Signal Integrity|VariantValue=
 ParamDesignator90=U16
 ParamVariation91=ParameterName=Simulation|VariantValue= 
 ParamDesignator91=U16
-ParamVariation92=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamVariation92=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809291530_Worldsemi-WS2813C_C194323.pdf
 ParamDesignator92=U16
-ParamVariation93=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamVariation93=ParameterName=JLC Type|VariantValue=Extended
 ParamDesignator93=U16
-ParamVariation94=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamVariation94=ParameterName=Manufacturer|VariantValue=WorldSemi
 ParamDesignator94=U16
-ParamVariation95=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamVariation95=ParameterName=Manufacturer 3|VariantValue=WorldSemi
 ParamDesignator95=U16
-ParamVariation96=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamVariation96=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813C
 ParamDesignator96=U16
-ParamVariation97=ParameterName=Package|VariantValue=<no parameter>
+ParamVariation97=ParameterName=Package|VariantValue=SMD5050
 ParamDesignator97=U16
-ParamVariation98=ParameterName=Part Number|VariantValue=<no parameter>
+ParamVariation98=ParameterName=Part Number|VariantValue=WS2813C
 ParamDesignator98=U16
-ParamVariation99=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamVariation99=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator99=U16
-ParamVariation100=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamVariation100=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator100=U16
-Variation26=Designator=U17|UniqueId=\FYQSFHEG\MGKTSPAI\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation26=Designator=U17|UniqueId=\FYQSFHEG\MGKTSPAI\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation101=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator101=U17
 ParamVariation102=ParameterName=Component Kind|VariantValue=Standard
 ParamDesignator102=U17
 ParamVariation103=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator103=U17
-ParamVariation104=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamVariation104=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator104=U17
-ParamVariation105=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation105=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator105=U17
 ParamVariation106=ParameterName=Ibis Model|VariantValue= 
 ParamDesignator106=U17
@@ -1520,34 +1520,34 @@ ParamVariation110=ParameterName=Signal Integrity|VariantValue=
 ParamDesignator110=U17
 ParamVariation111=ParameterName=Simulation|VariantValue= 
 ParamDesignator111=U17
-ParamVariation112=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamVariation112=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809291530_Worldsemi-WS2813C_C194323.pdf
 ParamDesignator112=U17
-ParamVariation113=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamVariation113=ParameterName=JLC Type|VariantValue=Extended
 ParamDesignator113=U17
-ParamVariation114=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamVariation114=ParameterName=Manufacturer|VariantValue=WorldSemi
 ParamDesignator114=U17
-ParamVariation115=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamVariation115=ParameterName=Manufacturer 3|VariantValue=WorldSemi
 ParamDesignator115=U17
-ParamVariation116=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamVariation116=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813C
 ParamDesignator116=U17
-ParamVariation117=ParameterName=Package|VariantValue=<no parameter>
+ParamVariation117=ParameterName=Package|VariantValue=SMD5050
 ParamDesignator117=U17
-ParamVariation118=ParameterName=Part Number|VariantValue=<no parameter>
+ParamVariation118=ParameterName=Part Number|VariantValue=WS2813C
 ParamDesignator118=U17
-ParamVariation119=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamVariation119=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator119=U17
-ParamVariation120=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamVariation120=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator120=U17
-Variation27=Designator=U18|UniqueId=\FYQSFHEG\JWAILDQK\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation27=Designator=U18|UniqueId=\FYQSFHEG\JWAILDQK\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation121=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator121=U18
 ParamVariation122=ParameterName=Component Kind|VariantValue=Standard
 ParamDesignator122=U18
 ParamVariation123=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator123=U18
-ParamVariation124=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamVariation124=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator124=U18
-ParamVariation125=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation125=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator125=U18
 ParamVariation126=ParameterName=Ibis Model|VariantValue= 
 ParamDesignator126=U18
@@ -1561,34 +1561,34 @@ ParamVariation130=ParameterName=Signal Integrity|VariantValue=
 ParamDesignator130=U18
 ParamVariation131=ParameterName=Simulation|VariantValue= 
 ParamDesignator131=U18
-ParamVariation132=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamVariation132=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809291530_Worldsemi-WS2813C_C194323.pdf
 ParamDesignator132=U18
-ParamVariation133=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamVariation133=ParameterName=JLC Type|VariantValue=Extended
 ParamDesignator133=U18
-ParamVariation134=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamVariation134=ParameterName=Manufacturer|VariantValue=WorldSemi
 ParamDesignator134=U18
-ParamVariation135=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamVariation135=ParameterName=Manufacturer 3|VariantValue=WorldSemi
 ParamDesignator135=U18
-ParamVariation136=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamVariation136=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813C
 ParamDesignator136=U18
-ParamVariation137=ParameterName=Package|VariantValue=<no parameter>
+ParamVariation137=ParameterName=Package|VariantValue=SMD5050
 ParamDesignator137=U18
-ParamVariation138=ParameterName=Part Number|VariantValue=<no parameter>
+ParamVariation138=ParameterName=Part Number|VariantValue=WS2813C
 ParamDesignator138=U18
-ParamVariation139=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamVariation139=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator139=U18
-ParamVariation140=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamVariation140=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator140=U18
-Variation28=Designator=U19|UniqueId=\FYQSFHEG\HSICOQDH\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation28=Designator=U19|UniqueId=\FYQSFHEG\HSICOQDH\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation141=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator141=U19
 ParamVariation142=ParameterName=Component Kind|VariantValue=Standard
 ParamDesignator142=U19
 ParamVariation143=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator143=U19
-ParamVariation144=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamVariation144=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator144=U19
-ParamVariation145=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation145=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator145=U19
 ParamVariation146=ParameterName=Ibis Model|VariantValue= 
 ParamDesignator146=U19
@@ -1602,34 +1602,34 @@ ParamVariation150=ParameterName=Signal Integrity|VariantValue=
 ParamDesignator150=U19
 ParamVariation151=ParameterName=Simulation|VariantValue= 
 ParamDesignator151=U19
-ParamVariation152=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamVariation152=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809291530_Worldsemi-WS2813C_C194323.pdf
 ParamDesignator152=U19
-ParamVariation153=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamVariation153=ParameterName=JLC Type|VariantValue=Extended
 ParamDesignator153=U19
-ParamVariation154=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamVariation154=ParameterName=Manufacturer|VariantValue=WorldSemi
 ParamDesignator154=U19
-ParamVariation155=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamVariation155=ParameterName=Manufacturer 3|VariantValue=WorldSemi
 ParamDesignator155=U19
-ParamVariation156=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamVariation156=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813C
 ParamDesignator156=U19
-ParamVariation157=ParameterName=Package|VariantValue=<no parameter>
+ParamVariation157=ParameterName=Package|VariantValue=SMD5050
 ParamDesignator157=U19
-ParamVariation158=ParameterName=Part Number|VariantValue=<no parameter>
+ParamVariation158=ParameterName=Part Number|VariantValue=WS2813C
 ParamDesignator158=U19
-ParamVariation159=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamVariation159=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator159=U19
-ParamVariation160=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamVariation160=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator160=U19
-Variation29=Designator=U20|UniqueId=\FYQSFHEG\EPUNFBGK\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation29=Designator=U20|UniqueId=\FYQSFHEG\EPUNFBGK\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation161=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator161=U20
 ParamVariation162=ParameterName=Component Kind|VariantValue=Standard
 ParamDesignator162=U20
 ParamVariation163=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator163=U20
-ParamVariation164=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamVariation164=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator164=U20
-ParamVariation165=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation165=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator165=U20
 ParamVariation166=ParameterName=Ibis Model|VariantValue= 
 ParamDesignator166=U20
@@ -1643,34 +1643,34 @@ ParamVariation170=ParameterName=Signal Integrity|VariantValue=
 ParamDesignator170=U20
 ParamVariation171=ParameterName=Simulation|VariantValue= 
 ParamDesignator171=U20
-ParamVariation172=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamVariation172=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809291530_Worldsemi-WS2813C_C194323.pdf
 ParamDesignator172=U20
-ParamVariation173=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamVariation173=ParameterName=JLC Type|VariantValue=Extended
 ParamDesignator173=U20
-ParamVariation174=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamVariation174=ParameterName=Manufacturer|VariantValue=WorldSemi
 ParamDesignator174=U20
-ParamVariation175=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamVariation175=ParameterName=Manufacturer 3|VariantValue=WorldSemi
 ParamDesignator175=U20
-ParamVariation176=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamVariation176=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813C
 ParamDesignator176=U20
-ParamVariation177=ParameterName=Package|VariantValue=<no parameter>
+ParamVariation177=ParameterName=Package|VariantValue=SMD5050
 ParamDesignator177=U20
-ParamVariation178=ParameterName=Part Number|VariantValue=<no parameter>
+ParamVariation178=ParameterName=Part Number|VariantValue=WS2813C
 ParamDesignator178=U20
-ParamVariation179=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamVariation179=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator179=U20
-ParamVariation180=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamVariation180=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator180=U20
-Variation30=Designator=U21|UniqueId=\FYQSFHEG\AROKUIPJ\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation30=Designator=U21|UniqueId=\FYQSFHEG\AROKUIPJ\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation181=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator181=U21
 ParamVariation182=ParameterName=Component Kind|VariantValue=Standard
 ParamDesignator182=U21
 ParamVariation183=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator183=U21
-ParamVariation184=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamVariation184=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator184=U21
-ParamVariation185=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation185=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator185=U21
 ParamVariation186=ParameterName=Ibis Model|VariantValue= 
 ParamDesignator186=U21
@@ -1684,34 +1684,34 @@ ParamVariation190=ParameterName=Signal Integrity|VariantValue=
 ParamDesignator190=U21
 ParamVariation191=ParameterName=Simulation|VariantValue= 
 ParamDesignator191=U21
-ParamVariation192=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamVariation192=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809291530_Worldsemi-WS2813C_C194323.pdf
 ParamDesignator192=U21
-ParamVariation193=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamVariation193=ParameterName=JLC Type|VariantValue=Extended
 ParamDesignator193=U21
-ParamVariation194=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamVariation194=ParameterName=Manufacturer|VariantValue=WorldSemi
 ParamDesignator194=U21
-ParamVariation195=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamVariation195=ParameterName=Manufacturer 3|VariantValue=WorldSemi
 ParamDesignator195=U21
-ParamVariation196=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamVariation196=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813C
 ParamDesignator196=U21
-ParamVariation197=ParameterName=Package|VariantValue=<no parameter>
+ParamVariation197=ParameterName=Package|VariantValue=SMD5050
 ParamDesignator197=U21
-ParamVariation198=ParameterName=Part Number|VariantValue=<no parameter>
+ParamVariation198=ParameterName=Part Number|VariantValue=WS2813C
 ParamDesignator198=U21
-ParamVariation199=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamVariation199=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator199=U21
-ParamVariation200=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamVariation200=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator200=U21
-Variation31=Designator=U22|UniqueId=\FYQSFHEG\IKDVEBSM\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation31=Designator=U22|UniqueId=\FYQSFHEG\IKDVEBSM\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation201=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator201=U22
 ParamVariation202=ParameterName=Component Kind|VariantValue=Standard
 ParamDesignator202=U22
 ParamVariation203=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator203=U22
-ParamVariation204=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamVariation204=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator204=U22
-ParamVariation205=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation205=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator205=U22
 ParamVariation206=ParameterName=Ibis Model|VariantValue= 
 ParamDesignator206=U22
@@ -1725,34 +1725,34 @@ ParamVariation210=ParameterName=Signal Integrity|VariantValue=
 ParamDesignator210=U22
 ParamVariation211=ParameterName=Simulation|VariantValue= 
 ParamDesignator211=U22
-ParamVariation212=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamVariation212=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809291530_Worldsemi-WS2813C_C194323.pdf
 ParamDesignator212=U22
-ParamVariation213=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamVariation213=ParameterName=JLC Type|VariantValue=Extended
 ParamDesignator213=U22
-ParamVariation214=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamVariation214=ParameterName=Manufacturer|VariantValue=WorldSemi
 ParamDesignator214=U22
-ParamVariation215=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamVariation215=ParameterName=Manufacturer 3|VariantValue=WorldSemi
 ParamDesignator215=U22
-ParamVariation216=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamVariation216=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813C
 ParamDesignator216=U22
-ParamVariation217=ParameterName=Package|VariantValue=<no parameter>
+ParamVariation217=ParameterName=Package|VariantValue=SMD5050
 ParamDesignator217=U22
-ParamVariation218=ParameterName=Part Number|VariantValue=<no parameter>
+ParamVariation218=ParameterName=Part Number|VariantValue=WS2813C
 ParamDesignator218=U22
-ParamVariation219=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamVariation219=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator219=U22
-ParamVariation220=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamVariation220=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator220=U22
-Variation32=Designator=U23|UniqueId=\FYQSFHEG\ZWYOLWGR\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation32=Designator=U23|UniqueId=\FYQSFHEG\ZWYOLWGR\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation221=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator221=U23
 ParamVariation222=ParameterName=Component Kind|VariantValue=Standard
 ParamDesignator222=U23
 ParamVariation223=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator223=U23
-ParamVariation224=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamVariation224=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator224=U23
-ParamVariation225=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation225=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator225=U23
 ParamVariation226=ParameterName=Ibis Model|VariantValue= 
 ParamDesignator226=U23
@@ -1766,34 +1766,34 @@ ParamVariation230=ParameterName=Signal Integrity|VariantValue=
 ParamDesignator230=U23
 ParamVariation231=ParameterName=Simulation|VariantValue= 
 ParamDesignator231=U23
-ParamVariation232=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamVariation232=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809291530_Worldsemi-WS2813C_C194323.pdf
 ParamDesignator232=U23
-ParamVariation233=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamVariation233=ParameterName=JLC Type|VariantValue=Extended
 ParamDesignator233=U23
-ParamVariation234=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamVariation234=ParameterName=Manufacturer|VariantValue=WorldSemi
 ParamDesignator234=U23
-ParamVariation235=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamVariation235=ParameterName=Manufacturer 3|VariantValue=WorldSemi
 ParamDesignator235=U23
-ParamVariation236=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamVariation236=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813C
 ParamDesignator236=U23
-ParamVariation237=ParameterName=Package|VariantValue=<no parameter>
+ParamVariation237=ParameterName=Package|VariantValue=SMD5050
 ParamDesignator237=U23
-ParamVariation238=ParameterName=Part Number|VariantValue=<no parameter>
+ParamVariation238=ParameterName=Part Number|VariantValue=WS2813C
 ParamDesignator238=U23
-ParamVariation239=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamVariation239=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator239=U23
-ParamVariation240=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamVariation240=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator240=U23
-Variation33=Designator=U24|UniqueId=\FYQSFHEG\UIVROOYL\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation33=Designator=U24|UniqueId=\FYQSFHEG\UIVROOYL\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation241=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator241=U24
 ParamVariation242=ParameterName=Component Kind|VariantValue=Standard
 ParamDesignator242=U24
 ParamVariation243=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator243=U24
-ParamVariation244=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamVariation244=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator244=U24
-ParamVariation245=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation245=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator245=U24
 ParamVariation246=ParameterName=Ibis Model|VariantValue= 
 ParamDesignator246=U24
@@ -1807,34 +1807,34 @@ ParamVariation250=ParameterName=Signal Integrity|VariantValue=
 ParamDesignator250=U24
 ParamVariation251=ParameterName=Simulation|VariantValue= 
 ParamDesignator251=U24
-ParamVariation252=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamVariation252=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809291530_Worldsemi-WS2813C_C194323.pdf
 ParamDesignator252=U24
-ParamVariation253=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamVariation253=ParameterName=JLC Type|VariantValue=Extended
 ParamDesignator253=U24
-ParamVariation254=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamVariation254=ParameterName=Manufacturer|VariantValue=WorldSemi
 ParamDesignator254=U24
-ParamVariation255=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamVariation255=ParameterName=Manufacturer 3|VariantValue=WorldSemi
 ParamDesignator255=U24
-ParamVariation256=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamVariation256=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813C
 ParamDesignator256=U24
-ParamVariation257=ParameterName=Package|VariantValue=<no parameter>
+ParamVariation257=ParameterName=Package|VariantValue=SMD5050
 ParamDesignator257=U24
-ParamVariation258=ParameterName=Part Number|VariantValue=<no parameter>
+ParamVariation258=ParameterName=Part Number|VariantValue=WS2813C
 ParamDesignator258=U24
-ParamVariation259=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamVariation259=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator259=U24
-ParamVariation260=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamVariation260=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator260=U24
-Variation34=Designator=U25|UniqueId=\FYQSFHEG\ITCNZRDD\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation34=Designator=U25|UniqueId=\FYQSFHEG\ITCNZRDD\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation261=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator261=U25
 ParamVariation262=ParameterName=Component Kind|VariantValue=Standard
 ParamDesignator262=U25
 ParamVariation263=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator263=U25
-ParamVariation264=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamVariation264=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator264=U25
-ParamVariation265=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation265=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator265=U25
 ParamVariation266=ParameterName=Ibis Model|VariantValue= 
 ParamDesignator266=U25
@@ -1848,34 +1848,34 @@ ParamVariation270=ParameterName=Signal Integrity|VariantValue=
 ParamDesignator270=U25
 ParamVariation271=ParameterName=Simulation|VariantValue= 
 ParamDesignator271=U25
-ParamVariation272=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamVariation272=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809291530_Worldsemi-WS2813C_C194323.pdf
 ParamDesignator272=U25
-ParamVariation273=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamVariation273=ParameterName=JLC Type|VariantValue=Extended
 ParamDesignator273=U25
-ParamVariation274=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamVariation274=ParameterName=Manufacturer|VariantValue=WorldSemi
 ParamDesignator274=U25
-ParamVariation275=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamVariation275=ParameterName=Manufacturer 3|VariantValue=WorldSemi
 ParamDesignator275=U25
-ParamVariation276=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamVariation276=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813C
 ParamDesignator276=U25
-ParamVariation277=ParameterName=Package|VariantValue=<no parameter>
+ParamVariation277=ParameterName=Package|VariantValue=SMD5050
 ParamDesignator277=U25
-ParamVariation278=ParameterName=Part Number|VariantValue=<no parameter>
+ParamVariation278=ParameterName=Part Number|VariantValue=WS2813C
 ParamDesignator278=U25
-ParamVariation279=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamVariation279=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator279=U25
-ParamVariation280=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamVariation280=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator280=U25
-Variation35=Designator=U7|UniqueId=\FYQSFHEG\IOVQKARY\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation35=Designator=U7|UniqueId=\FYQSFHEG\IOVQKARY\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation281=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator281=U7
 ParamVariation282=ParameterName=Component Kind|VariantValue=Standard
 ParamDesignator282=U7
 ParamVariation283=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator283=U7
-ParamVariation284=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamVariation284=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator284=U7
-ParamVariation285=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation285=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator285=U7
 ParamVariation286=ParameterName=Ibis Model|VariantValue= 
 ParamDesignator286=U7
@@ -1889,34 +1889,34 @@ ParamVariation290=ParameterName=Signal Integrity|VariantValue=
 ParamDesignator290=U7
 ParamVariation291=ParameterName=Simulation|VariantValue= 
 ParamDesignator291=U7
-ParamVariation292=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamVariation292=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809291530_Worldsemi-WS2813C_C194323.pdf
 ParamDesignator292=U7
-ParamVariation293=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamVariation293=ParameterName=JLC Type|VariantValue=Extended
 ParamDesignator293=U7
-ParamVariation294=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamVariation294=ParameterName=Manufacturer|VariantValue=WorldSemi
 ParamDesignator294=U7
-ParamVariation295=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamVariation295=ParameterName=Manufacturer 3|VariantValue=WorldSemi
 ParamDesignator295=U7
-ParamVariation296=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamVariation296=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813C
 ParamDesignator296=U7
-ParamVariation297=ParameterName=Package|VariantValue=<no parameter>
+ParamVariation297=ParameterName=Package|VariantValue=SMD5050
 ParamDesignator297=U7
-ParamVariation298=ParameterName=Part Number|VariantValue=<no parameter>
+ParamVariation298=ParameterName=Part Number|VariantValue=WS2813C
 ParamDesignator298=U7
-ParamVariation299=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamVariation299=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator299=U7
-ParamVariation300=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamVariation300=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator300=U7
-Variation36=Designator=U8|UniqueId=\FYQSFHEG\XLENUFJX\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation36=Designator=U8|UniqueId=\FYQSFHEG\XLENUFJX\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation301=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator301=U8
 ParamVariation302=ParameterName=Component Kind|VariantValue=Standard
 ParamDesignator302=U8
 ParamVariation303=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator303=U8
-ParamVariation304=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamVariation304=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator304=U8
-ParamVariation305=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation305=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator305=U8
 ParamVariation306=ParameterName=Ibis Model|VariantValue= 
 ParamDesignator306=U8
@@ -1930,34 +1930,34 @@ ParamVariation310=ParameterName=Signal Integrity|VariantValue=
 ParamDesignator310=U8
 ParamVariation311=ParameterName=Simulation|VariantValue= 
 ParamDesignator311=U8
-ParamVariation312=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamVariation312=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809291530_Worldsemi-WS2813C_C194323.pdf
 ParamDesignator312=U8
-ParamVariation313=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamVariation313=ParameterName=JLC Type|VariantValue=Extended
 ParamDesignator313=U8
-ParamVariation314=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamVariation314=ParameterName=Manufacturer|VariantValue=WorldSemi
 ParamDesignator314=U8
-ParamVariation315=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamVariation315=ParameterName=Manufacturer 3|VariantValue=WorldSemi
 ParamDesignator315=U8
-ParamVariation316=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamVariation316=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813C
 ParamDesignator316=U8
-ParamVariation317=ParameterName=Package|VariantValue=<no parameter>
+ParamVariation317=ParameterName=Package|VariantValue=SMD5050
 ParamDesignator317=U8
-ParamVariation318=ParameterName=Part Number|VariantValue=<no parameter>
+ParamVariation318=ParameterName=Part Number|VariantValue=WS2813C
 ParamDesignator318=U8
-ParamVariation319=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamVariation319=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator319=U8
-ParamVariation320=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamVariation320=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator320=U8
-Variation37=Designator=U9|UniqueId=\FYQSFHEG\XLXDOQCU\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation37=Designator=U9|UniqueId=\FYQSFHEG\XLXDOQCU\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation321=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator321=U9
 ParamVariation322=ParameterName=Component Kind|VariantValue=Standard
 ParamDesignator322=U9
 ParamVariation323=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator323=U9
-ParamVariation324=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamVariation324=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator324=U9
-ParamVariation325=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation325=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator325=U9
 ParamVariation326=ParameterName=Ibis Model|VariantValue= 
 ParamDesignator326=U9
@@ -1971,34 +1971,34 @@ ParamVariation330=ParameterName=Signal Integrity|VariantValue=
 ParamDesignator330=U9
 ParamVariation331=ParameterName=Simulation|VariantValue= 
 ParamDesignator331=U9
-ParamVariation332=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamVariation332=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809291530_Worldsemi-WS2813C_C194323.pdf
 ParamDesignator332=U9
-ParamVariation333=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamVariation333=ParameterName=JLC Type|VariantValue=Extended
 ParamDesignator333=U9
-ParamVariation334=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamVariation334=ParameterName=Manufacturer|VariantValue=WorldSemi
 ParamDesignator334=U9
-ParamVariation335=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamVariation335=ParameterName=Manufacturer 3|VariantValue=WorldSemi
 ParamDesignator335=U9
-ParamVariation336=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamVariation336=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813C
 ParamDesignator336=U9
-ParamVariation337=ParameterName=Package|VariantValue=<no parameter>
+ParamVariation337=ParameterName=Package|VariantValue=SMD5050
 ParamDesignator337=U9
-ParamVariation338=ParameterName=Part Number|VariantValue=<no parameter>
+ParamVariation338=ParameterName=Part Number|VariantValue=WS2813C
 ParamDesignator338=U9
-ParamVariation339=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamVariation339=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator339=U9
-ParamVariation340=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamVariation340=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator340=U9
-Variation38=Designator=U10|UniqueId=\FYQSFHEG\MZBUBEAV\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation38=Designator=U10|UniqueId=\FYQSFHEG\MZBUBEAV\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation341=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator341=U10
 ParamVariation342=ParameterName=Component Kind|VariantValue=Standard
 ParamDesignator342=U10
 ParamVariation343=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator343=U10
-ParamVariation344=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamVariation344=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator344=U10
-ParamVariation345=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation345=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator345=U10
 ParamVariation346=ParameterName=Ibis Model|VariantValue= 
 ParamDesignator346=U10
@@ -2012,34 +2012,34 @@ ParamVariation350=ParameterName=Signal Integrity|VariantValue=
 ParamDesignator350=U10
 ParamVariation351=ParameterName=Simulation|VariantValue= 
 ParamDesignator351=U10
-ParamVariation352=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamVariation352=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809291530_Worldsemi-WS2813C_C194323.pdf
 ParamDesignator352=U10
-ParamVariation353=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamVariation353=ParameterName=JLC Type|VariantValue=Extended
 ParamDesignator353=U10
-ParamVariation354=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamVariation354=ParameterName=Manufacturer|VariantValue=WorldSemi
 ParamDesignator354=U10
-ParamVariation355=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamVariation355=ParameterName=Manufacturer 3|VariantValue=WorldSemi
 ParamDesignator355=U10
-ParamVariation356=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamVariation356=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813C
 ParamDesignator356=U10
-ParamVariation357=ParameterName=Package|VariantValue=<no parameter>
+ParamVariation357=ParameterName=Package|VariantValue=SMD5050
 ParamDesignator357=U10
-ParamVariation358=ParameterName=Part Number|VariantValue=<no parameter>
+ParamVariation358=ParameterName=Part Number|VariantValue=WS2813C
 ParamDesignator358=U10
-ParamVariation359=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamVariation359=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator359=U10
-ParamVariation360=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamVariation360=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator360=U10
-Variation39=Designator=U11|UniqueId=\FYQSFHEG\UBYVCMAG\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation39=Designator=U11|UniqueId=\FYQSFHEG\UBYVCMAG\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation361=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator361=U11
 ParamVariation362=ParameterName=Component Kind|VariantValue=Standard
 ParamDesignator362=U11
 ParamVariation363=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator363=U11
-ParamVariation364=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamVariation364=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator364=U11
-ParamVariation365=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation365=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator365=U11
 ParamVariation366=ParameterName=Ibis Model|VariantValue= 
 ParamDesignator366=U11
@@ -2053,34 +2053,34 @@ ParamVariation370=ParameterName=Signal Integrity|VariantValue=
 ParamDesignator370=U11
 ParamVariation371=ParameterName=Simulation|VariantValue= 
 ParamDesignator371=U11
-ParamVariation372=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamVariation372=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809291530_Worldsemi-WS2813C_C194323.pdf
 ParamDesignator372=U11
-ParamVariation373=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamVariation373=ParameterName=JLC Type|VariantValue=Extended
 ParamDesignator373=U11
-ParamVariation374=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamVariation374=ParameterName=Manufacturer|VariantValue=WorldSemi
 ParamDesignator374=U11
-ParamVariation375=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamVariation375=ParameterName=Manufacturer 3|VariantValue=WorldSemi
 ParamDesignator375=U11
-ParamVariation376=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamVariation376=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813C
 ParamDesignator376=U11
-ParamVariation377=ParameterName=Package|VariantValue=<no parameter>
+ParamVariation377=ParameterName=Package|VariantValue=SMD5050
 ParamDesignator377=U11
-ParamVariation378=ParameterName=Part Number|VariantValue=<no parameter>
+ParamVariation378=ParameterName=Part Number|VariantValue=WS2813C
 ParamDesignator378=U11
-ParamVariation379=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamVariation379=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator379=U11
-ParamVariation380=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamVariation380=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator380=U11
-Variation40=Designator=U12|UniqueId=\FYQSFHEG\CIIJGTKZ\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation40=Designator=U12|UniqueId=\FYQSFHEG\CIIJGTKZ\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation381=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator381=U12
 ParamVariation382=ParameterName=Component Kind|VariantValue=Standard
 ParamDesignator382=U12
 ParamVariation383=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator383=U12
-ParamVariation384=ParameterName=Description|VariantValue=Intelligent control integrated LED light source
+ParamVariation384=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator384=U12
-ParamVariation385=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation385=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator385=U12
 ParamVariation386=ParameterName=Ibis Model|VariantValue= 
 ParamDesignator386=U12
@@ -2094,25 +2094,25 @@ ParamVariation390=ParameterName=Signal Integrity|VariantValue=
 ParamDesignator390=U12
 ParamVariation391=ParameterName=Simulation|VariantValue= 
 ParamDesignator391=U12
-ParamVariation392=ParameterName=HelpURL|VariantValue=<no parameter>
+ParamVariation392=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1809291530_Worldsemi-WS2813C_C194323.pdf
 ParamDesignator392=U12
-ParamVariation393=ParameterName=JLC Type|VariantValue=<no parameter>
+ParamVariation393=ParameterName=JLC Type|VariantValue=Extended
 ParamDesignator393=U12
-ParamVariation394=ParameterName=Manufacturer|VariantValue=<no parameter>
+ParamVariation394=ParameterName=Manufacturer|VariantValue=WorldSemi
 ParamDesignator394=U12
-ParamVariation395=ParameterName=Manufacturer 3|VariantValue=<no parameter>
+ParamVariation395=ParameterName=Manufacturer 3|VariantValue=WorldSemi
 ParamDesignator395=U12
-ParamVariation396=ParameterName=Manufacturer Part Number 3|VariantValue=<no parameter>
+ParamVariation396=ParameterName=Manufacturer Part Number 3|VariantValue=WS2813C
 ParamDesignator396=U12
-ParamVariation397=ParameterName=Package|VariantValue=<no parameter>
+ParamVariation397=ParameterName=Package|VariantValue=SMD5050
 ParamDesignator397=U12
-ParamVariation398=ParameterName=Part Number|VariantValue=<no parameter>
+ParamVariation398=ParameterName=Part Number|VariantValue=WS2813C
 ParamDesignator398=U12
-ParamVariation399=ParameterName=Supplier 3|VariantValue=<no parameter>
+ParamVariation399=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator399=U12
-ParamVariation400=ParameterName=Supplier Part Number 3|VariantValue=<no parameter>
+ParamVariation400=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator400=U12
-Variation41=Designator=Q?|UniqueId=\OPVNZNGZ\RYCFEGNJ|Kind=1|AlternatePart= 
+Variation41=Designator=Q7|UniqueId=\OPVNZNGZ\RYCFEGNJ|Kind=1|AlternatePart= 
 Variation42=Designator=C61|UniqueId=\DMUNOPTP\ZDLHJMGF|Kind=1|AlternatePart= 
 ParamVariationCount=400
 
@@ -2186,7 +2186,7 @@ Variation57=Designator=C42|UniqueId=\FYQSFHEG\AROKUIPJ\LZGUBYJD|Kind=1|Alternate
 Variation58=Designator=R18|UniqueId=\FYQSFHEG\IOVQKARY\HGUCYFFL|Kind=1|AlternatePart= 
 Variation59=Designator=C14|UniqueId=\FYQSFHEG\IOVQKARY\LZGUBYJD|Kind=1|AlternatePart= 
 Variation60=Designator=R33|UniqueId=\FYQSFHEG\CIIJGTKZ\HGUCYFFL|Kind=1|AlternatePart= 
-Variation61=Designator=U6|UniqueId=\FYQSFHEG\TKEMSLII\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation61=Designator=U6|UniqueId=\FYQSFHEG\TKEMSLII\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation1=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator1=U6
 ParamVariation2=ParameterName=Component Kind|VariantValue=Standard
@@ -2195,7 +2195,7 @@ ParamVariation3=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator3=U6
 ParamVariation4=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator4=U6
-ParamVariation5=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation5=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator5=U6
 ParamVariation6=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
 ParamDesignator6=U6
@@ -2227,7 +2227,7 @@ ParamVariation19=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator19=U6
 ParamVariation20=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator20=U6
-Variation62=Designator=U13|UniqueId=\FYQSFHEG\ABAPEJJD\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation62=Designator=U13|UniqueId=\FYQSFHEG\ABAPEJJD\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation21=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator21=U13
 ParamVariation22=ParameterName=Component Kind|VariantValue=Standard
@@ -2236,7 +2236,7 @@ ParamVariation23=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator23=U13
 ParamVariation24=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator24=U13
-ParamVariation25=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation25=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator25=U13
 ParamVariation26=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
 ParamDesignator26=U13
@@ -2268,7 +2268,7 @@ ParamVariation39=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator39=U13
 ParamVariation40=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator40=U13
-Variation63=Designator=U14|UniqueId=\FYQSFHEG\KRUXYDTE\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation63=Designator=U14|UniqueId=\FYQSFHEG\KRUXYDTE\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation41=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator41=U14
 ParamVariation42=ParameterName=Component Kind|VariantValue=Standard
@@ -2277,7 +2277,7 @@ ParamVariation43=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator43=U14
 ParamVariation44=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator44=U14
-ParamVariation45=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation45=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator45=U14
 ParamVariation46=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
 ParamDesignator46=U14
@@ -2309,7 +2309,7 @@ ParamVariation59=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator59=U14
 ParamVariation60=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator60=U14
-Variation64=Designator=U15|UniqueId=\FYQSFHEG\MMTKBMXE\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation64=Designator=U15|UniqueId=\FYQSFHEG\MMTKBMXE\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation61=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator61=U15
 ParamVariation62=ParameterName=Component Kind|VariantValue=Standard
@@ -2318,7 +2318,7 @@ ParamVariation63=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator63=U15
 ParamVariation64=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator64=U15
-ParamVariation65=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation65=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator65=U15
 ParamVariation66=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
 ParamDesignator66=U15
@@ -2350,7 +2350,7 @@ ParamVariation79=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator79=U15
 ParamVariation80=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator80=U15
-Variation65=Designator=U16|UniqueId=\FYQSFHEG\PXXVBESD\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation65=Designator=U16|UniqueId=\FYQSFHEG\PXXVBESD\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation81=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator81=U16
 ParamVariation82=ParameterName=Component Kind|VariantValue=Standard
@@ -2359,7 +2359,7 @@ ParamVariation83=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator83=U16
 ParamVariation84=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator84=U16
-ParamVariation85=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation85=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator85=U16
 ParamVariation86=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
 ParamDesignator86=U16
@@ -2391,7 +2391,7 @@ ParamVariation99=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator99=U16
 ParamVariation100=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator100=U16
-Variation66=Designator=U17|UniqueId=\FYQSFHEG\MGKTSPAI\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation66=Designator=U17|UniqueId=\FYQSFHEG\MGKTSPAI\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation101=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator101=U17
 ParamVariation102=ParameterName=Component Kind|VariantValue=Standard
@@ -2400,7 +2400,7 @@ ParamVariation103=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator103=U17
 ParamVariation104=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator104=U17
-ParamVariation105=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation105=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator105=U17
 ParamVariation106=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
 ParamDesignator106=U17
@@ -2432,7 +2432,7 @@ ParamVariation119=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator119=U17
 ParamVariation120=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator120=U17
-Variation67=Designator=U18|UniqueId=\FYQSFHEG\JWAILDQK\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation67=Designator=U18|UniqueId=\FYQSFHEG\JWAILDQK\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation121=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator121=U18
 ParamVariation122=ParameterName=Component Kind|VariantValue=Standard
@@ -2441,7 +2441,7 @@ ParamVariation123=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator123=U18
 ParamVariation124=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator124=U18
-ParamVariation125=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation125=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator125=U18
 ParamVariation126=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
 ParamDesignator126=U18
@@ -2473,7 +2473,7 @@ ParamVariation139=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator139=U18
 ParamVariation140=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator140=U18
-Variation68=Designator=U19|UniqueId=\FYQSFHEG\HSICOQDH\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation68=Designator=U19|UniqueId=\FYQSFHEG\HSICOQDH\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation141=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator141=U19
 ParamVariation142=ParameterName=Component Kind|VariantValue=Standard
@@ -2482,7 +2482,7 @@ ParamVariation143=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator143=U19
 ParamVariation144=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator144=U19
-ParamVariation145=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation145=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator145=U19
 ParamVariation146=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
 ParamDesignator146=U19
@@ -2514,7 +2514,7 @@ ParamVariation159=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator159=U19
 ParamVariation160=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator160=U19
-Variation69=Designator=U20|UniqueId=\FYQSFHEG\EPUNFBGK\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation69=Designator=U20|UniqueId=\FYQSFHEG\EPUNFBGK\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation161=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator161=U20
 ParamVariation162=ParameterName=Component Kind|VariantValue=Standard
@@ -2523,7 +2523,7 @@ ParamVariation163=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator163=U20
 ParamVariation164=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator164=U20
-ParamVariation165=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation165=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator165=U20
 ParamVariation166=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
 ParamDesignator166=U20
@@ -2555,7 +2555,7 @@ ParamVariation179=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator179=U20
 ParamVariation180=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator180=U20
-Variation70=Designator=U21|UniqueId=\FYQSFHEG\AROKUIPJ\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation70=Designator=U21|UniqueId=\FYQSFHEG\AROKUIPJ\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation181=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator181=U21
 ParamVariation182=ParameterName=Component Kind|VariantValue=Standard
@@ -2564,7 +2564,7 @@ ParamVariation183=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator183=U21
 ParamVariation184=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator184=U21
-ParamVariation185=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation185=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator185=U21
 ParamVariation186=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
 ParamDesignator186=U21
@@ -2596,7 +2596,7 @@ ParamVariation199=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator199=U21
 ParamVariation200=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator200=U21
-Variation71=Designator=U22|UniqueId=\FYQSFHEG\IKDVEBSM\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation71=Designator=U22|UniqueId=\FYQSFHEG\IKDVEBSM\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation201=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator201=U22
 ParamVariation202=ParameterName=Component Kind|VariantValue=Standard
@@ -2605,7 +2605,7 @@ ParamVariation203=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator203=U22
 ParamVariation204=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator204=U22
-ParamVariation205=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation205=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator205=U22
 ParamVariation206=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
 ParamDesignator206=U22
@@ -2637,7 +2637,7 @@ ParamVariation219=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator219=U22
 ParamVariation220=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator220=U22
-Variation72=Designator=U23|UniqueId=\FYQSFHEG\ZWYOLWGR\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation72=Designator=U23|UniqueId=\FYQSFHEG\ZWYOLWGR\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation221=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator221=U23
 ParamVariation222=ParameterName=Component Kind|VariantValue=Standard
@@ -2646,7 +2646,7 @@ ParamVariation223=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator223=U23
 ParamVariation224=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator224=U23
-ParamVariation225=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation225=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator225=U23
 ParamVariation226=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
 ParamDesignator226=U23
@@ -2678,7 +2678,7 @@ ParamVariation239=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator239=U23
 ParamVariation240=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator240=U23
-Variation73=Designator=U24|UniqueId=\FYQSFHEG\UIVROOYL\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation73=Designator=U24|UniqueId=\FYQSFHEG\UIVROOYL\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation241=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator241=U24
 ParamVariation242=ParameterName=Component Kind|VariantValue=Standard
@@ -2687,7 +2687,7 @@ ParamVariation243=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator243=U24
 ParamVariation244=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator244=U24
-ParamVariation245=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation245=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator245=U24
 ParamVariation246=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
 ParamDesignator246=U24
@@ -2719,7 +2719,7 @@ ParamVariation259=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator259=U24
 ParamVariation260=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator260=U24
-Variation74=Designator=U25|UniqueId=\FYQSFHEG\ITCNZRDD\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation74=Designator=U25|UniqueId=\FYQSFHEG\ITCNZRDD\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation261=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator261=U25
 ParamVariation262=ParameterName=Component Kind|VariantValue=Standard
@@ -2728,7 +2728,7 @@ ParamVariation263=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator263=U25
 ParamVariation264=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator264=U25
-ParamVariation265=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation265=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator265=U25
 ParamVariation266=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
 ParamDesignator266=U25
@@ -2760,7 +2760,7 @@ ParamVariation279=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator279=U25
 ParamVariation280=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator280=U25
-Variation75=Designator=U7|UniqueId=\FYQSFHEG\IOVQKARY\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation75=Designator=U7|UniqueId=\FYQSFHEG\IOVQKARY\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation281=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator281=U7
 ParamVariation282=ParameterName=Component Kind|VariantValue=Standard
@@ -2769,7 +2769,7 @@ ParamVariation283=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator283=U7
 ParamVariation284=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator284=U7
-ParamVariation285=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation285=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator285=U7
 ParamVariation286=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
 ParamDesignator286=U7
@@ -2801,7 +2801,7 @@ ParamVariation299=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator299=U7
 ParamVariation300=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator300=U7
-Variation76=Designator=U8|UniqueId=\FYQSFHEG\XLENUFJX\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation76=Designator=U8|UniqueId=\FYQSFHEG\XLENUFJX\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation301=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator301=U8
 ParamVariation302=ParameterName=Component Kind|VariantValue=Standard
@@ -2810,7 +2810,7 @@ ParamVariation303=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator303=U8
 ParamVariation304=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator304=U8
-ParamVariation305=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation305=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator305=U8
 ParamVariation306=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
 ParamDesignator306=U8
@@ -2842,7 +2842,7 @@ ParamVariation319=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator319=U8
 ParamVariation320=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator320=U8
-Variation77=Designator=U9|UniqueId=\FYQSFHEG\XLXDOQCU\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation77=Designator=U9|UniqueId=\FYQSFHEG\XLXDOQCU\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation321=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator321=U9
 ParamVariation322=ParameterName=Component Kind|VariantValue=Standard
@@ -2851,7 +2851,7 @@ ParamVariation323=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator323=U9
 ParamVariation324=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator324=U9
-ParamVariation325=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation325=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator325=U9
 ParamVariation326=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
 ParamDesignator326=U9
@@ -2883,7 +2883,7 @@ ParamVariation339=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator339=U9
 ParamVariation340=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator340=U9
-Variation78=Designator=U10|UniqueId=\FYQSFHEG\MZBUBEAV\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation78=Designator=U10|UniqueId=\FYQSFHEG\MZBUBEAV\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation341=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator341=U10
 ParamVariation342=ParameterName=Component Kind|VariantValue=Standard
@@ -2892,7 +2892,7 @@ ParamVariation343=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator343=U10
 ParamVariation344=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator344=U10
-ParamVariation345=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation345=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator345=U10
 ParamVariation346=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
 ParamDesignator346=U10
@@ -2924,7 +2924,7 @@ ParamVariation359=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator359=U10
 ParamVariation360=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator360=U10
-Variation79=Designator=U11|UniqueId=\FYQSFHEG\UBYVCMAG\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation79=Designator=U11|UniqueId=\FYQSFHEG\UBYVCMAG\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation361=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator361=U11
 ParamVariation362=ParameterName=Component Kind|VariantValue=Standard
@@ -2933,7 +2933,7 @@ ParamVariation363=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator363=U11
 ParamVariation364=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator364=U11
-ParamVariation365=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation365=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator365=U11
 ParamVariation366=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
 ParamDesignator366=U11
@@ -2965,7 +2965,7 @@ ParamVariation379=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator379=U11
 ParamVariation380=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator380=U11
-Variation80=Designator=U12|UniqueId=\FYQSFHEG\CIIJGTKZ\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6|AltLibLink_IsSameFootprint=True
+Variation80=Designator=U12|UniqueId=\FYQSFHEG\CIIJGTKZ\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation381=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator381=U12
 ParamVariation382=ParameterName=Component Kind|VariantValue=Standard
@@ -2974,7 +2974,7 @@ ParamVariation383=ParameterName=Database Table Name|VariantValue=Integrated$
 ParamDesignator383=U12
 ParamVariation384=ParameterName=Description|VariantValue=Intelligent control LED integrated light source with backup Pin
 ParamDesignator384=U12
-ParamVariation385=ParameterName=Footprint|VariantValue=LEDM5050X165-6
+ParamVariation385=ParameterName=Footprint|VariantValue=LEDM5050X165-6-SE
 ParamDesignator385=U12
 ParamVariation386=ParameterName=HelpURL|VariantValue=https://datasheet.lcsc.com/lcsc/1810231212_Worldsemi-WS2813E_C160214.pdf
 ParamDesignator386=U12
@@ -3006,7 +3006,7 @@ ParamVariation399=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator399=U12
 ParamVariation400=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator400=U12
-Variation81=Designator=Q?|UniqueId=\OPVNZNGZ\RYCFEGNJ|Kind=1|AlternatePart= 
+Variation81=Designator=Q7|UniqueId=\OPVNZNGZ\RYCFEGNJ|Kind=1|AlternatePart= 
 Variation82=Designator=C61|UniqueId=\DMUNOPTP\ZDLHJMGF|Kind=1|AlternatePart= 
 ParamVariationCount=400
 
@@ -4223,17 +4223,11 @@ UpdateVariants=1
 UpdateToLatestRevision=1
 PartTypes=0
 ComponentLibIdentifierKind0=Library Name And Type
-ComponentLibraryIdentifier0=daniw_altium_lib.DbLib/R$
-ComponentDesignItemID0=100K/0603
-ComponentSymbolReference0=R
+ComponentLibraryIdentifier0=daniw_altium_lib.DbLib/Integrated$
+ComponentDesignItemID0=UHE4913
+ComponentSymbolReference0=UHE4913
 ComponentUpdate0=1
 ComponentIsDeviceSheet0=0
-ComponentLibIdentifierKind1=Library Name And Type
-ComponentLibraryIdentifier1=daniw_altium_lib.DbLib/R$
-ComponentDesignItemID1=5K1/0603
-ComponentSymbolReference1=R
-ComponentUpdate1=1
-ComponentIsDeviceSheet1=0
 FullReplace=1
 UpdateDesignatorLock=1
 UpdatePartIDLock=1
@@ -4247,56 +4241,36 @@ RemoveParameters=0
 AddModels=1
 RemoveModels=1
 UpdateCurrentModels=1
-ParameterName0=Absolute Value
+ParameterName0=Comment
 ParameterUpdate0=1
-ParameterName1=Comment
+ParameterName1=Component Kind
 ParameterUpdate1=1
-ParameterName2=Component Kind
+ParameterName2=Description
 ParameterUpdate2=1
-ParameterName3=Description
+ParameterName3=HelpURL
 ParameterUpdate3=1
-ParameterName4=HelpURL
+ParameterName4=JLC Type
 ParameterUpdate4=1
-ParameterName5=JLC Type
+ParameterName5=Library Reference
 ParameterUpdate5=1
-ParameterName6=Library Reference
+ParameterName6=Manufacturer
 ParameterUpdate6=1
-ParameterName7=Manufacturer
+ParameterName7=Manufacturer 3
 ParameterUpdate7=1
-ParameterName8=Manufacturer 1
+ParameterName8=Manufacturer Part Number 3
 ParameterUpdate8=1
-ParameterName9=Manufacturer 2
+ParameterName9=Package
 ParameterUpdate9=1
-ParameterName10=Manufacturer 3
+ParameterName10=Part Number
 ParameterUpdate10=1
-ParameterName11=Manufacturer Part Number 1
+ParameterName11=Supplier 3
 ParameterUpdate11=1
-ParameterName12=Manufacturer Part Number 2
+ParameterName12=Supplier Part Number 3
 ParameterUpdate12=1
-ParameterName13=Manufacturer Part Number 3
-ParameterUpdate13=1
-ParameterName14=Package
-ParameterUpdate14=1
-ParameterName15=Part Number
-ParameterUpdate15=1
-ParameterName16=Supplier 1
-ParameterUpdate16=1
-ParameterName17=Supplier 2
-ParameterUpdate17=1
-ParameterName18=Supplier 3
-ParameterUpdate18=1
-ParameterName19=Supplier Part Number 1
-ParameterUpdate19=1
-ParameterName20=Supplier Part Number 2
-ParameterUpdate20=1
-ParameterName21=Supplier Part Number 3
-ParameterUpdate21=1
-ParameterName22=Value
-ParameterUpdate22=1
 ModelTypeGroup0=PCBLIB
 ModelTypeUpdate0=1
 ModelType0=PCBLIB
-ModelName0=R0603-0.40-WW
+ModelName0=SOT2395P280X125-3-NW
 ModelUpdate0=1
 
 [DatabaseUpdateOptions]

@@ -15,13 +15,13 @@ LifeCycleDefinitionGUID=
 RevisionNamingSchemeGUID=
 
 [OutputGroup1]
-Name=
+Name=night-cone-proto0.OutJob
 Description=
 TargetOutputMedium=42 - PCB Assembly
 VariantName=WS2813B-B
 VariantScope=1
 CurrentConfigurationName=
-TargetPrinter=\\SCHSPR02\SCHPAB3_ENTWICKLUNG
+TargetPrinter=ETL_H15_HP
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 OutputMedium1=Print Job
 OutputMedium1_Type=Printer
@@ -342,7 +342,7 @@ OutputEnabled11_OutputMedium4=3
 OutputEnabled11_OutputMedium5=0
 OutputDefault11=0
 Configuration11_Name1=OutputConfigurationParameter1
-Configuration11_Item1=Record=PickPlaceView|Units=Metric|GenerateCSVFormat=True|GenerateTextFormat=False|ShowUnits=False|Separator=.|ExcludeFilterParam=False|IncludeVariations=False|IncludeStandardNoBOM=True|Filter= |FilterActive=False|YFlip=False|DifferentFootprints=False|Column#1=Name:Designator,Fixed:True,Metric:False,Visible:True,Sort:None,Position:0|Column#2=Name:Comment,Fixed:True,Metric:False,Visible:True,Sort:None,Position:1|Column#3=Name:Layer,Fixed:True,Metric:False,Visible:True,Sort:None,Position:2|Column#4=Name:Footprint,Fixed:True,Metric:False,Visible:True,Sort:None,Position:3|Column#5=Name:Footprint Description,Fixed:True,Metric:False,Visible:False,Sort:None,Position:4|Column#6=Name:Center-X,Fixed:True,Metric:True,Visible:True,Sort:None,Position:5|Column#7=Name:Center-Y,Fixed:True,Metric:True,Visible:True,Sort:None,Position:6|Column#8=Name:Rotation,Fixed:True,Metric:False,Visible:True,Sort:None,Position:7|Column#9=Name:Description,Fixed:True,Metric:False,Visible:True,Sort:None,Position:8|Column#10=Name:ComponentKind,Fixed:True,Metric:False,Visible:False,Sort:None,Position:9|Column#11=Name:Height,Fixed:True,Metric:True,Visible:False,Sort:None,Position:10|Column#12=Name:Ref-X,Fixed:True,Metric:True,Visible:False,Sort:None,Position:11|Column#13=Name:Ref-Y,Fixed:True,Metric:True,Visible:False,Sort:None,Position:12|Column#14=Name:Pad-X,Fixed:True,Metric:True,Visible:False,Sort:None,Position:13|Column#15=Name:Pad-Y,Fixed:True,Metric:True,Visible:False,Sort:None,Position:14|Column#16=Name:Variation,Fixed:True,Metric:False,Visible:False,Sort:None,Position:15|Column#17=Name:Supplier Part Number 2,Fixed:False,Metric:False,Visible:False,Sort:None,Position:32,Type:0|Column#18=Name:JLC Type,Fixed:False,Metric:False,Visible:False,Sort:None,Position:18,Type:0|Column#19=Name:Manufacturer 3,Fixed:False,Metric:False,Visible:False,Sort:None,Position:22,Type:0|Column#20=Name:Supplier Part Number 1,Fixed:False,Metric:False,Visible:False,Sort:None,Position:31,Type:0|Column#21=Name:Manufacturer Part Number 2,Fixed:False,Metric:False,Visible:False,Sort:None,Position:24,Type:0|Column#22=Name:Manufacturer,Fixed:False,Metric:False,Visible:False,Sort:None,Position:19,Type:0|Column#23=Name:Package,Fixed:False,Metric:False,Visible:False,Sort:None,Position:26,Type:0|Column#24=Name:Value,Fixed:False,Metric:False,Visible:False,Sort:None,Position:34,Type:0|Column#25=Name:HelpURL,Fixed:False,Metric:False,Visible:False,Sort:None,Position:17,Type:0|Column#26=Name:Supplier 2,Fixed:False,Metric:False,Visible:False,Sort:None,Position:29,Type:0|Column#27=Name:Manufacturer 2,Fixed:False,Metric:False,Visible:False,Sort:None,Position:21,Type:0|Column#28=Name:Manufacturer Part Number 1,Fixed:False,Metric:False,Visible:False,Sort:None,Position:23,Type:0|Column#29=Name:Manufacturer Part Number 3,Fixed:False,Metric:False,Visible:False,Sort:None,Position:25,Type:0|Column#30=Name:Manufacturer 1,Fixed:False,Metric:False,Visible:False,Sort:None,Position:20,Type:0|Column#31=Name:Part Number,Fixed:False,Metric:False,Visible:False,Sort:None,Position:27,Type:0|Column#32=Name:Supplier 3,Fixed:False,Metric:False,Visible:False,Sort:None,Position:30,Type:0|Column#33=Name:Supplier Part Number 3,Fixed:False,Metric:False,Visible:False,Sort:None,Position:33,Type:0|Column#34=Name:Absolute Value,Fixed:False,Metric:False,Visible:False,Sort:None,Position:16,Type:0|Column#35=Name:Supplier 1,Fixed:False,Metric:False,Visible:False,Sort:None,Position:28,Type:0|DocumentPath=C:\Daten\Daniel\fsch\night-cones\HW\night-cone-proto0\PCB\night-cone-proto0.PcbDoc
+Configuration11_Item1=Record=PickPlaceView|Units=Metric|GenerateCSVFormat=True|GenerateTextFormat=False|ShowUnits=False|Separator=.|ExcludeFilterParam=False|IncludeVariations=False|IncludeStandardNoBOM=True|Filter= |FilterActive=False|YFlip=True|Column#1=Name:Designator,Fixed:True,Metric:False,Visible:True,Sort:None,Position:0|Column#2=Name:Comment,Fixed:True,Metric:False,Visible:True,Sort:None,Position:1|Column#3=Name:Layer,Fixed:True,Metric:False,Visible:True,Sort:None,Position:2|Column#4=Name:Footprint,Fixed:True,Metric:False,Visible:True,Sort:None,Position:3|Column#5=Name:Footprint Description,Fixed:True,Metric:False,Visible:False,Sort:None,Position:4|Column#6=Name:Center-X,Fixed:True,Metric:True,Visible:True,Sort:None,Position:5|Column#7=Name:Center-Y,Fixed:True,Metric:True,Visible:True,Sort:None,Position:6|Column#8=Name:Rotation,Fixed:True,Metric:False,Visible:True,Sort:None,Position:7|Column#9=Name:Description,Fixed:True,Metric:False,Visible:True,Sort:None,Position:8|Column#10=Name:ComponentKind,Fixed:True,Metric:False,Visible:False,Sort:None,Position:9|Column#11=Name:Height,Fixed:True,Metric:True,Visible:False,Sort:None,Position:10|Column#12=Name:Ref-X,Fixed:True,Metric:True,Visible:False,Sort:None,Position:11|Column#13=Name:Ref-Y,Fixed:True,Metric:True,Visible:False,Sort:None,Position:12|Column#14=Name:Pad-X,Fixed:True,Metric:True,Visible:False,Sort:None,Position:13|Column#15=Name:Pad-Y,Fixed:True,Metric:True,Visible:False,Sort:None,Position:14|Column#16=Name:Variation,Fixed:True,Metric:False,Visible:False,Sort:None,Position:15|Column#17=Name:Supplier Part Number 2,Fixed:False,Metric:False,Visible:False,Sort:None,Position:32|Column#18=Name:JLC Type,Fixed:False,Metric:False,Visible:False,Sort:None,Position:18|Column#19=Name:Manufacturer 3,Fixed:False,Metric:False,Visible:False,Sort:None,Position:22|Column#20=Name:Supplier Part Number 1,Fixed:False,Metric:False,Visible:False,Sort:None,Position:31|Column#21=Name:Manufacturer Part Number 2,Fixed:False,Metric:False,Visible:False,Sort:None,Position:24|Column#22=Name:Manufacturer,Fixed:False,Metric:False,Visible:False,Sort:None,Position:19|Column#23=Name:Package,Fixed:False,Metric:False,Visible:False,Sort:None,Position:26|Column#24=Name:Value,Fixed:False,Metric:False,Visible:False,Sort:None,Position:34|Column#25=Name:HelpURL,Fixed:False,Metric:False,Visible:False,Sort:None,Position:17|Column#26=Name:Supplier 2,Fixed:False,Metric:False,Visible:False,Sort:None,Position:29|Column#27=Name:Manufacturer 2,Fixed:False,Metric:False,Visible:False,Sort:None,Position:21|Column#28=Name:Manufacturer Part Number 1,Fixed:False,Metric:False,Visible:False,Sort:None,Position:23|Column#29=Name:Manufacturer Part Number 3,Fixed:False,Metric:False,Visible:False,Sort:None,Position:25|Column#30=Name:Manufacturer 1,Fixed:False,Metric:False,Visible:False,Sort:None,Position:20|Column#31=Name:Part Number,Fixed:False,Metric:False,Visible:False,Sort:None,Position:27|Column#32=Name:Supplier 3,Fixed:False,Metric:False,Visible:False,Sort:None,Position:30|Column#33=Name:Supplier Part Number 3,Fixed:False,Metric:False,Visible:False,Sort:None,Position:33|Column#34=Name:Absolute Value,Fixed:False,Metric:False,Visible:False,Sort:None,Position:16|Column#35=Name:Supplier 1,Fixed:False,Metric:False,Visible:False,Sort:None,Position:28|DocumentPath=C:\Daten\Temp\night-cones\hw\night-cone-proto0\PCB\night-cone-proto0.PcbDoc
 OutputType12=PDF3D
 OutputName12=PDF3D
 OutputCategory12=Documentation
@@ -450,7 +450,7 @@ ShowComponentParameters3=1
 GlobalBookmarks3=0
 PDFACompliance3=Disabled
 PDFVersion3=Default
-OutputFilePath4=C:\Daten\Daniel\fsch\night-cones\HW\night-cone-proto0\Manufacturing\04 - PCB Assembly\
+OutputFilePath4=C:\Daten\Temp\night-cones\hw\night-cone-proto0\Manufacturing\04 - PCB Assembly\
 ReleaseManaged4=0
 OutputBasePath4=Manufacturing\
 OutputPathMedia4=04 - PCB Assembly
@@ -490,7 +490,7 @@ OpenIPCOutput2=0
 EnableReload2=0
 RelativeOutputPath3=C:\Daten\Daniel\fsch\night-cones\HW\night-cone-proto0\Manufacturing\04 - PCB Assembly\
 OpenOutputs3=1
-RelativeOutputPath4=C:\Daten\Daniel\fsch\night-cones\HW\night-cone-proto0\Manufacturing\04 - PCB Assembly\
+RelativeOutputPath4=C:\Daten\Temp\night-cones\hw\night-cone-proto0\Manufacturing\04 - PCB Assembly\
 OpenOutputs4=1
 AddToProject4=0
 TimestampFolder4=0
