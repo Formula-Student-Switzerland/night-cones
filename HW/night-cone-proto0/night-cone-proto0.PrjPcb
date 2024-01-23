@@ -1092,7 +1092,7 @@ UniqueID=BA0F52E3-0EDB-4A9E-A898-C4DF2CEEC255
 Description=WS2813B-V5
 AllowFabrication=1
 ParameterCount=1
-VariationCount=60
+VariationCount=62
 Variation1=Designator=C12|UniqueId=\FYQSFHEG\TKEMSLII\LZGUBYJD|Kind=1|AlternatePart= 
 Variation2=Designator=C40|UniqueId=\FYQSFHEG\EPUNFBGK\LZGUBYJD|Kind=1|AlternatePart= 
 Variation3=Designator=C38|UniqueId=\FYQSFHEG\HSICOQDH\LZGUBYJD|Kind=1|AlternatePart= 
@@ -1153,7 +1153,109 @@ Variation57=Designator=R52|UniqueId=\FYQSFHEG\JWAILDQK\NKAFNTLQ|Kind=1|Alternate
 Variation58=Designator=R53|UniqueId=\FYQSFHEG\HSICOQDH\JRXFDWCZ|Kind=1|AlternatePart= 
 Variation59=Designator=R50|UniqueId=\FYQSFHEG\JWAILDQK\JRXFDWCZ|Kind=1|AlternatePart= 
 Variation60=Designator=R43|UniqueId=\FYQSFHEG\MMTKBMXE\NKAFNTLQ|Kind=1|AlternatePart= 
-ParamVariationCount=0
+Variation61=Designator=R8|UniqueId=\OPVNZNGZ\RTGVUTYD|Kind=2|AlternatePart=910R/0603|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/R$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=910R/0603|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=R$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=R0603-0.40-WW|AltLibLink_IsSameFootprint=True
+ParamVariation1=ParameterName=Absolute Value|VariantValue=910
+ParamDesignator1=R8
+ParamVariation2=ParameterName=Comment|VariantValue=910R/0603
+ParamDesignator2=R8
+ParamVariation3=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator3=R8
+ParamVariation4=ParameterName=Database Table Name|VariantValue=R$
+ParamDesignator4=R8
+ParamVariation5=ParameterName=Description|VariantValue=RES SM 0603 910R
+ParamDesignator5=R8
+ParamVariation6=ParameterName=Footprint|VariantValue=R0603-0.40-WW
+ParamDesignator6=R8
+ParamVariation7=ParameterName=HelpURL|VariantValue=https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf
+ParamDesignator7=R8
+ParamVariation8=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator8=R8
+ParamVariation9=ParameterName=Library Reference|VariantValue=910R/0603
+ParamDesignator9=R8
+ParamVariation10=ParameterName=Manufacturer|VariantValue=GENERIC
+ParamDesignator10=R8
+ParamVariation11=ParameterName=Manufacturer 1|VariantValue=YAGEO
+ParamDesignator11=R8
+ParamVariation12=ParameterName=Manufacturer 2|VariantValue=YAGEO
+ParamDesignator12=R8
+ParamVariation13=ParameterName=Manufacturer Part Number 1|VariantValue=RC0603FR-13910RL
+ParamDesignator13=R8
+ParamVariation14=ParameterName=Manufacturer Part Number 2|VariantValue=RC0603FR-10910RL
+ParamDesignator14=R8
+ParamVariation15=ParameterName=Package|VariantValue=0603
+ParamDesignator15=R8
+ParamVariation16=ParameterName=Part Number|VariantValue=910R/0603
+ParamDesignator16=R8
+ParamVariation17=ParameterName=PCB3D|VariantValue= 
+ParamDesignator17=R8
+ParamVariation18=ParameterName=Pin Info|VariantValue= 
+ParamDesignator18=R8
+ParamVariation19=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator19=R8
+ParamVariation20=ParameterName=Simulation|VariantValue= 
+ParamDesignator20=R8
+ParamVariation21=ParameterName=Supplier 1|VariantValue=Digi-Key
+ParamDesignator21=R8
+ParamVariation22=ParameterName=Supplier 2|VariantValue=Digi-Key
+ParamDesignator22=R8
+ParamVariation23=ParameterName=Supplier Part Number 1|VariantValue=13-RC0603FR-13910RLCT-ND
+ParamDesignator23=R8
+ParamVariation24=ParameterName=Supplier Part Number 2|VariantValue=13-RC0603FR-10910RLCT-ND
+ParamDesignator24=R8
+ParamVariation25=ParameterName=Value|VariantValue=910R
+ParamDesignator25=R8
+Variation62=Designator=R9|UniqueId=\OPVNZNGZ\XBYPSFKP|Kind=2|AlternatePart=1K2/0603|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/R$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=1K2/0603|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=R$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=R0603-0.40-WW|AltLibLink_IsSameFootprint=True
+ParamVariation26=ParameterName=Absolute Value|VariantValue=1200
+ParamDesignator26=R9
+ParamVariation27=ParameterName=Comment|VariantValue=1K2/0603
+ParamDesignator27=R9
+ParamVariation28=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator28=R9
+ParamVariation29=ParameterName=Database Table Name|VariantValue=R$
+ParamDesignator29=R9
+ParamVariation30=ParameterName=Description|VariantValue=RES SM 0603 1K2
+ParamDesignator30=R9
+ParamVariation31=ParameterName=Footprint|VariantValue=R0603-0.40-WW
+ParamDesignator31=R9
+ParamVariation32=ParameterName=HelpURL|VariantValue=https://www.yageo.com/upload/media/product/app/datasheet/rchip/pyu-rc_group_51_rohs_l.pdf
+ParamDesignator32=R9
+ParamVariation33=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator33=R9
+ParamVariation34=ParameterName=Library Reference|VariantValue=1K2/0603
+ParamDesignator34=R9
+ParamVariation35=ParameterName=Manufacturer|VariantValue=GENERIC
+ParamDesignator35=R9
+ParamVariation36=ParameterName=Manufacturer 1|VariantValue=YAGEO
+ParamDesignator36=R9
+ParamVariation37=ParameterName=Manufacturer 2|VariantValue=YAGEO
+ParamDesignator37=R9
+ParamVariation38=ParameterName=Manufacturer Part Number 1|VariantValue=RC0603FR-131K2L
+ParamDesignator38=R9
+ParamVariation39=ParameterName=Manufacturer Part Number 2|VariantValue=RC0603FR-101K2L
+ParamDesignator39=R9
+ParamVariation40=ParameterName=Package|VariantValue=0603
+ParamDesignator40=R9
+ParamVariation41=ParameterName=Part Number|VariantValue=1K2/0603
+ParamDesignator41=R9
+ParamVariation42=ParameterName=PCB3D|VariantValue= 
+ParamDesignator42=R9
+ParamVariation43=ParameterName=Pin Info|VariantValue= 
+ParamDesignator43=R9
+ParamVariation44=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator44=R9
+ParamVariation45=ParameterName=Simulation|VariantValue= 
+ParamDesignator45=R9
+ParamVariation46=ParameterName=Supplier 1|VariantValue=Digi-Key
+ParamDesignator46=R9
+ParamVariation47=ParameterName=Supplier 2|VariantValue=Digi-Key
+ParamDesignator47=R9
+ParamVariation48=ParameterName=Supplier Part Number 1|VariantValue=13-RC0603FR-131K2LCT-ND
+ParamDesignator48=R9
+ParamVariation49=ParameterName=Supplier Part Number 2|VariantValue=13-RC0603FR-101K2LCT-ND
+ParamDesignator49=R9
+ParamVariation50=ParameterName=Value|VariantValue=1K2
+ParamDesignator50=R9
+ParamVariationCount=50
 
 [Parameter3_1]
 Name=PCB_Name
@@ -3918,51 +4020,51 @@ MatchStrictly2=1
 PhysicalNamingFormat=$ComponentPrefix$GlobalIndex
 GlobalIndexSortOrder=3
 GlobalIndexSortLocation=0
-UniqueIDPath0=\OPVNZNGZ
-DocumentName0=[3] FailSafe.SchDoc
+UniqueIDPath0=\FYQSFHEG\MZBUBEAV
+DocumentName0=[5] LED.SchDoc
 IsEnabled0=1
 SelectionScope0=All
-Order0=3
+Order0=9
 IndexEnabled0=0
 IndexStartValue0=1
 Suffix0=
-UniqueIDPath1=\FYQSFHEG\MGKTSPAI
+UniqueIDPath1=\FYQSFHEG\MMTKBMXE
 DocumentName1=[5] LED.SchDoc
 IsEnabled1=1
 SelectionScope1=All
-Order1=16
+Order1=14
 IndexEnabled1=0
 IndexStartValue1=1
 Suffix1=
-UniqueIDPath2=\FYQSFHEG\PXXVBESD
+UniqueIDPath2=\FYQSFHEG\HSICOQDH
 DocumentName2=[5] LED.SchDoc
 IsEnabled2=1
 SelectionScope2=All
-Order2=15
+Order2=18
 IndexEnabled2=0
 IndexStartValue2=1
 Suffix2=
-UniqueIDPath3=\FYQSFHEG\ITCNZRDD
-DocumentName3=[5] LED.SchDoc
+UniqueIDPath3=\AYMDKEDG
+DocumentName3=[6] Charger.SchDoc
 IsEnabled3=1
 SelectionScope3=All
-Order3=24
+Order3=25
 IndexEnabled3=0
 IndexStartValue3=1
 Suffix3=
-UniqueIDPath4=\FYQSFHEG\HSICOQDH
+UniqueIDPath4=\FYQSFHEG\ZWYOLWGR
 DocumentName4=[5] LED.SchDoc
 IsEnabled4=1
 SelectionScope4=All
-Order4=18
+Order4=22
 IndexEnabled4=0
 IndexStartValue4=1
 Suffix4=
-UniqueIDPath5=\FYQSFHEG\MZBUBEAV
-DocumentName5=[5] LED.SchDoc
+UniqueIDPath5=\DMUNOPTP
+DocumentName5=[7] Power.SchDoc
 IsEnabled5=1
 SelectionScope5=All
-Order5=9
+Order5=26
 IndexEnabled5=0
 IndexStartValue5=1
 Suffix5=
@@ -3974,115 +4076,115 @@ Order6=12
 IndexEnabled6=0
 IndexStartValue6=1
 Suffix6=
-UniqueIDPath7=\AYMDKEDG
-DocumentName7=[6] Charger.SchDoc
+UniqueIDPath7=\FYQSFHEG\TKEMSLII
+DocumentName7=[5] LED.SchDoc
 IsEnabled7=1
 SelectionScope7=All
-Order7=25
+Order7=5
 IndexEnabled7=0
 IndexStartValue7=1
 Suffix7=
-UniqueIDPath8=\FYQSFHEG\CIIJGTKZ
+UniqueIDPath8=\FYQSFHEG\MGKTSPAI
 DocumentName8=[5] LED.SchDoc
 IsEnabled8=1
 SelectionScope8=All
-Order8=11
+Order8=16
 IndexEnabled8=0
 IndexStartValue8=1
 Suffix8=
-UniqueIDPath9=\DMUNOPTP
-DocumentName9=[7] Power.SchDoc
+UniqueIDPath9=\OPVNZNGZ
+DocumentName9=[3] FailSafe.SchDoc
 IsEnabled9=1
 SelectionScope9=All
-Order9=26
+Order9=3
 IndexEnabled9=0
 IndexStartValue9=1
 Suffix9=
-UniqueIDPath10=\FYQSFHEG\TKEMSLII
+UniqueIDPath10=\FYQSFHEG\CIIJGTKZ
 DocumentName10=[5] LED.SchDoc
 IsEnabled10=1
 SelectionScope10=All
-Order10=5
+Order10=11
 IndexEnabled10=0
 IndexStartValue10=1
 Suffix10=
-UniqueIDPath11=\FYQSFHEG\XLENUFJX
+UniqueIDPath11=\FYQSFHEG\JWAILDQK
 DocumentName11=[5] LED.SchDoc
 IsEnabled11=1
 SelectionScope11=All
-Order11=7
+Order11=17
 IndexEnabled11=0
 IndexStartValue11=1
 Suffix11=
-UniqueIDPath12=\FYQSFHEG\MMTKBMXE
+UniqueIDPath12=\FYQSFHEG\EPUNFBGK
 DocumentName12=[5] LED.SchDoc
 IsEnabled12=1
 SelectionScope12=All
-Order12=14
+Order12=19
 IndexEnabled12=0
 IndexStartValue12=1
 Suffix12=
-UniqueIDPath13=\FYQSFHEG\IOVQKARY
-DocumentName13=[5] LED.SchDoc
+UniqueIDPath13=
+DocumentName13=[1] night-cone-proto0-Top.SchDoc
 IsEnabled13=1
 SelectionScope13=All
-Order13=6
+Order13=1
 IndexEnabled13=0
 IndexStartValue13=1
 Suffix13=
-UniqueIDPath14=\FYQSFHEG\EPUNFBGK
+UniqueIDPath14=\FYQSFHEG\XLENUFJX
 DocumentName14=[5] LED.SchDoc
 IsEnabled14=1
 SelectionScope14=All
-Order14=19
+Order14=7
 IndexEnabled14=0
 IndexStartValue14=1
 Suffix14=
-UniqueIDPath15=\FYQSFHEG\AROKUIPJ
+UniqueIDPath15=\FYQSFHEG\IKDVEBSM
 DocumentName15=[5] LED.SchDoc
 IsEnabled15=1
 SelectionScope15=All
-Order15=20
+Order15=21
 IndexEnabled15=0
 IndexStartValue15=1
 Suffix15=
-UniqueIDPath16=\FYQSFHEG\IKDVEBSM
-DocumentName16=[5] LED.SchDoc
+UniqueIDPath16=\FYQSFHEG
+DocumentName16=[4] Lights.SchDoc
 IsEnabled16=1
 SelectionScope16=All
-Order16=21
+Order16=4
 IndexEnabled16=0
 IndexStartValue16=1
 Suffix16=
-UniqueIDPath17=\FYQSFHEG
-DocumentName17=[4] Lights.SchDoc
+UniqueIDPath17=\FYQSFHEG\XLXDOQCU
+DocumentName17=[5] LED.SchDoc
 IsEnabled17=1
 SelectionScope17=All
-Order17=4
+Order17=8
 IndexEnabled17=0
 IndexStartValue17=1
 Suffix17=
-UniqueIDPath18=\FYQSFHEG\UBYVCMAG
+UniqueIDPath18=\FYQSFHEG\PXXVBESD
 DocumentName18=[5] LED.SchDoc
 IsEnabled18=1
 SelectionScope18=All
-Order18=10
+Order18=15
 IndexEnabled18=0
 IndexStartValue18=1
 Suffix18=
-UniqueIDPath19=
-DocumentName19=[1] night-cone-proto0-Top.SchDoc
+UniqueIDPath19=\KUKTWLSW
+DocumentName19=[2] Control.SchDoc
 IsEnabled19=1
 SelectionScope19=All
-Order19=1
+Order19=2
 IndexEnabled19=0
 IndexStartValue19=1
 Suffix19=
-UniqueIDPath20=\FYQSFHEG\XLXDOQCU
+UniqueIDPath20=\FYQSFHEG\UIVROOYL
 DocumentName20=[5] LED.SchDoc
 IsEnabled20=1
 SelectionScope20=All
-Order20=8
+Order20=23
 IndexEnabled20=0
 IndexStartValue20=1
 Suffix20=
@@ -4094,35 +4196,35 @@ Order21=13
 IndexEnabled21=0
 IndexStartValue21=1
 Suffix21=
-UniqueIDPath22=\KUKTWLSW
-DocumentName22=[2] Control.SchDoc
+UniqueIDPath22=\FYQSFHEG\ITCNZRDD
+DocumentName22=[5] LED.SchDoc
 IsEnabled22=1
 SelectionScope22=All
-Order22=2
+Order22=24
 IndexEnabled22=0
 IndexStartValue22=1
 Suffix22=
-UniqueIDPath23=\FYQSFHEG\JWAILDQK
+UniqueIDPath23=\FYQSFHEG\UBYVCMAG
 DocumentName23=[5] LED.SchDoc
 IsEnabled23=1
 SelectionScope23=All
-Order23=17
+Order23=10
 IndexEnabled23=0
 IndexStartValue23=1
 Suffix23=
-UniqueIDPath24=\FYQSFHEG\ZWYOLWGR
+UniqueIDPath24=\FYQSFHEG\IOVQKARY
 DocumentName24=[5] LED.SchDoc
 IsEnabled24=1
 SelectionScope24=All
-Order24=22
+Order24=6
 IndexEnabled24=0
 IndexStartValue24=1
 Suffix24=
-UniqueIDPath25=\FYQSFHEG\UIVROOYL
+UniqueIDPath25=\FYQSFHEG\AROKUIPJ
 DocumentName25=[5] LED.SchDoc
 IsEnabled25=1
 SelectionScope25=All
-Order25=23
+Order25=20
 IndexEnabled25=0
 IndexStartValue25=1
 Suffix25=
