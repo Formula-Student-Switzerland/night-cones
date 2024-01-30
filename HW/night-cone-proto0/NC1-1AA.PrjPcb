@@ -24,7 +24,7 @@ ReorderDocumentsOnCompile=1
 NameNetsHierarchically=0
 PowerPortNamesTakePriority=0
 AutoSheetNumbering=1
-AutoCrossReferences=0
+AutoCrossReferences=1
 NewIndexingOfSheetSymbols=1
 PushECOToAnnotationFile=1
 DItemRevisionGUID=
@@ -67,7 +67,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document2]
-DocumentPath=SCH\[1] night-cone-proto0-Top.SchDoc
+DocumentPath=SCH\NC1-1-Top.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -84,7 +84,7 @@ GenerateClassCluster=0
 DocumentUniqueId=RUUYLWHW
 
 [Document3]
-DocumentPath=PCB\night-cone-proto0.PcbDoc
+DocumentPath=PCB\NC1-1A-BASIS.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -101,7 +101,7 @@ GenerateClassCluster=0
 DocumentUniqueId=DFPJGVJR
 
 [Document4]
-DocumentPath=SCH\[2] Control.SchDoc
+DocumentPath=SCH\Control.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -118,7 +118,7 @@ GenerateClassCluster=0
 DocumentUniqueId=UVEKBQZG
 
 [Document5]
-DocumentPath=SCH\[3] FailSafe.SchDoc
+DocumentPath=SCH\FailSafe.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -135,7 +135,7 @@ GenerateClassCluster=0
 DocumentUniqueId=DWGPLVWK
 
 [Document6]
-DocumentPath=SCH\[4] Lights.SchDoc
+DocumentPath=SCH\Lights.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -152,7 +152,7 @@ GenerateClassCluster=0
 DocumentUniqueId=YCBEXBRH
 
 [Document7]
-DocumentPath=SCH\[5] LED.SchDoc
+DocumentPath=SCH\LED.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -169,7 +169,7 @@ GenerateClassCluster=0
 DocumentUniqueId=ZZEADVAT
 
 [Document8]
-DocumentPath=SCH\[6] Charger.SchDoc
+DocumentPath=SCH\Charger.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -186,7 +186,7 @@ GenerateClassCluster=0
 DocumentUniqueId=RLKMKIFL
 
 [Document9]
-DocumentPath=SCH\[7] Power.SchDoc
+DocumentPath=SCH\Power.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -203,7 +203,24 @@ GenerateClassCluster=0
 DocumentUniqueId=LNVWJBXE
 
 [Document10]
-DocumentPath=night-cone-proto0.BomDoc
+DocumentPath=PCB\NC1-1A-PANEL.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=ERUPQRWG
+
+[Document11]
+DocumentPath=NC1-1AA.BomDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -219,8 +236,8 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document11]
-DocumentPath=night-cone-proto0.Annotation
+[Document12]
+DocumentPath=NC1-1AA.Annotation
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -3017,10 +3034,6 @@ ParamVariationCount=400
 [Parameter5_1]
 Name=PCB_Name
 Value=NC1-14
-
-[GeneratedDocument1]
-DocumentPath=Project Outputs for night-cone-proto0\Design Rule Check - night-cone-proto0.html
-DItemRevisionGUID=
 
 [Parameter1]
 Name=Author
