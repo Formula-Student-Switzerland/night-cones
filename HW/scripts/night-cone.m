@@ -6,7 +6,7 @@ clear;
 close all;
 
 %% System definition
-nof_LED = 21;
+nof_LED = 20;
 % LED protocol
 LED_buffer = 25;
 % WS2813B
