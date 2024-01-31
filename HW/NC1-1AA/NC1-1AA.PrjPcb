@@ -43,7 +43,6 @@ CrossRefPorts=3
 CrossRefCrossSheets=1
 CrossRefSheetEntries=0
 CrossRefFollowFromMainSettings=1
-CurrentVariant=WS2813E
 
 [Preferences]
 PrefsVaultGUID=
@@ -279,7 +278,7 @@ Variation17=Designator=R60|UniqueId=\FYQSFHEG\HSICOQDH\HGUCYFFL|Kind=1|Alternate
 Variation18=Designator=R48|UniqueId=\FYQSFHEG\MMTKBMXE\HGUCYFFL|Kind=1|AlternatePart= 
 Variation19=Designator=R45|UniqueId=\FYQSFHEG\KRUXYDTE\HGUCYFFL|Kind=1|AlternatePart= 
 Variation20=Designator=R54|UniqueId=\FYQSFHEG\MGKTSPAI\HGUCYFFL|Kind=1|AlternatePart= 
-Variation21=Designator=U8|UniqueId=\FYQSFHEG\TKEMSLII\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation21=Designator=U8|UniqueId=\FYQSFHEG\TKEMSLII\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation1=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator1=U8
 ParamVariation2=ParameterName=Component Kind|VariantValue=Standard
@@ -320,7 +319,7 @@ ParamVariation19=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator19=U8
 ParamVariation20=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator20=U8
-Variation22=Designator=U15|UniqueId=\FYQSFHEG\ABAPEJJD\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation22=Designator=U15|UniqueId=\FYQSFHEG\ABAPEJJD\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation21=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator21=U15
 ParamVariation22=ParameterName=Component Kind|VariantValue=Standard
@@ -361,7 +360,7 @@ ParamVariation39=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator39=U15
 ParamVariation40=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator40=U15
-Variation23=Designator=U16|UniqueId=\FYQSFHEG\KRUXYDTE\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation23=Designator=U16|UniqueId=\FYQSFHEG\KRUXYDTE\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation41=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator41=U16
 ParamVariation42=ParameterName=Component Kind|VariantValue=Standard
@@ -402,7 +401,7 @@ ParamVariation59=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator59=U16
 ParamVariation60=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator60=U16
-Variation24=Designator=U17|UniqueId=\FYQSFHEG\MMTKBMXE\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation24=Designator=U17|UniqueId=\FYQSFHEG\MMTKBMXE\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation61=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator61=U17
 ParamVariation62=ParameterName=Component Kind|VariantValue=Standard
@@ -443,7 +442,7 @@ ParamVariation79=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator79=U17
 ParamVariation80=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator80=U17
-Variation25=Designator=U18|UniqueId=\FYQSFHEG\PXXVBESD\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation25=Designator=U18|UniqueId=\FYQSFHEG\PXXVBESD\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation81=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator81=U18
 ParamVariation82=ParameterName=Component Kind|VariantValue=Standard
@@ -484,7 +483,7 @@ ParamVariation99=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator99=U18
 ParamVariation100=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator100=U18
-Variation26=Designator=U19|UniqueId=\FYQSFHEG\MGKTSPAI\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation26=Designator=U19|UniqueId=\FYQSFHEG\MGKTSPAI\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation101=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator101=U19
 ParamVariation102=ParameterName=Component Kind|VariantValue=Standard
@@ -525,7 +524,7 @@ ParamVariation119=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator119=U19
 ParamVariation120=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator120=U19
-Variation27=Designator=U20|UniqueId=\FYQSFHEG\JWAILDQK\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation27=Designator=U20|UniqueId=\FYQSFHEG\JWAILDQK\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation121=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator121=U20
 ParamVariation122=ParameterName=Component Kind|VariantValue=Standard
@@ -566,7 +565,7 @@ ParamVariation139=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator139=U20
 ParamVariation140=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator140=U20
-Variation28=Designator=U21|UniqueId=\FYQSFHEG\HSICOQDH\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation28=Designator=U21|UniqueId=\FYQSFHEG\HSICOQDH\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation141=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator141=U21
 ParamVariation142=ParameterName=Component Kind|VariantValue=Standard
@@ -607,7 +606,7 @@ ParamVariation159=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator159=U21
 ParamVariation160=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator160=U21
-Variation29=Designator=U22|UniqueId=\FYQSFHEG\EPUNFBGK\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation29=Designator=U22|UniqueId=\FYQSFHEG\EPUNFBGK\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation161=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator161=U22
 ParamVariation162=ParameterName=Component Kind|VariantValue=Standard
@@ -648,7 +647,7 @@ ParamVariation179=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator179=U22
 ParamVariation180=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator180=U22
-Variation30=Designator=U23|UniqueId=\FYQSFHEG\AROKUIPJ\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation30=Designator=U23|UniqueId=\FYQSFHEG\AROKUIPJ\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation181=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator181=U23
 ParamVariation182=ParameterName=Component Kind|VariantValue=Standard
@@ -689,7 +688,7 @@ ParamVariation199=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator199=U23
 ParamVariation200=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator200=U23
-Variation31=Designator=U24|UniqueId=\FYQSFHEG\IKDVEBSM\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation31=Designator=U24|UniqueId=\FYQSFHEG\IKDVEBSM\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation201=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator201=U24
 ParamVariation202=ParameterName=Component Kind|VariantValue=Standard
@@ -730,7 +729,7 @@ ParamVariation219=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator219=U24
 ParamVariation220=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator220=U24
-Variation32=Designator=U25|UniqueId=\FYQSFHEG\ZWYOLWGR\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation32=Designator=U25|UniqueId=\FYQSFHEG\ZWYOLWGR\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation221=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator221=U25
 ParamVariation222=ParameterName=Component Kind|VariantValue=Standard
@@ -771,7 +770,7 @@ ParamVariation239=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator239=U25
 ParamVariation240=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator240=U25
-Variation33=Designator=U26|UniqueId=\FYQSFHEG\UIVROOYL\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation33=Designator=U26|UniqueId=\FYQSFHEG\UIVROOYL\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation241=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator241=U26
 ParamVariation242=ParameterName=Component Kind|VariantValue=Standard
@@ -812,7 +811,7 @@ ParamVariation259=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator259=U26
 ParamVariation260=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator260=U26
-Variation34=Designator=U27|UniqueId=\FYQSFHEG\ITCNZRDD\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation34=Designator=U27|UniqueId=\FYQSFHEG\ITCNZRDD\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation261=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator261=U27
 ParamVariation262=ParameterName=Component Kind|VariantValue=Standard
@@ -853,7 +852,7 @@ ParamVariation279=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator279=U27
 ParamVariation280=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator280=U27
-Variation35=Designator=U9|UniqueId=\FYQSFHEG\IOVQKARY\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation35=Designator=U9|UniqueId=\FYQSFHEG\IOVQKARY\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation281=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator281=U9
 ParamVariation282=ParameterName=Component Kind|VariantValue=Standard
@@ -894,7 +893,7 @@ ParamVariation299=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator299=U9
 ParamVariation300=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator300=U9
-Variation36=Designator=U10|UniqueId=\FYQSFHEG\XLENUFJX\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation36=Designator=U10|UniqueId=\FYQSFHEG\XLENUFJX\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation301=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator301=U10
 ParamVariation302=ParameterName=Component Kind|VariantValue=Standard
@@ -935,7 +934,7 @@ ParamVariation319=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator319=U10
 ParamVariation320=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator320=U10
-Variation37=Designator=U11|UniqueId=\FYQSFHEG\XLXDOQCU\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation37=Designator=U11|UniqueId=\FYQSFHEG\XLXDOQCU\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation321=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator321=U11
 ParamVariation322=ParameterName=Component Kind|VariantValue=Standard
@@ -976,7 +975,7 @@ ParamVariation339=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator339=U11
 ParamVariation340=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator340=U11
-Variation38=Designator=U12|UniqueId=\FYQSFHEG\MZBUBEAV\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation38=Designator=U12|UniqueId=\FYQSFHEG\MZBUBEAV\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation341=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator341=U12
 ParamVariation342=ParameterName=Component Kind|VariantValue=Standard
@@ -1017,7 +1016,7 @@ ParamVariation359=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator359=U12
 ParamVariation360=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator360=U12
-Variation39=Designator=U13|UniqueId=\FYQSFHEG\UBYVCMAG\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation39=Designator=U13|UniqueId=\FYQSFHEG\UBYVCMAG\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation361=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator361=U13
 ParamVariation362=ParameterName=Component Kind|VariantValue=Standard
@@ -1058,7 +1057,7 @@ ParamVariation379=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator379=U13
 ParamVariation380=ParameterName=Supplier Part Number 3|VariantValue=C114592
 ParamDesignator380=U13
-Variation40=Designator=U14|UniqueId=\FYQSFHEG\CIIJGTKZ\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation40=Designator=U14|UniqueId=\FYQSFHEG\CIIJGTKZ\MIVTIEMA|Kind=2|AlternatePart=WS2813B-B|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-B|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation381=ParameterName=Comment|VariantValue=WS2813B-B
 ParamDesignator381=U14
 ParamVariation382=ParameterName=Component Kind|VariantValue=Standard
@@ -1279,7 +1278,7 @@ ParamDesignator50=R19
 Variation63=Designator=Q4|UniqueId=\OPVNZNGZ\RYCFEGNJ|Kind=1|AlternatePart= 
 Variation64=Designator=C67|UniqueId=\DMUNOPTP\ZDLHJMGF|Kind=1|AlternatePart= 
 Variation65=Designator=M1|UniqueId=\KUKTWLSW\XTYKJKRS|Kind=1|AlternatePart= 
-Variation66=Designator=U8|UniqueId=\FYQSFHEG\TKEMSLII\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation66=Designator=U8|UniqueId=\FYQSFHEG\TKEMSLII\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation51=ParameterName=Comment|VariantValue=WS2813B-V5
 ParamDesignator51=U8
 ParamVariation52=ParameterName=Component Kind|VariantValue=Standard
@@ -1320,7 +1319,7 @@ ParamVariation69=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator69=U8
 ParamVariation70=ParameterName=Supplier Part Number 3|VariantValue=C965558
 ParamDesignator70=U8
-Variation67=Designator=U9|UniqueId=\FYQSFHEG\IOVQKARY\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation67=Designator=U9|UniqueId=\FYQSFHEG\IOVQKARY\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation71=ParameterName=Comment|VariantValue=WS2813B-V5
 ParamDesignator71=U9
 ParamVariation72=ParameterName=Component Kind|VariantValue=Standard
@@ -1361,7 +1360,7 @@ ParamVariation89=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator89=U9
 ParamVariation90=ParameterName=Supplier Part Number 3|VariantValue=C965558
 ParamDesignator90=U9
-Variation68=Designator=U16|UniqueId=\FYQSFHEG\KRUXYDTE\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation68=Designator=U16|UniqueId=\FYQSFHEG\KRUXYDTE\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation91=ParameterName=Comment|VariantValue=WS2813B-V5
 ParamDesignator91=U16
 ParamVariation92=ParameterName=Component Kind|VariantValue=Standard
@@ -1402,7 +1401,7 @@ ParamVariation109=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator109=U16
 ParamVariation110=ParameterName=Supplier Part Number 3|VariantValue=C965558
 ParamDesignator110=U16
-Variation69=Designator=U17|UniqueId=\FYQSFHEG\MMTKBMXE\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation69=Designator=U17|UniqueId=\FYQSFHEG\MMTKBMXE\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation111=ParameterName=Comment|VariantValue=WS2813B-V5
 ParamDesignator111=U17
 ParamVariation112=ParameterName=Component Kind|VariantValue=Standard
@@ -1443,7 +1442,7 @@ ParamVariation129=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator129=U17
 ParamVariation130=ParameterName=Supplier Part Number 3|VariantValue=C965558
 ParamDesignator130=U17
-Variation70=Designator=U18|UniqueId=\FYQSFHEG\PXXVBESD\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation70=Designator=U18|UniqueId=\FYQSFHEG\PXXVBESD\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation131=ParameterName=Comment|VariantValue=WS2813B-V5
 ParamDesignator131=U18
 ParamVariation132=ParameterName=Component Kind|VariantValue=Standard
@@ -1484,7 +1483,7 @@ ParamVariation149=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator149=U18
 ParamVariation150=ParameterName=Supplier Part Number 3|VariantValue=C965558
 ParamDesignator150=U18
-Variation71=Designator=U19|UniqueId=\FYQSFHEG\MGKTSPAI\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation71=Designator=U19|UniqueId=\FYQSFHEG\MGKTSPAI\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation151=ParameterName=Comment|VariantValue=WS2813B-V5
 ParamDesignator151=U19
 ParamVariation152=ParameterName=Component Kind|VariantValue=Standard
@@ -1525,7 +1524,7 @@ ParamVariation169=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator169=U19
 ParamVariation170=ParameterName=Supplier Part Number 3|VariantValue=C965558
 ParamDesignator170=U19
-Variation72=Designator=U20|UniqueId=\FYQSFHEG\JWAILDQK\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation72=Designator=U20|UniqueId=\FYQSFHEG\JWAILDQK\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation171=ParameterName=Comment|VariantValue=WS2813B-V5
 ParamDesignator171=U20
 ParamVariation172=ParameterName=Component Kind|VariantValue=Standard
@@ -1566,7 +1565,7 @@ ParamVariation189=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator189=U20
 ParamVariation190=ParameterName=Supplier Part Number 3|VariantValue=C965558
 ParamDesignator190=U20
-Variation73=Designator=U22|UniqueId=\FYQSFHEG\EPUNFBGK\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation73=Designator=U22|UniqueId=\FYQSFHEG\EPUNFBGK\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation191=ParameterName=Comment|VariantValue=WS2813B-V5
 ParamDesignator191=U22
 ParamVariation192=ParameterName=Component Kind|VariantValue=Standard
@@ -1607,7 +1606,7 @@ ParamVariation209=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator209=U22
 ParamVariation210=ParameterName=Supplier Part Number 3|VariantValue=C965558
 ParamDesignator210=U22
-Variation74=Designator=U23|UniqueId=\FYQSFHEG\AROKUIPJ\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation74=Designator=U23|UniqueId=\FYQSFHEG\AROKUIPJ\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation211=ParameterName=Comment|VariantValue=WS2813B-V5
 ParamDesignator211=U23
 ParamVariation212=ParameterName=Component Kind|VariantValue=Standard
@@ -1648,7 +1647,7 @@ ParamVariation229=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator229=U23
 ParamVariation230=ParameterName=Supplier Part Number 3|VariantValue=C965558
 ParamDesignator230=U23
-Variation75=Designator=U21|UniqueId=\FYQSFHEG\HSICOQDH\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation75=Designator=U21|UniqueId=\FYQSFHEG\HSICOQDH\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation231=ParameterName=Comment|VariantValue=WS2813B-V5
 ParamDesignator231=U21
 ParamVariation232=ParameterName=Component Kind|VariantValue=Standard
@@ -1689,7 +1688,7 @@ ParamVariation249=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator249=U21
 ParamVariation250=ParameterName=Supplier Part Number 3|VariantValue=C965558
 ParamDesignator250=U21
-Variation76=Designator=U25|UniqueId=\FYQSFHEG\ZWYOLWGR\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation76=Designator=U25|UniqueId=\FYQSFHEG\ZWYOLWGR\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation251=ParameterName=Comment|VariantValue=WS2813B-V5
 ParamDesignator251=U25
 ParamVariation252=ParameterName=Component Kind|VariantValue=Standard
@@ -1730,7 +1729,7 @@ ParamVariation269=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator269=U25
 ParamVariation270=ParameterName=Supplier Part Number 3|VariantValue=C965558
 ParamDesignator270=U25
-Variation77=Designator=U26|UniqueId=\FYQSFHEG\UIVROOYL\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation77=Designator=U26|UniqueId=\FYQSFHEG\UIVROOYL\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation271=ParameterName=Comment|VariantValue=WS2813B-V5
 ParamDesignator271=U26
 ParamVariation272=ParameterName=Component Kind|VariantValue=Standard
@@ -1771,7 +1770,7 @@ ParamVariation289=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator289=U26
 ParamVariation290=ParameterName=Supplier Part Number 3|VariantValue=C965558
 ParamDesignator290=U26
-Variation78=Designator=U24|UniqueId=\FYQSFHEG\IKDVEBSM\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation78=Designator=U24|UniqueId=\FYQSFHEG\IKDVEBSM\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation291=ParameterName=Comment|VariantValue=WS2813B-V5
 ParamDesignator291=U24
 ParamVariation292=ParameterName=Component Kind|VariantValue=Standard
@@ -1812,7 +1811,7 @@ ParamVariation309=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator309=U24
 ParamVariation310=ParameterName=Supplier Part Number 3|VariantValue=C965558
 ParamDesignator310=U24
-Variation79=Designator=U27|UniqueId=\FYQSFHEG\ITCNZRDD\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation79=Designator=U27|UniqueId=\FYQSFHEG\ITCNZRDD\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation311=ParameterName=Comment|VariantValue=WS2813B-V5
 ParamDesignator311=U27
 ParamVariation312=ParameterName=Component Kind|VariantValue=Standard
@@ -1853,7 +1852,7 @@ ParamVariation329=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator329=U27
 ParamVariation330=ParameterName=Supplier Part Number 3|VariantValue=C965558
 ParamDesignator330=U27
-Variation80=Designator=U10|UniqueId=\FYQSFHEG\XLENUFJX\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation80=Designator=U10|UniqueId=\FYQSFHEG\XLENUFJX\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation331=ParameterName=Comment|VariantValue=WS2813B-V5
 ParamDesignator331=U10
 ParamVariation332=ParameterName=Component Kind|VariantValue=Standard
@@ -1894,7 +1893,7 @@ ParamVariation349=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator349=U10
 ParamVariation350=ParameterName=Supplier Part Number 3|VariantValue=C965558
 ParamDesignator350=U10
-Variation81=Designator=U13|UniqueId=\FYQSFHEG\UBYVCMAG\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation81=Designator=U13|UniqueId=\FYQSFHEG\UBYVCMAG\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation351=ParameterName=Comment|VariantValue=WS2813B-V5
 ParamDesignator351=U13
 ParamVariation352=ParameterName=Component Kind|VariantValue=Standard
@@ -1935,7 +1934,7 @@ ParamVariation369=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator369=U13
 ParamVariation370=ParameterName=Supplier Part Number 3|VariantValue=C965558
 ParamDesignator370=U13
-Variation82=Designator=U12|UniqueId=\FYQSFHEG\MZBUBEAV\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation82=Designator=U12|UniqueId=\FYQSFHEG\MZBUBEAV\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation371=ParameterName=Comment|VariantValue=WS2813B-V5
 ParamDesignator371=U12
 ParamVariation372=ParameterName=Component Kind|VariantValue=Standard
@@ -1976,7 +1975,7 @@ ParamVariation389=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator389=U12
 ParamVariation390=ParameterName=Supplier Part Number 3|VariantValue=C965558
 ParamDesignator390=U12
-Variation83=Designator=U14|UniqueId=\FYQSFHEG\CIIJGTKZ\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation83=Designator=U14|UniqueId=\FYQSFHEG\CIIJGTKZ\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation391=ParameterName=Comment|VariantValue=WS2813B-V5
 ParamDesignator391=U14
 ParamVariation392=ParameterName=Component Kind|VariantValue=Standard
@@ -2017,7 +2016,7 @@ ParamVariation409=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator409=U14
 ParamVariation410=ParameterName=Supplier Part Number 3|VariantValue=C965558
 ParamDesignator410=U14
-Variation84=Designator=U15|UniqueId=\FYQSFHEG\ABAPEJJD\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation84=Designator=U15|UniqueId=\FYQSFHEG\ABAPEJJD\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation411=ParameterName=Comment|VariantValue=WS2813B-V5
 ParamDesignator411=U15
 ParamVariation412=ParameterName=Component Kind|VariantValue=Standard
@@ -2058,7 +2057,7 @@ ParamVariation429=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator429=U15
 ParamVariation430=ParameterName=Supplier Part Number 3|VariantValue=C965558
 ParamDesignator430=U15
-Variation85=Designator=U11|UniqueId=\FYQSFHEG\XLXDOQCU\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation85=Designator=U11|UniqueId=\FYQSFHEG\XLXDOQCU\MIVTIEMA|Kind=2|AlternatePart=WS2813B-V5|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813B-V5|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation431=ParameterName=Comment|VariantValue=WS2813B-V5
 ParamDesignator431=U11
 ParamVariation432=ParameterName=Component Kind|VariantValue=Standard
@@ -2131,7 +2130,7 @@ Variation17=Designator=R60|UniqueId=\FYQSFHEG\HSICOQDH\HGUCYFFL|Kind=1|Alternate
 Variation18=Designator=R48|UniqueId=\FYQSFHEG\MMTKBMXE\HGUCYFFL|Kind=1|AlternatePart= 
 Variation19=Designator=R45|UniqueId=\FYQSFHEG\KRUXYDTE\HGUCYFFL|Kind=1|AlternatePart= 
 Variation20=Designator=R54|UniqueId=\FYQSFHEG\MGKTSPAI\HGUCYFFL|Kind=1|AlternatePart= 
-Variation21=Designator=U8|UniqueId=\FYQSFHEG\TKEMSLII\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation21=Designator=U8|UniqueId=\FYQSFHEG\TKEMSLII\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation1=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator1=U8
 ParamVariation2=ParameterName=Component Kind|VariantValue=Standard
@@ -2172,7 +2171,7 @@ ParamVariation19=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator19=U8
 ParamVariation20=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator20=U8
-Variation22=Designator=U15|UniqueId=\FYQSFHEG\ABAPEJJD\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation22=Designator=U15|UniqueId=\FYQSFHEG\ABAPEJJD\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation21=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator21=U15
 ParamVariation22=ParameterName=Component Kind|VariantValue=Standard
@@ -2213,7 +2212,7 @@ ParamVariation39=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator39=U15
 ParamVariation40=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator40=U15
-Variation23=Designator=U16|UniqueId=\FYQSFHEG\KRUXYDTE\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation23=Designator=U16|UniqueId=\FYQSFHEG\KRUXYDTE\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation41=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator41=U16
 ParamVariation42=ParameterName=Component Kind|VariantValue=Standard
@@ -2254,7 +2253,7 @@ ParamVariation59=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator59=U16
 ParamVariation60=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator60=U16
-Variation24=Designator=U17|UniqueId=\FYQSFHEG\MMTKBMXE\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation24=Designator=U17|UniqueId=\FYQSFHEG\MMTKBMXE\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation61=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator61=U17
 ParamVariation62=ParameterName=Component Kind|VariantValue=Standard
@@ -2295,7 +2294,7 @@ ParamVariation79=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator79=U17
 ParamVariation80=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator80=U17
-Variation25=Designator=U18|UniqueId=\FYQSFHEG\PXXVBESD\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation25=Designator=U18|UniqueId=\FYQSFHEG\PXXVBESD\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation81=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator81=U18
 ParamVariation82=ParameterName=Component Kind|VariantValue=Standard
@@ -2336,7 +2335,7 @@ ParamVariation99=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator99=U18
 ParamVariation100=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator100=U18
-Variation26=Designator=U19|UniqueId=\FYQSFHEG\MGKTSPAI\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation26=Designator=U19|UniqueId=\FYQSFHEG\MGKTSPAI\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation101=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator101=U19
 ParamVariation102=ParameterName=Component Kind|VariantValue=Standard
@@ -2377,7 +2376,7 @@ ParamVariation119=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator119=U19
 ParamVariation120=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator120=U19
-Variation27=Designator=U20|UniqueId=\FYQSFHEG\JWAILDQK\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation27=Designator=U20|UniqueId=\FYQSFHEG\JWAILDQK\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation121=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator121=U20
 ParamVariation122=ParameterName=Component Kind|VariantValue=Standard
@@ -2418,7 +2417,7 @@ ParamVariation139=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator139=U20
 ParamVariation140=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator140=U20
-Variation28=Designator=U21|UniqueId=\FYQSFHEG\HSICOQDH\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation28=Designator=U21|UniqueId=\FYQSFHEG\HSICOQDH\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation141=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator141=U21
 ParamVariation142=ParameterName=Component Kind|VariantValue=Standard
@@ -2459,7 +2458,7 @@ ParamVariation159=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator159=U21
 ParamVariation160=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator160=U21
-Variation29=Designator=U22|UniqueId=\FYQSFHEG\EPUNFBGK\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation29=Designator=U22|UniqueId=\FYQSFHEG\EPUNFBGK\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation161=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator161=U22
 ParamVariation162=ParameterName=Component Kind|VariantValue=Standard
@@ -2500,7 +2499,7 @@ ParamVariation179=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator179=U22
 ParamVariation180=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator180=U22
-Variation30=Designator=U23|UniqueId=\FYQSFHEG\AROKUIPJ\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation30=Designator=U23|UniqueId=\FYQSFHEG\AROKUIPJ\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation181=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator181=U23
 ParamVariation182=ParameterName=Component Kind|VariantValue=Standard
@@ -2541,7 +2540,7 @@ ParamVariation199=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator199=U23
 ParamVariation200=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator200=U23
-Variation31=Designator=U24|UniqueId=\FYQSFHEG\IKDVEBSM\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation31=Designator=U24|UniqueId=\FYQSFHEG\IKDVEBSM\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation201=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator201=U24
 ParamVariation202=ParameterName=Component Kind|VariantValue=Standard
@@ -2582,7 +2581,7 @@ ParamVariation219=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator219=U24
 ParamVariation220=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator220=U24
-Variation32=Designator=U25|UniqueId=\FYQSFHEG\ZWYOLWGR\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation32=Designator=U25|UniqueId=\FYQSFHEG\ZWYOLWGR\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation221=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator221=U25
 ParamVariation222=ParameterName=Component Kind|VariantValue=Standard
@@ -2623,7 +2622,7 @@ ParamVariation239=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator239=U25
 ParamVariation240=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator240=U25
-Variation33=Designator=U26|UniqueId=\FYQSFHEG\UIVROOYL\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation33=Designator=U26|UniqueId=\FYQSFHEG\UIVROOYL\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation241=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator241=U26
 ParamVariation242=ParameterName=Component Kind|VariantValue=Standard
@@ -2664,7 +2663,7 @@ ParamVariation259=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator259=U26
 ParamVariation260=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator260=U26
-Variation34=Designator=U27|UniqueId=\FYQSFHEG\ITCNZRDD\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation34=Designator=U27|UniqueId=\FYQSFHEG\ITCNZRDD\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation261=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator261=U27
 ParamVariation262=ParameterName=Component Kind|VariantValue=Standard
@@ -2705,7 +2704,7 @@ ParamVariation279=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator279=U27
 ParamVariation280=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator280=U27
-Variation35=Designator=U9|UniqueId=\FYQSFHEG\IOVQKARY\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation35=Designator=U9|UniqueId=\FYQSFHEG\IOVQKARY\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation281=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator281=U9
 ParamVariation282=ParameterName=Component Kind|VariantValue=Standard
@@ -2746,7 +2745,7 @@ ParamVariation299=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator299=U9
 ParamVariation300=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator300=U9
-Variation36=Designator=U10|UniqueId=\FYQSFHEG\XLENUFJX\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation36=Designator=U10|UniqueId=\FYQSFHEG\XLENUFJX\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation301=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator301=U10
 ParamVariation302=ParameterName=Component Kind|VariantValue=Standard
@@ -2787,7 +2786,7 @@ ParamVariation319=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator319=U10
 ParamVariation320=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator320=U10
-Variation37=Designator=U11|UniqueId=\FYQSFHEG\XLXDOQCU\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation37=Designator=U11|UniqueId=\FYQSFHEG\XLXDOQCU\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation321=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator321=U11
 ParamVariation322=ParameterName=Component Kind|VariantValue=Standard
@@ -2828,7 +2827,7 @@ ParamVariation339=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator339=U11
 ParamVariation340=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator340=U11
-Variation38=Designator=U12|UniqueId=\FYQSFHEG\MZBUBEAV\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation38=Designator=U12|UniqueId=\FYQSFHEG\MZBUBEAV\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation341=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator341=U12
 ParamVariation342=ParameterName=Component Kind|VariantValue=Standard
@@ -2869,7 +2868,7 @@ ParamVariation359=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator359=U12
 ParamVariation360=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator360=U12
-Variation39=Designator=U13|UniqueId=\FYQSFHEG\UBYVCMAG\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation39=Designator=U13|UniqueId=\FYQSFHEG\UBYVCMAG\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation361=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator361=U13
 ParamVariation362=ParameterName=Component Kind|VariantValue=Standard
@@ -2910,7 +2909,7 @@ ParamVariation379=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator379=U13
 ParamVariation380=ParameterName=Supplier Part Number 3|VariantValue=C194323
 ParamDesignator380=U13
-Variation40=Designator=U14|UniqueId=\FYQSFHEG\CIIJGTKZ\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation40=Designator=U14|UniqueId=\FYQSFHEG\CIIJGTKZ\MIVTIEMA|Kind=2|AlternatePart=WS2813C|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813C|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation381=ParameterName=Comment|VariantValue=WS2813C
 ParamDesignator381=U14
 ParamVariation382=ParameterName=Component Kind|VariantValue=Standard
@@ -3026,7 +3025,7 @@ Variation57=Designator=C46|UniqueId=\FYQSFHEG\AROKUIPJ\LZGUBYJD|Kind=1|Alternate
 Variation58=Designator=R24|UniqueId=\FYQSFHEG\IOVQKARY\HGUCYFFL|Kind=1|AlternatePart= 
 Variation59=Designator=C18|UniqueId=\FYQSFHEG\IOVQKARY\LZGUBYJD|Kind=1|AlternatePart= 
 Variation60=Designator=R39|UniqueId=\FYQSFHEG\CIIJGTKZ\HGUCYFFL|Kind=1|AlternatePart= 
-Variation61=Designator=U8|UniqueId=\FYQSFHEG\TKEMSLII\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation61=Designator=U8|UniqueId=\FYQSFHEG\TKEMSLII\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation1=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator1=U8
 ParamVariation2=ParameterName=Component Kind|VariantValue=Standard
@@ -3067,7 +3066,7 @@ ParamVariation19=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator19=U8
 ParamVariation20=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator20=U8
-Variation62=Designator=U15|UniqueId=\FYQSFHEG\ABAPEJJD\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation62=Designator=U15|UniqueId=\FYQSFHEG\ABAPEJJD\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation21=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator21=U15
 ParamVariation22=ParameterName=Component Kind|VariantValue=Standard
@@ -3108,7 +3107,7 @@ ParamVariation39=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator39=U15
 ParamVariation40=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator40=U15
-Variation63=Designator=U16|UniqueId=\FYQSFHEG\KRUXYDTE\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation63=Designator=U16|UniqueId=\FYQSFHEG\KRUXYDTE\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation41=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator41=U16
 ParamVariation42=ParameterName=Component Kind|VariantValue=Standard
@@ -3149,7 +3148,7 @@ ParamVariation59=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator59=U16
 ParamVariation60=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator60=U16
-Variation64=Designator=U17|UniqueId=\FYQSFHEG\MMTKBMXE\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation64=Designator=U17|UniqueId=\FYQSFHEG\MMTKBMXE\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation61=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator61=U17
 ParamVariation62=ParameterName=Component Kind|VariantValue=Standard
@@ -3190,7 +3189,7 @@ ParamVariation79=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator79=U17
 ParamVariation80=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator80=U17
-Variation65=Designator=U18|UniqueId=\FYQSFHEG\PXXVBESD\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation65=Designator=U18|UniqueId=\FYQSFHEG\PXXVBESD\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation81=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator81=U18
 ParamVariation82=ParameterName=Component Kind|VariantValue=Standard
@@ -3231,7 +3230,7 @@ ParamVariation99=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator99=U18
 ParamVariation100=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator100=U18
-Variation66=Designator=U19|UniqueId=\FYQSFHEG\MGKTSPAI\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation66=Designator=U19|UniqueId=\FYQSFHEG\MGKTSPAI\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation101=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator101=U19
 ParamVariation102=ParameterName=Component Kind|VariantValue=Standard
@@ -3272,7 +3271,7 @@ ParamVariation119=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator119=U19
 ParamVariation120=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator120=U19
-Variation67=Designator=U20|UniqueId=\FYQSFHEG\JWAILDQK\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation67=Designator=U20|UniqueId=\FYQSFHEG\JWAILDQK\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation121=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator121=U20
 ParamVariation122=ParameterName=Component Kind|VariantValue=Standard
@@ -3313,7 +3312,7 @@ ParamVariation139=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator139=U20
 ParamVariation140=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator140=U20
-Variation68=Designator=U21|UniqueId=\FYQSFHEG\HSICOQDH\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation68=Designator=U21|UniqueId=\FYQSFHEG\HSICOQDH\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation141=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator141=U21
 ParamVariation142=ParameterName=Component Kind|VariantValue=Standard
@@ -3354,7 +3353,7 @@ ParamVariation159=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator159=U21
 ParamVariation160=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator160=U21
-Variation69=Designator=U22|UniqueId=\FYQSFHEG\EPUNFBGK\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation69=Designator=U22|UniqueId=\FYQSFHEG\EPUNFBGK\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation161=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator161=U22
 ParamVariation162=ParameterName=Component Kind|VariantValue=Standard
@@ -3395,7 +3394,7 @@ ParamVariation179=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator179=U22
 ParamVariation180=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator180=U22
-Variation70=Designator=U23|UniqueId=\FYQSFHEG\AROKUIPJ\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation70=Designator=U23|UniqueId=\FYQSFHEG\AROKUIPJ\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation181=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator181=U23
 ParamVariation182=ParameterName=Component Kind|VariantValue=Standard
@@ -3436,7 +3435,7 @@ ParamVariation199=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator199=U23
 ParamVariation200=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator200=U23
-Variation71=Designator=U24|UniqueId=\FYQSFHEG\IKDVEBSM\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation71=Designator=U24|UniqueId=\FYQSFHEG\IKDVEBSM\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation201=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator201=U24
 ParamVariation202=ParameterName=Component Kind|VariantValue=Standard
@@ -3477,7 +3476,7 @@ ParamVariation219=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator219=U24
 ParamVariation220=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator220=U24
-Variation72=Designator=U25|UniqueId=\FYQSFHEG\ZWYOLWGR\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation72=Designator=U25|UniqueId=\FYQSFHEG\ZWYOLWGR\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation221=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator221=U25
 ParamVariation222=ParameterName=Component Kind|VariantValue=Standard
@@ -3518,7 +3517,7 @@ ParamVariation239=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator239=U25
 ParamVariation240=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator240=U25
-Variation73=Designator=U26|UniqueId=\FYQSFHEG\UIVROOYL\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation73=Designator=U26|UniqueId=\FYQSFHEG\UIVROOYL\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation241=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator241=U26
 ParamVariation242=ParameterName=Component Kind|VariantValue=Standard
@@ -3559,7 +3558,7 @@ ParamVariation259=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator259=U26
 ParamVariation260=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator260=U26
-Variation74=Designator=U27|UniqueId=\FYQSFHEG\ITCNZRDD\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation74=Designator=U27|UniqueId=\FYQSFHEG\ITCNZRDD\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation261=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator261=U27
 ParamVariation262=ParameterName=Component Kind|VariantValue=Standard
@@ -3600,7 +3599,7 @@ ParamVariation279=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator279=U27
 ParamVariation280=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator280=U27
-Variation75=Designator=U9|UniqueId=\FYQSFHEG\IOVQKARY\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation75=Designator=U9|UniqueId=\FYQSFHEG\IOVQKARY\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation281=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator281=U9
 ParamVariation282=ParameterName=Component Kind|VariantValue=Standard
@@ -3641,7 +3640,7 @@ ParamVariation299=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator299=U9
 ParamVariation300=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator300=U9
-Variation76=Designator=U10|UniqueId=\FYQSFHEG\XLENUFJX\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation76=Designator=U10|UniqueId=\FYQSFHEG\XLENUFJX\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation301=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator301=U10
 ParamVariation302=ParameterName=Component Kind|VariantValue=Standard
@@ -3682,7 +3681,7 @@ ParamVariation319=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator319=U10
 ParamVariation320=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator320=U10
-Variation77=Designator=U11|UniqueId=\FYQSFHEG\XLXDOQCU\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation77=Designator=U11|UniqueId=\FYQSFHEG\XLXDOQCU\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation321=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator321=U11
 ParamVariation322=ParameterName=Component Kind|VariantValue=Standard
@@ -3723,7 +3722,7 @@ ParamVariation339=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator339=U11
 ParamVariation340=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator340=U11
-Variation78=Designator=U12|UniqueId=\FYQSFHEG\MZBUBEAV\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation78=Designator=U12|UniqueId=\FYQSFHEG\MZBUBEAV\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation341=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator341=U12
 ParamVariation342=ParameterName=Component Kind|VariantValue=Standard
@@ -3764,7 +3763,7 @@ ParamVariation359=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator359=U12
 ParamVariation360=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator360=U12
-Variation79=Designator=U13|UniqueId=\FYQSFHEG\UBYVCMAG\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation79=Designator=U13|UniqueId=\FYQSFHEG\UBYVCMAG\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation361=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator361=U13
 ParamVariation362=ParameterName=Component Kind|VariantValue=Standard
@@ -3805,7 +3804,7 @@ ParamVariation379=ParameterName=Supplier 3|VariantValue=LCSC
 ParamDesignator379=U13
 ParamVariation380=ParameterName=Supplier Part Number 3|VariantValue=C160214
 ParamDesignator380=U13
-Variation80=Designator=U14|UniqueId=\FYQSFHEG\CIIJGTKZ\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=False
+Variation80=Designator=U14|UniqueId=\FYQSFHEG\CIIJGTKZ\MIVTIEMA|Kind=2|AlternatePart=WS2813E|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Daten\Daniel\ele\daniw_altium_lib\daniw_altium_lib.DbLib/Integrated$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=WS2813E|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=daniw_altium_lib.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=Integrated$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=LEDM5050X165-6-SE|AltLibLink_IsSameFootprint=True
 ParamVariation381=ParameterName=Comment|VariantValue=WS2813E
 ParamDesignator381=U14
 ParamVariation382=ParameterName=Component Kind|VariantValue=Standard
