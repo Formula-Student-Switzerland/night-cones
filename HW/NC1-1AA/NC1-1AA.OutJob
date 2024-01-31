@@ -17,11 +17,11 @@ RevisionNamingSchemeGUID=
 [OutputGroup1]
 Name=NC1-1AA.OutJob
 Description=
-TargetOutputMedium=11 - PCB Manufacturing
+TargetOutputMedium=42 - PCB Assembly
 VariantName=WS2813E
 VariantScope=1
 CurrentConfigurationName=
-TargetPrinter=\\SCHSPR02\SCHPAB3_ENTWICKLUNG
+TargetPrinter=ETL_H15_HP
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 OutputMedium1=Print Job
 OutputMedium1_Type=Printer
@@ -106,7 +106,7 @@ OutputEnabled4=0
 OutputEnabled4_OutputMedium1=0
 OutputEnabled4_OutputMedium2=0
 OutputEnabled4_OutputMedium3=0
-OutputEnabled4_OutputMedium4=1
+OutputEnabled4_OutputMedium4=0
 OutputEnabled4_OutputMedium5=0
 OutputDefault4=0
 PageOptions4=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
@@ -273,7 +273,7 @@ OutputName8=Gerber Files
 OutputCategory8=Fabrication
 OutputDocumentPath8=NC1-1A-PANEL.PcbDoc
 OutputVariantName8=
-OutputEnabled8=1
+OutputEnabled8=0
 OutputEnabled8_OutputMedium1=0
 OutputEnabled8_OutputMedium2=1
 OutputEnabled8_OutputMedium3=0
@@ -287,7 +287,7 @@ OutputName9=NC Drill Files
 OutputCategory9=Fabrication
 OutputDocumentPath9=NC1-1A-PANEL.PcbDoc
 OutputVariantName9=
-OutputEnabled9=1
+OutputEnabled9=0
 OutputEnabled9_OutputMedium1=0
 OutputEnabled9_OutputMedium2=2
 OutputEnabled9_OutputMedium3=0
@@ -305,7 +305,7 @@ OutputEnabled10=0
 OutputEnabled10_OutputMedium1=0
 OutputEnabled10_OutputMedium2=0
 OutputEnabled10_OutputMedium3=0
-OutputEnabled10_OutputMedium4=2
+OutputEnabled10_OutputMedium4=0
 OutputEnabled10_OutputMedium5=0
 OutputDefault10=0
 PageOptions10=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
@@ -330,15 +330,15 @@ OutputName11=PIK
 OutputCategory11=Assembly
 OutputDocumentPath11=NC1-1A-PANEL.PcbDoc
 OutputVariantName11=
-OutputEnabled11=0
+OutputEnabled11=1
 OutputEnabled11_OutputMedium1=0
 OutputEnabled11_OutputMedium2=0
 OutputEnabled11_OutputMedium3=0
-OutputEnabled11_OutputMedium4=3
+OutputEnabled11_OutputMedium4=1
 OutputEnabled11_OutputMedium5=0
 OutputDefault11=0
 Configuration11_Name1=OutputConfigurationParameter1
-Configuration11_Item1=Record=PickPlaceView|Units=Metric|GenerateCSVFormat=True|GenerateTextFormat=False|ShowUnits=False|Separator=.|ExcludeFilterParam=False|IncludeVariations=False|IncludeStandardNoBOM=False|Filter= |FilterActive=False|YFlip=False|DifferentFootprints=False|Column#1=Name:Designator,Fixed:True,Metric:False,Visible:True,Sort:Ascending,SortIndex:0,Position:0|Column#2=Name:Comment,Fixed:True,Metric:False,Visible:True,Sort:None,Position:1|Column#3=Name:Layer,Fixed:True,Metric:False,Visible:True,Sort:None,Position:2|Column#4=Name:Footprint,Fixed:True,Metric:False,Visible:True,Sort:None,Position:3|Column#5=Name:Footprint Description,Fixed:True,Metric:False,Visible:False,Sort:None,Position:4|Column#6=Name:Center-X,Fixed:True,Metric:True,Visible:True,Sort:None,Position:5|Column#7=Name:Center-Y,Fixed:True,Metric:True,Visible:True,Sort:None,Position:6|Column#8=Name:Rotation,Fixed:True,Metric:False,Visible:True,Sort:None,Position:7|Column#9=Name:Description,Fixed:True,Metric:False,Visible:True,Sort:None,Position:8|Column#10=Name:ComponentKind,Fixed:True,Metric:False,Visible:False,Sort:None,Position:9|Column#11=Name:Height,Fixed:True,Metric:True,Visible:False,Sort:None,Position:10|Column#12=Name:Ref-X,Fixed:True,Metric:True,Visible:False,Sort:None,Position:11|Column#13=Name:Ref-Y,Fixed:True,Metric:True,Visible:False,Sort:None,Position:12|Column#14=Name:Pad-X,Fixed:True,Metric:True,Visible:False,Sort:None,Position:13|Column#15=Name:Pad-Y,Fixed:True,Metric:True,Visible:False,Sort:None,Position:14|Column#16=Name:Variation,Fixed:True,Metric:False,Visible:False,Sort:None,Position:15|Column#17=Name:Supplier Part Number 2,Fixed:False,Metric:False,Visible:False,Sort:None,Position:32,Type:0|Column#18=Name:JLC Type,Fixed:False,Metric:False,Visible:False,Sort:None,Position:18,Type:0|Column#19=Name:Manufacturer 3,Fixed:False,Metric:False,Visible:False,Sort:None,Position:22,Type:0|Column#20=Name:Supplier Part Number 1,Fixed:False,Metric:False,Visible:False,Sort:None,Position:31,Type:0|Column#21=Name:Manufacturer Part Number 2,Fixed:False,Metric:False,Visible:False,Sort:None,Position:24,Type:0|Column#22=Name:Manufacturer,Fixed:False,Metric:False,Visible:False,Sort:None,Position:19,Type:0|Column#23=Name:Package,Fixed:False,Metric:False,Visible:False,Sort:None,Position:26,Type:0|Column#24=Name:Value,Fixed:False,Metric:False,Visible:False,Sort:None,Position:34,Type:0|Column#25=Name:HelpURL,Fixed:False,Metric:False,Visible:False,Sort:None,Position:17,Type:0|Column#26=Name:Supplier 2,Fixed:False,Metric:False,Visible:False,Sort:None,Position:29,Type:0|Column#27=Name:Manufacturer 2,Fixed:False,Metric:False,Visible:False,Sort:None,Position:21,Type:0|Column#28=Name:Manufacturer Part Number 1,Fixed:False,Metric:False,Visible:False,Sort:None,Position:23,Type:0|Column#29=Name:Manufacturer Part Number 3,Fixed:False,Metric:False,Visible:False,Sort:None,Position:25,Type:0|Column#30=Name:Manufacturer 1,Fixed:False,Metric:False,Visible:False,Sort:None,Position:20,Type:0|Column#31=Name:Part Number,Fixed:False,Metric:False,Visible:False,Sort:None,Position:27,Type:0|Column#32=Name:Supplier 3,Fixed:False,Metric:False,Visible:False,Sort:None,Position:30,Type:0|Column#33=Name:Supplier Part Number 3,Fixed:False,Metric:False,Visible:False,Sort:None,Position:33,Type:0|Column#34=Name:Absolute Value,Fixed:False,Metric:False,Visible:False,Sort:None,Position:16,Type:0|Column#35=Name:Supplier 1,Fixed:False,Metric:False,Visible:False,Sort:None,Position:28,Type:0|DocumentPath=C:\Daten\Daniel\fsch\night-cones\HW\NC1-1AA\PCB\NC1-1A-PANEL.PcbDoc
+Configuration11_Item1=Record=PickPlaceView|Units=Metric|GenerateCSVFormat=True|GenerateTextFormat=False|ShowUnits=False|Separator=.|ExcludeFilterParam=False|IncludeVariations=False|IncludeStandardNoBOM=False|Filter= |FilterActive=False|YFlip=False|Column#1=Name:Designator,Fixed:True,Metric:False,Visible:True,Sort:Ascending,SortIndex:0,Position:0|Column#2=Name:Comment,Fixed:True,Metric:False,Visible:True,Sort:None,Position:1|Column#3=Name:Layer,Fixed:True,Metric:False,Visible:True,Sort:None,Position:2|Column#4=Name:Footprint,Fixed:True,Metric:False,Visible:True,Sort:None,Position:3|Column#5=Name:Footprint Description,Fixed:True,Metric:False,Visible:False,Sort:None,Position:4|Column#6=Name:Center-X,Fixed:True,Metric:True,Visible:False,Sort:None,Position:5|Column#7=Name:Center-Y,Fixed:True,Metric:True,Visible:False,Sort:None,Position:6|Column#8=Name:Rotation,Fixed:True,Metric:False,Visible:True,Sort:None,Position:7|Column#9=Name:Description,Fixed:True,Metric:False,Visible:True,Sort:None,Position:8|Column#10=Name:ComponentKind,Fixed:True,Metric:False,Visible:False,Sort:None,Position:9|Column#11=Name:Height,Fixed:True,Metric:True,Visible:False,Sort:None,Position:10|Column#12=Name:Ref-X,Fixed:True,Metric:True,Visible:True,Sort:None,Position:11|Column#13=Name:Ref-Y,Fixed:True,Metric:True,Visible:True,Sort:None,Position:12|Column#14=Name:Pad-X,Fixed:True,Metric:True,Visible:False,Sort:None,Position:13|Column#15=Name:Pad-Y,Fixed:True,Metric:True,Visible:False,Sort:None,Position:14|Column#16=Name:Variation,Fixed:True,Metric:False,Visible:False,Sort:None,Position:15|Column#17=Name:Supplier Part Number 2,Fixed:False,Metric:False,Visible:False,Sort:None,Position:32|Column#18=Name:JLC Type,Fixed:False,Metric:False,Visible:False,Sort:None,Position:18|Column#19=Name:Manufacturer 3,Fixed:False,Metric:False,Visible:False,Sort:None,Position:22|Column#20=Name:Supplier Part Number 1,Fixed:False,Metric:False,Visible:False,Sort:None,Position:31|Column#21=Name:Manufacturer Part Number 2,Fixed:False,Metric:False,Visible:False,Sort:None,Position:24|Column#22=Name:Manufacturer,Fixed:False,Metric:False,Visible:False,Sort:None,Position:19|Column#23=Name:Package,Fixed:False,Metric:False,Visible:False,Sort:None,Position:26|Column#24=Name:Value,Fixed:False,Metric:False,Visible:False,Sort:None,Position:34|Column#25=Name:HelpURL,Fixed:False,Metric:False,Visible:False,Sort:None,Position:17|Column#26=Name:Supplier 2,Fixed:False,Metric:False,Visible:False,Sort:None,Position:29|Column#27=Name:Manufacturer 2,Fixed:False,Metric:False,Visible:False,Sort:None,Position:21|Column#28=Name:Manufacturer Part Number 1,Fixed:False,Metric:False,Visible:False,Sort:None,Position:23|Column#29=Name:Manufacturer Part Number 3,Fixed:False,Metric:False,Visible:False,Sort:None,Position:25|Column#30=Name:Manufacturer 1,Fixed:False,Metric:False,Visible:False,Sort:None,Position:20|Column#31=Name:Part Number,Fixed:False,Metric:False,Visible:False,Sort:None,Position:27|Column#32=Name:Supplier 3,Fixed:False,Metric:False,Visible:False,Sort:None,Position:30|Column#33=Name:Supplier Part Number 3,Fixed:False,Metric:False,Visible:False,Sort:None,Position:33|Column#34=Name:Absolute Value,Fixed:False,Metric:False,Visible:False,Sort:None,Position:16|Column#35=Name:Supplier 1,Fixed:False,Metric:False,Visible:False,Sort:None,Position:28|DocumentPath=C:\Daten\Temp\night-cones\hw\NC1-1AA\PCB\NC1-1A-PANEL.PcbDoc
 OutputType12=PDF3D
 OutputName12=PDF3D
 OutputCategory12=Documentation
@@ -363,7 +363,7 @@ OutputEnabled13=0
 OutputEnabled13_OutputMedium1=0
 OutputEnabled13_OutputMedium2=0
 OutputEnabled13_OutputMedium3=7
-OutputEnabled13_OutputMedium4=4
+OutputEnabled13_OutputMedium4=0
 OutputEnabled13_OutputMedium5=0
 OutputDefault13=0
 PageOptions13=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
@@ -384,11 +384,11 @@ OutputName14=BOM JLC
 OutputCategory14=Report
 OutputDocumentPath14=
 OutputVariantName14=
-OutputEnabled14=0
+OutputEnabled14=1
 OutputEnabled14_OutputMedium1=0
 OutputEnabled14_OutputMedium2=0
 OutputEnabled14_OutputMedium3=8
-OutputEnabled14_OutputMedium4=5
+OutputEnabled14_OutputMedium4=2
 OutputEnabled14_OutputMedium5=0
 OutputDefault14=0
 PageOptions14=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
@@ -406,7 +406,7 @@ Configuration14_Name6=VisibleOrder_Flat
 Configuration14_Item6=Comment=120|Designator=120|Footprint=100|Supplier Part Number 3=100
 
 [PublishSettings]
-OutputFilePath2=C:\Daten\Daniel\fsch\night-cones\HW\NC1-1AA\Manufacturing\01 - PCB Manufacturing\
+OutputFilePath2=C:\Daten\Temp\night-cones\hw\NC1-1AA\Manufacturing\01 - PCB Manufacturing\
 ReleaseManaged2=0
 OutputBasePath2=Manufacturing\
 OutputPathMedia2=01 - PCB Manufacturing
@@ -446,7 +446,7 @@ ShowComponentParameters3=1
 GlobalBookmarks3=0
 PDFACompliance3=Disabled
 PDFVersion3=Default
-OutputFilePath4=C:\Daten\Daniel\fsch\night-cones\HW\NC1-1AA\Manufacturing\04 - PCB Assembly\
+OutputFilePath4=C:\Daten\Temp\night-cones\hw\NC1-1AA\Manufacturing\04 - PCB Assembly\
 ReleaseManaged4=0
 OutputBasePath4=Manufacturing\
 OutputPathMedia4=04 - PCB Assembly
@@ -474,7 +474,7 @@ OutputFileNameSpecial5=
 OpenOutput5=0
 
 [GeneratedFilesSettings]
-RelativeOutputPath2=C:\Daten\Daniel\fsch\night-cones\HW\NC1-1AA\Manufacturing\01 - PCB Manufacturing\
+RelativeOutputPath2=C:\Daten\Temp\night-cones\hw\NC1-1AA\Manufacturing\01 - PCB Manufacturing\
 OpenOutputs2=0
 AddToProject2=0
 TimestampFolder2=0
@@ -486,7 +486,7 @@ OpenIPCOutput2=0
 EnableReload2=0
 RelativeOutputPath3=C:\Daten\Daniel\fsch\night-cones\HW\night-cone-proto0\Manufacturing\04 - PCB Assembly\
 OpenOutputs3=1
-RelativeOutputPath4=C:\Daten\Daniel\fsch\night-cones\HW\NC1-1AA\Manufacturing\04 - PCB Assembly\
+RelativeOutputPath4=C:\Daten\Temp\night-cones\hw\NC1-1AA\Manufacturing\04 - PCB Assembly\
 OpenOutputs4=0
 AddToProject4=0
 TimestampFolder4=0
