@@ -3035,6 +3035,10 @@ ParamVariationCount=400
 Name=PCB_Name
 Value=NC1-14
 
+[GeneratedDocument1]
+DocumentPath=Project Outputs for NC1-1AA\Design Rule Check - NC1-1A-BASIS.html
+DItemRevisionGUID=
+
 [Parameter1]
 Name=Author
 Value=ahorat / daniw
