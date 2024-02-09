@@ -3,6 +3,43 @@
 \subsection{Overview}
 
 \subsection{Controller}
+An ESP8266 on a module is selected as microcontroller. The module is used as it already contains the matching network and either an antenna or anantenna connector. 
+The usage of an ESP32 was considered as well but finally rejected due to the higher cost. 
+
+Three options are considered for the module: ESP-01S, ESP-07S and ESP-12F. \autoref{tab_ESP_modules} lists the modules and their most important spacifications. 
+
+\begin{table}[h!]
+    \centering
+    \begin{zebratabular}{llll}
+    \rowcolor{gray} 
+    Module  & GPIO  & ADC pin   & Antenna \\
+    ESP-01S & 4     & No        & internal \\
+    ESP-07S & 11    & No        & internal \\
+    ESP-12F & 17    & No        & internal \\
+    \end{zebratabular}
+    \caption{Overview of ESP6288 modules}
+    \label{tab_ESP_modules}
+\end{table}
+
+It is possible to solder any of the modules that is listed in \autoref{tab_ESP_modules} on the PCB. The ESP-07S can be soldered on the same footprint as the ESP-12F. The ESP-01S footprint could be fitted inside the ESP-12F footprint. Special car must be taken in that case, as the ESP-07S has an exposed pad. Only the GND pin of the ESP-01S is allowed to touch the area of the exposed pad to prevent short-circuits when the EXP-07S is mounted. 
+
+The ESP module is powered from the \SI{3.3}{\volt} supply. For details about the \SI{3.3}{\volt} supply, see \autoref{sec_power_3V3}, \nameref{sec_power_3V3}. 
+
+The EN pin and the RST pin are pulled to \SI{3.3}{\volt} with a pull-up resistor each. The GPIO pinout is listed in \autoref{tab_ESP_pinout}. 
+
+\begin{table}[h!]
+    \centering
+    \begin{zebratabular}{lllll}
+    \rowcolor{gray} 
+    Signal      & ESP-01S   & ESP-07S   & ESP-12F   & Description \\
+    DATA        & GPIO0     & GPIO15    & GPIO15    & LED data \\
+    KILL        & GPIO2     & GPIO13    & GPIO13    & Turn-off command \\
+    HALL        & N/A       & GPIO14    & GPIO14    & Presence detection from hall sensor \\
+    VBAT\_MON   & N/A       & ADC       & ADC       & Battery voltage monitor \\
+    \end{zebratabular}
+    \caption{ESP module pinout}
+    \label{tab_ESP_pinout}
+\end{table}
 
 \subsection{LED}
 
@@ -17,4 +54,5 @@
 \subsection{Converter \SI{5.2}{\volt}}
 
 \subsection{Converter \SI{3.3}{\volt}}
+\label{sec_power_3V3}
 
