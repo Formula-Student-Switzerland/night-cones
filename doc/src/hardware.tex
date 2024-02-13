@@ -3,6 +3,7 @@
 \subsection{Overview}
 
 \subsection{Controller}
+\label{sec_ctrl}
 An ESP8266 on a module is selected as microcontroller. The module is used as it already contains the matching network and either an antenna or antenna connector. 
 The usage of an ESP32 was considered as well but finally rejected due to the higher cost. 
 
@@ -43,6 +44,7 @@ The EN pin and the RST pin are pulled to \SI{3.3}{\volt} with a pull-up resistor
 \end{table}
 
 \subsection{LED}
+\label{sec_LED}
 Addressable NeoPixel acp{LED} of the type WS2813 from WorldSemi are used to illuminate the cone. Four \acp{LED} are evenly distributed on the top side of the PCB to illuminate the enclosure of the NightCone. A total of 16 \acp{LED} are aligned in the shape of a circle on the bottom side. The purpose of those \acp{LED} is the illumination of the ground around the cone and the cone from above. 
 
 Each NeoPixel \ac{LED} contains a controller and three single \acp{LED} in the colors red, green and blue. The brightness of each LED can be set through an interface. On the interface a bit is represented by a pulse. The value of the bit is encoded in the pulse length. A reset command is sent by pulling the data line low for an certain time $t_{reset}$. \autoref{fig_neopixel_bit} shows the signal shape of 0s, 1s and the reset pulse. The specific timing depends on the LED type and is listed in \autoref{tab_neopixel_timing}. \cite{Worldsemi:WS2813B-B}\cite{Worldsemi:WS2813B-V5}\cite{Worldsemi:WS2813C}\cite{Worldsemi:WS2813E}
@@ -102,14 +104,19 @@ Each \ac{LED} has an internal buffered shift-register with a length of \SI{24}{\
 The advantage of the WS2813 type over the widely used WS2812 is the additional backup input. The input of each \ac{LED} is also connected to the backup input of the next \ac{LED} in the chain. This allows the chain to continue operation even when a \ac{LED} has failed completely. The chain continues to operate with up to half of the \acp{LED} failed, as long as there are no successive failed \acp{LED}. On some \ac{LED} types a separate backup output exists on pin 1. Refer to \autoref{tab_neopixel_timing} for this information. 
 
 \subsection{Failsafe}
+\label{sec_failsafe}
 
 \subsection{Charger}
+\label{sec_charger}
 
 \subsection{Battery Management System}
+\label{sec_bms}
 
 \subsection{On/Off controller}
+\label{sec_onoff}
 
 \subsection{Converter \SI{5.2}{\volt}}
+\label{sec_power_5V2}
 
 \subsection{Converter \SI{3.3}{\volt}}
 \label{sec_power_3V3}
