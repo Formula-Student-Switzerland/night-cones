@@ -51,8 +51,8 @@
     \newenvironment{zebralongtable}{\rowcolors{2}{lgray}{white}\longtable}{\endlongtable}
 
 % Requirement tables
-\newcommand{\ReqWidthOne}{1.5cm}
-\newcommand{\ReqWidthTwo}{12.0cm}
+\newcommand{\ReqWidthOne}{2.0cm}
+\newcommand{\ReqWidthTwo}{11.0cm}
 \newcommand{\ReqWidthThree}{1.5cm}
 \newcommand{\ReqWidthFour}{1.5cm}
 \newcommand{\ReqWidthFive}{8cm}
@@ -518,35 +518,4 @@
 [\thispagestyle{fancy}]
 %
 \titlespacing*{\part}{0pt}{0pt}{20pt}
-
-
-% Requirements Tabelle
-\newcommand{\requirementNumber}[4]{\begin{table}[!h]
-		\centering
-		\label{#1}
-		\begin{zebratabularx}{\textwidth}{Xccc}
-			\rowcolor{gray}
-			\textbf{#1}&\textbf{Minimum}&\textbf{Maximum}\\
-		
-			#2 & #3 & #4\\
-			&&\\[-2ex]
-		\end{zebratabularx}
-	\end{table}
-\FloatBarrier
-}
-
-\newcommand{\requirement}[2]{\begin{table}[!h]
-		\centering
-		\label{#1}
-		\begin{zebratabularx}{\textwidth}{X}
-			\rowcolor{gray}
-			\textbf{#1}\\
-			#2 \\
-			\\[-2ex]
-		\end{zebratabularx}
-	\end{table}
-\FloatBarrier
-}
-
-\newcommand{\reqref}[1]{\textbf{\hyperref[#1]{#1}}}
 
