@@ -7,18 +7,16 @@
     \ReqItem{R:Cone}{The NightCone can be mounted on top of a cone as used in formula student events. \cite{FSG:Rules_2024}}
     \ReqItem{R:Light}{The NightCone illuminates the cone underneath and its enclosure sufficient to be seen at dusk and night. The cone should be easily visible from a normal driving position and by track marshals. }
     \ReqItem{R:Power}{The NightCone is internally powered. }
-    \ReqItemMM{R:Time}{At maximum brightness the cone runs for the estimated time of a skidpad or acceleration event}{$\SI{4}{\minute}$}{N/A}
+    \ReqItemMM{R:Time}{The cone runs for the estimated time of a skidpad or acceleration event}{$\SI{4}{\hour}$}{N/A}
     \ReqItem{R:Color}{The color of the NightCone can be adjusted. }
     \ReqItem{R:Blink}{Simple light modes (eg. Blinking) can be set. }
     \ReqItem{R:Control}{A centralized control system (eg. Laptop, smartphone) is capable of controlling the NightCones. }
-    \ReqItem{R:Usability}{An untrained person is capable of using the system without introduction. }
+    \ReqItem{R:Usability}{An untrained person is capable of using the system after the initial setup is completed. }
     \ReqItem{R:Disable}{All components can be disabled by the means of an analog shut-down device. }
     \ReqItem{R:Flying}{The change in mass and center of gravity does not lead to a significant change in the flying characteristics of the cone. }
     \ReqItem{R:Charging}{When a battery is used to power the cone, the battery can be charged without opening the enclosure. }
     \end{ReqTable}
 \end{table}
-
-\todo[inline]{\ReqRef{R:Usability}: After initial setup? }
 
 \FloatBarrier
 
@@ -27,18 +25,14 @@
     \begin{ReqTable}
     \ReqHeader
     \ReqItem{R:Failsafe}{A failure of the controller leads to a defined safe-state. The safe-state must provide at least a minimum amount of illumination. }
-    \ReqItem{R:Change}{An unmotivated of the color setting must be prevented. }
+    \ReqItem{R:Change}{An unintended change of the color setting must be prevented. }
     \ReqItem{R:Short}{A short circuit of the battery or the charging port must be prevented. }
     \ReqItem{R:Current}{The NightCone must include overcurrent protected on for the battery. }
     \ReqItem{R:BMS}{The battery must be protected against deep-discharge, over-charge and over-temperature. }
-    \ReqItem{R:Rain}{The NightCone must be able to operate in rain. }
+    \ReqItem{R:Rain}{The NightCone must be able to operate in rain. The enclosure fulfills an ingress protection of at least IP54. }
     \ReqItem{R:Crash}{The components of the NightCone are protected when the cone is hit by a car. The hit cone must not pose any additional danger. The functionality of the cone can be deteriorated after the impact. }
     \ReqItem{R:Edges}{The NightCone has no additional excessively sharp edges. }
     \ReqItem{R:Mass}{The additional mass must not pose an increased danger. }
     \end{ReqTable}
 \end{table}
-
-\todo[inline]{\ReqRef{R:Change}: Is unmotivated correctly translated? }
-\todo[inline]{\ReqRef{R:Rain}: Specify ingress protection rating? (In this case IP54 or higher?) }
-\todo[inline]{\ReqRef{R:Crash}: better word than deteriorated (beeinträchtigt)? }
 
