@@ -106,11 +106,39 @@ The advantage of the WS2813 type over the widely used WS2812 is the additional b
 \subsection{Failsafe}
 \label{sec_failsafe}
 
-\subsection{Charger}
-\label{sec_charger}
+\subsection{Battery}
+\label{battery}
+The NightCone is powered by a single \ac{LiIon} battery cell. The cell is mounted in the center of the NightCone. 
+
+To design the required battery capacity, the energy consumption of each component is calculated. The efficiency $\eta_{5V2}$ and $\eta_{3V3}$ of each voltage converter is assumed to be 0.9. 
+
+The average current consumption of the ESP module is \SI{71}{\milli\ampere} at a supply voltage of \SI{3.3}{\volt}. \cite{AIThinker:ESP_12F}
+\begin{align}
+    P_{ESP} = \dfrac{V_{ESP} \cdot I_{ESP}}{\eta_{5V2} \cdot \eta_{3V3}} = \dfrac{\SI{3.3}{\volt} \cdot \SI{71}{\milli\ampere}}{0.9 \cdot 0.9} = \SI{289.3}{\milli\watt}
+\end{align}
+
+The current of a single \ac{LED} is up to \SI{16}{\milli\ampere} for all three colors. \cite{Worldsemi:WS2813E}
+\begin{align}
+    P_{LED} = \dfrac{V_{LED} \cdot I_{LED} \cdot 3 \cot n_{LED}}{\eta_{5V2}} = \dfrac{\SI{5.2}{\volt} \cdot \SI{16}{\milli\ampere} \cdot 3 \cot 20}{0.9} = \SI{5.547}{\watt}
+\end{align}
+
+As the current consumption of the failsafe circuit is assumed to be much smaller than that of the \acp{LED} it is neglected for the energy estimation. 
+
+The minimum oparation time is defined in \ReqRef{R:Time}. 
+\begin{align}
+    W = \left(P_{ESP} + P_{LED}\right) \cdot t = \left(\SI{289.3}{\milli\watt} + \SI{5.547}{\watt}\right) \cdot \SI{4}{\hour} = \SI{23.35}{\watt\hour}
+    Q = \dfrac{W}{V_{nom}} = \dfrac{\SI{23.35}{\watt\hour}}{\SI{3.6}{\volt}} = \SI{6.31}{\ampere\hour}
+\end{align}
+
+A capacity of \SI{6.31}{\ampere\hour} would require a 26650 cell. As the cone is not expected to be set to the maximum brightness for all three colors, a capacity of about \SI{5}{\ampere\hour} is expected to be sufficient. This allows the use of a 21700 cell, which reduces the cost of the battery solution. A 18650 cell could also fit in the enclosure, but would only be available with a capacity of \SI{3}{\ampere\hour}, which is assumed to be insufficient. 
+
+The cell is mounted in the center of the NightCone. The \ac{PCB} includes an opening in the center for the cell to fit through. Nickel strips are spotwelded to the cell. The strips are soldered to solder pads to connect the battery to the electronics. The positive lead is connected soldered to the top side of the \ac{PCB}, the negative lead to the bottom side. 
 
 \subsection{Battery Management System}
 \label{sec_bms}
+
+\subsection{Charger}
+\label{sec_charger}
 
 \subsection{On/Off controller}
 \label{sec_onoff}
