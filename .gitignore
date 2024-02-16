@@ -1,2 +1,13 @@
 # Ki-Cad backup files
 schematics/night-cones/night-cones-backups/
+
+# CAD
+# stl files
+*.stl
+
+# pcb cad files
+cad/pcb/
+
+# Tests
+cad/Tests/
+
