@@ -1,0 +1,153 @@
+\section{Hardware}
+
+\subsection{Overview}
+
+\subsection{Controller}
+\label{sec_ctrl}
+An ESP8266 on a module is selected as microcontroller. The module is used as it already contains the matching network and either an antenna or antenna connector. 
+The usage of an ESP32 was considered as well but finally rejected due to the higher cost. 
+
+Three options are considered for the module: ESP-01S, ESP-07S and ESP-12F. \autoref{tab_ESP_modules} lists the modules and their most important specifications. 
+
+\begin{table}[h!]
+    \centering
+    \begin{zebratabular}{llll}
+    \rowcolor{gray} 
+        Module  & GPIO  & ADC pin   & Antenna \\
+        ESP-01S & 4     & No        & internal \\
+        ESP-07S & 11    & No        & external \\
+        ESP-12F & 17    & No        & internal \\
+    \end{zebratabular}
+    \caption[Overview of ESP6288 modules]
+            {Overview of ESP6288 modules \cite{AIThinker:ESP_01S} \cite{AIThinker:ESP_07S} \cite{AIThinker:ESP_12F}}
+    \label{tab_ESP_modules}
+\end{table}
+
+It is possible to solder any of the modules that is listed in \autoref{tab_ESP_modules} on the PCB. The ESP-07S can be soldered on the same footprint as the ESP-12F. The ESP-01S footprint could be fitted inside the ESP-12F footprint. Special car must be taken in that case, as the ESP-07S has an exposed pad. Only the GND pin of the ESP-01S is allowed to touch the area of the exposed pad to prevent short-circuits when the ESP-07S is mounted. \cite{AIThinker:ESP_07S}\cite{AIThinker:ESP_12F}
+
+The ESP module is powered directly from the \SI{3.3}{\volt} supply. The design of the \SI{3.3}{\volt} supply is documented in \secref{sec_power_3V3}. 
+
+The EN pin and the RST pin are pulled to \SI{3.3}{\volt} with a pull-up resistor each. The GPIO pinout is listed in \autoref{tab_ESP_pinout}. 
+
+\begin{table}[h!]
+    \centering
+    \begin{zebratabular}{lllll}
+        \rowcolor{gray} 
+        Signal      & ESP-01S   & ESP-07S   & ESP-12F   & Description \\
+        DATA        & GPIO0     & GPIO15    & GPIO15    & LED data \\
+        KILL        & GPIO2     & GPIO13    & GPIO13    & Turn-off command \\
+        HALL        & N/A       & GPIO14    & GPIO14    & Presence detection from hall sensor \\
+        VBAT\_MON   & N/A       & ADC       & ADC       & Battery voltage monitor \\
+    \end{zebratabular}
+    \caption{ESP module pinout}
+    \label{tab_ESP_pinout}
+\end{table}
+
+\subsection{LED}
+\label{sec_LED}
+Addressable NeoPixel acp{LED} of the type WS2813 from WorldSemi are used to illuminate the cone. Four \acp{LED} are evenly distributed on the top side of the PCB to illuminate the enclosure of the NightCone. A total of 16 \acp{LED} are aligned in the shape of a circle on the bottom side. The purpose of those \acp{LED} is the illumination of the ground around the cone and the cone from above. 
+
+Each NeoPixel \ac{LED} contains a controller and three single \acp{LED} in the colors red, green and blue. The brightness of each LED can be set through an interface. On the interface a bit is represented by a pulse. The value of the bit is encoded in the pulse length. A reset command is sent by pulling the data line low for an certain time $t_{reset}$. \autoref{fig_neopixel_bit} shows the signal shape of 0s, 1s and the reset pulse. The specific timing depends on the LED type and is listed in \autoref{tab_neopixel_timing}. \cite{Worldsemi:WS2813B-B}\cite{Worldsemi:WS2813B-V5}\cite{Worldsemi:WS2813C}\cite{Worldsemi:WS2813E}
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikztimingtable}
+        0s    & 0.2L25{0.6H1.4L}0.2H\\
+        1s    & 0.2L25{1.4H0.6L}0.2H\\
+        Reset & 0.2H50L0.2H\\
+    \end{tikztimingtable}
+    \caption[NeoPixel bits, timing not representative]
+            {NeoPixel bits, timing not representative, see \autoref{tab_neopixel_timing} for exact timing}
+    \label{fig_neopixel_bit}
+\end{figure}
+
+\begin{table}[h!]
+    \centering
+    \begin{zebratabular}{lllllll}
+        \rowcolor{gray}
+        LED type    & $t_{0_H}$ [\si{\nano\second}] & $t_{0_L}$ [\si{\nano\second}] & $t_{1_H}$ [\si{\nano\second}] & $t_{1_L}$ [\si{\nano\second}] & $t_{Reset}$ [\si{\micro\second}]  & Pin 1 \\
+        WS2813B-B   & 220 \ldots 380                & 580 \ldots 1600               & 580 \ldots 1600               & 220 \ldots 420                & > 280                             & VCC   \\
+        WS2813B-V5  & 220 \ldots 380                & 580 \ldots 1000               & 580 \ldots 1600               & 580 \ldots 1000               & > 280                             & BO    \\
+        WS2813C     & 220 \ldots 380                & 580 \ldots 1600               & 580 \ldots 1600               & 220 \ldots 420                & > 280                             & VCC   \\
+        WS2813E     & 220 \ldots 380                & 580 \ldots 1600               & 580 \ldots 1600               & 220 \ldots 420                & > 280                             & NC    \\
+    \end{zebratabular}
+    \caption[LED timing overview]
+            {LED timing overview \cite{Worldsemi:WS2813B-B}\cite{Worldsemi:WS2813B-V5}\cite{Worldsemi:WS2813C}\cite{Worldsemi:WS2813E}}
+    \label{tab_neopixel_timing}
+\end{table}
+
+Each \ac{LED} has an internal buffered shift-register with a length of \SI{24}{\bit}. Every bit that is received shifts the content of the register for \todo{better word (um)} one bit. The last bit that is shifted out of the register is transmitted to the successive \ac{LED} in the chain. When a reset signal is received, the content of the shift-register is loaded into the buffer and the brightness of the three colored \acp{LED} is updated. The register definition is shown in \autoref{tab_neopixel_register}. \cite{Worldsemi:WS2813B-B}\cite{Worldsemi:WS2813B-V5}\cite{Worldsemi:WS2813C}\cite{Worldsemi:WS2813E}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+        \hline
+        Bit     & 1  & 2  & 3  & 4  & 5  & 6  & 7  & 8  \\
+        \hline
+        Data    & G7 & G6 & G5 & G4 & G3 & G2 & G1 & G0 \\
+        \hline
+        \hline
+        Bit     & 9  & 10 & 11 & 12 & 13 & 14 & 15 & 16 \\
+        \hline
+        Data    & R7 & R6 & R5 & R4 & R3 & R2 & R1 & R0 \\
+        \hline
+        \hline
+        Bit     & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 \\
+        \hline
+        Data    & B7 & B6 & B5 & B4 & B3 & B2 & B1 & B0 \\ 
+        \hline
+    \end{tabular}
+    \caption{NeoPixel register definition}
+    \label{tab_neopixel_register}
+\end{table}
+
+The advantage of the WS2813 type over the widely used WS2812 is the additional backup input. The input of each \ac{LED} is also connected to the backup input of the next \ac{LED} in the chain. This allows the chain to continue operation even when a \ac{LED} has failed completely. The chain continues to operate with up to half of the \acp{LED} failed, as long as there are no successive failed \acp{LED}. On some \ac{LED} types a separate backup output exists on pin 1. Refer to \autoref{tab_neopixel_timing} for this information. 
+
+\subsection{Failsafe}
+\label{sec_failsafe}
+
+\subsection{Battery}
+\label{battery}
+The NightCone is powered by a single \ac{LiIon} battery cell. The cell is mounted in the center of the NightCone. 
+
+To design the required battery capacity, the energy consumption of each component is calculated. The efficiency $\eta_{5V2}$ and $\eta_{3V3}$ of each voltage converter is assumed to be 0.9. 
+
+The average current consumption of the ESP module is \SI{71}{\milli\ampere} at a supply voltage of \SI{3.3}{\volt}. \cite{AIThinker:ESP_12F}
+\begin{align}
+    P_{ESP} = \dfrac{V_{ESP} \cdot I_{ESP}}{\eta_{5V2} \cdot \eta_{3V3}} = \dfrac{\SI{3.3}{\volt} \cdot \SI{71}{\milli\ampere}}{0.9 \cdot 0.9} = \SI{289.3}{\milli\watt}
+\end{align}
+
+The current of a single \ac{LED} is up to \SI{16}{\milli\ampere} for all three colors. \cite{Worldsemi:WS2813E}
+\begin{align}
+    P_{LED} = \dfrac{V_{LED} \cdot I_{LED} \cdot 3 \cot n_{LED}}{\eta_{5V2}} = \dfrac{\SI{5.2}{\volt} \cdot \SI{16}{\milli\ampere} \cdot 3 \cot 20}{0.9} = \SI{5.547}{\watt}
+\end{align}
+
+As the current consumption of the failsafe circuit is assumed to be much smaller than that of the \acp{LED} it is neglected for the energy estimation. 
+
+The minimum oparation time is defined in \ReqRef{R:Time}. 
+\begin{align}
+    W = \left(P_{ESP} + P_{LED}\right) \cdot t = \left(\SI{289.3}{\milli\watt} + \SI{5.547}{\watt}\right) \cdot \SI{4}{\hour} = \SI{23.35}{\watt\hour}
+\end{align}
+\begin{align}
+    Q = \dfrac{W}{V_{nom}} = \dfrac{\SI{23.35}{\watt\hour}}{\SI{3.6}{\volt}} = \SI{6.31}{\ampere\hour}
+\end{align}
+
+A capacity of \SI{6.31}{\ampere\hour} would require a 26650 cell. As the cone is not expected to be set to the maximum brightness for all three colors, a capacity of about \SI{5}{\ampere\hour} is expected to be sufficient. This allows the use of a 21700 cell, which reduces the cost of the battery solution. A 18650 cell could also fit in the enclosure, but would only be available with a capacity of \SI{3}{\ampere\hour}, which is assumed to be insufficient. 
+
+The cell is mounted in the center of the NightCone. The \ac{PCB} includes an opening in the center for the cell to fit through. Nickel strips are spotwelded to the cell. The strips are soldered to solder pads to connect the battery to the electronics. The positive lead is connected soldered to the top side of the \ac{PCB}, the negative lead to the bottom side. 
+
+\subsection{Battery Management System}
+\label{sec_bms}
+
+\subsection{Charger}
+\label{sec_charger}
+
+\subsection{On/Off controller}
+\label{sec_onoff}
+
+\subsection{Converter \SI{5.2}{\volt}}
+\label{sec_power_5V2}
+
+\subsection{Converter \SI{3.3}{\volt}}
+\label{sec_power_3V3}
+
