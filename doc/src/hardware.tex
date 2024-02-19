@@ -1,6 +1,10 @@
 \section{Hardware}
 
+\FloatBarrier
+
 \subsection{Overview}
+
+\FloatBarrier
 
 \subsection{Controller}
 \label{sec_ctrl}
@@ -42,6 +46,8 @@ The EN pin and the RST pin are pulled to \SI{3.3}{\volt} with a pull-up resistor
     \caption{ESP module pinout}
     \label{tab_ESP_pinout}
 \end{table}
+
+\FloatBarrier
 
 \subsection{LED}
 \label{sec_LED}
@@ -105,6 +111,37 @@ The advantage of the WS2813 type over the widely used WS2812 is the additional b
 
 \subsection{Failsafe}
 \label{sec_failsafe}
+\ReqRef{R:Failsafe} requires the \acp{LED} to illuminate in a controlled way after a controller failure. The simplest way to control the \acp{LED} is to send 1's followed by a reset pulse. This causes the \acp{LED} to light up white with the highest intensity. To ensure that all \acp{LED} turn on, the number of bits sent must be at least the number of bits per \ac{LED} multiplied by the number of \acp{LED}. A missing-pulse detector with an edge detector is used to detect a controller failure. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[page=3, scale=\schscale, trim=25 475 738 165, clip]{\schfile}
+    \caption{Levelshifter and edge detector}
+    \label{fig_failsafe_edge}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[page=3, scale=\schscale, trim=360 420 510 165, clip]{\schfile}
+    \caption{Missing-pulse detector}
+    \label{fig_failsafe_missing_pulse}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[page=3, scale=\schscale, trim=275 255 370 330, clip]{\schfile}
+    \caption{Bit-pulse generator with counter for reset generation}
+    \label{fig_failsafe_bit_counter}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[page=3, scale=\schscale, trim=700 380 100 350, clip]{\schfile}
+    \caption{Signal selector}
+    \label{fig_failsafe_mux}
+\end{figure}
+
+\FloatBarrier
 
 \subsection{Battery}
 \label{battery}
@@ -139,15 +176,67 @@ The cell is mounted in the center of the NightCone. The \ac{PCB} includes an ope
 \subsection{Battery Management System}
 \label{sec_bms}
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[page=25, scale=\schscale, trim=720 230 75 420, clip]{\schfile}
+    \caption{Battery management system}
+    \label{fig_bms}
+\end{figure}
+
+\FloatBarrier
+
 \subsection{Charger}
 \label{sec_charger}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[page=25, scale=\schscale, trim=60 485 685 135, clip]{\schfile}
+    \caption{Charging rectifier and input protection}
+    \label{fig_chg_input}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[page=25, scale=\schscale, trim=420 435 110 120, clip]{\schfile}
+    \caption{Charger}
+    \label{fig_charger}
+\end{figure}
+
+\FloatBarrier
 
 \subsection{On/Off controller}
 \label{sec_onoff}
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[page=26, scale=\schscale, trim=30 80 550 245, clip]{\schfile}
+    \caption{On/Off controller}
+    \label{fig_onoff}
+\end{figure}
+
+\FloatBarrier
+
 \subsection{Converter \SI{5.2}{\volt}}
 \label{sec_power_5V2}
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[page=26, scale=\schscale, trim=280 395 435 245, clip]{\schfile}
+    \caption{\SI{5.2}{\volt} converter}
+    \label{fig_power_5V2}
+\end{figure}
+
+\FloatBarrier
+
 \subsection{Converter \SI{3.3}{\volt}}
 \label{sec_power_3V3}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[page=26, scale=\schscale, trim=660 395 25 265, clip]{\schfile}
+    \caption{\SI{3.3}{\volt} converter}
+    \label{fig_power_3V3}
+\end{figure}
+
+\FloatBarrier
 
