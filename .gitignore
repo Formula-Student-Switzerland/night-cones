@@ -143,3 +143,9 @@ cad/pcb/
 
 # Tests
 cad/Tests/
+
+
+# Visual Studio Code
+.vscode/
+*tempCodeRunnerFile*
+*.exe
