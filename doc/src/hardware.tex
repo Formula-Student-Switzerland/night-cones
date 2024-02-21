@@ -111,7 +111,9 @@ The advantage of the WS2813 type over the widely used WS2812 is the additional b
 
 \subsection{Failsafe}
 \label{sec_failsafe}
-\ReqRef{R:Failsafe} requires the \acp{LED} to illuminate in a controlled way after a controller failure. The simplest way to control the \acp{LED} is to send 1's followed by a reset pulse. This causes the \acp{LED} to light up white with the highest intensity. To ensure that all \acp{LED} turn on, the number of bits sent must be at least the number of bits per \ac{LED} multiplied by the number of \acp{LED}. A missing-pulse detector with an edge detector is used to detect a controller failure. 
+\ReqRef{R:Failsafe} requires the \acp{LED} to illuminate in a controlled way after a controller failure. The simplest way to control the \acp{LED} is to send 1's followed by a reset pulse. This causes the \acp{LED} to light up white with the highest intensity. To ensure that all \acp{LED} turn on, the number of bits sent must be at least the number of bits per \ac{LED} multiplied by the number of \acp{LED}. A missing-pulse detector with an edge detector is used to detect a controller failure. Depending on the state of this detector, the signal from the controller or the failsafe signal is selected for the \acp{LED}. 
+
+The controller is powered with a voltage of \SI{3.3}{\volt}, which results in the same level for the output signals. The \acp{LED} are powered by the \SI{5.2}{\volt} supply and therefore expect an input signal with a similar voltage. A level-shifter converts the signal from \SI{3.3}{\volt} to \SI{5.2}{\volt} and also inverts the signal. An edge-detector avoids that a static signal triggers the missing-pulse detector. The inverter of the edge-detector is used to recondition the input signal and invert it again. The edge-detector generates a low pulse when a rising edge is detected. \autoref{fig_failsafe_edge}
 
 \begin{figure}[h!]
     \centering
@@ -120,6 +122,8 @@ The advantage of the WS2813 type over the widely used WS2812 is the additional b
     \label{fig_failsafe_edge}
 \end{figure}
 
+The missing-pulse detector is built with a XL555, which is a pin-compatible \ac{CMOS} derivate of the NE555 timer. \todo{reference to XL555 datasheet} The timing capacitor C10 is continuously charged by R13. The low pulse from the edge-detector discharges the capacitor through D10 and R20. R20 limits the current to protect the output of the edge-detector. In case D10 is not able to discharge C10 quick enough, Q4 can be added to increase the discharge current. The output of the edge-detector is also connected to the TRIG input of the timer and sets the internal flipflop when a pulse is detected. When the capacitor voltage reaches the CONT voltage, which is $\frac{2}{3}$ of the supply voltage, the flipflop of the timer is reset, which is interpreted as controller-failure. \autoref{fig_failsafe_missing_pulse}
+
 \begin{figure}[h!]
     \centering
     \includegraphics[page=3, scale=\schscale, trim=360 420 510 165, clip]{\schfile}
@@ -127,12 +131,43 @@ The advantage of the WS2813 type over the widely used WS2812 is the additional b
     \label{fig_failsafe_missing_pulse}
 \end{figure}
 
+An astable multivibrator with a XL555 generates the pulse pattern for a series of 1s. The timing requirements depends on the \ac{LED} type. \autoref{tab_neopixel_timing} shows the timing requirements for each \ac{LED} type that can be used. The formula for the timing as astable multivibrator is inaccurate in the frequency range that is used to generate the data pulse. \todo{Reference to XL555 datasheet} Therefore the component values for the oscillator were iterated on a test circuit using a TLC555 which is very similar to the XL555 that is used. The resulting values are listed in \autoref{tab_failsafe_bit_values}. The bit signal is fed into a ripple counter to count the number of bits and generate the reset pulse. \todo{Number of stages in the reset counter} \autoref{fig_failsafe_bit_counter}
+
+\begin{table}[h!]
+    \centering
+    \begin{zebratabular}{llllll}
+        \rowcolor{gray}
+        LED &
+        $t_{1_H}$ &
+        $t_{1_L}$ &
+        R17 &
+        R19 &
+        C11 \\
+        B-B, C, E &
+        \SI{1.09}{\micro\second} &
+        \SI{320}{\nano\second} &
+        \SI{1.5}{\kilo\ohm}   &
+        \SI{270}{\ohm}        &
+        \SI{470}{\nano\farad} \\
+        B-V5 &
+        \SI{1.09}{\micro\second} &
+        \SI{790}{\nano\second} &
+        \SI{910}{\ohm} &
+        \SI{1.2}{\kilo\ohm} &
+        \SI{470}{\nano\farad} \\
+    \end{zebratabular}
+    \caption{Component values for the astable multivibrator, obtained from TLC555 test circuit iteration}
+    \label{tab_failsafe_bit_values}
+\end{table}
+
 \begin{figure}[h!]
     \centering
     \includegraphics[page=3, scale=\schscale, trim=275 255 370 330, clip]{\schfile}
     \caption{Bit-pulse generator with counter for reset generation}
     \label{fig_failsafe_bit_counter}
 \end{figure}
+
+The data pulse and the reset signal are combined to the failsafe signal with an AND gate. A multiplexer (74LVC1G157) selects either the signal from the controller or the failsafe signal to send to the \acp{LED} based on the state of the missing-pulse detector. 
 
 \begin{figure}[h!]
     \centering
