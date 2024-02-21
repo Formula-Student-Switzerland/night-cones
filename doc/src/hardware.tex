@@ -275,3 +275,28 @@ The cell is mounted in the center of the NightCone. The \ac{PCB} includes an ope
 
 \FloatBarrier
 
+\subsection{Modifications from index AA to index AB}
+
+\subsubsection{Feedforward capacitor in \SI{5.2}{\volt} and \SI{3.3}{\volt} supply}
+The feedforward capacitors in the feedback networkof the two converters are not meant to be mounted. It must either be removed or a value must be selected to ensure loop stability. 
+
+\subsubsection{Charging LED color}
+To reduce the cost of the first prototypes, the color of the charging \ac{LED} was changed to green. For correct operation, it needs to be changed to red. 
+
+\subsection{Modifications from index AA to index BA}
+
+\subsubsection{Programming connector}
+A Tag-Connect interface (TC2030) should be added for programming the ESP module. If there is enough space, the footprint with legs should be used. Necessary signals are TX, RX, RESET and GIPO0. 
+
+\subsubsection{ESP-01S}
+The GPIO count of the ESP-01S is insufficient for the complete functionaility and it lacks an \ac{ADC} input. The option to mount it can therefore be removed. 
+
+\subsubsection{Memory for configuration data}
+To reduce the number of write cycles on the flash memory of the ESP8266, an additional nonvolatile memory should be added to store configuration data. It needs to be able to endure frequent write operation. From a first analysis, an \ac{I2C} \ac{EEPROM} would be ideal. 
+
+\subsubsection{GPIO}
+Due to the addition of an \ac{I2C} \ac{EEPROM}, the \ac{GPIO} pins need to be rearranged, as on index A, the signal from the hall sensor is connected to GPIO14, which is used as SCL. 
+
+\subsubsection{HW ID}
+A hardware ID should be implemented to indicate different hardware revisions to the software. This can be implemented by connecting GPIO pins or by changing the I2C address of the EEPROM. No additional HW should be implemented for the HW ID. 
+
