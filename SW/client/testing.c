@@ -1,6 +1,7 @@
 #include<stdio.h>
 
 void decodeColors (int color, int brightness, int *decoded);
+void displayLeds (int *leds, int *colors);
 
 
 int main() {
@@ -15,8 +16,6 @@ int main() {
 	printf("%d\n", decoded[0]);
 	printf("%d\n", decoded[1]);
 	printf("%d\n", decoded[2]);
-
-
 
 
 	return 0;
@@ -89,5 +88,12 @@ void decodeColors (int color, int brightness, int *decoded) {
 	decoded[0] = red_scaled;
 	decoded[1] = green_scaled;
 	decoded[2] = blue_scaled;
+
+}
+
+void displayLeds(int *leds, int *colors) {
+	
+
+
 
 }
