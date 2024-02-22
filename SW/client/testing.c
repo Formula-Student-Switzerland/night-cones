@@ -1,11 +1,15 @@
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
 
 void decodeColors (int color, int brightness, int *decoded);
-void displayLeds (int *leds, int *colors);
+int displayLeds(int *leds, int *colors);
 
 
 int main() {
+	int lastLen = 0;
+	int leds[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+
 	// Define debug settings.
 	int color = 130;
 	int brightness = 50;
@@ -14,10 +18,17 @@ int main() {
 	int decoded[3];
 	decodeColors(color, brightness, decoded);
 
-	printf("%d\n", decoded[0]);
-	printf("%d\n", decoded[1]);
-	printf("%d\n", decoded[2]);
+	// Show led representation.
+	while (1) {
+		
+		displayLeds(leds, decoded);
+		sleep(1);
+		leds[0] = 0;
+		displayLeds(leds, decoded);
+		sleep(1);
+		leds[0] = 1;
 
+	}
 
 	return 0;
 }
@@ -67,9 +78,12 @@ void decodeColors (int color, int brightness, int *decoded) {
     	blue = 0;
   	}
 
+/*
 	printf("%f\n", red);
 	printf("%f\n", green);
 	printf("%f\n", blue);
+*/
+
 
   	// Scale colors with brightness.
   	if (red >= green && red >= blue) {
@@ -109,32 +123,39 @@ X       X
 X X   X X
 X X X X X
 */
-int displayLeds(int *leds, int *colors, int lastLen) {
+int displayLeds(int *leds, int *colors) {
 	char displayStr[100];
 	char illumChar[21];
 	int stringLen;
 
+	// Delete the last conlose content.
+	printf("\033[H\033[J");
+
 	// Set array for LED on strings.
 	for (int k=0; k<20; k++) {
 		if (leds[k] == 1) {
-			illumChar[k] = "X";
+			illumChar[k] = 'X';
 		} else {
-			illumChar[k] = " ";
+			illumChar[k] = ' ';
 		}
 	}
-	illumChar[20] = "\0"
+	illumChar[20] = '\0';
 
 	// Add color header.
-	displayStr = sprintf("R: %03d\nG: %03d\nB: %03d\n\n", colors[0], colors[1], colors[2]);
+	sprintf(displayStr, "R: %03d\nG: %03d\nB: %03d\n\n", colors[0], colors[1], colors[2]);
 
 	// Add led representation.
-	strcat(displayStr, sprintf("%c %c %c %c %c\n\n", illumChar[2], illumChar[3], illumChar[4], illumChar[5], illumChar[6]))
-	strcat(displayStr, sprintf("%c %c   %c %c\n\n", illumChar[1], illumChar[16], illumChar[17], illumChar[7]))
-	strcat(displayStr, sprintf("%c       %c\n\n", illumChar[0], illumChar[8]))
-	strcat(displayStr, sprintf("%c %c   %c %c\n\n", illumChar[15], illumChar[19], illumChar[18], illumChar[9]))
-	strcat(displayStr, sprintf("%c %c %c %c %c", illumChar[14], illumChar[13], illumChar[12], illumChar[11], illumChar[10]))
+	sprintf(displayStr, "%s%c %c %c %c %c\n", displayStr, illumChar[2], illumChar[3], illumChar[4], illumChar[5], illumChar[6]);
+	sprintf(displayStr, "%s%c %c   %c %c\n", displayStr, illumChar[1], illumChar[16], illumChar[17], illumChar[7]);
+	sprintf(displayStr, "%s%c       %c\n", displayStr, illumChar[0], illumChar[8]);
+	sprintf(displayStr, "%s%c %c   %c %c\n", displayStr, illumChar[15], illumChar[19], illumChar[18], illumChar[9]);
+	sprintf(displayStr, "%s%c %c %c %c %c", displayStr, illumChar[14], illumChar[13], illumChar[12], illumChar[11], illumChar[10]);
 
 	// Calculate display string length.
-	stringLen = sizeof(displayStr) / sizeof(displayStr[0])
+	stringLen = sizeof(displayStr) / sizeof(displayStr[0]);
+
+	printf(displayStr);
+
+	return 0;
 
 }
