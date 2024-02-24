@@ -191,7 +191,7 @@ The average current consumption of the ESP module is \SI{71}{\milli\ampere} at a
 
 The current of a single \ac{LED} is up to \SI{16}{\milli\ampere} for all three colors. \cite{Worldsemi:WS2813E}
 \begin{align}
-    P_{LED} = \dfrac{V_{LED} \cdot I_{LED} \cdot 3 \cot n_{LED}}{\eta_{5V2}} = \dfrac{\SI{5.2}{\volt} \cdot \SI{16}{\milli\ampere} \cdot 3 \cot 20}{0.9} = \SI{5.547}{\watt}
+    P_{LED} = \dfrac{V_{LED} \cdot I_{LED} \cdot 3 \cdot n_{LED}}{\eta_{5V2}} = \dfrac{\SI{5.2}{\volt} \cdot \SI{16}{\milli\ampere} \cdot 3 \cdot 20}{0.9} = \SI{5.547}{\watt}
 \end{align}
 
 As the current consumption of the failsafe circuit is assumed to be much smaller than that of the \acp{LED} it is neglected for the energy estimation. 
@@ -210,6 +210,23 @@ The cell is mounted in the center of the NightCone. The \ac{PCB} includes an ope
 
 \subsection{Battery Management System}
 \label{sec_bms}
+The battery management system is pretty simple using a two IC solution. The used DW01A \cite{Puolop:DW01A} is a low cost \ac{LiIon} protection IC. It protects the battery from the following issues: 
+\begin{itemize}
+	\item Overvoltage at $\SI[separate-uncertainty=true,multi-part-units=single]{4.3(0.05)}{\V}$  after $\qtyrange{110}{200}{\ms}$
+	\item Undervoltage at $\SI[separate-uncertainty=true,multi-part-units=single]{2.50(0.10)}{\V}$after $\qtyrange{55}{200}{\ms}$
+	\item Overcurrent
+\end{itemize}
+This covers requirement \ReqRef{R:Current} and partially \ReqRef{R:BMS}. The overtemperature protection is done in the charger and therefore only available during charging. 
+
+The overcurrent protection is realized using the voltage drop over the two AO3400A \ref{AOSMD:AO3400A}. The DW01A IC features two types of over current protection. 
+
+The fast over current protection triggers at nominal $\SI{1.36}{\V}$ with a blanking time of $\qtyrange{400}{600}{\ms}$. This leads to the following thresholds: 
+\begin{align}
+	I_\mathrm{SC;fast,min} &= \frac{V_\mathrm{SC,fast,min}}{2\cdot R_\mathrm{AO3400A,max}}=\frac{\SI{0.82}{\V}}{2\cdot\SI{48}{\milli\ohm}}=\SI{8.5}{\A}\\
+		I_\mathrm{SC;fast,typ} &= \frac{V_\mathrm{SC,fast,typ}}{2\cdot R_\mathrm{AO3400A,typ}}=\frac{\SI{1.36}{\V}}{2\cdot\SI{24}{\milli\ohm}}=\SI{28.3}{\A}\\
+		I_\mathrm{SC;fast,max} &= \frac{V_\mathrm{SC,fast,max}}{2\cdot R_\mathrm{AO3400A,typ}}=\frac{\SI{1.75}{\V}}{2\cdot\SI{24}{\milli\ohm}}=\SI{36.5}{\A}\\
+\end{align}
+
 
 \begin{figure}[h!]
     \centering
@@ -218,10 +235,35 @@ The cell is mounted in the center of the NightCone. The \ac{PCB} includes an ope
     \label{fig_bms}
 \end{figure}
 
+The slow over current protection triggers at nominal $\SI{150(20)}{\milli\V}$ after a blanking time of $\qtyrange{7}{20}{\ms}$. This leads to the following values: 
+\begin{align}
+	I_\mathrm{SC;slow,min} &= \frac{V_\mathrm{SC,slow,min}}{2\cdot R_\mathrm{AO3400A,max}}=\frac{\SI{130}{\milli\V}}{2\cdot\SI{48}{\milli\ohm}}=\SI{1.4}{\A}\\
+		I_\mathrm{SC;slow,typ} &= \frac{V_\mathrm{SC,slow,typ}}{2\cdot R_\mathrm{AO3400A,typ}}=\frac{\SI{150}{\milli\V}}{2\cdot\SI{24}{\milli\ohm}}=\SI{3.1}{\A}\\
+		I_\mathrm{SC;slow,max} &= \frac{V_\mathrm{SC,slow,max}}{2\cdot R_\mathrm{AO3400A,typ}}=\frac{\SI{170}{\milli\V}}{2\cdot\SI{24}{\milli\ohm}}=\SI{3.5}{\A}\\
+\end{align}
+
+If the maximum current is $I_max=\frac{P_\mathrm{ESP}+P_\mathrm{LED}}{V_\mathrm{bat,min}}=\frac{\SI{289.3}{\milli\W} + \SI{5.547}{\W}}{\SI{2.5}{\V}}=\SI{2.33}{\A}$, the current threshold is exceeded, if the resistance of both MOSFETS is at the maximum value. This must be extensively tested. 
+
+The resettable fuse acts as a last resort, if the DW01A is malfunctioning.
+
 \FloatBarrier
 
 \subsection{Charger}
 \label{sec_charger}
+
+The cone can be charge by using three screws as connectors on the outside to fulfil \ReqRef{R:Charging}. The cone can be charged using two of the three circumferentially distributed screws using a voltage of $\qtyrange{5.25}{6.5}{\V}$, as it can be seen in \todo{Insert CAD Figure here}. 
+
+The $\SI{1.5}{\A}$ fuse protects the charging circuit. The six shottky rectifier diodes allow to use any pin for positive and negative supply. The two $\SI{1}{\ohm}$ resistors are used to reduce the required voltage drop inside the charging IC and to act as linear impedance for the $\SI{6.8}{\V}$ transient voltage suppression diode. The diode has a reverse stand-off voltage of $\SI{5.8}{\V}$ and a minimum breakdown voltage of $\SI{6.45}{\V}$. 
+This allows a maximum input voltage of 
+\begin{align}
+	V_\mathrm{in,max} &= V_\mathrm{R,TVS} + 2\cdot V_\mathrm{f,SS34} = \SI{5.8}{\V}+ 2\cdot \SI{0.35}{\V}=\SI{6.5}{\V}\\
+	V_\mathrm{in,min,end} &= V_\mathrm{bat,max} + V_{drop, TP4056} + 2\cdot V_{f,SS34} = \SI{4.2}{\V} + \SI{0.03}{\V} + 2\cdot \SI{0.35}{\V} = \SI{4.93}{\V}
+\end{align}
+The voltage drop on the voltage reduction resistor can be neglected for the first two cases because the maximum voltage must be followed also for the final charge phase, where the current converges to zero and the same is the case for the minimal voltage when finishing charging. 
+The voltage drop is considered in the following case for the minimum voltage at full charging current at the highest voltage:
+\begin{align}
+	V_\mathrm{in,min,charge} &= V_\mathrm{bat,charge} + V_{drop, TP4056} + 2\cdot V_{f,SS34} + R \cdot I_\mathrm{chg} = \SI{4.1}{\V} + \SI{0.03}{\V} + 2\cdot \SI{0.35}{\V} + \SI{0.5}{\ohm} * \SI{0.78}{\A} = \SI{5.22}{\V}
+\end{align}
 
 \begin{figure}[h!]
     \centering
@@ -230,12 +272,38 @@ The cell is mounted in the center of the NightCone. The \ac{PCB} includes an ope
     \label{fig_chg_input}
 \end{figure}
 
+The charging IC TP4056 \ref{MSKSEMI:TP4056} monitors the cell temperature during the charging process by evaluating the voltage drop of the used $\SI{10}{\kilo\ohm}$ \ac{NTC}. This covers the missing part of \ReqRef{R:BMS}. The voltage at the Temp pin is evaluated as ratio to the supply voltage. The operative range is $\num{0.45} \cdot \mathrm{VCC}$ to $\num{0.8} \cdot \mathrm{VCC}$. The resistor divider is designed to operate in a temperature range from $\qtyrange{5}{50}{\celsius}$. The resistors $R_5$ and $R_7$ are derived using these formulas: 
+\begin{align}
+R_7 &= \frac{R_\mathrm{th,low}\cdot R_\mathrm{th,high}}{(V_\mathrm{th,low}-1)\cdot R_\mathrm{th,high} + \left(\frac{V_\mathrm{th,low}}{V_\mathrm{th,high}}-V_\mathrm{th,low}\right)\cdot R_\mathrm{th,low}}\\
+R_5 &= R_7\cdot R_\mathrm{th,low}\cdot \frac{1-V_\mathrm{th,high}}{V_\mathrm{th,high}\cdot (R_7+R_\mathrm{th,low})}
+\end{align}
+The resulting values where then adapted to use resistors already used in other parts of the schematic, which also matched quite well. 
+
 \begin{figure}[h!]
     \centering
     \includegraphics[page=25, scale=\schscale, trim=420 435 110 120, clip]{\schfile}
     \caption{Charger}
     \label{fig_charger}
 \end{figure}
+
+The charging current is set to $\SI{780}{\mA}$ by using the $\SI{1.5}{\kilo\ohm}$ resistor. The charger has a trickle current feature that charges the battery with a low current of $\SI{130}{\milli\A}$ if the battery voltage is below $\SI{2.9}{\V}$. \\
+In the schematic, both \acp{LED} are marked as green. \ac{LED} D6 is replaced by a red \ac{LED}. The functions of the \acp{LED} are summarized in the following table
+
+\begin{table}[h!]
+    \centering
+    \begin{zebratabular}{lll}
+        \rowcolor{gray}
+        Charging State &
+        LED Green &
+        LED Red \\
+        Charging & off & on \\
+        Charging terminated & on & off\\
+        Temp error, no power or battery & off &off\\
+        No battery & on & flashing ($\qtyrange{1}{4}{\s}$)
+    \end{zebratabular}
+    \caption{Charger LED Signals}
+    \label{tab_chg_led}
+\end{table}
 
 \FloatBarrier
 
@@ -300,3 +368,5 @@ Due to the addition of an \ac{I2C} \ac{EEPROM}, the \ac{GPIO} pins need to be re
 \subsubsection{HW ID}
 A hardware ID should be implemented to indicate different hardware revisions to the software. This can be implemented by connecting GPIO pins or by changing the I2C address of the EEPROM. No additional HW should be implemented for the HW ID. 
 
+\subsection{Over-current protection}
+The over-current protection on the prototype triggers below the maximum current, because the maximum resistance of the used MOSFETs is to high. The typical value would be sufficient. The fuse $(\SI{1.5}{\A}$ is as well too low. 
