@@ -309,4 +309,7 @@ Due to the addition of an \ac{I2C} \ac{EEPROM}, the \ac{GPIO} pins need to be re
 A hardware ID should be implemented to indicate different hardware revisions to the software. This can be implemented by connecting GPIO pins or by changing the I2C address of the EEPROM. No additional HW should be implemented for the HW ID. 
 
 \subsubsection{Failsafe counter output}
-The failsafe counter only counts to 256. With a total of 480 \acp{LED}, 480 pulses are required to turn on all \acp{LED}. Therefore FS\_RESET must be connected to Q9 instead of Q8. 
+The failsafe counter only counts to 256. With a total of 20 \acp{LED}, 480 pulses are required to turn on all \acp{LED}. Therefore FS\_RESET must be connected to Q9 instead of Q8. 
+
+\subsubsection{Quiescent current}
+D11 causes about \SI{40}{\micro\ampere} of quiescent current (up to \SI{500}{\micro\ampere} according to datasheet) and is unnecessary as the body diode of Q5 is parallel. D11 can be removed. 
