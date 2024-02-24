@@ -307,13 +307,21 @@ In the schematic, both \acp{LED} are marked as green. \ac{LED} D6 is replaced by
 
 \FloatBarrier
 
-\subsection{On/Off controller}
+\subsection{On/off controller}
 \label{sec_onoff}
+
+As \ReqRef{R:Rain} requires the cone to be able to operate in rain , it must be possible to turn the NightCone on and off without opening it. To fulfill this requirement, one method to enable the NightCone and two methods to disable it are implemented. The hall sensor U30 (UHE4913) detects the presence of a magnet. When a magnet is detected, the output of the sensor is pulled low. This pulls the enable input of the boost converter U28 towards the battery voltage, which enables the converter. As the hall sensor is directly connected to the battery and therefore always powered, a sensor with a low operating current must be chosen. The selected boost converter (TPS61023) completely disconnects the output from the input when the converter is disabled. This is necessary because the output voltage of a boost converter is always at least slightly lower than the input voltage due to the body diode of the highside \ac{MOSFET}. \cite{TI:TPS61023}. \todo{Check link to TPS61023 datasheet}
+
+The controller can send a KILL signal to the on/off controller. To ensure, that a static high signal is not able to shut down the NightCone, the signal is AC coupled and rectified. To disable the NightCone, a series of pulses must be sent to the KILL signal which charges the capacitor C71. When the threshold voltage of Q10 is reached, the \SI{5.2}{\volt} converter is disables by pulling the EN signal low. 
+
+The requirement \ReqRef{R:Disable} demands an analog shutdown device. This is implemented by supervising the voltage on the charging input. When a voltage is detected, Q9 pulls the EN signal to GND, which disables the \SI{5.2}{\volt} converter. The threshold level can be adjusted by changing the voltage divider R94 and R96. This ensures that the NightCone is automatically disabled when it is connected to the charging station. 
+
+During development and debugging it is advantageous to allow the operation of the NightCone while the battery is being charged. To allow this operation mode, the signal of the hall sensor is prioritized over both turn off signals. This means, that the NightCone can not be turned off when the presence of a magnet is detected. For the schematic of the on/off controller, see \autoref{fig_onoff}. 
 
 \begin{figure}[h!]
     \centering
     \includegraphics[page=26, scale=\schscale, trim=30 80 550 245, clip]{\schfile}
-    \caption{On/Off controller}
+    \caption{On/off controller}
     \label{fig_onoff}
 \end{figure}
 
@@ -368,5 +376,16 @@ Due to the addition of an \ac{I2C} \ac{EEPROM}, the \ac{GPIO} pins need to be re
 \subsubsection{HW ID}
 A hardware ID should be implemented to indicate different hardware revisions to the software. This can be implemented by connecting GPIO pins or by changing the I2C address of the EEPROM. No additional HW should be implemented for the HW ID. 
 
+<<<<<<< HEAD
 \subsection{Over-current protection}
 The over-current protection on the prototype triggers below the maximum current, because the maximum resistance of the used MOSFETs is to high. The typical value would be sufficient. The fuse $(\SI{1.5}{\A}$ is as well too low. 
+=======
+\subsubsection{Failsafe counter output}
+The failsafe counter only counts to 256. With a total of 20 \acp{LED}, 480 pulses are required to turn on all \acp{LED}. Therefore FS\_RESET must be connected to Q9 instead of Q8. 
+
+\subsubsection{Quiescent current}
+D11 causes about \SI{40}{\micro\ampere} of quiescent current (up to \SI{500}{\micro\ampere} according to datasheet) and is unnecessary as the body diode of Q5 is parallel. D11 can be removed. 
+
+\subsubsection{Power indication LED}
+The power indication \acp{LED} are unnecessary and can be removed or set to NB. 
+>>>>>>> b1b41a1f11137c13d19abffbbc8d8eebaa29f15b

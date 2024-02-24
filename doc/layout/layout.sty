@@ -415,6 +415,26 @@
     }{}
     \makeatother        % @ wieder anderes Zeichen
 
+    % Ränder für Letter
+    \makeatletter       % @ Teil des Befehls
+    \@ifclassloaded{letter}{
+        % TODO: Define all dimensions below!!!
+        \addtolength{\textheight}{4.0cm}
+        \addtolength{\voffset}{-4.5cm}
+        \addtolength{\textwidth}{12cm}
+        \addtolength{\evensidemargin}{-60mm}
+        \addtolength{\oddsidemargin}{-60mm}
+        \addtolength{\headwidth}{0.0cm}
+        \addtolength{\headheight}{2.5cm}
+        \addtolength{\headsep}{-1cm}
+
+        % \addtolength{\textheight}{\topmargin-\evensidemargin-\hoffset+\voffset}
+        % \setlength{\topmargin}{\evensidemargin+\hoffset-\voffset}
+
+        % \addtolength{\headwidth}{1cm}
+    }{}
+    \makeatother        % @ wieder anderes Zeichen
+
     % Ränder für Bücher
     \makeatletter       % @ Teil des Befehls
     \@ifclassloaded{book}{
@@ -479,6 +499,31 @@
     }
     \makeatother        % @ wieder anderes Zeichen
 
+    % Kopf- und Fusszeile für Letter
+    \makeatletter       % @ Teil des Befehls
+    \@ifclassloaded{letter}{
+        \fancyhead[LO]{NightCones}              % Kopfeile links
+        \fancyhead[CO]{Commissioning protocol}  % zentrierte Kopfzeile
+        \fancyhead[RO]{\includegraphics[width=1.5cm]{../img/LogoFSCH-Color.pdf}} % Kopfzeile rechts
+        \fancyhead[LE]{}               % Kopfeile links
+        \fancyhead[CE]{\leftmark}  % zentrierte Kopfzeile
+        \fancyhead[RE]{}                             % Kopfzeile rechts
+        %
+        %\fancyfoot[L]{\today}                       % Fusszeile links
+        %\fancyfoot[C]{}                             % Fusszeile zentriert
+        %\fancyfoot[R]{\thepage}                     % Fusszeile rechts
+        \fancyfoot[LO]{\today}                             % Fusszeile links
+        \fancyfoot[CO]{Andreas Horat \\ Daniel Winz}                       % Fusszeile zentriert
+        \fancyfoot[RO]{\thepage}                     % Fusszeile rechts
+        \fancyfoot[LE]{}                     % Fusszeile links
+        \fancyfoot[CE]{} % Fusszeile zentriert
+        \fancyfoot[RE]{}                             % Fusszeile rechts
+        %
+        \renewcommand{\headrulewidth}{0.4pt}        % obere Trennlinie
+        \renewcommand{\footrulewidth}{0.4pt}        % untere Trennlinie
+        }{}
+    \makeatother        % @ wieder anderes Zeichen
+
     % Kopf- und Fusszeile für Bücher
     \makeatletter       % @ Teil des Befehls
     \@ifclassloaded{book}{
@@ -515,4 +560,31 @@
 [\thispagestyle{fancy}]
 %
 \titlespacing*{\part}{0pt}{0pt}{20pt}
+
+% Table for test report
+
+\newcounter{formcount}
+\newcommand{\formfieldMW}{\stepcounter{formcount}\TextField[name=\arabic{formcount}, bordercolor = black, borderstyle = U, height = 0.45cm,width=3cm]{}}
+\newcommand{\formfieldCO}{\stepcounter{formcount}\TextField[name=\arabic{formcount}, bordercolor = black, borderstyle = U, height = 0.45cm,width=8cm]{}}
+\newcommand{\formCB}[1]{\stepcounter{formcount}\CheckBox[name=\arabic{formcount}, bordercolor = #1]{}}
+
+\newcommand{\formTitle}[1]{\hline \multicolumn{5}{|c|}{\textbf{#1}} \\ \hline \hline}
+\newcommand{\formHeader}{Description & Expected Value & Measured Value & Passed & Comments \endfirsthead \hline Description & Expected Value & Measured Value & Passed & Comments \endhead \hline}
+\newcommand{\formMeasure}[2]{#1 & #2 & \formfieldMW & \formCB{black} & \formfieldCO \\ \hline}
+\newcommand{\formWork}[1]{\multicolumn{3}{|l|}{\textbf{\textcolor{darkgreen}{#1}}} &\formCB{darkgreen} &\formfieldCO \\ \hline \hline}
+\newcommand{\formCheck}[1]{\multicolumn{3}{|l|}{\textbf{#1}} &\formCB{black} &\formfieldCO \\ \hline}
+\newcommand{\formNote}[2]{\multicolumn{5}{|l|}{#1} \\* \multicolumn{5}{|l|}{#2} \\ \hline}
+\newcommand{\formNoteR}[1]{\multicolumn{5}{|l|}{#1} \\* \multicolumn{5}{|l|}{\textcolor{yellow}{\textcircled{$i$} Measure resistances expected to be OL at the highest range on the multimeter}} \\ \hline}
+\newcommand{\formNoteV}[2]{\multicolumn{5}{|l|}{#1} \\* \multicolumn{5}{|l|}{\textcolor{yellow}{\textcircled{$i$} Measure voltages with reference to #2. }} \\ \hline}
+\newcommand{\formNoteHV}[1]{\multicolumn{5}{|l|}{#1} \\ \multicolumn{5}{|l|}{\textbf{\textcolor{red}{\warning Test under high voltage}}} \\ \hline}
+
+\newenvironment{formtable}{\begin{longtable}{ |p{\ColumnWidthOne}||p{\ColumnWidthTwo}|p{\ColumnWidthThree}|p{\ColumnWidthFour}|p{\ColumnWidthFive}| }}{\end{longtable}}
+
+% Table dimensions
+\newcommand{\ColumnWidthOne}{8.4cm}
+\newcommand{\ColumnWidthTwo}{3cm}
+\newcommand{\ColumnWidthThree}{3cm}
+\newcommand{\ColumnWidthFour}{1.2cm}
+\newcommand{\ColumnWidthFive}{8cm}
+\newcommand{\ColumnWidthOneThree}{\ColumnWidthOne+\ColumnWidthTwo+\ColumnWidthThree}
 
