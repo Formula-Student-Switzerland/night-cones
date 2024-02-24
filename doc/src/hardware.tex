@@ -376,10 +376,9 @@ Due to the addition of an \ac{I2C} \ac{EEPROM}, the \ac{GPIO} pins need to be re
 \subsubsection{HW ID}
 A hardware ID should be implemented to indicate different hardware revisions to the software. This can be implemented by connecting GPIO pins or by changing the I2C address of the EEPROM. No additional HW should be implemented for the HW ID. 
 
-<<<<<<< HEAD
 \subsection{Over-current protection}
 The over-current protection on the prototype triggers below the maximum current, because the maximum resistance of the used MOSFETs is to high. The typical value would be sufficient. The fuse $(\SI{1.5}{\A}$ is as well too low. 
-=======
+
 \subsubsection{Failsafe counter output}
 The failsafe counter only counts to 256. With a total of 20 \acp{LED}, 480 pulses are required to turn on all \acp{LED}. Therefore FS\_RESET must be connected to Q9 instead of Q8. 
 
@@ -388,4 +387,6 @@ D11 causes about \SI{40}{\micro\ampere} of quiescent current (up to \SI{500}{\mi
 
 \subsubsection{Power indication LED}
 The power indication \acp{LED} are unnecessary and can be removed or set to NB. 
->>>>>>> b1b41a1f11137c13d19abffbbc8d8eebaa29f15b
+
+\subsubsection{GPIO 15 for FW upload}
+GPIO 15 must always be pulled low for Flash boot and FW upload. R16 must be replaced by a $\SI{10}{\kilo\ohm}$ for the prototype and should not be used for the next version. Move DATA signal to another pin. 
