@@ -390,3 +390,6 @@ The power indication \acp{LED} are unnecessary and can be removed or set to NB.
 
 \subsubsection{GPIO 15 for FW upload}
 GPIO 15 must always be pulled low for Flash boot and FW upload. R16 must be replaced by a $\SI{10}{\kilo\ohm}$ for the prototype and should not be used for the next version. Move DATA signal to another pin. 
+
+\subsubsection{Low time of Failsafe pulse generator}
+The low time of the failsafe pulse generator is too high. A value of \SI{532}{\nano\s} is measured. A value of \SI{320}{\nano\s} is targeted. 
