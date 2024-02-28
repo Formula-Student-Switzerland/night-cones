@@ -29,9 +29,9 @@ Three options are considered for the module: ESP-01S, ESP-07S and ESP-12F. \auto
 
 It is possible to solder any of the modules that is listed in \autoref{tab_ESP_modules} on the PCB. The ESP-07S can be soldered on the same footprint as the ESP-12F. The ESP-01S footprint could be fitted inside the ESP-12F footprint. Special car must be taken in that case, as the ESP-07S has an exposed pad. Only the GND pin of the ESP-01S is allowed to touch the area of the exposed pad to prevent short-circuits when the ESP-07S is mounted. \cite{AIThinker:ESP_07S}\cite{AIThinker:ESP_12F}
 
-The ESP module is powered directly from the \SI{3.3}{\volt} supply. The design of the \SI{3.3}{\volt} supply is documented in \secref{sec_power_3V3}. 
+The ESP module is powered directly from the \qty{3.3}{\volt} supply. The design of the \qty{3.3}{\volt} supply is documented in \secref{sec_power_3V3}. 
 
-The EN pin and the RST pin are pulled to \SI{3.3}{\volt} with a pull-up resistor each. The GPIO pinout is listed in \autoref{tab_ESP_pinout}. 
+The EN pin and the RST pin are pulled to \qty{3.3}{\volt} with a pull-up resistor each. The GPIO pinout is listed in \autoref{tab_ESP_pinout}. 
 
 \begin{table}[h!]
     \centering
@@ -82,7 +82,7 @@ Each NeoPixel \ac{LED} contains a controller and three single \acp{LED} in the c
     \label{tab_neopixel_timing}
 \end{table}
 
-Each \ac{LED} has an internal buffered shift-register with a length of \SI{24}{\bit}. Every bit that is received shifts the content of the register for \todo{better word (um)} one bit. The last bit that is shifted out of the register is transmitted to the successive \ac{LED} in the chain. When a reset signal is received, the content of the shift-register is loaded into the buffer and the brightness of the three colored \acp{LED} is updated. The register definition is shown in \autoref{tab_neopixel_register}. \cite{Worldsemi:WS2813B-B}\cite{Worldsemi:WS2813B-V5}\cite{Worldsemi:WS2813C}\cite{Worldsemi:WS2813E}
+Each \ac{LED} has an internal buffered shift-register with a length of \qty{24}{\bit}. Every bit that is received shifts the content of the register for \todo{better word (um)} one bit. The last bit that is shifted out of the register is transmitted to the successive \ac{LED} in the chain. When a reset signal is received, the content of the shift-register is loaded into the buffer and the brightness of the three colored \acp{LED} is updated. The register definition is shown in \autoref{tab_neopixel_register}. \cite{Worldsemi:WS2813B-B}\cite{Worldsemi:WS2813B-V5}\cite{Worldsemi:WS2813C}\cite{Worldsemi:WS2813E}
 
 \begin{table}[h!]
     \centering
@@ -113,7 +113,7 @@ The advantage of the WS2813 type over the widely used WS2812 is the additional b
 \label{sec_failsafe}
 \ReqRef{R:Failsafe} requires the \acp{LED} to illuminate in a controlled way after a controller failure. The simplest way to control the \acp{LED} is to send 1's followed by a reset pulse. This causes the \acp{LED} to light up white with the highest intensity. To ensure that all \acp{LED} turn on, the number of bits sent must be at least the number of bits per \ac{LED} multiplied by the number of \acp{LED}. A missing-pulse detector with an edge detector is used to detect a controller failure. Depending on the state of this detector, the signal from the controller or the failsafe signal is selected for the \acp{LED}. 
 
-The controller is powered with a voltage of \SI{3.3}{\volt}, which results in the same level for the output signals. The \acp{LED} are powered by the \SI{5.2}{\volt} supply and therefore expect an input signal with a similar voltage. A level-shifter converts the signal from \SI{3.3}{\volt} to \SI{5.2}{\volt} and also inverts the signal. An edge-detector avoids that a static signal triggers the missing-pulse detector. The inverter of the edge-detector is used to recondition the input signal and invert it again. The edge-detector generates a low pulse when a rising edge is detected. \autoref{fig_failsafe_edge}
+The controller is powered with a voltage of \qty{3.3}{\volt}, which results in the same level for the output signals. The \acp{LED} are powered by the \qty{5.2}{\volt} supply and therefore expect an input signal with a similar voltage. A level-shifter converts the signal from \qty{3.3}{\volt} to \qty{5.2}{\volt} and also inverts the signal. An edge-detector avoids that a static signal triggers the missing-pulse detector. The inverter of the edge-detector is used to recondition the input signal and invert it again. The edge-detector generates a low pulse when a rising edge is detected. \autoref{fig_failsafe_edge}
 
 \begin{figure}[h!]
     \centering
@@ -144,17 +144,17 @@ An astable multivibrator with a XL555 generates the pulse pattern for a series o
         R19 &
         C11 \\
         B-B, C, E &
-        \SI{1.09}{\micro\second} &
-        \SI{320}{\nano\second} &
-        \SI{1.5}{\kilo\ohm}   &
-        \SI{270}{\ohm}        &
-        \SI{470}{\nano\farad} \\
+        \qty{1.09}{\micro\second} &
+        \qty{320}{\nano\second} &
+        \qty{1.5}{\kilo\ohm}   &
+        \qty{270}{\ohm}        &
+        \qty{470}{\nano\farad} \\
         B-V5 &
-        \SI{1.09}{\micro\second} &
-        \SI{790}{\nano\second} &
-        \SI{910}{\ohm} &
-        \SI{1.2}{\kilo\ohm} &
-        \SI{470}{\nano\farad} \\
+        \qty{1.09}{\micro\second} &
+        \qty{790}{\nano\second} &
+        \qty{910}{\ohm} &
+        \qty{1.2}{\kilo\ohm} &
+        \qty{470}{\nano\farad} \\
     \end{zebratabular}
     \caption{Component values for the astable multivibrator, obtained from TLC555 test circuit iteration}
     \label{tab_failsafe_bit_values}
@@ -184,27 +184,27 @@ The NightCone is powered by a single \ac{LiIon} battery cell. The cell is mounte
 
 To design the required battery capacity, the energy consumption of each component is calculated. The efficiency $\eta_{5V2}$ and $\eta_{3V3}$ of each voltage converter is assumed to be 0.9. 
 
-The average current consumption of the ESP module is \SI{71}{\milli\ampere} at a supply voltage of \SI{3.3}{\volt}. \cite{AIThinker:ESP_12F}
+The average current consumption of the ESP module is \qty{71}{\milli\ampere} at a supply voltage of \qty{3.3}{\volt}. \cite{AIThinker:ESP_12F}
 \begin{align}
-    P_{ESP} = \dfrac{V_{ESP} \cdot I_{ESP}}{\eta_{5V2} \cdot \eta_{3V3}} = \dfrac{\SI{3.3}{\volt} \cdot \SI{71}{\milli\ampere}}{0.9 \cdot 0.9} = \SI{289.3}{\milli\watt}
+    P_{ESP} = \dfrac{V_{ESP} \cdot I_{ESP}}{\eta_{5V2} \cdot \eta_{3V3}} = \dfrac{\qty{3.3}{\volt} \cdot \qty{71}{\milli\ampere}}{0.9 \cdot 0.9} = \qty{289.3}{\milli\watt}
 \end{align}
 
-The current of a single \ac{LED} is up to \SI{16}{\milli\ampere} for all three colors. \cite{Worldsemi:WS2813E}
+The current of a single \ac{LED} is up to \qty{16}{\milli\ampere} for all three colors. \cite{Worldsemi:WS2813E}
 \begin{align}
-    P_{LED} = \dfrac{V_{LED} \cdot I_{LED} \cdot 3 \cdot n_{LED}}{\eta_{5V2}} = \dfrac{\SI{5.2}{\volt} \cdot \SI{16}{\milli\ampere} \cdot 3 \cdot 20}{0.9} = \SI{5.547}{\watt}
+    P_{LED} = \dfrac{V_{LED} \cdot I_{LED} \cdot 3 \cdot n_{LED}}{\eta_{5V2}} = \dfrac{\qty{5.2}{\volt} \cdot \qty{16}{\milli\ampere} \cdot 3 \cdot 20}{0.9} = \qty{5.547}{\watt}
 \end{align}
 
 As the current consumption of the failsafe circuit is assumed to be much smaller than that of the \acp{LED} it is neglected for the energy estimation. 
 
 The minimum oparation time is defined in \ReqRef{R:Time}. 
 \begin{align}
-    W = \left(P_{ESP} + P_{LED}\right) \cdot t = \left(\SI{289.3}{\milli\watt} + \SI{5.547}{\watt}\right) \cdot \SI{4}{\hour} = \SI{23.35}{\watt\hour}
+    W = \left(P_{ESP} + P_{LED}\right) \cdot t = \left(\qty{289.3}{\milli\watt} + \qty{5.547}{\watt}\right) \cdot \qty{4}{\hour} = \qty{23.35}{\watt\hour}
 \end{align}
 \begin{align}
-    Q = \dfrac{W}{V_{nom}} = \dfrac{\SI{23.35}{\watt\hour}}{\SI{3.6}{\volt}} = \SI{6.31}{\ampere\hour}
+    Q = \dfrac{W}{V_{nom}} = \dfrac{\qty{23.35}{\watt\hour}}{\qty{3.6}{\volt}} = \qty{6.31}{\ampere\hour}
 \end{align}
 
-A capacity of \SI{6.31}{\ampere\hour} would require a 26650 cell. As the cone is not expected to be set to the maximum brightness for all three colors, a capacity of about \SI{5}{\ampere\hour} is expected to be sufficient. This allows the use of a 21700 cell, which reduces the cost of the battery solution. A 18650 cell could also fit in the enclosure, but would only be available with a capacity of \SI{3}{\ampere\hour}, which is assumed to be insufficient. 
+A capacity of \qty{6.31}{\ampere\hour} would require a 26650 cell. As the cone is not expected to be set to the maximum brightness for all three colors, a capacity of about \qty{5}{\ampere\hour} is expected to be sufficient. This allows the use of a 21700 cell, which reduces the cost of the battery solution. A 18650 cell could also fit in the enclosure, but would only be available with a capacity of \qty{3}{\ampere\hour}, which is assumed to be insufficient. 
 
 The cell is mounted in the center of the NightCone. The \ac{PCB} includes an opening in the center for the cell to fit through. Nickel strips are spotwelded to the cell. The strips are soldered to solder pads to connect the battery to the electronics. The positive lead is connected soldered to the top side of the \ac{PCB}, the negative lead to the bottom side. 
 
@@ -212,19 +212,19 @@ The cell is mounted in the center of the NightCone. The \ac{PCB} includes an ope
 \label{sec_bms}
 The battery management system is pretty simple using a two IC solution. The used DW01A \cite{Puolop:DW01A} is a low cost \ac{LiIon} protection IC. It protects the battery from the following issues: 
 \begin{itemize}
-	\item Overvoltage at $\SI[separate-uncertainty=true,multi-part-units=single]{4.3(0.05)}{\V}$  after $\qtyrange{110}{200}{\ms}$
-	\item Undervoltage at $\SI[separate-uncertainty=true,multi-part-units=single]{2.50(0.10)}{\V}$after $\qtyrange{55}{200}{\ms}$
+	\item Overvoltage at $\qty{4.3(0.05)}{\V}$  after $\qtyrange{110}{200}{\ms}$
+	\item Undervoltage at $\qty{2.50(0.10)}{\V}$after $\qtyrange{55}{200}{\ms}$
 	\item Overcurrent
 \end{itemize}
 This covers requirement \ReqRef{R:Current} and partially \ReqRef{R:BMS}. The overtemperature protection is done in the charger and therefore only available during charging. 
 
 The overcurrent protection is realized using the voltage drop over the two AO3400A \cite{AOSMD:AO3400A}. The DW01A IC features two types of over current protection. 
 
-The fast over current protection triggers at nominal $\SI{1.36}{\V}$ with a blanking time of $\qtyrange{400}{600}{\ms}$. This leads to the following thresholds: 
+The fast over current protection triggers at nominal $\qty{1.36}{\V}$ with a blanking time of $\qtyrange{400}{600}{\ms}$. This leads to the following thresholds: 
 \begin{align}
-	I_\mathrm{SC;fast,min} &= \frac{V_\mathrm{SC,fast,min}}{2\cdot R_\mathrm{AO3400A,max}}=\frac{\SI{0.82}{\V}}{2\cdot\SI{48}{\milli\ohm}}=\SI{8.5}{\A}\\
-		I_\mathrm{SC;fast,typ} &= \frac{V_\mathrm{SC,fast,typ}}{2\cdot R_\mathrm{AO3400A,typ}}=\frac{\SI{1.36}{\V}}{2\cdot\SI{24}{\milli\ohm}}=\SI{28.3}{\A}\\
-		I_\mathrm{SC;fast,max} &= \frac{V_\mathrm{SC,fast,max}}{2\cdot R_\mathrm{AO3400A,typ}}=\frac{\SI{1.75}{\V}}{2\cdot\SI{24}{\milli\ohm}}=\SI{36.5}{\A}\\
+	I_\mathrm{SC;fast,min} &= \frac{V_\mathrm{SC,fast,min}}{2\cdot R_\mathrm{AO3400A,max}}=\frac{\qty{0.82}{\V}}{2\cdot\qty{48}{\milli\ohm}}=\qty{8.5}{\A}\\
+		I_\mathrm{SC;fast,typ} &= \frac{V_\mathrm{SC,fast,typ}}{2\cdot R_\mathrm{AO3400A,typ}}=\frac{\qty{1.36}{\V}}{2\cdot\qty{24}{\milli\ohm}}=\qty{28.3}{\A}\\
+		I_\mathrm{SC;fast,max} &= \frac{V_\mathrm{SC,fast,max}}{2\cdot R_\mathrm{AO3400A,typ}}=\frac{\qty{1.75}{\V}}{2\cdot\qty{24}{\milli\ohm}}=\qty{36.5}{\A}\\
 \end{align}
 
 
@@ -235,14 +235,14 @@ The fast over current protection triggers at nominal $\SI{1.36}{\V}$ with a blan
     \label{fig_bms}
 \end{figure}
 
-The slow over current protection triggers at nominal $\SI[separate-uncertainty=true,multi-part-units=single]{150(20)}{\milli\V}$ after a blanking time of $\qtyrange{7}{20}{\ms}$. This leads to the following values: 
+The slow over current protection triggers at nominal $\qty{150(20)}{\milli\V}$ after a blanking time of $\qtyrange{7}{20}{\ms}$. This leads to the following values: 
 \begin{align}
-	I_\mathrm{SC;slow,min} &= \frac{V_\mathrm{SC,slow,min}}{2\cdot R_\mathrm{AO3400A,max}}=\frac{\SI{130}{\milli\V}}{2\cdot\SI{48}{\milli\ohm}}=\SI{1.4}{\A}\\
-		I_\mathrm{SC;slow,typ} &= \frac{V_\mathrm{SC,slow,typ}}{2\cdot R_\mathrm{AO3400A,typ}}=\frac{\SI{150}{\milli\V}}{2\cdot\SI{24}{\milli\ohm}}=\SI{3.1}{\A}\\
-		I_\mathrm{SC;slow,max} &= \frac{V_\mathrm{SC,slow,max}}{2\cdot R_\mathrm{AO3400A,typ}}=\frac{\SI{170}{\milli\V}}{2\cdot\SI{24}{\milli\ohm}}=\SI{3.5}{\A}\\
+	I_\mathrm{SC;slow,min} &= \frac{V_\mathrm{SC,slow,min}}{2\cdot R_\mathrm{AO3400A,max}}=\frac{\qty{130}{\milli\V}}{2\cdot\qty{48}{\milli\ohm}}=\qty{1.4}{\A}\\
+		I_\mathrm{SC;slow,typ} &= \frac{V_\mathrm{SC,slow,typ}}{2\cdot R_\mathrm{AO3400A,typ}}=\frac{\qty{150}{\milli\V}}{2\cdot\qty{24}{\milli\ohm}}=\qty{3.1}{\A}\\
+		I_\mathrm{SC;slow,max} &= \frac{V_\mathrm{SC,slow,max}}{2\cdot R_\mathrm{AO3400A,typ}}=\frac{\qty{170}{\milli\V}}{2\cdot\qty{24}{\milli\ohm}}=\qty{3.5}{\A}\\
 \end{align}
 
-If the maximum current is $I_\mathrm{max}=\frac{P_\mathrm{ESP}+P_\mathrm{LED}}{V_\mathrm{bat,min}}=\frac{\SI{289.3}{\milli\W} + \SI{5.547}{\W}}{\SI{2.5}{\V}}=\SI{2.33}{\A}$, the current threshold is exceeded, if the resistance of both MOSFETS is at the maximum value. This must be extensively tested. 
+If the maximum current is $I_\mathrm{max}=\frac{P_\mathrm{ESP}+P_\mathrm{LED}}{V_\mathrm{bat,min}}=\frac{\qty{289.3}{\milli\W} + \qty{5.547}{\W}}{\qty{2.5}{\V}}=\qty{2.33}{\A}$, the current threshold is exceeded, if the resistance of both MOSFETS is at the maximum value. This must be extensively tested. 
 
 The resettable fuse acts as a last resort, if the DW01A is malfunctioning.
 
@@ -258,17 +258,17 @@ The cone can be charge by using three screws as connectors on the outside to ful
 	\caption{Charging pin connection}
 	\label{fig_chg_connection}
 \end{figure}
-The $\SI{1.5}{\A}$ fuse protects the charging circuit. The six shottky rectifier diodes allow to use any pin for positive and negative supply. The two $\SI{1}{\ohm}$ resistors are used to reduce the required voltage drop inside the charging IC and to act as linear impedance for the $\SI{6.8}{\V}$ transient voltage suppression diode. The diode has a reverse stand-off voltage of $\SI{5.8}{\V}$ and a minimum breakdown voltage of $\SI{6.45}{\V}$. 
+The $\qty{1.5}{\A}$ fuse protects the charging circuit. The six shottky rectifier diodes allow to use any pin for positive and negative supply. The two $\qty{1}{\ohm}$ resistors are used to reduce the required voltage drop inside the charging IC and to act as linear impedance for the $\qty{6.8}{\V}$ transient voltage suppression diode. The diode has a reverse stand-off voltage of $\qty{5.8}{\V}$ and a minimum breakdown voltage of $\qty{6.45}{\V}$. 
 This allows a maximum input voltage of 
 \begin{align}
-	V_\mathrm{in,max} &= V_\mathrm{R,TVS} + 2\cdot V_\mathrm{f,SS34} = \SI{5.8}{\V}+ 2\cdot \SI{0.35}{\V}=\SI{6.5}{\V}\\
-	V_\mathrm{in,min,end} &= V_\mathrm{bat,max} + V_{drop, TP4056} + 2\cdot V_{f,SS34} = \SI{4.2}{\V} + \SI{0.03}{\V} + 2\cdot \SI{0.35}{\V} = \SI{4.93}{\V}
+	V_\mathrm{in,max} &= V_\mathrm{R,TVS} + 2\cdot V_\mathrm{f,SS34} = \qty{5.8}{\V}+ 2\cdot \qty{0.35}{\V}=\qty{6.5}{\V}\\
+	V_\mathrm{in,min,end} &= V_\mathrm{bat,max} + V_{drop, TP4056} + 2\cdot V_{f,SS34} = \qty{4.2}{\V} + \qty{0.03}{\V} + 2\cdot \qty{0.35}{\V} = \qty{4.93}{\V}
 \end{align}
 The voltage drop on the voltage reduction resistor can be neglected for the first two cases because the maximum voltage must be followed also for the final charge phase, where the current converges to zero and the same is the case for the minimal voltage when finishing charging. 
 The voltage drop is considered in the following case for the minimum voltage at full charging current at the highest voltage:
 \begin{align}
 	V_\mathrm{in,min,charge} &= V_\mathrm{bat,charge} + V_\mathrm{drop, TP4056} + 2\cdot V_\mathrm{f,SS34} + R \cdot I_\mathrm{chg}\\
-	&= \SI{4.1}{\V} + \SI{0.03}{\V} + 2\cdot \SI{0.35}{\V} + \SI{0.5}{\ohm} \cdot  \SI{0.78}{\A} = \SI{5.22}{\V}
+	&= \qty{4.1}{\V} + \qty{0.03}{\V} + 2\cdot \qty{0.35}{\V} + \qty{0.5}{\ohm} \cdot  \qty{0.78}{\A} = \qty{5.22}{\V}
 \end{align}
 
 \begin{figure}[h!]
@@ -278,7 +278,7 @@ The voltage drop is considered in the following case for the minimum voltage at 
     \label{fig_chg_input}
 \end{figure}
 
-The charging IC TP4056 \cite{MSKSEMI:TP4056} monitors the cell temperature during the charging process by evaluating the voltage drop of the used $\SI{10}{\kilo\ohm}$ \ac{NTC}. This covers the missing part of \ReqRef{R:BMS}. The voltage at the Temp pin is evaluated as ratio to the supply voltage. The operative range is $\num{0.45} \cdot \mathrm{VCC}$ to $\num{0.8} \cdot \mathrm{VCC}$. The resistor divider is designed to operate in a temperature range from $\qtyrange{5}{50}{\celsius}$. The resistors $R_5$ and $R_7$ are derived using these formulas: 
+The charging IC TP4056 \cite{MSKSEMI:TP4056} monitors the cell temperature during the charging process by evaluating the voltage drop of the used $\qty{10}{\kilo\ohm}$ \ac{NTC}. This covers the missing part of \ReqRef{R:BMS}. The voltage at the Temp pin is evaluated as ratio to the supply voltage. The operative range is $\num{0.45} \cdot \mathrm{VCC}$ to $\num{0.8} \cdot \mathrm{VCC}$. The resistor divider is designed to operate in a temperature range from $\qtyrange{5}{50}{\celsius}$. The resistors $R_5$ and $R_7$ are derived using these formulas: 
 \begin{align}
 R_7 &= \frac{R_\mathrm{th,low}\cdot R_\mathrm{th,high}}{(V_\mathrm{th,low}-1)\cdot R_\mathrm{th,high} + \left(\frac{V_\mathrm{th,low}}{V_\mathrm{th,high}}-V_\mathrm{th,low}\right)\cdot R_\mathrm{th,low}}\\
 R_5 &= R_7\cdot R_\mathrm{th,low}\cdot \frac{1-V_\mathrm{th,high}}{V_\mathrm{th,high}\cdot (R_7+R_\mathrm{th,low})}
@@ -292,7 +292,7 @@ The resulting values where then adapted to use resistors already used in other p
     \label{fig_charger}
 \end{figure}
 
-The charging current is set to $\SI{780}{\mA}$ by using the $\SI{1.5}{\kilo\ohm}$ resistor. The charger has a trickle current feature that charges the battery with a low current of $\SI{130}{\milli\A}$ if the battery voltage is below $\SI{2.9}{\V}$. \\
+The charging current is set to $\qty{780}{\mA}$ by using the $\qty{1.5}{\kilo\ohm}$ resistor. The charger has a trickle current feature that charges the battery with a low current of $\qty{130}{\milli\A}$ if the battery voltage is below $\qty{2.9}{\V}$. \\
 In the schematic, both \acp{LED} are marked as green. \ac{LED} D6 is replaced by a red \ac{LED}. The functions of the \acp{LED} are summarized in the following table
 
 \begin{table}[h!]
@@ -318,9 +318,9 @@ In the schematic, both \acp{LED} are marked as green. \ac{LED} D6 is replaced by
 
 As \ReqRef{R:Rain} requires the cone to be able to operate in rain , it must be possible to turn the NightCone on and off without opening it. To fulfill this requirement, one method to enable the NightCone and two methods to disable it are implemented. The hall sensor U30 (UHE4913) detects the presence of a magnet. When a magnet is detected, the output of the sensor is pulled low. This pulls the enable input of the boost converter U28 towards the battery voltage, which enables the converter. As the hall sensor is directly connected to the battery and therefore always powered, a sensor with a low operating current must be chosen. The selected boost converter (TPS61023) completely disconnects the output from the input when the converter is disabled. This is necessary because the output voltage of a boost converter is always at least slightly lower than the input voltage due to the body diode of the highside \ac{MOSFET}. \cite{TI:TPS61023}. \todo{Check link to TPS61023 datasheet}
 
-The controller can send a KILL signal to the on/off controller. To ensure, that a static high signal is not able to shut down the NightCone, the signal is AC coupled and rectified. To disable the NightCone, a series of pulses must be sent to the KILL signal which charges the capacitor C71. When the threshold voltage of Q10 is reached, the \SI{5.2}{\volt} converter is disables by pulling the EN signal low. 
+The controller can send a KILL signal to the on/off controller. To ensure, that a static high signal is not able to shut down the NightCone, the signal is AC coupled and rectified. To disable the NightCone, a series of pulses must be sent to the KILL signal which charges the capacitor C71. When the threshold voltage of Q10 is reached, the \qty{5.2}{\volt} converter is disables by pulling the EN signal low. 
 
-The requirement \ReqRef{R:Disable} demands an analog shutdown device. This is implemented by supervising the voltage on the charging input. When a voltage is detected, Q9 pulls the EN signal to GND, which disables the \SI{5.2}{\volt} converter. The threshold level can be adjusted by changing the voltage divider R94 and R96. This ensures that the NightCone is automatically disabled when it is connected to the charging station. 
+The requirement \ReqRef{R:Disable} demands an analog shutdown device. This is implemented by supervising the voltage on the charging input. When a voltage is detected, Q9 pulls the EN signal to GND, which disables the \qty{5.2}{\volt} converter. The threshold level can be adjusted by changing the voltage divider R94 and R96. This ensures that the NightCone is automatically disabled when it is connected to the charging station. 
 
 During development and debugging it is advantageous to allow the operation of the NightCone while the battery is being charged. To allow this operation mode, the signal of the hall sensor is prioritized over both turn off signals. This means, that the NightCone can not be turned off when the presence of a magnet is detected. For the schematic of the on/off controller, see \autoref{fig_onoff}. 
 
@@ -333,25 +333,25 @@ During development and debugging it is advantageous to allow the operation of th
 
 \FloatBarrier
 
-\subsection{Converter \SI{5.2}{\volt}}
+\subsection{Converter \qty{5.2}{\volt}}
 \label{sec_power_5V2}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[page=26, scale=\schscale, trim=280 395 435 245, clip]{\schfile}
-    \caption{\SI{5.2}{\volt} converter}
+    \caption{\qty{5.2}{\volt} converter}
     \label{fig_power_5V2}
 \end{figure}
 
 \FloatBarrier
 
-\subsection{Converter \SI{3.3}{\volt}}
+\subsection{Converter \qty{3.3}{\volt}}
 \label{sec_power_3V3}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[page=26, scale=\schscale, trim=660 395 25 265, clip]{\schfile}
-    \caption{\SI{3.3}{\volt} converter}
+    \caption{\qty{3.3}{\volt} converter}
     \label{fig_power_3V3}
 \end{figure}
 
@@ -359,7 +359,7 @@ During development and debugging it is advantageous to allow the operation of th
 
 \subsection{Modifications from index AA to index AB}
 
-\subsubsection{Feedforward capacitor in \SI{5.2}{\volt} and \SI{3.3}{\volt} supply}
+\subsubsection{Feedforward capacitor in \qty{5.2}{\volt} and \qty{3.3}{\volt} supply}
 The feedforward capacitors in the feedback networkof the two converters are not meant to be mounted. It must either be removed or a value must be selected to ensure loop stability. 
 
 \subsubsection{Charging LED color}
@@ -383,22 +383,22 @@ Due to the addition of an \ac{I2C} \ac{EEPROM}, the \ac{GPIO} pins need to be re
 A hardware ID should be implemented to indicate different hardware revisions to the software. This can be implemented by connecting GPIO pins or by changing the I2C address of the EEPROM. No additional HW should be implemented for the HW ID. 
 
 \subsection{Over-current protection}
-The over-current protection on the prototype triggers below the maximum current, because the maximum resistance of the used MOSFETs is to high. The typical value would be sufficient. The fuse $(\SI{1.5}{\A}$ is as well too low. 
+The over-current protection on the prototype triggers below the maximum current, because the maximum resistance of the used MOSFETs is to high. The typical value would be sufficient. The fuse $(\qty{1.5}{\A}$ is as well too low. 
 
 \subsubsection{Failsafe counter output}
 The failsafe counter only counts to 256. With a total of 20 \acp{LED}, 480 pulses are required to turn on all \acp{LED}. Therefore FS\_RESET must be connected to Q9 instead of Q8. 
 
 \subsubsection{Quiescent current}
-D11 causes about \SI{40}{\micro\ampere} of quiescent current (up to \SI{500}{\micro\ampere} according to datasheet) and is unnecessary as the body diode of Q5 is parallel. D11 can be removed. 
+D11 causes about \qty{40}{\micro\ampere} of quiescent current (up to \qty{500}{\micro\ampere} according to datasheet) and is unnecessary as the body diode of Q5 is parallel. D11 can be removed. 
 
 \subsubsection{Power indication LED}
 The power indication \acp{LED} are unnecessary and can be removed or set to NB. 
 
 \subsubsection{GPIO 15 for FW upload}
-GPIO 15 must always be pulled low for Flash boot and FW upload. R16 must be replaced by a $\SI{10}{\kilo\ohm}$ for the prototype and should not be used for the next version. Move DATA signal to another pin. 
+GPIO 15 must always be pulled low for Flash boot and FW upload. R16 must be replaced by a $\qty{10}{\kilo\ohm}$ for the prototype and should not be used for the next version. Move DATA signal to another pin. 
 
 \subsubsection{Low time of Failsafe pulse generator}
-The low time of the failsafe pulse generator is too high. A value of \SI{532}{\nano\s} is measured. A value of \SI{320}{\nano\s} is targeted. 
+The low time of the failsafe pulse generator is too high. A value of \qty{532}{\nano\s} is measured. A value of \qty{320}{\nano\s} is targeted. 
 
 \subsubsection{Power indication LED}
 The power indication \acp{LED} D14 and D15 are not needed and can be removed. 

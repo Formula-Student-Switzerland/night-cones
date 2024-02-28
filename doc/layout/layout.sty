@@ -233,7 +233,9 @@
 % SI Einheiten
     \usepackage[binary-units=true]{siunitx}        % SI Einheiten
     \sisetup{exponent-product = \cdot} % \cdot for exponents
-    \sisetup{per = frac}        % Fraction for Per units
+    \sisetup{per-mode = fraction}      % Fraction for Per units
+	\sisetup{separate-uncertainty=true} % Enable the display of uncertainties
+    \sisetup{separate-uncertainty-units=single} % Set uncertainty format to not use brackets  and only append the unit at the end eg. 123 +-2 mm
     \DeclareSIUnit{\wdg}{Wdg}   % Number of windings
     \DeclareSIUnit{\sample}{S}  % Samples
     \DeclareSIUnit{\rpm}{RPM}	% Revolutions per minute

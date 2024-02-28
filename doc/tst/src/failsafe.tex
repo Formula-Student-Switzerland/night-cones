@@ -1,15 +1,15 @@
 \begin{formtable}
  \formTitle{Failsafe}
- \formNoteV{Apply \SI{4}{\volt} to +VBAT}{GND}
+ \formNoteV{Apply \qty{4}{\volt} to +VBAT}{GND}
  \formHeader
- \formMeasure{FS\_PULSE (TP13) high time}       {\SI{580}{\nano\second} \ldots \SI{1600}{\nano\second}}
- \formMeasure{FS\_PULSE (TP13) low time}        {\SI{220}{\nano\second} \ldots \SI{420}{\nano\second}}
+ \formMeasure{FS\_PULSE (TP13) high time}       {\qtyrange{580}{1600}{\nano\second}}
+ \formMeasure{FS\_PULSE (TP13) low time}        {\qtyrange{220}{420}{\nano\second}}
  \formMeasure{FS\_DATA (TP14) pulse count}      {512}
  \formNoteV{When the controller is not programmed yet, apply a pulse to DATA\_5V}{GND}
  \formMeasure{FS\_EDGE (U4, pin 3)}             {Low pulse on every rising edge of DATA\_5V}
  \formMeasure{FS\_ACT/ (TP11)}                  {Low}
  \formMeasure{DATA\_FAILSAFE (TP12)}            {Valid Neopixel signal}
  \formNoteV{Short DATA\_5V to GND (short Q3)}{GND}
- \formMeasure{FS\_ACT/ (TP11)}                  {Low after a delay of \SI{100}{\milli\second}}
+ \formMeasure{FS\_ACT/ (TP11)}                  {Low after a delay of \qty{100}{\milli\second}}
  \formMeasure{DATA\_FAILSAFE (TP12)}            {Valid Neopixel signal}
 \end{formtable}
