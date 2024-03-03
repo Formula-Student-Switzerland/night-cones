@@ -1,0 +1,1 @@
+int decodeColors (int color, int brightness, int *decoded);
