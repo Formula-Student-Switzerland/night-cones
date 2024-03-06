@@ -402,3 +402,9 @@ The low time of the failsafe pulse generator is too high. A value of \qty{532}{\
 
 \subsubsection{Power indication LED}
 The power indication \acp{LED} D14 and D15 are not needed and can be removed. 
+
+\subsubsection{Testpoints at end of LED chain}
+The testpoints at the end of the \ac{LED} chain are not used and can be removed. The resistors for routing the backup signal around the last LED can be removed as well. 
+
+\subsubsection{Voltage measurement filtering}
+The voltage divider for the battery voltage measurement is not filtered. A capacitor should be placed on VBAT\_MON. 
