@@ -1,4 +1,4 @@
-
+#include "color.h"
 
 void decodeColors (int color, int brightness, int *decoded) {
 	// Init variables.

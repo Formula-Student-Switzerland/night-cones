@@ -34,10 +34,13 @@
 % Eigene definierte Farben
     \definecolor{gray}      {gray}  {0.749}
     \definecolor{lgray}     {gray}  {0.85}
-    \definecolor{red}       {rgb}   {1 ,  0  , 0}
-    \definecolor{green}     {rgb}   {0 ,  1  , 0}
-    \definecolor{blue}      {rgb}   {0 ,  0  , 1}
-    \definecolor{darkgreen} {rgb}   {0 , 0.6 , 0}
+    \definecolor{red}       {rgb}   {1  ,  0  , 0}
+    \definecolor{green}     {rgb}   {0  ,  1  , 0}
+    \definecolor{blue}      {rgb}   {0  ,  0  , 1}
+    \definecolor{darkgreen} {rgb}   {0  , 0.6 , 0}
+    \definecolor{deepblue}  {rgb}   {0  , 0   , 0.5}
+    \definecolor{deepred}   {rgb}   {0.6, 0   , 0}
+    \definecolor{orange}    {rgb}   {1  , 0.5 , 0}
 
 % Tabellen
     \usepackage{longtable}      % Seitenübergreifende Tabellen
@@ -236,6 +239,7 @@
     \sisetup{per-mode = fraction}      % Fraction for Per units
 	\sisetup{separate-uncertainty=true} % Enable the display of uncertainties
     \sisetup{separate-uncertainty-units=single} % Set uncertainty format to not use brackets  and only append the unit at the end eg. 123 +-2 mm
+    %\sisetup{per = frac}        % Fraction for Per units (legacy)
     \DeclareSIUnit{\wdg}{Wdg}   % Number of windings
     \DeclareSIUnit{\sample}{S}  % Samples
     \DeclareSIUnit{\rpm}{RPM}	% Revolutions per minute
@@ -387,6 +391,29 @@
                      {ä}{{\"a}}1
                      {ö}{{\"o}}1 }
     }
+    
+    %Python 
+    \newcommand\lstsettingpython{\lstset{
+    		language=Python,
+    		basicstyle=\ttfamily,
+    		morekeywords={self},              % Add keywords here
+    		keywordstyle=\ttb\color{deepblue},
+    		emph={MyClass,__init__},          % Custom highlighting
+    		emphstyle=\ttb\color{deepred},    % Custom highlighting style
+    		stringstyle=\color{orange},
+    		frame=tb,                         % Any extra options here
+    		showstringspaces=false
+    }}
+
+	\newcommand\pythoninline[1]{{\lstsettingpython\lstinline!#1!}}
+	
+	\lstnewenvironment{python}[1][]
+	{
+		\lstsettingpython
+		\lstset{#1}
+	}
+	{}
+	
 
 % Bedingungen
     \usepackage{ifthen}     % Verzweigungen
