@@ -408,3 +408,6 @@ The testpoints at the end of the \ac{LED} chain are not used and can be removed.
 
 \subsubsection{Voltage measurement filtering}
 The voltage divider for the battery voltage measurement is not filtered. A capacitor should be placed on VBAT\_MON. 
+
+\subsubsection{Temperature measurement}
+During the first tests at full brightness, a temperature of over \qty{62}{\celsius} was observed. When the \ac{PCB} is mounted inside the enclosure, an even higher temperature is expected. Therefore a means to observe the internal temperature should be implemented. The control module has only one \ac{ADC} input which is already used to measure the cell voltage. A multiplexer could be used to switch the analog input between voltage and temperature measurement. Another option would be the use of a temperaure sensor with a digital interface. 
