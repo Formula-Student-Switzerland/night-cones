@@ -411,3 +411,6 @@ The voltage divider for the battery voltage measurement is not filtered. A capac
 
 \subsubsection{Temperature measurement}
 During the first tests at full brightness, a temperature of over \qty{62}{\celsius} was observed. When the \ac{PCB} is mounted inside the enclosure, an even higher temperature is expected. Therefore a means to observe the internal temperature should be implemented. The control module has only one \ac{ADC} input which is already used to measure the cell voltage. A multiplexer could be used to switch the analog input between voltage and temperature measurement. Another option would be the use of a temperaure sensor with a digital interface. 
+
+\subsubsection{On/Off controller feedback capacitor}
+The feedback capacitor of the On/Off Controller is not needed and can be removed. 
