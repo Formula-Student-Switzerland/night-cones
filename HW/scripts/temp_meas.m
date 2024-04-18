@@ -123,7 +123,7 @@ print('-dpng', 'Temp_Meas');
 
 ADC = 0:(2.^ADC_NOF_BIT - 1);
 V_ADC = ADC ./ max(max(ADC)) .* ADC_REF;
-R_ADC = R_1 .* R_1 ./ ((V_ref ./ V_ADC - 1) .* R_2 - R_1); % Double-check formula!!!!!!!!!!!!!!!!!
+R_ADC = (V_ADC .* R_1 .* R_2) ./ (V_ref .* R_2 - V_ADC .* (R_1 + R_2)); % Double-check formula!!!!!!!!!!!!!!!!!
 t_adc = 1 ./ (log(R_ADC ./ R_ref) ./ B + 1 ./ t_ref);
 
 figure(5);
