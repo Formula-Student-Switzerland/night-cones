@@ -357,6 +357,47 @@ During development and debugging it is advantageous to allow the operation of th
 
 \FloatBarrier
 
+\subsection{Testing}
+The initial prototypes (index A) are manually tested using the protocol in \todo{Add test protocol to annex and refer to it}. 
+
+For the production run with index B, a test adapter is built to allow for automated testing. 
+
+\begin{table}[h!]
+    \centering
+    \begin{zebratabular}{lllll}
+        \rowcolor{gray}
+        Testpoint   & Signal    & Measure       & Supply        & Short         \\
+        TP1         & Data      &               & Pulse 3V3     & GND           \\
+        TP2         & GPIO0     &               & Programmer    & GND           \\
+        TP3         & SDA       &               &               &               \\
+        TP4         & SCL       &               &               &               \\
+        TP5         & KILL      &               & Pulseburst 3V3&               \\
+        TP6         & TXD       &               & Programmer    &               \\
+        TP7         & RXD       &               & Programmer    &               \\
+        TP8         & RST       & Voltage       & Programmer    & GND           \\
+        TP9         & TEMP      & Voltage       &               &               \\
+        TP10        & FS\_ACT/  & Voltage       &               &               \\
+        TP11        & DATA\_FS  & Pulsewidth    & Pulse 5V      & GND           \\
+        TP12        & FS\_PULSE & Pulsewidth, f &               &               \\
+        TP13        & FS\_DATA  & Pulsewidth, n &               &               \\
+        TP14        & +5V\_CHG  & Voltage       &               &               \\
+        TP15        & CHG\_A    &               & Charge +/-    &               \\
+        TP16        & CHG\_B    &               & Charge +/-    &               \\
+        TP17        & CHG\_C    &               & Charge +/-    &               \\
+        TP18        & +VBAT     & Voltage Bat   & Battery +     & Load to -VBAT \\
+        TP19        & -VBAT     & Voltage Bat   & Battery -     & Load to +VBAT \\
+        TP20        & +5V2      & Voltage       &               & Load to GND   \\
+        TP21        & +3V3      & Voltage       &               & Load to GND   \\
+        TP22        & GND       &               &               &               \\
+        TP23        & HALL/     & Voltage       &               & GND           \\
+        TP24        & VBAT\_MON & Voltage       &               &               \\
+    \end{zebratabular}
+    \caption{NC1-1B test point overview}
+    \label{tab_test_point}
+\end{table}
+
+\FloatBarrier
+
 \subsection{Modifications from index AA to index AB}
 
 \subsubsection{Feedforward capacitor in \qty{5.2}{\volt} and \qty{3.3}{\volt} supply}
