@@ -152,3 +152,6 @@ cad/Tests/
 
 # Octave / Matlab
 HW/scripts/*.png
+
+# FEMM
+*.ans
