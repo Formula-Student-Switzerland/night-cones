@@ -18,7 +18,7 @@ RevisionNamingSchemeGUID=
 Name=NC1-2BA.OutJob
 Description=
 TargetOutputMedium=11 - PCB Manufacturing
-VariantName=WS2813E
+VariantName=[No Variations]
 VariantScope=1
 CurrentConfigurationName=
 TargetPrinter=Microsoft Print to PDF
@@ -388,7 +388,7 @@ Configuration14_Name6=VisibleOrder_Flat
 Configuration14_Item6=Comment=120|Designator=120|Footprint=100|Supplier Part Number 3=100
 
 [PublishSettings]
-OutputFilePath1=C:\Daten\Temp\night-cones\hw\NC1-1BA-TESTADAPTER\Manufacturing\01 - PCB Manufacturing\
+OutputFilePath1=C:\Daten\Temp\night-cones\hw\NC1-2BA\Manufacturing\01 - PCB Manufacturing\
 ReleaseManaged1=0
 OutputBasePath1=Manufacturing\
 OutputPathMedia1=01 - PCB Manufacturing
@@ -456,7 +456,7 @@ OutputFileNameSpecial4=
 OpenOutput4=0
 
 [GeneratedFilesSettings]
-RelativeOutputPath1=C:\Daten\Temp\night-cones\hw\NC1-1BA-TESTADAPTER\Manufacturing\01 - PCB Manufacturing\
+RelativeOutputPath1=C:\Daten\Temp\night-cones\hw\NC1-2BA\Manufacturing\01 - PCB Manufacturing\
 OpenOutputs1=0
 AddToProject1=0
 TimestampFolder1=0
