@@ -31,6 +31,7 @@ Manufacturing
 # *.ps
 # *.eps
 # *.pdf
+doc/night-cones.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
@@ -155,3 +156,9 @@ HW/scripts/*.png
 
 # FEMM
 *.ans
+
+
+# LT Spice
+*.op.raw
+*.raw
+
