@@ -155,3 +155,6 @@ HW/scripts/*.png
 
 # FEMM
 *.ans
+
+# Python
+__pycache__
