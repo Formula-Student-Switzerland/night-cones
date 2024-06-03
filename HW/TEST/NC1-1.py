@@ -2,6 +2,7 @@ import time
 import pyvisa
 from SwitchUnit import SwitchUnit
 from SwitchUnitCard import SwitchUnitCard
+from PowerSupply import PowerSupply
 #from tkinter import *
 #from tkinter import ttk
 
@@ -71,19 +72,48 @@ def main():
     rm = pyvisa.ResourceManager()
     rm.list_resources()
 
-    # Switch Unit demonstration
-    switch = SwitchUnit(rm, "GPIB0", 20, sw_cards, "NC1-1B TEST")
-    switch.close(card_vbat.ch([CH_VBAT_VBAT_POS, CH_VBAT_SUP_POS, CH_VBAT_VBAT_NEG, CH_VBAT_AMP_NEG, CH_VBAT_AMP_POS, CH_VBAT_SUP_NEG]))
+    ## Switch Unit demonstration
+    #switch = SwitchUnit(rm, "GPIB0", 20, sw_cards, "NC1-1B TEST")
+    #switch.close(card_vbat.ch([CH_VBAT_VBAT_POS, CH_VBAT_SUP_POS, CH_VBAT_VBAT_NEG, CH_VBAT_AMP_NEG, CH_VBAT_AMP_POS, CH_VBAT_SUP_NEG]))
+    #time.sleep(0.1)
+    #switch.close(card_volt.ch(CH_VOLT_FS_ACT))
+    #time.sleep(0.1)
+    #switch.close(card_short.ch(CH_SHORT_HALL))
+    #time.sleep(0.1)
+    #switch.close(card_sig.ch([CH_SIG_M_DATA_FS, CH_SIG_MEASUREMENT, CH_SIG_S_KILL, CH_SIG_GENERATOR]))
+    #time.sleep(0.1)
+    #switch.close(card_chg.ch([CH_CHG_CHG_POS, CH_CHG_CHG_A, CH_CHG_CHG_NEG, CH_CHG_CHG_B]))
+    #time.sleep(0.1)
+    #switch.open_all()
+
+    # Power supply demonstration
+    PS_CH_BAT = 1
+    PS_CH_CHG = 2
+    ps = PowerSupply(rm, "GPIB0", 16)
+    ps.reset()
     time.sleep(0.1)
-    switch.close(card_volt.ch(CH_VOLT_FS_ACT))
+    ps.set_ovp(5, PS_CH_BAT)
     time.sleep(0.1)
-    switch.close(card_short.ch(CH_SHORT_HALL))
+    ps.set_ovp(7, PS_CH_CHG)
     time.sleep(0.1)
-    switch.close(card_sig.ch([CH_SIG_M_DATA_FS, CH_SIG_MEASUREMENT, CH_SIG_S_KILL, CH_SIG_GENERATOR]))
-    time.sleep(0.1)
-    switch.close(card_chg.ch([CH_CHG_CHG_POS, CH_CHG_CHG_A, CH_CHG_CHG_NEG, CH_CHG_CHG_B]))
-    time.sleep(0.1)
-    switch.open_all()
+    ps.set_volt(4.2, PS_CH_BAT)
+    time.sleep(1)
+    ps.set_amp(3, PS_CH_BAT)
+    time.sleep(1)
+    ps.set_volt(6, PS_CH_CHG)
+    time.sleep(1)
+    ps.set_amp(1, PS_CH_CHG)
+    time.sleep(1)
+    ps.on(PS_CH_BAT)
+    time.sleep(1)
+    ps.on(PS_CH_CHG)
+    time.sleep(1)
+    ps.off(PS_CH_CHG)
+    time.sleep(1)
+    ps.set_amp(3, PS_CH_BAT)
+    time.sleep(1)
+    ps.set_volt(4.2, PS_CH_BAT)
+    ps.reset()
 
     ##switch_unit = rm.open_resource('GPIB::20::INSTR')
     #print(switch_unit.query("TEST"))

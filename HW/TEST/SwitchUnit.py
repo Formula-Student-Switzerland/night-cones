@@ -61,5 +61,5 @@ class SwitchUnit:
 
     if __name__ == "__main__":
         self.rm = pyvisa.ResourceManager()
-        __init__(self, rm, 20, [], "HP 3488 INIT")
+        __init__(self, rm, "GPIB0", 20, [], "HP 3488 INIT")
 

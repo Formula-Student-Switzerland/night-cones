@@ -1,0 +1,83 @@
+import pyvisa
+
+class PowerSupply:
+    """ Class for TTi CPX200DP power supply """
+
+    def set_volt(self, volt, channel=1):
+        self.ps.write(f"V{channel} {volt}")
+
+    def get_volt(self, channel=1):
+        return self.ps.write(f"V{channel}?")
+
+    def meas_volt(self, channel=1):
+        return self.ps.write(f"V{channel}O?")
+
+    def set_amp(self, amp, channel=1):
+        self.ps.write(f"I{channel} {amp}")
+
+    def get_amp(self, channel=1):
+        return self.ps.query(f"I{channel}?")
+
+    def meas_amp(self, channel=1):
+        return self.ps.query(f"I{channel}O?")
+
+    def set_ovp(self, volt, channel=1):
+        self.ps.write(f"OVP{channel} {volt}")
+
+    def set_ocp(self, amp, channel=1):
+        self.ps.write(f"OCP{channel} {amp}")
+
+    def get_ovp(self, volt, channel=1):
+        return self.ps.query(f"OVP{channel}?")
+
+    def get_ocp(self, amp, channel=1):
+        return self.ps.query(f"OCP{channel}?")
+
+    def all_off(self):
+        self.ps.write(f"OPALL 0")
+
+    def off(self, channel=1):
+        self.ps.write(f"OP{channel} 0")
+
+    def on(self, channel=1):
+        self.ps.write(f"OP{channel} 1")
+
+    def reset(self):
+        self.set_volt(0, 1)
+        self.set_amp(0, 1)
+        self.set_volt(0, 2)
+        self.set_amp(0, 2)
+        self.all_off()
+
+    def __init__(self, rm, GPIB_INTERFACE="GPIB0", GPIB_Addr=16):
+        # Variables
+        self.rm = rm
+
+        # Initiate GPIB communication
+        self.ps = self.rm.open_resource(f"{GPIB_INTERFACE}::{str(GPIB_Addr)}::INSTR")
+
+        # Selftest
+        Resp = self.ps.query("*IDN?")
+        if "THURLBY THANDAR, CPX200DP" not in Resp:
+            raise NameError(f"Power supply: Equipment setup incorrect, Expected: THURBLY THANDAR, CPX200DP, Detected: {Resp}...")
+        #Resp = self.ps.query("TEST")
+        #if (int(Resp) != 0):
+        #    raise NameError("Switch unit: Self-test failed")
+
+        # Reset to power-on state
+        self.ps.write("*RST")
+
+        # Lock instrument
+        Resp = self.ps.query("IFLOCK?")
+        if int(Resp) == 0:
+            Resp = self.ps.query("IFLOCK")
+            if int(Resp) != 1:
+                raise NameError("Power supply: Instrument lock not possible")
+
+        # Set outputs to zero and off
+        self.reset()
+
+    if __name__ == "__main__":
+        self.rm = pyvisa.ResourceManager()
+        __init__(self, rm, "GPIB0", 16)
+
