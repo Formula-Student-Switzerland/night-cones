@@ -71,7 +71,6 @@ class Oscilloscope:
                     self.osc.write(f":BEEP:ACT")
                 res.append(float(self.osc.query(f":MEAS:{func}? CHAN{int(ch)}")))
                 self.opc_check()
-            print(res)
             result = [sum(res)/len(res), min(res), max(res), statistics.stdev(res)]
         return result
 
@@ -138,10 +137,10 @@ class Oscilloscope:
         setup.append(":CHAN1:BWL 0")
         setup.append(":CHAN1:FILT 0")
         setup.append(":CHAN1:INV 0")
-        #setup.append(":CHAN1:PROB 10X")
-        setup.append(":CHAN1:PROB 1X") ###################DEBUG#############
+        setup.append(":CHAN1:PROB 10X")
+        #setup.append(":CHAN1:PROB 1X") ###################DEBUG#############
         setup.append(":CHAN1:SCAL 1")
-        setup.append(":CHAN1:OFFS -2")
+        setup.append(":CHAN1:OFFS -3")
         setup.append(":CHAN1:UNIT VOLT")
         setup.append(":CHAN1:VERN 0")
         #Channel 2
@@ -150,8 +149,8 @@ class Oscilloscope:
         setup.append(":CHAN2:BWL 0")
         setup.append(":CHAN2:FILT 0")
         setup.append(":CHAN2:INV 0")
-        #setup.append(":CHAN2:PROB 10X")
-        setup.append(":CHAN2:PROB 1X") ###################DEBUG#############
+        setup.append(":CHAN2:PROB 10X")
+        #setup.append(":CHAN2:PROB 1X") ###################DEBUG#############
         setup.append(":CHAN2:SCAL 1")
         setup.append(":CHAN2:OFFS -3")
         setup.append(":CHAN2:UNIT VOLT")
@@ -171,8 +170,8 @@ class Oscilloscope:
         #setup.append(":TIM:DEL:SCAL 1e-6")
         setup.append(":TIM:FORM:YT")
         setup.append(":TIM:OFFS 0")
-        #setup.append(":TIM:SCAL 10e-6")
-        setup.append(":TIM:SCAL 200e-6") ################DEBUG###############
+        setup.append(":TIM:SCAL 500e-9")
+        #setup.append(":TIM:SCAL 200e-6") ################DEBUG###############
         setup.append(":TIM:MODE:MAIN")
         # Trigger
         setup.append(":TRIG:COUP DC")
