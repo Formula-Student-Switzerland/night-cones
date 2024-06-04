@@ -33,14 +33,15 @@ class SwitchUnit:
         # Variables
         self.rm = rm
         self.cards = cards
+        self.ID = "HP3488A"
 
         # Initiate GPIB communication
         self.sw = self.rm.open_resource(f"{GPIB_INTERFACE}::{str(GPIB_Addr)}::INSTR")
 
         # Selftest
         Resp = self.sw.query("ID?")
-        if "HP3488A" not in Resp:
-            raise NameError(f"Switch unit: Equipment setup incorrect, Expected: HP3488A, Detected: {Resp}...")
+        if self.ID not in Resp:
+            raise NameError(f"Switch unit: Equipment setup incorrect, Expected: {self.ID}, Detected: {Resp}...")
         Resp = self.sw.query("TEST")
         if (int(Resp) != 0):
             raise NameError("Switch unit: Self-test failed")

@@ -52,17 +52,15 @@ class PowerSupply:
     def __init__(self, rm, GPIB_INTERFACE="GPIB0", GPIB_Addr=16):
         # Variables
         self.rm = rm
+        self.ID = "THURLBY THANDAR, CPX200DP"
 
         # Initiate GPIB communication
         self.ps = self.rm.open_resource(f"{GPIB_INTERFACE}::{str(GPIB_Addr)}::INSTR")
 
         # Selftest
         Resp = self.ps.query("*IDN?")
-        if "THURLBY THANDAR, CPX200DP" not in Resp:
-            raise NameError(f"Power supply: Equipment setup incorrect, Expected: THURBLY THANDAR, CPX200DP, Detected: {Resp}...")
-        #Resp = self.ps.query("TEST")
-        #if (int(Resp) != 0):
-        #    raise NameError("Switch unit: Self-test failed")
+        if self.ID not in Resp:
+            raise NameError(f"Power supply: Equipment setup incorrect, Expected: {self.ID}, Detected: {Resp}...")
 
         # Reset to power-on state
         self.ps.write("*RST")

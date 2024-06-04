@@ -1,0 +1,187 @@
+import pyvisa
+import time
+
+class Oscilloscope:
+    """ Class for Keysight DSO1000 Oscilloscope """
+
+    def opc_check(self, opccnt_time = 1): # Change OPC time to constant <self.opccnt_time>
+        opccnt_limit = int(opccnt_time / self.opccnt_delay)
+        opc = 0
+        opccnt = 0
+        while opc != 1:
+            opc = int(self.osc.query("*OPC?"))
+            opccnt += 1
+            if opccnt > opccnt_limit:
+                raise NameError("Oscilloscope: Operation complete not achieved within {opccnt_time}s")
+            time.sleep(self.opccnt_delay)
+
+    def reset(self):
+        self.osc.write("*RST")
+        self.opc_check()
+
+    def meas(self, ch, func, avg = 1):
+        res = 0
+        for i in range(avg):
+            self.osc.write(f":SINGLE")
+            self.opc_check()
+            trig_cnt = 0
+            trig_stat = 0
+            while trig_cnt < self.trig_time / self.trig_delay and trig_stat != 1:
+                if "STOP" in self.osc.query(f":TRIG:STAT?"):
+                    self.opc_check()
+                    trig_stat = 1
+                time.sleep(self.trig_delay)
+                trig_cnt += 1
+            if trig_stat != 1:
+                self.osc.write(f":FORC")
+                self.opc_check()
+                while trig_stat != 2:
+                    if "STOP" in self.osc.query(f":TRIG:STAT?"):
+                        self.opc_check()
+                        trig_stat = 2
+                    time.sleep(self.trig_delay)
+            if trig_stat == 2:
+                print(f"Warinng! Trigger forced, check measurement value plausibility!")
+                self.osc.write(f":BEEP:ACT")
+            res = self.osc.query(f":MEAS:{func}? CHAN{int(ch)}")
+            self.opc_check()
+        return res
+
+    def meas_falltime(self, ch, avg = 1):
+        return self.meas(ch, "FALL", avg)
+
+    def meas_freq(self, ch, avg = 1):
+        return self.meas(ch, "FREQ", avg)
+
+    def meas_nduty(self, ch, avg = 1):
+        return self.meas(ch, "NDUT", avg)
+
+    def meas_nwidth(self, ch, avg = 1):
+        return self.meas(ch, "NWID", avg)
+
+    def meas_overshoot(self, ch, avg = 1):
+        return self.meas(ch, "OVER", avg)
+
+    def meas_pduty(self, ch, avg = 1):
+        return self.meas(ch, "PDUT", avg)
+
+    def meas_period(self, ch, avg = 1):
+        return self.meas(ch, "PER", avg)
+
+    def meas_preshoot(self, ch, avg = 1):
+        return self.meas(ch, "PRES", avg)
+
+    def meas_pwidth(self, ch, avg = 1):
+        return self.meas(ch, "PWID", avg)
+
+    def meas_risetime(self, ch, avg = 1):
+        return self.meas(ch, "RIS", avg)
+
+    def meas_amp(self, ch, avg = 1):
+        return self.meas(ch, "VAMP", avg)
+
+    def meas_avg(self, ch, avg = 1):
+        return self.meas(ch, "VAV", avg)
+
+    def meas_basevolt(self, ch, avg = 1):
+        return self.meas(ch, "VBAS", avg)
+
+    def meas_vmax(self, ch, avg = 1):
+        return self.meas(ch, "VMAX", avg)
+
+    def meas_vmin(self, ch, avg = 1):
+        return self.meas(ch, "VMIN", avg)
+
+    def meas_vpp(self, ch, avg = 1):
+        return self.meas(ch, "VPP", avg)
+
+    def meas_vrms(self, ch, avg = 1):
+        return self.meas(ch, "VRMS", avg)
+
+    def meas_vtop(self, ch, avg = 1):
+        return self.meas(ch, "VTOP", avg)
+
+    def setup_nightcone(self):
+        setup = []
+        setup.append(":ACQ:TYPE NORM")
+        # Channel 1
+        setup.append(":CHAN1:DISP 1")
+        setup.append(":CHAN1:COUP DC")
+        setup.append(":CHAN1:BWL 0")
+        setup.append(":CHAN1:FILT 0")
+        setup.append(":CHAN1:INV 0")
+        setup.append(":CHAN1:PROB 10X")
+        setup.append(":CHAN1:SCAL 1")
+        setup.append(":CHAN1:OFFS -1")
+        setup.append(":CHAN1:UNIT VOLT")
+        setup.append(":CHAN1:VERN 0")
+        #Channel 2
+        setup.append(":CHAN2:DISP 1")
+        setup.append(":CHAN2:COUP DC")
+        setup.append(":CHAN2:BWL 0")
+        setup.append(":CHAN2:FILT 0")
+        setup.append(":CHAN2:INV 0")
+        setup.append(":CHAN2:PROB 10X")
+        setup.append(":CHAN2:SCAL 1")
+        setup.append(":CHAN2:OFFS -4")
+        setup.append(":CHAN2:UNIT VOLT")
+        setup.append(":CHAN2:VERN 0")
+        # Counter
+        setup.append(":COUN:ENAB 0")
+        # Cursors - No cursor setup, not needed for this measurement
+        # Display - No display setup, default setup after reset sufficient
+        # Keys
+        setup.append(":KEY:LOCK ENAB")
+        # Mask - No mask setup, not needed for this measurement
+        # Math - No math setup, not needed for this measurement
+        # Measurement
+        setup.append(":MEAS:TOT 1")
+        # Timebase
+        #setup.append(":TIM:DEL:OFF 0")
+        #setup.append(":TIM:DEL:SCAL 1e-6")
+        setup.append(":TIM:FORM:YT")
+        setup.append(":TIM:OFFS 0")
+        setup.append(":TIM:SCAL 10e-6")
+        setup.append(":TIM:MODE:MAIN")
+        # Trigger
+        setup.append(":TRIG:COUP DC")
+        setup.append(":TRIG:HFRE 0")
+        setup.append(":TRIG:HOLD 100e-9")
+        setup.append(":TRIG:MODE EDGE")
+        setup.append(":TRIG:SENS 0.5")
+        setup.append(":TRIG:EDGE:LEV 1.67")
+        setup.append(":TRIG:EDGE:SLOP POS")
+        setup.append(":TRIG:EDGE:SOUR CHAN1")
+        setup.append(":TRIG:EDGE:SWE NORM")
+        # Waveform - No waveform setup, not needed for this measurement
+
+        for s in setup
+            print(s)
+            self.osc.write(s)
+            self.opc_check()
+
+    def __init__(self, rm, interface="USB0", USB_ID=16, serialnumber="CN00000000"):
+        # Variables
+        self.rm = rm
+        self.ID = ""
+        self.opccnt_time = 10
+        self.opccnt_delay = 0.1
+        self.trig_time = 1
+        self.trig_delay = 0.1
+
+        # Initiate USB communication
+        self.osc = self.rm.open_resource(f"{interface}::{str(USB_ID)}::{serialnumber}::0::INSTR")
+
+        # Selftest
+        Resp = self.osc.query("*IDN?")
+        if self.ID not in Resp:
+            raise NameError(f"Oscilloscope: Equipment setup incorrect, Expected: THURBLY THANDAR, CPX200DP, Detected: {Resp}...")
+
+        # Reset to power-on state
+        self.osc.write("*RST")
+        self.opc_check()
+
+    if __name__ == "__main__":
+        self.rm = pyvisa.ResourceManager()
+        __init__(self, rm, "USB0")
+
