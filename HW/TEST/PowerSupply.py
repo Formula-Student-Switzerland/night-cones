@@ -49,13 +49,13 @@ class PowerSupply:
         self.set_amp(0, 2)
         self.all_off()
 
-    def __init__(self, rm, GPIB_INTERFACE="GPIB0", GPIB_Addr=16):
+    def __init__(self, rm, GPIB_Interface="GPIB0", GPIB_Addr=16):
         # Variables
         self.rm = rm
         self.ID = "THURLBY THANDAR, CPX200DP"
 
         # Initiate GPIB communication
-        self.ps = self.rm.open_resource(f"{GPIB_INTERFACE}::{str(GPIB_Addr)}::INSTR")
+        self.ps = self.rm.open_resource(f"{GPIB_Interface}::{str(GPIB_Addr)}::INSTR")
 
         # Selftest
         Resp = self.ps.query("*IDN?")

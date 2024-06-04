@@ -1,5 +1,6 @@
 import pyvisa
 import time
+import statistics
 
 class Oscilloscope:
     """ Class for Keysight DSO1000 Oscilloscope """
@@ -20,8 +21,7 @@ class Oscilloscope:
         self.opc_check()
 
     def meas(self, ch, func, avg = 1):
-        res = 0
-        for i in range(avg):
+        if avg == 1:
             self.osc.write(f":SINGLE")
             self.opc_check()
             trig_cnt = 0
@@ -41,11 +41,39 @@ class Oscilloscope:
                         trig_stat = 2
                     time.sleep(self.trig_delay)
             if trig_stat == 2:
-                print(f"Warinng! Trigger forced, check measurement value plausibility!")
+                print(f"Warning! Trigger forced, check measurement value plausibility!")
                 self.osc.write(f":BEEP:ACT")
-            res = self.osc.query(f":MEAS:{func}? CHAN{int(ch)}")
+            result = float(self.osc.query(f":MEAS:{func}? CHAN{int(ch)}"))
             self.opc_check()
-        return res
+        else:
+            res = []
+            for i in range(avg):
+                self.osc.write(f":SINGLE")
+                self.opc_check()
+                trig_cnt = 0
+                trig_stat = 0
+                while trig_cnt < self.trig_time / self.trig_delay and trig_stat != 1:
+                    if "STOP" in self.osc.query(f":TRIG:STAT?"):
+                        self.opc_check()
+                        trig_stat = 1
+                    time.sleep(self.trig_delay)
+                    trig_cnt += 1
+                if trig_stat != 1:
+                    self.osc.write(f":FORC")
+                    self.opc_check()
+                    while trig_stat != 2:
+                        if "STOP" in self.osc.query(f":TRIG:STAT?"):
+                            self.opc_check()
+                            trig_stat = 2
+                        time.sleep(self.trig_delay)
+                if trig_stat == 2:
+                    print(f"Warning! Trigger forced, check measurement value plausibility!")
+                    self.osc.write(f":BEEP:ACT")
+                res.append(float(self.osc.query(f":MEAS:{func}? CHAN{int(ch)}")))
+                self.opc_check()
+            print(res)
+            result = [sum(res)/len(res), min(res), max(res), statistics.stdev(res)]
+        return result
 
     def meas_falltime(self, ch, avg = 1):
         return self.meas(ch, "FALL", avg)
@@ -110,9 +138,10 @@ class Oscilloscope:
         setup.append(":CHAN1:BWL 0")
         setup.append(":CHAN1:FILT 0")
         setup.append(":CHAN1:INV 0")
-        setup.append(":CHAN1:PROB 10X")
+        #setup.append(":CHAN1:PROB 10X")
+        setup.append(":CHAN1:PROB 1X") ###################DEBUG#############
         setup.append(":CHAN1:SCAL 1")
-        setup.append(":CHAN1:OFFS -1")
+        setup.append(":CHAN1:OFFS -2")
         setup.append(":CHAN1:UNIT VOLT")
         setup.append(":CHAN1:VERN 0")
         #Channel 2
@@ -121,9 +150,10 @@ class Oscilloscope:
         setup.append(":CHAN2:BWL 0")
         setup.append(":CHAN2:FILT 0")
         setup.append(":CHAN2:INV 0")
-        setup.append(":CHAN2:PROB 10X")
+        #setup.append(":CHAN2:PROB 10X")
+        setup.append(":CHAN2:PROB 1X") ###################DEBUG#############
         setup.append(":CHAN2:SCAL 1")
-        setup.append(":CHAN2:OFFS -4")
+        setup.append(":CHAN2:OFFS -3")
         setup.append(":CHAN2:UNIT VOLT")
         setup.append(":CHAN2:VERN 0")
         # Counter
@@ -135,13 +165,14 @@ class Oscilloscope:
         # Mask - No mask setup, not needed for this measurement
         # Math - No math setup, not needed for this measurement
         # Measurement
-        setup.append(":MEAS:TOT 1")
+        #setup.append(":MEAS:TOT 1")
         # Timebase
         #setup.append(":TIM:DEL:OFF 0")
         #setup.append(":TIM:DEL:SCAL 1e-6")
         setup.append(":TIM:FORM:YT")
         setup.append(":TIM:OFFS 0")
-        setup.append(":TIM:SCAL 10e-6")
+        #setup.append(":TIM:SCAL 10e-6")
+        setup.append(":TIM:SCAL 200e-6") ################DEBUG###############
         setup.append(":TIM:MODE:MAIN")
         # Trigger
         setup.append(":TRIG:COUP DC")
@@ -154,8 +185,9 @@ class Oscilloscope:
         setup.append(":TRIG:EDGE:SOUR CHAN1")
         setup.append(":TRIG:EDGE:SWE NORM")
         # Waveform - No waveform setup, not needed for this measurement
+        setup.append(":DISP:MNUS 0")
 
-        for s in setup
+        for s in setup:
             print(s)
             self.osc.write(s)
             self.opc_check()
@@ -165,9 +197,9 @@ class Oscilloscope:
         self.rm = rm
         self.ID = ""
         self.opccnt_time = 10
-        self.opccnt_delay = 0.1
+        self.opccnt_delay = 0.001
         self.trig_time = 1
-        self.trig_delay = 0.1
+        self.trig_delay = 0.001
 
         # Initiate USB communication
         self.osc = self.rm.open_resource(f"{interface}::{str(USB_ID)}::{serialnumber}::0::INSTR")
