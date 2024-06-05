@@ -20,8 +20,8 @@ class Oscilloscope:
         self.osc.write("*RST")
         self.opc_check()
 
-    def meas(self, ch, func, avg = 1):
-        if avg == 1:
+    def meas(self, ch, func, samples = 1):
+        if samples == 1:
             self.osc.write(f":SINGLE")
             self.opc_check()
             trig_cnt = 0
@@ -47,7 +47,7 @@ class Oscilloscope:
             self.opc_check()
         else:
             res = []
-            for i in range(avg):
+            for i in range(samples):
                 self.osc.write(f":SINGLE")
                 self.opc_check()
                 trig_cnt = 0
@@ -74,59 +74,59 @@ class Oscilloscope:
             result = [sum(res)/len(res), min(res), max(res), statistics.stdev(res)]
         return result
 
-    def meas_falltime(self, ch, avg = 1):
-        return self.meas(ch, "FALL", avg)
+    def meas_falltime(self, ch, samples = 1):
+        return self.meas(ch, "FALL", samples)
 
-    def meas_freq(self, ch, avg = 1):
-        return self.meas(ch, "FREQ", avg)
+    def meas_freq(self, ch, samples = 1):
+        return self.meas(ch, "FREQ", samples)
 
-    def meas_nduty(self, ch, avg = 1):
-        return self.meas(ch, "NDUT", avg)
+    def meas_nduty(self, ch, samples = 1):
+        return self.meas(ch, "NDUT", samples)
 
-    def meas_nwidth(self, ch, avg = 1):
-        return self.meas(ch, "NWID", avg)
+    def meas_nwidth(self, ch, samples = 1):
+        return self.meas(ch, "NWID", samples)
 
-    def meas_overshoot(self, ch, avg = 1):
-        return self.meas(ch, "OVER", avg)
+    def meas_overshoot(self, ch, samples = 1):
+        return self.meas(ch, "OVER", samples)
 
-    def meas_pduty(self, ch, avg = 1):
-        return self.meas(ch, "PDUT", avg)
+    def meas_pduty(self, ch, samples = 1):
+        return self.meas(ch, "PDUT", samples)
 
-    def meas_period(self, ch, avg = 1):
-        return self.meas(ch, "PER", avg)
+    def meas_period(self, ch, samples = 1):
+        return self.meas(ch, "PER", samples)
 
-    def meas_preshoot(self, ch, avg = 1):
-        return self.meas(ch, "PRES", avg)
+    def meas_preshoot(self, ch, samples = 1):
+        return self.meas(ch, "PRES", samples)
 
-    def meas_pwidth(self, ch, avg = 1):
-        return self.meas(ch, "PWID", avg)
+    def meas_pwidth(self, ch, samples = 1):
+        return self.meas(ch, "PWID", samples)
 
-    def meas_risetime(self, ch, avg = 1):
-        return self.meas(ch, "RIS", avg)
+    def meas_risetime(self, ch, samples = 1):
+        return self.meas(ch, "RIS", samples)
 
-    def meas_amp(self, ch, avg = 1):
-        return self.meas(ch, "VAMP", avg)
+    def meas_amp(self, ch, samples = 1):
+        return self.meas(ch, "VAMP", samples)
 
-    def meas_avg(self, ch, avg = 1):
-        return self.meas(ch, "VAV", avg)
+    def meas_avg(self, ch, samples = 1):
+        return self.meas(ch, "VAV", samples)
 
-    def meas_basevolt(self, ch, avg = 1):
-        return self.meas(ch, "VBAS", avg)
+    def meas_basevolt(self, ch, samples = 1):
+        return self.meas(ch, "VBAS", samples)
 
-    def meas_vmax(self, ch, avg = 1):
-        return self.meas(ch, "VMAX", avg)
+    def meas_vmax(self, ch, samples = 1):
+        return self.meas(ch, "VMAX", samples)
 
-    def meas_vmin(self, ch, avg = 1):
-        return self.meas(ch, "VMIN", avg)
+    def meas_vmin(self, ch, samples = 1):
+        return self.meas(ch, "VMIN", samples)
 
-    def meas_vpp(self, ch, avg = 1):
-        return self.meas(ch, "VPP", avg)
+    def meas_vpp(self, ch, samples = 1):
+        return self.meas(ch, "VPP", samples)
 
-    def meas_vrms(self, ch, avg = 1):
-        return self.meas(ch, "VRMS", avg)
+    def meas_vrms(self, ch, samples = 1):
+        return self.meas(ch, "VRMS", samples)
 
-    def meas_vtop(self, ch, avg = 1):
-        return self.meas(ch, "VTOP", avg)
+    def meas_vtop(self, ch, samples = 1):
+        return self.meas(ch, "VTOP", samples)
 
     def setup_nightcone(self):
         setup = []

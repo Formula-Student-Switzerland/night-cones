@@ -4,6 +4,7 @@ from SwitchUnit import SwitchUnit
 from SwitchUnitCard import SwitchUnitCard
 from PowerSupply import PowerSupply
 from Oscilloscope import Oscilloscope
+from Multimeter import Multimeter
 #from tkinter import *
 #from tkinter import ttk
 
@@ -116,21 +117,18 @@ def main():
     #ps.set_volt(4.2, PS_CH_BAT)
     #ps.reset()
 
-    # Oscilloscope
-    osc = Oscilloscope(rm, "USB0", "0x0957::0x0588", "CN50524177")
-    osc.setup_nightcone()
-    print(osc.meas_amp(1))
-    print(f"Positive width: {osc.meas_pwidth(1, 100)}")
-    print(f"Negative width: {osc.meas_nwidth(1, 100)}")
+    ## Oscilloscope
+    #osc = Oscilloscope(rm, "USB0", "0x0957::0x0588", "CN50524177")
+    #osc.setup_nightcone()
+    #print(osc.meas_amp(1))
+    #print(f"Positive width: {osc.meas_pwidth(1, 100)}")
+    #print(f"Negative width: {osc.meas_nwidth(1, 100)}")
 
-def sw_close_all():
-    switch_unit.query("CLOSE 100, 101, 102, 103, 110, 111, 112, 113, 120, 121, 122, 123, 130, 131, 132, 133, 200, 201, 202, 203, 210, 211, 212, 213, 220, 221, 222, 223, 230, 231, 232, 233, 300, 301, 302, 303, 310, 311, 312, 313, 320, 321, 322, 323, 330, 331, 332, 333, 400, 401, 402, 403, 410, 411, 412, 413, 420, 421, 422, 423, 430, 431, 432, 433")
-
-def sw_open_all():
-    switch_unit.query("OPEN 100, 101, 102, 103, 110, 111, 112, 113, 120, 121, 122, 123, 130, 131, 132, 133, 200, 201, 202, 203, 210, 211, 212, 213, 220, 221, 222, 223, 230, 231, 232, 233, 300, 301, 302, 303, 310, 311, 312, 313, 320, 321, 322, 323, 330, 331, 332, 333, 400, 401, 402, 403, 410, 411, 412, 413, 420, 421, 422, 423, 430, 431, 432, 433")
-
-def sw_reset():
-    switch_unit.query("CRESET 1, 2, 3, 4, 5")
+    #Multimeter
+    dmm = Multimeter(rm, "GPIB0", 20, "NC1-1B TEST")
+    print(f"DC Voltage: {dmm.meas_volt_dc(1)}")
+    print(f"DC Voltage: {dmm.meas_volt_dc(10)}")
+    print(f"Number of measurements: {len(dmm.meas_volt_dc(1024))}")
 
 if __name__ == "__main__":
     main()
