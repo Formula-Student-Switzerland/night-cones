@@ -5,6 +5,7 @@ from SwitchUnitCard import SwitchUnitCard
 from PowerSupply import PowerSupply
 from Oscilloscope import Oscilloscope
 from Multimeter import Multimeter
+from Generator import Generator
 #from tkinter import *
 #from tkinter import ttk
 
@@ -124,11 +125,36 @@ def main():
     #print(f"Positive width: {osc.meas_pwidth(1, 100)}")
     #print(f"Negative width: {osc.meas_nwidth(1, 100)}")
 
-    #Multimeter
-    dmm = Multimeter(rm, "GPIB0", 20, "NC1-1B TEST")
-    print(f"DC Voltage: {dmm.meas_volt_dc(1)}")
-    print(f"DC Voltage: {dmm.meas_volt_dc(10)}")
-    print(f"Number of measurements: {len(dmm.meas_volt_dc(1024))}")
+    ##Multimeter
+    #dmm = Multimeter(rm, "GPIB0", 20, "NC1-1B TEST", False)
+    #print(f"DC Voltage: {dmm.meas_volt_dc(1)}")
+    #print(f"DC Voltage: {dmm.meas_volt_dc(10)}")
+    #print(f"Number of measurements: {len(dmm.meas_volt_dc(1024))}")
+
+    #Signal Generator
+    ch_sig = 1
+    leds = 20
+    colors = 3
+    bit_per_led = 8
+    Gen_Disp_Msg = "Formula Student Switzerland\n\nNC1-1B TEST"
+    Gen_Disp_Msg_Selftest = "FSCH\n\nNC1-1B TEST\n\nSelftest in progress..."
+    gen = Generator(rm, Interface = "GPIB0", GPIB_Addr = 10, DispMsg = Gen_Disp_Msg_Selftest, load = ["INF", "INF"], run_selftest = True)
+    #gen.disp_text(Gen_Disp_Msg)
+    gen.pulse_setup(low=0, high=3.3, per=1390e-9, width=300e-9, ch = ch_sig)
+    gen.burst_setup(mode = "TRIG", per = 1e-3, cycles = leds*colors*bit_per_led, ch = ch_sig)
+    gen.output_on(ch = ch_sig)
+    gen.beep()
+    time.sleep(2)
+    gen.pulse_period(per = 1410e-9, ch = ch_sig)
+    gen.pulse_width(width = 1090e-9, ch = ch_sig)
+    gen.beep()
+    time.sleep(2)
+    gen.pulse_period(per = 1390e-9, ch = ch_sig)
+    gen.pulse_width(width = 300e-9, ch = ch_sig)
+    gen.beep()
+    time.sleep(2)
+    gen.output_off(ch_sig)
+    gen.beep()
 
 if __name__ == "__main__":
     main()
