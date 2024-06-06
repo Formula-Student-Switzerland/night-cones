@@ -145,6 +145,11 @@ cad/pcb/
 # Tests
 cad/Tests/
 
+# cad archives
+cad/archive/
+cad/pcb_bak/
+cad/print/
+
 
 # Visual Studio Code
 .vscode/
