@@ -6,6 +6,7 @@ from PowerSupply import PowerSupply
 from Oscilloscope import Oscilloscope
 from Multimeter import Multimeter
 from Generator import Generator
+from Report import Report
 #from tkinter import *
 #from tkinter import ttk
 
@@ -131,30 +132,91 @@ def main():
     #print(f"DC Voltage: {dmm.meas_volt_dc(10)}")
     #print(f"Number of measurements: {len(dmm.meas_volt_dc(1024))}")
 
-    #Signal Generator
-    ch_sig = 1
-    leds = 20
-    colors = 3
-    bit_per_led = 8
-    Gen_Disp_Msg = "Formula Student Switzerland\n\nNC1-1B TEST"
-    Gen_Disp_Msg_Selftest = "FSCH\n\nNC1-1B TEST\n\nSelftest in progress..."
-    gen = Generator(rm, Interface = "GPIB0", GPIB_Addr = 10, DispMsg = Gen_Disp_Msg_Selftest, load = ["INF", "INF"], run_selftest = True)
-    #gen.disp_text(Gen_Disp_Msg)
-    gen.pulse_setup(low=0, high=3.3, per=1390e-9, width=300e-9, ch = ch_sig)
-    gen.burst_setup(mode = "TRIG", per = 1e-3, cycles = leds*colors*bit_per_led, ch = ch_sig)
-    gen.output_on(ch = ch_sig)
-    gen.beep()
-    time.sleep(2)
-    gen.pulse_period(per = 1410e-9, ch = ch_sig)
-    gen.pulse_width(width = 1090e-9, ch = ch_sig)
-    gen.beep()
-    time.sleep(2)
-    gen.pulse_period(per = 1390e-9, ch = ch_sig)
-    gen.pulse_width(width = 300e-9, ch = ch_sig)
-    gen.beep()
-    time.sleep(2)
-    gen.output_off(ch_sig)
-    gen.beep()
+    ##Signal Generator
+    #ch_sig = 1
+    #leds = 20
+    #colors = 3
+    #bit_per_led = 8
+    #Gen_Disp_Msg = "Formula Student Switzerland\n\nNC1-1B TEST"
+    #Gen_Disp_Msg_Selftest = "FSCH\n\nNC1-1B TEST\n\nSelftest in progress..."
+    #gen = Generator(rm, Interface = "GPIB0", GPIB_Addr = 10, DispMsg = Gen_Disp_Msg_Selftest, load = ["INF", "INF"], run_selftest = True)
+    ##gen.disp_text(Gen_Disp_Msg)
+    #gen.pulse_setup(low=0, high=3.3, per=1390e-9, width=300e-9, ch = ch_sig)
+    #gen.burst_setup(mode = "TRIG", per = 1e-3, cycles = leds*colors*bit_per_led, ch = ch_sig)
+    #gen.output_on(ch = ch_sig)
+    #gen.beep()
+    #time.sleep(2)
+    #gen.pulse_period(per = 1410e-9, ch = ch_sig)
+    #gen.pulse_width(width = 1090e-9, ch = ch_sig)
+    #gen.beep()
+    #time.sleep(2)
+    #gen.pulse_period(per = 1390e-9, ch = ch_sig)
+    #gen.pulse_width(width = 300e-9, ch = ch_sig)
+    #gen.beep()
+    #time.sleep(2)
+    #gen.output_off(ch_sig)
+    #gen.beep()
+
+    rep_name = f"NC1-1B 2024-06-06"
+    rep = Report(rep_name)
+    report_path = "nc1-1/report"
+    dut_name = "NC1-1"
+    dut_ver = "BA"
+    dut_serial = "123456"
+    meas_value = 1
+    for dut_serial in ["000001", "000002", "000003", "000004", "000005", "000006", "000007", "000008", "000009", "000010"]:
+        rep.add_dut(name = dut_name, version = dut_ver, serial = dut_serial)
+        meas_name = "Meas 1"
+        rep.add_meas(value = meas_value, name = meas_name)
+        meas_value += 1
+        meas_name = "Meas 2"
+        rep.add_meas(value = meas_value, name = meas_name)
+        meas_value += 1
+        meas_name = "Meas 3"
+        rep.add_meas(value = meas_value, name = meas_name)
+        meas_value += 1
+        meas_name = "Meas 4"
+        rep.add_meas(value = meas_value, name = meas_name)
+        meas_value += 1
+        meas_name = "Meas 5"
+        rep.add_meas(value = meas_value, name = meas_name)
+        meas_value += 1
+        meas_name = "Meas 6"
+        rep.add_meas(value = meas_value, name = meas_name)
+        meas_value += 1
+        meas_name = "Meas 7"
+        rep.add_meas(value = meas_value, name = meas_name)
+        meas_value += 1
+        meas_name = "Meas 8"
+        rep.add_meas(value = meas_value, name = meas_name)
+        meas_value += 1
+        meas_name = "Meas 9"
+        rep.add_meas(value = meas_value, name = meas_name)
+        meas_value += 1
+        meas_name = "Meas 10"
+        rep.add_meas(value = meas_value, name = meas_name)
+        meas_value += 1
+        rep.print_dut(filename = f"{dut_name}{dut_ver}-{dut_serial}.txt", path = report_path)
+        time.sleep(2)
+    rep.print_report(filename = f"NC1-1BA {rep.datetime.strftime('%Y-%m-%d %H-%M-%S')}.csv", path = report_path)
+
+    ##### Test pcb for short-circuits
+    ####switch.close(card_volt.ch([CH_VOLT_5V2]))
+    ####print(dmm.meas_volt_dc())
+    ####switch.open_card(card_volt.card_slot)
+    ####switch.close(card_volt.ch([CH_VOLT_3V3]))
+    ####print(dmm.meas_volt_dc())
+    ####switch.open_card(card_volt.card_slot)
+    # Test charger
+    # BMS
+    # Test Hall sensor (on and off and HALL/)
+    # Test On/Off controller (Kill, charge and hall)
+    # Test supply 5.2V
+    # Test supply 3.3V
+    # Test voltage monitor
+    # Test temperature measurement
+    # Test Failsafe (Oscillator, Missing Pulse detection, combined signal, switch-over
+    # Programming
 
 if __name__ == "__main__":
     main()
