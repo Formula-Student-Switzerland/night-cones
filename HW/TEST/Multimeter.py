@@ -103,7 +103,7 @@ class Multimeter:
     def meas_diode(self, samples = 1):
         return self.meas("DIOD", samples)
 
-    def __init__(self, rm, Interface="GPIB0", GPIB_Addr=5, DispMsg=""):
+    def __init__(self, rm, Interface="GPIB0", GPIB_Addr=5, DispMsg="", run_selftest = True):
         # Variables
         self.rm = rm
         self.ID = "HEWLETT-PACKARD,34401A"
@@ -117,12 +117,13 @@ class Multimeter:
         Resp = self.dmm.query("*IDN?")
         if self.ID not in Resp:
             raise NameError(f"Multimeter: Equipment setup incorrect, Expected: {self.ID}, Detected: {Resp}...")
-        #timeout = self.dmm.timeout
-        #self.dmm.timeout = 20000
-        #Resp = self.dmm.query("*TST?")
-        #if int(Resp) != 0:
-        #    raise NameError(f"Multimeter: Selftest failed")
-        #self.dmm.timeout = timeout
+        if run_selftest:
+            timeout = self.dmm.timeout
+            self.dmm.timeout = 20000
+            Resp = self.dmm.query("*TST?")
+            if int(Resp) != 0:
+                raise NameError(f"Multimeter: Selftest failed")
+            self.dmm.timeout = timeout
 
         # Reset to power-on state
         self.reset()

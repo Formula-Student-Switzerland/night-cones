@@ -29,7 +29,7 @@ class SwitchUnit:
                 channels = f"{channels}{separator}{c}"
             self.sw.query(f"CLOSE {channels}")
 
-    def __init__(self, rm, GPIB_INTERFACE="GPIB0", GPIB_Addr=20, cards = [], DispMsg=""):
+    def __init__(self, rm, GPIB_INTERFACE="GPIB0", GPIB_Addr=20, cards = [], DispMsg="", run_selftest = True):
         # Variables
         self.rm = rm
         self.cards = cards
@@ -42,9 +42,10 @@ class SwitchUnit:
         Resp = self.sw.query("ID?")
         if self.ID not in Resp:
             raise NameError(f"Switch unit: Equipment setup incorrect, Expected: {self.ID}, Detected: {Resp}...")
-        Resp = self.sw.query("TEST")
-        if (int(Resp) != 0):
-            raise NameError("Switch unit: Self-test failed")
+        if run_selftest:
+            Resp = self.sw.query("TEST")
+            if (int(Resp) != 0):
+                raise NameError("Switch unit: Self-test failed")
 
         # Card type check
         for card in self.cards:
