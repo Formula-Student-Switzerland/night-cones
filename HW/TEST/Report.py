@@ -9,10 +9,10 @@ class Report:
         dut = Device(name = name, version = version, serial = serial)
         self.dut.append(dut)
 
-    def add_meas(self, value, name = ""):
-        self.dut[len(self.dut)-1].add_meas(value = value, name = name)
+    def add_meas(self, value, name = "", min = "", max = ""):
+        self.dut[len(self.dut)-1].add_meas(value = value, name = name, min = min, max = max)
 
-    def print_dut(self, filename = "", path = "", idx = -1):
+    def print_dut(self, filename = "", path = "", idx = -1, print_passfail = False, print_minmax = False):
         if idx < 0:
             idx = len(self.dut)-1
         if filename == "":
@@ -35,9 +35,22 @@ class Report:
             f.write(f"{self.dut[idx].name}{self.dut[idx].version} - {self.dut[idx].serial} - Test Protocol - {self.dut[idx].datetime.strftime('%Y-%m-%d %H:%M:%S')}\n")
             for i in range(len(self.dut[idx].meas_value)):
                 f.write(f"{self.dut[idx].meas_name[i]}: {self.dut[idx].meas_value[i]}\n")
+                if print_passfail:
+                    if print_minmax:
+                        # Todo: do not print empty limits
+                        if self.dut[idx].meas_min[i] == "" and self.dut[idx].meas_max[i] == "":
+                            f.write(f"    Result: {self.dut[idx].meas_passfail[i]}\n")
+                        elif self.dut[idx].meas_min[i] == "":
+                            f.write(f"    Result: {self.dut[idx].meas_passfail[i]} Max: {self.dut[idx].meas_max[i]}\n")
+                        elif self.dut[idx].meas_max[i] == "":
+                            f.write(f"    Result: {self.dut[idx].meas_passfail[i]} Min: {self.dut[idx].meas_min[i]}\n")
+                        else: 
+                            f.write(f"    Result: {self.dut[idx].meas_passfail[i]} Limits: {self.dut[idx].meas_min[i]} .. {self.dut[idx].meas_max[i]}\n")
+                    else:
+                        f.write(f"    Result: {self.dut[idx].meas_passfail[i]}\n")
             f.close()
 
-    def print_report(self, filename = "", path = ""):
+    def print_report(self, filename = "", path = "", print_passfail = False, print_minmax = False):
         # Title line
         title = ""
         separator = ""
@@ -48,6 +61,10 @@ class Report:
         for meas_idx in range(len(self.dut[0].meas_name)):
             title = f"{title}{separator}{self.dut[0].meas_name[meas_idx]}"
             separator = self.SEPARATOR
+            if print_passfail:
+                title = f"{title}{separator}Pass / Fail"
+                if print_minmax:
+                    title = f"{title}{separator}Min{separator}Max"
         # Data block
         data = []
         for dut_idx in range(len(self.dut)):
@@ -61,6 +78,11 @@ class Report:
             for meas_idx in range(len(self.dut[0].meas_name)):
                 data[dut_idx] = f"{data[dut_idx]}{separator}{self.dut[dut_idx].meas_value[meas_idx]}"
                 separator = self.SEPARATOR
+                if print_passfail:
+                    data[dut_idx] = f"{data[dut_idx]}{separator}{self.dut[dut_idx].meas_passfail[meas_idx]}"
+                    if print_minmax:
+                        data[dut_idx] = f"{data[dut_idx]}{separator}{self.dut[dut_idx].meas_min[meas_idx]}"
+                        data[dut_idx] = f"{data[dut_idx]}{separator}{self.dut[dut_idx].meas_max[meas_idx]}"
         if filename == "":
             print(title)
             for data_line in data:
