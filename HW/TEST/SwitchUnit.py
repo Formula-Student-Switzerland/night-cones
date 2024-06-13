@@ -3,7 +3,7 @@ import pyvisa
 class SwitchUnit:
     """ Class for HP 3488 Switch Unit """
     def open_all(self):
-        for card in self.cards:
+        for card in self.cards.values():
             self.sw.query(f"CRESET {card.card_slot}")
 
     def open_card(self, card):
@@ -48,7 +48,7 @@ class SwitchUnit:
                 raise NameError("Switch unit: Self-test failed")
 
         # Card type check
-        for card in self.cards:
+        for card in self.cards.values():
             Response = self.sw.query(f"CTYPE {card.card_slot}")
             if card.card_type not in Response:
                 raise NameError(f"Switch unit: Incorrect card configuration in slot {card.card_slot}, Expected: {card.card_type}, Installed: {Response}")
