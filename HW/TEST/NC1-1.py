@@ -11,6 +11,9 @@ from Report import Report
 #from tkinter import ttk
 
 SIMULATION = False
+DEBUG = True
+DEBUG_HALT = 1 # 0: ignore all halts, 1: only halt when parameter "halt" is True, 2: halt on every debug() statement
+DEBUG_DELAY = 2
 
 # Test parameters
 BAT_VOLT_FULL = 4.2
@@ -22,6 +25,8 @@ CHG_VOLT = 6
 CHG_AMP = 1
 MAGNET_VOLT = 2
 MAGNET_AMP = 1
+bat_status = "OFF"
+bat_ampmeter = False
 
 # Voltage measurement channel configuration
 CH_VOLT_3V3        = "00"
@@ -29,7 +34,7 @@ CH_VOLT_TEMP       = "01"
 CH_VOLT_FS_ACT     = "02"
 CH_VOLT_HALL       = "03"
 CH_VOLT_5V_CHG     = "04"
-CH_VOLT_VBAT_MOB   = "05"
+CH_VOLT_VBAT_MON   = "05"
 CH_VOLT_5V2        = "06"
 CH_VOLT_VBAT       = "07"
 
@@ -74,6 +79,16 @@ CH_SHORT_HALL      = "04"
 PS_CH_BAT = 1
 PS_CH_CHG = 2
 
+def debug(msg = "", halt = False):
+    if DEBUG:
+        print(f"DEBUG: {msg}")
+        if DEBUG_HALT >= 2 or (DEBUG_HALT >= 1 and halt):
+            print(f"DEBUG: Halted...")
+            input()
+        else:
+            time.sleep(DEBUG_DELAY)
+
+
 def chg_on(equipment, volt = CHG_VOLT, amp = CHG_AMP, pos="A", neg="B"):
     if pos == "A":
         ch_pos = CH_CHG_CHG_A
@@ -91,18 +106,23 @@ def chg_on(equipment, volt = CHG_VOLT, amp = CHG_AMP, pos="A", neg="B"):
         ch_neg = CH_CHG_CHG_C
     else:
         ch_neg = neg
-    #print(equipment["sw_cards"]["card_chg"].card_slot)
     equipment["switch"].open_card(equipment["sw_cards"]["card_chg"])
     equipment["switch"].close(equipment["sw_cards"]["card_chg"].ch([CH_CHG_CHG_POS, ch_pos, CH_CHG_CHG_NEG, ch_neg]))
     equipment["ps"].set_volt(volt = volt, channel = PS_CH_CHG)
     equipment["ps"].set_amp(amp = amp, channel = PS_CH_CHG)
     equipment["ps"].on(channel = PS_CH_CHG)
+    debug(f"Charging: {pos}, => {neg}")
+
+def chg_short(equipment):
+    equipment["switch"].close(equipment["sw_cards"]["card_chg"].ch([CH_CHG_CHG_NEG, CH_CHG_CHG_A, CH_CHG_CHG_NEG, CH_CHG_CHG_B, CH_CHG_CHG_NEG, CH_CHG_CHG_C]))
+    debug(f"Charging: Short")
 
 def chg_off(equipment):
     equipment["ps"].set_volt(volt = 0, channel = PS_CH_CHG)
     equipment["ps"].set_amp(amp = 0, channel = PS_CH_CHG)
     equipment["ps"].off(channel = PS_CH_CHG)
     equipment["switch"].open_card(equipment["sw_cards"]["card_chg"])
+    debug(f"Charging: Off")
 
 def magnet_turn_on(equipment):
     magnet_disable(equipment)
@@ -111,6 +131,7 @@ def magnet_turn_on(equipment):
     equipment["ps"].on(channel = PS_CH_CHG)
     equipment["ps"].set_volt(volt = MAGNET_VOLT, channel = PS_CH_CHG)
     equipment["ps"].set_amp(amp = MAGNET_AMP, channel = PS_CH_CHG)
+    debug(f"Magnet: On")
 
 def magnet_turn_off(equipment):
     magnet_disable(equipment)
@@ -119,22 +140,127 @@ def magnet_turn_off(equipment):
     equipment["ps"].on(channel = PS_CH_CHG)
     equipment["ps"].set_volt(volt = MAGNET_VOLT, channel = PS_CH_CHG)
     equipment["ps"].set_amp(amp = MAGNET_AMP, channel = PS_CH_CHG)
+    debug(f"Magnet: Off")
 
 def magnet_disable(equipment):
     equipment["ps"].set_volt(volt = 0, channel = PS_CH_CHG)
     equipment["ps"].set_amp(amp = 0, channel = PS_CH_CHG)
     equipment["ps"].off(channel = PS_CH_CHG)
     equipment["switch"].open_card(equipment["sw_cards"]["card_chg"])
+    debug(f"Magnet: Disabled")
 
-#def bat_supply(equipment, volt, amp):
-#
-#def bat_sim(equipment, volt, amp):
-#
-#def bat_ampmeter_enable(equipment, microamp = False):
-#
-#def bat_ampmeter_disable(equipment):
-#
-#def bat_off(equipment):
+def bat_supply(equipment, volt, amp, ampmeter = False):
+    if bat_status == "OFF":
+        if ampmeter:
+            equipment["switch"].close(card_vbat.ch([CH_VBAT_VBAT_NEG, CH_VBAT_SUP_NEG, CH_VBAT_VBAT_POS, CH_VBAT_AMP_NEG, CH_VBAT_AMP_POS, CH_VBAT_SUP_POS]))
+        else:
+            equipment["switch"].close(card_vbat.ch([CH_VBAT_VBAT_NEG, CH_VBAT_SUP_NEG, CH_VBAT_VBAT_POS, CH_VBAT_SUP_POS]))
+        equipment["ps"].set_volt(volt = volt, channel = PS_CH_BAT)
+        equipment["ps"].set_amp(amp = amp, channel = PS_CH_BAT)
+        equipment["ps"].on(channel = PS_CH_BAT)
+    elif bat_status == "SUP":
+        if ampmeter:
+            bat_ampmeter_enable(equipment)
+        else:
+            bat_ampmeter_disable(equipment)
+        equipment["ps"].set_volt(volt = volt, channel = PS_CH_BAT)
+        equipment["ps"].set_amp(amp = amp + volt / BAT_LOAD_R, channel = PS_CH_BAT)
+    elif bat_status == "SIM":
+        if ampmeter:
+            bat_ampmeter_enable(equipment)
+        else:
+            bat_ampmeter_disable(equipment)
+        equipment["switch"].open(card_vbat.ch([CH_VBAT_LOAD_POS, CH_VBAT_SUP_POS, CH_VBAT_LOAD_NEG, CH_VBAT_VBAT_NEG]))
+        equipment["ps"].set_volt(volt = volt, channel = PS_CH_BAT)
+        equipment["ps"].set_amp(amp = amp + volt / BAT_LOAD_R, channel = PS_CH_BAT)
+    else:
+        bat_off(equipment)
+        raise NameError(f"Unrecognized battery state: {bat_status}")
+    bat_status = "SUP"
+    bat_ampmeter = ampmeter
+    debug(f"Battery: Supply {volt}V, {amp}A, Ampmeter: {bat_ampmeter}")
+
+def bat_sim(equipment, volt, amp, ampmeter = False):
+    if bat_status == "OFF":
+        if ampmeter:
+            equipment["switch"].close(card_vbat.ch([CH_VBAT_VBAT_NEG, CH_VBAT_SUP_NEG, CH_VBAT_VBAT_POS, CH_VBAT_AMP_NEG, CH_VBAT_AMP_POS, CH_VBAT_SUP_POS, CH_VBAT_LOAD_POS, CH_VBAT_SUP_POS, CH_VBAT_LOAD_NEG, CH_VBAT_VBAT_NEG]))
+        else:
+            equipment["switch"].close(card_vbat.ch([CH_VBAT_VBAT_NEG, CH_VBAT_SUP_NEG, CH_VBAT_VBAT_POS, CH_VBAT_SUP_POS, CH_VBAT_LOAD_POS, CH_VBAT_SUP_POS, CH_VBAT_LOAD_NEG, CH_VBAT_VBAT_NEG]))
+        equipment["ps"].set_volt(volt = volt, channel = PS_CH_BAT)
+        equipment["ps"].set_amp(amp = amp + volt / BAT_LOAD_R, channel = PS_CH_BAT)
+        equipment["ps"].on(channel = PS_CH_BAT)
+    elif bat_status == "SUP":
+        if ampmeter:
+            bat_ampmeter_enable(equipment)
+        else:
+            bat_ampmeter_disable(equipment)
+        equipment["ps"].set_volt(volt = volt, channel = PS_CH_BAT)
+        equipment["ps"].set_amp(amp = amp + volt / BAT_LOAD_R, channel = PS_CH_BAT)
+        equipment["switch"].close(card_vbat.ch([CH_VBAT_LOAD_POS, CH_VBAT_SUP_POS, CH_VBAT_LOAD_NEG, CH_VBAT_VBAT_NEG]))
+    elif bat_status == "SIM":
+        if ampmeter:
+            bat_ampmeter_enable(equipment)
+        else:
+            bat_ampmeter_disable(equipment)
+        equipment["ps"].set_volt(volt = volt, channel = PS_CH_BAT)
+        equipment["ps"].set_amp(amp = amp + volt / BAT_LOAD_R, channel = PS_CH_BAT)
+    else:
+        bat_off(equipment)
+        raise NameError(f"Unrecognized battery state: {bat_status}")
+    bat_status = "SIM"
+    bat_ampmeter = ampmeter
+    debug(f"Battery: Simulation {volt}V, {amp}A, Ampmeter: {bat_ampmeter}")
+
+def bat_ampmeter_enable(equipment, microamp = False):
+    if not bat_ampmeter:
+        meas_volt_off(equipment)
+        equipment["switch"].close(card_vbat.ch([CH_VBAT_VBAT_POS, CH_VBAT_AMP_NEG, CH_VBAT_AMP_POS, CH_VBAT_SUP_POS]))
+        equipment["switch"].open(card_vbat.ch([CH_VBAT_VBAT_POS, CH_VBAT_SUP_POS]))
+        bat_ampmeter = True
+        debug(f"Battery: Ampmeter enabled")
+
+def bat_ampmeter_disable(equipment):
+    if bat_ampmeter:
+        equipment["switch"].close(card_vbat.ch([CH_VBAT_VBAT_POS, CH_VBAT_SUP_POS]))
+        equipment["switch"].open(card_vbat.ch([CH_VBAT_VBAT_POS, CH_VBAT_AMP_NEG, CH_VBAT_AMP_POS, CH_VBAT_SUP_POS]))
+        bat_ampmeter = False
+        debug(f"Battery: Ampmeter disabled")
+
+def bat_off(equipment):
+    equipment["ps"].set_volt(volt = 0, channel = PS_CH_BAT)
+    equipment["ps"].set_amp(amp = 0, channel = PS_CH_BAT)
+    equipment["ps"].off(channel = PS_CH_BAT)
+    equipment["switch"].open_card(equipment["sw_cards"]["card_vbat"])
+    bat_ampmeter = False
+    bat_status = "OFF"
+    debug(f"Battery: Off")
+
+def meas_volt_select(equipment, channel):
+    bat_ampmeter_disable(equipment)
+    equipment["switch"].close(equipment["sw_cards"]["card_volt"].ch([channel]))
+    if channel == CH_VOLT_3V3:
+        ch_str = "3V3"
+    elif channel == CH_VOLT_TEMP:
+        ch_str = "TEMP"
+    elif channel == CH_VOLT_FS_ACT:
+        ch_str = "FS_ACT"
+    elif channel == CH_VOLT_HALL:
+        ch_str = "HALL"
+    elif channel == CH_VOLT_5V_CHG:
+        ch_str = "5V_CHG"
+    elif channel == CH_VOLT_VBAT_MOB:
+        ch_str = "VBAT_MON"
+    elif channel == CH_VOLT_5V2:
+        ch_str = "5V2"
+    elif channel == CH_VOLT_VBAT:
+        ch_str = "VBAT"
+    else:
+        ch_str = "UNRECOGNIZED CHANNEL"
+    debug(f"Voltage Measurement: {ch_str}")
+
+def meas_volt_off(equipment):
+    equipment["switch"].open_card(equipment["sw_cards"]["card_volt"])
+    debug(f"Votage measurement: Disabled")
 
 def main():
     #root = Tk()
@@ -299,40 +425,46 @@ def main():
 
         if not SIMULATION:
             # Test pcb for short-circuits
-            switch.close(card_volt.ch([CH_VOLT_5V2]))
+            # +5V2
+            meas_volt_select(equipment = equipment, channel = CH_VOLT_5V2)
             rep.add_meas(value = dmm.meas_res(), name = f"SHORT: Resistance +5V2", min = 10e3, max = 1e6)
-            #switch.open(card_volt.ch([CH_VOLT_5V2]))
-            switch.open_card(card_volt)
-            switch.close(card_volt.ch([CH_VOLT_3V3]))
+            debug(f"Resistance: +5V2")
+            meas_volt_off(equipment = equipment)
+            # +3V3
+            meas_volt_select(equipment = equipment, channel = CH_VOLT_3V3)
             rep.add_meas(value = dmm.meas_res(), name = f"SHORT: Resistance +3V3", min = 10e3, max = 1e6)
-            #switch.open(card_volt.ch([CH_VOLT_3V3]))
-            switch.open_card(card_volt)
-            switch.close(card_volt.ch([CH_VOLT_VBAT]))
+            debug(f"Resistance: +5V2")
+            meas_volt_off(equipment = equipment)
+            # VBAT
+            meas_volt_select(equipment = equipment, channel = CH_VOLT_VBAT)
             rep.add_meas(value = dmm.meas_res(), name = f"SHORT: Resistance VBAT", min = 10e3, max = 1e6)
-            #switch.open(card_volt.ch([CH_VOLT_VBAT]))
-            switch.open_card(card_volt)
-            switch.close(card_chg.ch([CH_CHG_CHG_NEG, CH_CHG_CHG_A, CH_CHG_CHG_NEG, CH_CHG_CHG_B, CH_CHG_CHG_NEG, CH_CHG_CHG_C]))
-            switch.close(card_volt.ch([CH_VOLT_5V_CHG]))
+            debug(f"Resistance: +5V2")
+            meas_volt_off(equipment = equipment)
+            # +5V_CHG
+            chg_short(equipment = equipment)
+            meas_volt_select(equipment = equipment, channel = CH_VOLT_5V_CHG)
             rep.add_meas(value = dmm.meas_res(), name = f"SHORT: Resistance +5V_CHG", min = 10e3, max = 1e6)
-            #switch.open(card_chg.ch([CH_CHG_CHG_NEG, CH_CHG_CHG_A, CH_CHG_CHG_NEG, CH_CHG_CHG_B, CH_CHG_CHG_NEG, CH_CHG_CHG_C]))
-            #switch.open(card_volt.ch([CH_VOLT_5V_CHG]))
-            switch.open_card(card_chg)
-            switch.open_card(card_volt)
+            debug(f"Resistance: +5V2")
+            meas_volt_off(equipment = equipment)
+            chg_off(equipment = equipment)
 
             # Test charger
-            switch.close(card_chg.ch([CH_VBAT_VBAT_NEG, CH_VBAT_SUP_NEG, CH_VBAT_VBAT_POS, CH_VBAT_AMP_NEG, CH_VBAT_AMP_POS, CH_VBAT_SUP_POS, CH_VBAT_LOAD_POS, CH_VBAT_SUP_POS, CH_VBAT_LOAD_NEG, CH_VBAT_VBAT_NEG]))
-            ps.set_volt(volt = BAT_VOLT_CHG, channel = PS_CH_BAT)
-            ps.set_amp(amp = BAT_AMP_CHG, channel = PS_CH_BAT)
-            ps.on(channel = PS_CH_BAT)
+            # Prepare battery simulator
+            bat_sim(equipment = equipment, volt = BAT_VOLT_CHG, amp = BAT_AMP_CHG, ampmeter = True)
+            # Charge A => B
             chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
             rep.add_meas(value = dmm.meas_amp_dc(), name = f"CHARGE: Charging current A => B", min = 0.55, max = 0.65)
             chg_off(equipment = equipment)
+            # Charge B => C
             chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "B", neg = "C")
             rep.add_meas(value = dmm.meas_amp_dc(), name = f"CHARGE: Charging current B => C", min = 0.55, max = 0.65)
             chg_off(equipment = equipment)
+            # Charge C => A
             chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "C", neg = "A")
             rep.add_meas(value = dmm.meas_amp_dc(), name = f"CHARGE: Charging current C => A", min = 0.55, max = 0.65)
             chg_off(equipment = equipment)
+            # Disable battery simulator
+            #bat_off(equipment = equipment)
 
             # BMS
 
