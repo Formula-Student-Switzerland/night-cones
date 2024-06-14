@@ -3,7 +3,7 @@ import pyvisa
 class SwitchUnit:
     """ Class for HP 3488 Switch Unit """
     def open_all(self):
-        for card in self.cards:
+        for card in self.cards.values():
             self.sw.query(f"CRESET {card.card_slot}")
 
     def open_card(self, card):
@@ -29,7 +29,7 @@ class SwitchUnit:
                 channels = f"{channels}{separator}{c}"
             self.sw.query(f"CLOSE {channels}")
 
-    def __init__(self, rm, GPIB_INTERFACE="GPIB0", GPIB_Addr=20, cards = [], DispMsg=""):
+    def __init__(self, rm, GPIB_INTERFACE="GPIB0", GPIB_Addr=20, cards = [], DispMsg="", run_selftest = True):
         # Variables
         self.rm = rm
         self.cards = cards
@@ -42,12 +42,13 @@ class SwitchUnit:
         Resp = self.sw.query("ID?")
         if self.ID not in Resp:
             raise NameError(f"Switch unit: Equipment setup incorrect, Expected: {self.ID}, Detected: {Resp}...")
-        Resp = self.sw.query("TEST")
-        if (int(Resp) != 0):
-            raise NameError("Switch unit: Self-test failed")
+        if run_selftest:
+            Resp = self.sw.query("TEST")
+            if (int(Resp) != 0):
+                raise NameError("Switch unit: Self-test failed")
 
         # Card type check
-        for card in self.cards:
+        for card in self.cards.values():
             Response = self.sw.query(f"CTYPE {card.card_slot}")
             if card.card_type not in Response:
                 raise NameError(f"Switch unit: Incorrect card configuration in slot {card.card_slot}, Expected: {card.card_type}, Installed: {Response}")
