@@ -17,18 +17,24 @@ class Device:
                 self.meas_passfail.append(f"Pass")
             else:
                 self.meas_passfail.append(f"Fail")
+                self.passfail = "Fail"
+                print(f"Test failed: {name}: {value}, Min: {min}, Max: {max}")
             min = nopassfail
         elif max in nopassfails:
             if value >= min:
                 self.meas_passfail.append(f"Pass")
             else:
                 self.meas_passfail.append(f"Fail")
+                self.passfail = "Fail"
+                print(f"Test failed: {name}: {value}, Min: {min}, Max: {max}")
             max = nopassfail
         else:
             if value >= min and value <= max:
                 self.meas_passfail.append(f"Pass")
             else:
                 self.meas_passfail.append(f"Fail")
+                self.passfail = "Fail"
+                print(f"Test failed: {name}: {value}, Min: {min}, Max: {max}")
         self.meas_min.append(min)
         self.meas_max.append(max)
 
@@ -37,6 +43,7 @@ class Device:
         self.name = name
         self.version = version
         self.serial = serial
+        self.passfail = "Pass"
         self.meas_value = []
         self.meas_name = []
         self.meas_passfail = []
