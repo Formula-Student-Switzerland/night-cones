@@ -44,7 +44,7 @@ class Multimeter:
             self.dmm.write(f"INIT")
             self.dmm.write(f"*TRG")
             timeout = self.dmm.timeout
-            self.dmm.timeout = 100*samples
+            self.dmm.timeout = 1000*samples
             res = self.dmm.query(f"FETC?")
             self.dmm.timeout = timeout
             res = [float(idx) for idx in res.split(",")]

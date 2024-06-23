@@ -49,7 +49,7 @@ class PowerSupply:
         self.set_amp(0, 2)
         self.all_off()
 
-    def __init__(self, rm, GPIB_Interface="GPIB0", GPIB_Addr=16):
+    def __init__(self, rm, GPIB_Interface="GPIB0", GPIB_Addr=16, ovp = ""):
         # Variables
         self.rm = rm
         self.ID = "THURLBY THANDAR, CPX200DP"
@@ -64,6 +64,14 @@ class PowerSupply:
 
         # Reset to power-on state
         self.ps.write("*RST")
+
+        # Set overvoltage protection
+        if ovp != "":
+            if isinstance(ovp, list):
+                self.set_ovp(ovp[0], 1)
+                self.set_ovp(ovp[1], 2)
+                print(f"Power supply: OVP Channel 1: {self.get_ovp(1)}")
+                print(f"Power supply: OVP Channel 2: {self.get_ovp(2)}")
 
         # Lock instrument
         Resp = self.ps.query("IFLOCK?")

@@ -17,6 +17,7 @@ class SwitchUnit:
             channels = ""
             for c in ch:
                 channels = f"{channels}{separator}{c}"
+                separator = ", "
             self.sw.query(f"OPEN {channels}")
 
     def close(self, ch):
@@ -27,6 +28,7 @@ class SwitchUnit:
             channels = ""
             for c in ch:
                 channels = f"{channels}{separator}{c}"
+                separator = ", "
             self.sw.query(f"CLOSE {channels}")
 
     def __init__(self, rm, GPIB_INTERFACE="GPIB0", GPIB_Addr=20, cards = [], DispMsg="", run_selftest = True):
@@ -59,7 +61,7 @@ class SwitchUnit:
         # Display
         if DispMsg != "":
             self.sw.query("DISP " + DispMsg)
-        self.sw.query("LOCK1")
+        #self.sw.query("LOCK1")
 
     if __name__ == "__main__":
         self.rm = pyvisa.ResourceManager()
