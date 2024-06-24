@@ -326,6 +326,13 @@ def short(equipment, channel):
         equipment["switch"].close(equipment["sw_cards"]["card_short"].ch([channel]))
     debug(f"Short: {channel}")
 
+def short_open(equipment, channel):
+    if isinstance(channel, list):
+        equipment["switch"].open(equipment["sw_cards"]["card_short"].ch(channel))
+    else:
+        equipment["switch"].open(equipment["sw_cards"]["card_short"].ch([channel]))
+    debug(f"Short: {channel}")
+
 def short_clear(equipment):
     equipment["switch"].open_card(equipment["sw_cards"]["card_short"])
     debug(f"Short: Disabled")
@@ -563,6 +570,7 @@ def main():
             magnet_disable(equipment = equipment)
             level = 2.7
             running = True
+            volt_vbat_bms = 0
             while(running):
                 level = level - 0.01
                 bat_supply(equipment = equipment, volt = level, amp = BAT_AMP_RUN)
@@ -575,6 +583,7 @@ def main():
                 print(volt_5v2)
                 print("")
                 running = volt_5v2 > 4.5
+            rep.add_meas(value = volt_vbat_bms, name = f"BMS: Undervoltage cutoff", min = 2.48, max = 2.52)
             # Cutoff voltage under load
             chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
             time.sleep(0.1)
@@ -593,14 +602,13 @@ def main():
                 meas_volt_select(equipment = equipment, channel = CH_VOLT_5V2)
                 volt_5v2 = dmm.meas_volt_dc()
                 running = volt_5v2 > 4.5
-                if running:
-                    meas_volt_select(equipment = equipment, channel = CH_VOLT_VBAT)
-                    volt_vbat = dmm.meas_volt_dc()
-                    meas_volt_select(equipment = equipment, channel = CH_VOLT_VBAT_MON)
-                    volt_vbat_mon = dmm.meas_volt_dc()
+                meas_volt_select(equipment = equipment, channel = CH_VOLT_VBAT)
+                volt_vbat = dmm.meas_volt_dc()
+                meas_volt_select(equipment = equipment, channel = CH_VOLT_VBAT_MON)
+                volt_vbat_mon = dmm.meas_volt_dc()
                 print(level)
                 print(volt_vbat)
-                print(volt_vbat_mon)
+                print(volt_vbat_mon/22*122)
                 print(volt_5v2)
                 print("")
             print(level)
@@ -620,16 +628,24 @@ def main():
             # Test Failsafe (Oscillator, Missing Pulse detection, combined signal, switch-over
 
             # Programming
+            bat_supply(equipment = equipment, volt = BAT_VOLT_FULL, amp = BAT_AMP_RUN)
             chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
             time.sleep(0.1)
             chg_off(equipment = equipment)
             time.sleep(0.5)
             short(equipment = equipment, channel = CH_SHORT_DATA_FS)
+            short(equipment = equipment, channel = [CH_SHORT_GPIO0, CH_SHORT_RST])
             magnet_turn_on(equipment = equipment)
             time.sleep(0.5)
             magnet_disable(equipment = equipment)
             time.sleep(1.5)
-            short(equipment = equipment, channel = [CH_SHORT_GPIO0, CH_SHORT_RST])
+            short_open(equipment = equipment, channel = [CH_SHORT_RST])
+            print("Confirm Programming completion: ")
+            input()
+            short_open(equipment = equipment, channel = [CH_SHORT_GPIO0])
+            short(equipment = equipment, channel = [CH_SHORT_RST])
+            time.sleep(0.5)
+            short_open(equipment = equipment, channel = [CH_SHORT_RST])
 
             ########################
             # Unused code snippets #
