@@ -8,7 +8,12 @@ class Device:
         self.meas_name.append(name)
         nopassfail = ""
         nopassfails = ["", "N/A", "n/a", "n.a."]
-        if (min in nopassfails) and (max in nopassfails):
+        if isinstance(value, str):
+            self.meas_passfail.append(f"N/A")
+            min = nopassfail
+            max = nopassfail
+            print(f"Test failed: {name}: {value}, Min: {min}, Max: {max}")
+        elif (min in nopassfails) and (max in nopassfails):
             self.meas_passfail.append(f"N/A")
             min = nopassfail
             max = nopassfail

@@ -70,38 +70,38 @@ class Multimeter:
             res = [float(idx) for idx in res.split(",")]
         return res
 
-    def meas_volt_dc(self, samples = 1):
-        return self.meas("VOLT:DC", samples)
+    def meas_volt_dc(self, samples = 1, mrange = "DEF", resolution = "DEF"):
+        return self.meas("VOLT:DC", samples = samples, mrange = mrange, resolution = resolution)
 
-    def meas_volt_dc_ratio(self, samples = 1):
-        return self.meas("VOLT:DC:RAT", samples)
+    def meas_volt_dc_ratio(self, samples = 1, mrange = "DEF", resolution = "DEF"):
+        return self.meas("VOLT:DC:RAT", samples = samples, mrange = mrange, resolution = resolution)
 
-    def meas_volt_ac(self, samples = 1):
-        return self.meas("VOLT:AC", samples)
+    def meas_volt_ac(self, samples = 1, mrange = "DEF", resolution = "DEF"):
+        return self.meas("VOLT:AC", samples = samples, mrange = mrange, resolution = resolution)
 
-    def meas_amp_dc(self, samples = 1):
-        return self.meas("CURR:DC", samples)
+    def meas_amp_dc(self, samples = 1, mrange = "DEF", resolution = "DEF"):
+        return self.meas("CURR:DC", samples = samples, mrange = mrange, resolution = resolution)
 
-    def meas_amp_ac(self, samples = 1):
-        return self.meas("CURR:AC", samples)
+    def meas_amp_ac(self, samples = 1, mrange = "DEF", resolution = "DEF"):
+        return self.meas("CURR:AC", samples = samples, mrange = mrange, resolution = resolution)
 
-    def meas_res(self, samples = 1):
-        return self.meas("RES", samples)
+    def meas_res(self, samples = 1, mrange = "DEF", resolution = "DEF"):
+        return self.meas("RES", samples = samples, mrange = mrange, resolution = resolution)
 
-    def meas_res_kelvin(self, samples = 1):
-        return self.meas("FRES", samples)
+    def meas_res_kelvin(self, samples = 1, mrange = "DEF", resolution = "DEF"):
+        return self.meas("FRES", samples = samples, mrange = mrange, resolution = resolution)
 
-    def meas_frequency(self, samples = 1):
-        return self.meas("FREQ", samples)
+    def meas_frequency(self, samples = 1, mrange = "DEF", resolution = "DEF"):
+        return self.meas("FREQ", samples = samples, mrange = mrange, resolution = resolution)
 
-    def meas_period(self, samples = 1):
-        return self.meas("PER", samples)
+    def meas_period(self, samples = 1, mrange = "DEF", resolution = "DEF"):
+        return self.meas("PER", samples = samples, mrange = mrange, resolution = resolution)
 
-    def meas_continuity(self, samples = 1):
-        return self.meas("CONT", samples)
+    def meas_continuity(self, samples = 1, mrange = "DEF", resolution = "DEF"):
+        return self.meas("CONT", samples = samples, mrange = mrange, resolution = resolution)
 
-    def meas_diode(self, samples = 1):
-        return self.meas("DIOD", samples)
+    def meas_diode(self, samples = 1, mrange = "DEF", resolution = "DEF"):
+        return self.meas("DIOD", samples = samples, mrange = mrange, resolution = resolution)
 
     def __init__(self, rm, Interface="GPIB0", GPIB_Addr=5, DispMsg="", run_selftest = True):
         # Variables

@@ -134,13 +134,13 @@ class Oscilloscope:
         # Channel 1
         setup.append(":CHAN1:DISP 1")
         setup.append(":CHAN1:COUP DC")
-        setup.append(":CHAN1:BWL 0")
+        setup.append(":CHAN1:BWL 1") # Added BW Limit to reduce ringing
         setup.append(":CHAN1:FILT 0")
         setup.append(":CHAN1:INV 0")
         setup.append(":CHAN1:PROB 10X")
         #setup.append(":CHAN1:PROB 1X") ###################DEBUG#############
         setup.append(":CHAN1:SCAL 1")
-        setup.append(":CHAN1:OFFS -3")
+        setup.append(":CHAN1:OFFS -2.5")
         setup.append(":CHAN1:UNIT VOLT")
         setup.append(":CHAN1:VERN 0")
         #Channel 2
@@ -152,7 +152,7 @@ class Oscilloscope:
         setup.append(":CHAN2:PROB 10X")
         #setup.append(":CHAN2:PROB 1X") ###################DEBUG#############
         setup.append(":CHAN2:SCAL 1")
-        setup.append(":CHAN2:OFFS -3")
+        setup.append(":CHAN2:OFFS -2.5")
         setup.append(":CHAN2:UNIT VOLT")
         setup.append(":CHAN2:VERN 0")
         # Counter
