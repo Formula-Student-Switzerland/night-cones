@@ -6,9 +6,20 @@
 #include "color.h"
 #include "led.h"
 
+#ifdef OUTPUT_PIN
+	#include "ota.h"
+ 	const char* ssid = STASSID;
+	const char* password = STAPSK;
+#endif
+
+
 
 void setup() {
 	#ifdef OUTPUT_PIN
+		// OTA feature.
+		ota_setup();
+		
+		
 		initLeds();
 
 	#endif
