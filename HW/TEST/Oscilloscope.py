@@ -71,7 +71,7 @@ class Oscilloscope:
                     self.osc.write(f":BEEP:ACT")
                 res.append(float(self.osc.query(f":MEAS:{func}? CHAN{int(ch)}")))
                 self.opc_check()
-            result = [sum(res)/len(res), min(res), max(res), statistics.stdev(res)]
+            result = [sum(res)/len(res), min(res), max(res), statistics.stdev(res), res]
         return result
 
     def meas_falltime(self, ch, samples = 1):

@@ -12,6 +12,14 @@ class Report:
     def add_meas(self, value, name = "", min = "", max = ""):
         self.dut[len(self.dut)-1].add_meas(value = value, name = name, min = min, max = max)
 
+    def get_dut_pass(self, idx = -1):
+        if idx < 0:
+            idx = len(self.dut)-1
+        if "Pass" in self.dut[idx].passfail:
+            return True
+        else:
+            return False
+
     def print_dut(self, filename = "", path = "", idx = -1, print_passfail = False, print_minmax = False):
         if idx < 0:
             idx = len(self.dut)-1

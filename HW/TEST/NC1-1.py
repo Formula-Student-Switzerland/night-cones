@@ -18,25 +18,29 @@ SIMULATION  = False
 DEBUG       = False
 DEBUG_HALT  = 1 # 0: ignore all halts, 1: only halt when parameter "halt" is True, 2: halt on every debug() statement
 DEBUG_DELAY = 0
+MEAS_STAT   = True
 
 TEST_ALL        = False
 TEST_SHORT      = True
-TEST_CHARGER    = True
-TEST_BMS        = True
-TEST_HALL       = True
-TEST_ONOFF      = True
-TEST_5V2        = True
-TEST_3V3        = True
-TEST_VMON       = True
-TEST_TEMP       = True
-TEST_FAILSAFE   = True
-TEST_OFF_CURR   = True
+TEST_CHARGER    = False
+TEST_BMS        = False
+TEST_HALL       = False
+TEST_ONOFF      = False
+TEST_5V2        = False
+TEST_3V3        = False
+TEST_VMON       = False
+TEST_TEMP       = False
+TEST_FAILSAFE   = False
+TEST_OFF_CURR   = False
 TEST_PROG       = False  
+TEST_KEEP_ON    = False
 
 ###################
 # Test parameters #
 ###################
 
+DUT_SERIAL_START = 1
+SER_LEN = 6
 BAT_VOLT_FULL = 4.2
 BAT_VOLT_CHG = 3.7
 BAT_VOLT_EMPTY = 2.5
@@ -537,479 +541,576 @@ def main():
     report_path = "nc1-1/report"
     dut_name = "NC1-1"
     dut_ver = "BA"
-    dut_serial = "123456"
-    meas_value = 1
-    dut_serial_start = 1
-    dut_serial_stop = 10
-    print(f"Confirm Starting Serial Number: {str(dut_serial_start).zfill(6)}")
-    ser_input = input()
-    if ser_input != "":
-        dut_serial_start = int(ser_input)
-    print(f"Confirm Stopping Serial Number: {str(dut_serial_stop).zfill(6)}")
-    ser_input = input()
-    if ser_input != "":
-        dut_serial_stop = int(ser_input)
-    for dut_serial in range(dut_serial_start, dut_serial_stop+1):
-        dut_serial = str(dut_serial).zfill(6)
-        rep.add_dut(name = dut_name, version = dut_ver, serial = dut_serial)
+    #dut_serial = "123456"
+    #dut_serial_start = 1
+    #dut_serial_stop = 10
+    #print(f"Confirm Starting Serial Number: {str(dut_serial_start).zfill(6)}")
+    #ser_input = input()
+    #if ser_input != "":
+    #    dut_serial_start = int(ser_input)
+    #print(f"Confirm Stopping Serial Number: {str(dut_serial_stop).zfill(6)}")
+    #ser_input = input()
+    #if ser_input != "":
+    #    dut_serial_stop = int(ser_input)
+    #for dut_serial in range(dut_serial_start, dut_serial_stop+1):
 
-        if SIMULATION:
-            meas_name = "Meas 1"
-            rep.add_meas(value = meas_value, name = meas_name)
-            meas_value += 1
-            meas_name = "Meas 2"
-            rep.add_meas(value = meas_value, name = meas_name, min = 2)
-            meas_value += 1
-            meas_name = "Meas 3"
-            rep.add_meas(value = meas_value, name = meas_name, min = 4)
-            meas_value += 1
-            meas_name = "Meas 4"
-            rep.add_meas(value = meas_value, name = meas_name, max = 0)
-            meas_value += 1
-            meas_name = "Meas 5"
-            rep.add_meas(value = meas_value, name = meas_name, max = 5)
-            meas_value += 1
-            meas_name = "Meas 6"
-            rep.add_meas(value = meas_value, name = meas_name, min = 2, max = 5.9)
-            meas_value += 1
-            meas_name = "Meas 7"
-            rep.add_meas(value = meas_value, name = meas_name, min = 7, max = 7)
-            meas_value += 1
-            meas_name = "Meas 8"
-            rep.add_meas(value = meas_value, name = meas_name, min = 8.01, max = 10)
-            meas_value += 1
-            meas_name = "Meas 9"
-            rep.add_meas(value = meas_value, name = meas_name, min = 8, max = 10)
-            meas_value += 1
-            meas_name = "Meas 10"
-            rep.add_meas(value = meas_value, name = meas_name, min = 9, max = 10)
-            meas_value += 1
-            #time.sleep(2)
+    dut_serial = DUT_SERIAL_START-1
+    testing_continue = True
+    testing_run = True
+    testing_pass = True
+    print(f"Usage: ")
+    print(f"[ ]: Continue with next device when passed, rerun when failed")
+    print(f"[R]: Rerun")
+    print(f"[C]: Continue with next device")
+    print(f"[S]: Stop testing and summarize results")
+    print(f"[#ser] continue with specified serial number #ser")
+    print(f"[H]: Print this help")
+    print(f"")
+    print(f"Starting with {dut_name}{dut_ver}-{str(dut_serial+1).zfill(SER_LEN)}")
+    while testing_continue:
+        if testing_pass:
+            print(f"Continue with {dut_name}{dut_ver}-{str(dut_serial+1).zfill(SER_LEN)}")
+        else:
+            print(f"Retry {dut_name}{dut_ver}-{str(dut_serial).zfill(SER_LEN)}")
+        #print(f"Confirm serial number for next Device: {dut_serial}")
+        response = input()
+        if response == "":
+            testing_continue = True
+            testing_run = True
+            if testing_pass:
+                dut_serial = dut_serial + 1
+        elif "s" in response or "S" in response:
+            testing_continue = False
+            testing_run = False
+        elif "r" in response or "R" in response:
+            testing_continue = True
+            testing_run = True
+        elif "c" in response or "C" in response:
+            testing_continue = True
+            testing_run = True
+            dut_serial = dut_serial + 1
+        elif "h" in response or "H" in response:
+            testing_continue = True
+            testing_run = False
+            print(f"Usage: ")
+            print(f"[ ]: Continue with next device when passed, rerun when failed")
+            print(f"[R]: Rerun")
+            print(f"[C]: Continue with next device")
+            print(f"[S]: Stop testing and summarize results")
+            print(f"[#ser] continue with specified serial number #ser")
+            print(f"[H]: Print this help")
+            print(f"")
+        else:
+            try:
+                dut_serial = int(response)
+                testing_continue = True
+                testing_run = True
+            except:
+                print(f"ERROR: Unable to interpret command or serial number: {response}")
+                testing_continue = True
+                testing_run = False
+        if testing_run:
+            dut_serial_str = str(dut_serial).zfill(SER_LEN)
+            print(f"Testing {dut_name}{dut_ver}-{dut_serial_str}") 
+            rep.add_dut(name = dut_name, version = dut_ver, serial = dut_serial_str)
 
-        if not SIMULATION:
-            ###############################
-            # Test pcb for short-circuits #
-            ###############################
-            if TEST_ALL or TEST_SHORT:
-                meas_volt_short(equipment = equipment)
-                # +5V2
-                meas_volt_select(equipment = equipment, channel = CH_VOLT_5V2)
-                rep.add_meas(value = dmm.meas_res(), name = f"SHORT: Resistance +5V2", min = 500, max = 2.0e3)
-                debug(f"Resistance: +5V2")
-                meas_volt_off(equipment = equipment)
-                # +3V3
-                meas_volt_select(equipment = equipment, channel = CH_VOLT_3V3)
-                rep.add_meas(value = dmm.meas_res(), name = f"SHORT: Resistance +3V3", min = 500, max = 2.0e3)
-                debug(f"Resistance: +5V2")
-                meas_volt_off(equipment = equipment)
-                # VBAT
-                meas_volt_select(equipment = equipment, channel = CH_VOLT_VBAT)
-                rep.add_meas(value = dmm.meas_res(), name = f"SHORT: Resistance VBAT", min = 100e3, max = 100.0e6)
-                debug(f"Resistance: +5V2")
-                meas_volt_off(equipment = equipment)
-                # +5V_CHG
-                chg_short(equipment = equipment)
-                meas_volt_select(equipment = equipment, channel = CH_VOLT_5V_CHG)
-                rep.add_meas(value = dmm.meas_res(), name = f"SHORT: Resistance +5V_CHG", min = 100e3, max = 1e6)
-                debug(f"Resistance: +5V2")
-                meas_volt_off(equipment = equipment)
-                chg_off(equipment = equipment)
+            if SIMULATION:
+                meas_value = 1
+                meas_name = "Meas 1"
+                rep.add_meas(value = meas_value, name = meas_name)
+                meas_value += 1
+                meas_name = "Meas 2"
+                rep.add_meas(value = meas_value, name = meas_name, min = 2)
+                meas_value += 1
+                meas_name = "Meas 3"
+                rep.add_meas(value = meas_value, name = meas_name, min = 4)
+                meas_value += 1
+                meas_name = "Meas 4"
+                rep.add_meas(value = meas_value, name = meas_name, max = 0)
+                meas_value += 1
+                meas_name = "Meas 5"
+                rep.add_meas(value = meas_value, name = meas_name, max = 5)
+                meas_value += 1
+                meas_name = "Meas 6"
+                rep.add_meas(value = meas_value, name = meas_name, min = 2, max = 5.9)
+                meas_value += 1
+                meas_name = "Meas 7"
+                rep.add_meas(value = meas_value, name = meas_name, min = 7, max = 7)
+                meas_value += 1
+                meas_name = "Meas 8"
+                rep.add_meas(value = meas_value, name = meas_name, min = 8.01, max = 10)
+                meas_value += 1
+                meas_name = "Meas 9"
+                rep.add_meas(value = meas_value, name = meas_name, min = 8, max = 10)
+                meas_value += 1
+                meas_name = "Meas 10"
+                rep.add_meas(value = meas_value, name = meas_name, min = 9, max = 10)
+                meas_value += 1
+                #time.sleep(2)
 
-            ################
-            # Test charger #
-            ################
-            if TEST_ALL or TEST_CHARGER:
-                # Prepare battery simulator
-                bat_sim(equipment = equipment, volt = BAT_VOLT_CHG, amp = BAT_AMP_CHG, ampmeter = True)
-                # Charge A => B
-                chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
-                rep.add_meas(value = dmm.meas_amp_dc(), name = f"CHARGE: Charging current A => B", min = 0.45, max = 0.55)
-                chg_off(equipment = equipment)
-                # Charge B => C
-                chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "B", neg = "C")
-                rep.add_meas(value = dmm.meas_amp_dc(), name = f"CHARGE: Charging current B => C", min = 0.45, max = 0.55)
-                chg_off(equipment = equipment)
-                # Charge C => A
-                chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "C", neg = "A")
-                rep.add_meas(value = dmm.meas_amp_dc(), name = f"CHARGE: Charging current C => A", min = 0.45, max = 0.55)
-                chg_off(equipment = equipment)
-                # Charge voltage
-                meas_volt_select(equipment = equipment, channel = CH_VOLT_VBAT)
-                chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
-                bat_supply(equipment = equipment, volt = BAT_VOLT_CHG, amp = BAT_AMP_CHG)
-                #bat_off(equipment = equipment)
-                time.sleep(1)
-                #print(f"CHARGE: Charging voltage: {dmm.meas_volt_dc(samples = 100)}")
-                #for i in range(10):
-                #    print(f"CHARGE: Charging voltage: {dmm.meas_volt_dc(samples = 10)}")
-                rep.add_meas(value = dmm.meas_volt_dc(), name = f"CHARGE: Charging voltage", min = 4.100, max = 4.242)
-                chg_off(equipment = equipment)
-                # Disable battery simulator
-                bat_off(equipment = equipment)
-
-            #######
-            # BMS #
-            #######
-            if TEST_ALL or TEST_BMS:
-                bat_supply(equipment = equipment, volt = BAT_VOLT_FULL, amp = BAT_AMP_RUN)
-                chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
-                time.sleep(CHG_DELAY)
-                chg_off(equipment = equipment)
-                led_off(equipment = equipment)
-                magnet_turn_on(equipment = equipment)
-                time.sleep(HALL_DELAY)
-                magnet_disable(equipment = equipment)
-                level = 2.6
-                running = True
-                volt_vbat_bms = 0
-                while(running):
-                    bat_supply(equipment = equipment, volt = level, amp = BAT_AMP_RUN)
-                    meas_volt_select(equipment = equipment, channel = CH_VOLT_VBAT)
-                    volt_vbat = dmm.meas_volt_dc()
+            if not SIMULATION:
+                ###############################
+                # Test pcb for short-circuits #
+                ###############################
+                if TEST_ALL or TEST_SHORT:
+                    meas_volt_short(equipment = equipment)
+                    # +5V2
                     meas_volt_select(equipment = equipment, channel = CH_VOLT_5V2)
-                    volt_5v2 = dmm.meas_volt_dc()
-                    running = volt_5v2 > 4.5
-                    if running:
-                        volt_vbat_bms = volt_vbat
-                    level = round(level - 0.01, 3)
+                    rep.add_meas(value = dmm.meas_res(), name = f"SHORT: Resistance +5V2", min = 500, max = 10.0e3)
+                    debug(f"Resistance: +5V2")
+                    meas_volt_off(equipment = equipment)
+                    # +3V3
+                    meas_volt_select(equipment = equipment, channel = CH_VOLT_3V3)
+                    rep.add_meas(value = dmm.meas_res(), name = f"SHORT: Resistance +3V3", min = 500, max = 10.0e3)
+                    debug(f"Resistance: +3V3")
+                    meas_volt_off(equipment = equipment)
+                    # VBAT
+                    meas_volt_select(equipment = equipment, channel = CH_VOLT_VBAT)
+                    rep.add_meas(value = dmm.meas_res(), name = f"SHORT: Resistance VBAT", min = 100e3, max = 100.0e6)
+                    debug(f"Resistance: +VBAT")
+                    meas_volt_off(equipment = equipment)
+                    # +5V_CHG
+                    chg_short(equipment = equipment)
+                    meas_volt_select(equipment = equipment, channel = CH_VOLT_5V_CHG)
+                    rep.add_meas(value = dmm.meas_res(), name = f"SHORT: Resistance +5V_CHG", min = 100e3, max = 1e6)
+                    debug(f"Resistance: +5V_CHG")
+                    meas_volt_off(equipment = equipment)
+                    chg_off(equipment = equipment)
+
+                ################
+                # Test charger #
+                ################
+                if TEST_ALL or TEST_CHARGER:
+                    # Prepare battery simulator
+                    bat_sim(equipment = equipment, volt = BAT_VOLT_CHG, amp = BAT_AMP_CHG, ampmeter = True)
+                    # Charge A => B
+                    chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
+                    rep.add_meas(value = dmm.meas_amp_dc(), name = f"CHARGE: Charging current A => B", min = 0.45, max = 0.55)
+                    chg_off(equipment = equipment)
+                    # Charge B => C
+                    chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "B", neg = "C")
+                    rep.add_meas(value = dmm.meas_amp_dc(), name = f"CHARGE: Charging current B => C", min = 0.45, max = 0.55)
+                    chg_off(equipment = equipment)
+                    # Charge C => A
+                    chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "C", neg = "A")
+                    rep.add_meas(value = dmm.meas_amp_dc(), name = f"CHARGE: Charging current C => A", min = 0.45, max = 0.55)
+                    chg_off(equipment = equipment)
+                    # Charge voltage
+                    meas_volt_select(equipment = equipment, channel = CH_VOLT_VBAT)
+                    chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
+                    bat_supply(equipment = equipment, volt = BAT_VOLT_CHG, amp = BAT_AMP_CHG)
+                    #bat_off(equipment = equipment)
+                    time.sleep(1)
+                    #print(f"CHARGE: Charging voltage: {dmm.meas_volt_dc(samples = 100)}")
+                    #for i in range(10):
+                    #    print(f"CHARGE: Charging voltage: {dmm.meas_volt_dc(samples = 10)}")
+                    rep.add_meas(value = dmm.meas_volt_dc(), name = f"CHARGE: Charging voltage", min = 4.100, max = 4.242)
+                    chg_off(equipment = equipment)
+                    # Disable battery simulator
+                    bat_off(equipment = equipment)
+
+                #######
+                # BMS #
+                #######
+                if TEST_ALL or TEST_BMS:
+                    bat_supply(equipment = equipment, volt = BAT_VOLT_FULL, amp = BAT_AMP_RUN)
+                    chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
+                    time.sleep(CHG_DELAY)
+                    chg_off(equipment = equipment)
+                    led_off(equipment = equipment)
+                    magnet_turn_on(equipment = equipment)
+                    time.sleep(HALL_DELAY)
+                    magnet_disable(equipment = equipment)
+                    level = 2.6
+                    bms_test_running = True
+                    volt_vbat_bms = 0
+                    while(bms_test_running):
+                        bat_supply(equipment = equipment, volt = level, amp = BAT_AMP_RUN)
+                        meas_volt_select(equipment = equipment, channel = CH_VOLT_VBAT)
+                        volt_vbat = dmm.meas_volt_dc()
+                        meas_volt_select(equipment = equipment, channel = CH_VOLT_5V2)
+                        volt_5v2 = dmm.meas_volt_dc()
+                        bms_test_running = volt_5v2 > 4.5
+                        if bms_test_running:
+                            volt_vbat_bms = volt_vbat
+                        level = round(level - 0.01, 3)
+                        #print(level)
+                        #print(volt_vbat)
+                        #print(volt_5v2)
+                        #print("")
+                    rep.add_meas(value = volt_vbat_bms, name = f"BMS: Undervoltage cutoff", min = 2.46, max = 2.52)
+                    ## Cutoff voltage under load
+                    #chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
+                    #time.sleep(CHG_DELAY)
+                    #chg_off(equipment = equipment)
+                    #time.sleep(0.5)
+                    #magnet_turn_on(equipment = equipment)
+                    #time.sleep(0.5)
+                    #magnet_disable(equipment = equipment)
+                    #time.sleep(1.5)
+                    #short_clear(equipment = equipment)
+                    #level = 4.2
+                    #bms_test_running = True
+                    #while(bms_test_running):
+                    #    level = level - 0.01
+                    #    bat_supply(equipment = equipment, volt = level, amp = BAT_AMP_RUN)
+                    #    meas_volt_select(equipment = equipment, channel = CH_VOLT_5V2)
+                    #    volt_5v2 = dmm.meas_volt_dc()
+                    #    bms_test_running = volt_5v2 > 4.5
+                    #    meas_volt_select(equipment = equipment, channel = CH_VOLT_VBAT)
+                    #    volt_vbat = dmm.meas_volt_dc()
+                    #    meas_volt_select(equipment = equipment, channel = CH_VOLT_VBAT_MON)
+                    #    volt_vbat_mon = dmm.meas_volt_dc()
+                    #    print(level)
+                    #    print(volt_vbat)
+                    #    print(volt_vbat_mon/22*122)
+                    #    print(volt_5v2)
+                    #    print("")
                     #print(level)
-                    #print(volt_vbat)
-                    #print(volt_5v2)
-                    #print("")
-                rep.add_meas(value = volt_vbat_bms, name = f"BMS: Undervoltage cutoff", min = 2.46, max = 2.52)
-                ## Cutoff voltage under load
-                #chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
-                #time.sleep(CHG_DELAY)
-                #chg_off(equipment = equipment)
-                #time.sleep(0.5)
-                #magnet_turn_on(equipment = equipment)
-                #time.sleep(0.5)
-                #magnet_disable(equipment = equipment)
-                #time.sleep(1.5)
-                #short_clear(equipment = equipment)
-                #level = 4.2
-                #running = True
-                #while(running):
-                #    level = level - 0.01
-                #    bat_supply(equipment = equipment, volt = level, amp = BAT_AMP_RUN)
-                #    meas_volt_select(equipment = equipment, channel = CH_VOLT_5V2)
-                #    volt_5v2 = dmm.meas_volt_dc()
-                #    running = volt_5v2 > 4.5
-                #    meas_volt_select(equipment = equipment, channel = CH_VOLT_VBAT)
-                #    volt_vbat = dmm.meas_volt_dc()
-                #    meas_volt_select(equipment = equipment, channel = CH_VOLT_VBAT_MON)
-                #    volt_vbat_mon = dmm.meas_volt_dc()
-                #    print(level)
-                #    print(volt_vbat)
-                #    print(volt_vbat_mon/22*122)
-                #    print(volt_5v2)
-                #    print("")
-                #print(level)
 
-            ###############
-            # Hall sensor #
-            ###############
-            if TEST_ALL or TEST_HALL:
-                bat_supply(equipment = equipment, volt = BAT_VOLT_FULL, amp = BAT_AMP_RUN)
-                chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
-                time.sleep(CHG_DELAY)
-                chg_off(equipment = equipment)
-                led_off(equipment = equipment)
-                # Check hall sensor turn-on
-                magnet_turn_on(equipment = equipment)
-                time.sleep(HALL_DELAY)
-                magnet_disable(equipment = equipment)
-                meas_volt_select(equipment = equipment, channel = CH_VOLT_3V3)
-                rep.add_meas(value = dmm.meas_volt_dc(), name = f"Hall: +3V3 after turn-on", min = 3.0, max = 3.6)
-                debug(f"Hall: on")
-                time.sleep(HALL_DELAY)
-                meas_volt_select(equipment = equipment, channel = CH_VOLT_HALL)
-                rep.add_meas(value = dmm.meas_volt_dc(), name = f"Hall: HALL when inactive", min = 3.7, max = 4.7)
-                debug(f"Hall: inactive")
-                # Test hall sensor as magnet presence detection
-                magnet_turn_on(equipment = equipment)
-                meas_volt_select(equipment = equipment, channel = CH_VOLT_HALL)
-                rep.add_meas(value = dmm.meas_volt_dc(), name = f"Hall: HALL when active", min = -0.1, max = 0.2)
-                magnet_disable(equipment = equipment)
-                debug(f"Hall: active")
-                meas_volt_off(equipment = equipment)
+                ###############
+                # Hall sensor #
+                ###############
+                if TEST_ALL or TEST_HALL:
+                    bat_supply(equipment = equipment, volt = BAT_VOLT_FULL, amp = BAT_AMP_RUN)
+                    chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
+                    time.sleep(CHG_DELAY)
+                    chg_off(equipment = equipment)
+                    led_off(equipment = equipment)
+                    # Check hall sensor turn-on
+                    magnet_turn_on(equipment = equipment)
+                    time.sleep(HALL_DELAY)
+                    magnet_disable(equipment = equipment)
+                    meas_volt_select(equipment = equipment, channel = CH_VOLT_3V3)
+                    rep.add_meas(value = dmm.meas_volt_dc(), name = f"Hall: +3V3 after turn-on", min = 3.0, max = 3.6)
+                    debug(f"Hall: on")
+                    time.sleep(HALL_DELAY)
+                    meas_volt_select(equipment = equipment, channel = CH_VOLT_HALL)
+                    rep.add_meas(value = dmm.meas_volt_dc(), name = f"Hall: HALL when inactive", min = 3.7, max = 4.7)
+                    debug(f"Hall: inactive")
+                    # Test hall sensor as magnet presence detection
+                    magnet_turn_on(equipment = equipment)
+                    meas_volt_select(equipment = equipment, channel = CH_VOLT_HALL)
+                    rep.add_meas(value = dmm.meas_volt_dc(), name = f"Hall: HALL when active", min = -0.1, max = 0.2)
+                    magnet_disable(equipment = equipment)
+                    debug(f"Hall: active")
+                    meas_volt_off(equipment = equipment)
 
-            #####################
-            # On/Off controller #
-            #####################
-            if TEST_ALL or TEST_ONOFF:
-                bat_supply(equipment = equipment, volt = BAT_VOLT_FULL, amp = BAT_AMP_RUN)
-                chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
-                time.sleep(CHG_DELAY)
-                chg_off(equipment = equipment)
-                led_off(equipment = equipment)
-                # Hall sensor turn-off
-                magnet_turn_on(equipment = equipment)
-                time.sleep(HALL_DELAY)
-                magnet_disable(equipment = equipment)
-                meas_volt_select(equipment = equipment, channel = CH_VOLT_3V3)
-                if dmm.meas_volt_dc() >= 3.0:
+                #####################
+                # On/Off controller #
+                #####################
+                if TEST_ALL or TEST_ONOFF:
+                    bat_supply(equipment = equipment, volt = BAT_VOLT_FULL, amp = BAT_AMP_RUN)
+                    chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
+                    time.sleep(CHG_DELAY)
+                    chg_off(equipment = equipment)
+                    led_off(equipment = equipment)
+                    # Hall sensor turn-off
+                    magnet_turn_on(equipment = equipment)
+                    time.sleep(HALL_DELAY)
+                    magnet_disable(equipment = equipment)
+                    meas_volt_select(equipment = equipment, channel = CH_VOLT_3V3)
+                    if dmm.meas_volt_dc() >= 3.0:
+                        magnet_turn_off(equipment = equipment)
+                        time.sleep(HALL_DELAY)
+                        magnet_disable(equipment = equipment)
+                        time.sleep(0.5)
+                        meas_volt_select(equipment = equipment, channel = CH_VOLT_3V3)
+                        #time.sleep(2)
+                        rep.add_meas(value = dmm.meas_volt_dc(), name = f"On/Off Controller: +3V3 after magnet turn-off", min = -0.5, max = 0.5)
+                    else:
+                        rep.add_meas(value = "FAIL: +3V3 not started", name = f"On/Off Controller: +3V3 after magnet turn-off")
+                    debug(f"On/Off Controller: Magnet off")
+                    # Charger turn-off
+                    magnet_turn_on(equipment = equipment)
+                    time.sleep(HALL_DELAY)
+                    magnet_disable(equipment = equipment)
+                    meas_volt_select(equipment = equipment, channel = CH_VOLT_3V3)
+                    if dmm.meas_volt_dc() >= 3.0:
+                        chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
+                        time.sleep(CHG_DELAY)
+                        chg_off(equipment = equipment)
+                        #time.sleep(0.5)
+                        meas_volt_select(equipment = equipment, channel = CH_VOLT_3V3)
+                        rep.add_meas(value = dmm.meas_volt_dc(), name = f"On/Off Controller: +3V3 after charger turn-off", min = -0.5, max = 0.5)
+                    else:
+                        rep.add_meas(value = "FAIL: +3V3 not started", name = f"On/Off Controller: +3V3 after charger turn-off")
+                    debug(f"On/Off Controller: Charger off")
+                    # Kill turn-off
+                    sig_gen_select(equipment = equipment, channel = CH_SIG_S_KILL)
+                    gen.trig_bus(ch = GEN_CH_SIG)
+                    gen.output_on(ch = GEN_CH_SIG)
+                    gen.burst_period(per = 10e-3)
+                    gen.burst_cycles(cycles = KILL_COUNT, ch = GEN_CH_SIG)
+                    gen.pulse_period(per = 1 / KILL_FREQ, ch = GEN_CH_SIG)
+                    gen.pulse_width(width = (1/KILL_FREQ*KILL_DUTY), ch = GEN_CH_SIG)
+                    time.sleep(2.0)
+                    magnet_turn_on(equipment = equipment)
+                    time.sleep(HALL_DELAY)
+                    magnet_disable(equipment = equipment)
+                    meas_volt_select(equipment = equipment, channel = CH_VOLT_3V3)
+                    if dmm.meas_volt_dc() >= 3.0:
+                        gen.trigger(ch = GEN_CH_SIG)
+                        #time.sleep(0.5)
+                        meas_volt_select(equipment = equipment, channel = CH_VOLT_3V3)
+                        rep.add_meas(value = dmm.meas_volt_dc(), name = f"On/Off Controller: +3V3 after kill turn-off", min = -0.5, max = 0.5)
+                    else:
+                        rep.add_meas(value = "FAIL: +3V3 not started", name = f"On/Off Controller: +3V3 after kill turn-off")
+                    #gen.burst_period(per = 1e-3, ch = GEN_CH_SIG)
+                    gen.pulse_width(width = LED_OFF_WIDTH, ch = GEN_CH_SIG)
+                    gen.pulse_period(per = LED_OFF_PER, ch = GEN_CH_SIG)
+                    gen.burst_cycles(cycles = LED_COUNT*LED_COLORS*LED_BIT_PER_COLOR, ch = GEN_CH_SIG)
+                    gen.output_off(ch = GEN_CH_SIG)
+                    gen.trig_immediate(ch = GEN_CH_SIG)
+                    debug(f"On/Off Controller: KILL off")
+
+                ###############
+                # 5.2V Supply #
+                ###############
+                if TEST_ALL or TEST_5V2:
+                    bat_supply(equipment = equipment, volt = BAT_VOLT_FULL, amp = BAT_AMP_RUN)
+                    chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
+                    time.sleep(CHG_DELAY)
+                    chg_off(equipment = equipment)
+                    led_off(equipment = equipment)
+                    magnet_turn_on(equipment = equipment)
+                    time.sleep(HALL_DELAY)
+                    magnet_disable(equipment = equipment)
+                    meas_volt_select(equipment = equipment, channel = CH_VOLT_5V2)
+                    rep.add_meas(value = dmm.meas_volt_dc(), name = f"5.2V Supply: Voltage", min = 0.58/13e3*(100e3+13e3)*.98, max = 0.61/13e3*(100e3+13e3)*1.02)
+                    debug(f"5.2V Supply: voltage idle")
+                    # 5V2 voltage with maimum load
+                    led_on(equipment = equipment)
+                    time.sleep(0.5)
+                    bat_current = ps.meas_amp(channel = PS_CH_BAT)
+                    if bat_current >= BAT_AMP_THRES_BRIGHT:
+                        meas_volt_select(equipment = equipment, channel = CH_VOLT_5V2)
+                        rep.add_meas(value = dmm.meas_volt_dc(), name = f"5.2V Supply: Voltage under load", min = 0.58/13e3*(100e3+13e3)*.98-0.1, max = 0.61/13e3*(100e3+13e3)*1.02)
+                    else:
+                        rep.add_meas(value = f"FAIL: supply current too low: {bat_current}A", name = f"5.2V Supply: Voltage under load", min = 0.58/13e3*(100e3+13e3)*.98-0.1, max = 0.61/13e3*(100e3+13e3)*1.02)
+                    debug(f"5.2V Supply: voltage under load")
+                    led_off(equipment = equipment)
                     magnet_turn_off(equipment = equipment)
                     time.sleep(HALL_DELAY)
                     magnet_disable(equipment = equipment)
-                    time.sleep(0.5)
+                    magnet_turn_on(equipment = equipment)
+                    time.sleep(HALL_DELAY)
+                    magnet_disable(equipment = equipment)
+
+                ###############
+                # 3.3V Supply #
+                ###############
+                if TEST_ALL or TEST_3V3:
+                    bat_supply(equipment = equipment, volt = BAT_VOLT_FULL, amp = BAT_AMP_RUN)
+                    chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
+                    time.sleep(CHG_DELAY)
+                    chg_off(equipment = equipment)
+                    led_off(equipment = equipment)
+                    magnet_turn_on(equipment = equipment)
+                    time.sleep(HALL_DELAY)
+                    magnet_disable(equipment = equipment)
                     meas_volt_select(equipment = equipment, channel = CH_VOLT_3V3)
-                    #time.sleep(2)
-                    rep.add_meas(value = dmm.meas_volt_dc(), name = f"On/Off Controller: +3V3 after magnet turn-off", min = -0.5, max = 0.5)
-                else:
-                    rep.add_meas(value = "FAIL: +3V3 not started", name = f"On/Off Controller: +3V3 after magnet turn-off")
-                debug(f"On/Off Controller: Magnet off")
-                # Charger turn-off
-                magnet_turn_on(equipment = equipment)
-                time.sleep(HALL_DELAY)
-                magnet_disable(equipment = equipment)
-                meas_volt_select(equipment = equipment, channel = CH_VOLT_3V3)
-                if dmm.meas_volt_dc() >= 3.0:
+                    rep.add_meas(value = dmm.meas_volt_dc(), name = f"3.3V Supply: Voltage", min = 0.588/22e3*(100e3+22e3)*0.98, max = 0.612/22e3*(100e3+22e3)*1.02)
+                    debug(f"3.3V Supply: voltage")
+
+                ###################
+                # voltage monitor #
+                ###################
+                if TEST_ALL or TEST_VMON:
+                    bat_supply(equipment = equipment, volt = BAT_VOLT_FULL, amp = BAT_AMP_RUN)
+                    chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
+                    time.sleep(CHG_DELAY)
+                    chg_off(equipment = equipment)
+                    led_off(equipment = equipment)
+                    magnet_turn_on(equipment = equipment)
+                    time.sleep(HALL_DELAY)
+                    magnet_disable(equipment = equipment)
+                    time.sleep(0.5)
+                    meas_volt_select(equipment = equipment, channel = CH_VOLT_VBAT)
+                    vbat_meas = dmm.meas_volt_dc()
+                    rep.add_meas(value = vbat_meas, name = f"Voltage Monitor: VBAT", min = 4.0, max = 4.3)
+                    meas_volt_select(equipment = equipment, channel = CH_VOLT_VBAT_MON)
+                    vbat_mon_meas = dmm.meas_volt_dc()
+                    rep.add_meas(value = vbat_mon_meas, name = f"Voltage Monitor: VBAT_MON", min = 0.7, max = 0.8)
+                    rep.add_meas(value = vbat_meas / vbat_mon_meas, name = f"Voltage Monitor: VBAT_MON divider", min = (VBATMON_R1+VBATMON_R2)/VBATMON_R2*0.98, max = (VBATMON_R1+VBATMON_R2)/VBATMON_R2*1.02)
+                    debug(f"Voltage Monitor: Battery voltage")
+
+                ###########################
+                # Temperature measurement #
+                ###########################
+                if TEST_ALL or TEST_TEMP:
+                    bat_supply(equipment = equipment, volt = BAT_VOLT_FULL, amp = BAT_AMP_RUN)
+                    chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
+                    time.sleep(CHG_DELAY)
+                    chg_off(equipment = equipment)
+                    led_off(equipment = equipment)
+                    magnet_turn_on(equipment = equipment)
+                    time.sleep(HALL_DELAY)
+                    magnet_disable(equipment = equipment)
+                    meas_volt_select(equipment = equipment, channel = CH_VOLT_TEMP)
+                    rep.add_meas(value = dmm.meas_volt_dc(), name = f"Temperature: TEMP Voltage", min = 0.55, max = 0.71)
+                    debug(f"Termperature: TEMP Voltage")
+
+                ############
+                # Failsafe #
+                ############
+                if TEST_ALL or TEST_FAILSAFE:
+                    bat_supply(equipment = equipment, volt = BAT_VOLT_FULL, amp = BAT_AMP_RUN)
+                    chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
+                    time.sleep(CHG_DELAY)
+                    chg_off(equipment = equipment)
+                    led_off(equipment = equipment)
+                    magnet_turn_on(equipment = equipment)
+                    time.sleep(HALL_DELAY)
+                    magnet_disable(equipment = equipment)
+                    # Oscillator properties
+                    sig_meas_select(equipment = equipment, channel = CH_SIG_M_FS_PULSE)
+                    fs_osc_amp = osc.meas_amp(1, 20)
+                    #print(fs_osc_amp)
+                    rep.add_meas(value = fs_osc_amp[0], name = f"Failsafe: Oscillator Amplitude", min = 4.5, max = 5.5)
+                    if MEAS_STAT:
+                        rep.add_meas(value = fs_osc_amp[1], name = f"Failsafe: Oscillator Amplitude min", min =  4.5, max = 5.5)
+                        rep.add_meas(value = fs_osc_amp[2], name = f"Failsafe: Oscillator Amplitude max", min =  4.5, max = 5.5)
+                        rep.add_meas(value = fs_osc_amp[3], name = f"Failsafe: Oscillator Amplitude dev", min = -0.5, max = 0.5)
+                    debug(f"Failsafe: Oscillator amplitude")
+                    # Oscillator positive pulse width
+                    fs_osc_pos_width = osc.meas_pwidth(1, 20)
+                    #print(fs_osc_pos_width)
+                    rep.add_meas(value = fs_osc_pos_width[0], name = f"Failsafe: Oscillator Positive Width", min = 580e-9, max = 1600e-9)
+                    if MEAS_STAT:
+                        rep.add_meas(value = fs_osc_pos_width[1], name = f"Failsafe: Oscillator Positive Width min", min =  580e-9, max = 1600e-9)
+                        rep.add_meas(value = fs_osc_pos_width[2], name = f"Failsafe: Oscillator Positive Width max", min =  580e-9, max = 1600e-9)
+                        rep.add_meas(value = fs_osc_pos_width[3], name = f"Failsafe: Oscillator Positive Width dev", min = -300e-9, max =  300e-9)
+                    debug(f"Failsafe: Oscillator positive width")
+                    # Oscillator negative pulse width
+                    fs_osc_neg_width = osc.meas_nwidth(1, 20)
+                    #print(fs_osc_neg_width)
+                    rep.add_meas(value = fs_osc_neg_width[0], name = f"Failsafe: Oscillator Negative Width", min = 220e-9, max = 600e-9)
+                    if MEAS_STAT:
+                        rep.add_meas(value = fs_osc_neg_width[1], name = f"Failsafe: Oscillator Negative Width min", min =  220e-9, max = 600e-9)
+                        rep.add_meas(value = fs_osc_neg_width[2], name = f"Failsafe: Oscillator Negative Width max", min =  220e-9, max = 600e-9)
+                        rep.add_meas(value = fs_osc_neg_width[3], name = f"Failsafe: Oscillator Negative Width dev", min = -100e-9, max = 100e-9)
+                    debug(f"Failsafe: Oscillator negative width")
+                    # Oscillator period
+                    fs_osc_period = osc.meas_period(1, 20)
+                    #print(fs_osc_period)
+                    rep.add_meas(value = fs_osc_period[0], name = f"Failsafe: Oscillator Period", min = 800e-9, max = 2200e-9)
+                    if MEAS_STAT:
+                        rep.add_meas(value = fs_osc_period[1], name = f"Failsafe: Oscillator Period min", min =  800e-9, max = 2200e-9)
+                        rep.add_meas(value = fs_osc_period[2], name = f"Failsafe: Oscillator Period max", min =  800e-9, max = 2200e-9)
+                        rep.add_meas(value = fs_osc_period[3], name = f"Failsafe: Oscillator Period dev", min = -100e-9, max = 2200e-9)
+                    debug(f"Failsafe: Oscillator period")
+                    # Missing Pulse Detection
+                    led_off(equipment = equipment)
+                    meas_volt_select(equipment = equipment, channel = CH_VOLT_FS_ACT)
+                    rep.add_meas(value = dmm.meas_volt_dc(), name = f"Failsafe: Missing Pulse Detection without signal", min = -0.55, max = 0.5)
+                    debug(f"Failsafe: Missing Pulse Detection without signal")
+                    led_on(equipment = equipment)
+                    meas_volt_select(equipment = equipment, channel = CH_VOLT_FS_ACT)
+                    rep.add_meas(value = dmm.meas_volt_dc(), name = f"Failsafe: Missing Pulse Detection with on signal", min = 5.0, max = 5.5)
+                    debug(f"Failsafe: Missing Pulse Detection with on signal")
+                    led_off(equipment = equipment, keep_gen = True)
+                    meas_volt_select(equipment = equipment, channel = CH_VOLT_FS_ACT)
+                    rep.add_meas(value = dmm.meas_volt_dc(), name = f"Failsafe: Missing Pulse Detection with off signal", min = 5.0, max = 5.5)
+                    debug(f"Failsafe: Missing Pulse Detection with off signal")
+                    # Failsafe switch-over
+                    led_off(equipment = equipment, keep_gen = True)
+                    time.sleep(0.5)
+                    rep.add_meas(value = ps.meas_amp(channel = PS_CH_BAT), name = f"Failsafe: Switch-over normal operation", min = 0.02, max = 0.20)
+                    debug(f"Failsafe: Switch-over normal operation")
+                    short(equipment = equipment, channel = CH_SHORT_DATA)
+                    gen.output_off(ch = GEN_CH_SIG)
+                    time.sleep(0.5)
+                    rep.add_meas(value = ps.meas_amp(channel = PS_CH_BAT), name = f"Failsafe: Switch-over Failsafe operation", min = 1.00, max = 2.00)
+                    debug(f"Failsafe: Switch-over Failsafe operation")
+
+                #############################
+                # Off state battery current #
+                #############################
+                if TEST_ALL or TEST_OFF_CURR:
+                    bat_supply(equipment = equipment, volt = BAT_VOLT_FULL, amp = BAT_AMP_RUN, ampmeter = True)
+                    dmm.meas_amp_dc()
+                    chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
+                    time.sleep(CHG_DELAY)
+                    chg_off(equipment = equipment)
+                    time.sleep(0.5)
+                    #print(f"Off state current{dmm.meas_amp_dc(samples = 100)}")
+                    off_state_current = dmm.meas_amp_dc(samples = 10, get_statistics = True)
+                    #print(off_state_current)
+                    rep.add_meas(value = off_state_current[0], name = f"Off state battery current: Current", min = -10.0e-6, max = -2e-6)
+                    if MEAS_STAT:
+                        rep.add_meas(value = off_state_current[1], name = f"Off state battery current: Current min")#, min = -10e-6, max = -2e-6)
+                        rep.add_meas(value = off_state_current[2], name = f"Off state battery current: Current max")#, min = -10e-6, max = -2e-6)
+                        rep.add_meas(value = off_state_current[3], name = f"Off state battery current: Current dev")#, min =  -5e-6, max =  5e-6)
+                    debug(f"Off state battery current: Current")
+
+                ###############
+                # Programming #
+                ###############
+                if TEST_ALL or TEST_PROG:
+                    bat_supply(equipment = equipment, volt = BAT_VOLT_FULL, amp = BAT_AMP_RUN)
                     chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
                     time.sleep(CHG_DELAY)
                     chg_off(equipment = equipment)
                     #time.sleep(0.5)
-                    meas_volt_select(equipment = equipment, channel = CH_VOLT_3V3)
-                    rep.add_meas(value = dmm.meas_volt_dc(), name = f"On/Off Controller: +3V3 after charger turn-off", min = -0.5, max = 0.5)
+                    short(equipment = equipment, channel = CH_SHORT_DATA_FS)
+                    short(equipment = equipment, channel = [CH_SHORT_GPIO0, CH_SHORT_RST])
+                    magnet_turn_on(equipment = equipment)
+                    time.sleep(HALL_DELAY)
+                    magnet_disable(equipment = equipment)
+                    time.sleep(HALL_DELAY)
+                    short_open(equipment = equipment, channel = [CH_SHORT_RST])
+                    print("Confirm Programming completion: ")
+                    #TODO: Replace input() statement with programming
+                    input()
+                    short_open(equipment = equipment, channel = [CH_SHORT_GPIO0])
+                    short(equipment = equipment, channel = [CH_SHORT_RST])
+                    time.sleep(0.1)
+                    short_open(equipment = equipment, channel = [CH_SHORT_RST])
+
+                ###################
+                # Stop everything #
+                ###################
+                if TEST_ALL or not TEST_KEEP_ON:
+                    bat_off(equipment = equipment)
+                    switch.open_all()
                 else:
-                    rep.add_meas(value = "FAIL: +3V3 not started", name = f"On/Off Controller: +3V3 after charger turn-off")
-                debug(f"On/Off Controller: Charger off")
-                # Kill turn-off
-                sig_gen_select(equipment = equipment, channel = CH_SIG_S_KILL)
-                gen.trig_bus(ch = GEN_CH_SIG)
-                gen.output_on(ch = GEN_CH_SIG)
-                gen.burst_period(per = 10e-3)
-                gen.burst_cycles(cycles = KILL_COUNT, ch = GEN_CH_SIG)
-                gen.pulse_period(per = 1 / KILL_FREQ, ch = GEN_CH_SIG)
-                gen.pulse_width(width = (1/KILL_FREQ*KILL_DUTY), ch = GEN_CH_SIG)
-                time.sleep(2.0)
-                magnet_turn_on(equipment = equipment)
-                time.sleep(HALL_DELAY)
-                magnet_disable(equipment = equipment)
-                meas_volt_select(equipment = equipment, channel = CH_VOLT_3V3)
-                if dmm.meas_volt_dc() >= 3.0:
-                    gen.trigger(ch = GEN_CH_SIG)
-                    #time.sleep(0.5)
-                    meas_volt_select(equipment = equipment, channel = CH_VOLT_3V3)
-                    rep.add_meas(value = dmm.meas_volt_dc(), name = f"On/Off Controller: +3V3 after kill turn-off", min = -0.5, max = 0.5)
-                else:
-                    rep.add_meas(value = "FAIL: +3V3 not started", name = f"On/Off Controller: +3V3 after kill turn-off")
-                #gen.burst_period(per = 1e-3, ch = GEN_CH_SIG)
-                gen.pulse_width(width = LED_OFF_WIDTH, ch = GEN_CH_SIG)
-                gen.pulse_period(per = LED_OFF_PER, ch = GEN_CH_SIG)
-                gen.burst_cycles(cycles = LED_COUNT*LED_COLORS*LED_BIT_PER_COLOR, ch = GEN_CH_SIG)
-                gen.output_off(ch = GEN_CH_SIG)
-                gen.trig_immediate(ch = GEN_CH_SIG)
-                debug(f"On/Off Controller: KILL off")
+                    bat_supply(equipment = equipment, volt = BAT_VOLT_FULL, amp = BAT_AMP_RUN)
+                    chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
+                    time.sleep(CHG_DELAY)
+                    chg_off(equipment = equipment)
+                    magnet_turn_on(equipment = equipment)
+                    time.sleep(HALL_DELAY)
+                    magnet_disable(equipment = equipment)
+                    led_off(equipment = equipment, keep_gen = True)
+                    meas_volt_select(equipment = equipment, channel = CH_VOLT_TEMP)
+                    print(dmm.meas_volt_dc())
 
-            ###############
-            # 5.2V Supply #
-            ###############
-            if TEST_ALL or TEST_5V2:
-                bat_supply(equipment = equipment, volt = BAT_VOLT_FULL, amp = BAT_AMP_RUN)
-                chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
-                time.sleep(CHG_DELAY)
-                chg_off(equipment = equipment)
-                led_off(equipment = equipment)
-                magnet_turn_on(equipment = equipment)
-                time.sleep(HALL_DELAY)
-                magnet_disable(equipment = equipment)
-                meas_volt_select(equipment = equipment, channel = CH_VOLT_5V2)
-                rep.add_meas(value = dmm.meas_volt_dc(), name = f"5.2V Supply: Voltage", min = 0.58/13e3*(100e3+13e3)*.98, max = 0.61/13e3*(100e3+13e3)*1.02)
-                debug(f"5.2V Supply: voltage idle")
-                # 5V2 voltage with maimum load
-                led_on(equipment = equipment)
-                time.sleep(0.5)
-                bat_current = ps.meas_amp(channel = PS_CH_BAT)
-                if bat_current >= BAT_AMP_THRES_BRIGHT:
-                    meas_volt_select(equipment = equipment, channel = CH_VOLT_5V2)
-                    rep.add_meas(value = dmm.meas_volt_dc(), name = f"5.2V Supply: Voltage under load", min = 0.58/13e3*(100e3+13e3)*.98-0.1, max = 0.61/13e3*(100e3+13e3)*1.02)
-                else:
-                    rep.add_meas(value = f"FAIL: supply current too low: {bat_current}A", name = f"5.2V Supply: Voltage under load", min = 0.58/13e3*(100e3+13e3)*.98-0.1, max = 0.61/13e3*(100e3+13e3)*1.02)
-                debug(f"5.2V Supply: voltage under load")
-                led_off(equipment = equipment)
-                magnet_turn_off(equipment = equipment)
-                time.sleep(HALL_DELAY)
-                magnet_disable(equipment = equipment)
-                magnet_turn_on(equipment = equipment)
-                time.sleep(HALL_DELAY)
-                magnet_disable(equipment = equipment)
+                ########################
+                # Unused code snippets #
+                ########################
+                ## Iterate through number of activated LEDs
+                #gen.pulse_setup(low=LED_LOW, high=LED_HIGH, per=LED_OFF_PER, width=LED_OFF_WIDTH, ch = GEN_CH_SIG)
+                #gen.burst_setup(mode = "TRIG", per = 1e-3, cycles = LED_COUNT*LED_COLORS*LED_BIT_PER_COLOR, ch = GEN_CH_SIG)
+                #gen.output_on(ch = GEN_CH_SIG)
+                #sig_gen_select(equipment = equipment, channel = CH_SIG_S_DATA_FS)
+                #meas_volt_select(equipment = equipment, channel = CH_VOLT_VBAT)
+                #for n in range(1, 21):
+                #    gen.burst_setup(mode = "TRIG", per = 1e-3, cycles = n*LED_COLORS*LED_BIT_PER_COLOR, ch = GEN_CH_SIG)
+                #    gen.pulse_period(per = LED_ON_PER, ch = GEN_CH_SIG)
+                #    gen.pulse_width(width = LED_ON_WIDTH, ch = GEN_CH_SIG)
+                #    print(f"Number of LEDs: {n}")
+                #    print(f"Voltage: {dmm.meas_volt_dc()}")
+                #    time.sleep(1)
 
-            ###############
-            # 3.3V Supply #
-            ###############
-            if TEST_ALL or TEST_3V3:
-                bat_supply(equipment = equipment, volt = BAT_VOLT_FULL, amp = BAT_AMP_RUN)
-                chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
-                time.sleep(CHG_DELAY)
-                chg_off(equipment = equipment)
-                led_off(equipment = equipment)
-                magnet_turn_on(equipment = equipment)
-                time.sleep(HALL_DELAY)
-                magnet_disable(equipment = equipment)
-                meas_volt_select(equipment = equipment, channel = CH_VOLT_3V3)
-                rep.add_meas(value = dmm.meas_volt_dc(), name = f"3.3V Supply: Voltage", min = 0.588/22e3*(100e3+22e3)*0.98, max = 0.612/22e3*(100e3+22e3)*1.02)
-                debug(f"3.3V Supply: voltage")
+            rep.print_dut(filename = f"{dut_name}{dut_ver}-{dut_serial_str}.txt", path = report_path, print_passfail = True, print_minmax = True)
 
-            ###################
-            # voltage monitor #
-            ###################
-            if TEST_ALL or TEST_VMON:
-                bat_supply(equipment = equipment, volt = BAT_VOLT_FULL, amp = BAT_AMP_RUN)
-                chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
-                time.sleep(CHG_DELAY)
-                chg_off(equipment = equipment)
-                led_off(equipment = equipment)
-                magnet_turn_on(equipment = equipment)
-                time.sleep(HALL_DELAY)
-                magnet_disable(equipment = equipment)
-                time.sleep(0.5)
-                meas_volt_select(equipment = equipment, channel = CH_VOLT_VBAT)
-                vbat_meas = dmm.meas_volt_dc()
-                rep.add_meas(value = vbat_meas, name = f"Voltage Monitor: VBAT", min = 4.0, max = 4.3)
-                meas_volt_select(equipment = equipment, channel = CH_VOLT_VBAT_MON)
-                vbat_mon_meas = dmm.meas_volt_dc()
-                rep.add_meas(value = vbat_mon_meas, name = f"Voltage Monitor: VBAT_MON", min = 0.7, max = 0.8)
-                rep.add_meas(value = vbat_meas / vbat_mon_meas, name = f"Voltage Monitor: VBAT_MON divider", min = (VBATMON_R1+VBATMON_R2)/VBATMON_R2*0.98, max = (VBATMON_R1+VBATMON_R2)/VBATMON_R2*1.02)
-                debug(f"Voltage Monitor: Battery voltage")
-
-            ###########################
-            # Temperature measurement #
-            ###########################
-            if TEST_ALL or TEST_TEMP:
-                bat_supply(equipment = equipment, volt = BAT_VOLT_FULL, amp = BAT_AMP_RUN)
-                chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
-                time.sleep(CHG_DELAY)
-                chg_off(equipment = equipment)
-                led_off(equipment = equipment)
-                magnet_turn_on(equipment = equipment)
-                time.sleep(HALL_DELAY)
-                magnet_disable(equipment = equipment)
-                meas_volt_select(equipment = equipment, channel = CH_VOLT_TEMP)
-                rep.add_meas(value = dmm.meas_volt_dc(), name = f"Temperature: TEMP Voltage", min = 0.55, max = 0.71)
-                debug(f"Termperature: TEMP Voltage")
-
-            ############
-            # Failsafe #
-            ############
-            if TEST_ALL or TEST_FAILSAFE:
-                # (Oscillator, Missing Pulse detection, combined signal, switch-over
-                bat_supply(equipment = equipment, volt = BAT_VOLT_FULL, amp = BAT_AMP_RUN)
-                chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
-                time.sleep(CHG_DELAY)
-                chg_off(equipment = equipment)
-                led_off(equipment = equipment)
-                magnet_turn_on(equipment = equipment)
-                time.sleep(HALL_DELAY)
-                magnet_disable(equipment = equipment)
-                # Oscillator properties
-                sig_meas_select(equipment = equipment, channel = CH_SIG_M_FS_PULSE)
-                rep.add_meas(value = osc.meas_amp(1), name = f"Failsafe: Oscillator Amplitude", min = 4.5, max = 5.5)
-                debug(f"Failsafe: Oscillator amplitude")
-                # Oscillator positive pulse width
-                fs_osc_pos_width = osc.meas_pwidth(1, 20)
-                rep.add_meas(value = fs_osc_pos_width[0], name = f"Failsafe: Oscillator Positive Width", min = 580e-9, max = 1600e-9)
-                debug(f"Failsafe: Oscillator positive width")
-                # Oscillator negative pulse width
-                fs_osc_neg_width = osc.meas_nwidth(1, 20)
-                rep.add_meas(value = fs_osc_neg_width[0], name = f"Failsafe: Oscillator Negative Width", min = 220e-9, max = 600e-9)
-                debug(f"Failsafe: Oscillator negative width")
-                # Oscillator period
-                fs_osc_period = osc.meas_period(1, 20)
-                rep.add_meas(value = fs_osc_period[0], name = f"Failsafe: Oscillator Period", min = 800e-9, max = 2200e-9)
-                debug(f"Failsafe: Oscillator period")
-                # Missing Pulse Detection
-                led_off(equipment = equipment)
-                #time.sleep(0.2)
-                meas_volt_select(equipment = equipment, channel = CH_VOLT_FS_ACT)
-                rep.add_meas(value = dmm.meas_volt_dc(), name = f"Failsafe: Missing Pulse Detection without signal", min = -0.55, max = 0.5)
-                debug(f"Failsafe: Missing Pulse Detection without signal")
-                led_on(equipment = equipment)
-                meas_volt_select(equipment = equipment, channel = CH_VOLT_FS_ACT)
-                rep.add_meas(value = dmm.meas_volt_dc(), name = f"Failsafe: Missing Pulse Detection with on signal", min = 5.0, max = 5.5)
-                debug(f"Failsafe: Missing Pulse Detection with on signal")
-                led_off(equipment = equipment, keep_gen = True)
-                meas_volt_select(equipment = equipment, channel = CH_VOLT_FS_ACT)
-                rep.add_meas(value = dmm.meas_volt_dc(), name = f"Failsafe: Missing Pulse Detection with off signal", min = 5.0, max = 5.5)
-                debug(f"Failsafe: Missing Pulse Detection with off signal")
-                # Failsafe switch-over
-                debug("Error: 1", halt = True)
-                led_off(equipment = equipment, keep_gen = True)
-                debug("Error: 2", halt = True)
-                time.sleep(0.5)
-                rep.add_meas(value = ps.meas_amp(channel = PS_CH_BAT), name = f"Failsafe: Switch-over normal operation", min = 0.02, max = 0.20)
-                debug("Error: 3", halt = True)
-                debug(f"Failsafe: Switch-over normal operation")
-                short(equipment = equipment, channel = CH_SHORT_DATA)
-                gen.output_off(ch = GEN_CH_SIG)
-                time.sleep(0.5)
-                rep.add_meas(value = ps.meas_amp(channel = PS_CH_BAT), name = f"Failsafe: Switch-over Failsafe operation", min = 1.00, max = 2.00)
-                debug(f"Failsafe: Switch-over Failsafe operation")
-
-            #############################
-            # Off state battery current #
-            #############################
-            if TEST_ALL or TEST_OFF_CURR:
-                bat_supply(equipment = equipment, volt = BAT_VOLT_FULL, amp = BAT_AMP_RUN, ampmeter = True)
-                dmm.meas_amp_dc()
-                chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
-                time.sleep(CHG_DELAY)
-                chg_off(equipment = equipment)
-                #time.sleep(1)
-                #print(f"Off state current{dmm.meas_amp_dc(samples = 100)}")
-                rep.add_meas(value = dmm.meas_amp_dc(), name = f"Off state battery current: Current", min = -10.0e-6, max = -2e-6)
-                debug(f"Off state battery current: Current")
-
-            ###############
-            # Programming #
-            ###############
-            if TEST_ALL or TEST_PROG:
-                bat_supply(equipment = equipment, volt = BAT_VOLT_FULL, amp = BAT_AMP_RUN)
-                chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
-                time.sleep(CHG_DELAY)
-                chg_off(equipment = equipment)
-                #time.sleep(0.5)
-                short(equipment = equipment, channel = CH_SHORT_DATA_FS)
-                short(equipment = equipment, channel = [CH_SHORT_GPIO0, CH_SHORT_RST])
-                magnet_turn_on(equipment = equipment)
-                time.sleep(HALL_DELAY)
-                magnet_disable(equipment = equipment)
-                time.sleep(HALL_DELAY)
-                short_open(equipment = equipment, channel = [CH_SHORT_RST])
-                print("Confirm Programming completion: ")
-                #TODO: Replace input() statement with programming
-                input()
-                short_open(equipment = equipment, channel = [CH_SHORT_GPIO0])
-                short(equipment = equipment, channel = [CH_SHORT_RST])
-                time.sleep(0.1)
-                short_open(equipment = equipment, channel = [CH_SHORT_RST])
-
-            ###################
-            # Stop everything #
-            ###################
-            bat_off(equipment = equipment)
-            #switch.open_all()
-
-            ########################
-            # Unused code snippets #
-            ########################
-            ## Iterate through number of activated LEDs
-            #gen.pulse_setup(low=LED_LOW, high=LED_HIGH, per=LED_OFF_PER, width=LED_OFF_WIDTH, ch = GEN_CH_SIG)
-            #gen.burst_setup(mode = "TRIG", per = 1e-3, cycles = LED_COUNT*LED_COLORS*LED_BIT_PER_COLOR, ch = GEN_CH_SIG)
-            #gen.output_on(ch = GEN_CH_SIG)
-            #sig_gen_select(equipment = equipment, channel = CH_SIG_S_DATA_FS)
-            #meas_volt_select(equipment = equipment, channel = CH_VOLT_VBAT)
-            #for n in range(1, 21):
-            #    gen.burst_setup(mode = "TRIG", per = 1e-3, cycles = n*LED_COLORS*LED_BIT_PER_COLOR, ch = GEN_CH_SIG)
-            #    gen.pulse_period(per = LED_ON_PER, ch = GEN_CH_SIG)
-            #    gen.pulse_width(width = LED_ON_WIDTH, ch = GEN_CH_SIG)
-            #    print(f"Number of LEDs: {n}")
-            #    print(f"Voltage: {dmm.meas_volt_dc()}")
-            #    time.sleep(1)
-
-        print(f"Testing of {dut_name}{dut_ver}-{dut_serial} completed")
-
-        rep.print_dut(filename = f"{dut_name}{dut_ver}-{dut_serial}.txt", path = report_path, print_passfail = True, print_minmax = True)
+            if rep.get_dut_pass():
+                testing_pass = True
+                print(f"Testing of {dut_name}{dut_ver}-{dut_serial_str} completed: Pass")
+            else:
+                testing_pass = False
+                print(f"Testing of {dut_name}{dut_ver}-{dut_serial_str} completed: Fail")
     rep.print_report(filename = f"NC1-1BA {rep.datetime.strftime('%Y-%m-%d %H-%M-%S')}.csv", path = report_path, print_passfail = True, print_minmax = True)
 
 

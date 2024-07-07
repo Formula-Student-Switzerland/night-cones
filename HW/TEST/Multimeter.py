@@ -1,5 +1,6 @@
 import pyvisa
 import time
+import statistics
 
 class Multimeter:
     """ Class for HP 34401A Digital Multimeter """
@@ -19,7 +20,7 @@ class Multimeter:
         self.dmm.write("*RST")
         self.opc_check()
 
-    def meas(self, func, samples = 1, mrange = "DEF", resolution = "DEF"):
+    def meas(self, func, samples = 1, mrange = "DEF", resolution = "DEF", get_statistics = False):
         if "DEF" in mrange or "def" in mrange:
             mrange = f""
         elif "MIN" in mrange or "min" in mrange:
@@ -48,6 +49,8 @@ class Multimeter:
             res = self.dmm.query(f"FETC?")
             self.dmm.timeout = timeout
             res = [float(idx) for idx in res.split(",")]
+            if get_statistics:
+                res = [sum(res)/len(res), min(res), max(res), statistics.stdev(res), res]
         else:
             separator = ""
             res = ""
@@ -68,6 +71,8 @@ class Multimeter:
                 res = f"{res}{self.dmm.query(f'FETC?')}"
                 self.dmm.timeout = timeout
             res = [float(idx) for idx in res.split(",")]
+            if get_statistics:
+                res = [sum(res)/len(res), min(res), max(res), statistics.stdev(res), res]
         return res
 
     def meas_volt_dc(self, samples = 1, mrange = "DEF", resolution = "DEF"):
@@ -79,8 +84,8 @@ class Multimeter:
     def meas_volt_ac(self, samples = 1, mrange = "DEF", resolution = "DEF"):
         return self.meas("VOLT:AC", samples = samples, mrange = mrange, resolution = resolution)
 
-    def meas_amp_dc(self, samples = 1, mrange = "DEF", resolution = "DEF"):
-        return self.meas("CURR:DC", samples = samples, mrange = mrange, resolution = resolution)
+    def meas_amp_dc(self, samples = 1, mrange = "DEF", resolution = "DEF", get_statistics = "False"):
+        return self.meas("CURR:DC", samples = samples, mrange = mrange, resolution = resolution, get_statistics = get_statistics)
 
     def meas_amp_ac(self, samples = 1, mrange = "DEF", resolution = "DEF"):
         return self.meas("CURR:AC", samples = samples, mrange = mrange, resolution = resolution)
