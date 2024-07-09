@@ -2,6 +2,7 @@ import NetworkInterface
 import NightConesMessage
 import cmd
 import readline
+import threading
 
 class NightConesCLI(cmd.Cmd):
     
@@ -36,6 +37,9 @@ class NightConesCLI(cmd.Cmd):
             self._networkif.setCurrentNetwork(ip_adresses[int(ip_select)],int(tx_port),int(rx_port))
         else: 
             print("No valid selection, terminating tool")
+        self._rx_active = True
+        thread = threading.Thread(target = self._rx_thread)
+        thread.start()
             
     def do_hello(self, line):
         """Print a greeting."""
@@ -43,6 +47,7 @@ class NightConesCLI(cmd.Cmd):
 
     def do_quit(self, line):
         """Exit the CLI."""
+        self._rx_active = False
         return True
         
     def do_SetConeState(self, line):
@@ -66,7 +71,18 @@ class NightConesCLI(cmd.Cmd):
             
         self._networkif.sendDataFrame([data])  
         
+    def do_RequestConeData(self, line):
+        ''' Request Data from specific Cone. If no IP Address is given, broadcast address is used.        
+        '''        
+        self._networkif.sendDataRequestFrame(line)
         
+        
+        
+        
+    def _rx_thread(self):
+        ''' Runs the RX Function to print received packages.'''
+        while self._rx_active:
+            self._networkif._rx_package()
 
 if __name__ == "__main__":
     NightConesCLI().cmdloop()     
