@@ -12,6 +12,14 @@ class Report:
     def add_meas(self, value, name = "", min = "", max = ""):
         self.dut[len(self.dut)-1].add_meas(value = value, name = name, min = min, max = max)
 
+    def get_dut_pass(self, idx = -1):
+        if idx < 0:
+            idx = len(self.dut)-1
+        if "Pass" in self.dut[idx].passfail:
+            return True
+        else:
+            return False
+
     def print_dut(self, filename = "", path = "", idx = -1, print_passfail = False, print_minmax = False):
         if idx < 0:
             idx = len(self.dut)-1
@@ -33,8 +41,9 @@ class Report:
             # File export
             f = open(f"{path}{filename}", "w")
             f.write(f"{self.dut[idx].name}{self.dut[idx].version} - {self.dut[idx].serial} - Test Protocol - {self.dut[idx].datetime.strftime('%Y-%m-%d %H:%M:%S')}\n")
+            f.write(f"Overall result: {self.dut[idx].passfail}\n")
             for i in range(len(self.dut[idx].meas_value)):
-                f.write(f"{self.dut[idx].meas_name[i]}: {self.dut[idx].meas_value[i]}\n")
+                f.write(f"\n{self.dut[idx].meas_name[i]}: {self.dut[idx].meas_value[i]}\n")
                 if print_passfail:
                     if print_minmax:
                         # Todo: do not print empty limits
@@ -58,6 +67,7 @@ class Report:
         separator = self.SEPARATOR
         title = f"{title}{separator}DUT Serial"
         title = f"{title}{separator}Date Time"
+        title = f"{title}{separator}DUT Pass / Fail"
         for meas_idx in range(len(self.dut[0].meas_name)):
             title = f"{title}{separator}{self.dut[0].meas_name[meas_idx]}"
             separator = self.SEPARATOR
@@ -75,6 +85,7 @@ class Report:
             separator = self.SEPARATOR
             data[dut_idx] = f"{data[dut_idx]}{separator}{self.dut[dut_idx].serial}"
             data[dut_idx] = f"{data[dut_idx]}{separator}{self.dut[dut_idx].datetime.strftime('%Y-%m-%d %H:%M:%S')}"
+            data[dut_idx] = f"{data[dut_idx]}{separator}{self.dut[dut_idx].passfail}"
             for meas_idx in range(len(self.dut[0].meas_name)):
                 data[dut_idx] = f"{data[dut_idx]}{separator}{self.dut[dut_idx].meas_value[meas_idx]}"
                 separator = self.SEPARATOR

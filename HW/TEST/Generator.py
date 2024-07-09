@@ -12,7 +12,7 @@ class Generator:
             opc = int(self.gen.query("*OPC?"))
             opccnt += 1
             if opccnt > opccnt_limit:
-                raise NameError("Multimeter: Operation complete not achieved within {opccnt_time}s")
+                raise NameError("Signal Generator: Operation complete not achieved within {opccnt_time}s")
             time.sleep(self.opccnt_delay)
 
     def reset(self):
@@ -64,6 +64,21 @@ class Generator:
 
     def burst_off(self, ch = 1):
         self.gen.write(f"SOUR{ch}:BURS:STAT 0")
+
+    def burst_period(self, per, ch = 1):
+        self.gen.write(f"SOUR{ch}:BURS:INT:PER {per}")
+
+    def burst_cycles(self, cycles, ch = 1):
+        self.gen.write(f"SOUR{ch}:BURS:NCYC {cycles}")
+
+    def trig_immediate(self, ch = 1):
+        self.gen.write(f"TRIG{ch}:SOUR IMM")
+
+    def trig_bus(self, ch = 1):
+        self.gen.write(f"TRIG{ch}:SOUR BUS")
+
+    def trigger(self, ch = 1):
+        self.gen.write(f"TRIG{ch}")
 
     def disp_text(self, DispMsg = ""):
         if DispMsg != "":

@@ -10,7 +10,7 @@ class PowerSupply:
         return self.ps.write(f"V{channel}?")
 
     def meas_volt(self, channel=1):
-        return self.ps.write(f"V{channel}O?")
+        return float(self.ps.write(f"V{channel}O?").strip("V\r\n"))
 
     def set_amp(self, amp, channel=1):
         self.ps.write(f"I{channel} {amp}")
@@ -19,7 +19,7 @@ class PowerSupply:
         return self.ps.query(f"I{channel}?")
 
     def meas_amp(self, channel=1):
-        return self.ps.query(f"I{channel}O?")
+        return float(self.ps.query(f"I{channel}O?").strip("A\r\n"))
 
     def set_ovp(self, volt, channel=1):
         self.ps.write(f"OVP{channel} {volt}")

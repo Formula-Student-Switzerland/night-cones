@@ -150,6 +150,9 @@ cad/archive/
 cad/pcb_bak/
 cad/print/
 
+# FreeDAC
+*.FCStd1
+*.step
 
 # Visual Studio Code
 .vscode/
