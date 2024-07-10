@@ -1,6 +1,6 @@
 import socket
 import NightConesMessage
-
+import random
 
 class NightConeSimulator:
    
@@ -22,16 +22,24 @@ class NightConeSimulator:
         MESSAGE = b"NC an Erde"
         data = b''
         while True:
-            try:
+            #try:
                 data, addr = self._rx_socket.recvfrom(1024) # buffer size is 1024 bytes
-                message = self._NCMessage.unpackFrame(data)
-                print("received message from %s: %s" % (addr, message))
+                header,message = self._NCMessage.unpackFrame(data)
+                print("received message from %s: %s" % (addr, (header,message)))
+                if(header is not None and header[1] == self._NCMessage._DATAREQUEST_FRAME):
+                    dataresponse = self._NCMessage.DATARESPONSE_TUPLE(0, random.randrange(0, 255, 3), random.randrange(0, 255, 3),
+                        (random.randrange(0, 255, 3), random.randrange(0, 255, 3), random.randrange(0, 255, 3), random.randrange(0, 255, 3), random.randrange(0, 255, 3), random.randrange(0, 255, 3)),
+                        random.randrange(0, 65535, 3), 
+                        random.randrange(0, 255, 3), 
+                        random.randrange(0, 1, 1))
+                    print("Return Data Response: %s"%str(dataresponse))
+                    self._rx_socket.sendto(self._NCMessage.packDataResponseFrame(dataresponse), (self._ownIP, self._tx_port ))
+                
             except KeyboardInterrupt:
                 return
             except: 
                 pass
-            self._rx_socket.sendto(data, (self._ownIP, self._tx_port ))
-
+            
 if __name__ == "__main__":
    sim = NightConeSimulator(5006, 5005)
    sim.start()

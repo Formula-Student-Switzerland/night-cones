@@ -26,6 +26,7 @@ class NightConesMessage:
     _DATA_FRAME = 0	#Data Frame with current color data
     _CONFIG_FRAME = 1	#Config Frame for setting various parameters on the cone
     _DATAREQUEST_FRAME = 2	#Data Request frame to request data from any cone it is sent to. 
+    _CONFIGREQUEST_FRAME = 3	#Data Request frame to request data from any cone it is sent to. 
 
     '''Client to Host Types'''
     _DATARESPONSE_FRAME = 128	#Data Request Response from cone to Host
@@ -48,6 +49,7 @@ class NightConesMessage:
 '''
     _DATA_FRAME_DEFINITION = "BBBB"
     _dataframecounter = 0
+    DATA_TUPLE = namedtuple('DataFrame', 'Color Brightness LightMode RepetitionTime Phase')
     
     class LightMode(Enum):
         ''' Enumeration for all Light Modes
@@ -65,7 +67,22 @@ class NightConesMessage:
     
     _REPETITION_GAIN = 100 #ms   
     
+    '''
+    Cone Data Response Definition
+    Byte	Size	Usage (description below)
+    0-15	16 Byte	Header
+
+    16-17	2 Byte	ID
+    18	    1 Byte	SoC (0 → 0%, 255 → 100%)
+    19	    1 Byte	RSSI
+    20-25	6 Byte	MAC Address
+    26-27	2 Byte	Software Version
+    28	    1 Byte	Hardware Revision
+    29	    1 Byte 	Hall Sensor State
+    '''
     
+    _DATA_RESPONSE_DEFINITION = "HBBBBBBBBHBB"
+    DATARESPONSE_TUPLE = namedtuple('DataResponse', 'ID SoC RSSI MAC SWVersion HWRevision Hall')
     
     def unpackFrame(self, frame) :
         ''' frame: byte array of the message
@@ -79,15 +96,18 @@ class NightConesMessage:
                     temp = struct.unpack(self._DATA_FRAME_DEFINITION,frame[i:i+4])
                     brightness = temp[1]>>4
                     lightmode_temp = self.LightMode(temp[1] & 0xF)
-                    data_list.append((temp[0],brightness, lightmode_temp,temp[2],temp[3]))
+                    data_list.append(self.DATA_TUPLE(temp[0],brightness, lightmode_temp,temp[2],temp[3]))
                 return (header,data_list)
                 
             case self._CONFIG_FRAME:
                 raise NotImplementedError
             case self._DATAREQUEST_FRAME:
-                raise NotImplementedError
+                return (header,'')
             case self._DATARESPONSE_FRAME:
-                raise NotImplementedError
+                temp = struct.unpack(self._DATA_RESPONSE_DEFINITION,frame[16:])        
+                data=self.DATARESPONSE_TUPLE(temp[0],temp[1],temp[2],(temp[3],temp[4],temp[5],temp[6],temp[7],temp[8]),temp[9],temp[10],temp[11])
+                return (header,data)
+                
     
             # If an exact match is not confirmed, this last case will be used if provided
             case _:
@@ -108,7 +128,23 @@ class NightConesMessage:
     
         self._dataframecounter = self._dataframecounter + 1;
         return frame
+        
+    def packConfigRequestFrame(self):
+        ''' Creates a Config Request frame.'''
+        frame = struct.pack(self._HEADER_STRING,self._VERSION, self._CONFIGREQUEST_FRAME, 0,int(time.time() * 1000))
+        return frame
+            
+    def packDataRequestFrame(self):
+        ''' Creates a Data Request frame.'''
+        frame = struct.pack(self._HEADER_STRING,self._VERSION, self._DATAREQUEST_FRAME, 0,int(time.time() * 1000))
+        return frame
     
+    def packDataResponseFrame(self,data):
+        ''' data: DATARESPONSE_TUPLE of Data
+        Creates a Data Response frame.'''
+        frame = struct.pack(self._HEADER_STRING,self._VERSION, self._DATARESPONSE_FRAME, 0,int(time.time() * 1000))
+        frame += struct.pack(self._DATA_RESPONSE_DEFINITION, data[0],  data[1], data[2], data[3][0], data[3][1], data[3][2], data[3][3], data[3][4], data[3][5], data[4], data[5], data[6])
+        return frame
 
 
 

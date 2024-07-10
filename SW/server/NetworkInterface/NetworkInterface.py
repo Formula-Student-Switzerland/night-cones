@@ -41,10 +41,14 @@ class NetworkInterface:
         
     def _rx_package(self):
         ''' Receives a package and prints it to the console '''
-        data, addr = self._socket.recvfrom(1024) # buffer size is 1024 bytes
-        message = self._NCMessage.unpackFrame(data)
-        print("Decoded: ")
-        print(message)
+        try:
+            data, addr = self._socket.recvfrom(1024) # buffer size is 1024 bytes
+            message = self._NCMessage.unpackFrame(data)
+            print("Decoded: ")
+            print(message)
+        except: 
+            print("RX Error")
+            pass
     
         
     def sendDataFrame(self,data):
@@ -54,6 +58,20 @@ class NetworkInterface:
         '''
         frame = self._NCMessage.packDataFrame(data)
         self._socket.sendto(frame, (self._currentIP, self._UDP_TX_PORT));
+   
+    def sendConfigRequestFrame(self, ip):
+        ''' Request Config Data from specified Cone. Send to Broadcast, if no IP is given. '''
+        if(ip == ''):
+            ip = self._currentIP;
+        frame = self._NCMessage.packConfigRequestFrame()
+        self._socket.sendto(frame, (ip, self._UDP_TX_PORT));      
+        
+    def sendDataRequestFrame(self, ip):
+        ''' Request Data from specified Cone. Send to Broadcast, if no IP is given.'''
+        if(ip == ''):
+            ip = self._currentIP;
+        frame = self._NCMessage.packDataRequestFrame()
+        self._socket.sendto(frame, (ip, self._UDP_TX_PORT));      
    
 if __name__ == "__main__":
     ''' This is only for testing purpose. Do not use as script'''
