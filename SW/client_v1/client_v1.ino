@@ -18,6 +18,8 @@
 #define SDA_PIN    2
 #define SCL_PIN   14
 #define LED_ESP_PIN 2
+#define ADC_IN   A0
+
 
 #define LED_COUNT 20
 #define LED_BOTTOM_COUNT 16
@@ -25,16 +27,16 @@
 #define ADC_MUX_VOLT 0
 #define ADC_MUX_TEMP 1
 
-#define RED_DEFAULT 100
-#define GREEN_DEFAULT 100
-#define BLUE_DEFAULT 100
+#define RED_DEFAULT 127
+#define GREEN_DEFAULT 127
+#define BLUE_DEFAULT 127
 
 #define FREQ_ON 250
 #define FREQ_READY 500
 #define FREQ_LIGHT 1000
 #define FREQ_LOOP 3000
 
-#define WIFI_ATTEMPTS 3
+#define WIFI_ATTEMPTS 1
 
 
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
@@ -43,7 +45,7 @@ const int PIN = 2;
 
 const int DELAY = 3000;
 
-const char *ssid = "NIGHT_CONES";
+const char *ssid = "FSCH_CONES";
 const char *password = "I_R4C3@night";
 const char *ota_pwd = "NC_update";
 
@@ -60,7 +62,12 @@ void setup() {
   strip.begin();
   strip.show(); // Initialize all pixels to 'off'
 
-  
+  // Init LEDs with red
+  for (int n = 0; n<LED_COUNT; n++) {
+    strip.setPixelColor(n, 50, 0, 0);
+  };
+  strip.show();
+
   // Wifi Setup
   Serial.begin(115200);
   Serial.println("Booting");
@@ -70,10 +77,12 @@ void setup() {
 
   esp_led_blink(FREQ_ON, 4);
 
+  delay(1000);
+
   while (WiFi.waitForConnectResult() != WL_CONNECTED && wifi_attempt < WIFI_ATTEMPTS) {
     Serial.println("Connection Failed! Rebooting...");
-    delay(5000);
-    ESP.restart();
+    //delay(5000);
+    //ESP.restart();
     wifi_attempt++;
   }
 
@@ -148,20 +157,50 @@ void setup() {
 
 void loop() {
 
-  
+  int volt_meas;
+  int temp_meas;
+
   // OTA loop
   if (wifi_connected == true) {
     ArduinoOTA.handle();
   }
   
-  
-  
   // Setup light mode 1, white, 100 brightness.
   for (int n = 0; n<LED_BOTTOM_COUNT; n++) {
-  strip.setPixelColor(n, RED_DEFAULT, GREEN_DEFAULT, BLUE_DEFAULT);
-  //strip.setPixelColor(n, n*10, n*10, n*10);
-  //strip.setPixelColor(n, n*10, 0, 0);
+    strip.setPixelColor(n, RED_DEFAULT, GREEN_DEFAULT, BLUE_DEFAULT);
+    if (digitalRead(HALL_PIN)) {
+      strip.setPixelColor(n, n*16, n*16, n*16);
+    }
   };
+
+  if (wifi_connected == true) {
+    strip.setPixelColor(16, 40, 0, 0);
+    strip.setPixelColor(17, 40, 0, 0);
+  }
+  else {
+    for (int n = 16; n<18; n++) {
+      strip.setPixelColor(n, RED_DEFAULT, GREEN_DEFAULT, BLUE_DEFAULT);
+    };
+  };
+
+  digitalWrite(ADC_MUX_PIN, ADC_MUX_TEMP);
+  delay(1);
+  temp_meas = analogRead(ADC_IN);
+  digitalWrite(ADC_MUX_PIN, ADC_MUX_VOLT);
+  delay(1);
+  volt_meas = analogRead(ADC_IN);
+
+  if (temp_meas > 550) {
+    strip.setPixelColor(18, 0, 0, 100);
+  }
+  else if (temp_meas < 350) {
+    strip.setPixelColor(18, 100, 0, 0);
+  }
+  else {
+    strip.setPixelColor(18, 100-(temp_meas-350)/2, 0, ((temp_meas-350)/2));
+  }
+
+  strip.setPixelColor(19, 255-volt_meas/4, volt_meas/4, 0);
 
   strip.show();
 
