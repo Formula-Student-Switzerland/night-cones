@@ -59,6 +59,8 @@ class NetworkInterface:
         frame = self._NCMessage.packDataFrame(data)
         self._socket.sendto(frame, (self._currentIP, self._UDP_TX_PORT));
    
+    def sendConfigData(self, ip, data_tuple)
+   
     def sendConfigRequestFrame(self, ip):
         ''' Request Config Data from specified Cone. Send to Broadcast, if no IP is given. '''
         if(ip == ''):

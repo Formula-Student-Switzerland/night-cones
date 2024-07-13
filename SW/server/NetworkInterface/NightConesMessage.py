@@ -30,6 +30,7 @@ class NightConesMessage:
 
     '''Client to Host Types'''
     _DATARESPONSE_FRAME = 128	#Data Request Response from cone to Host
+    _CONFIGRESPONSE_FRAME = 129	#Config Request Response
 
 
     '''
@@ -84,6 +85,32 @@ class NightConesMessage:
     _DATA_RESPONSE_DEFINITION = "HBBBBBBBBHBB"
     DATARESPONSE_TUPLE = namedtuple('DataResponse', 'ID SoC RSSI MAC SWVersion HWRevision Hall')
     
+    '''
+    Config Responste Frame Definition
+    Byte	Size	Usage (description below)
+    0-15	16 Byte	Header
+    16	    1 Byte	Number of Parameters
+    17-19	3 Byte	Reserved
+            
+    20-21	2 Byte	Parameter ID
+    22-23	2 Byte	Reserved because of alignement
+    24-27	4 Byte	Value
+    ...	
+    '''
+    _CONFIGRESPONSE_FRAME_SUBHEADER_DEFINITION = "Bxxx"
+    _CONFIGRESPONSE_FRAME_ENTRY_DEFINITION = "i"
+    
+    '''
+    Config Frame Definition
+    Byte	Size	Usage (description below)
+    0-15	16 Byte	Header
+            
+    16-17	2 Byte	Parameter ID
+    18-19	2 Byte	Reserved because of alignement
+    20-23	4 Byte	Value
+'''
+    _CONFIGRESPONSE_FRAME_ENTRY_DEFINITION = "Hxxi"
+    
     def unpackFrame(self, frame) :
         ''' frame: byte array of the message
         
@@ -91,16 +118,25 @@ class NightConesMessage:
         header = struct.unpack(self._HEADER_STRING, frame[0:16])
         match header[1]:
             case self._DATA_FRAME:
-                data_list = []
+                datalist = []
                 for i in range(16,len(frame),4):
                     temp = struct.unpack(self._DATA_FRAME_DEFINITION,frame[i:i+4])
                     brightness = temp[1]>>4
                     lightmode_temp = self.LightMode(temp[1] & 0xF)
-                    data_list.append(self.DATA_TUPLE(temp[0],brightness, lightmode_temp,temp[2],temp[3]))
-                return (header,data_list)
+                    datalist.append(self.DATA_TUPLE(temp[0],brightness, lightmode_temp,temp[2],temp[3]))
+                return (header,datalist)
                 
             case self._CONFIG_FRAME:
                 raise NotImplementedError
+            case self._CONFIGRESPONSE_FRAME:
+                parameternumber = struct.unpack(self._CONFIGRESPONSE_FRAME_SUBHEADER_DEFINITION, frame[16:20])
+                datalist = []
+                for i in range(20,len(frame),4):
+                    temp, value = struct.unpack(self._DATA_FRAME_DEFINITION,frame[i:i+4])
+                    datalist.append(value)                
+                return (header, datalist)
+                
+            case self._CONFIGREQUEST_FRAME:
             case self._DATAREQUEST_FRAME:
                 return (header,'')
             case self._DATARESPONSE_FRAME:
@@ -128,11 +164,25 @@ class NightConesMessage:
     
         self._dataframecounter = self._dataframecounter + 1;
         return frame
+    
+    def packConfigFrame(self,datatuple):
+        frame = struct.pack(self._HEADER_STRING,self._VERSION, self._CONFIG_FRAME, 0,int(time.time() * 1000))
+        return frame
+        
         
     def packConfigRequestFrame(self):
         ''' Creates a Config Request frame.'''
         frame = struct.pack(self._HEADER_STRING,self._VERSION, self._CONFIGREQUEST_FRAME, 0,int(time.time() * 1000))
         return frame
+        
+    def packConfigResponseFrame(self,datalist):
+        ''' datalist: List of parameter values (4 byte int)
+        
+        Creates a Config Response Frame'''
+        frame = struct.pack(self._HEADER_STRING,self._VERSION, self._CONFIG_FRAME, 0,int(time.time() * 1000))
+        frame += struct.pack(self._CONFIGRESPONSE_FRAME_SUBHEADER_DEFINITION,len(datalist))
+        for el in datalist:
+            frame += struct.pack(self._CONFIGRESPONSE_FRAME_ENTRY_DEFINITION, el)
             
     def packDataRequestFrame(self):
         ''' Creates a Data Request frame.'''
