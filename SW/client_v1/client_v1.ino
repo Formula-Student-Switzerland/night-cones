@@ -36,9 +36,9 @@
 #define FREQ_LIGHT 1000
 #define FREQ_LOOP 3000
 
-#define WIFI_ATTEMPTS 1
-#define WIFI_DELAY_MS 20
-#define WIFI_LOOPS    250
+#define WIFI_ATTEMPTS 3
+#define WIFI_DELAY_MS 100
+#define WIFI_LOOPS    50
 
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 
@@ -46,12 +46,15 @@ const int PIN = 2;
 
 const int DELAY = 3000;
 
-const char *ssid = "Malve_B4";
-const char *password = "malve3988";
+const char *ssid = "FSCH_NightCone";
+const char *password = "I_R4C3@night";
 const char *ota_pwd = "NC_update";
 
 bool wifi_configure = true;
 bool wifi_connected = false;
+
+unsigned long previousMillis = 0;  // will store last time LED was updated
+const long loop_interval = 10;  // interval at which to blink (milliseconds)
 
 void setup() {
   // Init pins.
@@ -73,13 +76,23 @@ void setup() {
   bool wifi_loop_continue = false;
   bool hall_status;
   unsigned int wifi_loop_cnt = 0;
+  delay(500);
   while (wifi_loop_cnt < WIFI_LOOPS & wifi_configure) {
-    strip.show();
     delay(WIFI_DELAY_MS);
     hall_status = digitalRead(HALL_PIN);
-    if(hall_status) {
+    if(hall_status == false) {
       wifi_configure = false;
     }
+    if ((wifi_loop_cnt % 10) >= 5) {
+      for (int n = 0; n<LED_COUNT; n++) {
+        strip.setPixelColor(n, 0, 50, 0);
+      }
+    } else {
+      for (int n = 0; n<LED_COUNT; n++) {
+        strip.setPixelColor(n, 0, 0, 50);
+      }
+    }
+    strip.show();
     wifi_loop_cnt++;
   }
   if (wifi_configure) {
@@ -179,82 +192,102 @@ void loop() {
   int brightness_blue;
 
   // OTA loop
-  
-  // Measure temperature and battery voltage
-  digitalWrite(ADC_MUX_PIN, ADC_MUX_TEMP);
-  delay(1);
-  temp_meas = analogRead(ADC_IN);
-  digitalWrite(ADC_MUX_PIN, ADC_MUX_VOLT);
-  delay(1);
-  volt_meas = analogRead(ADC_IN);
+  ArduinoOTA.handle();
 
-  if (temp_meas > 374) {
-    brightness_red   = RED_DEFAULT;
-    brightness_green = GREEN_DEFAULT;
-    brightness_blue  = BLUE_DEFAULT;
-  } else if (temp_meas < 337) {
-    brightness_red   = 10;
-    brightness_green = 10;
-    brightness_blue  = 10;
-  } else {
-    brightness_red   = 10 + ((temp_meas - 337) * 3);
+  unsigned long currentMillis = millis();
+  if (currentMillis - previousMillis >= loop_interval) {
+    // save the last time you blinked the LED
+    previousMillis = currentMillis;
 
-  }
+    // Measure temperature and battery voltage
+    digitalWrite(ADC_MUX_PIN, ADC_MUX_TEMP);
+    delay(1);
+    temp_meas = analogRead(ADC_IN);
+    digitalWrite(ADC_MUX_PIN, ADC_MUX_VOLT);
+    delay(1);
+    volt_meas = analogRead(ADC_IN);
 
-  // Setup light mode 1, white, 100 brightness.
-  for (int n = 0; n<LED_COUNT; n++) {
-    strip.setPixelColor(n, brightness_red, brightness_green, brightness_blue);
-    //if (digitalRead(HALL_PIN)) {
-    //  strip.setPixelColor(n, n*16, n*16, n*16);
-    //}
-  };
-
-  if (wifi_connected == true && wifi_configure == true) {
-    ArduinoOTA.handle();
-    strip.setPixelColor(16, 40, 0, 0);
-    strip.setPixelColor(17, 40, 0, 0);
-  }
-  else {
-    //for (int n = 16; n<18; n++) {
-    //  strip.setPixelColor(n, brightness_red, brightness_green, brightness_blue);
-    //};
-  };
-
-  if (digitalRead(HALL_PIN)) {
-    if (temp_meas > 550) {
-      strip.setPixelColor(18, 0, 0, 100);
-    }
-    else if (temp_meas < 350) {
-      strip.setPixelColor(18, 100, 0, 0);
-    }
-    else {
-      strip.setPixelColor(18, 100-(temp_meas-350)/2, 0, ((temp_meas-350)/2));
-    }
-
-    strip.setPixelColor(19, 255-volt_meas/4, volt_meas/4, 0);
-
-    int n_led_indicator;
-    if (volt_meas > 775) {
-      n_led_indicator = 15;
-    } else if (volt_meas < 553) {
-      n_led_indicator = 0;
+    if (temp_meas > 374) {
+      brightness_red   = RED_DEFAULT;
+      brightness_green = GREEN_DEFAULT;
+      brightness_blue  = BLUE_DEFAULT;
+    } else if (temp_meas < 337) {
+      brightness_red   = 10;
+      brightness_green = 10;
+      brightness_blue  = 10;
     } else {
-      n_led_indicator = (volt_meas - 553) / 14;
+      brightness_red   = 10 + ((temp_meas - 337) * 3);
+      brightness_green = brightness_red;
+      brightness_blue  = brightness_red;
+      // ToDo Daniel Check here, if you missed the other brightnesses
     }
-    for (int n = 0; n<16; n++) {
-      if (n > n_led_indicator) {
-        strip.setPixelColor(n, 0, 0, 0);
+
+    // Setup light mode 1, white, 100 brightness.
+    for (int n = 0; n<LED_COUNT; n++) {
+      strip.setPixelColor(n, brightness_red, brightness_green, brightness_blue);
+      //if (digitalRead(HALL_PIN)) {
+      //  strip.setPixelColor(n, n*16, n*16, n*16);
+      //}
+    };
+
+    //if (wifi_connected == true && wifi_configure == true) {
+    //  strip.setPixelColor(16, 40, 0, 0);
+    //  strip.setPixelColor(17, 40, 0, 0);
+    //}
+    //else {
+      //for (int n = 16; n<18; n++) {
+      //  strip.setPixelColor(n, brightness_red, brightness_green, brightness_blue);
+      //};
+    //};
+    int led_temp_red;
+    int led_temp_green;
+    int led_temp_blue;
+    if (digitalRead(HALL_PIN)) {
+      if (temp_meas > 550) {
+        //strip.setPixelColor(18, 0, 0, 100);
+        led_temp_red   = 0;
+        led_temp_green = 0;
+        led_temp_blue  = 100;
+      }
+      else if (temp_meas < 350) {
+        //strip.setPixelColor(18, 100, 0, 0);
+        led_temp_red   = 100;
+        led_temp_green = 0;
+        led_temp_blue  = 0;
+      }
+      else {
+        //strip.setPixelColor(18, 100-(temp_meas-350)/2, 0, ((temp_meas-350)/2));
+        led_temp_red   = 100-(temp_meas-350)/2;
+        led_temp_green = 0;
+        led_temp_blue  = (temp_meas-350)/2;
+      }
+
+      for (int n = 16;n<20; n++) {
+        strip.setPixelColor(n, led_temp_red, led_temp_green, led_temp_blue);
+      }
+      //strip.setPixelColor(19, 255-volt_meas/4, volt_meas/4, 0);
+
+      int n_led_indicator;
+      if (volt_meas > 775) {
+        n_led_indicator = 15;
+      } else if (volt_meas < 553) {
+        n_led_indicator = 0;
       } else {
-        strip.setPixelColor(n, brightness_red, brightness_green, brightness_blue);
+        n_led_indicator = (volt_meas - 553) / 14;
+      }
+      for (int n = 0; n<16; n++) {
+        if (n > n_led_indicator) {
+          strip.setPixelColor(n, 0, 0, 0);
+        } else {
+          strip.setPixelColor(n, brightness_red, brightness_green, brightness_blue);
+        }
       }
     }
+
+    strip.show();
+
+    //delay(10);
   }
-
-  strip.show();
-
-  delay(10);
-  
-
 }
 
 
