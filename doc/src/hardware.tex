@@ -423,7 +423,7 @@ Due to the addition of an \ac{I2C} \ac{EEPROM}, the \ac{GPIO} pins need to be re
 \subsubsection{HW ID}
 A hardware ID should be implemented to indicate different hardware revisions to the software. This can be implemented by connecting GPIO pins or by changing the I2C address of the EEPROM. No additional HW should be implemented for the HW ID. 
 
-\subsection{Over-current protection}
+\subsubsection{Over-current protection}
 The over-current protection on the prototype triggers below the maximum current, because the maximum resistance of the used MOSFETs is to high. The typical value would be sufficient. The fuse $(\qty{1.5}{\A}$ is as well too low. 
 
 \subsubsection{Failsafe counter output}
@@ -461,3 +461,20 @@ Additional testpoints should be added to the charging ports to ease the connecti
 
 \subsubsection{Testpoint labels on top layer}
 The testpoints are only labelled on the bottom layer. To ease testing and debugging, the testpoints should be labelled on the top layer as well. 
+
+\subsection{Modifications from index BA to index BB}
+
+\subsubsection{Level shifter too slow}
+The rise time of the level shifter is too long. R18 should be changed from 1K5/0603 to 270R/0603. 
+
+\subsubsection{Edge detector not working}
+The edge detector is not working because the time constant of the delay is too long. R21 should be changed from 100K/0603 to 3K3/0603 and C6 should be changed from 1U/0603 to 100P/0603. 
+
+\subsubsection{Unreliable magnet turn-off}
+The turn-off with a magnet using the hall sensor is unreliable. This is caused by the low threshold voltage of the EN pin of the boost converter U30 (TPS61023) in combination with the voltage drop over R104 and D13. The value of R104 should be changed from 1K5/0603 to 620R/0603. 
+
+\subsection{Modifications from index BB to index CA}
+
+\subsubsection{Level shifter distorts duty cycle}
+Rise and fall time of the level shifter are not identical. This leads to a distortion of the duty cycle of the DATA signal. In the first series production this was corrected by adjusting the pulse width in the neopixel library. 
+For a new production run, the level shifter should be changed to a type that does not introduce any distortion in the signal duty cycle. 
