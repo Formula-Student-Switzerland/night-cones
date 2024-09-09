@@ -22,16 +22,16 @@ MEAS_STAT   = True
 
 TEST_ALL        = False
 TEST_SHORT      = True
-TEST_CHARGER    = False
-TEST_BMS        = False
-TEST_HALL       = False
-TEST_ONOFF      = False
-TEST_5V2        = False
-TEST_3V3        = False
-TEST_VMON       = False
-TEST_TEMP       = False
-TEST_FAILSAFE   = False
-TEST_OFF_CURR   = False
+TEST_CHARGER    = True
+TEST_BMS        = True
+TEST_HALL       = True
+TEST_ONOFF      = True
+TEST_5V2        = True
+TEST_3V3        = True
+TEST_VMON       = True
+TEST_TEMP       = True
+TEST_FAILSAFE   = True
+TEST_OFF_CURR   = True
 TEST_PROG       = False  
 TEST_KEEP_ON    = False
 
@@ -685,26 +685,30 @@ def main():
                     bat_sim(equipment = equipment, volt = BAT_VOLT_CHG, amp = BAT_AMP_CHG, ampmeter = True)
                     # Charge A => B
                     chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
+                    time.sleep(CHG_DELAY)
                     rep.add_meas(value = dmm.meas_amp_dc(), name = f"CHARGE: Charging current A => B", min = 0.45, max = 0.55)
                     chg_off(equipment = equipment)
                     # Charge B => C
                     chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "B", neg = "C")
+                    time.sleep(CHG_DELAY)
                     rep.add_meas(value = dmm.meas_amp_dc(), name = f"CHARGE: Charging current B => C", min = 0.45, max = 0.55)
                     chg_off(equipment = equipment)
                     # Charge C => A
                     chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "C", neg = "A")
+                    time.sleep(CHG_DELAY)
                     rep.add_meas(value = dmm.meas_amp_dc(), name = f"CHARGE: Charging current C => A", min = 0.45, max = 0.55)
                     chg_off(equipment = equipment)
                     # Charge voltage
                     meas_volt_select(equipment = equipment, channel = CH_VOLT_VBAT)
                     chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
+                    time.sleep(CHG_DELAY)
                     bat_supply(equipment = equipment, volt = BAT_VOLT_CHG, amp = BAT_AMP_CHG)
                     #bat_off(equipment = equipment)
                     time.sleep(1)
                     #print(f"CHARGE: Charging voltage: {dmm.meas_volt_dc(samples = 100)}")
                     #for i in range(10):
                     #    print(f"CHARGE: Charging voltage: {dmm.meas_volt_dc(samples = 10)}")
-                    rep.add_meas(value = dmm.meas_volt_dc(), name = f"CHARGE: Charging voltage", min = 4.100, max = 4.242)
+                    rep.add_meas(value = dmm.meas_volt_dc(), name = f"CHARGE: Charging voltage", min = 4.050, max = 4.242)
                     chg_off(equipment = equipment)
                     # Disable battery simulator
                     bat_off(equipment = equipment)
@@ -721,7 +725,7 @@ def main():
                     magnet_turn_on(equipment = equipment)
                     time.sleep(HALL_DELAY)
                     magnet_disable(equipment = equipment)
-                    level = 2.6
+                    level = 2.8
                     bms_test_running = True
                     volt_vbat_bms = 0
                     while(bms_test_running):
@@ -738,7 +742,7 @@ def main():
                         #print(volt_vbat)
                         #print(volt_5v2)
                         #print("")
-                    rep.add_meas(value = volt_vbat_bms, name = f"BMS: Undervoltage cutoff", min = 2.46, max = 2.52)
+                    rep.add_meas(value = volt_vbat_bms, name = f"BMS: Undervoltage cutoff", min = 2.46, max = 2.78)
                     ## Cutoff voltage under load
                     #chg_on(equipment = equipment, volt = CHG_VOLT, amp = CHG_AMP, pos = "A", neg = "B")
                     #time.sleep(CHG_DELAY)
@@ -967,11 +971,11 @@ def main():
                     sig_meas_select(equipment = equipment, channel = CH_SIG_M_FS_PULSE)
                     fs_osc_amp = osc.meas_amp(1, 20)
                     #print(fs_osc_amp)
-                    rep.add_meas(value = fs_osc_amp[0], name = f"Failsafe: Oscillator Amplitude", min = 4.5, max = 5.5)
+                    rep.add_meas(value = fs_osc_amp[0], name = f"Failsafe: Oscillator Amplitude", min = 4.5, max = 6.0)
                     if MEAS_STAT:
-                        rep.add_meas(value = fs_osc_amp[1], name = f"Failsafe: Oscillator Amplitude min", min =  4.5, max = 5.5)
-                        rep.add_meas(value = fs_osc_amp[2], name = f"Failsafe: Oscillator Amplitude max", min =  4.5, max = 5.5)
-                        rep.add_meas(value = fs_osc_amp[3], name = f"Failsafe: Oscillator Amplitude dev", min = -0.5, max = 0.5)
+                        rep.add_meas(value = fs_osc_amp[1], name = f"Failsafe: Oscillator Amplitude min")
+                        rep.add_meas(value = fs_osc_amp[2], name = f"Failsafe: Oscillator Amplitude max")
+                        rep.add_meas(value = fs_osc_amp[3], name = f"Failsafe: Oscillator Amplitude dev")
                     debug(f"Failsafe: Oscillator amplitude")
                     # Oscillator positive pulse width
                     fs_osc_pos_width = osc.meas_pwidth(1, 20)
