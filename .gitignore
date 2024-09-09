@@ -153,6 +153,7 @@ cad/print/
 # FreeDAC
 *.FCStd1
 *.step
+*.dxf
 
 # Visual Studio Code
 .vscode/
