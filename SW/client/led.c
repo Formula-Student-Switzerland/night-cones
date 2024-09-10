@@ -1,24 +1,24 @@
 #ifdef OUTPUT_PIN
 	#include <Adafruit_NeoPixel.h>
 
-	Adafruit_NeoPixel leds(LED_NUMBER, OUTPUT_PIN, NEO_GRB + NEO_KHZ800);
+    uint8_t led_state[LED_COUNT*3];
+    Adafruit_NeoPixel leds(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 
 	int initLeds() {
+        pinMode(LED_ESP_PIN, OUTPUT);
 		leds.begin();
 		leds.clear();
 	}
 
 
-	int controlLeds(int *ledState) {
+	int led_show(int *ledState) {
 
 		leds.clear();
 
 		for (int k=0; k<LED_NUMBER; k++) {
 			// Assign rgb values.
-			leds.setPixelColor(k, leds.Color(ledState[k*3], ledState[k*3+1], ledState[k*3+2]));
-			
+			leds.setPixelColor(k, leds.Color(ledState[k*3], ledState[k*3+1], ledState[k*3+2]));			
 		}
-
 		// Send rgb to LEDs.
 		leds.show();
 
@@ -28,6 +28,63 @@
 		leds.clear();
 		leds.show();
 	}
+    
+void led_esp_blink(int frequency, int blinks) {
+  for (int b=0; b < blinks; b++) {
+    digitalWrite(LED_ESP_PIN, 1);
+    delay(frequency);
+    digitalWrite(LED_ESP_PIN, 0);
+    delay(frequency);
+  }
+}
+
+
+void led_show_status(uint8_t temp, uint8_t voltage)
+{   int led_temp_red;
+    int led_temp_green;
+    int led_temp_blue;
+    
+    leds.clear();
+    
+    // Show Temperature through LEDs on top
+     if (temp > 550) {
+        //leds.setPixelColor(18, 0, 0, 100);
+        led_temp_red   = 0;
+        led_temp_green = 0;
+        led_temp_blue  = 100;
+      }
+      else if (temp < 350) {
+        //leds.setPixelColor(18, 100, 0, 0);
+        led_temp_red   = 100;
+        led_temp_green = 0;
+        led_temp_blue  = 0;
+      }
+      else {
+        //leds.setPixelColor(18, 100-(temp-350)/2, 0, ((temp-350)/2));
+        led_temp_red   = 100-(temp-350)/2;
+        led_temp_green = 0;
+        led_temp_blue  = (temp-350)/2;
+      }
+
+      for (int n = 16;n<20; n++) {
+        leds.setPixelColor(n, led_temp_red, led_temp_green, led_temp_blue);
+      }
+
+      // Show voltage as series of LEDs on bottom
+      int n_led_indicator;
+      if (voltage > 775) {
+        n_led_indicator = 15;
+      } else if (voltage < 553) {
+        n_led_indicator = 0;
+      } else {
+        n_led_indicator = (voltage - 553) / 14;
+      }
+      for (int n = 0; n<=n_led_indicator; n++) {
+          leds.setPixelColor(n, brightness_red, brightness_green, brightness_blue); 
+      }
+      led.show();
+}
+
 
 #else
 /*

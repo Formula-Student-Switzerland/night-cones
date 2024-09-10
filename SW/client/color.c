@@ -1,6 +1,28 @@
+/*******************************************************************************/
+/* 
+ * File: color.c
+ * Author: Oliver Clemens
+ */
+/*******************************************************************************/
+/*
+ * This file is used to convert the transmitted 8 bit color and 4 bit brightness
+ * This allowes to show 128 colors in 16 brightness levels. 
+ */
+/*******************************************************************************/
+#include <stdint.h>
 #include "color.h"
 
-void decodeColors (int color, int brightness, int *decoded) {
+
+/**
+ * Decode the received color field uint8_to RGB components
+ * Inputs:
+ *      color: 8 bit color code from blue-green-red-white (see documentation)
+ *      brightness: LEFT (MSB) aligned 4 bit brightness code. Lower 4 bits 
+ *                  must be 0
+ * Outputs: 
+ *      decoded: 3 byte array pointer with the three components RGB 
+ */
+void color_decode (uint8_t color, uint8_t brightness, uint8_t *decoded) {
 	// Init variables.
 	float red = 0;
 	float green = 0;
@@ -43,17 +65,17 @@ void decodeColors (int color, int brightness, int *decoded) {
 
   	// Scale colors with brightness.
   	if (red >= green && red >= blue) {
-    	decoded[0] = 1.275 * brightness;  // red scaled
-    	decoded[1] = green / red * 1.275 * brightness;  // green scaled
-    	decoded[2] = blue / red * 1.275 * brightness;  // blue scaled
+    	decoded[0] = (uint8_t)brightness;  // red scaled
+    	decoded[1] = (uint8_t)green / red * brightness;  // green scaled
+    	decoded[2] = (uint8_t)blue / red * brightness;  // blue scaled
   	} else if (green >= blue) {
-    	decoded[1] = 1.275 * brightness;
-    	decoded[0] = red / green * 1.275 * brightness;
-    	decoded[2] = blue / green * 1.275 * brightness;
+    	decoded[1] = (uint8_t) brightness;
+    	decoded[0] = (uint8_t) red / green * brightness;
+    	decoded[2] = (uint8_t) blue / green  * brightness;
   	} else {
-    	decoded[2] = 1.275 * brightness;
-    	decoded[0] = red / blue * 1.275 * brightness;
-    	decoded[1] = green / blue * 1.275 * brightness;
+    	decoded[2] = (uint8_t)brightness;
+    	decoded[0] = (uint8_t)red / blue * brightness;
+    	decoded[1] = (uint8_t)green / blue * brightness;
   	}
 
 }
