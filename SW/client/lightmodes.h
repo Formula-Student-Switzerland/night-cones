@@ -18,7 +18,8 @@
  * otherwise they will not work as intended.
  */
 /*******************************************************************************/
-
+#ifndef LIGHTMODES_H
+#define LIGHTMODES_H
 
 void lightmode_switch(uint8_t color, uint8_t brightness_mode, uint8_t repetition_time);
 void lightmode_step (int32_t time, uint8_t *ledState);
@@ -32,3 +33,6 @@ void lightmode_lightmode_circ(uint32_t time, lightmode* current_lm, uint8_t *led
 void lightmode_lightmode_circ_smoot(uint32_t time, lightmode* current_lm, uint8_t *ledState);
 void lightmode_lightmode_fade(uint32_t time, lightmode* current_lm, uint8_t *ledState);
 void lightmode_lightmode_ident(uint32_t time, lightmode* current_lm, uint8_t *ledState);
+
+
+#endif
