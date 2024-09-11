@@ -172,3 +172,5 @@ HW/scripts/*.png
 # Python
 __pycache__
 
+**/*/credentials.h
+
