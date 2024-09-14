@@ -13,6 +13,7 @@
 #include <ESP8266mDNS.h>
 #include <WiFiUdp.h>
 #include <ArduinoOTA.h>
+#include <stdint.h>
 
 #include "led.h"
 #include "wifi.h"
@@ -55,7 +56,7 @@ IPAddress wifi_server_ip;
  * Sets up the WIFI Module and connects to the specified WLAN
  *
  */
-void wifi_setup(void) {
+int wifi_setup(void) {
     // Wifi Setup
     WiFi.mode(WIFI_STA);
     WiFi.begin(ssid, password);

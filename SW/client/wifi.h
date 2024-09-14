@@ -11,11 +11,12 @@
 /*******************************************************************************/
 #ifndef WIFI_H
 #define WIFI_H
+#include <stdint.h>
 
 #define WIFI_UDP_RX_PORT 5005
 #define WIFI_UDP_TX_PORT 5006
 
-void wifi_setup(void);
+int wifi_setup(void) ;
 void wifi_loop(void);
 
 

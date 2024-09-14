@@ -20,6 +20,16 @@
 /*******************************************************************************/
 #ifndef LIGHTMODES_H
 #define LIGHTMODES_H
+#include <stdint.h>
+
+typedef struct {
+    uint8_t base_color;
+    uint8_t brightness;
+    uint8_t repetition_time;
+    
+    uint8_t color[9];
+    void (*lightmode_handler)(); 
+} lightmode;
 
 
 void lightmode_setup(void);
@@ -27,14 +37,14 @@ void lightmode_switch(uint8_t color, uint8_t brightness_mode, uint8_t repetition
 void lightmode_step (int32_t time, uint8_t *ledState);
 
 // Light Modes
-void lightmode_lightmode_continuous(uint32_t time, lightmode* current_lm, uint8_t *ledState);
-void lightmode_lightmode_blink(uint32_t time, lightmode* current_lm, uint8_t *ledState);
-void lightmode_lightmode_blink_short(uint32_t time, lightmode* current_lm, uint8_t *ledState);
-void lightmode_lightmode_blink_long(uint32_t time, lightmode* current_lm, uint8_t *ledState);
-void lightmode_lightmode_circ(uint32_t time, lightmode* current_lm, uint8_t *ledState);
-void lightmode_lightmode_circ_smoot(uint32_t time, lightmode* current_lm, uint8_t *ledState);
-void lightmode_lightmode_fade(uint32_t time, lightmode* current_lm, uint8_t *ledState);
-void lightmode_lightmode_ident(uint32_t time, lightmode* current_lm, uint8_t *ledState);
+void lightmode_continuous(uint32_t time, lightmode* current_lm, uint8_t *ledState);
+void lightmode_blink(uint32_t time, lightmode* current_lm, uint8_t *ledState);
+void lightmode_blink_short(uint32_t time, lightmode* current_lm, uint8_t *ledState);
+void lightmode_blink_long(uint32_t time, lightmode* current_lm, uint8_t *ledState);
+void lightmode_circ(uint32_t time, lightmode* current_lm, uint8_t *ledState);
+void lightmode_circ_smooth(uint32_t time, lightmode* current_lm, uint8_t *ledState);
+void lightmode_fade(uint32_t time, lightmode* current_lm, uint8_t *ledState);
+void lightmode_ident(uint32_t time, lightmode* current_lm, uint8_t *ledState);
 
 
 #endif

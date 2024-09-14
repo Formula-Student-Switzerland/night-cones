@@ -12,6 +12,7 @@
 
 #ifndef COLOR_H
 #define COLOR_H
+#include <stdint.h>
 
 void color_decode (uint8_t color, uint8_t brightness, uint8_t *decoded);
 

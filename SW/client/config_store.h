@@ -10,6 +10,7 @@
 /*******************************************************************************/
 #ifndef CONFIG_STORE_H
 #define CONFIG_STORE_H
+#include <stdint.h>
 
 #define CONFIG_STORE_SW_REV_MAJ 0x0
 #define CONFIG_STORE_SW_REV_MIN 0x99

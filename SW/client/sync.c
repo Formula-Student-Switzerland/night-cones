@@ -9,6 +9,8 @@
  * necessary phase shift. 
  */
 /*******************************************************************************/
+#include <stdint.h>
+#include <arduino.h>
 #include "sync.h"
 
 typedef struct{    
@@ -40,7 +42,7 @@ void sync_setup(uint16_t led_period){
  */
 bool sync_loop(uint32_t* time){
     
-    sync_setting.time = millis()-time_offset;
+    sync_setting.time = millis()-sync_setting.time_offset;
     *time = sync_setting.time;
     return (sync_setting.time%sync_setting.led_period ==0);
 }
@@ -52,7 +54,7 @@ bool sync_loop(uint32_t* time){
  *      phase_shift:     Phase shift from frame header
  */
 void sync_reconfigure(uint8_t repetition_time, uint8_t phase_shift){
-    phase_increment = phase_shift*repetition_time*100/255;
+    sync_setting.phase_increment = phase_shift*repetition_time*100/255;
 }
 
 /**
@@ -63,5 +65,5 @@ void sync_reconfigure(uint8_t repetition_time, uint8_t phase_shift){
  * TODO: Check if filtering of time_offset is necessary.
  */
 void sync_synchronize(uint32_t rx_timestamp){
-    time_offset = millis()-rx_timestamp-phase_increment;
+    sync_setting.time_offset = millis()-rx_timestamp-sync_setting.phase_increment;
 }

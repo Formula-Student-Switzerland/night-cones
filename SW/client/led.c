@@ -8,10 +8,15 @@
  * This file is used to control the on-board LED and the led Strip on the 
  * nightcone. 
 /*******************************************************************************/
-#ifdef OUTPUT_PIN
+
+#include <stdint.h>
 #include <Adafruit_NeoPixel.h>
 #include "led.h"
-#include "lightmode.h"
+#include "lightmodes.h"
+
+
+#ifndef LED_EMULATION
+
 
 uint8_t led_state[LED_COUNT*3];
 Adafruit_NeoPixel leds(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
@@ -22,7 +27,7 @@ Adafruit_NeoPixel leds(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
  */
 int led_setup(void) {
     pinMode(LED_ESP_PIN, OUTPUT);
-	leds.begin();
+	  leds.begin();
     led_clear();
 }
 
@@ -32,11 +37,11 @@ int led_setup(void) {
  *      ledState: uint8_t array with length 3*LED_COUNT which is used to define the LED colors. 
  *
  */
-int led_show(int *ledState) {
+int led_show(uint8_t *ledState) {
 
 	leds.clear();
 
-	for (int k=0; k<LED_NUMBER; k++) {
+	for (int k=0; k<LED_COUNT; k++) {
 		// Assign rgb values.
 		leds.setPixelColor(k, leds.Color(ledState[k*3], ledState[k*3+1], ledState[k*3+2]));			
 	}
@@ -115,7 +120,7 @@ void led_show_status(int16_t temp, int16_t voltage)
         n_led_indicator = (voltage - 553) / 14;
       }
       for (int n = 0; n<=n_led_indicator; n++) {
-          leds.setPixelColor(n, brightness_red, brightness_green, brightness_blue); 
+          leds.setPixelColor(n, DEFAULT_BRIGHTNESS, DEFAULT_BRIGHTNESS, DEFAULT_BRIGHTNESS); 
       }
       led.show();
 }
@@ -141,10 +146,10 @@ X X X X X
 */
 int displayLeds(int *ledState) {
 	char displayStr[100];
-	char illumChar[LED_NUMBER*3+1];
+	char illumChar[LED_COUNT*3+1];
 
 	// Set array for LED on strings.
-	for (int k=0; k<LED_NUMBER; k++) {
+	for (int k=0; k<LED_COUNT; k++) {
 		if (ledState[k] > 50 || ledState[k+1] > 50 || ledState[k+2] > 50) {
 			illumChar[k] = 'X';
 		} else if (ledState[k] > 0 || ledState[k+1] > 0 || ledState[k+2] > 0) {

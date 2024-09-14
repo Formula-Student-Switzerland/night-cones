@@ -13,6 +13,7 @@
 #include <ESP8266mDNS.h>
 #include <WiFiUdp.h>
 #include <ArduinoOTA.h>
+#include <stdint.h>
 
 #include "ota.h"
 #include "credentials.h"

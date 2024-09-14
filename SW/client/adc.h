@@ -1,5 +1,7 @@
 #ifndef ADC_H
 #define ADC_H
+#include <stdint.h>
+#include <arduino.h>
 
 #define ADC_MUX_PIN 13
 #define ADC_IN   A0
@@ -13,8 +15,6 @@ extern uint8_t adc_soc;
 
 void adc_setup(void);
 
-int adc_loop(void);
-
-
+void adc_loop(void);
 
 #endif

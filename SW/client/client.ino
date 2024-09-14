@@ -8,9 +8,11 @@
 
 #include <Adafruit_NeoPixel.h>
 
+#include "lightmodes.h"
 #include "wifi.h"
 #include "adc.h"
 #include "led.h"
+#include "sync.h"
 
 
 //#include "..\..\..\Adafruit_NeoPixel\Adafruit_NeoPixel.h"
@@ -36,10 +38,6 @@
 
 const int DELAY = 3000;
 
-const char *ssid = "FSCH_NightCone";
-const char *password = "I_R4C3@night";
-const char *ota_pwd = "NC_update";
-
 bool wifi_configure = true;
 bool wifi_connected = false;
 
@@ -59,10 +57,10 @@ void setup() {
   lightmode_setup();
 
   // Init LEDs with red
-  for (int n = 0; n<LED_COUNT; n++) {
+  /*for (int n = 0; n<LED_COUNT; n++) {
     strip.setPixelColor(n, 50, 0, 0);
   };
-  strip.show();
+  strip.show();*/
   
   bool wifi_loop_continue = false;
   bool hall_status;
@@ -75,15 +73,15 @@ void setup() {
       wifi_configure = false;
     }
     if ((wifi_loop_cnt % 10) >= 5) {
-      for (int n = 0; n<LED_COUNT; n++) {
+      /*for (int n = 0; n<LED_COUNT; n++) {
         strip.setPixelColor(n, 0, 50, 0);
-      }
+      }*/
     } else {
-      for (int n = 0; n<LED_COUNT; n++) {
+      /*for (int n = 0; n<LED_COUNT; n++) {
         strip.setPixelColor(n, 0, 0, 50);
-      }
+      }*/
     }
-    strip.show();
+    //strip.show();
     wifi_loop_cnt++;
   }
   if (wifi_configure) {
@@ -109,21 +107,21 @@ void loop() {
     
     // Measure temperature and battery voltage
     adc_loop();
-    lightmode_step(time, &led_state);
+    lightmode_step(currentMillis, led_state);
     
     // Exchange this piece of code
-    if (adc_temp_meas > 374) {
+    /*if (adc_temp_meas > 374) {
       lightMode1(0, RED_DEFAULT, led_state);
     } else if (adc_temp_meas < 337) {
       lightMode1(0, 10, led_state);
     } else {
       lightMode1(0, 10 + ((adc_temp_meas - 337) * 3), led_state);
-    }
+    }*/
 
     if (digitalRead(HALL_PIN))
         led_show_status(adc_temp_meas, adc_volt_meas);
     else{
-        led_show(&led_state);
+        led_show(led_state);
     }
   }
 }

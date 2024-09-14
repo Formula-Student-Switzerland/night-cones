@@ -12,9 +12,12 @@
 #ifndef SYNC_H
 #define SYNC_H
 
-void sync_setup(void);
+#include <stdint.h>
+#include <arduino.h>
 
-bool sync_loop(void);
+void sync_setup(uint16_t led_period);
+
+bool sync_loop(uint32_t* time);
 void sync_reconfigure(uint8_t repetition_time, uint8_t phase_shift);
 void sync_synchronize(uint32_t rx_timestamp);
 
