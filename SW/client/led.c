@@ -1,34 +1,64 @@
+/****************************)***************************************************/
+/* 
+ * File: led.c
+ * Author: Andreas Horat / Oliver Clemens
+ */
+/*******************************************************************************/
+/*
+ * This file is used to control the on-board LED and the led Strip on the 
+ * nightcone. 
+/*******************************************************************************/
 #ifdef OUTPUT_PIN
-	#include <Adafruit_NeoPixel.h>
+#include <Adafruit_NeoPixel.h>
+#include "led.h"
+#include "lightmode.h"
 
-    uint8_t led_state[LED_COUNT*3];
-    Adafruit_NeoPixel leds(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
+uint8_t led_state[LED_COUNT*3];
+Adafruit_NeoPixel leds(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 
-	int initLeds() {
-        pinMode(LED_ESP_PIN, OUTPUT);
-		leds.begin();
-		leds.clear();
+/**
+ * Setup the On-Board LED and the LED Strip. Turn off all LEDs
+ *
+ */
+int led_setup(void) {
+    pinMode(LED_ESP_PIN, OUTPUT);
+	leds.begin();
+    led_clear();
+}
+
+/**
+ * Show the ledState on the LEDs. This procedure uses time. 
+ *  Input: 
+ *      ledState: uint8_t array with length 3*LED_COUNT which is used to define the LED colors. 
+ *
+ */
+int led_show(int *ledState) {
+
+	leds.clear();
+
+	for (int k=0; k<LED_NUMBER; k++) {
+		// Assign rgb values.
+		leds.setPixelColor(k, leds.Color(ledState[k*3], ledState[k*3+1], ledState[k*3+2]));			
 	}
+	// Send rgb to LEDs.
+	leds.show();
 
+}
 
-	int led_show(int *ledState) {
+/**
+ * Turn off all LEDs
+ *
+ */
+int led_clear() {
+	leds.clear();
+	leds.show();
+}
 
-		leds.clear();
-
-		for (int k=0; k<LED_NUMBER; k++) {
-			// Assign rgb values.
-			leds.setPixelColor(k, leds.Color(ledState[k*3], ledState[k*3+1], ledState[k*3+2]));			
-		}
-		// Send rgb to LEDs.
-		leds.show();
-
-	}
-
-	int clearLeds() {
-		leds.clear();
-		leds.show();
-	}
-    
+/**
+ * Let the on-board LED blink for e specific amount of times. This function is blocking 
+ * with busy loop to realize the delay. 
+ *
+ */
 void led_esp_blink(int frequency, int blinks) {
   for (int b=0; b < blinks; b++) {
     digitalWrite(LED_ESP_PIN, 1);
@@ -39,7 +69,12 @@ void led_esp_blink(int frequency, int blinks) {
 }
 
 
-void led_show_status(uint8_t temp, uint8_t voltage)
+/**
+ * Show The temperature and voltage using the LEDs on top and bottom instead of the
+ * normal lightmode. 
+ *
+ */
+void led_show_status(int16_t temp, int16_t voltage)
 {   int led_temp_red;
     int led_temp_green;
     int led_temp_blue;

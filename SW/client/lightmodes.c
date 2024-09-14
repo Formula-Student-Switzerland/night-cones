@@ -61,6 +61,20 @@ const void lightmodes[LIGHTMODE_COUNT] =
 };
 
 /**
+ * Initialise the initial light mode. Change settings here. (or later in Header File)
+ *
+ *
+ */
+void lightmode_setup(void)
+{
+    lightmode_current.base_color=0;
+    lightmode_current.brightness=0;
+    lightmode_current.repetition_time=0;
+    lightmode_current.color={0,0,0,0,0,0,0,0,0};
+    lightmode_current.lightmode_handler = lightmodes[0];
+}
+
+/**
  * Switches the new light mode on. This is used to reduce the calculation-
  * amount per iteration to step the color. 
  *
@@ -140,7 +154,7 @@ void lightmode_blink(uint32_t time, lightmode* current_lm, uint8_t *ledState) {
     if(current_lm.repetition_time == 0)
         current_step = 0;
     else
-        current_step = time/200/current_lm.repetition_time;
+        current_step = time/400/current_lm.repetition_time;
     
     if(current_step %2 == 0)
         lightmode_set_all_led(current_lm.color,ledState);

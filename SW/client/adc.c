@@ -1,9 +1,9 @@
 
 #include "adc.h"
 
-int adc_volt_meas;
-int adc_temp_meas;
-
+int16_t adc_volt_meas;
+int16_t adc_temp_meas;
+uint8_t adc_soc;
 int adc_mux_state
 
 /*

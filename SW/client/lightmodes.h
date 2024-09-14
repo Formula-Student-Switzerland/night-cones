@@ -21,6 +21,8 @@
 #ifndef LIGHTMODES_H
 #define LIGHTMODES_H
 
+
+void lightmode_setup(void);
 void lightmode_switch(uint8_t color, uint8_t brightness_mode, uint8_t repetition_time);
 void lightmode_step (int32_t time, uint8_t *ledState);
 

@@ -55,8 +55,8 @@ void setup() {
   adc_setup();
 
   // LED setup
-  strip.begin();
-  strip.show(); // Initialize all pixels to 'off'
+  led_setup();
+  lightmode_setup();
 
   // Init LEDs with red
   for (int n = 0; n<LED_COUNT; n++) {
@@ -104,14 +104,14 @@ void loop() {
   // OTA loop
   wifi_loop();
 
-  unsigned long currentMillis = millis();
-  if (currentMillis - previousMillis >= LED_UPDATE_INTERVAL) {
-    // save the last time you blinked the LED
-    previousMillis = currentMillis;
-
+  uint32_t currentMillis;
+  if (sync_loop(&currentMillis)) {
+    
     // Measure temperature and battery voltage
     adc_loop();
-
+    lightmode_step(time, &led_state);
+    
+    // Exchange this piece of code
     if (adc_temp_meas > 374) {
       lightMode1(0, RED_DEFAULT, led_state);
     } else if (adc_temp_meas < 337) {
@@ -123,7 +123,7 @@ void loop() {
     if (digitalRead(HALL_PIN))
         led_show_status(adc_temp_meas, adc_volt_meas);
     else{
-        led_show(led_state);
+        led_show(&led_state);
     }
   }
 }

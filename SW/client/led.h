@@ -1,3 +1,13 @@
+/****************************)***************************************************/
+/* 
+ * File: led.h
+ * Author: Andreas Horat
+ */
+/*******************************************************************************/
+/*
+ * This file is used to control the LED strip and the on-board LED
+ */
+/*******************************************************************************/
 #ifndef LED_H
 #define LED_H
 
@@ -17,12 +27,12 @@
     extern uint8_t led_state[LED_COUNT*3];
 
 
-    int initLeds();
-    int controlLeds(int *ledState);
-    int clearLeds()
+    int led_setup();
+    int led_show(int *ledState);
+    int led_clear()
     
     void led_esp_blink(int frequency, int blinks);
-    void led_show_status(uint8_t temp, uint8_t voltage);
+    void led_show_status(int16_t temp, int16_t voltage);
 #else
     int displayLeds(int *ledState);
 #endif
