@@ -12,9 +12,7 @@
 
 #ifndef OTA_H
 #define OTA_H
-#include <stdint.h>
 #include <ArduinoOTA.h>
-
 void ota_setup(void);
 void ota_loop(void);
 

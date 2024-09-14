@@ -25,7 +25,7 @@ Adafruit_NeoPixel leds(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
  * Setup the On-Board LED and the LED Strip. Turn off all LEDs
  *
  */
-int led_setup(void) {
+void led_setup(void) {
     pinMode(LED_ESP_PIN, OUTPUT);
 	  leds.begin();
     led_clear();
@@ -37,7 +37,7 @@ int led_setup(void) {
  *      ledState: uint8_t array with length 3*LED_COUNT which is used to define the LED colors. 
  *
  */
-int led_show(uint8_t *ledState) {
+void led_show(uint8_t *ledState) {
 
 	leds.clear();
 
@@ -54,7 +54,7 @@ int led_show(uint8_t *ledState) {
  * Turn off all LEDs
  *
  */
-int led_clear() {
+void led_clear() {
 	leds.clear();
 	leds.show();
 }
@@ -122,7 +122,7 @@ void led_show_status(int16_t temp, int16_t voltage)
       for (int n = 0; n<=n_led_indicator; n++) {
           leds.setPixelColor(n, DEFAULT_BRIGHTNESS, DEFAULT_BRIGHTNESS, DEFAULT_BRIGHTNESS); 
       }
-      led.show();
+      leds.show();
 }
 
 

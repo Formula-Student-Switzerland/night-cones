@@ -15,6 +15,11 @@
 
 #define WIFI_UDP_RX_PORT 5005
 #define WIFI_UDP_TX_PORT 5006
+#define WIFI_ATTEMPTS 3
+
+#define WIFI_COM_VERSION 1
+
+#define WIFI_CTS_STATUS_TYPE 127
 
 int wifi_setup(void) ;
 void wifi_loop(void);

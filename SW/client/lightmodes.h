@@ -22,14 +22,16 @@
 #define LIGHTMODES_H
 #include <stdint.h>
 
+
 typedef struct {
     uint8_t base_color;
     uint8_t brightness;
     uint8_t repetition_time;
     
     uint8_t color[9];
-    void (*lightmode_handler)(); 
 } lightmode;
+
+typedef void (*lightmode_function)(uint32_t, lightmode* , uint8_t *) ;
 
 
 void lightmode_setup(void);

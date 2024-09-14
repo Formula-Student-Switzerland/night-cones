@@ -31,9 +31,9 @@
     extern uint8_t led_state[LED_COUNT*3];
 
 
-    int led_setup();
-    int led_show(uint8_t *ledState);
-    int led_clear();
+    void led_setup();
+    void led_show(uint8_t *ledState);
+    void led_clear();
     
     void led_esp_blink(int frequency, int blinks);
     void led_show_status(int16_t temp, int16_t voltage);

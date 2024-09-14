@@ -12,27 +12,29 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266mDNS.h>
 #include <WiFiUdp.h>
-#include <ArduinoOTA.h>
 #include <stdint.h>
 
 #include "led.h"
 #include "wifi.h"
 #include "credentials.h"
+#include "ota.h"
+#include "config_store.h"
+#include "adc.h"
 
-struct {
+typedef struct {
     uint8_t version;
     uint8_t type;
     uint8_t frame_number;
     uint8_t reserved;
     uint32_t reserved1;
     uint64_t timestamp;   
-} wifi_frame_header;
+} wifi_frame_header_struct;
 
 
 union {
     uint8_t frame[30];
     struct{
-        struct wifi_frame_header header;
+        wifi_frame_header_struct header;
         uint16_t cone_id;
         uint8_t SoC;
         uint8_t rssi;
@@ -42,15 +44,12 @@ union {
         uint8_t hw_rev;
         uint8_t hall_state;        
     } data;
-} wifi_cts_status_frame_def;
+} wifi_cts_status_frame;
     
-struct wifi_frame_header wifi_frame_header;
-
-struct wifi_cts_status_frame_def wifi_tx_status_frame;
-
-
+wifi_frame_header_struct wifi_frame_header;
 
 IPAddress wifi_server_ip;
+WiFiUDP Udp;
 
 /**
  * Sets up the WIFI Module and connects to the specified WLAN
@@ -59,7 +58,7 @@ IPAddress wifi_server_ip;
 int wifi_setup(void) {
     // Wifi Setup
     WiFi.mode(WIFI_STA);
-    WiFi.begin(ssid, password);
+    WiFi.begin(CRED_WIFI_SSID, CRED_WIFI_PW);
     
     int wifi_attempt = 0;
     // Signal start of connection
@@ -78,7 +77,6 @@ int wifi_setup(void) {
     // Check Wifi and init OTA.
     if (WiFi.waitForConnectResult() == WL_CONNECTED) {
       Serial.println("WiFi connected");
-      wifi_connected = true;
       ota_setup();
       return 0;
     }
@@ -95,11 +93,11 @@ int wifi_setup(void) {
     
     
     
-    wifi_cts_status_frame.data.header = header;
-   esp_wifi_get_mac(WIFI_IF_STA, &wifi_cts_status_frame.data.mac[6]); 
-   wifi_cts_status_frame.data.sw_rev_maj=CONFIG_STORE_SW_REV_MAJ;
-   wifi_cts_status_frame.data.sw_rev_min=CONFIG_STORE_SW_REV_MIN;
-   wifi_cts_status_frame.data.hw_rev = config_store[config_store_ids.HARDWARE_REVISION];
+    wifi_cts_status_frame.data.header = wifi_frame_header;
+    WiFi.macAddress(wifi_cts_status_frame.data.mac); 
+    wifi_cts_status_frame.data.sw_rev_maj=CONFIG_STORE_SW_REV_MAJ;
+    wifi_cts_status_frame.data.sw_rev_min=CONFIG_STORE_SW_REV_MIN;
+    wifi_cts_status_frame.data.hw_rev = config_store_get(HARDWARE_REVISION);
     
     // Failed somewhere
     return 1;
@@ -115,7 +113,7 @@ int wifi_setup(void) {
 void wifi_rx_frame()
 {
    
-    server_ip = Udp.remoteIP();
+    wifi_server_ip = Udp.remoteIP();
     
 }
 
@@ -125,13 +123,13 @@ void wifi_rx_frame()
  */
 void wifi_tx_status(){
     
-   wifi_cts_status_frame.data.cone_id = config_store[config_store_ids.CONE_ID];
+   wifi_cts_status_frame.data.cone_id = config_store_get(CONE_ID);
    wifi_cts_status_frame.data.SoC = adc_soc;
-   wifi_cts_status_frame.data.rssi = WIFI.RSSI();
+   wifi_cts_status_frame.data.rssi = WiFi.RSSI();
    //wifi_cts_status_frame.data.hall_state = ;     
     
     Udp.beginPacket(wifi_server_ip, WIFI_UDP_TX_PORT);
-    Udp.write(wifi_cts_status_frame,30);
+    Udp.write(wifi_cts_status_frame.frame,30);
     Udp.endPacket();
 }
 

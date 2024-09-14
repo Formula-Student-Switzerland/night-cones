@@ -8,11 +8,11 @@
 
 #include <Adafruit_NeoPixel.h>
 
-#include "lightmodes.h"
-#include "wifi.h"
+/*#include "lightmodes.h"
+#include "wifi.h"*/
 #include "adc.h"
-#include "led.h"
-#include "sync.h"
+/*#include "led.h"
+#include "sync.h"*/
 
 
 //#include "..\..\..\Adafruit_NeoPixel\Adafruit_NeoPixel.h"
@@ -29,9 +29,6 @@
 #define GREEN_DEFAULT 127
 #define BLUE_DEFAULT 127
 
-
-
-#define WIFI_ATTEMPTS 3
 #define WIFI_DELAY_MS 100
 #define WIFI_LOOPS    50
 
@@ -50,11 +47,11 @@ void setup() {
   pinMode(KILL_PIN, OUTPUT);
   pinMode(HALL_PIN, INPUT);
 
-  adc_setup();
+  //adc_setup();
 
   // LED setup
-  led_setup();
-  lightmode_setup();
+  //led_setup();
+  //lightmode_setup();
 
   // Init LEDs with red
   /*for (int n = 0; n<LED_COUNT; n++) {
@@ -85,9 +82,9 @@ void setup() {
     wifi_loop_cnt++;
   }
   if (wifi_configure) {
-    wifi_connected = !(bool) wifi_setup();
+    //wifi_connected = !(bool) wifi_setup();
   }
-  led_esp_blink(LED_ESP_FREQ_READY, 4);
+  //led_esp_blink(LED_ESP_FREQ_READY, 4);
   
 }
 
@@ -100,30 +97,30 @@ void loop() {
   int brightness_blue;
 
   // OTA loop
-  wifi_loop();
+  //wifi_loop();
 
   uint32_t currentMillis;
-  if (sync_loop(&currentMillis)) {
+  /*if (sync_loop(&currentMillis)) {
     
     // Measure temperature and battery voltage
     adc_loop();
     lightmode_step(currentMillis, led_state);
     
     // Exchange this piece of code
-    /*if (adc_temp_meas > 374) {
-      lightMode1(0, RED_DEFAULT, led_state);
-    } else if (adc_temp_meas < 337) {
-      lightMode1(0, 10, led_state);
-    } else {
-      lightMode1(0, 10 + ((adc_temp_meas - 337) * 3), led_state);
-    }*/
+    //if (adc_temp_meas > 374) {
+    //  lightMode1(0, RED_DEFAULT, led_state);
+    //} else if (adc_temp_meas < 337) {
+    //  lightMode1(0, 10, led_state);
+    //} else {
+    //  lightMode1(0, 10 + ((adc_temp_meas - 337) * 3), led_state);
+    //}
 
     if (digitalRead(HALL_PIN))
         led_show_status(adc_temp_meas, adc_volt_meas);
     else{
         led_show(led_state);
     }
-  }
+  }*/
 }
 
 
