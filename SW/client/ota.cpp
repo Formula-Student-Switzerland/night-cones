@@ -22,11 +22,13 @@
 * Sets the OTA library ip with all handlers. 
 */
 void ota_setup(void) {
+  // Set Default port to something different 13894
   // Port defaults to 8266
   // ArduinoOTA.setPort(8266);
 
   // Hostname defaults to esp8266-[ChipID]
-  // ArduinoOTA.setHostname("myesp8266");
+  // Set Hostname to Night-cone-[serial number]
+  //ArduinoOTA.setHostname("myesp8266");
 
 #ifdef CRED_OTA_PW_MD5
     ArduinoOTA.setPasswordHash(CRED_OTA_PW_MD5);

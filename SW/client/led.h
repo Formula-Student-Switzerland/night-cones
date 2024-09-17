@@ -30,7 +30,6 @@
 #ifndef LED_EMULATION
     extern uint8_t led_state[LED_COUNT*3];
 
-
     void led_setup();
     void led_show(uint8_t *ledState);
     void led_clear();

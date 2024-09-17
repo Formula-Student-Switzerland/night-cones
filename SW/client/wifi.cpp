@@ -28,13 +28,20 @@ typedef struct {
     uint8_t reserved;
     uint32_t reserved1;
     uint64_t timestamp;   
-} wifi_frame_header_struct;
+} wifi_frame_header_t;
+
+typedef struct {
+    uint8_t color;
+    uint8_t brightness_mode;
+    uint8_t repetition_time;
+    uint8_t phase_shift;
+} wifi_frame_rx_data_field_t
 
 
 union {
     uint8_t frame[30];
     struct{
-        wifi_frame_header_struct header;
+        wifi_frame_header_t header;
         uint16_t cone_id;
         uint8_t SoC;
         uint8_t rssi;
@@ -46,10 +53,14 @@ union {
     } data;
 } wifi_cts_status_frame;
     
-wifi_frame_header_struct wifi_frame_header;
+wifi_frame_header_t wifi_frame_header;
 
 IPAddress wifi_server_ip;
 WiFiUDP Udp;
+
+uint8_t wifi_rx_buffer[WIFI_RX_BUFFER_SIZE];
+wifi_frame_header_t * const wifi_rx_header = wifi_rx_buffer;
+wifi_frame_rx_data_field_t * const wifi_rx_stc_data = &wifi_rx_buffer[16];
 
 /**
  * Sets up the WIFI Module and connects to the specified WLAN
@@ -97,7 +108,7 @@ int wifi_setup(void) {
     WiFi.macAddress(wifi_cts_status_frame.data.mac); 
     wifi_cts_status_frame.data.sw_rev_maj=CONFIG_STORE_SW_REV_MAJ;
     wifi_cts_status_frame.data.sw_rev_min=CONFIG_STORE_SW_REV_MIN;
-    wifi_cts_status_frame.data.hw_rev = config_store_get(HARDWARE_REVISION);
+    wifi_cts_status_frame.data.hw_rev = config_store.hardware_data.hardware_revision;
     
     // Failed somewhere
     return 1;
@@ -112,18 +123,76 @@ int wifi_setup(void) {
 */
 void wifi_rx_frame()
 {
-   
-    wifi_server_ip = Udp.remoteIP();
+    int packetSize = Udp.parsePacket();
+    if (packetSize)
+    {
+        // receive incoming UDP packets
+        Serial.printf("Received %d bytes from %s, port %d\n", packetSize, Udp.remoteIP().toString().c_str(), Udp.remotePort());
+        int len = Udp.read(wifi_rx_buffer, 255);
+        if(len == 0) {
+            sprintf("Received Empty Frame");
+            return;
+        }
+        wifi_server_ip = Udp.remoteIP(); 
+        
+    
+        if(wifi_rx_header.version != WIFI_COM_VERSION)
+            // Error, Frame has the wrong Version
+            sprintf("Wrong WIFI_COM_Version Got: %x, Local: %x", wifi_rx_buffer[0],WIFI_COM_VERSION);
+            return;
+            
+        switch(wifi_rx_header.type) {
+            case WIFI_STC_DATA_TYPE:
+                wifi_rx_handle_data(wifi_rx_stc_data, (len-16)/4);
+                break;            
+            case WIFI_STC_CONFIG_TYPE:
+                wifi_rx_handle_config(wifi_rx_buffer[16], len-16);
+                
+            case WIFI_STC_SET_REQ_TYPE:
+                wifi_tx_settings();
+                break;
+            case WIFI_STC_STAT_REQ_TYPE:
+                wifi_tx_status();
+                break;    
+        }
+        sync_synchronize(wifi_rx_header.timestamp);
+        
+        
+        Serial.printf("UDP packet contents: %s\n", incomingPacket);      
+    }
+}
+
+void wifi_rx_handle_data(wifi_frame_rx_data_field_t * wifi_rx_stc_data, uint16_t max_cone_id) {
+    if(max_cone_id<=config_store.user_settings.cone_id)
+        return;
+    
+    lightmode_switch(wifi_rx_stc_data[config_store.user_settings.cone_id].color,  
+        wifi_rx_stc_data[config_store.user_settings.cone_id].brightness_mode, 
+        wifi_rx_stc_data[config_store.user_settings.cone_id].repetition_time);
+    sync_reconfigure(wifi_rx_stc_data[config_store.user_settings.cone_id].repetition_time,  
+        wifi_rx_stc_data[config_store.user_settings.cone_id].phase_shift); 
+}
+
+void wifi_rx_handle_config(uint8_t* rx_frame, uint16_t length) {
+    // Same as below think about this...
     
 }
+
+
+void wifi_tx_settings(void) {
+    // think about how to handle these things. Current method of config storage is optimized for EEPROM
+    // Making everything 32 bit would be optimized for this. Probably do translation in Config Storage
+    
+}
+
 
 /**
  * Transmits a Status message
  *
  */
-void wifi_tx_status(){
+void wifi_tx_status(void){
     
-   wifi_cts_status_frame.data.cone_id = config_store_get(CONE_ID);
+   wifi_cts_status_frame.data.cone_id = config_store.user_settings.cone_id;
    wifi_cts_status_frame.data.SoC = adc_soc;
    wifi_cts_status_frame.data.rssi = WiFi.RSSI();
    //wifi_cts_status_frame.data.hall_state = ;     

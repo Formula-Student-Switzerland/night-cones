@@ -13,27 +13,20 @@
 #include "adc.h"
 /*#include "led.h"
 #include "sync.h"*/
-
+#include "color.h"
+#include "hw_ctrl.h"
+#include "config_store.h"
 
 //#include "..\..\..\Adafruit_NeoPixel\Adafruit_NeoPixel.h"
 //#include "D:\git\FSCH\Adafruit_NeoPixel\Adafruit_NeoPixel.h"
+#define BRIGHTNESS_DEFAULT 0x70
 
 
-#define KILL_PIN  12
-#define HALL_PIN  16
 #define SDA_PIN    2
 #define SCL_PIN   14
 
-
-#define RED_DEFAULT 127
-#define GREEN_DEFAULT 127
-#define BLUE_DEFAULT 127
-
 #define WIFI_DELAY_MS 100
 #define WIFI_LOOPS    50
-
-
-const int DELAY = 3000;
 
 bool wifi_configure = true;
 bool wifi_connected = false;
@@ -43,21 +36,17 @@ const long LED_UPDATE_INTERVAL = 100;  // interval at which to blink (millisecon
 
 void setup() {
   // Init pins.
-
-  pinMode(KILL_PIN, OUTPUT);
-  pinMode(HALL_PIN, INPUT);
-
-  //adc_setup();
+    config_store_setup();
+    hw_Ctrl_setup();
+    adc_setup();
 
   // LED setup
-  //led_setup();
-  //lightmode_setup();
+  led_setup();
+  lightmode_setup();
 
   // Init LEDs with red
-  /*for (int n = 0; n<LED_COUNT; n++) {
-    strip.setPixelColor(n, 50, 0, 0);
-  };
-  strip.show();*/
+  lightmode_switch(COLOR_RED, 0xF0, 0);
+  led_show();
   
   bool wifi_loop_continue = false;
   bool hall_status;
@@ -65,26 +54,26 @@ void setup() {
   delay(500);
   while (wifi_loop_cnt < WIFI_LOOPS & wifi_configure) {
     delay(WIFI_DELAY_MS);
-    hall_status = digitalRead(HALL_PIN);
+    hall_status = hw_ctrl_get_hall_state();
     if(hall_status == false) {
       wifi_configure = false;
     }
     if ((wifi_loop_cnt % 10) >= 5) {
-      /*for (int n = 0; n<LED_COUNT; n++) {
-        strip.setPixelColor(n, 0, 50, 0);
-      }*/
+      for (int n = 0; n<LED_COUNT; n++) {
+        lightmode_switch(COLOR_GREEN, BRIGHTNESS_DEFAULT, 0);
+      }
     } else {
-      /*for (int n = 0; n<LED_COUNT; n++) {
-        strip.setPixelColor(n, 0, 0, 50);
-      }*/
+      for (int n = 0; n<LED_COUNT; n++) {
+        lightmode_switch(COLOR_BLUE, BRIGHTNESS_DEFAULT, 0);
+      }
     }
-    //strip.show();
+    led_show();
     wifi_loop_cnt++;
   }
   if (wifi_configure) {
-    //wifi_connected = !(bool) wifi_setup();
+    wifi_connected = !(bool) wifi_setup();
   }
-  //led_esp_blink(LED_ESP_FREQ_READY, 4);
+  led_esp_blink(LED_ESP_FREQ_READY, 4);
   
 }
 
@@ -92,35 +81,31 @@ void loop() {
 
   int adc_volt_meas;
   int adc_temp_meas;
-  int brightness_red;
-  int brightness_green;
-  int brightness_blue;
 
   // OTA loop
-  //wifi_loop();
+  wifi_loop();
 
   uint32_t currentMillis;
-  /*if (sync_loop(&currentMillis)) {
+  if (sync_loop(&currentMillis)) {
     
     // Measure temperature and battery voltage
     adc_loop();
     lightmode_step(currentMillis, led_state);
     
-    // Exchange this piece of code
-    //if (adc_temp_meas > 374) {
-    //  lightMode1(0, RED_DEFAULT, led_state);
-    //} else if (adc_temp_meas < 337) {
-    //  lightMode1(0, 10, led_state);
-    //} else {
-    //  lightMode1(0, 10 + ((adc_temp_meas - 337) * 3), led_state);
-    //}
+    if (adc_temp_meas > 374) 
+        //lightmode_dim(BRIGHTNESS_DEFAULT);
+     else if (adc_temp_meas < 337) {
+        lightmode_dim(0x10);
+    } else {
+      lightmode_dim((16 + ((adc_temp_meas - 337) * 3))&0xF0);
+    }
 
     if (digitalRead(HALL_PIN))
         led_show_status(adc_temp_meas, adc_volt_meas);
     else{
         led_show(led_state);
     }
-  }*/
+  }
 }
 
 

@@ -83,12 +83,23 @@ void lightmode_setup(void)
 void lightmode_switch(uint8_t color, uint8_t brightness_mode, 
                         uint8_t repetition_time){
     lightmode_current.repetition_time = repetition_time;
-    lightmode_current.brightness = brightness_mode & 0xF0;
-    color_decode(color, lightmode_current.brightness, lightmode_current.color);
+    lightmode_current.mode = brightness_mode & 0x0F
     lightmode_current.base_color = color;
-    lightmode_current_handler = lightmodes[brightness_mode&0xF];
+    lightmode_current_handler = lightmodes[lightmode_current.mode];
     
-    switch(brightness_mode&0xF){
+    lightmode_dim(brightness_mode);
+    
+}
+
+/**
+ * Dims the current lightmode by reducing the brightness. Does not work with all modes currently
+ * @param brightness Current brightness value
+ */
+void lightmode_dim(uint8_t brightness) {    
+    lightmode_current.brightness = brightness & 0xF0;
+    color_decode(color, lightmode_current.brightness, lightmode_current.color);
+    
+    switch(lightmode_current.mode){
         case 5:
             color_decode(color, lightmode_current.brightness/3*2, &lightmode_current.color[3]);
             color_decode(color, lightmode_current.brightness/3, &lightmode_current.color[6]);
@@ -99,7 +110,6 @@ void lightmode_switch(uint8_t color, uint8_t brightness_mode,
             color_decode(color, 0, &lightmode_current.color[3]);
             color_decode(color, 0, &lightmode_current.color[6]);
     }
-    
 }
 
 

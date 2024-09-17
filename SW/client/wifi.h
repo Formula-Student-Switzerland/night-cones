@@ -13,13 +13,23 @@
 #define WIFI_H
 #include <stdint.h>
 
-#define WIFI_UDP_RX_PORT 5005
-#define WIFI_UDP_TX_PORT 5006
+#define WIFI_UDP_RX_PORT 5250
+#define WIFI_UDP_TX_PORT 5251
 #define WIFI_ATTEMPTS 3
+
+//#define WIFI_RX_BUFFER_SIZE 255
+//#define WIFI_MAX_CONE_ID ((WIFI_RX_BUFFER_SIZE-16)/4)
+#define WIFI_MAX_CONE_ID 60
+#define WIFI_RX_BUFFER_SIZE (WIFI_MAX_CONE_ID*4+16-1)
 
 #define WIFI_COM_VERSION 1
 
-#define WIFI_CTS_STATUS_TYPE 127
+#define WIFI_STC_DATA_TYPE 0
+#define WIFI_STC_CONFIG_TYPE 1
+#define WIFI_STC_SET_REQ_TYPE 2
+#define WIFI_STC_STAT_REQ_TYPE 3
+#define WIFI_CTS_STATUS_TYPE 128
+#define WIFI_CTS_SET_TYPE 129
 
 int wifi_setup(void) ;
 void wifi_loop(void);

@@ -27,14 +27,13 @@ Adafruit_NeoPixel leds(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
  */
 void led_setup(void) {
     pinMode(LED_ESP_PIN, OUTPUT);
-	  leds.begin();
+	leds.begin();
     led_clear();
 }
 
 /**
  * Show the ledState on the LEDs. This procedure uses time. 
- *  Input: 
- *      ledState: uint8_t array with length 3*LED_COUNT which is used to define the LED colors. 
+ * @param ledState: uint8_t array with length 3*LED_COUNT which is used to define the LED colors. 
  *
  */
 void led_show(uint8_t *ledState) {
@@ -77,7 +76,8 @@ void led_esp_blink(int frequency, int blinks) {
 /**
  * Show The temperature and voltage using the LEDs on top and bottom instead of the
  * normal lightmode. 
- *
+ * @param temp temeprature in ADC Counts
+ * @param voltage voltage in mV
  */
 void led_show_status(int16_t temp, int16_t voltage)
 {   int led_temp_red;
