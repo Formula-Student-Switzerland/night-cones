@@ -83,7 +83,7 @@ void lightmode_setup(void)
 void lightmode_switch(uint8_t color, uint8_t brightness_mode, 
                         uint8_t repetition_time){
     lightmode_current.repetition_time = repetition_time;
-    lightmode_current.mode = brightness_mode & 0x0F
+    lightmode_current.mode = brightness_mode & 0x0F;
     lightmode_current.base_color = color;
     lightmode_current_handler = lightmodes[lightmode_current.mode];
     
@@ -97,18 +97,18 @@ void lightmode_switch(uint8_t color, uint8_t brightness_mode,
  */
 void lightmode_dim(uint8_t brightness) {    
     lightmode_current.brightness = brightness & 0xF0;
-    color_decode(color, lightmode_current.brightness, lightmode_current.color);
+    color_decode(lightmode_current.base_color, lightmode_current.brightness, lightmode_current.color);
     
     switch(lightmode_current.mode){
         case 5:
-            color_decode(color, lightmode_current.brightness/3*2, &lightmode_current.color[3]);
-            color_decode(color, lightmode_current.brightness/3, &lightmode_current.color[6]);
+            color_decode(lightmode_current.base_color, lightmode_current.brightness/3*2, &lightmode_current.color[3]);
+            color_decode(lightmode_current.base_color, lightmode_current.brightness/3, &lightmode_current.color[6]);
             break;
         case 9: 
             color_decode(48, 0xF0, &lightmode_current.color[3]);            
         default:
-            color_decode(color, 0, &lightmode_current.color[3]);
-            color_decode(color, 0, &lightmode_current.color[6]);
+            color_decode(lightmode_current.base_color, 0, &lightmode_current.color[3]);
+            color_decode(lightmode_current.base_color, 0, &lightmode_current.color[6]);
     }
 }
 
@@ -265,9 +265,10 @@ void lightmode_ident(uint32_t time, lightmode* current_lm, uint8_t *ledState) {
         lightmode_set_all_led(current_lm->color,ledState);
     else
         lightmode_set_all_led(&current_lm->color[3],ledState);
-        ledState[3*3+0] = current_lm->color[0];
-        ledState[3*3+1] = current_lm->color[1];
-        ledState[3*3+2] = current_lm->color[2];
+
+    ledState[3*3+0] = current_lm->color[0];
+    ledState[3*3+1] = current_lm->color[1];
+    ledState[3*3+2] = current_lm->color[2];
 }
 
 

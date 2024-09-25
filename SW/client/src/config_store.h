@@ -23,7 +23,7 @@
 typedef struct{
     uint8_t hardware_revision;
     uint16_t serial_number;
-} hardware_data_t
+} hardware_data_t;
 
 typedef struct{
     uint16_t cone_id;
@@ -40,10 +40,10 @@ typedef struct{
     uint8_t psvn;
     uint8_t header_reserved[7]; // Used to align to page size
     hardware_data_t hardware_data;
-    uint8_t hardware_data_reserved[CONFIG_STORE_HARDWARE_DATA_SIZE-size_t(hardware_data_t)];
+    uint8_t hardware_data_reserved[CONFIG_STORE_HARDWARE_DATA_SIZE-sizeof(hardware_data_t)];
     uint32_t hardware_data_crc;
     user_settings_t user_settings;
-    uint8_t user_settings_reserved[CONFIG_STORE_HARDWARE_DATA_SIZE-size_t(user_settings_t)];
+    uint8_t user_settings_reserved[CONFIG_STORE_HARDWARE_DATA_SIZE-sizeof(user_settings_t)];
     uint32_t user_settings_crc;
 }  config_store_t;
 
@@ -60,9 +60,7 @@ enum config_store_ids{
   CONFIG_ID_DEBUG2,
   CONFIG_ID_DEBUG3,
   CONFIG_ID_DEBUG4,
-  CONFIG_ID_END,
-    
-    
+  CONFIG_ID_END
 };
 
 

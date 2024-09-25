@@ -13,8 +13,8 @@ void config_store_setup(void){
     config_store.user_settings.fallback_phase = 0x0;
     config_store.user_settings.fallback_repetition_time = 0x0;
     config_store.user_settings.fallback_config = 0x0;
-} user_settings_t;
 }
+
 
 int config_store_read(void){
     config_store_t temp;
@@ -27,7 +27,7 @@ int config_store_read(void){
     
     // Handle old version / Upgrade
     
-    
+        return -1;
 }
 
 
@@ -36,6 +36,7 @@ int config_store_store(void){
     // Write the config store to the EEPROM
     
     // Check that the hardware information can not be read.
+    return -1;
 }
 
 void config_store_set_wifi(uint16_t id, uint32_t value){

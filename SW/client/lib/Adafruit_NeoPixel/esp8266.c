@@ -24,7 +24,7 @@ void espShow(
  uint8_t pin, uint8_t *pixels, uint32_t numBytes, boolean is800KHz) {
 #endif
 
-#define CYCLES_800_T0H  (F_CPU / 2500001) // 0.4us
+#define CYCLES_800_T0H  (F_CPU *3 / 2500001 / 5) // 0.4us
 #define CYCLES_800_T1H  (F_CPU / 1250001) // 0.8us
 #define CYCLES_800      (F_CPU /  800001) // 1.25us per bit
 #define CYCLES_400_T0H  (F_CPU / 2000000) // 0.5uS

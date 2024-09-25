@@ -10,7 +10,7 @@
 /*******************************************************************************/
 
 #include <stdint.h>
-#include <Adafruit_NeoPixel.h>
+#include "Adafruit_NeoPixel.h"
 #include "led.h"
 #include "lightmodes.h"
 
@@ -27,7 +27,7 @@ Adafruit_NeoPixel leds(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
  */
 void led_setup(void) {
     pinMode(LED_ESP_PIN, OUTPUT);
-	leds.begin();
+	  leds.begin();
     led_clear();
 }
 

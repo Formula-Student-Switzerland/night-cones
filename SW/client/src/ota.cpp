@@ -28,10 +28,10 @@ void ota_setup(void) {
 
   // Hostname defaults to esp8266-[ChipID]
   // Set Hostname to Night-cone-[serial number]
-  //ArduinoOTA.setHostname("myesp8266");
+  ArduinoOTA.setHostname("Night-cone-000078");
 
 #ifdef CRED_OTA_PW_MD5
-    ArduinoOTA.setPasswordHash(CRED_OTA_PW_MD5);
+   ArduinoOTA.setPasswordHash(CRED_OTA_PW_MD5);
 #else    
   ArduinoOTA.setPassword(CRED_OTA_PW);
 #endif

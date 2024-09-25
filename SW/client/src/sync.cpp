@@ -30,6 +30,9 @@ sync_settings sync_setting;
  */
 void sync_setup(uint16_t led_period){
     sync_setting.led_period = led_period;
+    sync_setting.time_offset = 0;
+    sync_setting.time = 0;
+    sync_setting.phase_increment = 0;
 
 }
 

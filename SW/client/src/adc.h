@@ -17,4 +17,6 @@ void adc_setup(void);
 
 void adc_loop(void);
 
+uint8_t adc_calc_temp(uint16_t value);
+
 #endif

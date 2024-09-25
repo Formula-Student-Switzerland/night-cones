@@ -52,6 +52,8 @@ const float adc_temp_lookup[16] =
 void adc_setup(void){    
   pinMode(ADC_MUX_PIN, OUTPUT);    
   adc_mux_state = 0;
+  adc_volt_meas = 0;
+  adc_temp_meas = 0;
   digitalWrite(ADC_MUX_PIN, adc_mux_state);    
 }
 
@@ -71,7 +73,7 @@ void adc_loop(void){
 }
 
 
-return uint8_t adc_calc_temp(uint16_t value) {
+uint8_t adc_calc_temp(uint16_t value) {
     uint8_t selection = value >>6;
     return uint8_t(adc_temp_lookup[selection] + adc_temp_diff[selection]*(value & 0x3F));
 };
