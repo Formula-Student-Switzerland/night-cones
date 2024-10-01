@@ -54,6 +54,7 @@ void adc_setup(void){
   adc_mux_state = 0;
   adc_volt_meas = 0;
   adc_temp_meas = 0;
+  adc_soc = 255;
   digitalWrite(ADC_MUX_PIN, adc_mux_state);    
 }
 

@@ -24,6 +24,7 @@ const long LED_UPDATE_INTERVAL = 50;  // interval at which to blink (millisecond
 
 void setup() {
   // Init pins.
+  Serial.begin(115200);
   config_store_setup();
   hw_Ctrl_setup();
   adc_setup();
@@ -55,7 +56,7 @@ void loop() {
   
   uint32_t currentMillis;
   if (sync_loop(&currentMillis)) {
-    
+
     // Measure temperature and battery voltage
     adc_loop();
     lightmode_step(currentMillis, led_state);
@@ -68,8 +69,10 @@ void loop() {
       lightmode_dim((16 + ((adc_temp_meas - 337) * 3))&0xF0);
     }
 
-    if (digitalRead(HALL_PIN))
+    if (digitalRead(HALL_PIN)){
+        printf("Hall Active");
         led_show_status(adc_temp_meas, adc_volt_meas);
+    }
     else{
         led_show(led_state);
     }

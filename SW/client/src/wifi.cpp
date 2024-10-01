@@ -23,6 +23,7 @@
 #include "config_store.h"
 #include "adc.h"
 #include "sync.h"
+#include "hw_ctrl.h"
 
 typedef struct {
     uint8_t version;
@@ -95,12 +96,14 @@ int wifi_setup(void) {
     }
 
     // Check Wifi and init OTA.
-    if (WiFi.waitForConnectResult() == WL_CONNECTED) {
-      Serial.println("WiFi connected");
-      ota_setup();
-      led_esp_blink(LED_ESP_FREQ_ON/5, 4);
-      return 0;
+    if (WiFi.waitForConnectResult() != WL_CONNECTED) {
+      return 1;
     }
+         
+         
+    Serial.println("WiFi connected");
+    ota_setup();
+    led_esp_blink(LED_ESP_FREQ_ON/5, 4);
     
     Udp.begin(WIFI_UDP_RX_PORT);
     
@@ -120,8 +123,7 @@ int wifi_setup(void) {
     wifi_cts_status_frame.data.sw_rev_min=CONFIG_STORE_SW_REV_MIN;
     wifi_cts_status_frame.data.hw_rev = config_store.hardware_data.hardware_revision;
     
-    // Failed somewhere
-    return 1;
+    return 0;
 }
 
 /*
@@ -154,15 +156,19 @@ void wifi_rx_frame()
 
         switch(wifi_rx_header->type) {
             case WIFI_STC_DATA_TYPE:
+                printf("Handle WIFI_STC_DATA_TYPE");
                 wifi_rx_handle_data(wifi_rx_stc_data, (len-16)/4);
                 break;            
             case WIFI_STC_CONFIG_TYPE:
+                printf("Handle WIFI_STC_CONFIG_TYPE");
                 wifi_rx_handle_config(&wifi_rx_buffer[16], len-16);
                 
             case WIFI_STC_SET_REQ_TYPE:
+                printf("Handle WIFI_STC_SET_REQ_TYPE");
                 wifi_tx_settings();
                 break;
             case WIFI_STC_STAT_REQ_TYPE:
+                printf("Handle WIFI_STC_STAT_REQ_TYPE");
                 wifi_tx_status();
                 break;    
         }
@@ -203,6 +209,7 @@ void wifi_tx_status(void){
    wifi_cts_status_frame.data.cone_id = config_store.user_settings.cone_id;
    wifi_cts_status_frame.data.SoC = adc_soc;
    wifi_cts_status_frame.data.rssi = WiFi.RSSI();
+   wifi_cts_status_frame.data.hall_state = hw_ctrl_get_hall_state();
    //wifi_cts_status_frame.data.hall_state = ;     
     
     Udp.beginPacket(wifi_server_ip, WIFI_UDP_TX_PORT);
@@ -216,7 +223,7 @@ void wifi_tx_status(void){
  *
  */
 void wifi_loop(void) {
-    //wifi_rx_frame();
+    wifi_rx_frame();
     ota_loop();
 }
 
