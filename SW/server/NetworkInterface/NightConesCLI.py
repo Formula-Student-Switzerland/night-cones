@@ -1,13 +1,13 @@
 import NetworkInterface
 import NightConesMessage
 import cmd
-import readline
+#import readline
 import threading
 
 class NightConesCLI(cmd.Cmd):
     
-    _UDP_TX_PORT = 5005
-    _UDP_RX_PORT = 5006  
+    _UDP_TX_PORT = 5250
+    _UDP_RX_PORT = 5251  
     prompt = '>> '
     intro = 'Welcome to the Nightcones CLI. Type "help" for available commands.'
     
@@ -37,6 +37,7 @@ class NightConesCLI(cmd.Cmd):
             self._networkif.setCurrentNetwork(ip_adresses[int(ip_select)],int(tx_port),int(rx_port))
         else: 
             print("No valid selection, terminating tool")
+            exit()
         self._rx_active = True
         thread = threading.Thread(target = self._rx_thread)
         thread.start()
@@ -63,11 +64,11 @@ class NightConesCLI(cmd.Cmd):
         except:
             data = []
             #data.append(int(input("Select Cone ID: ")))
-            data.append(int(input("Select Color [0-255]: ")))
-            data.append(int(input("Select Brightness [0-15]: ")))
-            data.append(NightConesMessage.NightConesMessage.LightMode(int(input("Select Light Mode [0-15]: "))))
-            data.append(int(input("Select Frequency [0-255]: ")))
-            data.append(int(input("Select Phase [0-255]: ")))
+            data.append(max(0,min(255,int(input("Select Color [0-255]: ")))))
+            data.append(max(0,min(15,int(input("Select Brightness [0-15]: ")))))
+            data.append(NightConesMessage.NightConesMessage.LightMode(max(0,min(15,int(input("Select Light Mode [0-15]: "))))))
+            data.append(max(0,min(255,int(input("Select Frequency [0-255]: ")))))
+            data.append(max(0,min(255,int(input("Select Phase [0-255]: ")))))
             
         self._networkif.sendDataFrame([data])  
         
@@ -75,6 +76,11 @@ class NightConesCLI(cmd.Cmd):
         ''' Request Data from specific Cone. If no IP Address is given, broadcast address is used.        
         '''        
         self._networkif.sendDataRequestFrame(line)
+        
+    def do_RequestConeConfig(self, line):
+        ''' Request Data from specific Cone. If no IP Address is given, broadcast address is used.        
+        '''        
+        self._networkif.sendConfigRequestFrame(line)
         
         
         
