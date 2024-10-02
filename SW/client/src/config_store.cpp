@@ -3,6 +3,10 @@
 
 config_store_t config_store;
 
+/**
+ * Configure Config store with defaults and load data from EEPROM.
+ *
+ */
 void config_store_setup(void){
     config_store.hardware_data.hardware_revision=0x2;
     config_store.hardware_data.serial_number = 0x00;
@@ -15,7 +19,10 @@ void config_store_setup(void){
     config_store.user_settings.fallback_config = 0x0;
 }
 
-
+/**
+ * Read the config store from EEPROM
+ *
+ */
 int config_store_read(void){
     config_store_t temp;
     
@@ -30,7 +37,10 @@ int config_store_read(void){
         return -1;
 }
 
-
+/**
+ * Store the config to the EEPROM
+ *
+ */
 int config_store_store(void){
     
     // Write the config store to the EEPROM
@@ -39,14 +49,26 @@ int config_store_store(void){
     return -1;
 }
 
-void config_store_set_wifi(uint16_t id, uint32_t value){
-    
+/**
+ * Calculate the CRC for specific message.
+ *
+ */
+uint32_t config_store_crc32b(uint8_t *message, uint16_t length) {
+   uint32_t byte, crc, mask;
+
+   i = 0;
+   crc = 0xFFFFFFFF;
+  for(int i = 0; i<length; i++) {
+      byte = message[i];            // Get next byte.
+      crc = crc ^ byte;
+      for (int j = 7; j >= 0; j--) {    // Do eight times.
+         mask = -(crc & 1);
+         crc = (crc >> 1) ^ (0xEDB88320 & mask);
+      }
+   }
+   return ~crc;
 }
 
-void config_store_get_wifi(uint32_t *out_values) {
-    
-    
-}
 
 
 

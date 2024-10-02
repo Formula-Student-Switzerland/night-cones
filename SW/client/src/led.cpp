@@ -22,12 +22,12 @@ uint8_t led_state[LED_COUNT*3];
 Adafruit_NeoPixel leds(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 
 /**
- * Setup the On-Board LED and the LED Strip. Turn off all LEDs
+ * Setup the On-Board LED and the LED Strip. Turn off all LEDs.
  *
  */
 void led_setup(void) {
     pinMode(LED_ESP_PIN, OUTPUT);
-	  leds.begin();
+	leds.begin();
     led_clear();
 }
 
@@ -88,19 +88,16 @@ void led_show_status(int16_t temp, int16_t voltage)
     
     // Show Temperature through LEDs on top
      if (temp > 550) {
-        //leds.setPixelColor(18, 0, 0, 100);
         led_temp_red   = 0;
         led_temp_green = 0;
         led_temp_blue  = 100;
       }
       else if (temp < 350) {
-        //leds.setPixelColor(18, 100, 0, 0);
         led_temp_red   = 100;
         led_temp_green = 0;
         led_temp_blue  = 0;
       }
       else {
-        //leds.setPixelColor(18, 100-(temp-350)/2, 0, ((temp-350)/2));
         led_temp_red   = 100-(temp-350)/2;
         led_temp_green = 0;
         led_temp_blue  = (temp-350)/2;

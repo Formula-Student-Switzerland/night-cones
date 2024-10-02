@@ -23,9 +23,6 @@
 #include "color.h"
 #include "led.h"
 
-//LED_COUNT
-//LED_BOTTOM_COUNT
-
 #define LIGHTMODE_COUNT 16
 
 lightmode lightmode_current;
@@ -55,27 +52,20 @@ const lightmode_function lightmodes[LIGHTMODE_COUNT] =
 
 /**
  * Initialise the initial light mode. Change settings here. (or later in Header File)
- *
- *
  */
 void lightmode_setup(void)
 {
-    lightmode_current.base_color=0;
-    lightmode_current.brightness=0;
-    lightmode_current.repetition_time=0;
-    for(int i=0; i<9; i++)
-      lightmode_current.color[i]=0;
-    lightmode_current_handler = lightmodes[0];
+    lightmode_switch(config_store.user_settings.fallback_color, config_store.user_settings.fallback_lightmode, 
+        config_store.user_settings.fallback_repetition_time);
 }
 
 /**
  * Switches the new light mode on. This is used to reduce the calculation-
  * amount per iteration to step the color. 
  *
- * Inputs: 
- *      color:              Color code from Frame
- *      brightness_mode:    encoded brightness and mode in one field
- *      repetition_time:    time steps needed for each repetition.         
+ * @param color              Color code from Frame
+ * @param brightness_mode    encoded brightness and mode in one field
+ * @param repetition_time    time steps needed for each repetition.         
  *      
  * 
  * 
@@ -83,7 +73,7 @@ void lightmode_setup(void)
 void lightmode_switch(uint8_t color, uint8_t brightness_mode, 
                         uint8_t repetition_time){
     lightmode_current.repetition_time = repetition_time;
-    lightmode_current.mode = brightness_mode & 0x0F;
+    lightmode_current.mode = brightness_mode & 0x0F
     lightmode_current.base_color = color;
     lightmode_current_handler = lightmodes[lightmode_current.mode];
     
@@ -117,9 +107,8 @@ void lightmode_dim(uint8_t brightness) {
  * This procedure advances the lightmode pattern by one step. it must be called
  * with 10 Hz frequency. Deviation causes devitation in the pattern. 
  * The phase shift of the pattern must be calculated in the timing block.
- * Inputs: 
- *      Time:       Current Time in millis seconds. This value needs to be phase_shifted.
- *      ledState:   Array of values to define each LED Color.
+ * @param Time       Current Time in millis seconds. This value needs to be phase_shifted.
+ * @param ledState   Array of values to define each LED Color.
  */
 void lightmode_step (int32_t time, uint8_t *ledState) {
 
@@ -128,10 +117,8 @@ void lightmode_step (int32_t time, uint8_t *ledState) {
 
 /**
  * Set all LEDs in ledState to the specified color (arraycopy)
- *      color:      Three value uint8_t array containing the color components.
- *      ledState:   Array of values to define each LED Color.
- *
- *
+ * @param color      Three value uint8_t array containing the color components.
+ * @param ledState   Array of values to define each LED Color.
  */
 void lightmode_set_all_led(uint8_t* colors, uint8_t* ledState){
     for (uint8_t k=0; k<LED_COUNT; k++) {

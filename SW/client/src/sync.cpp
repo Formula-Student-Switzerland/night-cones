@@ -18,15 +18,15 @@ typedef struct{
     uint32_t time;
     int32_t time_offset;
     int32_t phase_increment;
-} sync_settings;
+} sync_settings_t;
 
 
-sync_settings sync_setting;
+sync_settings_t sync_setting;
 
 /**
  * Initializes the synchronization module
- *  Inputs:
- *      led_period: LED Period in millisecods
+ * 
+ *  @param led_period: LED Period in millisecods
  */
 void sync_setup(uint16_t led_period){
     sync_setting.led_period = led_period;
@@ -39,9 +39,8 @@ void sync_setup(uint16_t led_period){
 /**
  * Gets the current time and checks if the lightmode task must be executed.
  *
- * Outputs: 
- *      time: The current local time for use with lightmodes
- * Return: True if the lightmode task shall be executed. 
+ * @param  time The current local time for use with lightmodes
+ * @return True if the lightmode task shall be executed. 
  */
 bool sync_loop(uint32_t* time){
     
@@ -52,9 +51,8 @@ bool sync_loop(uint32_t* time){
 
 /**
  * Reconfigure the sync module with new lightmode settings. 
- *  Inputs: 
- *      repetition_time: Repetition time from frame header. 
- *      phase_shift:     Phase shift from frame header
+ * @param repetition_time  Repetition time from frame header. 
+ * @param  phase_shift     Phase shift from frame header
  */
 void sync_reconfigure(uint8_t repetition_time, uint8_t phase_shift){
     sync_setting.phase_increment = phase_shift*repetition_time*100/255;
@@ -62,11 +60,10 @@ void sync_reconfigure(uint8_t repetition_time, uint8_t phase_shift){
 
 /**
  * Synchronize the local timer with the received time stamp
- *  Inputs: 
- *      rx_timestamp:   32 Bit milli seconds time stamp from received frame. 
+ * @param rx_timestamp   32 Bit milli seconds time stamp from received frame. 
  *
  * TODO: Check if filtering of time_offset is necessary.
  */
-void sync_synchronize(uint32_t rx_timestamp){
-    sync_setting.time_offset = millis()-rx_timestamp-sync_setting.phase_increment;
+void sync_synchronize(uint64_t rx_timestamp){
+    sync_setting.time_offset = millis()-(uint32_t)rx_timestamp-sync_setting.phase_increment;
 }

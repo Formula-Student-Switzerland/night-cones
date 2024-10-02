@@ -27,6 +27,7 @@ typedef struct{
 
 typedef struct{
     uint16_t cone_id;
+    uint16_t reserved; //For aligning lightmode to 32 bit
     uint8_t fallback_lightmode;
     uint8_t fallback_color;
     uint8_t fallback_phase;
@@ -48,23 +49,6 @@ typedef struct{
 }  config_store_t;
 
 
-enum config_store_ids{
-  CONFIG_ID_HW_REV = 0,
-  CONFIG_ID_SERIAL_NO,
-  CONFIG_ID_CONE_ID,
-  CONFIG_ID_FALLBACK_LM,
-  CONFIG_ID_TURN_OFF,
-  CONFIG_ID_ADC_VOLTAGE,
-  CONFIG_ID_ADC_TEMP,
-  CONFIG_ID_DEBUG1,
-  CONFIG_ID_DEBUG2,
-  CONFIG_ID_DEBUG3,
-  CONFIG_ID_DEBUG4,
-  CONFIG_ID_END
-};
-
-
-
 
 
 extern config_store_t config_store;
@@ -76,4 +60,5 @@ int config_store_read(void);
 
 int config_store_store(void);
 
+uint32_t config_store_crc32b(uint8_t *message, uint16_t length);
 #endif

@@ -31,8 +31,9 @@
 #define WIFI_CTS_STATUS_TYPE 128
 #define WIFI_CTS_SET_TYPE 129
 
-int wifi_setup(void) ;
+int wifi_setup(void);
 void wifi_loop(void);
+void wifi_status_transmit(void);
 
 
 #endif

@@ -77,6 +77,9 @@ void loop() {
         led_show(led_state);
     }
   }
+  if(currentMillis%10000 == 0){
+      wifi_status_transmit();
+  }
 }
 
 
