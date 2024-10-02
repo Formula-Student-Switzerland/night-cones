@@ -56,7 +56,6 @@ int config_store_store(void){
 uint32_t config_store_crc32b(uint8_t *message, uint16_t length) {
    uint32_t byte, crc, mask;
 
-   i = 0;
    crc = 0xFFFFFFFF;
   for(int i = 0; i<length; i++) {
       byte = message[i];            // Get next byte.

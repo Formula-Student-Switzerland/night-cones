@@ -29,10 +29,12 @@ void color_decode (uint8_t color, uint8_t brightness, uint8_t *decoded) {
 	float blue = 0;
 
 	// Set red component.
-	if (color <= 95) {
+	if (color < 32) {
+    	red = (31-color) / 32.0 * 30;
+	} else if (color < 96) {
     	red = 0;
-	} else if (color <= 127) {
-    	red = (color - 95) / 32.0 * 30;
+  	} else if (color < 128) {
+    	red = (color-96) / 32.0 * 30;
   	} else {
     	red = 30;
   	}
@@ -51,12 +53,10 @@ void color_decode (uint8_t color, uint8_t brightness, uint8_t *decoded) {
   	}
 
   	// Set blue component.
-  	if ((color >= 32 && color <= 63) || (color >= 224)) {
+  	if ((color <= 63) || (color >= 224)) {
     	blue = 30;
-  	} else if (color <= 31) {
-    	blue = color / 31.0 * 30;
   	} else if (color >= 64 && color <= 95) {
-    	blue = (1 - (color - 63) / 32.0) * 30;
+    	blue = ((96-color ) / 32.0) * 30;
   	} else if (color >= 192 && color <= 223) {
     	blue = (color - 191) / 32.0 * 30;
   	} else {

@@ -110,7 +110,7 @@ uint32_t wifi_current_frame_id;
  * Methods
  */
 void wifi_rx_handle_data(wifi_stc_data_frame_field_t * wifi_rx_stc_data, uint16_t max_cone_id);
-uint32_t wifi_rx_handle_config(uint8_t* rx_frame, uint16_t length);
+uint32_t wifi_rx_handle_config(uint32_t* rx_frame, uint16_t length);
 void wifi_tx_settings(IPAddress server_ip);
 void wifi_tx_status(IPAddress server_ip);
 
@@ -174,36 +174,36 @@ void wifi_rx_frame(void)
     if (packetSize)
     {
         // receive incoming UDP packets
-        printf("Received %d bytes from %s, port %d\n", packetSize, Udp.remoteIP().toString().c_str(), Udp.remotePort());
+        printf("Received %d bytes from %s, port %d\r\n", packetSize, Udp.remoteIP().toString().c_str(), Udp.remotePort());
         int len = Udp.read(wifi_rx_buffer, 255);
         if(len == 0) {
-            printf("Received Empty Frame");
+            printf("Received Empty Frame\r\n");
             return;
         }
         server_ip = Udp.remoteIP();
     
         if(wifi_rx_header->version != WIFI_COM_VERSION){
             // Error, Frame has the wrong Version
-            printf("Wrong WIFI_COM_Version Got: %x, Local: %x", wifi_rx_buffer[0],WIFI_COM_VERSION);
+            printf("Wrong WIFI_COM_Version Got: %x, Local: %x\r\n", wifi_rx_buffer[0],WIFI_COM_VERSION);
             return;
         }
 
         switch(wifi_rx_header->type) {
             case WIFI_STC_DATA_TYPE:
-                printf("Handle WIFI_STC_DATA_TYPE");
+                printf("Handle WIFI_STC_DATA_TYPE\r\n");
                 wifi_rx_handle_data(wifi_rx_stc_data, (len-16)/4);
-                wifi_server_ip = server_ip
+                wifi_server_ip = server_ip;
                 break;            
             case WIFI_STC_CONFIG_TYPE:
-                printf("Handle WIFI_STC_CONFIG_TYPE");
-                wifi_rx_handle_config(&wifi_rx_buffer[16], (len-16)/4);
+                printf("Handle WIFI_STC_CONFIG_TYPE\r\n");
+                wifi_rx_handle_config((uint32_t*)&wifi_rx_buffer[16], (len-16)/4);
                 
             case WIFI_STC_SET_REQ_TYPE:
-                printf("Handle WIFI_STC_SET_REQ_TYPE");
+                printf("Handle WIFI_STC_SET_REQ_TYPE\r\n");
                 wifi_tx_settings(server_ip);
                 break;
             case WIFI_STC_STAT_REQ_TYPE:
-                printf("Handle WIFI_STC_STAT_REQ_TYPE");
+                printf("Handle WIFI_STC_STAT_REQ_TYPE\r\n");
                 wifi_tx_status(server_ip);
                 break;    
         }
@@ -276,7 +276,7 @@ uint32_t wifi_rx_handle_config(uint32_t* rx_frame, uint16_t length) {
  */
 void wifi_tx_settings(IPAddress server_ip) {
 
-    wifi_cts_config_frame->data.header.wifi_frame_header.type = WIFI_CTS_CONFIG_TYPE;
+    wifi_cts_config_frame->data.header.type = WIFI_CTS_SET_TYPE;
   
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_HW_REV] = config_store.hardware_data.hardware_revision;
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_SERIAL_NO] = config_store.hardware_data.serial_number;
@@ -291,7 +291,7 @@ void wifi_tx_settings(IPAddress server_ip) {
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_DEBUG4] = 0;
   
     Udp.beginPacket(server_ip, WIFI_UDP_TX_PORT);
-    Udp.write(wifi_cts_status_frame->frame,16+4*WIFI_CONFIG_ID_END);
+    Udp.write(wifi_cts_config_frame->frame,16+4*WIFI_CONFIG_ID_END);
     Udp.endPacket();
 }
 
@@ -304,7 +304,7 @@ void wifi_tx_settings(IPAddress server_ip) {
 void wifi_tx_status(IPAddress server_ip){
     // Update static information, if header is changed
     if(wifi_cts_status_frame->data.header.type != WIFI_CTS_STATUS_TYPE){    
-        wifi_cts_status_frame->data.header.wifi_frame_header.type = WIFI_CTS_STATUS_TYPE;
+        wifi_cts_status_frame->data.header.type = WIFI_CTS_STATUS_TYPE;
         wifi_cts_status_frame->data.sw_rev_maj=CONFIG_STORE_SW_REV_MAJ;
         wifi_cts_status_frame->data.sw_rev_min=CONFIG_STORE_SW_REV_MIN;
         wifi_cts_status_frame->data.hw_rev = config_store.hardware_data.hardware_revision;

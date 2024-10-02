@@ -48,6 +48,8 @@ void lightmode_blink_long(uint32_t time, lightmode* current_lm, uint8_t *ledStat
 void lightmode_circ(uint32_t time, lightmode* current_lm, uint8_t *ledState);
 void lightmode_circ_smooth(uint32_t time, lightmode* current_lm, uint8_t *ledState);
 void lightmode_fade(uint32_t time, lightmode* current_lm, uint8_t *ledState);
+void lightmode_rainbow_fade(uint32_t time, lightmode* current_lm, uint8_t *ledState);
+void lightmode_rainbow_circle(uint32_t time, lightmode* current_lm, uint8_t *ledState);
 void lightmode_ident(uint32_t time, lightmode* current_lm, uint8_t *ledState);
 
 

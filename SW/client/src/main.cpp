@@ -20,7 +20,7 @@
 bool wifi_connected = false;
 
 unsigned long previousMillis = 0;  // will store last time LED was updated
-const long LED_UPDATE_INTERVAL = 50;  // interval at which to blink (milliseconds)
+const long LED_UPDATE_INTERVAL = 25;  // interval at which to blink (milliseconds)
 
 void setup() {
   // Init pins.
@@ -77,7 +77,7 @@ void loop() {
         led_show(led_state);
     }
   }
-  if(currentMillis%10000 == 0){
+  if(currentMillis%20000 == 0){
       wifi_status_transmit();
   }
 }
