@@ -465,13 +465,16 @@ The testpoints are only labelled on the bottom layer. To ease testing and debugg
 \subsection{Modifications from index BA to index BB}
 
 \subsubsection{Level shifter too slow}
-The rise time of the level shifter is too long. R18 should be changed from 1K5/0603 to 270R/0603. 
+The rise time of the level shifter is too long. R18 should be changed from 1K5/0603 to 270R/0603. In addition, R3 should be changed from 270R/0603 to 0R/0603. 
 
 \subsubsection{Edge detector not working}
 The edge detector is not working because the time constant of the delay is too long. R21 should be changed from 100K/0603 to 3K3/0603 and C6 should be changed from 1U/0603 to 100P/0603. 
 
 \subsubsection{Unreliable magnet turn-off}
 The turn-off with a magnet using the hall sensor is unreliable. This is caused by the low threshold voltage of the EN pin of the boost converter U30 (TPS61023) in combination with the voltage drop over R104 and D13. The value of R104 should be changed from 1K5/0603 to 620R/0603. 
+
+\subsubsection{EEPROM not accessible}
+No pull-up resistors are placed on the \ac{I2C} lines and the internal pull-up resistors of the ESP module are too weak. Additional pull-up resistors are to be placed from SDA and SCL to +3V3. 
 
 \subsection{Modifications from index BB to index CA}
 
