@@ -15,15 +15,15 @@
 #include <stdint.h>
 #include <stdio.h>
 
+#include "adc.h"
+#include "config_store.h"
+#include "credentials.h"
+#include "hw_ctrl.h"
 #include "led.h"
 #include "lightmodes.h"
-#include "wifi.h"
-#include "credentials.h"
-#include "ota.h"
-#include "config_store.h"
-#include "adc.h"
 #include "sync.h"
-#include "hw_ctrl.h"
+#include "ota.h"
+#include "wifi.h"
 
 /*
  * Frame definitions
@@ -45,16 +45,16 @@ typedef struct {
 } wifi_stc_data_frame_field_t;
 
 typedef union {
-    uint8_t frame[30];
+    uint8_t frame[25];
     struct{
         wifi_frame_header_t header;
         uint16_t cone_id;
         uint8_t SoC;
         uint8_t rssi;
-        uint8_t mac[6];
+        int8_t temp;
+        uint8_t hw_rev;
         uint8_t sw_rev_maj;
         uint8_t sw_rev_min;
-        uint8_t hw_rev;
         uint8_t hall_state;        
     } data;
 } wifi_cts_status_frame_t;
@@ -132,7 +132,7 @@ int wifi_setup(void) {
 
     // Check what this code excatly does and if it works as intended
     while (WiFi.waitForConnectResult() != WL_CONNECTED && wifi_attempt < WIFI_ATTEMPTS) {
-      Serial.println("Connection Failed! Rebooting...");
+      printf("Connection Failed! Rebooting...");
       delay(5000);
       ESP.restart();
       wifi_attempt++;
@@ -143,7 +143,7 @@ int wifi_setup(void) {
       return 1;
     }
     
-    Serial.println("WiFi connected");
+    printf("WiFi connected");
     ota_setup();
     led_esp_blink(LED_ESP_FREQ_ON/5, 4);
     
@@ -259,7 +259,11 @@ uint32_t wifi_rx_handle_config(uint32_t* rx_frame, uint16_t length) {
                 *((uint32_t*)&config_store.user_settings.fallback_lightmode) = value;
                 break;
             case WIFI_CONFIG_ID_TURN_OFF:
-                hw_ctrl_turn_off();
+                if(value == 1)
+                    ESP.restart();
+                else
+                    hw_ctrl_turn_off();
+
                 break;
             default: 
                 return 1;
@@ -284,7 +288,7 @@ void wifi_tx_settings(IPAddress server_ip) {
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_FALLBACK_LM] = *((uint32_t*)&config_store.user_settings.fallback_lightmode);
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_TURN_OFF] = 0;
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_ADC_VOLTAGE] = adc_volt_meas;
-    wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_ADC_TEMP] = adc_temp_meas;
+    wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_ADC_TEMP] = adc_temp_deg;
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_DEBUG1] = 0;
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_DEBUG2] = 0;
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_DEBUG3] = 0;
@@ -308,15 +312,15 @@ void wifi_tx_status(IPAddress server_ip){
         wifi_cts_status_frame->data.sw_rev_maj=CONFIG_STORE_SW_REV_MAJ;
         wifi_cts_status_frame->data.sw_rev_min=CONFIG_STORE_SW_REV_MIN;
         wifi_cts_status_frame->data.hw_rev = config_store.hardware_data.hardware_revision;
-        WiFi.macAddress(wifi_cts_status_frame->data.mac); 
     }
     wifi_cts_status_frame->data.cone_id = config_store.user_settings.cone_id;
     wifi_cts_status_frame->data.SoC = adc_soc;
     wifi_cts_status_frame->data.rssi = WiFi.RSSI();
+    wifi_cts_status_frame->data.temp = adc_temp_deg;
     wifi_cts_status_frame->data.hall_state = hw_ctrl_get_hall_state();     
     
     Udp.beginPacket(server_ip, WIFI_UDP_TX_PORT);
-    Udp.write(wifi_cts_status_frame->frame,30);
+    Udp.write(wifi_cts_status_frame->frame, 25);
     Udp.endPacket();
 }
 

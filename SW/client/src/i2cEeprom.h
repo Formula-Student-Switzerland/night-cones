@@ -12,7 +12,6 @@
 #define I2CEEPROM_H
 #include <stdint.h>
 #include "Arduino.h"
-
 #include "Wire.h"
 
 

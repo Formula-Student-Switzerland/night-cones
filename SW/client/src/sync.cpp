@@ -66,5 +66,4 @@ void sync_reconfigure(uint8_t repetition_time, uint8_t phase_shift){
  */
 void sync_synchronize(uint64_t rx_timestamp){
     sync_setting.time_offset = millis()-(uint32_t)rx_timestamp-sync_setting.phase_increment;
-    printf("Defined new Time Offset %d\r\n", sync_setting.time_offset);
 }

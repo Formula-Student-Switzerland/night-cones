@@ -1,7 +1,7 @@
 /*******************************************************************************/
 /* 
  * File: color.c
- * Author: Oliver Clemens
+ * Author: Andreas Horat
  */
 /*******************************************************************************/
 /*
@@ -12,21 +12,26 @@
 #include <stdint.h>
 #include "color.h"
 
-
 /**
  * Decode the received color field uint8_to RGB components
- * Inputs:
- *      color: 8 bit color code from blue-green-red-white (see documentation)
- *      brightness: LEFT (MSB) aligned 4 bit brightness code. Lower 4 bits 
+
+ * @param color: 8 bit color code from blue-green-red-white (see documentation)
+ * @param brightness: LEFT (MSB) aligned 4 bit brightness code. Lower 4 bits
  *                  must be 0
- * Outputs: 
- *      decoded: 3 byte array pointer with the three components RGB 
+ * @param decode 3 byte array pointer with the three components RGB
  */
 void color_decode (uint8_t color, uint8_t brightness, uint8_t *decoded) {
 	// Init variables.
 	float red = 0;
 	float green = 0;
 	float blue = 0;
+	
+	if(brightness == 0){
+		decoded[0] = 0;
+		decoded[1] = 0;
+		decoded[2] = 0;
+		return;
+	}
 
 	// Set red component.
 	if (color < 32) {
@@ -77,5 +82,4 @@ void color_decode (uint8_t color, uint8_t brightness, uint8_t *decoded) {
     	decoded[0] = (uint8_t)red / blue * brightness;
     	decoded[1] = (uint8_t)green / blue * brightness;
   	}
-
 }

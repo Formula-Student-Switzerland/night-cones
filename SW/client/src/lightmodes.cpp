@@ -19,11 +19,11 @@
  */
 /*******************************************************************************/
 #include <stdint.h>
+#include "Arduino.h"
 #include "lightmodes.h"
 #include "color.h"
 #include "led.h"
 #include "config_store.h"
-#include "Arduino.h"
 
 #define LIGHTMODE_COUNT 16
 
@@ -62,6 +62,16 @@ void lightmode_setup(void)
 }
 
 /**
+ * Sets the current mode as fallback (Startup mode)
+ */
+void lightmode_setAsFallback(void){
+    config_store.user_settings.fallback_color = lightmode_current.base_color;
+    config_store.user_settings.fallback_lightmode = lightmode_current.brightness<<4 | lightmode_current.mode;
+    config_store.user_settings.fallback_repetition_time = lightmode_current.repetition_time;
+    config_store.user_settings.fallback_phase = 0;
+}
+
+/**
  * Switches the new light mode on. This is used to reduce the calculation-
  * amount per iteration to step the color. 
  *
@@ -75,7 +85,7 @@ void lightmode_setup(void)
 void lightmode_switch(uint8_t color, uint8_t brightness_mode, 
                         uint8_t repetition_time){
     lightmode_current.repetition_time = repetition_time;
-    lightmode_current.mode = brightness_mode & 0x0F;
+    lightmode_current.mode = (brightness_mode & 0x0F);
     lightmode_current.base_color = color;
     lightmode_current_handler = lightmodes[lightmode_current.mode];
     
@@ -87,7 +97,7 @@ void lightmode_switch(uint8_t color, uint8_t brightness_mode,
  * @param brightness Current brightness value
  */
 void lightmode_dim(uint8_t brightness) {    
-    lightmode_current.brightness = brightness & 0xF0;
+    lightmode_current.brightness = (brightness & 0xF0);
     color_decode(lightmode_current.base_color, lightmode_current.brightness, lightmode_current.color);
     
     switch(lightmode_current.mode){
@@ -136,7 +146,7 @@ void lightmode_set_all_led(uint8_t* colors, uint8_t* ledState){
  */
 void lightmode_continuous(uint32_t time, lightmode* current_lm, uint8_t *ledState) {
 	// Assign colors to LED.
-	lightmode_set_all_led(current_lm->color, ledState);
+    lightmode_set_all_led(current_lm->color, ledState);
 
 }
 

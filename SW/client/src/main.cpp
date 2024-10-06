@@ -1,12 +1,14 @@
 #include "Arduino.h"
-#include "lightmodes.h"
-#include "wifi.h"
+#include "HardwareSerial.h"
 #include "adc.h"
-#include "led.h"
-#include "sync.h"
+#include "cli.h"
 #include "color.h"
-#include "hw_ctrl.h"
 #include "config_store.h"
+#include "hw_ctrl.h"
+#include "led.h"
+#include "lightmodes.h"
+#include "sync.h"
+#include "wifi.h"
 
 #define BRIGHTNESS_DEFAULT 0x70
 
@@ -17,17 +19,18 @@
 #define WIFI_DELAY_MS 100
 #define WIFI_LOOPS    50
 
-bool wifi_connected = false;
-
 unsigned long previousMillis = 0;  // will store last time LED was updated
 const long LED_UPDATE_INTERVAL = 25;  // interval at which to blink (milliseconds)
 
 void setup() {
   // Init pins.
   Serial.begin(115200);
+  delay(2000);
   config_store_setup();
   hw_Ctrl_setup();
   adc_setup();
+  adc_loop();
+
   sync_setup(LED_UPDATE_INTERVAL);
 
   // LED setup
@@ -35,51 +38,62 @@ void setup() {
   lightmode_setup();
  
   // Init LEDs with red
-  lightmode_switch(COLOR_BLUE, 0x70, 0);
+  lightmode_switch(COLOR_BLUE, 0x20, 0);
   lightmode_step(0, led_state);
   led_show(led_state);
 
   delay(500);
-  wifi_connected = !(bool) wifi_setup();
-  if(wifi_connected){    
-    lightmode_switch(COLOR_BLUE, 0x70, 0);
-  } else {
-    lightmode_switch(COLOR_RED, 0x70, 0);
-  }
-
+  wifi_setup();
+  // In case the Default mode would turn off everything, we first need to 
+  // wake the failsafe by switching shortly to blue and then go to black. 
+  led_show(led_state);
+  lightmode_switch(config_store.user_settings.fallback_color,
+                   config_store.user_settings.fallback_lightmode,
+                   config_store.user_settings.fallback_repetition_time);
+  lightmode_step(0, led_state);
+  led_show(led_state);
+  cli_init();
 }
 
-void loop() {
+void loop()
+{
 
-  // OTA loop
   wifi_loop();
-  
-  uint32_t currentMillis;
-  if (sync_loop(&currentMillis)) {
 
+  cli_work();
+
+  uint32_t currentMillis;
+  if (sync_loop(&currentMillis))
+  {
+
+    lightmode_step(currentMillis, led_state);
+    // ToDo Implement Dimming here. 
+    /*if (adc_temp_deg < 20)
+    {
+      // lightmode_dim(BRIGHTNESS_DEFAULT);
+    }
+    else if (adc_temp_deg > 60)
+    {
+      //lightmode_dim(0x10);
+    }
+    else
+    {
+      //lightmode_dim((16 + ((60-adc_temp_deg) * )) & 0xF0);
+    }*/
+
+    if (digitalRead(HALL_PIN))
+    {
+      led_show_status(adc_temp_deg, adc_volt_meas);
+    }
+    else
+    {
+      led_show(led_state);
+    }
+  }
+  if (currentMillis % 5000 == 0)
+  {
     // Measure temperature and battery voltage
     adc_loop();
-    lightmode_step(currentMillis, led_state);
-    
-    if (adc_temp_meas > 374) {
-        //lightmode_dim(BRIGHTNESS_DEFAULT);
-     } else if (adc_temp_meas < 337) {
-        lightmode_dim(0x10);
-    } else {
-      lightmode_dim((16 + ((adc_temp_meas - 337) * 3))&0xF0);
-    }
-
-    if (digitalRead(HALL_PIN)){
-        printf("Hall Active");
-        led_show_status(adc_temp_meas, adc_volt_meas);
-    }
-    else{
-        led_show(led_state);
-    }
-  }
-  if(currentMillis%20000 == 0){
-      wifi_status_transmit();
+    wifi_status_transmit();
   }
 }
-
-

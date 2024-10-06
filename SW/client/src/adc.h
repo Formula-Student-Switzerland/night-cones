@@ -10,13 +10,11 @@
 #define ADC_MUX_TEMP 1
 
 extern int16_t adc_volt_meas;
-extern int16_t adc_temp_meas;
+extern uint8_t adc_temp_deg;
 extern uint8_t adc_soc;
 
 void adc_setup(void);
 
 void adc_loop(void);
-
-uint8_t adc_calc_temp(uint16_t value);
 
 #endif

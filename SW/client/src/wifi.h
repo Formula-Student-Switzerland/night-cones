@@ -11,7 +11,6 @@
 /*******************************************************************************/
 #ifndef WIFI_H
 #define WIFI_H
-#include <stdint.h>
 
 #define WIFI_UDP_RX_PORT 5250
 #define WIFI_UDP_TX_PORT 5251

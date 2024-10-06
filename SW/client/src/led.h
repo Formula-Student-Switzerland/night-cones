@@ -35,7 +35,7 @@
     void led_clear();
     
     void led_esp_blink(int frequency, int blinks);
-    void led_show_status(int16_t temp, int16_t voltage);
+    void led_show_status(int8_t temp, int16_t voltage);
 #else
     int displayLeds(int *ledState);
 #endif

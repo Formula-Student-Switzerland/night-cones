@@ -20,6 +20,7 @@
 #define CONFIG_STORE_HARDWARE_DATA_SIZE 20
 #define CONFIG_STORE_USER_SETTINGS_SIZE 28
 
+
 typedef struct{
     uint8_t hardware_revision;
     uint16_t serial_number;
@@ -44,7 +45,7 @@ typedef struct{
     uint8_t hardware_data_reserved[CONFIG_STORE_HARDWARE_DATA_SIZE-sizeof(hardware_data_t)];
     uint32_t hardware_data_crc;
     user_settings_t user_settings;
-    uint8_t user_settings_reserved[CONFIG_STORE_HARDWARE_DATA_SIZE-sizeof(user_settings_t)];
+    uint8_t user_settings_reserved[CONFIG_STORE_USER_SETTINGS_SIZE-sizeof(user_settings_t)];
     uint32_t user_settings_crc;
 }  config_store_t;
 
@@ -52,13 +53,12 @@ typedef struct{
 
 
 extern config_store_t config_store;
-//ToDo: Add CRC
 
 void config_store_setup(void);
 
 int config_store_read(void);
 
 int config_store_store(void);
+int config_store_storeHW(void);
 
-uint32_t config_store_crc32b(uint8_t *message, uint16_t length);
 #endif
