@@ -481,3 +481,4 @@ No pull-up resistors are placed on the \ac{I2C} lines and the internal pull-up r
 \subsubsection{Level shifter distorts duty cycle}
 Rise and fall time of the level shifter are not identical. This leads to a distortion of the duty cycle of the DATA signal. In the first series production this was corrected by adjusting the pulse width in the neopixel library. 
 For a new production run, the level shifter should be changed to a type that does not introduce any distortion in the signal duty cycle. 
+The inverter 74HCT1G04, which accepts TTL levels, should work. 
