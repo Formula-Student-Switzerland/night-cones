@@ -76,14 +76,14 @@ class NightConesMessage:
     16-17	2 Byte	ID
     18	    1 Byte	SoC (0 → 0%, 255 → 100%)
     19	    1 Byte	RSSI
-    20-25	6 Byte	MAC Address
+    20-25	2 Byte	MAC Address
     26-27	2 Byte	Software Version
     28	    1 Byte	Hardware Revision
     29	    1 Byte 	Hall Sensor State
     '''
     
-    _DATA_RESPONSE_DEFINITION = "HBBBBBBBBHBB"
-    DATARESPONSE_TUPLE = namedtuple('DataResponse', 'ID SoC RSSI MAC SWVersion HWRevision Hall')
+    _DATA_RESPONSE_DEFINITION = "HBBbBHB"
+    DATARESPONSE_TUPLE = namedtuple('DataResponse', 'ID SoC RSSI Temp HWRevision SWVersion Hall')
     
     '''
     Config Responste Frame Definition
@@ -143,7 +143,7 @@ class NightConesMessage:
                 return (header,'')
             case self._DATARESPONSE_FRAME:
                 temp = struct.unpack(self._DATA_RESPONSE_DEFINITION,frame[16:])        
-                data=self.DATARESPONSE_TUPLE(temp[0],temp[1],temp[2],(temp[3],temp[4],temp[5],temp[6],temp[7],temp[8]),temp[9],temp[10],temp[11])
+                data=self.DATARESPONSE_TUPLE(temp[0],temp[1],temp[2],temp[3],temp[4],temp[5],temp[6])
                 return (header,data)
                 
     
@@ -159,19 +159,19 @@ class NightConesMessage:
         
         Packs a data frame as specified in the documentation.'''
         frame = struct.pack(self._HEADER_STRING,self._VERSION, self._DATA_FRAME, self._dataframecounter,int(time.time() * 1000))
-        print(data)
+
         for i in range(0,len(data)):
             byte1 = (data[i][1]<<4)+ (int(data[i][2].value)&0xF)
             frame += (struct.pack(self._DATA_FRAME_DEFINITION,data[i][0], byte1, data[i][3],data[i][4]))
-        print(byte1);
-        print(int(data[i][2].value))
-        print(int(data[i][2].value)&0xF)
+
         self._dataframecounter = self._dataframecounter + 1;
         return frame
     
-    def packConfigFrame(self,datatuple):
+    def packConfigFrame(self,datatuples):
         frame = struct.pack(self._HEADER_STRING,self._VERSION, self._CONFIG_FRAME, 0,int(time.time() * 1000))
-        raise NotImplementedError
+        for tuple in datatuples:
+            frame = frame + struct.pack(self._CONFIGFRAME_FRAME_ENTRY_DEFINITION, tuple[0], tuple[1])
+        print(frame)
         return frame
         
         
