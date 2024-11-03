@@ -60,8 +60,6 @@ void config_store_upgrade(config_store_t *temp)
         break;
     }
     temp->psvn = CONFIG_STORE_PSVN;
-    config_store_storeHW();
-    config_store_store();
 }
 
 /**
@@ -98,6 +96,7 @@ uint32_t config_store_crc32b(uint8_t *message, uint16_t length)
 int config_store_read(void){
     config_store_t temp;
     uint32_t crc;
+    bool upgrade = false;
 
     if(config_storage_eeprom.read(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS, (uint8_t*)&temp, 
         CONFIG_STORE_EEPROM_USED_SIZE)){
@@ -122,10 +121,16 @@ int config_store_read(void){
     if(temp.psvn != CONFIG_STORE_PSVN){
         printf("PSVN not matching. Upgrade will be performed.\r\n");
         config_store_upgrade(&temp);
+        upgrade = true;
     }
 
     memcpy(&config_store, &temp, sizeof(config_store_t));
     printf("EEPROM Read Successful!\r\n");
+    if(upgrade)
+    {
+        config_store_storeHW();
+        config_store_store();
+    }
     return 0;
 }
 

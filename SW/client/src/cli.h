@@ -14,7 +14,7 @@
 #define LINE_BUF_SIZE 128
 #define MAX_NUM_ARGS 8
 
-//#define CLI_ENABLED
+#define CLI_ENABLED
 
 void cli_init();
 void cli_work();

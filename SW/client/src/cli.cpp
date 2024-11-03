@@ -220,8 +220,9 @@ void cmd_readEEPROM(void)
                    *(((uint8_t *)&config_store) + i + j + 1),
                    *(((uint8_t *)&config_store) + i + j + 2),
                    *(((uint8_t *)&config_store) + i + j + 3));
+            if (j == 12)
+                printf(" \r\n");
         }
-        printf(" \r\n");
     }
 }
 

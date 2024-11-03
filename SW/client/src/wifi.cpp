@@ -59,19 +59,22 @@ typedef union {
     } data;
 } wifi_cts_status_frame_t;
 
-enum wifi_config_store_ids{
-  WIFI_CONFIG_ID_HW_REV = 0,
-  WIFI_CONFIG_ID_SERIAL_NO,
-  WIFI_CONFIG_ID_CONE_ID,
-  WIFI_CONFIG_ID_FALLBACK_LM,
-  WIFI_CONFIG_ID_TURN_OFF,
-  WIFI_CONFIG_ID_ADC_VOLTAGE,
-  WIFI_CONFIG_ID_ADC_TEMP,
-  WIFI_CONFIG_ID_DEBUG1,
-  WIFI_CONFIG_ID_DEBUG2,
-  WIFI_CONFIG_ID_DEBUG3,
-  WIFI_CONFIG_ID_DEBUG4,
-  WIFI_CONFIG_ID_END
+enum wifi_config_store_ids
+{
+    WIFI_CONFIG_ID_HW_REV = 0,
+    WIFI_CONFIG_ID_SERIAL_NO,
+    WIFI_CONFIG_ID_CONE_ID,
+    WIFI_CONFIG_ID_FALLBACK_LM,
+    WIFI_CONFIG_ID_TURN_OFF,
+    WIFI_CONFIG_ID_ADC_VOLTAGE,
+    WIFI_CONFIG_ID_ADC_TEMP,
+    WIFI_CONFIG_ID_STATUS_FREQUENCY,
+    WIFI_CONFIG_ID_DEBUG1,
+    WIFI_CONFIG_ID_DEBUG2,
+    WIFI_CONFIG_ID_DEBUG3,
+    WIFI_CONFIG_ID_DEBUG4,
+    WIFI_CONFIG_ID_SAVE_EEPROM,
+    WIFI_CONFIG_ID_END
 };
 
 typedef union {
@@ -265,6 +268,11 @@ uint32_t wifi_rx_handle_config(uint32_t* rx_frame, uint16_t length) {
                     hw_ctrl_turn_off();
 
                 break;
+
+            case WIFI_CONFIG_ID_STATUS_FREQUENCY:
+                config_store.user_settings.status_refresh_period = value;
+            case WIFI_CONFIG_ID_SAVE_EEPROM:
+                config_store_store();
             default: 
                 return 1;
         }
@@ -289,6 +297,7 @@ void wifi_tx_settings(IPAddress server_ip) {
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_TURN_OFF] = 0;
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_ADC_VOLTAGE] = adc_volt_meas;
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_ADC_TEMP] = adc_temp_deg;
+    wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_STATUS_FREQUENCY] = config_store.user_settings.status_refresh_period;
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_DEBUG1] = 0;
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_DEBUG2] = 0;
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_DEBUG3] = 0;

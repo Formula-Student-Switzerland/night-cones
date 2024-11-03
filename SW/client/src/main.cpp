@@ -90,7 +90,7 @@ void loop()
       led_show(led_state);
     }
   }
-  if (currentMillis % 5000 == 0)
+  if (config_store.user_settings.status_refresh_period != 0 && (currentMillis % config_store.user_settings.status_refresh_period == 0))
   {
     // Measure temperature and battery voltage
     adc_loop();
