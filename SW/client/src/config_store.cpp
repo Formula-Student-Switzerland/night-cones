@@ -15,7 +15,6 @@
 
 config_store_t config_store;
 TwoWire I2C = TwoWire();
-i2c_eeprom config_storage_eeprom(&I2C);
 
 /**
  * Configure Config store with defaults and load data from EEPROM.
@@ -24,11 +23,11 @@ i2c_eeprom config_storage_eeprom(&I2C);
 void config_store_setup(void){
     I2C.begin(2,14);
     I2C.setClock(5000);
-    
-    config_storage_eeprom.set_address(CONFIG_STORE_EEPROM_ADDRESS);
-    config_storage_eeprom.set_memory_size(CONFIG_STORE_EEPROM_SIZE);
-    config_storage_eeprom.set_page_size(CONFIG_STORE_EEPROM_PAGE_SIZE);
-    
+    i2c_eeprom_init(&I2C);
+    i2c_eeprom_set_address(CONFIG_STORE_EEPROM_ADDRESS);
+    i2c_eeprom_set_memory_size(CONFIG_STORE_EEPROM_SIZE);
+    i2c_eeprom_set_page_size(CONFIG_STORE_EEPROM_PAGE_SIZE);
+
     config_store_read();
 
 }
@@ -98,12 +97,13 @@ int config_store_read(void){
     uint32_t crc;
     bool upgrade = false;
 
-    if(config_storage_eeprom.read(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS, (uint8_t*)&temp, 
-        CONFIG_STORE_EEPROM_USED_SIZE)){
-            printf("Reading EEPROM failed\r\n!");
-            return -1;
-        }
-  
+    if (i2c_eeprom_read(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS, (uint8_t *)&temp,
+                        CONFIG_STORE_EEPROM_USED_SIZE))
+    {
+        printf("Reading EEPROM failed\r\n!");
+        return -1;
+    }
+
     crc = config_store_crc32b((uint8_t*) &temp.hardware_data, CONFIG_STORE_HARDWARE_DATA_SIZE);
 
     if(crc != temp.hardware_data_crc){
@@ -148,10 +148,10 @@ int config_store_store(void){
     config_store.user_settings_crc = config_store_crc32b((uint8_t*) &config_store.user_settings,CONFIG_STORE_USER_SETTINGS_SIZE);
 
     for(uint8_t i=0; i < CONFIG_STORE_USER_SETTINGS_SIZE + 4; i+=8){
-        result += config_storage_eeprom.read(CONFIG_STORE_EEPROM_USER_SETTIGS_BASE_ADDRESS+i, buffer, 8);
+        result += i2c_eeprom_read(CONFIG_STORE_EEPROM_USER_SETTIGS_BASE_ADDRESS + i, buffer, 8);
         // Only write page if needed.
         if(memcmp(buffer, ((uint8_t*) &config_store.user_settings)+i, 8)!= 0){
-            result += config_storage_eeprom.write(CONFIG_STORE_EEPROM_USER_SETTIGS_BASE_ADDRESS+i, ((uint8_t*) &config_store.user_settings)+i, 8);
+            result += i2c_eeprom_write(CONFIG_STORE_EEPROM_USER_SETTIGS_BASE_ADDRESS + i, ((uint8_t *)&config_store.user_settings) + i, 8);
        }
     }
     return result;
@@ -169,10 +169,10 @@ int config_store_storeHW(void){
     config_store.hardware_data_crc = config_store_crc32b((uint8_t*) &config_store.hardware_data,CONFIG_STORE_HARDWARE_DATA_SIZE);
 
     for(uint8_t i=0; i < CONFIG_STORE_EEPROM_HEADER_SIZE + CONFIG_STORE_HARDWARE_DATA_SIZE + 4; i+=8){
-        config_storage_eeprom.read(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS+i, buffer, 8);
+        i2c_eeprom_read(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS + i, buffer, 8);
         // Only write page if needed.
         if(memcmp(buffer, ((uint8_t*) &config_store)+i, 8)!= 0){
-            result += config_storage_eeprom.write(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS+i, ((uint8_t*) &config_store)+i, 8);
+            result += i2c_eeprom_write(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS + i, ((uint8_t *)&config_store) + i, 8);
 }
     }
     return result;
