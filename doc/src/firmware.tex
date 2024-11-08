@@ -1,2 +1,42 @@
 \section{Firmware}
 
+The software is written in C++ using VS Code as IDE in combination with the PlatformIO extension. However, it is written in C style, not using classes.
+The software is built from various modules described below.
+
+\subsection{adc}
+This module reads out the integrated ADC and switches between both channels after each conversion. The \texttt{adc\_loop} function needs to be called periodically to read out the conversion value. The values are afterwards stored in the variables \texttt{adc\_volt\_meas} and \texttt{adc\_temp\_deg}. 
+
+The battery voltage is stored in millivolt. The temperature is stored in degrees. Additionally the \ac{SoC} is available in \texttt{adc\_soc} in percent. 
+\subsection{cli}
+The command line interface is only used to set the serial number and the hardware revision. The command line interface can be disabled if necessary using the compiler flag \texttt{CLI\_ENABLED}.
+For this, the following commands are available: 
+\begin{itemize}
+	\item \texttt{help}: Prints a message to test the command line interface. 
+	\item \texttt{LED}: Can be used to set the current lightmode. The command takes 4 positional arguments: \texttt{color}, \texttt{brightness}, \texttt{lightmode}, \texttt{repetition time}.
+	\item \texttt{setLEDFallback}: This command can be used to set the fallback (default) lightmode that is used at turn on. It stores the current active lightmode as default. 
+	\item \texttt{saveEEPROM}: Stores the current settings (hardware and user settings part) to the EEPROM. 
+	\item \texttt{readEEPROM}: Reads out the EEPROM again and updates the config storage. 
+	\item \texttt{setSerialNo}: Sets the serial number and the hardware revision to the config storage. To store the values in the EEPROM, \texttt{saveEEPROM} needs to be called. This commands takes the two arguments in decimal: \texttt{[serial number]}, \texttt{[hardware revision]}	
+\end{itemize}
+
+\subsection{config\_store}
+The config storage is used to store data on the EEPROM mounted starting with hardware revision \texttt{NC1-1B}. 
+
+
+\subsection{i2ceeprom}
+
+\subsection{credentials}
+
+\subsection{color}
+
+\subsection{led}
+
+\subsection{lightmodes}
+
+\subsection{ota}
+
+\subsection{sync}
+
+\subsection{wifi}
+
+\subsection{main}
