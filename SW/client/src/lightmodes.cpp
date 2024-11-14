@@ -19,9 +19,11 @@
  */
 /*******************************************************************************/
 #include <stdint.h>
+#include "Arduino.h"
 #include "lightmodes.h"
 #include "color.h"
 #include "led.h"
+#include "config_store.h"
 
 #define LIGHTMODE_COUNT 16
 
@@ -39,8 +41,8 @@ const lightmode_function lightmodes[LIGHTMODE_COUNT] =
   lightmode_circ, // 04
   lightmode_circ_smooth, // 05
   lightmode_fade, // 06
-  lightmode_continuous, // 07
-  lightmode_continuous, // 08
+  lightmode_rainbow_fade, // 07
+  lightmode_rainbow_circle, // 08
   lightmode_ident, // 09
   lightmode_continuous, // 10
   lightmode_continuous, // 11
@@ -60,6 +62,16 @@ void lightmode_setup(void)
 }
 
 /**
+ * Sets the current mode as fallback (Startup mode)
+ */
+void lightmode_setAsFallback(void){
+    config_store.user_settings.fallback_color = lightmode_current.base_color;
+    config_store.user_settings.fallback_lightmode = lightmode_current.brightness<<4 | lightmode_current.mode;
+    config_store.user_settings.fallback_repetition_time = lightmode_current.repetition_time;
+    config_store.user_settings.fallback_phase = 0;
+}
+
+/**
  * Switches the new light mode on. This is used to reduce the calculation-
  * amount per iteration to step the color. 
  *
@@ -73,12 +85,11 @@ void lightmode_setup(void)
 void lightmode_switch(uint8_t color, uint8_t brightness_mode, 
                         uint8_t repetition_time){
     lightmode_current.repetition_time = repetition_time;
-    lightmode_current.mode = brightness_mode & 0x0F
+    lightmode_current.mode = (brightness_mode & 0x0F);
     lightmode_current.base_color = color;
     lightmode_current_handler = lightmodes[lightmode_current.mode];
     
     lightmode_dim(brightness_mode);
-    
 }
 
 /**
@@ -86,7 +97,7 @@ void lightmode_switch(uint8_t color, uint8_t brightness_mode,
  * @param brightness Current brightness value
  */
 void lightmode_dim(uint8_t brightness) {    
-    lightmode_current.brightness = brightness & 0xF0;
+    lightmode_current.brightness = (brightness & 0xF0);
     color_decode(lightmode_current.base_color, lightmode_current.brightness, lightmode_current.color);
     
     switch(lightmode_current.mode){
@@ -95,7 +106,9 @@ void lightmode_dim(uint8_t brightness) {
             color_decode(lightmode_current.base_color, lightmode_current.brightness/3, &lightmode_current.color[6]);
             break;
         case 9: 
-            color_decode(48, 0xF0, &lightmode_current.color[3]);            
+            color_decode(COLOR_RED, 0xF0, &lightmode_current.color[0]);  
+            color_decode(COLOR_GREEN, 0xF0, &lightmode_current.color[3]);         
+            break;   
         default:
             color_decode(lightmode_current.base_color, 0, &lightmode_current.color[3]);
             color_decode(lightmode_current.base_color, 0, &lightmode_current.color[6]);
@@ -133,7 +146,7 @@ void lightmode_set_all_led(uint8_t* colors, uint8_t* ledState){
  */
 void lightmode_continuous(uint32_t time, lightmode* current_lm, uint8_t *ledState) {
 	// Assign colors to LED.
-	lightmode_set_all_led(current_lm->color, ledState);
+    lightmode_set_all_led(current_lm->color, ledState);
 
 }
 
@@ -145,8 +158,8 @@ void lightmode_blink(uint32_t time, lightmode* current_lm, uint8_t *ledState) {
     if(current_lm->repetition_time == 0)
         current_step = 0;
     else
-        current_step = time/400/current_lm->repetition_time;
-    
+        current_step = time/50/current_lm->repetition_time;
+
     if(current_step %2 == 0)
         lightmode_set_all_led(current_lm->color,ledState);
     else
@@ -161,7 +174,7 @@ void lightmode_blink_short(uint32_t time, lightmode* current_lm, uint8_t *ledSta
     if(current_lm->repetition_time == 0)
         current_step = 0;
     else
-        current_step = time/200/current_lm->repetition_time;
+        current_step = time/25/current_lm->repetition_time;
     
     if(current_step %4 == 0)
         lightmode_set_all_led(current_lm->color,ledState);
@@ -178,7 +191,7 @@ void lightmode_blink_long(uint32_t time, lightmode* current_lm, uint8_t *ledStat
     if(current_lm->repetition_time == 0)
         current_step = 0;
     else
-        current_step = time/200/current_lm->repetition_time;
+        current_step = time/25/current_lm->repetition_time;
     
     if(current_step %4 != 3)
         lightmode_set_all_led(current_lm->color,ledState);
@@ -231,7 +244,7 @@ void lightmode_fade(uint32_t time, lightmode* current_lm, uint8_t *ledState) {
     if(current_lm->repetition_time == 0)
         current_step = 0;
     else
-        current_step = ((uint32_t)(time/100.0/current_lm->repetition_time))%2;
+        current_step = (time/current_lm->repetition_time%200)/100.0;
     
     if(current_step > 1)
         current_step = 2-current_step;
@@ -239,6 +252,44 @@ void lightmode_fade(uint32_t time, lightmode* current_lm, uint8_t *ledState) {
     color_decode(current_lm->base_color, current_lm->brightness*current_step, current_lm->color);
         
     lightmode_set_all_led(current_lm->color,ledState);
+}
+
+/**
+ * Lightmode 7: Rainbow fade
+ */
+void lightmode_rainbow_fade(uint32_t time, lightmode* current_lm, uint8_t *ledState) {
+    uint8_t current_step;
+    if(current_lm->repetition_time == 0)
+        current_step = 0;
+    else
+        current_step = (224*time/100/current_lm->repetition_time)%224;
+    
+
+    color_decode(current_step, current_lm->brightness, current_lm->color);
+        
+    lightmode_set_all_led(current_lm->color,ledState);
+}
+
+/**
+ * Lightmode 8: Rainbow circle
+ */
+void lightmode_rainbow_circle(uint32_t time, lightmode* current_lm, uint8_t *ledState) {
+    uint8_t current_step;
+    if(current_lm->repetition_time == 0)
+        current_step = 0;
+    else
+        current_step = (224*time/100/current_lm->repetition_time)%224;
+
+    for(int i=0; i<LED_BOTTOM_COUNT; i++){
+        current_step = (current_step + 11)%224;
+        color_decode(current_step, current_lm->brightness, current_lm->color);
+        ledState[3*i+0] = current_lm->color[0];
+        ledState[3*i+1] = current_lm->color[1];
+        ledState[3*i+2] = current_lm->color[2];
+        ledState[3*(16+i/4)+0] = current_lm->color[0];
+        ledState[3*(16+i/4)+1] = current_lm->color[1];
+        ledState[3*(16+i/4)+2] = current_lm->color[2];
+    }
 }
 
 /**
@@ -253,9 +304,9 @@ void lightmode_ident(uint32_t time, lightmode* current_lm, uint8_t *ledState) {
     else
         lightmode_set_all_led(&current_lm->color[3],ledState);
 
-    ledState[3*3+0] = current_lm->color[0];
-    ledState[3*3+1] = current_lm->color[1];
-    ledState[3*3+2] = current_lm->color[2];
+    ledState[3*3+0] = current_lm->color[3];
+    ledState[3*3+1] = current_lm->color[4];
+    ledState[3*3+2] = current_lm->color[5];
 }
 
 

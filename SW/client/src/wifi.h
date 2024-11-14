@@ -11,7 +11,6 @@
 /*******************************************************************************/
 #ifndef WIFI_H
 #define WIFI_H
-#include <stdint.h>
 
 #define WIFI_UDP_RX_PORT 5250
 #define WIFI_UDP_TX_PORT 5251
@@ -21,6 +20,7 @@
 //#define WIFI_MAX_CONE_ID ((WIFI_RX_BUFFER_SIZE-16)/4)
 #define WIFI_MAX_CONE_ID 60
 #define WIFI_RX_BUFFER_SIZE (WIFI_MAX_CONE_ID*4+16-1)
+#define WIFI_TX_BUFFER_SIZE 80
 
 #define WIFI_COM_VERSION 1
 

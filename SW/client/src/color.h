@@ -1,7 +1,7 @@
 /*******************************************************************************/
 /* 
  * File: color.c
- * Author: Oliver Clemens
+ * Author: Andreas Horat
  */
 /*******************************************************************************/
 /*
@@ -14,8 +14,7 @@
 #define COLOR_H
 #include <stdint.h>
 
-#define COLOR_BLACK 0
-#define COLOR_GREEN 94
+#define COLOR_GREEN 96
 #define COLOR_BLUE  32
 #define COLOR_RED   192
 #define COLOR_WHITE 255

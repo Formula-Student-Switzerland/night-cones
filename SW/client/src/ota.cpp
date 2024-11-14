@@ -17,24 +17,24 @@
 
 #include "ota.h"
 #include "credentials.h"
+#include "config_store.h"
 
 /**
 * Sets the OTA library ip with all handlers. 
 */
 void ota_setup(void) {
-  // Set Default port to something different 13894
-  // Port defaults to 8266
-  // ArduinoOTA.setPort(8266);
+  // Port defaults to 8266  
+  // Set to custom Port
+  ArduinoOTA.setPort(CRED_OTA_PORT);
 
   // Hostname defaults to esp8266-[ChipID]
   // Set Hostname to Night-cone-[serial number]
-  ArduinoOTA.setHostname("Night-cone-000078");
+  char strbuf[18];
+  sprintf(strbuf, "Night-cone-%06d", config_store.hardware_data.serial_number);
+  ArduinoOTA.setHostname(strbuf);
 
-#ifdef CRED_OTA_PW_MD5
-   ArduinoOTA.setPasswordHash(CRED_OTA_PW_MD5);
-#else    
+  // No MD5 OTA Password because it is less save
   ArduinoOTA.setPassword(CRED_OTA_PW);
-#endif
 
   // Connect to handler
   ArduinoOTA.onStart(ota_handle_start); 
