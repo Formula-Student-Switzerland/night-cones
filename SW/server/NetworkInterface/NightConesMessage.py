@@ -25,8 +25,8 @@ class NightConesMessage:
         Host to Client Types'''
     _DATA_FRAME = 0	#Data Frame with current color data
     _CONFIG_FRAME = 1	#Config Frame for setting various parameters on the cone
-    _DATAREQUEST_FRAME = 2	#Data Request frame to request data from any cone it is sent to. 
-    _CONFIGREQUEST_FRAME = 3	#Data Request frame to request data from any cone it is sent to. 
+    _DATAREQUEST_FRAME = 3	#Data Request frame to request data from any cone it is sent to. 
+    _CONFIGREQUEST_FRAME = 2	#Data Request frame to request data from any cone it is sent to. 
 
     '''Client to Host Types'''
     _DATARESPONSE_FRAME = 128	#Data Request Response from cone to Host
@@ -76,14 +76,14 @@ class NightConesMessage:
     16-17	2 Byte	ID
     18	    1 Byte	SoC (0 → 0%, 255 → 100%)
     19	    1 Byte	RSSI
-    20-25	6 Byte	MAC Address
+    20-25	2 Byte	MAC Address
     26-27	2 Byte	Software Version
     28	    1 Byte	Hardware Revision
     29	    1 Byte 	Hall Sensor State
     '''
     
-    _DATA_RESPONSE_DEFINITION = "HBBBBBBBBHBB"
-    DATARESPONSE_TUPLE = namedtuple('DataResponse', 'ID SoC RSSI MAC SWVersion HWRevision Hall')
+    _DATA_RESPONSE_DEFINITION = "HBBbBHB"
+    DATARESPONSE_TUPLE = namedtuple('DataResponse', 'ID SoC RSSI Temp HWRevision SWVersion Hall')
     
     '''
     Config Responste Frame Definition
@@ -98,7 +98,7 @@ class NightConesMessage:
     ...	
     '''
     _CONFIGRESPONSE_FRAME_SUBHEADER_DEFINITION = "Bxxx"
-    _CONFIGRESPONSE_FRAME_ENTRY_DEFINITION = "i"
+    _CONFIGRESPONSE_FRAME_ENTRY_DEFINITION = "I"
     
     '''
     Config Frame Definition
@@ -109,7 +109,7 @@ class NightConesMessage:
     18-19	2 Byte	Reserved because of alignement
     20-23	4 Byte	Value
 '''
-    _CONFIGRESPONSE_FRAME_ENTRY_DEFINITION = "Hxxi"
+    _CONFIGFRAME_FRAME_ENTRY_DEFINITION = "Hxxi"
     
     def unpackFrame(self, frame) :
         ''' frame: byte array of the message
@@ -129,19 +129,21 @@ class NightConesMessage:
             case self._CONFIG_FRAME:
                 raise NotImplementedError
             case self._CONFIGRESPONSE_FRAME:
-                parameternumber = struct.unpack(self._CONFIGRESPONSE_FRAME_SUBHEADER_DEFINITION, frame[16:20])
                 datalist = []
-                for i in range(20,len(frame),4):
-                    temp, value = struct.unpack(self._DATA_FRAME_DEFINITION,frame[i:i+4])
-                    datalist.append(value)                
+                for i in range(16,len(frame),4):
+                    value = struct.unpack(self._CONFIGRESPONSE_FRAME_ENTRY_DEFINITION,frame[i:i+4])
+                    datalist.append(value[0]) 
                 return (header, datalist)
                 
             case self._CONFIGREQUEST_FRAME:
+                raise NotImplementedError;
+                return (header,'')
             case self._DATAREQUEST_FRAME:
+                raise NotImplementedError;
                 return (header,'')
             case self._DATARESPONSE_FRAME:
                 temp = struct.unpack(self._DATA_RESPONSE_DEFINITION,frame[16:])        
-                data=self.DATARESPONSE_TUPLE(temp[0],temp[1],temp[2],(temp[3],temp[4],temp[5],temp[6],temp[7],temp[8]),temp[9],temp[10],temp[11])
+                data=self.DATARESPONSE_TUPLE(temp[0],temp[1],temp[2],temp[3],temp[4],temp[5],temp[6])
                 return (header,data)
                 
     
@@ -157,16 +159,19 @@ class NightConesMessage:
         
         Packs a data frame as specified in the documentation.'''
         frame = struct.pack(self._HEADER_STRING,self._VERSION, self._DATA_FRAME, self._dataframecounter,int(time.time() * 1000))
-        
+
         for i in range(0,len(data)):
-            byte1 = data[i][1]<<4 + int(data[i][2].value)&0xF
+            byte1 = (data[i][1]<<4)+ (int(data[i][2].value)&0xF)
             frame += (struct.pack(self._DATA_FRAME_DEFINITION,data[i][0], byte1, data[i][3],data[i][4]))
-    
+
         self._dataframecounter = self._dataframecounter + 1;
         return frame
     
-    def packConfigFrame(self,datatuple):
+    def packConfigFrame(self,datatuples):
         frame = struct.pack(self._HEADER_STRING,self._VERSION, self._CONFIG_FRAME, 0,int(time.time() * 1000))
+        for tuple in datatuples:
+            frame = frame + struct.pack(self._CONFIGFRAME_FRAME_ENTRY_DEFINITION, tuple[0], tuple[1])
+        print(frame)
         return frame
         
         

@@ -47,6 +47,7 @@ doc/night-cones.pdf
 *.synctex.gz
 *.synctex.gz(busy)
 *.pdfsync
+*.synctex
 
 ## Auxiliary and intermediate files from other packages:
 
@@ -172,4 +173,6 @@ HW/scripts/*.png
 
 # Python
 __pycache__
+
+**/*/credentials.h
 

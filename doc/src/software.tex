@@ -209,26 +209,35 @@ The data frame is used to send the new data to a set of cones. It is sent to the
 	    0 & Continuous & Continuous light & Yes & Yes & Don’t care\\
 	
 		1 & Blinking & Blinking with duty cycle \qty{50}{\percent} & Yes & Yes & 
-		Blinking time (\qtyrange[range-phrase=\textendash]{0.1}{25.5}{\s})\\
+		Blinking time (\qtyrange[range-phrase=\textendash]{0.4}{102}{\s})\\
 		
 		2 & Blinking short & Blinking with duty cycle \qty{25}{\percent} & Yes & Yes & 
-		Blinking time (\qtyrange[range-phrase=\textendash]{0.1}{25.5}{\second})\\
+		Blinking time (\qtyrange[range-phrase=\textendash]{0.4}{102}{\second})\\
 		
 		3 & Blinking long & Blinking with duty cycle \qty{75}{\percent} & Yes & Yes & 
-		Blinking time (\qtyrange[range-phrase=\textendash]{0.1}{25.5}{\second})\\
+		Blinking time (\qtyrange[range-phrase=\textendash]{0.4}{102}{\second})\\
 		
-		4 & Circulating & Circulating light.  \newline Bottom LEDs only. \newline 3 at a time. & Yes & Yes & Rotation time (\qtyrange[range-phrase=\textendash]{0.1}{25.5}{\second})\\
+		4 & Circulating & Circulating light.  \newline Bottom LEDs only. \newline 3 at a time. & Yes & Yes &
+        Rotation time step (\qtyrange[range-phrase=\textendash]{0.1}{102}{\second})\\
 		
-		5 & Circulating smooth & Circulating light. \newline Bottom LEDs only. \newline 1 at full $b$ brightness\newline 2 with $0.66\cdot b$ brightness \newline 2 with $0.33\cdot b$ brightness & Yes & Brightness $b$ of middle LED & Rotation time (\qtyrange[range-phrase=\textendash]{0.1}{25.5}{\second})\\
+		5 & Circulating smooth & Circulating light. \newline Bottom LEDs only. 
+        \newline 1 at full $b$ brightness\newline 2 with $0.66\cdot b$ brightness 
+        \newline 2 with $0.33\cdot b$ brightness & Yes & Brightness $b$ of middle LED & 
+        Rotation time step(\qtyrange[range-phrase=\textendash]{0.1}{102}{\second})\\
 		
-		6 & Fade & Single color, brightness fades between zero to maximum value & Yes & Maximum brightness & Fade cycle time (\qtyrange[range-phrase=\textendash]{0.1}{25.5}{\second})\\
+		6 & Fade & Single color, brightness fades between zero to maximum value & Yes & Maximum brightness &
+        Fade cycle time (\qtyrange[range-phrase=\textendash]{0.1}{102}{\second})\\
 		
-		7 & Rainbow fade & Continuous light, color fades in rainbow colors & Don’t care & Yes & Fade cycle time (\qtyrange[range-phrase=\textendash]{0.1}{25.5}{\second})\\
+		7 & Rainbow fade & Continuous light, color fades in rainbow colors & Don’t care & Yes &
+        Fade cycle time (\qtyrange[range-phrase=\textendash]{0.1}{102}{\second})\\
 		
-		8 & Rainbow circle & Each LED around the circle has one of the rainbow colors.\newline Colors rotate with given frequency & Don’t care & Yes & Rotation time (\qtyrange[range-phrase=\textendash]{0.1}{25.5}{\second})\\
+		8 & Rainbow circle & Each LED around the circle has one of the rainbow colors.
+        \newline Colors rotate with given frequency & Don’t care & Yes & 
+        Rotation time (\qtyrange[range-phrase=\textendash]{0.1}{102}{\second})\\
 		
 		9 & Identification & Blinking with duty cycle \qty{50}{\percent}\newline
-		\qty{2}{\Hz} with a significant color on full brightness. \newline LED nearest to sensor (number 3) continuously on & Don’t care & Don’t care & Don’t care\\
+		\qty{2}{\Hz} with a significant color on full brightness. 
+        \newline LED nearest to sensor (number 3) continuously on & Don’t care & Don’t care & Don’t care\\
 		
 		10 - 15 & reserved\\
 	\end{zebratabular}
@@ -239,7 +248,7 @@ The data frame is used to send the new data to a set of cones. It is sent to the
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=\textwidth]{img/ColorScheme.png}
+	\includegraphics[width=\textwidth]{img/ColorScheme}
 	\caption{Color distribution in $\qty{8}{\bit}$ according to the following scheme. The scheme is stretched from $\qty{7}{\bit}$ to $\qty{8}{\bit}$ to allow for finer color steps and to use 1 full byte.
 	}
 	\label{fig_color_scheme}

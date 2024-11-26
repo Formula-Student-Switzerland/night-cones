@@ -16,6 +16,8 @@ class NetworkInterface:
     def __init__(self):
         
         self._socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        self._socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        self._socket.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
         self._socket.settimeout(10)
         pass
         
@@ -32,22 +34,24 @@ class NetworkInterface:
         if(ipaddr.ip == "127.0.0.1"):
             self._currentIP = "127.0.0.1"
         else:      
-            self._currentIP = net.broadcast_address  
+            self._currentIP = str(net.broadcast_address)  
+        print('Configured for Address:', str(ipaddr.ip)) 
+        print('Using Port %d for TX and %d for RX'%(tx_port,rx_port))
         self._UDP_TX_PORT = tx_port
         self._UDP_RX_PORT = rx_port
-        self._socket.bind((self._currentIP, self._UDP_RX_PORT)) 
-        print('Configured for Address:', self._currentIP) 
+        self._socket.bind((str(ipaddr.ip), self._UDP_RX_PORT)) 
+        print('Configured for Address:', str(net.network_address)) 
         print('Using Port %d for TX and %d for RX'%(tx_port,rx_port))
         
     def _rx_package(self):
         ''' Receives a package and prints it to the console '''
         try:
             data, addr = self._socket.recvfrom(1024) # buffer size is 1024 bytes
-            message = self._NCMessage.unpackFrame(data)
-            print("Decoded: ")
-            print(message)
-        except: 
-            print("RX Error")
+            message = self._NCMessage.unpackFrame(data)            
+            #print("Decoded: ")
+            #print(message)
+            return message, addr
+        except Exception as ex:
             pass
     
         
@@ -59,7 +63,13 @@ class NetworkInterface:
         frame = self._NCMessage.packDataFrame(data)
         self._socket.sendto(frame, (self._currentIP, self._UDP_TX_PORT));
    
-    def sendConfigData(self, ip, data_tuple)
+    def sendConfigData(self, ip, data_tuples):
+        ''' ip:             ip to send this data to
+            data_tuples:    list of data tuples
+        
+        '''
+        frame = self._NCMessage.packConfigFrame(data_tuples)
+        self._socket.sendto(frame, (ip, self._UDP_TX_PORT))
    
     def sendConfigRequestFrame(self, ip):
         ''' Request Config Data from specified Cone. Send to Broadcast, if no IP is given. '''
