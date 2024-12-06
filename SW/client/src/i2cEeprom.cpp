@@ -1,3 +1,13 @@
+/****************************)***************************************************/
+/* 
+ * File: i2cEeprom.cpp
+ * Author: Andreas Horat
+ */
+/*******************************************************************************/
+/*
+ * This file contains a simple driver for the external i2c EEPROM
+ */
+/*******************************************************************************/
 #include "i2cEeprom.h"
 #include <stdint.h>
 #include "Wire.h"
@@ -26,6 +36,7 @@ void i2c_eeprom_init(TwoWire *w){
  * Attention: Address must be left aligned. 
  * 
  * @param addr Left aligned address of the EEPROM
+ *
  */
 void i2c_eeprom_set_address(uint8_t addr){
   i2c_eeprom_settings.i2c_address = addr>>1;
@@ -37,6 +48,7 @@ void i2c_eeprom_set_address(uint8_t addr){
  * @param i2c_addr Optional address. Default 0xFF will use preconfigured address
  * 
  * @return Returns true, if the EEPROM is ready to receive commands.
+ *
  */
 bool i2c_eeprom_is_ready(uint8_t i2c_addr){
   if (i2c_addr == 255)
@@ -52,6 +64,7 @@ bool i2c_eeprom_is_ready(uint8_t i2c_addr){
  * @param address of the byte to be read.
  * 
  * @return Value at addr
+ *
  */
 uint8_t i2c_eeprom_read(uint16_t addr)
 {
@@ -68,6 +81,7 @@ uint8_t i2c_eeprom_read(uint16_t addr)
  * @param count Number of bytes to read.
  * 
  * @return Returns 0, if sucessful, otherwise returns error code
+ *
  */
 uint8_t i2c_eeprom_read(uint16_t addr, uint8_t* data_out, uint8_t count){
 
@@ -98,6 +112,7 @@ uint8_t i2c_eeprom_read(uint16_t addr, uint8_t* data_out, uint8_t count){
  * @param data Data to write
  * 
  * @return Returns 0, if sucessful, otherwise returns error code 
+ *
  */
 uint8_t i2c_eeprom_write(uint16_t addr, uint8_t data){
 
@@ -116,6 +131,7 @@ uint8_t i2c_eeprom_write(uint16_t addr, uint8_t data){
  * @param count Number of bytes to write
  * 
  * @return Returns 0, if sucessful, otherwise returns error code 
+ *
  */
 uint8_t i2c_eeprom_write(uint16_t addr, uint8_t* data, uint8_t count){
   uint8_t status = 0;
@@ -163,6 +179,7 @@ uint8_t i2c_eeprom_write(uint16_t addr, uint8_t* data, uint8_t count){
  * Get the size of the EEPROM
  * 
  * @return Returns the number of bytes in the memory
+ *
  */
 uint32_t i2c_eeprom_length(){
   return i2c_eeprom_settings.memory_size;
@@ -172,6 +189,7 @@ uint32_t i2c_eeprom_length(){
  * Erases the whole EEPROM with the specified value.
  * 
  * @param value Default value to write to all memory locations
+ *
  */
 void i2c_eeprom_erase(uint8_t value){
   uint8_t zero [i2c_eeprom_settings.page_size];
@@ -188,6 +206,7 @@ void i2c_eeprom_erase(uint8_t value){
  * Set the size of the memory
  * 
  * @param size Number of bytes in the EEPROM
+ *
  */
 void i2c_eeprom_set_memory_size(uint32_t size){
   i2c_eeprom_settings.memory_size = size;
@@ -197,6 +216,7 @@ void i2c_eeprom_set_memory_size(uint32_t size){
  * Set the page size of the memory
  * 
  * @param size Number of bytes in one page
+ *
  */
 void i2c_eeprom_set_page_size(uint32_t size){
   i2c_eeprom_settings.page_size = size;
@@ -207,6 +227,7 @@ void i2c_eeprom_set_page_size(uint32_t size){
  * Set the write delay according to datasheet
  * 
  * @param size Number of millisecconds delay when writing one page
+ *
  */
 void i2c_eeprom_set_write_delay_ms(uint8_t time){
   i2c_eeprom_settings.write_delay_ms = time;
@@ -215,13 +236,14 @@ void i2c_eeprom_set_write_delay_ms(uint8_t time){
 
 /**
  * Enables write polling, which loads the I2C Bus instead of waiting. 
+ *
  */
 void i2c_eeprom_enable_write_complete_polling(){
   i2c_eeprom_settings.write_complete_polling = true;
 }
 
 /**
- * Desables write polling
+ * Disables write polling
  */
 void i2c_eeprom_disable_write_complete_polling(){
   i2c_eeprom_settings.write_complete_polling = false;

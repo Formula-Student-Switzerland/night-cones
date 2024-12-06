@@ -17,6 +17,6 @@
 #define CLI_ENABLED
 
 void cli_init();
-void cli_work();
+void cli_loop();
 
 #endif

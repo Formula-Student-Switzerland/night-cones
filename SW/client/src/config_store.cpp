@@ -2,6 +2,10 @@
 #include "config_store.h"
 #include "Arduino.h"
 
+
+#define CONFIG_STORE_SDA_PIN    2
+#define CONFIG_STORE_SCL_PIN   14
+
 #define CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS 0
 #define CONFIG_STORE_EEPROM_HEADER_SIZE 8
 #define CONFIG_STORE_EEPROM_HARDWARE_DATA_BASE_ADDRESS 8
@@ -21,7 +25,7 @@ TwoWire I2C = TwoWire();
  *
  */
 void config_store_setup(void){
-    I2C.begin(2,14);
+    I2C.begin(CONFIG_STORE_SDA_PIN,CONFIG_STORE_SCL_PIN);
     I2C.setClock(5000);
     i2c_eeprom_init(&I2C);
     i2c_eeprom_set_address(CONFIG_STORE_EEPROM_ADDRESS);
@@ -68,6 +72,7 @@ void config_store_upgrade(config_store_t *temp)
  * @param length  Number of bytes to calculate
  *
  * @return Returns the CRC value.
+ *
  */
 uint32_t config_store_crc32b(uint8_t *message, uint16_t length)
 {
@@ -91,46 +96,55 @@ uint32_t config_store_crc32b(uint8_t *message, uint16_t length)
  * Read the config store from EEPROM
  *
  * @return Returns 0 when the storage is correctly loaded. Error code otherwise
+ *
  */
 int config_store_read(void){
     config_store_t temp;
     uint32_t crc;
-    bool upgrade = false;
 
     if (i2c_eeprom_read(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS, (uint8_t *)&temp,
                         CONFIG_STORE_EEPROM_USED_SIZE))
     {
+#ifdef DEBUG
         printf("Reading EEPROM failed\r\n!");
+#endif
         return -1;
     }
 
     crc = config_store_crc32b((uint8_t*) &temp.hardware_data, CONFIG_STORE_HARDWARE_DATA_SIZE);
 
     if(crc != temp.hardware_data_crc){
+#ifdef DEBUG
         printf("Hardware Data CRC not matching!\r\n %x != %x\r\n", crc, temp.hardware_data_crc);
+#endif
         return -2;
     }
 
     crc = config_store_crc32b((uint8_t*) &temp.user_settings, CONFIG_STORE_USER_SETTINGS_SIZE);
 
     if(crc != temp.user_settings_crc){
+#ifdef DEBUG
         printf("User Settings CRC not matching!\r\n");
+#endif
         return -3;
     }
 
     if(temp.psvn != CONFIG_STORE_PSVN){
+ #ifdef DEBUG
         printf("PSVN not matching. Upgrade will be performed.\r\n");
+#endif
         config_store_upgrade(&temp);
-        upgrade = true;
-    }
-
-    memcpy(&config_store, &temp, sizeof(config_store_t));
-    printf("EEPROM Read Successful!\r\n");
-    if(upgrade)
-    {
+        memcpy(&config_store, &temp, sizeof(config_store_t));
         config_store_storeHW();
         config_store_store();
+    } else{
+        memcpy(&config_store, &temp, sizeof(config_store_t));
     }
+    
+#ifdef DEBUG
+    printf("EEPROM Read Successful!\r\n");
+#endif
+
     return 0;
 }
 
@@ -141,6 +155,7 @@ int config_store_read(void){
  * user settings part. 
  *
  * @return Returns 0, if sucessful, otherwise returns error code.
+ *
  */
 int config_store_store(void){
     uint8_t buffer[8];
@@ -162,6 +177,7 @@ int config_store_store(void){
  * THIS FUNCTION MUST ONLY BE CALLED BY COMMANDLINE!
  *
  * @return Returns 0, if sucessful, otherwise returns error code.
+ *
  */
 int config_store_storeHW(void){
     uint8_t buffer[8];
@@ -169,7 +185,7 @@ int config_store_storeHW(void){
     config_store.hardware_data_crc = config_store_crc32b((uint8_t*) &config_store.hardware_data,CONFIG_STORE_HARDWARE_DATA_SIZE);
 
     for(uint8_t i=0; i < CONFIG_STORE_EEPROM_HEADER_SIZE + CONFIG_STORE_HARDWARE_DATA_SIZE + 4; i+=8){
-        i2c_eeprom_read(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS + i, buffer, 8);
+        result += i2c_eeprom_read(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS + i, buffer, 8);
         // Only write page if needed.
         if(memcmp(buffer, ((uint8_t*) &config_store)+i, 8)!= 0){
             result += i2c_eeprom_write(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS + i, ((uint8_t *)&config_store) + i, 8);

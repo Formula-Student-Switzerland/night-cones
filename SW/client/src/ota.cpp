@@ -14,6 +14,7 @@
 #include <WiFiUdp.h>
 #include <ArduinoOTA.h>
 #include <stdint.h>
+#include "HardwareSerial.h"
 
 #include "ota.h"
 #include "credentials.h"

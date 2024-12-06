@@ -16,6 +16,8 @@
 #include "config_store.h"
 
 #ifdef CLI_ENABLED
+
+
 char line_buffer[LINE_BUF_SIZE];
 char *arg_locs[MAX_NUM_ARGS];
 uint8_t number_of_args;
@@ -59,7 +61,7 @@ void cli_init(void)
     line_buffer_index = 0;
     number_of_args = 0;
     memset(line_buffer, 0, LINE_BUF_SIZE);
-    printf("Serial Interface enabled.\r\n");
+    Serial.printf("Serial Interface enabled.\r\n");
 #endif
 }
 
@@ -88,7 +90,7 @@ bool readline(void)
 
         if (++line_buffer_index == LINE_BUF_SIZE)
         {
-            printf("Input String too long. Deleted.\r\n>");
+            Serial.printf("Input String too long. Deleted.\r\n>");
             line_buffer_index = 0;
             memset(line_buffer, 0, LINE_BUF_SIZE);
         }
@@ -110,7 +112,7 @@ int parseline(void)
     {
         if (++number_of_args >= MAX_NUM_ARGS)
         {
-            printf("Input String contains too much arguments!\r\n>");
+            Serial.printf("Input String contains too much arguments!\r\n>");
             return 0;
         }
         arg_locs[number_of_args] = strtok(NULL, " ");
@@ -133,13 +135,14 @@ void execute(void)
         }
     }
 
-    printf("Invalid Command.\r\n");
+    Serial.printf("Invalid Command.\r\n");
 }
 #endif
+
 /**
  * CLI Worker function that executes the command if correct
  */
-void cli_work(void)
+void cli_loop(void)
 {
 #ifdef CLI_ENABLED
     if (!readline())
@@ -151,15 +154,17 @@ void cli_work(void)
     memset(line_buffer, 0, LINE_BUF_SIZE);
 #endif
 }
+
 #ifdef CLI_ENABLED
 /**
  * Print Help Message
  */
 void cmd_help(void)
 {
-    printf("Simple Interface for configuration only.\r\n");
+    Serial.printf("Simple Interface for configuration only.\r\n");
 }
 
+/*********************** Functions ************************************/
 /**
  * Set an LED State
  */
@@ -190,8 +195,8 @@ void cmd_led_fallback_store(void)
  */
 void cmd_saveEEPROM(void)
 {
-    printf("Saving Hardware Area: %d\r\n", config_store_storeHW());
-    printf("Saving User Area: %d\r\n", config_store_store());
+    Serial.printf("Saving Hardware Area: %d\r\n", config_store_storeHW());
+    Serial.printf("Saving User Area: %d\r\n", config_store_store());
 }
 
 /**
@@ -200,28 +205,28 @@ void cmd_saveEEPROM(void)
 void cmd_readEEPROM(void)
 {
     config_store_read();
-    printf("Serial Number: %06d\r\n", config_store.hardware_data.serial_number);
-    printf("Hardware Revision: %d\r\n", config_store.hardware_data.hardware_revision);
-    printf("Hardware Data CRC: %d\r\n", config_store.hardware_data_crc);
-    printf("Cone ID: %d\r\n", config_store.user_settings.cone_id);
-    printf("Fallback Color: %d\r\n", config_store.user_settings.fallback_color);
-    printf("Fallback Mode: %d\r\n", config_store.user_settings.fallback_lightmode);
-    printf("Fallback Repetition Time: %d\r\n", config_store.user_settings.fallback_repetition_time);
-    printf("Fallback Phase: %d\r\n", config_store.user_settings.fallback_phase);
-    printf("User Settings CRC: %d\r\n", config_store.user_settings_crc);
+    Serial.printf("Serial Number: %06d\r\n", config_store.hardware_data.serial_number);
+    Serial.printf("Hardware Revision: %d\r\n", config_store.hardware_data.hardware_revision);
+    Serial.printf("Hardware Data CRC: %d\r\n", config_store.hardware_data_crc);
+    Serial.printf("Cone ID: %d\r\n", config_store.user_settings.cone_id);
+    Serial.printf("Fallback Color: %d\r\n", config_store.user_settings.fallback_color);
+    Serial.printf("Fallback Mode: %d\r\n", config_store.user_settings.fallback_lightmode);
+    Serial.printf("Fallback Repetition Time: %d\r\n", config_store.user_settings.fallback_repetition_time);
+    Serial.printf("Fallback Phase: %d\r\n", config_store.user_settings.fallback_phase);
+    Serial.printf("User Settings CRC: %d\r\n", config_store.user_settings_crc);
 
-    printf("Hex View\r\n");
+    Serial.printf("Hex View\r\n");
     for (uint8_t i = 0; i < sizeof(config_store_t); i += 16)
     {
-        printf("0x%02x ", i);
+        Serial.printf("0x%02x ", i);
         for (uint8_t j = 0; j < 16; j += 4)
         {
-            printf("%02x%02x%02x%02x\t", *(((uint8_t *)&config_store) + i + j),
+            Serial.printf("%02x%02x%02x%02x\t", *(((uint8_t *)&config_store) + i + j),
                    *(((uint8_t *)&config_store) + i + j + 1),
                    *(((uint8_t *)&config_store) + i + j + 2),
                    *(((uint8_t *)&config_store) + i + j + 3));
             if (j == 12)
-                printf(" \r\n");
+                Serial.printf(" \r\n");
         }
     }
 }

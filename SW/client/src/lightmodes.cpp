@@ -78,8 +78,6 @@ void lightmode_setAsFallback(void){
  * @param color              Color code from Frame
  * @param brightness_mode    encoded brightness and mode in one field
  * @param repetition_time    time steps needed for each repetition.         
- *      
- * 
  * 
  */
 void lightmode_switch(uint8_t color, uint8_t brightness_mode, 

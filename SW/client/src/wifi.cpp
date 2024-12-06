@@ -14,6 +14,7 @@
 #include <WiFiUdp.h>
 #include <stdint.h>
 #include <stdio.h>
+#include "HardwareSerial.h"
 
 #include "adc.h"
 #include "config_store.h"
@@ -37,6 +38,7 @@ typedef struct {
     uint64_t timestamp;   
 } wifi_frame_header_t;
 
+// Station to cone data frame
 typedef struct {
     uint8_t color;
     uint8_t brightness_mode;
@@ -44,6 +46,7 @@ typedef struct {
     uint8_t phase_shift;
 } wifi_stc_data_frame_field_t;
 
+// cone to station status frame
 typedef union {
     uint8_t frame[25];
     struct{
@@ -135,7 +138,7 @@ int wifi_setup(void) {
 
     // Check what this code excatly does and if it works as intended
     while (WiFi.waitForConnectResult() != WL_CONNECTED && wifi_attempt < WIFI_ATTEMPTS) {
-      printf("Connection Failed! Rebooting...");
+      Serial.printf("Connection Failed! Rebooting...");
       delay(5000);
       ESP.restart();
       wifi_attempt++;
@@ -146,9 +149,9 @@ int wifi_setup(void) {
       return 1;
     }
     
-    printf("WiFi connected");
+    Serial.printf("WiFi connected");
     ota_setup();
-    led_esp_blink(LED_ESP_FREQ_ON/5, 4);
+    led_esp_blink(LED_ESP_FREQ_CONNECTED, 8);
     
     Udp.begin(WIFI_UDP_RX_PORT);
     
@@ -177,36 +180,50 @@ void wifi_rx_frame(void)
     if (packetSize)
     {
         // receive incoming UDP packets
-        printf("Received %d bytes from %s, port %d\r\n", packetSize, Udp.remoteIP().toString().c_str(), Udp.remotePort());
+#ifdef DEBUG
+        Serial.printf("Received %d bytes from %s, port %d\r\n", packetSize, Udp.remoteIP().toString().c_str(), Udp.remotePort());
+#endif
         int len = Udp.read(wifi_rx_buffer, 255);
         if(len == 0) {
+#ifdef DEBUG
             printf("Received Empty Frame\r\n");
+#endif
             return;
         }
         server_ip = Udp.remoteIP();
     
         if(wifi_rx_header->version != WIFI_COM_VERSION){
             // Error, Frame has the wrong Version
+#ifdef DEBUG      
             printf("Wrong WIFI_COM_Version Got: %x, Local: %x\r\n", wifi_rx_buffer[0],WIFI_COM_VERSION);
+#endif            
             return;
         }
 
         switch(wifi_rx_header->type) {
             case WIFI_STC_DATA_TYPE:
+#ifdef DEBUG
                 printf("Handle WIFI_STC_DATA_TYPE\r\n");
+#endif
                 wifi_rx_handle_data(wifi_rx_stc_data, (len-16)/4);
                 wifi_server_ip = server_ip;
                 break;            
             case WIFI_STC_CONFIG_TYPE:
+#ifdef DEBUG
                 printf("Handle WIFI_STC_CONFIG_TYPE\r\n");
+#endif
                 wifi_rx_handle_config((uint32_t*)&wifi_rx_buffer[16], (len-16)/4);
                 
             case WIFI_STC_SET_REQ_TYPE:
+#ifdef DEBUG
                 printf("Handle WIFI_STC_SET_REQ_TYPE\r\n");
+#endif
                 wifi_tx_settings(server_ip);
                 break;
             case WIFI_STC_STAT_REQ_TYPE:
+#ifdef DEBUG
                 printf("Handle WIFI_STC_STAT_REQ_TYPE\r\n");
+#endif
                 wifi_tx_status(server_ip);
                 break;    
         }
@@ -237,7 +254,7 @@ void wifi_rx_handle_data(wifi_stc_data_frame_field_t * wifi_rx_stc_data, uint16_
  * Handle the server to cone config message. Decodes all available values and sets them. 
  *
  * @param rx_frame pointer to the uint32_t array of id/value pairs
- * @param length length of the uint32_t array
+ * @param length length of the uint32_t array (number of id+keys
  */
 uint32_t wifi_rx_handle_config(uint32_t* rx_frame, uint16_t length) {
     uint32_t id = 0;
@@ -301,7 +318,8 @@ void wifi_tx_settings(IPAddress server_ip) {
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_DEBUG1] = 0;
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_DEBUG2] = 0;
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_DEBUG3] = 0;
-    wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_DEBUG4] = 0;
+    wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_DEBUG4] = 0;  
+    wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_SAVE_EEPROM] = 0;
   
     Udp.beginPacket(server_ip, WIFI_UDP_TX_PORT);
     Udp.write(wifi_cts_config_frame->frame,16+4*WIFI_CONFIG_ID_END);
@@ -313,6 +331,7 @@ void wifi_tx_settings(IPAddress server_ip) {
  * Transmits a Status message
  *
  * @param server_ip IP Address of the server
+ *
  */
 void wifi_tx_status(IPAddress server_ip){
     // Update static information, if header is changed

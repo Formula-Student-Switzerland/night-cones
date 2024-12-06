@@ -1,3 +1,13 @@
+/*******************************************************************************/
+/*
+ * File: main.cpp
+ * Author: Andreas Horat
+ */
+/*******************************************************************************/
+/*
+ * Main file for nightcones
+ */
+/*******************************************************************************/
 #include "Arduino.h"
 #include "HardwareSerial.h"
 #include "adc.h"
@@ -13,46 +23,43 @@
 #define BRIGHTNESS_DEFAULT 0x70
 
 
-#define SDA_PIN    2
-#define SCL_PIN   14
 
 #define WIFI_DELAY_MS 100
 #define WIFI_LOOPS    50
 
-unsigned long previousMillis = 0;  // will store last time LED was updated
-const long LED_UPDATE_INTERVAL = 25;  // interval at which to blink (milliseconds)
+const long LED_UPDATE_INTERVAL = 25;  // initial interval at which to blink (milliseconds)
 
 void setup() {
-  // Init pins.
+  // Setup Hardware
   Serial.begin(115200);
   delay(2000);
   config_store_setup();
-  hw_Ctrl_setup();
+  hw_ctrl_setup();
   adc_setup();
-  adc_loop();
-
+  cli_init();
   sync_setup(LED_UPDATE_INTERVAL);
 
   // LED setup
   led_setup();
   lightmode_setup();
  
-  // Init LEDs with red
+  // Init LEDs with blue 
+  // In case the Default mode would turn off everything, we first need to 
+  // wake the failsafe by switching shortly to blue and then go to black. 
   lightmode_switch(COLOR_BLUE, 0x20, 0);
-  lightmode_step(0, led_state);
+  lightmode_step(0, led_state); // Is used to activate the lightmode
   led_show(led_state);
 
   delay(500);
   wifi_setup();
-  // In case the Default mode would turn off everything, we first need to 
-  // wake the failsafe by switching shortly to blue and then go to black. 
+  // Switch to default lightmode
   led_show(led_state);
   lightmode_switch(config_store.user_settings.fallback_color,
                    config_store.user_settings.fallback_lightmode,
                    config_store.user_settings.fallback_repetition_time);
   lightmode_step(0, led_state);
   led_show(led_state);
-  cli_init();
+  
 }
 
 void loop()
@@ -60,7 +67,7 @@ void loop()
 
   wifi_loop();
 
-  cli_work();
+  cli_loop();
 
   uint32_t currentMillis;
   if (sync_loop(&currentMillis))

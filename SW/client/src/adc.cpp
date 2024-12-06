@@ -1,3 +1,13 @@
+/*******************************************************************************/
+/*
+ * File: adc.h
+ * Author: Andreas Horat
+ */
+/*******************************************************************************/
+/*
+ * This file contains the ADC Interface with corresponding conversions
+ */
+/*******************************************************************************/
 #include <stdint.h>
 #include <arduino.h>
 #include "adc.h"
@@ -51,6 +61,7 @@ const float adc_temp_lookup[16] =
  * @param value ADC Value
  *
  * @return Temperature in Degrees
+ *
  */
 int8_t adc_calc_temp(uint16_t value)
 {
@@ -64,6 +75,7 @@ int8_t adc_calc_temp(uint16_t value)
  * @param value ADC Value
  *
  * @return Voltage in millivolt
+ *
  */
 uint16_t adc_calc_voltage(uint16_t value)
 {
@@ -78,6 +90,7 @@ uint16_t adc_calc_voltage(uint16_t value)
  * @param voltage Voltage in Millivolt
  * 
  * @return SoC in percent
+ *
  */
 uint8_t adc_calc_soc(uint16_t voltage)
 {
@@ -94,7 +107,9 @@ void adc_setup(void){
   adc_volt_meas = 0;
   adc_temp_meas = 0;
   adc_soc = 255;
-  digitalWrite(ADC_MUX_PIN, adc_mux_state);    
+  digitalWrite(ADC_MUX_PIN, adc_mux_state); 
+  // Run for one time to properly init ADC  
+  adc_loop();  
 }
 
 /*

@@ -127,12 +127,13 @@ void led_show_status(int8_t temp, int16_t voltage)
   }
   for (int n = 0; n <= n_led_indicator; n++)
   {
-    leds.setPixelColor(n, DEFAULT_BRIGHTNESS, DEFAULT_BRIGHTNESS, DEFAULT_BRIGHTNESS);
+    leds.setPixelColor(n, LED_DEFAULT_BRIGHTNESS, DEFAULT_BRIGHTNESS, DEFAULT_BRIGHTNESS);
   }
   leds.show();
 }
 
 #else
+#include "HardwareSerial.h"
 /*
 U8/L2	U9/L3	U10/L4	U11/L5	U12/L6
 
@@ -174,7 +175,7 @@ int displayLeds(int *ledState)
   illumChar[20] = '\0';
 
   // Delete the last conlose content.
-  printf("\033[H\033[J");
+  Serial.printf("\033[H\033[J");
 
   // Add color header.
   sprintf(displayStr, "R: %03d\nG: %03d\nB: %03d\n\n", ledState[0], ledState[1], ledState[2]);
@@ -186,7 +187,7 @@ int displayLeds(int *ledState)
   sprintf(displayStr, "%s%c %c   %c %c\n", displayStr, illumChar[15], illumChar[19], illumChar[18], illumChar[9]);
   sprintf(displayStr, "%s%c %c %c %c %c", displayStr, illumChar[14], illumChar[13], illumChar[12], illumChar[11], illumChar[10]);
 
-  printf(displayStr);
+  Serial.printf(displayStr);
 
   return 0;
 }

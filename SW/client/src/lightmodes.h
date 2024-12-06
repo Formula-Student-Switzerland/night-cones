@@ -29,7 +29,7 @@ typedef struct {
     uint8_t mode;
     uint8_t repetition_time;
     
-    uint8_t color[9];
+    uint8_t color[9]; // Three colors are used for some lightmodes, therefore 9 bytes
 } lightmode;
 
 typedef void (*lightmode_function)(uint32_t, lightmode* , uint8_t *) ;

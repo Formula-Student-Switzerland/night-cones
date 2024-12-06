@@ -19,6 +19,7 @@
  * @param brightness: LEFT (MSB) aligned 4 bit brightness code. Lower 4 bits
  *                  must be 0
  * @param decode 3 byte array pointer with the three components RGB
+ *
  */
 void color_decode (uint8_t color, uint8_t brightness, uint8_t *decoded) {
 	// Init variables.
