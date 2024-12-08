@@ -127,7 +127,7 @@ void led_show_status(int8_t temp, int16_t voltage)
   }
   for (int n = 0; n <= n_led_indicator; n++)
   {
-    leds.setPixelColor(n, LED_DEFAULT_BRIGHTNESS, DEFAULT_BRIGHTNESS, DEFAULT_BRIGHTNESS);
+    leds.setPixelColor(n, LED_DEFAULT_BRIGHTNESS, LED_DEFAULT_BRIGHTNESS, LED_DEFAULT_BRIGHTNESS);
   }
   leds.show();
 }
