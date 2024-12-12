@@ -20,23 +20,63 @@ For this, the following commands are available:
 \end{itemize}
 
 \subsection{config\_store}
-The config storage is used to store data on the EEPROM mounted starting with hardware revision \texttt{NC1-1B}. 
+The config storage is used to store data on the EEPROM mounted on nightcones starting with hardware revision \texttt{NC1-1B}. The EEPROM has a block syize of 8 bytes. Therefore the memory layout is aligned to the 8 byte boundaries. The memory consists of three blocks. The first block called header contains information about the config storage itself. The second block called hardware data contains information that can not be changed through the WLAN interface like the serial number and the hardware revision. The third block contains user settings and can be modified through the WLAN interface.  
+
+The memory layout of the config storage is shown below: 
+\begin{table}[ht!]
+\begin{tabular}{|c|l|l|}
+	\textbf{Byte} & \textbf{Name} & \textbf{Description}\\\hline
+	0 & PSVN & Persistent storage version number\\\hline
+	1-7 & Reserved & Reserved for additional header data\\\hline\hline
+	
+	8 & HW Revision & Hardware Revision Code: Currently supported are 0x1 for NC1-1B\\\hline
+	9-10 & Serial Number & Serial number of the Cone. \\\hline
+	11-27 & Reserved & Reserved for future use. \\\hline
+	28-31 & CRC & CRC Checksum for the hardware part.\\\hline\hline
+	
+	32-33 & Cone ID & ID of the cone used for lightmode settings.\\\hline
+	34-35 & Reserved & Reserved for future use. \\\hline
+	36-39 & Fallback Lightmode & The Lightmode that is turned on after start\\\hline
+	40-41 & Status Refresh & Status Refresh period for ADC and status frame in ms. \\\hline
+	42-59 & Reserved & Reserved for future use. \\\hline
+	60-63 & CRC & CRC Checksum for user settings part. \\\hline
+\end{tabular}
+\end{table}
+
+The config storage can be accessed system wide using the external variable \texttt{config\_store}. Saving the complete config storage to the EEPROM is only possible through the command line interface. Via the WLAN interface, only the user settings part can be saved. 
 
 
 \subsection{i2ceeprom}
+This simple driver for the I2C EEPROM can be used to write and read from the EEPROM. It uses the widely known \texttt{Wire} module from Arduino. If saving a block to the EEPROM, the whole block is first read and checked. Only if the new data differs from the old one, it is overridden. Otherwise, the data remains unchanged to increase the lifetime of the EEPROM chip. 
 
 \subsection{credentials}
+The credentials file is a smal file containing some sensitive data, namely the WLAN SSID, WLAN Key, OTA password, and OTA port. Only the template \texttt{\_credentials.txt} is checked into GIT, while the original file is excluded from GIT. This file must be renamed to \texttt{credentials.h} and filled with correct values. 
 
 \subsection{color}
+The color module is solely used to convert the received \qty{8}{\bit} code combined with the requested \qty{4}{\bit} brightness into the three \qty{8}{\bit} \ac{PWM} values. 
+The conversion is done in a way, that the highest component (eg. red) equals the requested brightness. The other two color components are scaled accordingly. 
 
 \subsection{led}
+The \texttt{led.cpp} controls the \acp{LED} directly. The \texttt{led\_show} method takes an array of color components, that are written to the WS2812 \acp{LED}. The helper function \texttt{led\_clear} can be used to turn off all \acp{LED}. In addition the blue on-board \ac{LED} of the ESP-12 module can be blinked. This is realised using busy wait. Accordingly, this code is not realtime capable and should be used with care. 
+
+The \texttt{led\_show\_status} is triggered, whenever the Hall sensor is set. It shows the temperature using the color of the top \acp{LED}. The 20 lower side \acp{LED} are used to show the current battery voltage level. 
 
 \subsection{lightmodes}
+This module is central for the function of the cone. It contains the definition of all light modes. The lightmode function is called by the \texttt{lightmode\_step} method. It takes the current time, the \texttt{lightmode} struct and the \texttt{ledstate} as arguments. It is called every \texttt{LED\_UPDATE\_INTERVAL} $= \qty{20}{\milli\s}$. The individual lightmode function is then required to keep track of its own state. For this purpose, the function gets the current time in milliseconds. The individual lightmodes are described in table \ref{tab_lightmode}. 
 
 \subsection{ota}
+The \texttt{ota} class is a wrapper for the \texttt{AndroidOTA} module. Only the \texttt{ota\_setup} and \texttt{ota\_loop} functions are used during operation. Everything else is used for debugging. 
+
+The setup method sets the hostname to \texttt{Night-cone-XXXXXX} where the serial number from the flash is used in place of the "X". In addition, the password and the port are set. 
+
 
 \subsection{sync}
+The sync module is used to synchronise the time on the cone to a common carrier time. The server defines the main time, onto which all cones synchronize. A \qty{32}{\bit} time stamp representing the milliseconds since an arbitrary zero time is used by the server. This allows for a permanent operation for $\approx$ 50 days until a wraparound occurs. The sync module also directly implements the phase shift defined in the light mode. This simplifies the implementation of the light modes itself. The synchronizer is currently a very simple unfiltered \ac{PLL}. 
+
+The \texttt{sync\_loop} function returns true whenever the \ac{LED} update interval is expired. It returns the current time in milliseconds as an argument. 
 
 \subsection{wifi}
+The \texttt{WIFI} module handles all communication between the server and the cone. The communication protocol is described in section \ref{sec_communication}. The communication ports are fixed. They can not be changed using the user config to reduce the risk of unreachable cones. 
 
 \subsection{main}
+The \texttt{main} file contains the two main functions. The \texttt{setup} method prepares everything for operation. The subsequent \texttt{loop} method is called permanently and executes all worker functions and also incorporates the dimming functionality (currently not active). 

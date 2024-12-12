@@ -135,7 +135,7 @@ The simulator shall also give the possibility to change the values of the cones 
 \end{itemize}
 
 \subsection{Communication Protocol}
-
+\label{sec_communication}
 The proprietary communication protocol is based on \ac{UDP}. It uses simple messages without any checksum.  The different frame types have a fixed or variable length. In any case a single \ac{UDP} packet is used for a single message. All frame types share the same header. The frame types are defined below.
 \subsubsection{Header}
 The header contains simple information to classify the frame. It includes a POSIX Timestamp (8 byte) used for synchronisation, an increasing Frame number and a version.
