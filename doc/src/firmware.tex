@@ -80,3 +80,28 @@ The \texttt{WIFI} module handles all communication between the server and the co
 
 \subsection{main}
 The \texttt{main} file contains the two main functions. The \texttt{setup} method prepares everything for operation. The subsequent \texttt{loop} method is called permanently and executes all worker functions and also incorporates the dimming functionality (currently not active). 
+
+\subsection{Programmer}
+\label{programmer_software}
+
+A small python script is used to program the ESP-12 and set the hardware part of the \texttt{config\_store} in one go. The suboptimal design using the FT234XD (See \ref{Programmer_Hardware}) requires some additional steps. 
+
+A wrapper for the original \texttt{esptool.py} and the \texttt{pyftdi} library is used. This wrapper performs two actions. First, it overrides the \texttt{set\_dtr} with one, that uses the \texttt{CBUS0} pin instead of a (non-existing) nativ dtr signal. As a second operations, it replaces the serial interface in the ESP-Tool with the \texttt{serial\_ext} extension of the \texttt{pyftdi} library.
+
+The \texttt{NC\_programmer.py} script is used to call the esptool and set the parameters. 
+
+The script accepts all parameters of the native \texttt{esptool.py} and in addition the following arguments: 
+\begin{itemize}
+	\item First Positional argument: Path to the \texttt{esptool.py}
+	\item \texttt{-s,--set\_EEPROM\_config}: This argument allows to set the hardware revision and the serial number. It takes two positional arguments \texttt{[Serial-number Hardware-revision]}.	Both can be decimal or hexadecimal. 
+\end{itemize}
+
+The \texttt{esptool.py} must be cloned to use it in the way, we use it. In the example call, it is cloned into the same folder as the night-cones repository. 
+
+The example call below sets the serial number to \texttt{138} and the hardware revision to \texttt{0x2}. It flashes the ESP-12 module using the binary file from \texttt{.pio/build/nodemcuv2/firmware.bin}:
+\begin{verbatim}
+	NC_programmer.py -s 138 0x2 "../../../esptool/esptool.py" --chip esp8266 \
+	--port "ftdi://ftdi:ft-x:0:1/1" --baud 115200 write_flash 0x0 \
+	.pio\build\nodemcuv2\firmware.bin
+\end{verbatim}
+

@@ -135,6 +135,7 @@ The simulator shall also give the possibility to change the values of the cones 
 \end{itemize}
 
 \subsection{Communication Protocol}
+\todo{This is currently not in line with the communication protocol implemented on the cone. Will be updated soon ahorat 13.12.2024}
 \label{sec_communication}
 The proprietary communication protocol is based on \ac{UDP}. It uses simple messages without any checksum.  The different frame types have a fixed or variable length. In any case a single \ac{UDP} packet is used for a single message. All frame types share the same header. The frame types are defined below.
 \subsubsection{Header}
@@ -415,11 +416,12 @@ As this software is intended to be made open source in near or far future, the l
 		pip install name & 
 		License & url \\
 		\texttt{ifaddr} & \texttt{ifaddr}  & MIT &  \url{https://github.com/pydron/ifaddr} \\
+		\texttt{esptool} & \texttt{esptool} & GNU GPL & \url{https://github.com/espressif/esptool.git}\\
+		\texttt{pyftdi} & \texttt{pyftdi} & BSD-3-Clause & 
+		\url{https://github.com/eblot/pyftdi.git}\\
 	\end{zebratabular}
 	\caption{Python Dependencies} 	
 	\label{tab_py_dependencies}
 \end{table}
 
 
-\subsection{Programmer}
-\label{programmer_software}

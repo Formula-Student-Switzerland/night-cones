@@ -486,8 +486,8 @@ The inverter 74HCT1G04, which accepts TTL levels, should work.
 \FloatBarrier
 
 \subsection{Programmer NC1-3AA}
-
-Programming the ESP-12F module requires the assertion of GPIO 0 and pulling the reset line. To simplify programming and configuration of the night-cones, a dedicated programmer was developed. This programmer is based on an FTDI FT234XD \cite{FTDI:FT234XD}. The hardware for it is straight forward. The reset pin of the ESP is connected to the \texttt{RTS} pin of the FT234XD. The \texttt{GPIO 0} used to switch between the normal boot mode and bootloader mode is connected to the \texttt{CBUS 0} pin. The \texttt{TX} and \texttt{RX}. 
+\label{Programmer_Hardware}
+Programming the ESP-12F module requires the assertion of GPIO 0 and pulling the reset line. To simplify programming and configuration of the night-cones, a dedicated programmer was developed. This programmer is based on an FTDI FT234XD \cite{FTDI:FT234XD}. The hardware for it is straight forward. The reset pin of the ESP is connected to the \texttt{RTS} pin of the FT234XD. The \texttt{GPIO 0} used to switch between the normal boot mode and bootloader mode is connected to the \texttt{CBUS 0} pin. The \texttt{TX} and \texttt{RX}. \textbf{For a future design, a chip with native RTS and DSR support should be used!}
 
 The chip is then reprogrammed using the \texttt{FT\_PROG} Tool to exhibit the correct name, driver configuration and to use the CBUS0 pin as GPIO. This is shown in figure \ref{fig_nc31AA_config}. 
 
@@ -497,7 +497,7 @@ On Windows an additional step is needed. However keep in mind, that this could c
 		\includegraphics[height=9cm]{img/FT_Prog_1}
 		\includegraphics[height=9cm]{img/FT_Prog_2}
 		\includegraphics[height=9cm]{img/FT_Prog_3}
-		\caption{FT\_Prog configuration for NC3-1AA Programmer. The Product Description is \texttt{NC3-1AA Programmer}.}
+		\caption[FT\_Prog Configuration]{FT\_Prog configuration for NC3-1AA Programmer. The Product Description is \texttt{NC3-1AA Programmer}.}
 		\label{fig_nc31AA_config}	
 \end{figure}
 
