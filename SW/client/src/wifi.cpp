@@ -316,7 +316,7 @@ void wifi_tx_settings(IPAddress server_ip) {
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_ADC_TEMP] = adc_temp_deg;
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_STATUS_FREQUENCY] = config_store.user_settings.status_refresh_period_ms;
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_DEBUG1] = 111;
-    wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_DEBUG2] = adc_temp_meas;
+    wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_DEBUG2] = 0;
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_DEBUG3] = 0;
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_DEBUG4] = 0;  
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_SAVE_EEPROM] = 0;

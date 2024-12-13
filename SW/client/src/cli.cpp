@@ -62,6 +62,7 @@ void cli_init(void)
     number_of_args = 0;
     memset(line_buffer, 0, LINE_BUF_SIZE);
     Serial.printf("Serial Interface enabled.\r\n");
+    Serial.print(">\r\n");
 #endif
 }
 

@@ -33,7 +33,6 @@ typedef struct{
     uint8_t fallback_color;
     uint8_t fallback_phase;
     uint8_t fallback_repetition_time;
-    uint8_t fallback_config; 
     uint16_t status_refresh_period_ms;
 } user_settings_t;
 

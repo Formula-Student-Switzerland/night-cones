@@ -57,7 +57,6 @@ void config_store_upgrade(config_store_t *temp)
         temp->user_settings.fallback_color = 0x0;
         temp->user_settings.fallback_phase = 0x0;
         temp->user_settings.fallback_repetition_time = 0x0;
-        temp->user_settings.fallback_config = 0x0;
 
     default:
         break;

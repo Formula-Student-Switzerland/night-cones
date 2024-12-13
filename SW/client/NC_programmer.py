@@ -34,8 +34,14 @@ if __name__ == "__main__":
    if(args.set_EEPROM_config==None):
     exit()
    print("Wait until restarted...\r\n")
-   time.sleep(10)
    port = serial.serial_for_url("ftdi://ftdi:ft-x:0:1/1", baudrate=args.baudrate, timeout=2)
+   i=0;
+   while(port.read() != ">"):
+       i = i+1;
+       time.sleep(1)
+       if(i>12):
+           print("Error: Device did not properly reboot!")
+           exit()
    port.write('readEEPROM\n')
    port.write(F"setSerialNo {args.set_EEPROM_config[0]} {args.set_EEPROM_config[1]}\n")
    port.write("saveEEPROM\n")
