@@ -1,3 +1,4 @@
+# Copyright (c) 2024 Andreas Horat
 import os
 import sys
 import shutil
@@ -6,6 +7,7 @@ from pyftdi.ftdi import Ftdi
 
 
 def import_from_path(esptool_path, name="esptool"):
+    '''Import the esptool from the supplied path.'''
     if not os.path.isfile(esptool_path):
         esptool_lookup = shutil.which(esptool_path)
         if esptool_lookup == None:

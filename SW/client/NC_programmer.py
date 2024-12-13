@@ -1,3 +1,4 @@
+# Copyright (c) 2024 Andreas Horat
 import subprocess
 import time
 import pyftdi.serialext as serial
@@ -12,29 +13,22 @@ def auto_int(x):
 
 if __name__ == "__main__":
    
-   
-   #subprocess.call("test1.py", shell=True)
-   #time.sleep(10)
-   #
-   
    parser = argparse.ArgumentParser(
-                    prog='ProgramName',
-                    description='What the program does',
-                    epilog='Text at the bottom of help')
+                    prog='NC-Programmer',
+                    description='Nightcones Programmer for NC3-1AA programmer board.',
+                    epilog='Brought to you with <3')
    parser.add_argument('esptool_path', help ="Path to the esptool.py", default="../../../esptool/esptool.py")
    parser.add_argument('-s','--set_EEPROM_config', help="Set EEPROM values ['Serial Number' 'HW Revision']", nargs=2, type=auto_int)  
    parser.add_argument('-p', '--port', help="Serial port device")
    parser.add_argument('-b','--baudrate', help="serial port baudrate (default: 115200)", default=115200)
    args, unknown = parser.parse_known_args()
-   print(args)
-   print(unknown)
    print(F"Call: esptool-ftdi.py {args.esptool_path} --port {args.port} --baud {args.baudrate} {' '.join(unknown)}")
    subprocess.call(F"esptool-ftdi.py {args.esptool_path} --port {args.port} {' '.join(unknown)}", shell=True)
    
    if(args.set_EEPROM_config==None):
     exit()
    print("Wait until restarted...\r\n")
-   port = serial.serial_for_url("ftdi://ftdi:ft-x:0:1/1", baudrate=args.baudrate, timeout=2)
+   port = serial.serial_for_url(args.port, baudrate=args.baudrate, timeout=2)
    i=0;
    while(port.read() != ">"):
        i = i+1;
