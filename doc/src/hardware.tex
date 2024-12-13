@@ -482,3 +482,32 @@ No pull-up resistors are placed on the \ac{I2C} lines and the internal pull-up r
 Rise and fall time of the level shifter are not identical. This leads to a distortion of the duty cycle of the DATA signal. In the first series production this was corrected by adjusting the pulse width in the neopixel library. 
 For a new production run, the level shifter should be changed to a type that does not introduce any distortion in the signal duty cycle. 
 The inverter 74HCT1G04, which accepts TTL levels, should work. 
+
+\FloatBarrier
+
+\subsection{Programmer NC1-3AA}
+
+Programming the ESP-12F module requires the assertion of GPIO 0 and pulling the reset line. To simplify programming and configuration of the night-cones, a dedicated programmer was developed. This programmer is based on an FTDI FT234XD \cite{FTDI:FT234XD}. The hardware for it is straight forward. The reset pin of the ESP is connected to the \texttt{RTS} pin of the FT234XD. The \texttt{GPIO 0} used to switch between the normal boot mode and bootloader mode is connected to the \texttt{CBUS 0} pin. The \texttt{TX} and \texttt{RX}. 
+
+The chip is then reprogrammed using the \texttt{FT\_PROG} Tool to exhibit the correct name, driver configuration and to use the CBUS0 pin as GPIO. This is shown in figure \ref{fig_nc31AA_config}. 
+
+On Windows an additional step is needed. However keep in mind, that this could create problems with FTDI chips in future. Refer to the last subsection to revert the changes. 
+\begin{figure}
+		\centering
+		\includegraphics[height=9cm]{img/FT_Prog_1}
+		\includegraphics[height=9cm]{img/FT_Prog_2}
+		\includegraphics[height=9cm]{img/FT_Prog_3}
+		\caption{FT\_Prog configuration for NC3-1AA Programmer. The Product Description is \texttt{NC3-1AA Programmer}.}
+		\label{fig_nc31AA_config}	
+\end{figure}
+
+
+\subsubsection{Zadig Configuration}
+The python script of the modified programmer (refer to \ref{programmer_software}) uses the pyftdi library, which in terms uses the libwinusb-32 library. On linux, this driver is natively available. On Windows machines, this needs to be manually assigned. Zadig\cite{zadig} is a freeware tool used to change the \ac{USB} driver of a specific device. Change the driver of the \texttt{NC3-1 Programmer} to libwinusb-32. It could be necessary to enable \texttt{List All Devices} in the \texttt{options} menu. After installing the driver, you are ready to program the night-cones using the NC3-1AA Programmer. 
+
+\subsubsection{Revert Zadig configuration}
+To revert the changes made by Zadig, the driver needs to be uninstalled using the Windows Device Manager. The driver can be removed using a right click on the NC3-1AA Programmer Entry. 
+
+\FloatBarrier
+
+
