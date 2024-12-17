@@ -104,8 +104,9 @@ void lightmode_dim(uint8_t brightness) {
             color_decode(lightmode_current.base_color, lightmode_current.brightness/3, &lightmode_current.color[6]);
             break;
         case 9: 
-            color_decode(COLOR_RED, 0xF0, &lightmode_current.color[0]);  
-            color_decode(COLOR_GREEN, 0xF0, &lightmode_current.color[3]);         
+            color_decode(COLOR_RED, 0xF0, &lightmode_current.color[0]);
+            color_decode(COLOR_GREEN, 0xF0, &lightmode_current.color[3]);
+            color_decode(COLOR_GREEN, 0, &lightmode_current.color[6]);
             break;   
         default:
             color_decode(lightmode_current.base_color, 0, &lightmode_current.color[3]);
@@ -201,7 +202,6 @@ void lightmode_blink_long(uint32_t time, lightmode* current_lm, uint8_t *ledStat
 /**
  * Lightmode 4: Circulating 3 LEDs
  */
- // ToDo: Here, the lightmode is not correct. There should be no factor of 3. Also Check Timing 
 void lightmode_circ(uint32_t time, lightmode* current_lm, uint8_t *ledState) {
     uint32_t current_step;
     if(current_lm->repetition_time == 0)
@@ -218,7 +218,7 @@ void lightmode_circ(uint32_t time, lightmode* current_lm, uint8_t *ledState) {
 /**
  * Lightmode 5: Circulating Smooth 3 LEDs
  */
- // ToDo: Here, the lightmode is not correct. There should be no factor of 3. Also Check Timing 
+// ToDo: Check here, how to do it smoother... Same Problem as with lighthouse
 void lightmode_circ_smooth(uint32_t time, lightmode* current_lm, uint8_t *ledState) {
     uint32_t current_step;
     if(current_lm->repetition_time == 0)
@@ -244,7 +244,7 @@ void lightmode_fade(uint32_t time, lightmode* current_lm, uint8_t *ledState) {
     if(current_lm->repetition_time == 0)
         current_step = 0;
     else
-        current_step = (time/current_lm->repetition_time)%200)/100.0;
+        current_step = ((time/current_lm->repetition_time)%100)/50.0;
     
     if(current_step > 1)
         current_step = 2-current_step;
@@ -302,7 +302,7 @@ void lightmode_ident(uint32_t time, lightmode* current_lm, uint8_t *ledState) {
     if(current_step %2 == 0)
         lightmode_set_all_led(current_lm->color,ledState);
     else
-        lightmode_set_all_led(&current_lm->color[3],ledState);
+        lightmode_set_all_led(&current_lm->color[6],ledState);
 
     ledState[3*3+0] = current_lm->color[3];
     ledState[3*3+1] = current_lm->color[4];

@@ -2,6 +2,7 @@ import ifaddr
 import socket
 import NightConesMessage
 import ipaddress
+import time
 
 
 class NetworkInterface:
@@ -19,6 +20,7 @@ class NetworkInterface:
         self._socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self._socket.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
         self._socket.settimeout(10)
+        self._NCMessage.ZeroTime = time.time()*1000;
         pass
         
     def getAdpaterList(self):
@@ -41,7 +43,6 @@ class NetworkInterface:
         self._UDP_RX_PORT = rx_port
         self._socket.bind((str(ipaddr.ip), self._UDP_RX_PORT)) 
         print('Configured for Address:', str(net.network_address)) 
-        print('Using Port %d for TX and %d for RX'%(tx_port,rx_port))
         
     def _rx_package(self):
         ''' Receives a package and prints it to the console '''

@@ -3,6 +3,7 @@ import NightConesMessage
 import cmd
 #import readline
 import threading
+from datetime import datetime
 
 class NightConesCLI(cmd.Cmd):
     
@@ -33,14 +34,24 @@ class NightConesCLI(cmd.Cmd):
         rx_port = input("Select UDP RX Port (Default %d):" % self._UDP_RX_PORT)
         if(rx_port.isdigit() == False):
             rx_port=self._UDP_RX_PORT
+        
+        rx_active = input("Type 1 to activate RX Thread:")
+        if(rx_active.isdigit() == True) and (rx_active == "1"):
+            self._rx_active = True
+        else:
+            self._rx_active = False
+            rx_port=self._UDP_RX_PORT+1
+        
         if(ip_select.isdigit() and int(ip_select)<ip_index):
             self._networkif.setCurrentNetwork(ip_adresses[int(ip_select)],int(tx_port),int(rx_port))
         else: 
             print("No valid selection, terminating tool")
             exit()
-        self._rx_active = True
-        thread = threading.Thread(target = self._rx_thread)
-        thread.start()
+            
+        if(self._rx_active == True):
+            print("Starting RX Thread")
+            thread = threading.Thread(target = self._rx_thread)
+            thread.start()
             
     def do_hello(self, line):
         """Print a greeting."""
@@ -73,7 +84,7 @@ class NightConesCLI(cmd.Cmd):
         self._networkif.sendDataFrame([data])  
         
     def do_SetConeStates(self, line):
-        '''Set Colors for one cone ID. If no arguments are supplied, they will be prompted
+        '''Set Colors for one cone ID. 
         
         Arguments (all positional, int): Color  Brightness  Lightmode  Frequency  phase
         '''
@@ -104,15 +115,13 @@ class NightConesCLI(cmd.Cmd):
         '''        
         self._networkif.sendConfigRequestFrame(line)
         
-    def do_SendConeConfig(self, line):
+    def do_SetConeConfig(self, line):
         ''' Send Data tuples to Cone 
         
         Arguments (despite IP, all positional, int): IP key1 value1 [key2 value2 ...]'''
         ip, line = line.split(' ',1)
-        print(ip, line)
         data = [int(ele) for ele in line.split()]
         
-        print(ip, data)
         if((len(data) % 2)== 1):
             print("Error: Number of keys and values not matching.")
             return
@@ -122,7 +131,6 @@ class NightConesCLI(cmd.Cmd):
             tuple = (data[0],data[1]);
             data_tuples.append(tuple)            
         
-        print(ip, data_tuples)
         self._networkif.sendConfigData(ip,data_tuples)
         
         
@@ -131,7 +139,7 @@ class NightConesCLI(cmd.Cmd):
         while self._rx_active:
             try:
                 message,addr = self._networkif._rx_package()
-                print(F"{addr} : {message}")
+                print(F"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}{addr} : {message}")
             except:
                 pass
 

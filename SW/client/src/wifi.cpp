@@ -47,14 +47,15 @@ typedef struct {
 
 // cone to station status frame
 typedef union {
-    uint8_t frame[sizeof(wifi_frame_header_t)+9];
+    uint8_t frame[sizeof(wifi_frame_header_t)+8];
     struct{
         wifi_frame_header_t header;
         uint16_t cone_id;
         uint8_t SoC;
         uint8_t rssi;
         int8_t temp;
-        uint8_t hall_state;        
+        uint8_t hall_state;  
+        uint16_t reserved;      
     } data;
 } wifi_cts_status_frame_t;
 
@@ -113,7 +114,7 @@ uint32_t wifi_current_frame_id;
  * Methods
  */
 void wifi_rx_handle_data(wifi_stc_data_frame_field_t * wifi_rx_stc_data, uint16_t max_cone_id);
-uint32_t wifi_rx_handle_config(uint32_t* rx_frame, uint16_t length);
+uint32_t wifi_rx_handle_config(wifi_xtx_config_frame_t *rx_frame, uint16_t length);
 void wifi_tx_settings(IPAddress server_ip);
 void wifi_tx_status(IPAddress server_ip);
 
@@ -156,7 +157,6 @@ int wifi_setup(void) {
     wifi_cts_status_frame->data.header.version = WIFI_COM_VERSION;
     wifi_cts_status_frame->data.header.frame_number = 0;
     wifi_cts_status_frame->data.header.reserved=0;
-    wifi_cts_status_frame->data.header.reserved1=0;
     wifi_cts_status_frame->data.header.timestamp=0;    
 
     return 0;
@@ -259,8 +259,8 @@ uint32_t wifi_rx_handle_config(wifi_xtx_config_frame_t* rx_frame, uint16_t lengt
     uint32_t value = 0;
 
     for(int i=0; i<length;i+=2){
-        id = rx_frame->values[i];
-        value = rx_frame->values[i+1];
+        id = rx_frame->data.values[i];
+        value = rx_frame->data.values[i + 1];
         if(id >= WIFI_CONFIG_ID_END)
             return 1;
     
@@ -286,8 +286,10 @@ uint32_t wifi_rx_handle_config(wifi_xtx_config_frame_t* rx_frame, uint16_t lengt
 
             case WIFI_CONFIG_ID_STATUS_FREQUENCY:
                 config_store.user_settings.status_refresh_period_ms = value;
+                break;
             case WIFI_CONFIG_ID_SAVE_EEPROM:
                 config_store_store();
+                break;
             default: 
                 return 1;
         }
@@ -342,7 +344,7 @@ void wifi_tx_status(IPAddress server_ip){
     wifi_cts_status_frame->data.hall_state = hw_ctrl_get_hall_state();     
     
     Udp.beginPacket(server_ip, WIFI_UDP_TX_PORT);
-    Udp.write(wifi_cts_status_frame->frame, 25);
+    Udp.write(wifi_cts_status_frame->frame, sizeof(wifi_cts_status_frame_t));
     Udp.endPacket();
 }
 

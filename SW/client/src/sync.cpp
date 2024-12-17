@@ -65,6 +65,6 @@ void sync_reconfigure(uint8_t repetition_time, uint8_t phase_shift){
  *
  * TODO: Check if filtering of time_offset is necessary.
  */
-void sync_synchronize(uint64_t rx_timestamp){
+void sync_synchronize(uint32_t rx_timestamp){
     sync_setting.time_offset = millis()-(uint32_t)rx_timestamp-sync_setting.phase_increment;
 }

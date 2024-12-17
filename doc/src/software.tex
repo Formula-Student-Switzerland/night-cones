@@ -200,7 +200,7 @@ The data frame is used to send the new data to a set of cones. It is sent to the
 \textbf{Lightmodes}
 
 The currently implemented lightmodes are described in table \ref{tab_lightmode}.  
-\todo{Check here, if timing for all lightmodes is correct}
+
 
 \begin{table}[h!]
 	\centering
@@ -223,22 +223,22 @@ The currently implemented lightmodes are described in table \ref{tab_lightmode}.
 		Blinking time (\qtyrange[range-phrase=\textendash]{0.1}{25.5}{\second})\\
 		
 		4 & Circulating & Circulating light.  \newline Bottom LEDs only. \newline 3 at a time. & Yes & Yes & 
-        Rotation time step (\qtyrange[range-phrase=\textendash]{0.1}{102}{\second})\\
+        Rotation time step (\qtyrange[range-phrase=\textendash]{0.1}{25.5}{\second})\\
 		
 		5 & Circulating smooth & Circulating light. \newline Bottom LEDs only. 
         \newline 1 at full $b$ brightness\newline 2 with $0.66\cdot b$ brightness 
         \newline 2 with $0.33\cdot b$ brightness & Yes & Brightness $b$ of middle LED & 
-        Rotation time step(\qtyrange[range-phrase=\textendash]{0.1}{102}{\second})\\
+        Rotation time step(\qtyrange[range-phrase=\textendash]{0.1}{25.5}{\second})\\
 		
 		6 & Fade & Single color, brightness fades between zero to maximum value & Yes & Maximum brightness &
-        Fade cycle time (\qtyrange[range-phrase=\textendash]{0.1}{102}{\second})\\
+        Fade cycle time (\qtyrange[range-phrase=\textendash]{0.1}{25.5}{\second})\\
 		
 		7 & Rainbow fade & Continuous light, color fades in rainbow colors & Don’t care & Yes &
-        Fade cycle time (\qtyrange[range-phrase=\textendash]{0.1}{102}{\second})\\
+        Fade cycle time (\qtyrange[range-phrase=\textendash]{0.1}{25.5}{\second})\\
 		
 		8 & Rainbow circle & Each LED around the circle has one of the rainbow colors.
         \newline Colors rotate with given frequency & Don’t care & Yes & 
-        Rotation time (\qtyrange[range-phrase=\textendash]{0.1}{102}{\second})\\
+        Rotation time (\qtyrange[range-phrase=\textendash]{0.1}{25.5}{\second})\\
 		
 		9 & Identification & Blinking with duty cycle \qty{50}{\percent}\newline
 		\qty{2}{\Hz} with a significant color on full brightness. 
@@ -251,6 +251,7 @@ The currently implemented lightmodes are described in table \ref{tab_lightmode}.
 \end{table}
 
 \textbf{Color}
+
 As 256 colors are sufficient for this application, the color is transmitted as \qty{8}{\bit} number instead of a \qty{8}{bit} triplet. This saves some bandwidth. The color scheme is developed in a way, that it repeats from 0 to 223. The range between 224 to 255 is used to swipe to white, also allowing the use of white color. The green change from 128 to 192 is stretched, to allow for more intermediate steps from yellow to red. 
 There are some color nuances, that are not able to be encoded. This includes the transient to white from any color to white.   
 
@@ -286,7 +287,7 @@ There is one Frame, that can be used, to set various settings on the cone. This 
 	\label{tab_config_frame}
 \end{table}
 
-\todo{Check Status frame period for long periods}
+
 \begin{table}[h!]
 	\centering
 	\begin{zebratabular}{cll}
@@ -329,7 +330,7 @@ The Request Frame is used to request the Settings or status frame from a specifi
 \\
 
 \subsubsection{0x80: Status Frame}
-The status frame is periodically requested by the server and contains current status data as well as relevant Identification values. \todo{with presence of the Settings frame check if MAC Adress and revisions must be part of this frame}
+The status frame is periodically requested by the server and contains current status data as well as relevant Identification values. 
 \begin{table}[h!]
 	\centering
 	\begin{zebratabular}{ccll}
