@@ -5,7 +5,13 @@
 
 \FloatBarrier
 \subsection{EMI Concept}
+There is no EMI concept available. Therefore, this section remains empty. 
 
 \FloatBarrier
 \subsection{Interfaces}
+The cones have two electrical and one radio interface. The cone can be charged using any two of the three screws at the bottom by applying a voltage between \qty{5.5}{\V} and \qty{10}{\V}. A higher voltage leads to higher losses on the board. A Voltage of \qty{6}{\V} is suggested. 
+
+The second electrical interface is used for programming and command line access. The used ESP8266 is programmed through serial UART, which can be used as a simple command line interface as well. In addition, the reset signal and GPIO0 are also available on this TAG-Connect interface. 
+
+The cone integrates a WIFI interface, which is used for communication to the server and can as well be used to update the software over-the-air. 
 

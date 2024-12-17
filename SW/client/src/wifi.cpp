@@ -34,8 +34,7 @@ typedef struct {
     uint8_t type;
     uint8_t frame_number;
     uint8_t reserved;
-    uint32_t reserved1;
-    uint64_t timestamp;   
+    uint32_t timestamp;   
 } wifi_frame_header_t;
 
 // Station to cone data frame
@@ -48,16 +47,13 @@ typedef struct {
 
 // cone to station status frame
 typedef union {
-    uint8_t frame[25];
+    uint8_t frame[sizeof(wifi_frame_header_t)+9];
     struct{
         wifi_frame_header_t header;
         uint16_t cone_id;
         uint8_t SoC;
         uint8_t rssi;
         int8_t temp;
-        uint8_t hw_rev;
-        uint8_t sw_rev_maj;
-        uint8_t sw_rev_min;
         uint8_t hall_state;        
     } data;
 } wifi_cts_status_frame_t;
@@ -65,6 +61,7 @@ typedef union {
 enum wifi_config_store_ids
 {
     WIFI_CONFIG_ID_HW_REV = 0,
+    WIFI_CONFIG_ID_SW_REV,
     WIFI_CONFIG_ID_SERIAL_NO,
     WIFI_CONFIG_ID_CONE_ID,
     WIFI_CONFIG_ID_FALLBACK_LM,
@@ -81,7 +78,7 @@ enum wifi_config_store_ids
 };
 
 typedef union {
-    uint8_t frame[16+8*WIFI_CONFIG_ID_END];
+    uint8_t frame[sizeof(wifi_frame_header_t)+8*WIFI_CONFIG_ID_END];
     struct{
         wifi_frame_header_t header;
         uint32_t values[2*WIFI_CONFIG_ID_END];
@@ -96,7 +93,7 @@ uint8_t wifi_rx_buffer[WIFI_RX_BUFFER_SIZE];
 uint8_t wifi_tx_buffer[WIFI_TX_BUFFER_SIZE];
 
 wifi_frame_header_t * const wifi_rx_header = (wifi_frame_header_t *)wifi_rx_buffer;
-wifi_stc_data_frame_field_t * const wifi_rx_stc_data = (wifi_stc_data_frame_field_t *)&wifi_rx_buffer[16];
+wifi_stc_data_frame_field_t * const wifi_rx_stc_data = (wifi_stc_data_frame_field_t *)&wifi_rx_buffer[sizeof(wifi_frame_header_t)];
 
 wifi_cts_status_frame_t * const wifi_cts_status_frame = (wifi_cts_status_frame_t *)wifi_tx_buffer;
 wifi_xtx_config_frame_t * const wifi_cts_config_frame = (wifi_xtx_config_frame_t *)wifi_tx_buffer;
@@ -205,14 +202,15 @@ void wifi_rx_frame(void)
 #ifdef DEBUG
                 printf("Handle WIFI_STC_DATA_TYPE\r\n");
 #endif
-                wifi_rx_handle_data(wifi_rx_stc_data, (len-16)/4);
+                //ToDo Implement lost package detection here!
+                wifi_rx_handle_data(wifi_rx_stc_data, (len-sizeof(wifi_frame_header_t))/4);
                 wifi_server_ip = server_ip;
                 break;            
             case WIFI_STC_CONFIG_TYPE:
 #ifdef DEBUG
                 printf("Handle WIFI_STC_CONFIG_TYPE\r\n");
 #endif
-                wifi_rx_handle_config((uint32_t*)&wifi_rx_buffer[16], (len-16)/4);
+                wifi_rx_handle_config((wifi_xtx_config_frame_t*)wifi_rx_buffer, (len-sizeof(wifi_frame_header_t))/4);
                 
             case WIFI_STC_SET_REQ_TYPE:
 #ifdef DEBUG
@@ -253,16 +251,16 @@ void wifi_rx_handle_data(wifi_stc_data_frame_field_t * wifi_rx_stc_data, uint16_
 /**
  * Handle the server to cone config message. Decodes all available values and sets them. 
  *
- * @param rx_frame pointer to the uint32_t array of id/value pairs
+ * @param rx_frame pointer to config_frame struct
  * @param length length of the uint32_t array (number of id+keys
  */
-uint32_t wifi_rx_handle_config(uint32_t* rx_frame, uint16_t length) {
+uint32_t wifi_rx_handle_config(wifi_xtx_config_frame_t* rx_frame, uint16_t length) {
     uint32_t id = 0;
     uint32_t value = 0;
 
     for(int i=0; i<length;i+=2){
-        id = rx_frame[i];
-        value = rx_frame[i+1];
+        id = rx_frame->values[i];
+        value = rx_frame->values[i+1];
         if(id >= WIFI_CONFIG_ID_END)
             return 1;
     
@@ -308,6 +306,7 @@ void wifi_tx_settings(IPAddress server_ip) {
     wifi_cts_config_frame->data.header.type = WIFI_CTS_SET_TYPE;
   
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_HW_REV] = config_store.hardware_data.hardware_revision;
+    wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_SW_REV]=CONFIG_STORE_SW_REV_MAJ<<8 | CONFIG_STORE_SW_REV_MIN;
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_SERIAL_NO] = config_store.hardware_data.serial_number;
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_CONE_ID] = config_store.user_settings.cone_id;
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_FALLBACK_LM] = *((uint32_t*)&config_store.user_settings.fallback_lightmode);
@@ -322,7 +321,7 @@ void wifi_tx_settings(IPAddress server_ip) {
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_SAVE_EEPROM] = 0;
   
     Udp.beginPacket(server_ip, WIFI_UDP_TX_PORT);
-    Udp.write(wifi_cts_config_frame->frame,16+4*WIFI_CONFIG_ID_END);
+    Udp.write(wifi_cts_config_frame->frame,sizeof(wifi_frame_header_t)+4*WIFI_CONFIG_ID_END);
     Udp.endPacket();
 }
 
@@ -335,12 +334,7 @@ void wifi_tx_settings(IPAddress server_ip) {
  */
 void wifi_tx_status(IPAddress server_ip){
     // Update static information, if header is changed
-    if(wifi_cts_status_frame->data.header.type != WIFI_CTS_STATUS_TYPE){    
-        wifi_cts_status_frame->data.header.type = WIFI_CTS_STATUS_TYPE;
-        wifi_cts_status_frame->data.sw_rev_maj=CONFIG_STORE_SW_REV_MAJ;
-        wifi_cts_status_frame->data.sw_rev_min=CONFIG_STORE_SW_REV_MIN;
-        wifi_cts_status_frame->data.hw_rev = config_store.hardware_data.hardware_revision;
-    }
+    wifi_cts_status_frame->data.header.type = WIFI_CTS_STATUS_TYPE;
     wifi_cts_status_frame->data.cone_id = config_store.user_settings.cone_id;
     wifi_cts_status_frame->data.SoC = adc_soc;
     wifi_cts_status_frame->data.rssi = WiFi.RSSI();

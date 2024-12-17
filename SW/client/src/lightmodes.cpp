@@ -201,6 +201,7 @@ void lightmode_blink_long(uint32_t time, lightmode* current_lm, uint8_t *ledStat
 /**
  * Lightmode 4: Circulating 3 LEDs
  */
+ // ToDo: Here, the lightmode is not correct. There should be no factor of 3. Also Check Timing 
 void lightmode_circ(uint32_t time, lightmode* current_lm, uint8_t *ledState) {
     uint32_t current_step;
     if(current_lm->repetition_time == 0)
@@ -217,6 +218,7 @@ void lightmode_circ(uint32_t time, lightmode* current_lm, uint8_t *ledState) {
 /**
  * Lightmode 5: Circulating Smooth 3 LEDs
  */
+ // ToDo: Here, the lightmode is not correct. There should be no factor of 3. Also Check Timing 
 void lightmode_circ_smooth(uint32_t time, lightmode* current_lm, uint8_t *ledState) {
     uint32_t current_step;
     if(current_lm->repetition_time == 0)
@@ -242,7 +244,7 @@ void lightmode_fade(uint32_t time, lightmode* current_lm, uint8_t *ledState) {
     if(current_lm->repetition_time == 0)
         current_step = 0;
     else
-        current_step = (time/current_lm->repetition_time%200)/100.0;
+        current_step = (time/current_lm->repetition_time)%200)/100.0;
     
     if(current_step > 1)
         current_step = 2-current_step;
