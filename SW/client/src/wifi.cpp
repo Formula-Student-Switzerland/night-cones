@@ -75,6 +75,8 @@ enum wifi_config_store_ids
     WIFI_CONFIG_ID_DEBUG3,
     WIFI_CONFIG_ID_DEBUG4,
     WIFI_CONFIG_ID_SAVE_EEPROM,
+    WIFI_CONFIG_ID_FRAME_ERROR,
+    WIFI_CONFIG_ID_FRAME_ORDER_ERROR,
     WIFI_CONFIG_ID_END
 };
 
@@ -158,6 +160,9 @@ int wifi_setup(void) {
     wifi_cts_status_frame->data.header.frame_number = 0;
     wifi_cts_status_frame->data.header.reserved=0;
     wifi_cts_status_frame->data.header.timestamp=0;    
+    
+    wifi_frame_errors = 0;
+    wifi_frame_order_error = 0;
 
     return 0;
 }
@@ -184,7 +189,8 @@ void wifi_rx_frame(void)
         if(len == 0) {
 #ifdef DEBUG
             printf("Received Empty Frame\r\n");
-#endif
+#endif      
+            wifi_frame_errors ++;
             return;
         }
         server_ip = Udp.remoteIP();
@@ -194,6 +200,7 @@ void wifi_rx_frame(void)
 #ifdef DEBUG      
             printf("Wrong WIFI_COM_Version Got: %x, Local: %x\r\n", wifi_rx_buffer[0],WIFI_COM_VERSION);
 #endif            
+            wifi_frame_errors ++;
             return;
         }
 
@@ -202,9 +209,13 @@ void wifi_rx_frame(void)
 #ifdef DEBUG
                 printf("Handle WIFI_STC_DATA_TYPE\r\n");
 #endif
-                //ToDo Implement lost package detection here!
-                wifi_rx_handle_data(wifi_rx_stc_data, (len-sizeof(wifi_frame_header_t))/4);
-                wifi_server_ip = server_ip;
+                if(wifi_current_frame_id != 0 && wifi_rx_header->frame_number != wifi_current_frame_id + 1)
+                    wifi_frame_order_error ++;
+                else {
+                    wifi_rx_handle_data(wifi_rx_stc_data, (len-sizeof(wifi_frame_header_t))/4);
+                    wifi_server_ip = server_ip;
+                }
+                wifi_current_frame_id = wifi_rx_header->frame_number;                
                 break;            
             case WIFI_STC_CONFIG_TYPE:
 #ifdef DEBUG
@@ -281,7 +292,6 @@ uint32_t wifi_rx_handle_config(wifi_xtx_config_frame_t* rx_frame, uint16_t lengt
                     ESP.restart();
                 else
                     hw_ctrl_turn_off();
-
                 break;
 
             case WIFI_CONFIG_ID_STATUS_FREQUENCY:
@@ -320,6 +330,8 @@ void wifi_tx_settings(IPAddress server_ip) {
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_DEBUG2] = 0;
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_DEBUG3] = 0;
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_DEBUG4] = 0;  
+    wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_FRAME_ERROR] = wifi_frame_errors;  
+    wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_FRAME_ORDER_ERROR] = wifi_frame_order_error;  
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_SAVE_EEPROM] = 0;
   
     Udp.beginPacket(server_ip, WIFI_UDP_TX_PORT);

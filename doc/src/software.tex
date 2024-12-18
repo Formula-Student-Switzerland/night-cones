@@ -138,7 +138,7 @@ The simulator shall also give the possibility to change the values of the cones 
 \label{sec_communication}
 The proprietary communication protocol is based on \ac{UDP}. It uses simple messages without any checksum.  The different frame types have a fixed or variable length. In any case a single \ac{UDP} packet is used for a single message. All frame types share the same header. The frame types are defined below.
 \subsubsection{Header}
-The header contains simple information to classify the frame. It includes a millisecond time stamp (4 byte) used for synchronisation, an increasing Frame number and a version.
+The header contains simple information to classify the frame. It includes a millisecond time stamp (4 byte) used for synchronisation, an increasing Frame number and a version. The frame number must only be increased for data frames. It can be set to zero for all other frame types.
 \begin{table}[h!]
 	\centering
 	\begin{zebratabular}{ccll}
@@ -146,7 +146,7 @@ The header contains simple information to classify the frame. It includes a mill
 		Byte & Size   & Name        & Description\\
 		0    & \qty{1}{\byte} & Version		& \qty{4}{\bit} for major and \qty{4}{\bit} of minor revision\\
 		1    & \qty{1}{\byte} & Frame Type  & Frame type as described in Table \ref{tab_frame_type}\\
-		2    & \qty{1}{\byte} & Frame Number& strictly increasing counter to detect missing packages\\
+		2    & \qty{1}{\byte} & Frame Number & strictly increasing counter to detect missing packages\\
 		3    & \qty{1}{\byte} & Reserved	& Reserved for future use\\
 		4-7  & \qty{4}{\byte} & Timestamp	& time stamp (milliseconds since arbitrary zero time)\\
 	\end{zebratabular}
@@ -307,6 +307,8 @@ There is one Frame, that can be used, to set various settings on the cone. This 
 		11 & Debug 3 & \qty{32}{\bit} value for debug purposes.\\
 		12 & Debug 4 & \qty{32}{\bit} value for debug purposes.\\
 		13 & Save \acs{EEPROM} & Store the user configuration to the \ac{EEPROM}.\\
+		14 & Frame Error & Error counter for damaged/invalid received frames. \\
+		15 & Frame order & Error counter for frame order.\\
 		\end{zebratabular}
 	\caption{Config Frame IDs}
 	\label{tab_config_IDs}
