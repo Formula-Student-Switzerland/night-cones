@@ -14,6 +14,7 @@
 #include "HardwareSerial.h"
 #include "lightmodes.h"
 #include "config_store.h"
+#include "hw_ctrl.h"
 
 #ifdef CLI_ENABLED
 
@@ -30,6 +31,7 @@ void cmd_saveEEPROM(void);
 void cmd_readEEPROM(void);
 void cmd_setSerialNo(void);
 void cmd_led_fallback_store(void);
+void cmd_turnOff(void);
 
 // List of functions pointers corresponding to each command
 void (*cmd_func[])(void){
@@ -38,7 +40,8 @@ void (*cmd_func[])(void){
     &cmd_led_fallback_store,
     &cmd_saveEEPROM,
     &cmd_readEEPROM,
-    &cmd_setSerialNo};
+    &cmd_setSerialNo, 
+    &cmd_turnOff};
 
 // List of command names
 const char *cmd_str[] = {
@@ -47,7 +50,8 @@ const char *cmd_str[] = {
     "setLEDFallback",
     "saveEEPROM",
     "readEEPROM",
-    "setSerialNo"};
+    "setSerialNo", 
+    "turnOff"};
 
 int num_commands = sizeof(cmd_str) / sizeof(char *);
 #endif
@@ -62,7 +66,7 @@ void cli_init(void)
     number_of_args = 0;
     memset(line_buffer, 0, LINE_BUF_SIZE);
     Serial.printf("Serial Interface enabled.\r\n");
-    Serial.print(">\r\n");
+    Serial.print(">>\r\n");
 #endif
 }
 
@@ -249,5 +253,11 @@ void cmd_setSerialNo(void)
 
     config_store.hardware_data.serial_number = numbers[0];
     config_store.hardware_data.hardware_revision = numbers[1];
+}
+
+void cmd_turnOff (void)
+{
+    Serial.printf("Goodbye!\r\n");
+    hw_ctrl_turn_off();
 }
 #endif

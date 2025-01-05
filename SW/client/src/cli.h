@@ -16,7 +16,7 @@
 
 #define CLI_ENABLED
 
-void cli_init();
-void cli_loop();
+void cli_init(void);
+void cli_loop(void);
 
 #endif
