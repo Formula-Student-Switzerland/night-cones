@@ -61,9 +61,9 @@ void color_decode (uint8_t color, uint8_t brightness, uint8_t *decoded) {
   	// Set blue component.
   	if ((color <= 63) || (color >= 224)) {
     	blue = 30;
-  	} else if (color >= 64 && color <= 95) {
+  	} else if (color <= 95) {
     	blue = ((96-color ) / 32.0) * 30;
-  	} else if (color >= 192 && color <= 223) {
+  	} else if (color >= 192) {
     	blue = (color - 191) / 32.0 * 30;
   	} else {
     	blue = 0;
