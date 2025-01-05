@@ -10,7 +10,7 @@
 /*******************************************************************************/
 #ifndef HW_CTRL
 #define HW_CTRL
-
+#include <stdint.h>
 #define KILL_PIN  12
 #define HALL_PIN  16
 
@@ -21,12 +21,12 @@ void hw_ctrl_setup(void);
  * 
  * @return True if Hall sensor is used.
  */
-#define hw_ctrl_get_hall_state(void) digitalRead(HALL_PIN);
+uint8_t hw_ctrl_get_hall_state(void);
 
 /**
  * Turn off the Cone
  */
-#define hw_ctrl_turn_off(void) digitalWrite(KILL_PIN,1)
+void hw_ctrl_turn_off(void);
 
 
 #endif
