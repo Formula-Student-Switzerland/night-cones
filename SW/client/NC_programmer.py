@@ -30,19 +30,46 @@ if __name__ == "__main__":
    print("Wait until restarted...\r\n")
    port = serial.serial_for_url(args.port, baudrate=args.baudrate, timeout=2)
    i=0;
-   while(port.read() != ">"):
-       i = i+1;
-       time.sleep(1)
-       if(i>12):
-           print("Error: Device did not properly reboot!")
-           exit()
+   port.flush()
+   port.reset_input_buffer()
+   time.sleep(4)
+   
+   c = port.read()
+   for i in range(0,2):
+    while(c != b">"):
+        i = i+1;
+        c = port.read()
+        #print(c)
+        time.sleep(0.01)
+        if(i>400):
+            print("Error: Device did not properly reboot!")
+            #exit()
+            break;
+   
+   
    port.write('readEEPROM\n')
    port.write(F"setSerialNo {args.set_EEPROM_config[0]} {args.set_EEPROM_config[1]}\n")
+   port.write('LED 138 2 0 0\n')
+   port.write('setLEDFallback\n')
    port.write("saveEEPROM\n")
    port.write('readEEPROM\n')
    port.flush()
    #while port.in_waiting:
-   line = port.readline().decode('UTF-8')
+   line = port.readline().decode('ascii', 'replace')
+   for i in range(0,10):
+    while line != "":
+            print(F"{line}", end="")
+            line = port.readline().decode('ascii', 'replace')
+   
+   input("Press Enter to turn off cone:")
+   
+   print("Turn Off Cone.")
+   
+   port.write("turnOff\n")
+   port.flush()
+   line = port.readline().decode('ascii', 'replace')
+   
    while line != "":
-    print(F"{line}", end="")
-    line = port.readline().decode('UTF-8')
+     print(F"{line}", end="")
+     line = port.readline().decode('ascii', 'replace')
+   
