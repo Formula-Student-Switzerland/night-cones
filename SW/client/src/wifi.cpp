@@ -132,24 +132,25 @@ int wifi_setup(void) {
     // Signal start of connection
     led_esp_blink(LED_ESP_FREQ_ON, 2);
     
-    delay(1000);
+    //delay(1000);
 
     // Check what this code excatly does and if it works as intended
     while (WiFi.waitForConnectResult() != WL_CONNECTED && wifi_attempt < WIFI_ATTEMPTS) {
-      Serial.printf("Connection Failed! Rebooting...");
+      Serial.printf("Connection Failed! Rebooting...\r\n");
+      Serial.flush();
       delay(5000);
       ESP.restart();
       wifi_attempt++;
     }
 
     // Check Wifi and init OTA.
-    if (WiFi.waitForConnectResult() != WL_CONNECTED) {
+    if (WiFi.isConnected() != true) {
       return 1;
     }
     
-    Serial.printf("WiFi connected");
+    Serial.printf("WiFi connected\r\n");
     ota_setup();
-    led_esp_blink(LED_ESP_FREQ_CONNECTED, 8);
+    //led_esp_blink(LED_ESP_FREQ_CONNECTED, 8);
     
     Udp.begin(WIFI_UDP_RX_PORT);
     

@@ -17,7 +17,7 @@
 #ifndef LED_EMULATION
 
 uint8_t led_state[LED_COUNT * 3];
-Adafruit_NeoPixel leds(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel leds(LED_COUNT+1, LED_PIN, NEO_GRB + NEO_KHZ800);
 
 /**
  * Setup the On-Board LED and the LED Strip. Turn off all LEDs.
@@ -28,6 +28,7 @@ void led_setup(void)
   pinMode(LED_ESP_PIN, OUTPUT);
   leds.begin();
   led_clear();
+  leds.setPixelColor(20, leds.Color(255,255,255));
 }
 
 /**
@@ -37,8 +38,8 @@ void led_setup(void)
  */
 void led_show(uint8_t *ledState)
 {
-  leds.clear();
-
+  //leds.clear();
+  //leds.setPixelColor(20, leds.Color(255, 255, 255));
   for (int k = 0; k < LED_COUNT; k++)
   {
     leds.setPixelColor(k, leds.Color(ledState[k * 3], ledState[k * 3 + 1], ledState[k * 3 + 2]));
@@ -53,6 +54,7 @@ void led_show(uint8_t *ledState)
 void led_clear()
 {
   leds.clear();
+  leds.setPixelColor(20, leds.Color(127, 127, 127));
   leds.show();
 }
 
@@ -70,6 +72,7 @@ void led_esp_blink(int frequency, int blinks)
     digitalWrite(LED_ESP_PIN, 0);
     delay(frequency);
   }
+  //digitalWrite(LED_ESP_PIN, 1);
 }
 
 /**

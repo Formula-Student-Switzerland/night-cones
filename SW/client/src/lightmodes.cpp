@@ -66,7 +66,7 @@ void lightmode_setup(void)
  */
 void lightmode_setAsFallback(void){
     config_store.user_settings.fallback_color = lightmode_current.base_color;
-    config_store.user_settings.fallback_lightmode = lightmode_current.brightness<<4 | lightmode_current.mode;
+    config_store.user_settings.fallback_lightmode = lightmode_current.brightness | lightmode_current.mode;
     config_store.user_settings.fallback_repetition_time = lightmode_current.repetition_time;
     config_store.user_settings.fallback_phase = 0;
 }

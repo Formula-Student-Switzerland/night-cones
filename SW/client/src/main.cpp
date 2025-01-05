@@ -36,16 +36,15 @@ void setup() {
   config_store_setup();
   hw_ctrl_setup();
   adc_setup();
-  cli_init();
   sync_setup(LED_UPDATE_INTERVAL);
 
   // LED setup
   led_setup();
   lightmode_setup();
- 
-  // Init LEDs with blue 
-  // In case the Default mode would turn off everything, we first need to 
-  // wake the failsafe by switching shortly to blue and then go to black. 
+
+  // Init LEDs with blue
+  // In case the Default mode would turn off everything, we first need to
+  // wake the failsafe by switching shortly to blue and then go to black.
   lightmode_switch(COLOR_BLUE, 0x20, 0);
   lightmode_step(0, led_state); // Is used to activate the lightmode
   led_show(led_state);
@@ -59,7 +58,7 @@ void setup() {
                    config_store.user_settings.fallback_repetition_time);
   lightmode_step(0, led_state);
   led_show(led_state);
-  
+  cli_init();
 }
 
 void loop()
