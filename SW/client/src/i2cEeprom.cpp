@@ -12,8 +12,9 @@
 #include <stdint.h>
 #include "Wire.h"
 #include "Arduino.h"
+#include "HardwareSerial.h"
 
-TwoWire *wire;
+TwoWire *i2c_interface_wire;
 
 i2c_eeprom_settings_struct i2c_eeprom_settings;
 
@@ -23,12 +24,12 @@ i2c_eeprom_settings_struct i2c_eeprom_settings;
  * @param w Reference to the TwoWire Class
  */
 void i2c_eeprom_init(TwoWire *w){
-  wire = w;
+  i2c_interface_wire = w;
   i2c_eeprom_settings.i2c_address = I2C_EEPROM_BASE_ADDRESS;
-   i2c_eeprom_settings.memory_size = 256;
-    i2c_eeprom_settings.page_size = 8;
-    i2c_eeprom_settings.write_delay_ms = 5;
-    i2c_eeprom_settings.write_complete_polling = true;
+  i2c_eeprom_settings.memory_size = 256;
+  i2c_eeprom_settings.page_size = 8;
+  i2c_eeprom_settings.write_delay_ms = 5;
+  i2c_eeprom_settings.write_complete_polling = true;
 }
 
 /**
@@ -51,11 +52,13 @@ void i2c_eeprom_set_address(uint8_t addr){
  *
  */
 bool i2c_eeprom_is_ready(uint8_t i2c_addr){
+  uint8_t status;
   if (i2c_addr == 255)
     i2c_addr = i2c_eeprom_settings.i2c_address;
 
-  wire->beginTransmission((uint8_t)i2c_addr);
-  return (wire->endTransmission() == 0);
+  i2c_interface_wire->beginTransmission((uint8_t)i2c_addr);
+  status = i2c_interface_wire->endTransmission();
+  return (status == 0);
 }
 
 /**
@@ -87,21 +90,21 @@ uint8_t i2c_eeprom_read(uint16_t addr, uint8_t* data_out, uint8_t count){
 
   while (!i2c_eeprom_is_ready())
   {
-    delay(1);
+    delayMicroseconds(100);
   }
 
   if(addr+count > i2c_eeprom_settings.memory_size ||count == 0)
     return -1;
   
-  wire->beginTransmission(i2c_eeprom_settings.i2c_address);
-  wire->write(addr);
-  uint8_t status = wire->endTransmission(true);
+  i2c_interface_wire->beginTransmission(i2c_eeprom_settings.i2c_address);
+  i2c_interface_wire->write(addr);
+  uint8_t status = i2c_interface_wire->endTransmission(true);
 
-  if(count != wire->requestFrom(i2c_eeprom_settings.i2c_address,(uint8_t) count))
+  if(count != i2c_interface_wire->requestFrom(i2c_eeprom_settings.i2c_address,(uint8_t) count))
     return -2;    
 
-  while (Wire.available())
-    *(data_out++) =  wire->read();
+  while (i2c_interface_wire->available())
+    *(data_out++) =  i2c_interface_wire->read();
   return status;
 }
 
@@ -158,15 +161,15 @@ uint8_t i2c_eeprom_write(uint16_t addr, uint8_t* data, uint8_t count){
     while (!i2c_eeprom_is_ready())
       delayMicroseconds(100);
 
-    wire->beginTransmission(i2c_eeprom_settings.i2c_address);
-    wire->write(addr);
+    i2c_interface_wire->beginTransmission(i2c_eeprom_settings.i2c_address);
+    i2c_interface_wire->write(addr);
     
     for(int i=0; i<write_count; i++)
-      wire->write(*(data++));
+      i2c_interface_wire->write(*(data++));
     
     addr += write_count;
     transferred += write_count;
-    status = wire->endTransmission();
+    status = i2c_interface_wire->endTransmission();
 
     if(i2c_eeprom_settings.write_complete_polling)
       delay(i2c_eeprom_settings.write_delay_ms);
