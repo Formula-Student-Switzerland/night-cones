@@ -202,6 +202,7 @@ int config_store_store(void)
     } else {
         EEPROM.put(CONFIG_STORE_EEPROM_USER_SETTIGS_BASE_ADDRESS,config_store.user_settings);
         EEPROM.put(CONFIG_STORE_EEPROM_USER_SETTIGS_BASE_ADDRESS+CONFIG_STORE_USER_SETTINGS_SIZE,config_store.user_settings_crc);
+        EEPROM.commit();
     }
  
     return result;
@@ -233,6 +234,7 @@ int config_store_storeHW(void)
     } else {
         EEPROM.put(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS,config_store.hardware_data);
         EEPROM.put(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS+CONFIG_STORE_HARDWARE_DATA_SIZE,config_store.hardware_data_crc);
+        EEPROM.commit();
     }
     return result;
 }

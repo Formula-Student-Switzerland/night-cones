@@ -32,10 +32,9 @@ typedef struct {
     uint8_t color[9]; // Three colors are used for some lightmodes, therefore 9 bytes
 } lightmode;
 
-typedef void (*lightmode_function)(uint32_t, lightmode* , uint8_t *) ;
-
-
 void lightmode_setup(void);
+void lightmode_activate_ident(void);
+void lightmode_deactivate_ident(void);
 void lightmode_setAsFallback(void);
 void lightmode_switch(uint8_t color, uint8_t brightness_mode, uint8_t repetition_time);
 void lightmode_dim(uint8_t brightness);

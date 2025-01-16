@@ -77,6 +77,7 @@ enum wifi_config_store_ids
     WIFI_CONFIG_ID_SAVE_EEPROM,
     WIFI_CONFIG_ID_FRAME_ERROR,
     WIFI_CONFIG_ID_FRAME_ORDER_ERROR,
+    WIFI_CONFIG_ID_IDENT_MODE,
     WIFI_CONFIG_ID_END
 };
 
@@ -301,6 +302,12 @@ uint32_t wifi_rx_handle_config(wifi_xtx_config_frame_t* rx_frame, uint16_t lengt
             case WIFI_CONFIG_ID_SAVE_EEPROM:
                 config_store_store();
                 break;
+            case WIFI_CONFIG_ID_IDENT_MODE:
+                if(value ==1 )
+                    lightmode_activate_ident();
+                else
+                    lightmode_deactivate_ident();
+                break;
             default: 
                 return 1;
         }
@@ -334,6 +341,8 @@ void wifi_tx_settings(IPAddress server_ip) {
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_FRAME_ERROR] = wifi_frame_errors;  
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_FRAME_ORDER_ERROR] = wifi_frame_order_error;  
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_SAVE_EEPROM] = 0;
+    wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_IDENT_MODE] = 0;
+    
   
     Udp.beginPacket(server_ip, WIFI_UDP_TX_PORT);
     Udp.write(wifi_cts_config_frame->frame,sizeof(wifi_frame_header_t)+4*WIFI_CONFIG_ID_END);

@@ -26,9 +26,13 @@
 #include "config_store.h"
 
 #define LIGHTMODE_COUNT 16
-
+#define LIGHTMODE_IDENT 0x9
 lightmode lightmode_current;
+
+typedef void (*lightmode_function)(uint32_t, lightmode* , uint8_t *) ;
 lightmode_function lightmode_current_handler; 
+
+uint8_t lightmode_ident_active;
 
 uint8_t COLOR_DARK[3] = {0,0,0};
 
@@ -59,6 +63,25 @@ void lightmode_setup(void)
 {
     lightmode_switch(config_store.user_settings.fallback_color, config_store.user_settings.fallback_lightmode, 
         config_store.user_settings.fallback_repetition_time);
+    lightmode_ident_active = 0;
+}
+
+/**
+ * Activates the ident mode, which has priority against general lightmode.
+ */
+void lightmode_activate_ident(void){
+    lightmode_ident_active = 1;
+    lightmode_switch(0,0,0);
+}
+
+/**
+ * Deactivates the ident mode, which has priority against general lightmode.
+ */
+void lightmode_deactivate_ident(void){
+    lightmode_ident_active = 0;   
+    lightmode_switch(config_store.user_settings.fallback_color, 
+    config_store.user_settings.fallback_lightmode, 
+    config_store.user_settings.fallback_repetition_time);
 }
 
 /**
@@ -82,11 +105,14 @@ void lightmode_setAsFallback(void){
  */
 void lightmode_switch(uint8_t color, uint8_t brightness_mode, 
                         uint8_t repetition_time){
-    lightmode_current.repetition_time = repetition_time;
-    lightmode_current.mode = (brightness_mode & 0x0F);
-    lightmode_current.base_color = color;
-    lightmode_current_handler = lightmodes[lightmode_current.mode];
-    
+    if(lightmode_ident_active == 0){
+        lightmode_current.repetition_time = repetition_time;
+        lightmode_current.mode = (brightness_mode & 0x0F);
+        lightmode_current.base_color = color;
+        lightmode_current_handler = lightmodes[lightmode_current.mode];
+    } else {        
+        lightmode_current_handler = lightmodes[LIGHTMODE_IDENT]
+    }
     lightmode_dim(brightness_mode);
 }
 
