@@ -3,7 +3,7 @@
 #include "Arduino.h"
 #include "Wire.h"
 #include "HardwareSerial.h"
-
+#include <EEPROM.h>
 //#define DEBUG
 
 #define CONFIG_STORE_SDA_PIN 2
@@ -22,6 +22,7 @@
 
 config_store_t config_store;
 TwoWire I2C;
+bool externalEEprom;
 
 /**
  * Configure Config store with defaults and load data from EEPROM.
@@ -37,7 +38,14 @@ void config_store_setup(void)
     i2c_eeprom_set_memory_size(CONFIG_STORE_EEPROM_SIZE);
     i2c_eeprom_set_page_size(CONFIG_STORE_EEPROM_PAGE_SIZE);
 
-    config_store_read();
+    if(i2c_eeprom_is_ready()){
+        externalEEprom = true;
+        config_store_read();
+    } else {
+        externalEEprom = false;
+        EEPROM.begin(CONFIG_STORE_EEPROM_USED_SIZE);
+    }
+
 }
 
 /**
@@ -109,13 +117,18 @@ int config_store_read(void)
 {
     config_store_t temp;
     uint32_t crc;
-    if (i2c_eeprom_read(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS, (uint8_t *)&temp,
+    if(externalEEprom){
+        if (i2c_eeprom_read(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS, (uint8_t *)&temp,
                         CONFIG_STORE_EEPROM_USED_SIZE))
-    {
+        {
 #ifdef DEBUG
-        printf("Reading EEPROM failed\n!");
+            printf("Reading EEPROM failed\n!");
 #endif
-        return -1;
+            return -1;
+        }
+    } else {
+        EEPROM.get(0,&temp);
+        
     }
 
     if (temp.psvn != CONFIG_STORE_PSVN)
@@ -171,15 +184,26 @@ int config_store_store(void)
     uint8_t result = 0;
     config_store.user_settings_crc = config_store_crc32b((uint8_t *)&config_store.user_settings, CONFIG_STORE_USER_SETTINGS_SIZE);
 
-    for (uint8_t i = 0; i < CONFIG_STORE_USER_SETTINGS_SIZE + 4; i += 8)
-    {
-        result += i2c_eeprom_read(CONFIG_STORE_EEPROM_USER_SETTIGS_BASE_ADDRESS + i, buffer, 8);
-        // Only write page if needed.
-        if (memcmp(buffer, ((uint8_t *)&config_store.user_settings) + i, 8) != 0)
+    if(externalEEprom){
+        for (uint8_t i = 0; i < CONFIG_STORE_USER_SETTINGS_SIZE + 4; i += 8)
         {
-            result += i2c_eeprom_write(CONFIG_STORE_EEPROM_USER_SETTIGS_BASE_ADDRESS + i, ((uint8_t *)&config_store.user_settings) + i, 8);
-        }
+        
+            result += i2c_eeprom_read(CONFIG_STORE_EEPROM_USER_SETTIGS_BASE_ADDRESS + i, buffer, 8);
+        
+            // Only write page if needed.
+            if (memcmp(buffer, ((uint8_t *)&config_store.user_settings) + i, 8) != 0)
+            {
+#ifdef DEBUG
+                printf("EEPROM Write page %i!\n", i);
+#endif
+                result += i2c_eeprom_write(CONFIG_STORE_EEPROM_USER_SETTIGS_BASE_ADDRESS + i, ((uint8_t *)&config_store.user_settings) + i, 8);
+            }
+        } 
+    } else {
+        EEPROM.put(CONFIG_STORE_EEPROM_USER_SETTIGS_BASE_ADDRESS,config_store.user_settings);
+        EEPROM.put(CONFIG_STORE_EEPROM_USER_SETTIGS_BASE_ADDRESS+CONFIG_STORE_USER_SETTINGS_SIZE,config_store.user_settings_crc);
     }
+ 
     return result;
 }
 
@@ -196,14 +220,19 @@ int config_store_storeHW(void)
     uint8_t result = 0;
     config_store.hardware_data_crc = config_store_crc32b((uint8_t *)&config_store.hardware_data, CONFIG_STORE_HARDWARE_DATA_SIZE);
 
-    for (uint8_t i = 0; i < CONFIG_STORE_EEPROM_HEADER_SIZE + CONFIG_STORE_HARDWARE_DATA_SIZE + 4; i += 8)
-    {
-        result += i2c_eeprom_read(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS + i, buffer, 8);
-        // Only write page if needed.
-        if (memcmp(buffer, ((uint8_t *)&config_store) + i, 8) != 0)
+    if(externalEEprom) {
+        for (uint8_t i = 0; i < CONFIG_STORE_EEPROM_HEADER_SIZE + CONFIG_STORE_HARDWARE_DATA_SIZE + 4; i += 8)
         {
-            result += i2c_eeprom_write(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS + i, ((uint8_t *)&config_store) + i, 8);
+            result += i2c_eeprom_read(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS + i, buffer, 8);
+            // Only write page if needed.
+            if (memcmp(buffer, ((uint8_t *)&config_store) + i, 8) != 0)
+            {
+                result += i2c_eeprom_write(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS + i, ((uint8_t *)&config_store) + i, 8);
+            }
         }
+    } else {
+        EEPROM.put(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS,config_store.hardware_data);
+        EEPROM.put(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS+CONFIG_STORE_HARDWARE_DATA_SIZE,config_store.hardware_data_crc);
     }
     return result;
 }
