@@ -4,7 +4,7 @@
 #include "Wire.h"
 #include "HardwareSerial.h"
 #include <EEPROM.h>
-//#define DEBUG
+#define DEBUG
 
 #define CONFIG_STORE_SDA_PIN 2
 #define CONFIG_STORE_SCL_PIN 14
@@ -40,11 +40,11 @@ void config_store_setup(void)
 
     if(i2c_eeprom_is_ready()){
         externalEEprom = true;
-        config_store_read();
     } else {
         externalEEprom = false;
         EEPROM.begin(CONFIG_STORE_EEPROM_USED_SIZE);
     }
+    config_store_read();
 
 }
 
@@ -127,8 +127,7 @@ int config_store_read(void)
             return -1;
         }
     } else {
-        EEPROM.get(0,&temp);
-        
+        EEPROM.get(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS, temp);
     }
 
     if (temp.psvn != CONFIG_STORE_PSVN)
@@ -150,6 +149,7 @@ int config_store_read(void)
 #ifdef DEBUG
         printf("Hardware Data CRC not matching!\r\n %x != %x\r\n", crc, temp.hardware_data_crc);
 #endif
+        memcpy(&config_store, &temp, sizeof(config_store_t));
         return -2;
     }
 
@@ -200,8 +200,8 @@ int config_store_store(void)
             }
         } 
     } else {
-        EEPROM.put(CONFIG_STORE_EEPROM_USER_SETTIGS_BASE_ADDRESS,config_store.user_settings);
-        EEPROM.put(CONFIG_STORE_EEPROM_USER_SETTIGS_BASE_ADDRESS+CONFIG_STORE_USER_SETTINGS_SIZE,config_store.user_settings_crc);
+        EEPROM.put(CONFIG_STORE_EEPROM_USER_SETTIGS_BASE_ADDRESS, config_store.user_settings);
+        EEPROM.put(CONFIG_STORE_EEPROM_USER_SETTIGS_BASE_ADDRESS + CONFIG_STORE_USER_SETTINGS_SIZE, config_store.user_settings_crc);
         EEPROM.commit();
     }
  
@@ -232,8 +232,9 @@ int config_store_storeHW(void)
             }
         }
     } else {
-        EEPROM.put(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS,config_store.hardware_data);
-        EEPROM.put(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS+CONFIG_STORE_HARDWARE_DATA_SIZE,config_store.hardware_data_crc);
+        EEPROM.put(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS, config_store.psvn);
+        EEPROM.put(CONFIG_STORE_EEPROM_HARDWARE_DATA_BASE_ADDRESS, config_store.hardware_data);
+        EEPROM.put(CONFIG_STORE_EEPROM_HARDWARE_DATA_BASE_ADDRESS + CONFIG_STORE_HARDWARE_DATA_SIZE, config_store.hardware_data_crc);
         EEPROM.commit();
     }
     return result;

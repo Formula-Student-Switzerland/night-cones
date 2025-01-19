@@ -22,6 +22,7 @@
 extern int16_t adc_volt_meas;
 extern uint8_t adc_temp_deg;
 extern uint8_t adc_soc;
+extern int16_t adc_temp_meas;
 
 void adc_setup(void);
 

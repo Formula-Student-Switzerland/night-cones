@@ -34,12 +34,12 @@ void setup() {
   Serial.begin(115200);
   delay(2000);
   config_store_setup();
-  hw_ctrl_setup();
+  hw_ctrl_setup(config_store.hardware_data.hardware_revision);
   adc_setup();
   sync_setup(LED_UPDATE_INTERVAL);
 
   // LED setup
-  led_setup();
+  led_setup(config_store.hardware_data.hardware_revision);
   lightmode_setup();
 
   // Init LEDs with blue
@@ -87,7 +87,7 @@ void loop()
       //lightmode_dim((16 + ((60-adc_temp_deg) * )) & 0xF0);
     }*/
 
-    if (digitalRead(HALL_PIN))
+    if (hw_ctrl_get_hall_state())
     {
       led_show_status(adc_temp_deg, adc_volt_meas);
     }

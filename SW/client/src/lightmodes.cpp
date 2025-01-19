@@ -70,8 +70,8 @@ void lightmode_setup(void)
  * Activates the ident mode, which has priority against general lightmode.
  */
 void lightmode_activate_ident(void){
+    lightmode_switch(0,9,0);
     lightmode_ident_active = 1;
-    lightmode_switch(0,0,0);
 }
 
 /**
@@ -110,9 +110,7 @@ void lightmode_switch(uint8_t color, uint8_t brightness_mode,
         lightmode_current.mode = (brightness_mode & 0x0F);
         lightmode_current.base_color = color;
         lightmode_current_handler = lightmodes[lightmode_current.mode];
-    } else {        
-        lightmode_current_handler = lightmodes[LIGHTMODE_IDENT]
-    }
+    } 
     lightmode_dim(brightness_mode);
 }
 
@@ -330,9 +328,9 @@ void lightmode_ident(uint32_t time, lightmode* current_lm, uint8_t *ledState) {
     else
         lightmode_set_all_led(&current_lm->color[6],ledState);
 
-    ledState[3*3+0] = current_lm->color[3];
-    ledState[3*3+1] = current_lm->color[4];
-    ledState[3*3+2] = current_lm->color[5];
+    ledState[3*4+0] = current_lm->color[3];
+    ledState[3*4+1] = current_lm->color[4];
+    ledState[3*4+2] = current_lm->color[5];
 }
 
 

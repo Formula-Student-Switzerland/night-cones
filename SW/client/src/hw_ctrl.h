@@ -11,10 +11,12 @@
 #ifndef HW_CTRL
 #define HW_CTRL
 #include <stdint.h>
-#define KILL_PIN  12
-#define HALL_PIN  16
+#define KILL_PIN_NC1_1AA 13
+#define HALL_PIN_NC1_1AA 14
+#define KILL_PIN_NC1_1BB 12
+#define HALL_PIN_NC1_1BB 16
 
-void hw_ctrl_setup(void);
+void hw_ctrl_setup(uint8_t hw_revision);
 
 /**
  * Get the state of the hall sensor

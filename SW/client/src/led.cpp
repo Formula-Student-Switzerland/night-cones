@@ -17,18 +17,34 @@
 #ifndef LED_EMULATION
 
 uint8_t led_state[LED_COUNT * 3];
-Adafruit_NeoPixel leds(LED_COUNT+1, LED_PIN, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel leds(LED_COUNT+1, -1, NEO_GRB + NEO_KHZ800);
 
 /**
  * Setup the On-Board LED and the LED Strip. Turn off all LEDs.
  *
  */
-void led_setup(void)
+void led_setup(uint8_t hw_revision)
 {
   pinMode(LED_ESP_PIN, OUTPUT);
+  switch (hw_revision)
+  {
+  case 1:
+    leds.setPin(LED_PIN_NC1_1AA);
+    Serial.print("Configured LED on PIN 15\n");
+    break;
+  case 2:
+    leds.setPin(LED_PIN_NC1_1BB);
+    break;
+
+  default:
+    leds.setPin(-1);
+    break;
+  }
+
   leds.begin();
   led_clear();
   leds.setPixelColor(20, leds.Color(255,255,255));
+  
 }
 
 /**
