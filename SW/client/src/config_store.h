@@ -61,4 +61,6 @@ int config_store_read(void);
 int config_store_store(void);
 int config_store_storeHW(void);
 
+int config_store_get_external(void);
+
 #endif

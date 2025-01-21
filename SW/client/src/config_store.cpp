@@ -239,3 +239,16 @@ int config_store_storeHW(void)
     }
     return result;
 }
+
+/**
+ * Used to query, if an external EEPROM is detected.
+ * Returns 1 of an external EEPROM is fitted. 
+ * Returns 0 if the internal EEPROM is used.
+ *
+ * @return Returns EEPROM selection
+ *
+ */
+int config_store_get_external(void)
+{
+    return externalEEprom;    
+}

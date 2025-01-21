@@ -340,8 +340,9 @@ void wifi_tx_settings(IPAddress server_ip) {
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_DEBUG4] = 0;  
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_FRAME_ERROR] = wifi_frame_errors;  
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_FRAME_ORDER_ERROR] = wifi_frame_order_error;  
-    wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_SAVE_EEPROM] = 0;
+    wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_SAVE_EEPROM] = config_store_get_external();
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_IDENT_MODE] = 0;
+    
     
   
     Udp.beginPacket(server_ip, WIFI_UDP_TX_PORT);
