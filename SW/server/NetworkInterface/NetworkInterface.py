@@ -21,6 +21,8 @@ class NetworkInterface:
         self._socket.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
         self._socket.settimeout(10)
         self._NCMessage.ZeroTime = time.time()*1000;
+        print(self._socket.getsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF))
+        
         pass
         
     def getAdpaterList(self):
@@ -64,11 +66,13 @@ class NetworkInterface:
         frame = self._NCMessage.packDataFrame(data)
         self._socket.sendto(frame, (self._currentIP, self._UDP_TX_PORT));
    
-    def sendConfigData(self, ip, data_tuples):
-        ''' ip:             ip to send this data to
-            data_tuples:    list of data tuples
+    def sendConfigData(self, data_tuples, ip=''):
+        ''' data_tuples:    list of data tuples
+            ip:             ip to send this data to
         
         '''
+        if(ip == ''):
+            ip =self._currentIP
         frame = self._NCMessage.packConfigFrame(data_tuples)
         self._socket.sendto(frame, (ip, self._UDP_TX_PORT))
    

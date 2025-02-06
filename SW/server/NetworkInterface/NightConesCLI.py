@@ -4,6 +4,7 @@ import cmd
 #import readline
 import threading
 from datetime import datetime
+import time
 
 class NightConesCLI(cmd.Cmd):
     
@@ -131,8 +132,38 @@ class NightConesCLI(cmd.Cmd):
             tuple = (data[0],data[1]);
             data_tuples.append(tuple)            
         
-        self._networkif.sendConfigData(ip,data_tuples)
+        self._networkif.sendConfigData(data_tuples,ip)
         
+        
+    def do_NumberAllCones(self, line):
+        ''' Number all cones with the ID according to their serial number.  
+        
+            if a number is given as argument, set all cones to that number '''
+        if(len(line)>0):
+            id = int(line)
+            self._networkif.sendConfigData([(3,id)])
+        else:
+            for i in range(1,100):
+                try:
+                    self._networkif.sendConfigData([(3,i)],F"Night-cone-{i:06d}.local")
+                    print(F"Successfully set Cone {i}", end="\r")
+                except:
+                    print(F"Failed to set Cone    {i}", end="\r")
+                    pass
+     
+    def do_Rainbow(self, line):
+        if(len(line)>0):
+            max_id = int(line)
+        else:
+            max_id = 255
+        cone_values = []
+        for i in range(0,max_id):  
+            data = [int(255*i/max_id),15,NightConesMessage.NightConesMessage.LightMode(6),10,int(255*i/max_id)]  
+            cone_values.append(data)
+        for i in range(1,10):
+            self._networkif.sendDataFrame(cone_values)  
+            time.sleep(0.1)
+
         
     def _rx_thread(self):
         ''' Runs the RX Function to print received packages.'''
@@ -140,7 +171,8 @@ class NightConesCLI(cmd.Cmd):
             try:
                 message,addr = self._networkif._rx_package()
                 print(F"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}{addr} : {message}")
-            except:
+            except Exception as e: 
+                #print(e)                
                 pass
 
 if __name__ == "__main__":

@@ -1,0 +1,1 @@
+python .\espota.py -i 192.168.10.101 -p 13894 -a NC_update -f .\.pio\build\nodemcuv2_ota\firmware.elf -r
