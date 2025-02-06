@@ -187,7 +187,7 @@ void wifi_rx_frame(void)
 #ifdef DEBUG
         Serial.printf("Received %d bytes from %s, port %d\r\n", packetSize, Udp.remoteIP().toString().c_str(), Udp.remotePort());
 #endif
-        int len = Udp.read(wifi_rx_buffer, 255);
+        int len = Udp.read(wifi_rx_buffer, WIFI_RX_BUFFER_SIZE);
         if(len == 0) {
 #ifdef DEBUG
             printf("Received Empty Frame\r\n");
