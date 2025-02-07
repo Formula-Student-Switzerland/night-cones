@@ -158,7 +158,7 @@ class NightConesMessage:
             byte1 = (data[i][1]<<4)+ (int(data[i][2].value)&0xF)
             frame += (struct.pack(self._DATA_FRAME_DEFINITION,data[i][0], byte1, data[i][3],data[i][4]))
 
-        self._dataframecounter = self._dataframecounter + 1;
+        self._dataframecounter = (self._dataframecounter + 1)%256;
         return frame
     
     def packConfigFrame(self,datatuples):

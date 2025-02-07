@@ -163,6 +163,111 @@ class NightConesCLI(cmd.Cmd):
         for i in range(1,10):
             self._networkif.sendDataFrame(cone_values)  
             time.sleep(0.1)
+            
+            
+    def do_Demo(self, line):
+        ''' Demo Programm to include all light modes
+        
+        '''
+        br = 8
+        max_id = 90
+        cone_values = []
+        # Steady -------------------------------------------------
+        print("Set Steady Colors")
+        for color in [31, 96, 192, 255]:
+            cone_values=[[color,br,NightConesMessage.NightConesMessage.LightMode(0),0,0]]*max_id
+            #cone_values = max_id*cone_values
+            for i in range(1,10):
+                self._networkif.sendDataFrame(cone_values)  
+                time.sleep(0.1)
+        # Flashing uniform 1 ------------------------------------------
+        print("Flash with uniform color")
+        for color in [31, 96, 192, 255]:
+            cone_values=[[color,br,NightConesMessage.NightConesMessage.LightMode(1),10,0]]*max_id
+            #cone_values = max_id*cone_values
+            for i in range(1,10):
+                self._networkif.sendDataFrame(cone_values)  
+                time.sleep(0.1)
+        # Flashing uniform 2 25% ------------------------------------------
+        print("Flash blue with 25% Duty")
+        color = 31
+        cone_values=[[color,br,NightConesMessage.NightConesMessage.LightMode(2),10,0]]*max_id
+        #cone_values = max_id*cone_values
+        for i in range(1,10):
+            self._networkif.sendDataFrame(cone_values)  
+            time.sleep(0.1)
+        
+        # Rainbow Flashing outwards ------------------------------------------
+        print("Flash in rainbow colors with increasing phaseshift")
+        for phase in range(0,255,25):
+            cone_values = []
+            for i in range(0,max_id):  
+                data = [int(255*i/max_id),br,NightConesMessage.NightConesMessage.LightMode(2),10,int(phase*i/max_id)]  
+                cone_values.append(data)
+            for i in range(1,10):
+                self._networkif.sendDataFrame(cone_values)  
+                time.sleep(0.1)
+                
+         # Rainbow Fading inwards ------------------------------------------
+        print("Fade in rainbow colors with decreasing phaseshift")
+        for phase in range(255,0,-25):
+            cone_values = []
+            for i in range(0,max_id):  
+                data = [int(255*i/max_id),br,NightConesMessage.NightConesMessage.LightMode(6),10,int(phase*i/max_id)]  
+                cone_values.append(data)
+            for i in range(1,10):
+                self._networkif.sendDataFrame(cone_values)  
+                time.sleep(0.1)
+                
+        # circle single color ------------------------------------------
+        print("Circulate with a single color with increasing speed")
+        cone_values = []
+        for i in range(0,max_id):  
+            data = [color,br,NightConesMessage.NightConesMessage.LightMode(4),int(255*i/max_id),0]  
+            cone_values.append(data)
+        for i in range(1,30):
+            self._networkif.sendDataFrame(cone_values)  
+            time.sleep(0.1)
+            
+        # circle smooth single color ------------------------------------------
+        print("Smooth circling with a single color")
+        cone_values = []
+        for i in range(0,max_id):  
+            data = [color,br,NightConesMessage.NightConesMessage.LightMode(5),int(255*i/max_id),0]  
+            cone_values.append(data)
+        for i in range(1,30):
+            self._networkif.sendDataFrame(cone_values)  
+            time.sleep(0.1)
+            
+        # All Yellow ------------------------------------------
+        print("Set all cones to yellow")
+        cone_values = []
+        for i in range(0,max_id):  
+            data = [138,br,NightConesMessage.NightConesMessage.LightMode(0),0,0]  
+            cone_values.append(data)
+        for i in range(1,10):
+            self._networkif.sendDataFrame(cone_values)  
+            time.sleep(0.1)
+            
+        # Ident------------------------------------------  
+        print("Set Cone 27 to ident")
+        data = [0,0,NightConesMessage.NightConesMessage.LightMode(9),0,0]  
+        cone_values[27] = data
+        for i in range(1,50):
+            self._networkif.sendDataFrame(cone_values)  
+            time.sleep(0.1)
+            
+        # Turn down------------------------------------------   
+        print("Set all cones to yellow on low brightness")
+        cone_values=[[138,1,NightConesMessage.NightConesMessage.LightMode(0),0,0]]*max_id
+        #cone_values = max_id*cone_values
+        for i in range(1,10):
+            self._networkif.sendDataFrame(cone_values)  
+            time.sleep(0.1)
+        
+        
+
+        
 
         
     def _rx_thread(self):
