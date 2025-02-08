@@ -20,6 +20,6 @@ void sync_setup(uint16_t led_period);
 bool sync_loop(uint32_t* time);
 void sync_reconfigure(uint8_t repetition_time, uint8_t phase_shift);
 void sync_synchronize(uint32_t rx_timestamp);
-
+void sync_print_PTP_status(void);
 
 #endif
