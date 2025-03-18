@@ -15,6 +15,8 @@
 #include "lightmodes.h"
 #include "config_store.h"
 #include "hw_ctrl.h"
+#include <Esp.h>
+#include <user_interface.h>
 
 #ifdef CLI_ENABLED
 
@@ -32,6 +34,7 @@ void cmd_readEEPROM(void);
 void cmd_setSerialNo(void);
 void cmd_led_fallback_store(void);
 void cmd_turnOff(void);
+void cmd_rstInfo(void);
 
 // List of functions pointers corresponding to each command
 void (*cmd_func[])(void){
@@ -41,7 +44,8 @@ void (*cmd_func[])(void){
     &cmd_saveEEPROM,
     &cmd_readEEPROM,
     &cmd_setSerialNo, 
-    &cmd_turnOff};
+    &cmd_turnOff, 
+    &cmd_rstInfo};
 
 // List of command names
 const char *cmd_str[] = {
@@ -51,7 +55,8 @@ const char *cmd_str[] = {
     "saveEEPROM",
     "readEEPROM",
     "setSerialNo", 
-    "turnOff"};
+    "turnOff", 
+    "rstInfo"};
 
 int num_commands = sizeof(cmd_str) / sizeof(char *);
 #endif
@@ -259,5 +264,29 @@ void cmd_turnOff (void)
 {
     Serial.printf("Goodbye!\r\n");
     hw_ctrl_turn_off();
+}
+
+
+/**
+ * Prints the reset information from the system.
+ *  
+ */
+void cmd_rstInfo(void)
+{
+    struct rst_info *rtc_info = ESP.getResetInfoPtr();
+    Serial.printf("reset	reason:	%x\n", rtc_info->reason);
+
+    if(rtc_info->reason	==	REASON_WDT_RST	||
+	 	 rtc_info->reason	==	REASON_EXCEPTION_RST	||
+	 	 rtc_info->reason	==	REASON_SOFT_WDT_RST)	
+    {
+
+    if(rtc_info->reason	==	REASON_EXCEPTION_RST)
+    {
+        Serial.printf("Fatal	exception	(%d):\n", rtc_info->exccause);
+    }
+    Serial.printf("epc1=0x%08x,	epc2=0x%08x,	epc3=0x%08x,	excvaddr=0x%08x, depc=0x%08x\n",
+                  rtc_info->epc1, rtc_info->epc2, rtc_info->epc3, rtc_info->excvaddr, rtc_info->depc);
+    }
 }
 #endif
