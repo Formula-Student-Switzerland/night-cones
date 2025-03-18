@@ -15,6 +15,8 @@
 #include "lightmodes.h"
 #include "config_store.h"
 #include "hw_ctrl.h"
+#include <Esp.h>
+#include <user_interface.h>
 
 #ifdef CLI_ENABLED
 
@@ -271,8 +273,8 @@ void cmd_turnOff (void)
  */
 void cmd_rstInfo(void)
 {
-    struct	rst_info	*rtc_info	=	system_get_rst_info();
-    Serial.println("reset	reason:	%x\n",	rtc_info->reason);
+    struct rst_info *rtc_info = ESP.getResetInfoPtr();
+    Serial.printf("reset	reason:	%x\n", rtc_info->reason);
 
     if(rtc_info->reason	==	REASON_WDT_RST	||
 	 	 rtc_info->reason	==	REASON_EXCEPTION_RST	||
@@ -281,10 +283,10 @@ void cmd_rstInfo(void)
 
     if(rtc_info->reason	==	REASON_EXCEPTION_RST)
     {
-        Serial.println("Fatal	exception	(%d):\n",	rtc_info->exccause);
+        Serial.printf("Fatal	exception	(%d):\n", rtc_info->exccause);
     }
-    Serial.println("epc1=0x%08x,	epc2=0x%08x,	epc3=0x%08x,	excvaddr=0x%08x, depc=0x%08x\n",
-	 	 	 	 rtc_info->epc1,	rtc_info->epc2,	rtc_info->epc3,	rtc_info->excvaddr,	rtc_info->depc);
-	}
+    Serial.printf("epc1=0x%08x,	epc2=0x%08x,	epc3=0x%08x,	excvaddr=0x%08x, depc=0x%08x\n",
+                  rtc_info->epc1, rtc_info->epc2, rtc_info->epc3, rtc_info->excvaddr, rtc_info->depc);
+    }
 }
 #endif
