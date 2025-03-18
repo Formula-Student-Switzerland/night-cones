@@ -175,4 +175,5 @@ HW/scripts/*.png
 __pycache__
 
 **/*/credentials.h
+**/*/lib
 

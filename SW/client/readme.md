@@ -1,1 +1,2 @@
-python .\espota.py -i 192.168.10.101 -p 13894 -a NC_update -f .\.pio\build\nodemcuv2_ota\firmware.elf -r
+python .\espota.py -i 192.168.10.101 -p 13894 -a NC_update -f .\.pio\build\nodemcuv2_ota\firmware.bin -r
+python .\espota.py -i Night-Cone-000015.local -p 13894 -a NC_update -f .\.pio\build\nodemcuv2_ota\firmware.bin -r
