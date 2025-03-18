@@ -73,7 +73,13 @@ void config_store_upgrade(config_store_t *temp)
         temp->user_settings.fallback_color = 0x8A;
         temp->user_settings.fallback_phase = 0x0;
         temp->user_settings.fallback_repetition_time = 0x0;
-        break;
+        
+    case 0x1:
+        temp->turn_off_voltage_mv = 0;
+        temp->ip_address = 0xC0A80000 | temp->hardware_data.serial_number;// 192.168.XX.XX
+        temp->subnet = 0xFFFF0000;
+        temp->gateway = IPAddress(192,168,0,1); 
+
     default:
         break;
     }

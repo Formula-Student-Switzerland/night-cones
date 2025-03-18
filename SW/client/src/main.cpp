@@ -96,10 +96,17 @@ void loop()
       led_show(led_state);
     }
   }
-  if (config_store.user_settings.status_refresh_period_ms != 0 && (currentMillis % config_store.user_settings.status_refresh_period_ms == 0))
-  {
+  
+  if(currentMillis % 1000==0){
     // Measure temperature and battery voltage
     adc_loop();
+    // if the voltage measured is smaller than the turn off threshold, it is turned off. 
+    if(config_store.user_settings.turn_off_voltage_mv > adc_volt_meas)
+        hw_ctrl_turn_off();
+  }
+  
+  if (config_store.user_settings.status_refresh_period_ms != 0 && (currentMillis % config_store.user_settings.status_refresh_period_ms == 0))
+  { // Transmit the status frame
     wifi_status_transmit();
   }
 }

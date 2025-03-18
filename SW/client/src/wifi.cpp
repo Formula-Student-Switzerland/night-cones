@@ -78,6 +78,17 @@ enum wifi_config_store_ids
     WIFI_CONFIG_ID_FRAME_ERROR,
     WIFI_CONFIG_ID_FRAME_ORDER_ERROR,
     WIFI_CONFIG_ID_IDENT_MODE,
+    WIFI_CONFIG_ID_TURNOFF_VOLTAGE,
+    WIFI_CONFIG_ID_IP_ADDRESS,
+    WIFI_CONFIG_ID_IP_GATEWAY,
+    WIFI_CONFIG_ID_IP_SUBNET,
+    WIFI_CONFIG_ID_RST_INFO_1,
+    WIFI_CONFIG_ID_RST_INFO_2,
+    WIFI_CONFIG_ID_RST_INFO_3,
+    WIFI_CONFIG_ID_RST_INFO_4,
+    WIFI_CONFIG_ID_RST_INFO_5,
+    WIFI_CONFIG_ID_RST_INFO_6,
+    WIFI_CONFIG_ID_RST_INFO_7,
     WIFI_CONFIG_ID_END
 };
 
@@ -129,21 +140,25 @@ void wifi_tx_status(IPAddress server_ip);
 int wifi_setup(void) {
     // Wifi Setup
     WiFi.mode(WIFI_STA);
+    // Set static IP, if IP address is set.
+    if(config_store.user_settings.ip_address != 0 ){
+        WiFi.config(config_store.user_settings.ip_address, config_store.user_settings.gateway, config_store.user_settings.subnet)
+    }
     WiFi.begin(CRED_WIFI_SSID, CRED_WIFI_PW);
     
-    int wifi_attempt = 0;
+    //int wifi_attempt = 0;
     // Signal start of connection
     led_esp_blink(LED_ESP_FREQ_ON, 2);
     
     //delay(1000);
 
     // Check what this code excatly does and if it works as intended
-    while (WiFi.waitForConnectResult() != WL_CONNECTED && wifi_attempt < WIFI_ATTEMPTS) {
+    while (WiFi.waitForConnectResult() != WL_CONNECTED /*&& wifi_attempt < WIFI_ATTEMPTS*/) {
       Serial.printf("Connection Failed! Rebooting...\r\n");
       Serial.flush();
       delay(5000);
       ESP.restart();
-      wifi_attempt++;
+      //wifi_attempt++;
     }
 
     // Check Wifi and init OTA.
@@ -303,10 +318,22 @@ uint32_t wifi_rx_handle_config(wifi_xtx_config_frame_t* rx_frame, uint16_t lengt
                 config_store_store();
                 break;
             case WIFI_CONFIG_ID_IDENT_MODE:
-                if(value ==1 )
+                if(value == 1)
                     lightmode_activate_ident();
                 else
                     lightmode_deactivate_ident();
+                break;
+            case WIFI_CONFIG_ID_TURNOFF_VOLTAGE:
+                config_store.user_settings.turn_off_voltage_mv;
+                break;
+            case WIFI_CONFIG_ID_IP_ADDRESS:
+                config_store.user_settings.ip_address = value;
+                break;
+            case WIFI_CONFIG_ID_IP_GATEWAY
+                config_store.user_settings.gateway = value;
+                break;      
+            case WIFI_CONFIG_ID_IP_SUBNET:
+                config_store.user_settings.subnet = value;
                 break;
             default: 
                 return 1;
@@ -343,7 +370,11 @@ void wifi_tx_settings(IPAddress server_ip) {
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_SAVE_EEPROM] = config_store_get_external();
     wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_IDENT_MODE] = 0;
     
-    
+    uint32_t rst_info* = system_get_rst_info();
+    for(int i=0; i<7; i++)
+    {
+        wifi_cts_config_frame->data.values[WIFI_CONFIG_ID_RST_INFO_1+i] = rst_info[i];
+    }
   
     Udp.beginPacket(server_ip, WIFI_UDP_TX_PORT);
     Udp.write(wifi_cts_config_frame->frame,sizeof(wifi_frame_header_t)+4*WIFI_CONFIG_ID_END);

@@ -13,12 +13,12 @@
 #include <stdint.h>
 
 #define CONFIG_STORE_SW_REV_MAJ 0x1
-#define CONFIG_STORE_SW_REV_MIN 0x00
+#define CONFIG_STORE_SW_REV_MIN 0x01
 
-#define CONFIG_STORE_PSVN 0x1 // Version of the persistant storage
+#define CONFIG_STORE_PSVN 0x2 // Version of the persistant storage
 
 #define CONFIG_STORE_HARDWARE_DATA_SIZE 20
-#define CONFIG_STORE_USER_SETTINGS_SIZE 28
+#define CONFIG_STORE_USER_SETTINGS_SIZE 44
 
 
 typedef struct{
@@ -34,6 +34,10 @@ typedef struct{
     uint8_t fallback_phase;
     uint8_t fallback_repetition_time;
     uint16_t status_refresh_period_ms;
+    uint16_t turn_off_voltage_mv;
+    uint32_t ip_address;
+    uint32_t subnet;
+    uint32_t gateway; 
 } user_settings_t;
 
 
