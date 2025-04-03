@@ -76,11 +76,11 @@ class NightConesCLI(cmd.Cmd):
         except:
             data = []
             #data.append(int(input("Select Cone ID: ")))
-            data.append(max(0,min(255,int(input("Select Color [0-255]: ")))))
-            data.append(max(0,min(15,int(input("Select Brightness [0-15]: ")))))
-            data.append(NightConesMessage.NightConesMessage.LightMode(max(0,min(15,int(input("Select Light Mode [0-15]: "))))))
-            data.append(max(0,min(255,int(input("Select Frequency [0-255]: ")))))
-            data.append(max(0,min(255,int(input("Select Phase [0-255]: ")))))
+            data.append(max(0,min(255,int(input("Select Color [0-255]: ").strip() or "0"))))
+            data.append(max(0,min(15,int(input("Select Brightness [0-15]: ").strip() or "0"))))
+            data.append(NightConesMessage.NightConesMessage.LightMode(max(0,min(15,int(input("Select Light Mode [0-15]: ").strip() or "0")))))
+            data.append(max(0,min(255,int(input("Select Frequency [0-255]: ").strip() or "0"))))
+            data.append(max(0,min(255,int(input("Select Phase [0-255]: ").strip() or "0"))))
             
         self._networkif.sendDataFrame([data])  
         
