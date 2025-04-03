@@ -31,4 +31,6 @@ uint8_t hw_ctrl_get_hall_state(void);
 void hw_ctrl_turn_off(void);
 
 
+
+
 #endif

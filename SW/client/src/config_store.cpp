@@ -38,14 +38,16 @@ void config_store_setup(void)
     i2c_eeprom_set_memory_size(CONFIG_STORE_EEPROM_SIZE);
     i2c_eeprom_set_page_size(CONFIG_STORE_EEPROM_PAGE_SIZE);
 
-    if(i2c_eeprom_is_ready()){
+    if (i2c_eeprom_is_ready())
+    {
         externalEEprom = true;
-    } else {
+    }
+    else
+    {
         externalEEprom = false;
         EEPROM.begin(CONFIG_STORE_EEPROM_USED_SIZE);
     }
     config_store_read();
-
 }
 
 /**
@@ -73,7 +75,15 @@ void config_store_upgrade(config_store_t *temp)
         temp->user_settings.fallback_color = 0x8A;
         temp->user_settings.fallback_phase = 0x0;
         temp->user_settings.fallback_repetition_time = 0x0;
-        break;
+
+    case 0x1:
+        temp->user_settings.turn_off_voltage_mv = 0;
+        temp->user_settings.ip_address = 0x0000A8C0 |
+                                         ((temp->hardware_data.serial_number & 0xFF) << 24) |
+                                         ((temp->hardware_data.serial_number & 0xFF00) << 8); // 192.168.XX.XX
+        temp->user_settings.subnet = 0x0000FFFF;
+        temp->user_settings.gateway = 0x0100A8C0; // 192.168.0.1 in reversed order
+
     default:
         break;
     }
@@ -117,16 +127,19 @@ int config_store_read(void)
 {
     config_store_t temp;
     uint32_t crc;
-    if(externalEEprom){
+    if (externalEEprom)
+    {
         if (i2c_eeprom_read(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS, (uint8_t *)&temp,
-                        CONFIG_STORE_EEPROM_USED_SIZE))
+                            CONFIG_STORE_EEPROM_USED_SIZE))
         {
 #ifdef DEBUG
             printf("Reading EEPROM failed\n!");
 #endif
             return -1;
         }
-    } else {
+    }
+    else
+    {
         EEPROM.get(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS, temp);
     }
 
@@ -184,12 +197,13 @@ int config_store_store(void)
     uint8_t result = 0;
     config_store.user_settings_crc = config_store_crc32b((uint8_t *)&config_store.user_settings, CONFIG_STORE_USER_SETTINGS_SIZE);
 
-    if(externalEEprom){
+    if (externalEEprom)
+    {
         for (uint8_t i = 0; i < CONFIG_STORE_USER_SETTINGS_SIZE + 4; i += 8)
         {
-        
+
             result += i2c_eeprom_read(CONFIG_STORE_EEPROM_USER_SETTIGS_BASE_ADDRESS + i, buffer, 8);
-        
+
             // Only write page if needed.
             if (memcmp(buffer, ((uint8_t *)&config_store.user_settings) + i, 8) != 0)
             {
@@ -198,13 +212,15 @@ int config_store_store(void)
 #endif
                 result += i2c_eeprom_write(CONFIG_STORE_EEPROM_USER_SETTIGS_BASE_ADDRESS + i, ((uint8_t *)&config_store.user_settings) + i, 8);
             }
-        } 
-    } else {
+        }
+    }
+    else
+    {
         EEPROM.put(CONFIG_STORE_EEPROM_USER_SETTIGS_BASE_ADDRESS, config_store.user_settings);
         EEPROM.put(CONFIG_STORE_EEPROM_USER_SETTIGS_BASE_ADDRESS + CONFIG_STORE_USER_SETTINGS_SIZE, config_store.user_settings_crc);
         EEPROM.commit();
     }
- 
+
     return result;
 }
 
@@ -221,7 +237,8 @@ int config_store_storeHW(void)
     uint8_t result = 0;
     config_store.hardware_data_crc = config_store_crc32b((uint8_t *)&config_store.hardware_data, CONFIG_STORE_HARDWARE_DATA_SIZE);
 
-    if(externalEEprom) {
+    if (externalEEprom)
+    {
         for (uint8_t i = 0; i < CONFIG_STORE_EEPROM_HEADER_SIZE + CONFIG_STORE_HARDWARE_DATA_SIZE + 4; i += 8)
         {
             result += i2c_eeprom_read(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS + i, buffer, 8);
@@ -231,7 +248,9 @@ int config_store_storeHW(void)
                 result += i2c_eeprom_write(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS + i, ((uint8_t *)&config_store) + i, 8);
             }
         }
-    } else {
+    }
+    else
+    {
         EEPROM.put(CONFIG_STORE_EEPROM_HEADER_BASE_ADDRESS, config_store.psvn);
         EEPROM.put(CONFIG_STORE_EEPROM_HARDWARE_DATA_BASE_ADDRESS, config_store.hardware_data);
         EEPROM.put(CONFIG_STORE_EEPROM_HARDWARE_DATA_BASE_ADDRESS + CONFIG_STORE_HARDWARE_DATA_SIZE, config_store.hardware_data_crc);
@@ -242,7 +261,7 @@ int config_store_storeHW(void)
 
 /**
  * Used to query, if an external EEPROM is detected.
- * Returns 1 of an external EEPROM is fitted. 
+ * Returns 1 of an external EEPROM is fitted.
  * Returns 0 if the internal EEPROM is used.
  *
  * @return Returns EEPROM selection
@@ -250,5 +269,5 @@ int config_store_storeHW(void)
  */
 int config_store_get_external(void)
 {
-    return externalEEprom;    
+    return externalEEprom;
 }

@@ -32,7 +32,7 @@ const long LED_UPDATE_INTERVAL = 25;  // initial interval at which to blink (mil
 void setup() {
   // Setup Hardware
   Serial.begin(115200);
-  delay(2000);
+  //delay(2000);
   config_store_setup();
   hw_ctrl_setup(config_store.hardware_data.hardware_revision);
   adc_setup();
@@ -49,7 +49,7 @@ void setup() {
   lightmode_step(0, led_state); // Is used to activate the lightmode
   led_show(led_state);
 
-  delay(500);
+  //delay(500);
   wifi_setup();
   // Switch to default lightmode
   led_show(led_state);
@@ -96,10 +96,17 @@ void loop()
       led_show(led_state);
     }
   }
-  if (config_store.user_settings.status_refresh_period_ms != 0 && (currentMillis % config_store.user_settings.status_refresh_period_ms == 0))
-  {
+  
+  if(currentMillis % 1000==0){
     // Measure temperature and battery voltage
     adc_loop();
+    // if the voltage measured is smaller than the turn off threshold, it is turned off. 
+    if(config_store.user_settings.turn_off_voltage_mv > adc_volt_meas)
+        hw_ctrl_turn_off();
+  }
+  
+  if (config_store.user_settings.status_refresh_period_ms != 0 && (currentMillis % config_store.user_settings.status_refresh_period_ms == 0))
+  { // Transmit the status frame
     wifi_status_transmit();
   }
 }
