@@ -109,4 +109,6 @@ void loop()
   { // Transmit the status frame
     wifi_status_transmit();
   }
+
+  yield();
 }

@@ -13,7 +13,7 @@
 #include <stdint.h>
 
 #define CONFIG_STORE_SW_REV_MAJ 0x1
-#define CONFIG_STORE_SW_REV_MIN 0x01
+#define CONFIG_STORE_SW_REV_MIN 0x02
 
 #define CONFIG_STORE_PSVN 0x2 // Version of the persistant storage
 

@@ -147,6 +147,7 @@ int wifi_setup(void)
 {
     // Wifi Setup
     WiFi.mode(WIFI_STA);
+    //WiFi.setPhyMode(WIFI_PHY_MODE_11N);
     // Set static IP, if IP address is set.
     if (config_store.user_settings.ip_address != 0)
     {

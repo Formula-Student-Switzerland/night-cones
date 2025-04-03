@@ -7,6 +7,7 @@
 /*
  * This file is used to control the on-board LED and the led Strip on the
  * nightcone.
+ */
 /*******************************************************************************/
 
 #include <stdint.h>
