@@ -476,6 +476,9 @@ The turn-off with a magnet using the hall sensor is unreliable. This is caused b
 \subsubsection{EEPROM not accessible}
 No pull-up resistors are placed on the \ac{I2C} lines and the internal pull-up resistors of the ESP module are too weak. Additional pull-up resistors are to be placed from SDA and SCL to +3V3. 
 
+\subsubsection{Software shut-down not working}
+The software shut-down does not work, because the voltage that is generated on the \ac{MOSFET} Q10 is insufficient to shut down the \qty{5.2}{\volt} converter. This reduction in voltage is caused by the voltage divider that is formed with the resistors R9 and R110. R9 can not be removed, as it is essential for allow automated testing of the shutdown circuit. The resistor R110 is replaced with a schottky diode 1N5819WS. 
+
 \subsection{Modifications from index BB to index CA}
 
 \subsubsection{Level shifter distorts duty cycle}
