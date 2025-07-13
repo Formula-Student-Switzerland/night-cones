@@ -1,4 +1,7 @@
-# night-cones
+# FSCH Night-Cones
+![FSCH night-cones](https://github.com/Formula-Student-Switzerland/night-cones/releases/download/NC1-1BA/SampleImage.jpg)
+
+The FSCH Night-Cones are ESP8266 controlled RGB lights for the illumination of a formula student track. The project is described in detail in the documentation available in the `doc` folder. 
 
 ## Hardware
 
@@ -53,3 +56,9 @@ Testadapter for automated PCB test of the main nightcone PCB NC1-1. Only index N
 
 #### NC1-3
 Programming adapter to program the nightcone PCB standalone as well as mounted in the enclosure. To program, a USB-A to UAB-B cable and a 6-pin RJ-11 TagConnect cable are required. 
+
+### Housing
+The current housing is designed to be printed out of transparent PETG. It consists of three parts that are printed independently and glued together afterwards. 
+
+## Software
+The current software state includes a running software on the cone. Currently, there exists no software running on server side. 

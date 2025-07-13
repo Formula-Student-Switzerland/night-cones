@@ -15,18 +15,18 @@ class NightConesMessage:
     1	    1 Byte	Frame Type
     2	    1 Byte	Frame Number (The frame number is used for frame type 0 to identifiy lost packets. The 8-bit overflowing counter is incremented with every frame. )
     3	    1 Byte	Reserve
-    4-7	    4 Byte	Reserved
-    8-15	8 Byte	Timestamp (The current UNIX Timestamp to synchronize the cones (ms).)
+    4-7	    4 Byte	Timestamp (The current UNIX Timestamp to synchronize the cones (ms).)
     '''
-    _HEADER_STRING = "BBBxxxxxQ"
+    _HEADER_STRING = "BBBxI"
+    _HEADER_LENGTH = 8
     _VERSION = 1;
     
     ''' Frame Types
         Host to Client Types'''
     _DATA_FRAME = 0	#Data Frame with current color data
     _CONFIG_FRAME = 1	#Config Frame for setting various parameters on the cone
-    _DATAREQUEST_FRAME = 2	#Data Request frame to request data from any cone it is sent to. 
-    _CONFIGREQUEST_FRAME = 3	#Data Request frame to request data from any cone it is sent to. 
+    _DATAREQUEST_FRAME = 3	#Data Request frame to request data from any cone it is sent to. 
+    _CONFIGREQUEST_FRAME = 2	#Data Request frame to request data from any cone it is sent to. 
 
     '''Client to Host Types'''
     _DATARESPONSE_FRAME = 128	#Data Request Response from cone to Host
@@ -35,17 +35,17 @@ class NightConesMessage:
 
     '''
     Data Frame Definition
-    16	1 Byte	Color (Encoding: see below)
-    17	4 Bit	Brightness
-    17	4 Bit 	Light mode
-    18	1 Byte	Repetition time [x100ms]
-    19	1 Byte	Phase shift (0..255 scaled through repetition time)
+    8 	1 Byte	Color (Encoding: see below)
+    9 	4 Bit	Brightness
+    9	4 Bit 	Light mode
+    10	1 Byte	Repetition time [x100ms]
+    11	1 Byte	Phase shift (0..255 scaled through repetition time)
             
-    20	1 Byte	Color (Cone 1)
-    21	4 Bit	Brightness (Cone 1)
-    21	4 Bit	Light mode (Cone 1)    
-    22	1 Byte	Repetition time [x100ms] (Cone 1)
-    23	1 Byte	Phase shift (0..255 scaled through repetition time) (Cone 1)
+    12	1 Byte	Color (Cone 1)
+    13	4 Bit	Brightness (Cone 1)
+    13	4 Bit	Light mode (Cone 1)    
+    14	1 Byte	Repetition time [x100ms] (Cone 1)
+    15	1 Byte	Phase shift (0..255 scaled through repetition time) (Cone 1)
 
 '''
     _DATA_FRAME_DEFINITION = "BBBB"
@@ -71,55 +71,49 @@ class NightConesMessage:
     '''
     Cone Data Response Definition
     Byte	Size	Usage (description below)
-    0-15	16 Byte	Header
+    0-7	8 Byte	Header
 
-    16-17	2 Byte	ID
-    18	    1 Byte	SoC (0 → 0%, 255 → 100%)
-    19	    1 Byte	RSSI
-    20-25	6 Byte	MAC Address
-    26-27	2 Byte	Software Version
-    28	    1 Byte	Hardware Revision
-    29	    1 Byte 	Hall Sensor State
+    8-9	2 Byte	ID
+    10	    1 Byte	SoC (0 → 0%, 255 → 100%)
+    11	    1 Byte	RSSI
+    12      1 Byte Temperature
+    13	    1 Byte 	Hall Sensor State
     '''
     
-    _DATA_RESPONSE_DEFINITION = "HBBBBBBBBHBB"
-    DATARESPONSE_TUPLE = namedtuple('DataResponse', 'ID SoC RSSI MAC SWVersion HWRevision Hall')
+    _DATA_RESPONSE_DEFINITION = "HBBbBxx"
+    DATARESPONSE_TUPLE = namedtuple('DataResponse', 'ID SoC RSSI Temp Hall')
     
     '''
     Config Responste Frame Definition
     Byte	Size	Usage (description below)
-    0-15	16 Byte	Header
-    16	    1 Byte	Number of Parameters
-    17-19	3 Byte	Reserved
+    0-7	8 Byte	Header
             
-    20-21	2 Byte	Parameter ID
-    22-23	2 Byte	Reserved because of alignement
-    24-27	4 Byte	Value
+    8-11	4 Byte	Parameter ID
+    12-15	4 Byte	Value
     ...	
     '''
-    _CONFIGRESPONSE_FRAME_SUBHEADER_DEFINITION = "Bxxx"
-    _CONFIGRESPONSE_FRAME_ENTRY_DEFINITION = "i"
+    _CONFIGRESPONSE_FRAME_ENTRY_DEFINITION = "I"
     
     '''
     Config Frame Definition
     Byte	Size	Usage (description below)
-    0-15	16 Byte	Header
+    0-7	8 Byte	Header
             
-    16-17	2 Byte	Parameter ID
-    18-19	2 Byte	Reserved because of alignement
-    20-23	4 Byte	Value
+    8-11	4 Byte	Parameter ID
+    12-15	4 Byte	Value
 '''
-    _CONFIGRESPONSE_FRAME_ENTRY_DEFINITION = "Hxxi"
+    _CONFIGFRAME_FRAME_ENTRY_DEFINITION = "Ii"
     
     def unpackFrame(self, frame) :
         ''' frame: byte array of the message
         
         Unpacks a frame received from the network interface '''
-        header = struct.unpack(self._HEADER_STRING, frame[0:16])
+
+        header = struct.unpack(self._HEADER_STRING, frame[0:self._HEADER_LENGTH])
         match header[1]:
             case self._DATA_FRAME:
                 datalist = []
-                for i in range(16,len(frame),4):
+                for i in range(self._HEADER_LENGTH,len(frame),4):
                     temp = struct.unpack(self._DATA_FRAME_DEFINITION,frame[i:i+4])
                     brightness = temp[1]>>4
                     lightmode_temp = self.LightMode(temp[1] & 0xF)
@@ -129,19 +123,21 @@ class NightConesMessage:
             case self._CONFIG_FRAME:
                 raise NotImplementedError
             case self._CONFIGRESPONSE_FRAME:
-                parameternumber = struct.unpack(self._CONFIGRESPONSE_FRAME_SUBHEADER_DEFINITION, frame[16:20])
                 datalist = []
-                for i in range(20,len(frame),4):
-                    temp, value = struct.unpack(self._DATA_FRAME_DEFINITION,frame[i:i+4])
-                    datalist.append(value)                
+                for i in range(self._HEADER_LENGTH,len(frame),4):
+                    value = struct.unpack(self._CONFIGRESPONSE_FRAME_ENTRY_DEFINITION,frame[i:i+4])
+                    datalist.append(value[0]) 
                 return (header, datalist)
                 
             case self._CONFIGREQUEST_FRAME:
+                raise NotImplementedError;
+                return (header,'')
             case self._DATAREQUEST_FRAME:
+                raise NotImplementedError;
                 return (header,'')
             case self._DATARESPONSE_FRAME:
-                temp = struct.unpack(self._DATA_RESPONSE_DEFINITION,frame[16:])        
-                data=self.DATARESPONSE_TUPLE(temp[0],temp[1],temp[2],(temp[3],temp[4],temp[5],temp[6],temp[7],temp[8]),temp[9],temp[10],temp[11])
+                temp = struct.unpack(self._DATA_RESPONSE_DEFINITION,frame[self._HEADER_LENGTH:])        
+                data=self.DATARESPONSE_TUPLE(temp[0],temp[1],temp[2],temp[3],temp[4])
                 return (header,data)
                 
     
@@ -156,43 +152,45 @@ class NightConesMessage:
         ''' data: List of Cone States consisting of (Color:int, Brightness:int, LightMode:LightMode, Frequency:int, phase:int)
         
         Packs a data frame as specified in the documentation.'''
-        frame = struct.pack(self._HEADER_STRING,self._VERSION, self._DATA_FRAME, self._dataframecounter,int(time.time() * 1000))
-        
+        frame = struct.pack(self._HEADER_STRING,self._VERSION, self._DATA_FRAME, self._dataframecounter,int(time.time()*1000.0 - self.ZeroTime))
+
         for i in range(0,len(data)):
-            byte1 = data[i][1]<<4 + int(data[i][2].value)&0xF
+            byte1 = (data[i][1]<<4)+ (int(data[i][2].value)&0xF)
             frame += (struct.pack(self._DATA_FRAME_DEFINITION,data[i][0], byte1, data[i][3],data[i][4]))
-    
-        self._dataframecounter = self._dataframecounter + 1;
+
+        self._dataframecounter = (self._dataframecounter + 1)%256;
         return frame
     
-    def packConfigFrame(self,datatuple):
-        frame = struct.pack(self._HEADER_STRING,self._VERSION, self._CONFIG_FRAME, 0,int(time.time() * 1000))
+    def packConfigFrame(self,datatuples):
+        frame = struct.pack(self._HEADER_STRING,self._VERSION, self._CONFIG_FRAME, 0,int(time.time() * 1000 - self.ZeroTime))
+        for tuple in datatuples:
+            frame = frame + struct.pack(self._CONFIGFRAME_FRAME_ENTRY_DEFINITION, tuple[0], tuple[1])
         return frame
         
         
     def packConfigRequestFrame(self):
         ''' Creates a Config Request frame.'''
-        frame = struct.pack(self._HEADER_STRING,self._VERSION, self._CONFIGREQUEST_FRAME, 0,int(time.time() * 1000))
+        frame = struct.pack(self._HEADER_STRING,self._VERSION, self._CONFIGREQUEST_FRAME, 0,int(time.time() * 1000 - self.ZeroTime))
         return frame
         
-    def packConfigResponseFrame(self,datalist):
-        ''' datalist: List of parameter values (4 byte int)
-        
-        Creates a Config Response Frame'''
-        frame = struct.pack(self._HEADER_STRING,self._VERSION, self._CONFIG_FRAME, 0,int(time.time() * 1000))
-        frame += struct.pack(self._CONFIGRESPONSE_FRAME_SUBHEADER_DEFINITION,len(datalist))
-        for el in datalist:
-            frame += struct.pack(self._CONFIGRESPONSE_FRAME_ENTRY_DEFINITION, el)
+    #def packConfigResponseFrame(self,datalist):
+    #    ''' datalist: List of parameter values (4 byte int)
+    #    
+    #    Creates a Config Response Frame'''
+    #    frame = struct.pack(self._HEADER_STRING,self._VERSION, self._CONFIG_FRAME, 0,int(time.time() * 1000))
+    #    frame += struct.pack(self._CONFIGRESPONSE_FRAME_SUBHEADER_DEFINITION,len(datalist))
+    #    for el in datalist:
+    #        frame += struct.pack(self._CONFIGRESPONSE_FRAME_ENTRY_DEFINITION, el)
             
     def packDataRequestFrame(self):
         ''' Creates a Data Request frame.'''
-        frame = struct.pack(self._HEADER_STRING,self._VERSION, self._DATAREQUEST_FRAME, 0,int(time.time() * 1000))
+        frame = struct.pack(self._HEADER_STRING,self._VERSION, self._DATAREQUEST_FRAME, 0,int(time.time() * 1000 - self.ZeroTime))
         return frame
     
     def packDataResponseFrame(self,data):
         ''' data: DATARESPONSE_TUPLE of Data
         Creates a Data Response frame.'''
-        frame = struct.pack(self._HEADER_STRING,self._VERSION, self._DATARESPONSE_FRAME, 0,int(time.time() * 1000))
+        frame = struct.pack(self._HEADER_STRING,self._VERSION, self._DATARESPONSE_FRAME, 0,int(time.time() * 1000 - self.ZeroTime))
         frame += struct.pack(self._DATA_RESPONSE_DEFINITION, data[0],  data[1], data[2], data[3][0], data[3][1], data[3][2], data[3][3], data[3][4], data[3][5], data[4], data[5], data[6])
         return frame
 

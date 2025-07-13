@@ -1,2 +1,107 @@
 \section{Firmware}
 
+The software is written in C++ using VS Code as IDE in combination with the PlatformIO extension. However, it is written in C style, not using classes.
+The software is built from various modules described below.
+
+\subsection{adc}
+This module reads out the integrated ADC and switches between both channels after each conversion. The \texttt{adc\_loop} function needs to be called periodically to read out the conversion value. The values are afterwards stored in the variables \texttt{adc\_volt\_meas} and \texttt{adc\_temp\_deg}. 
+
+The battery voltage is stored in millivolt. The temperature is stored in degrees. Additionally the \ac{SoC} is available in \texttt{adc\_soc} in percent. 
+\subsection{cli}
+The command line interface is only used to set the serial number and the hardware revision. The command line interface can be disabled if necessary using the compiler flag \texttt{CLI\_ENABLED}.
+For this, the following commands are available: 
+\begin{itemize}
+	\item \texttt{help}: Prints a message to test the command line interface. 
+	\item \texttt{LED}: Can be used to set the current lightmode. The command takes 4 positional arguments: \texttt{color}, \texttt{brightness}, \texttt{lightmode}, \texttt{repetition time}.
+	\item \texttt{setLEDFallback}: This command can be used to set the fallback (default) lightmode that is used at turn on. It stores the current active lightmode as default. 
+	\item \texttt{saveEEPROM}: Stores the current settings (hardware and user settings part) to the EEPROM. 
+	\item \texttt{readEEPROM}: Reads out the EEPROM again and updates the config storage. 
+	\item \texttt{setSerialNo}: Sets the serial number and the hardware revision to the config storage. To store the values in the EEPROM, \texttt{saveEEPROM} needs to be called. This commands takes the two arguments in decimal: \texttt{[serial number]}, \texttt{[hardware revision]}	
+\end{itemize}
+
+\subsection{config\_store}
+The config storage is used to store data on the EEPROM mounted on nightcones starting with hardware revision \texttt{NC1-1B}. The EEPROM has a block syize of 8 bytes. Therefore the memory layout is aligned to the 8 byte boundaries. The memory consists of three blocks. The first block called header contains information about the config storage itself. The second block called hardware data contains information that can not be changed through the WLAN interface like the serial number and the hardware revision. The third block contains user settings and can be modified through the WLAN interface.  
+
+The memory layout of the config storage is shown below: 
+\begin{table}[ht!]
+\begin{tabular}{|c|l|l|}
+	\textbf{Byte} & \textbf{Name} & \textbf{Description}\\\hline
+	0 & PSVN & Persistent storage version number\\\hline
+	1-7 & Reserved & Reserved for additional header data\\\hline\hline
+	
+	8 & HW Revision & Hardware Revision Code: Currently supported are 0x1 for NC1-1B\\\hline
+	9-10 & Serial Number & Serial number of the Cone. \\\hline
+	11-27 & Reserved & Reserved for future use. \\\hline
+	28-31 & CRC & CRC Checksum for the hardware part.\\\hline\hline
+	
+	32-33 & Cone ID & ID of the cone used for lightmode settings.\\\hline
+	34-35 & Reserved & Reserved for future use. \\\hline
+	36-39 & Fallback Lightmode & The Lightmode that is turned on after start\\\hline
+	40-41 & Status Refresh & Status Refresh period for ADC and status frame in ms. \\\hline
+	42-59 & Reserved & Reserved for future use. \\\hline
+	60-63 & CRC & CRC Checksum for user settings part. \\\hline
+\end{tabular}
+\end{table}
+
+The config storage can be accessed system wide using the external variable \texttt{config\_store}. Saving the complete config storage to the EEPROM is only possible through the command line interface. Via the WLAN interface, only the user settings part can be saved. 
+
+
+\subsection{i2ceeprom}
+This simple driver for the I2C EEPROM can be used to write and read from the EEPROM. It uses the widely known \texttt{Wire} module from Arduino. If saving a block to the EEPROM, the whole block is first read and checked. Only if the new data differs from the old one, it is overridden. Otherwise, the data remains unchanged to increase the lifetime of the EEPROM chip. 
+
+\subsection{credentials}
+The credentials file is a smal file containing some sensitive data, namely the WLAN SSID, WLAN Key, OTA password, and OTA port. Only the template \texttt{\_credentials.txt} is checked into GIT, while the original file is excluded from GIT. This file must be renamed to \texttt{credentials.h} and filled with correct values. 
+
+\subsection{color}
+The color module is solely used to convert the received \qty{8}{\bit} code combined with the requested \qty{4}{\bit} brightness into the three \qty{8}{\bit} \ac{PWM} values. 
+The conversion is done in a way, that the highest component (eg. red) equals the requested brightness. The other two color components are scaled accordingly. 
+
+\subsection{led}
+The \texttt{led.cpp} controls the \acp{LED} directly. The \texttt{led\_show} method takes an array of color components, that are written to the WS2812 \acp{LED}. The helper function \texttt{led\_clear} can be used to turn off all \acp{LED}. In addition the blue on-board \ac{LED} of the ESP-12 module can be blinked. This is realised using busy wait. Accordingly, this code is not realtime capable and should be used with care. 
+
+The \texttt{led\_show\_status} is triggered, whenever the Hall sensor is set. It shows the temperature using the color of the top \acp{LED}. The 20 lower side \acp{LED} are used to show the current battery voltage level. 
+
+\subsection{lightmodes}
+This module is central for the function of the cone. It contains the definition of all light modes. The lightmode function is called by the \texttt{lightmode\_step} method. It takes the current time, the \texttt{lightmode} struct and the \texttt{ledstate} as arguments. It is called every \texttt{LED\_UPDATE\_INTERVAL} $= \qty{20}{\milli\s}$. The individual lightmode function is then required to keep track of its own state. For this purpose, the function gets the current time in milliseconds. The individual lightmodes are described in table \ref{tab_lightmode}. 
+
+\subsection{ota}
+The \texttt{ota} class is a wrapper for the \texttt{AndroidOTA} module. Only the \texttt{ota\_setup} and \texttt{ota\_loop} functions are used during operation. Everything else is used for debugging. 
+
+The setup method sets the hostname to \texttt{Night-cone-XXXXXX} where the serial number from the flash is used in place of the "X". In addition, the password and the port are set. 
+
+
+\subsection{sync}
+The sync module is used to synchronise the time on the cone to a common carrier time. The server defines the main time, onto which all cones synchronize. A \qty{32}{\bit} time stamp representing the milliseconds since an arbitrary zero time is used by the server. This allows for a permanent operation for $\approx$ 50 days until a wraparound occurs. The sync module also directly implements the phase shift defined in the light mode. This simplifies the implementation of the light modes itself. The synchronizer is currently a very simple unfiltered \ac{PLL}. 
+
+The \texttt{sync\_loop} function returns true whenever the \ac{LED} update interval is expired. It returns the current time in milliseconds as an argument. 
+
+\subsection{wifi}
+The \texttt{WIFI} module handles all communication between the server and the cone. The communication protocol is described in section \ref{sec_communication}. The communication ports are fixed. They can not be changed using the user config to reduce the risk of unreachable cones. 
+
+\subsection{main}
+The \texttt{main} file contains the two main functions. The \texttt{setup} method prepares everything for operation. The subsequent \texttt{loop} method is called permanently and executes all worker functions and also incorporates the dimming functionality (currently not active). 
+
+\subsection{Programmer}
+\label{programmer_software}
+
+A small python script is used to program the ESP-12 and set the hardware part of the \texttt{config\_store} in one go. The suboptimal design using the FT234XD (See \ref{Programmer_Hardware}) requires some additional steps. 
+
+A wrapper for the original \texttt{esptool.py} and the \texttt{pyftdi} library is used. This wrapper performs two actions. First, it overrides the \texttt{set\_dtr} with one, that uses the \texttt{CBUS0} pin instead of a (non-existing) nativ dtr signal. As a second operations, it replaces the serial interface in the ESP-Tool with the \texttt{serial\_ext} extension of the \texttt{pyftdi} library.
+
+The \texttt{NC\_programmer.py} script is used to call the esptool and set the parameters. 
+
+The script accepts all parameters of the native \texttt{esptool.py} and in addition the following arguments: 
+\begin{itemize}
+	\item First Positional argument: Path to the \texttt{esptool.py}
+	\item \texttt{-s,--set\_EEPROM\_config}: This argument allows to set the hardware revision and the serial number. It takes two positional arguments \texttt{[Serial-number Hardware-revision]}.	Both can be decimal or hexadecimal. 
+\end{itemize}
+
+The \texttt{esptool.py} must be cloned to use it in the way, we use it. In the example call, it is cloned into the same folder as the night-cones repository. 
+
+The example call below sets the serial number to \texttt{138} and the hardware revision to \texttt{0x2}. It flashes the ESP-12 module using the binary file from \texttt{.pio/build/nodemcuv2/firmware.bin}:
+\begin{verbatim}
+	NC_programmer.py -s 138 0x2 "../../../esptool/esptool.py" --chip esp8266 \
+	--port "ftdi://ftdi:ft-x:0:1/1" --baud 115200 write_flash 0x0 \
+	.pio\build\nodemcuv2\firmware.bin
+\end{verbatim}
+
