@@ -1,0 +1,91 @@
+[Format]      =  4.0
+[Frequency]   =  0
+[Precision]   =  1e-008
+[MinAngle]    =  30
+[Depth]       =  1
+[LengthUnits] =  millimeters
+[ProblemType] =  axisymmetric
+[Coordinates] =  cartesian
+[ACSolver]    =  0
+[PrevSoln]    =  ""
+[Comment]     =  "Add comments here."
+[PointProps]   = 0
+[BdryProps]   = 0
+[BlockProps]  = 2
+  <BeginBlock>
+    <BlockName> = "Air"
+    <Mu_x> = 1
+    <Mu_y> = 1
+    <H_c> = 0
+    <H_cAngle> = 0
+    <J_re> = 0
+    <J_im> = 0
+    <Sigma> = 0
+    <d_lam> = 0
+    <Phi_h> = 0
+    <Phi_hx> = 0
+    <Phi_hy> = 0
+    <LamType> = 0
+    <LamFill> = 1
+    <NStrands> = 0
+    <WireD> = 0
+    <BHPoints> = 0
+  <EndBlock>
+  <BeginBlock>
+    <BlockName> = "1mm"
+    <Mu_x> = 1
+    <Mu_y> = 1
+    <H_c> = 0
+    <H_cAngle> = 0
+    <J_re> = 0
+    <J_im> = 0
+    <Sigma> = 58
+    <d_lam> = 0
+    <Phi_h> = 0
+    <Phi_hx> = 0
+    <Phi_hy> = 0
+    <LamType> = 3
+    <LamFill> = 1
+    <NStrands> = 1
+    <WireD> = 1
+    <BHPoints> = 0
+  <EndBlock>
+[CircuitProps]  = 1
+  <BeginCircuit>
+    <CircuitName> = "L"
+    <TotalAmps_re> = 3
+    <TotalAmps_im> = 0
+    <CircuitType> = 1
+  <EndCircuit>
+[NumPoints] = 12
+300	0	0	0
+310	0	0	0
+310	10	0	0
+300	10	0	0
+50	100	0	0
+60	100	0	0
+60	110	0	0
+50	110	0	0
+0	70	0	0
+300	70	0	0
+0	1000	0	0
+0	-1000	0	0
+[NumSegments] = 11
+7	4	-1	0	0	0
+5	4	-1	0	0	0
+6	5	-1	0	0	0
+6	7	-1	0	0	0
+1	2	-1	0	0	0
+3	2	-1	0	0	0
+1	0	-1	0	0	0
+3	0	-1	0	0	0
+8	9	-1	0	0	0
+10	8	-1	0	0	0
+11	8	-1	0	0	0
+[NumArcSegments] = 1
+11	10	180	1	0	0	0
+[NumHoles] = 0
+[NumBlockLabels] = 3
+485	110	1	-1	0	0	0	1	0
+55	105	2	-1	1	0	0	100	0
+305	5	1	-1	0	0	0	1	0
