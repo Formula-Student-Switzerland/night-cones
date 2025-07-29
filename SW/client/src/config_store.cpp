@@ -80,7 +80,7 @@ void config_store_upgrade(config_store_t *temp)
         temp->user_settings.turn_off_voltage_mv = 0;
         temp->user_settings.ip_address = 0x0000A8C0 |
                                          ((temp->hardware_data.serial_number & 0xFF) << 24) |
-                                         ((temp->hardware_data.serial_number & 0xFF00) << 8); // 192.168.XX.XX
+                                         ((temp->hardware_data.serial_number & 0xFF00) << 16); // 192.168.XX.XX
         temp->user_settings.subnet = 0x0000FFFF;
         temp->user_settings.gateway = 0x0100A8C0; // 192.168.0.1 in reversed order
 
