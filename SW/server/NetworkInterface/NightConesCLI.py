@@ -10,6 +10,26 @@ class NightConesCLI(cmd.Cmd):
     
     _UDP_TX_PORT = 5250
     _UDP_RX_PORT = 5251  
+    SEND_LOOP = 100
+    COLOR_RED = 191
+    COLOR_GREEN = 95
+    COLOR_BLUE = 63
+    COLOR_WHITE = 255
+    COLOR_YELLOW = 127
+    BRIGHTNESS_LOW = 2
+    BRIGHTNESS_HIGH = 15
+    LIGHTMODE_CONT = 0
+    GW_SLEEP = 3.0
+    SKIDPAD_NOF = 72
+    EXITENTRY_NOF = 26
+    SKIDPAD_IP_START = 11
+    SKIDPAD_IP_STOP = SKIDPAD_IP_START + SKIDPAD_NOF - 1
+    EXITENTRY_IP_START = SKIDPAD_IP_STOP + 1
+    EXITENTRY_IP_STOP = EXITENTRY_IP_START + EXITENTRY_NOF - 1
+    SKIDPAD_ID = 0
+    EXITENTRY_ID = 1
+    IP_PREFIX = "192.168.0."
+    IP_BROADCAST = "192.168.255.255"
     prompt = '>> '
     intro = 'Welcome to the Nightcones CLI. Type "help" for available commands.'
     
@@ -105,6 +125,182 @@ class NightConesCLI(cmd.Cmd):
             return
             
         self._networkif.sendDataFrame(cone_values)  
+        
+    def do_SetupSkidpad(self, line):
+        ''' Setup cone IDs for skidpad
+        '''
+        data = []
+        #data.append(int(input("Select Cone ID: ")))
+        data.append(max(0,min(255,int(self.COLOR_BLUE))))
+        data.append(max(0,min(15,int(self.BRIGHTNESS_HIGH))))
+        data.append(NightConesMessage.NightConesMessage.LightMode(max(0,min(15,int(self.LIGHTMODE_CONT)))))
+        data.append(max(0,min(255,int(0)))) #input("Select Frequency [0-255]: ")))))
+        data.append(max(0,min(255,int(0)))) #input("Select Phase [0-255]: ")))))
+        for i in range(0, self.SEND_LOOP):
+            self._networkif.sendDataFrame([data])  
+
+        for i in range(self.SKIDPAD_IP_START, self.EXITENTRY_IP_STOP+1):
+            data_tuples = []
+            if i <= self.SKIDPAD_IP_STOP:
+                tuple = (3,self.SKIDPAD_ID);
+                data_tuples.append(tuple)            
+            elif i <= self.EXITENTRY_IP_STOP:
+                tuple = (3,self.EXITENTRY_ID);
+                data_tuples.append(tuple)            
+            ip = F"{self.IP_PREFIX}{i}"
+            #print(ip)
+            #print(data_tuples)
+            self._networkif.sendConfigData(data_tuples,ip)
+
+        data = []
+        #data.append(int(input("Select Cone ID: ")))
+        data.append(max(0,min(255,int(self.COLOR_RED))))
+        data.append(max(0,min(15,int(self.BRIGHTNESS_HIGH))))
+        data.append(NightConesMessage.NightConesMessage.LightMode(max(0,min(15,int(self.LIGHTMODE_CONT)))))
+        data.append(max(0,min(255,int(0)))) #input("Select Frequency [0-255]: ")))))
+        data.append(max(0,min(255,int(0)))) #input("Select Phase [0-255]: ")))))
+        for i in range(0, self.SEND_LOOP):
+            self._networkif.sendDataFrame([data])  
+        self.do_SetConeStates(F"{self.COLOR_RED} {self.BRIGHTNESS_HIGH} {self.LIGHTMODE_CONT} 0 0 {self.COLOR_BLUE} {self.BRIGHTNESS_HIGH} {self.LIGHTMODE_CONT} 0 0")
+
+    def do_S(self, line):
+        ''' Setup cone IDs for skidpad
+        '''
+        self.do_SetupSkidpad("")
+
+    def do_Off(self, line):
+        ''' Turn all cones off
+        '''
+        #for i in range(self.SKIDPAD_IP_START,self.EXITENTRY_IP_STOP+1):
+            #self.do_SetConeConfig(F"{self.IP_PREFIX}{i} 5 0")
+        self.do_SetConeConfig(F"{self.IP_BROADCAST} 5 0")
+
+    def do_CS(self, line):
+        '''Set Rainbow pattern for cheese award
+        Start
+        '''
+        for i in range(0, self.SEND_LOOP):
+            self.do_SetConeState(F"0 {self.BRIGHTNESS_HIGH} 7 80 0")
+
+    def do_CP(self, line):
+        '''Set Rainbow pattern for cheese award
+        Presentation
+        '''
+        self.do_W("")
+
+    def do_CJ(self, line):
+        '''Set Rainbow pattern for cheese award
+        Judging
+        '''
+        for i in range(0, self.SEND_LOOP):
+            self.do_SetConeState(F"0 {self.BRIGHTNESS_HIGH} 8 20 0")
+
+    def do_CT(self, line):
+        '''Set Rainbow pattern for cheese award
+        Tension before announcement
+        '''
+        for i in range(0, self.SEND_LOOP):
+            self.do_SetConeState(F"0 {self.BRIGHTNESS_HIGH} 6 3 0")
+
+    def do_CA(self, line):
+        '''Set Rainbow pattern for cheese award
+        Announcement
+        '''
+        for i in range(0, self.SEND_LOOP):
+            self.do_SetConeState(F"0 {self.BRIGHTNESS_HIGH} 2 3 0")
+
+    def do_O(self, line):
+        '''Set Colors for one cone ID to white at no brightness. 
+        '''
+        for i in range(0, self.SEND_LOOP):
+            self.do_SetConeStates(F"{self.COLOR_WHITE} 0 {self.LIGHTMODE_CONT} 0 0 {self.COLOR_WHITE} {0} {self.LIGHTMODE_CONT} 0 0")
+        
+    def do_o(self, line):
+        '''Set Colors for one cone ID to white at no brightness. 
+        '''
+        for i in range(0, self.SEND_LOOP):
+            self.do_SetConeStates(F"{self.COLOR_WHITE} 0 {self.LIGHTMODE_CONT} 0 0 {self.COLOR_WHITE} {0} {self.LIGHTMODE_CONT} 0 0")
+        
+    def do_R(self, line):
+        '''Set Colors for one cone ID to red at high brightness. 
+        '''
+        for i in range(0, self.SEND_LOOP):
+            #self.do_SetConeState(F"{self.COLOR_RED} {self.BRIGHTNESS_HIGH} {self.LIGHTMODE_CONT} 0 0")
+            self.do_SetConeStates(F"{self.COLOR_RED} {self.BRIGHTNESS_HIGH} {self.LIGHTMODE_CONT} 0 0 {self.COLOR_BLUE} {self.BRIGHTNESS_HIGH} {self.LIGHTMODE_CONT} 0 0")
+        
+    def do_r(self, line):
+        '''Set Colors for one cone ID to red at low brightness. 
+        '''
+        for i in range(0, self.SEND_LOOP):
+            #self.do_SetConeState(F"{self.COLOR_RED} {self.BRIGHTNESS_LOW} {self.LIGHTMODE_CONT} 0 0")
+            self.do_SetConeStates(F"{self.COLOR_RED} {self.BRIGHTNESS_LOW} {self.LIGHTMODE_CONT} 0 0 {self.COLOR_BLUE} {self.BRIGHTNESS_LOW} {self.LIGHTMODE_CONT} 0 0")
+        
+    def do_G(self, line):
+        '''Set Colors for one cone ID to green at high brightness. 
+        '''
+        for i in range(0, self.SEND_LOOP):
+            #self.do_SetConeState(F"{self.COLOR_GREEN} {self.BRIGHTNESS_HIGH} {self.LIGHTMODE_CONT} 0 0")
+            self.do_SetConeStates(F"{self.COLOR_GREEN} {self.BRIGHTNESS_HIGH} {self.LIGHTMODE_CONT} 0 0 {self.COLOR_BLUE} {self.BRIGHTNESS_HIGH} {self.LIGHTMODE_CONT} 0 0")
+        
+    def do_g(self, line):
+        '''Set Colors for one cone ID to green at low brightness. 
+        '''
+        for i in range(0, self.SEND_LOOP):
+            #self.do_SetConeState(F"{self.COLOR_GREEN} {self.BRIGHTNESS_LOW} {self.LIGHTMODE_CONT} 0 0")
+            self.do_SetConeStates(F"{self.COLOR_GREEN} {self.BRIGHTNESS_LOW} {self.LIGHTMODE_CONT} 0 0 {self.COLOR_BLUE} {self.BRIGHTNESS_LOW} {self.LIGHTMODE_CONT} 0 0")
+        
+    def do_B(self, line):
+        '''Set Colors for one cone ID to blue at high brightness. 
+        '''
+        for i in range(0, self.SEND_LOOP):
+            #self.do_SetConeState(F"{self.COLOR_BLUE} {self.BRIGHTNESS_HIGH} {self.LIGHTMODE_CONT} 0 0")
+            self.do_SetConeStates(F"{self.COLOR_BLUE} {self.BRIGHTNESS_HIGH} {self.LIGHTMODE_CONT} 0 0 {self.COLOR_BLUE} {self.BRIGHTNESS_HIGH} {self.LIGHTMODE_CONT} 0 0")
+        
+    def do_b(self, line):
+        '''Set Colors for one cone ID to blue at low brightness. 
+        '''
+        for i in range(0, self.SEND_LOOP):
+            #self.do_SetConeState(F"{self.COLOR_BLUE} {self.BRIGHTNESS_LOW} {self.LIGHTMODE_CONT} 0 0")
+            self.do_SetConeStates(F"{self.COLOR_BLUE} {self.BRIGHTNESS_LOW} {self.LIGHTMODE_CONT} 0 0 {self.COLOR_BLUE} {self.BRIGHTNESS_LOW} {self.LIGHTMODE_CONT} 0 0")
+        
+    def do_Y(self, line):
+        '''Set Colors for one cone ID to yellow at high brightness. 
+        '''
+        for i in range(0, self.SEND_LOOP):
+            #self.do_SetConeState(F"{self.COLOR_YELLOW} {self.BRIGHTNESS_HIGH} {self.LIGHTMODE_CONT} 0 0")
+            self.do_SetConeStates(F"{self.COLOR_YELLOW} {self.BRIGHTNESS_HIGH} {self.LIGHTMODE_CONT} 0 0 {self.COLOR_BLUE} {self.BRIGHTNESS_HIGH} {self.LIGHTMODE_CONT} 0 0")
+        
+    def do_y(self, line):
+        '''Set Colors for one cone ID to yellow at low brightness. 
+        '''
+        for i in range(0, self.SEND_LOOP):
+            #self.do_SetConeState(F"{self.COLOR_YELLOW} {self.BRIGHTNESS_LOW} {self.LIGHTMODE_CONT} 0 0")
+            self.do_SetConeStates(F"{self.COLOR_YELLOW} {self.BRIGHTNESS_LOW} {self.LIGHTMODE_CONT} 0 0 {self.COLOR_BLUE} {self.BRIGHTNESS_LOW} {self.LIGHTMODE_CONT} 0 0")
+        
+    def do_W(self, line):
+        '''Set Colors for one cone ID to white at high brightness. 
+        '''
+        for i in range(0, self.SEND_LOOP):
+            #self.do_SetConeState(F"{self.COLOR_WHITE} {self.BRIGHTNESS_HIGH} {self.LIGHTMODE_CONT} 0 0")
+            self.do_SetConeStates(F"{self.COLOR_WHITE} {self.BRIGHTNESS_HIGH} {self.LIGHTMODE_CONT} 0 0 {self.COLOR_BLUE} {self.BRIGHTNESS_HIGH} {self.LIGHTMODE_CONT} 0 0")
+        
+    def do_w(self, line):
+        '''Set Colors for one cone ID to white at low brightness. 
+        '''
+        for i in range(0, self.SEND_LOOP):
+            #self.do_SetConeState(F"{self.COLOR_WHITE} {self.BRIGHTNESS_LOW} {self.LIGHTMODE_CONT} 0 0")
+            self.do_SetConeStates(F"{self.COLOR_WHITE} {self.BRIGHTNESS_LOW} {self.LIGHTMODE_CONT} 0 0 {self.COLOR_BLUE} {self.BRIGHTNESS_LOW} {self.LIGHTMODE_CONT} 0 0")
+        
+    def do_GW(self, line):
+        '''Set Colors for one cone ID to green and then to white at high brightness. 
+        '''
+        for i in range(0, self.SEND_LOOP):
+            #self.do_SetConeState(F"{self.COLOR_GREEN} {self.BRIGHTNESS_HIGH} {self.LIGHTMODE_CONT} 0 0")
+            self.do_SetConeStates(F"{self.COLOR_GREEN} {self.BRIGHTNESS_HIGH} {self.LIGHTMODE_CONT} 0 0 {self.COLOR_BLUE} {self.BRIGHTNESS_HIGH} {self.LIGHTMODE_CONT} 0 0")
+        time.sleep(self.GW_SLEEP)
+        for i in range(0, self.SEND_LOOP):
+            #self.do_SetConeState(F"{self.COLOR_WHITE} {self.BRIGHTNESS_HIGH} {self.LIGHTMODE_CONT} 0 0")
+            self.do_SetConeStates(F"{self.COLOR_WHITE} {self.BRIGHTNESS_HIGH} {self.LIGHTMODE_CONT} 0 0 {self.COLOR_BLUE} {self.BRIGHTNESS_HIGH} {self.LIGHTMODE_CONT} 0 0")
         
     def do_RequestConeData(self, line):
         ''' Request Data from specific Cone. If no IP Address is given, broadcast address is used.        
