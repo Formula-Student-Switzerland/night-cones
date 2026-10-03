@@ -38,6 +38,8 @@ void lightmode_deactivate_ident(void);
 void lightmode_setAsFallback(void);
 void lightmode_switch(uint8_t color, uint8_t brightness_mode, uint8_t repetition_time);
 void lightmode_dim(uint8_t brightness);
+uint8_t lightmode_get_color(void);
+uint8_t lightmode_get_brightness_mode(void);
 void lightmode_step(int32_t time, uint8_t *ledState);
 
 // Light Modes

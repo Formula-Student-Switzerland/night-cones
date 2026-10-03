@@ -1,4 +1,4 @@
-import NetworkInterface
+import NightConesController
 import NightConesMessage
 import cmd
 #import readline
@@ -35,7 +35,9 @@ class NightConesCLI(cmd.Cmd):
     
     def preloop(self):
         ''' Gets Executed before starting the CLI'''
-        self._networkif = NetworkInterface.NetworkInterface()
+        self._controller = NightConesController.NightConesController(self._print_message)
+        self._networkif = self._controller.networkif
+        self._send_data = self._controller.send_data
     
         print("Available Network Interfaces:")
         ip_adresses = []
@@ -64,15 +66,12 @@ class NightConesCLI(cmd.Cmd):
             rx_port=self._UDP_RX_PORT+1
         
         if(ip_select.isdigit() and int(ip_select)<ip_index):
-            self._networkif.setCurrentNetwork(ip_adresses[int(ip_select)],int(tx_port),int(rx_port))
+            if(self._rx_active == True):
+                print("Starting RX Thread")
+            self._controller.connect(ip_adresses[int(ip_select)],int(tx_port),int(rx_port),self._rx_active)
         else: 
             print("No valid selection, terminating tool")
             exit()
-            
-        if(self._rx_active == True):
-            print("Starting RX Thread")
-            thread = threading.Thread(target = self._rx_thread)
-            thread.start()
             
     def do_hello(self, line):
         """Print a greeting."""
@@ -80,7 +79,7 @@ class NightConesCLI(cmd.Cmd):
 
     def do_quit(self, line):
         """Exit the CLI."""
-        self._rx_active = False
+        self._controller.close()
         return True
         
     def do_SetConeState(self, line):
@@ -102,7 +101,7 @@ class NightConesCLI(cmd.Cmd):
             data.append(max(0,min(255,int(input("Select Frequency [0-255]: ")))))
             data.append(max(0,min(255,int(input("Select Phase [0-255]: ")))))
             
-        self._networkif.sendDataFrame([data])  
+        self._send_data([data])  
         
     def do_SetConeStates(self, line):
         '''Set Colors for one cone ID. 
@@ -124,7 +123,7 @@ class NightConesCLI(cmd.Cmd):
             print(F"***Error {e}")
             return
             
-        self._networkif.sendDataFrame(cone_values)  
+        self._send_data(cone_values)  
         
     def do_SetupSkidpad(self, line):
         ''' Setup cone IDs for skidpad
@@ -137,7 +136,7 @@ class NightConesCLI(cmd.Cmd):
         data.append(max(0,min(255,int(0)))) #input("Select Frequency [0-255]: ")))))
         data.append(max(0,min(255,int(0)))) #input("Select Phase [0-255]: ")))))
         for i in range(0, self.SEND_LOOP):
-            self._networkif.sendDataFrame([data])  
+            self._send_data([data])  
 
         for i in range(self.SKIDPAD_IP_START, self.EXITENTRY_IP_STOP+1):
             data_tuples = []
@@ -160,7 +159,7 @@ class NightConesCLI(cmd.Cmd):
         data.append(max(0,min(255,int(0)))) #input("Select Frequency [0-255]: ")))))
         data.append(max(0,min(255,int(0)))) #input("Select Phase [0-255]: ")))))
         for i in range(0, self.SEND_LOOP):
-            self._networkif.sendDataFrame([data])  
+            self._send_data([data])  
         self.do_SetConeStates(F"{self.COLOR_RED} {self.BRIGHTNESS_HIGH} {self.LIGHTMODE_CONT} 0 0 {self.COLOR_BLUE} {self.BRIGHTNESS_HIGH} {self.LIGHTMODE_CONT} 0 0")
 
     def do_S(self, line):
@@ -358,14 +357,14 @@ class NightConesCLI(cmd.Cmd):
             data = [int(255*i/max_id),15,NightConesMessage.NightConesMessage.LightMode(6),10,int(255*i/max_id)]  
             cone_values.append(data)
         for i in range(1,10):
-            self._networkif.sendDataFrame(cone_values)  
+            self._send_data(cone_values)  
             time.sleep(0.1)
        
     def do_Test(self, line):
         cone_values=[[31,2,NightConesMessage.NightConesMessage.LightMode(1),10,0]]
         #cone_values = max_id*cone_values
         for i in range(1,100):
-            self._networkif.sendDataFrame(cone_values)  
+            self._send_data(cone_values)  
             time.sleep(0.1)
             
     def do_Demo(self, line):
@@ -382,7 +381,7 @@ class NightConesCLI(cmd.Cmd):
             cone_values=[[color,br,NightConesMessage.NightConesMessage.LightMode(0),0,0]]*max_id
             #cone_values = max_id*cone_values
             for i in range(1,int(1/sampling_time)):
-                self._networkif.sendDataFrame(cone_values)  
+                self._send_data(cone_values)  
                 time.sleep(sampling_time)
         # Flashing uniform 1 ------------------------------------------
         print("Flash with uniform color")
@@ -390,7 +389,7 @@ class NightConesCLI(cmd.Cmd):
             cone_values=[[color,br,NightConesMessage.NightConesMessage.LightMode(1),10,0]]*max_id
             #cone_values = max_id*cone_values
             for i in range(1,int(1/sampling_time)):
-                self._networkif.sendDataFrame(cone_values)  
+                self._send_data(cone_values)  
                 time.sleep(sampling_time)
         # Flashing uniform 2 25% ------------------------------------------
         print("Flash blue with 25% Duty")
@@ -398,7 +397,7 @@ class NightConesCLI(cmd.Cmd):
         cone_values=[[color,br,NightConesMessage.NightConesMessage.LightMode(2),5,0]]*max_id
         #cone_values = max_id*cone_values
         for i in range(1,int(2/sampling_time)):
-            self._networkif.sendDataFrame(cone_values)  
+            self._send_data(cone_values)  
             time.sleep(sampling_time)
         
         # Rainbow Flashing outwards ------------------------------------------
@@ -409,7 +408,7 @@ class NightConesCLI(cmd.Cmd):
                 data = [int(255*i/max_id),br,NightConesMessage.NightConesMessage.LightMode(2),5,int(phase*i/max_id)]  
                 cone_values.append(data)
             for i in range(1,int(1/sampling_time)):
-                self._networkif.sendDataFrame(cone_values)  
+                self._send_data(cone_values)  
                 time.sleep(sampling_time)
                 
          # Rainbow Fading inwards ------------------------------------------
@@ -420,7 +419,7 @@ class NightConesCLI(cmd.Cmd):
                 data = [int(255*i/max_id),br,NightConesMessage.NightConesMessage.LightMode(6),5,int(phase*i/max_id)]  
                 cone_values.append(data)
             for i in range(1,int(1/sampling_time)):
-                self._networkif.sendDataFrame(cone_values)  
+                self._send_data(cone_values)  
                 time.sleep(sampling_time)
                 
         # circle single color ------------------------------------------
@@ -430,7 +429,7 @@ class NightConesCLI(cmd.Cmd):
             data = [color,br,NightConesMessage.NightConesMessage.LightMode(4),i+1,0]  
             cone_values.append(data)
         for i in range(1,int(5/sampling_time)):
-            self._networkif.sendDataFrame(cone_values)  
+            self._send_data(cone_values)  
             time.sleep(sampling_time)
             
         # circle smooth single color ------------------------------------------
@@ -440,7 +439,7 @@ class NightConesCLI(cmd.Cmd):
             data = [color,br,NightConesMessage.NightConesMessage.LightMode(5),i+1,0]  
             cone_values.append(data)
         for i in range(1,int(5/sampling_time)):
-            self._networkif.sendDataFrame(cone_values)  
+            self._send_data(cone_values)  
             time.sleep(sampling_time)
             
         # All Yellow ------------------------------------------
@@ -450,7 +449,7 @@ class NightConesCLI(cmd.Cmd):
             data = [138,br,NightConesMessage.NightConesMessage.LightMode(0),0,0]  
             cone_values.append(data)
         for i in range(1,int(2/sampling_time)):
-            self._networkif.sendDataFrame(cone_values)  
+            self._send_data(cone_values)  
             time.sleep(sampling_time)
             
         # Ident------------------------------------------  
@@ -458,7 +457,7 @@ class NightConesCLI(cmd.Cmd):
         data = [0,0,NightConesMessage.NightConesMessage.LightMode(9),0,0]  
         cone_values[27] = data
         for i in range(1,int(5/sampling_time)):
-            self._networkif.sendDataFrame(cone_values)  
+            self._send_data(cone_values)  
             time.sleep(sampling_time)
             
         # Turn down------------------------------------------   
@@ -466,7 +465,7 @@ class NightConesCLI(cmd.Cmd):
         cone_values=[[138,1,NightConesMessage.NightConesMessage.LightMode(0),0,0]]*max_id
         #cone_values = max_id*cone_values
         for i in range(1,int(2/sampling_time)):
-            self._networkif.sendDataFrame(cone_values)  
+            self._send_data(cone_values)  
             time.sleep(sampling_time)
         
         
@@ -474,15 +473,107 @@ class NightConesCLI(cmd.Cmd):
         
 
         
-    def _rx_thread(self):
-        ''' Runs the RX Function to print received packages.'''
-        while self._rx_active:
-            try:
-                message,addr = self._networkif._rx_package()
-                print(F"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}{addr} : {message}")
-            except Exception as e: 
-                #print(e)                
-                pass
+    def do_State(self, line):
+        ''' Request the state of all cones and report it, including the cones that are not connected.
+
+        Arguments (optional): IDs to report, e.g. "3", "1,4,7", "10-20" or "1,4-6"
+        '''
+        if not self._check_rx():
+            return
+        try:
+            ids = NightConesController.parse_ids(line) if line.strip() else None
+        except ValueError as e:
+            print(F"***Error: {e}")
+            return
+        responses = self._controller.request_states()
+        if ids is not None:
+            responses = {addr: data for addr, data in responses.items() if data.ID in ids}
+        print(F"{len(responses)} cone(s) responded:")
+        if responses:
+            print("  Address              ID  Color          Bright  Mode               SoC  RSSI  Temp")
+        for addr, data in sorted(responses.items(), key=lambda item: (item[1].ID, item[0])):
+            print(F"  {NightConesController.format_addr(addr):<19} {data.ID:>3}  {NightConesController.format_color(data.Color):<13}  "
+                  F"{data.Brightness:>6}  {NightConesController.format_mode(data.LightMode):<17} {data.SoC*100//255:>3}%  "
+                  F"{NightConesController.signed(data.RSSI):>4}  {data.Temp:>3}°C")
+        self._report_not_connected(responses, ids)
+
+    def do_SetColor(self, line):
+        ''' Set the color of single cone IDs or lists of IDs and verify that the cones changed.
+        Cones that did not change are retried up to 3 times and reported in the end.
+
+        Arguments: IDs Color [Brightness] [LightMode] [RepetitionTime] [Phase]
+            IDs:        "3", "1,4,7", "10-20", "1,4-6" or "all" (all IDs that responded)
+            Color:      0-255 or red, green, blue, white, yellow
+            Brightness: 0-15 (default 15), LightMode: 0-9 (default 0), RepetitionTime, Phase: 0-255 (default 0)
+        Example: SetColor 1,3,10-12 red 8
+        '''
+        args = line.split()
+        if len(args) < 2 or len(args) > 6:
+            print("***Error: Usage: SetColor IDs Color [Brightness] [LightMode] [RepetitionTime] [Phase]")
+            return
+        try:
+            target = [NightConesController.parse_color(args[1]), self.BRIGHTNESS_HIGH, self.LIGHTMODE_CONT, 0, 0]
+            for i, arg in enumerate(args[2:], start=1):
+                target[i] = int(arg)
+            target[1] = max(0, min(15, target[1]))
+            target[2] = NightConesMessage.NightConesMessage.LightMode(target[2])
+            target[3] = max(0, min(255, target[3]))
+            target[4] = max(0, min(255, target[4]))
+            if args[0].lower() == "all":
+                if not self._check_rx():
+                    return
+                ids = sorted({data.ID for data in self._controller.request_states().values()})
+                if not ids:
+                    print("***Error: No cone responded, nothing to set")
+                    return
+            else:
+                ids = NightConesController.parse_ids(args[0])
+        except ValueError as e:
+            print(F"***Error: {e}")
+            return
+
+        if not self._rx_active:
+            print("RX Thread not active: sending without verification")
+        result = self._controller.set_color(ids, target, lambda retry, pending:
+            print(F"Retry {retry}/{NightConesController.SET_RETRIES} for ID(s) {NightConesController.format_ids(pending)}"))
+        if result is None:
+            return
+
+        if result.changed:
+            print(F"Changed: ID(s) {NightConesController.format_ids(result.changed)}")
+        if result.wrong:
+            print(F"NOT changed after {NightConesController.SET_RETRIES} retries ({len(result.wrong)} cone(s)), "
+                  F"expected {NightConesController.format_color(target[0])} / brightness {target[1]} / "
+                  F"{NightConesController.format_mode(target[2].value)}:")
+            for addr, data in sorted(result.wrong.items(), key=lambda item: (item[1].ID, item[0])):
+                print(F"  ID {data.ID:>3}  {NightConesController.format_addr(addr):<19} shows {NightConesController.format_color(data.Color)} / "
+                      F"brightness {data.Brightness} / {NightConesController.format_mode(data.LightMode)}")
+        if result.no_answer:
+            print(F"No cone responded for ID(s) {NightConesController.format_ids(result.no_answer)}, change could not be verified")
+        self._report_not_connected(result.responses, set(ids))
+
+    def _check_rx(self):
+        ''' Responses of the cones are only received if the RX Thread is active. '''
+        if not self._rx_active:
+            print("***Error: RX Thread not active. Restart the CLI and type 1 to activate the RX Thread.")
+        return self._rx_active
+
+    def _report_not_connected(self, responses, ids=None):
+        ''' Report expected or previously seen cones (optionally only of the given IDs) that did not respond. '''
+        missing = self._controller.not_connected(responses, ids)
+        if not missing:
+            print("All known cones are connected.")
+            return
+        print(F"Not connected ({len(missing)} cone(s)):")
+        for addr, last in sorted(missing.items()):
+            if last is None:
+                print(F"  {NightConesController.format_addr(addr):<19} never seen")
+            else:
+                print(F"  {NightConesController.format_addr(addr):<19} ID {last[1].ID:>3}, last seen {datetime.fromtimestamp(last[0]).strftime('%H:%M:%S')}")
+
+    def _print_message(self, message, addr):
+        ''' Prints the packages received by the RX Thread.'''
+        print(F"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}{addr} : {message}")
 
 if __name__ == "__main__":
     NightConesCLI().cmdloop()     

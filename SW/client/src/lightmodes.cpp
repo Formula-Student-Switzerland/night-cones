@@ -115,6 +115,21 @@ void lightmode_switch(uint8_t color, uint8_t brightness_mode,
 }
 
 /**
+ * Returns the base color of the currently active light mode.
+ */
+uint8_t lightmode_get_color(void) {
+    return lightmode_current.base_color;
+}
+
+/**
+ * Returns brightness and mode of the currently active light mode, encoded
+ * the same way as in the data frame (brightness in upper, mode in lower nibble).
+ */
+uint8_t lightmode_get_brightness_mode(void) {
+    return lightmode_current.brightness | lightmode_current.mode;
+}
+
+/**
  * Dims the current lightmode by reducing the brightness. Does not work with all modes currently
  * @param brightness Current brightness value
  */

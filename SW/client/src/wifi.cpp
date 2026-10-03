@@ -61,7 +61,8 @@ typedef union
         uint8_t rssi;
         int8_t temp;
         uint8_t hall_state;
-        uint16_t reserved;
+        uint8_t color;
+        uint8_t brightness_mode;
     } data;
 } wifi_cts_status_frame_t;
 
@@ -421,6 +422,8 @@ void wifi_tx_status(IPAddress server_ip)
     wifi_cts_status_frame->data.rssi = WiFi.RSSI();
     wifi_cts_status_frame->data.temp = adc_temp_deg;
     wifi_cts_status_frame->data.hall_state = hw_ctrl_get_hall_state();
+    wifi_cts_status_frame->data.color = lightmode_get_color();
+    wifi_cts_status_frame->data.brightness_mode = lightmode_get_brightness_mode();
 
     Udp.beginPacket(server_ip, WIFI_UDP_TX_PORT);
     Udp.write(wifi_cts_status_frame->frame, sizeof(wifi_cts_status_frame_t));

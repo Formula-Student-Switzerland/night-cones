@@ -78,10 +78,13 @@ class NightConesMessage:
     11	    1 Byte	RSSI
     12      1 Byte Temperature
     13	    1 Byte 	Hall Sensor State
+    14	    1 Byte	Color currently shown (0 on firmware before SW rev 1.2)
+    15	    4 Bit	Brightness currently shown
+    15	    4 Bit	Light mode currently shown
     '''
     
-    _DATA_RESPONSE_DEFINITION = "HBBbBxx"
-    DATARESPONSE_TUPLE = namedtuple('DataResponse', 'ID SoC RSSI Temp Hall')
+    _DATA_RESPONSE_DEFINITION = "HBBbBBB"
+    DATARESPONSE_TUPLE = namedtuple('DataResponse', 'ID SoC RSSI Temp Hall Color Brightness LightMode')
     
     '''
     Config Responste Frame Definition
@@ -130,14 +133,12 @@ class NightConesMessage:
                 return (header, datalist)
                 
             case self._CONFIGREQUEST_FRAME:
-                raise NotImplementedError;
                 return (header,'')
             case self._DATAREQUEST_FRAME:
-                raise NotImplementedError;
                 return (header,'')
             case self._DATARESPONSE_FRAME:
                 temp = struct.unpack(self._DATA_RESPONSE_DEFINITION,frame[self._HEADER_LENGTH:])        
-                data=self.DATARESPONSE_TUPLE(temp[0],temp[1],temp[2],temp[3],temp[4])
+                data=self.DATARESPONSE_TUPLE(temp[0],temp[1],temp[2],temp[3],temp[4],temp[5],temp[6]>>4,temp[6]&0xF)
                 return (header,data)
                 
     
@@ -191,7 +192,7 @@ class NightConesMessage:
         ''' data: DATARESPONSE_TUPLE of Data
         Creates a Data Response frame.'''
         frame = struct.pack(self._HEADER_STRING,self._VERSION, self._DATARESPONSE_FRAME, 0,int(time.time() * 1000 - self.ZeroTime))
-        frame += struct.pack(self._DATA_RESPONSE_DEFINITION, data[0],  data[1], data[2], data[3][0], data[3][1], data[3][2], data[3][3], data[3][4], data[3][5], data[4], data[5], data[6])
+        frame += struct.pack(self._DATA_RESPONSE_DEFINITION, data.ID, data.SoC, data.RSSI, data.Temp, data.Hall, data.Color, (data.Brightness<<4) | (int(data.LightMode)&0xF))
         return frame
 
 
