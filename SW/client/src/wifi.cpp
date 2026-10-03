@@ -132,6 +132,9 @@ uint32_t wifi_frame_errors;
 uint32_t wifi_frame_order_error;
 uint32_t wifi_current_frame_id;
 
+bool wifi_ready = false;        // UDP and OTA are running
+bool wifi_ignore_data = false;  // Data frames do not change the light mode (fixed color cones)
+
 /*
  * Methods
  */
@@ -139,6 +142,8 @@ void wifi_rx_handle_data(wifi_stc_data_frame_field_t *wifi_rx_stc_data, uint16_t
 uint32_t wifi_rx_handle_config(wifi_xtx_config_frame_t *rx_frame, uint16_t length);
 void wifi_tx_settings(IPAddress server_ip);
 void wifi_tx_status(IPAddress server_ip);
+void wifi_begin(void);
+void wifi_start_services(void);
 
 /**
  * Sets up the WIFI Module and connects to the specified WLAN
@@ -146,17 +151,7 @@ void wifi_tx_status(IPAddress server_ip);
  */
 int wifi_setup(void)
 {
-    // Wifi Setup
-    WiFi.mode(WIFI_STA);
-    // Set static IP, if IP address is set.
-    if (config_store.user_settings.ip_address != 0)
-    {
-        if (!WiFi.config(IPAddress(config_store.user_settings.ip_address),
-                         IPAddress(config_store.user_settings.gateway),
-                         IPAddress(config_store.user_settings.subnet)))
-            Serial.print("Error in IP Address configuration!\n");
-    }
-    WiFi.begin(CRED_WIFI_SSID, CRED_WIFI_PW);
+    wifi_begin();
 
     // int wifi_attempt = 0;
     //  Signal start of connection
@@ -180,6 +175,46 @@ int wifi_setup(void)
         return 1;
     }
 
+    wifi_start_services();
+    return 0;
+}
+
+/**
+ * Starts connecting to the WLAN without waiting for the connection. UDP and OTA are
+ * started by wifi_loop as soon as the connection is established. The ESP keeps
+ * trying to connect in the background.
+ *
+ * @param ignore_data If true, received data frames do not change the light mode
+ */
+void wifi_setup_background(bool ignore_data)
+{
+    wifi_ignore_data = ignore_data;
+    wifi_begin();
+}
+
+/**
+ * Configures the WIFI Module and starts connecting to the specified WLAN
+ */
+void wifi_begin(void)
+{
+    // Wifi Setup
+    WiFi.mode(WIFI_STA);
+    // Set static IP, if IP address is set.
+    if (config_store.user_settings.ip_address != 0)
+    {
+        if (!WiFi.config(IPAddress(config_store.user_settings.ip_address),
+                         IPAddress(config_store.user_settings.gateway),
+                         IPAddress(config_store.user_settings.subnet)))
+            Serial.print("Error in IP Address configuration!\n");
+    }
+    WiFi.begin(CRED_WIFI_SSID, CRED_WIFI_PW);
+}
+
+/**
+ * Starts OTA and UDP communication once the WLAN is connected
+ */
+void wifi_start_services(void)
+{
     Serial.printf("WiFi connected\r\n");
     ota_setup();
     // led_esp_blink(LED_ESP_FREQ_CONNECTED, 8);
@@ -194,8 +229,7 @@ int wifi_setup(void)
 
     wifi_frame_errors = 0;
     wifi_frame_order_error = 0;
-
-    return 0;
+    wifi_ready = true;
 }
 
 /*
@@ -247,7 +281,8 @@ void wifi_rx_frame(void)
                 wifi_frame_order_error++;
             else
             {
-                wifi_rx_handle_data(wifi_rx_stc_data, (len - sizeof(wifi_frame_header_t)) / 4);
+                if (!wifi_ignore_data)
+                    wifi_rx_handle_data(wifi_rx_stc_data, (len - sizeof(wifi_frame_header_t)) / 4);
                 wifi_server_ip = server_ip;
             }
             wifi_current_frame_id = wifi_rx_header->frame_number;
@@ -436,6 +471,13 @@ void wifi_tx_status(IPAddress server_ip)
  */
 void wifi_loop(void)
 {
+    if (!wifi_ready)
+    {
+        // Connected in the background, see wifi_setup_background
+        if (WiFi.status() != WL_CONNECTED)
+            return;
+        wifi_start_services();
+    }
     wifi_rx_frame();
     ota_loop();
 }
@@ -445,5 +487,7 @@ void wifi_loop(void)
  */
 void wifi_status_transmit(void)
 {
+    if (!wifi_ready)
+        return;
     wifi_tx_status(wifi_server_ip);
 }

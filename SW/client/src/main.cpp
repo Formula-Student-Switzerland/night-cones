@@ -14,6 +14,7 @@
 #include "cli.h"
 #include "color.h"
 #include "config_store.h"
+#include "fixed_colors.h"
 #include "hw_ctrl.h"
 #include "led.h"
 #include "lightmodes.h"
@@ -28,6 +29,7 @@
 #define WIFI_LOOPS    50
 
 const long LED_UPDATE_INTERVAL = 25;  // initial interval at which to blink (milliseconds)
+#define FIXED_COLORS_WAKE_MS 500       // Time the failsafe is woken with blue before a fixed color is shown
 
 void setup() {
   // Setup Hardware
@@ -50,12 +52,22 @@ void setup() {
   led_show(led_state);
 
   //delay(500);
-  wifi_setup();
-  // Switch to default lightmode
-  led_show(led_state);
-  lightmode_switch(config_store.user_settings.fallback_color,
-                   config_store.user_settings.fallback_lightmode,
-                   config_store.user_settings.fallback_repetition_time);
+  if (fixed_colors_setup())
+  {
+    // Fixed color cone: the fixed light mode is already set, WiFi connects in the
+    // background for OTA updates and status requests.
+    delay(FIXED_COLORS_WAKE_MS);
+    wifi_setup_background(true);
+  }
+  else
+  {
+    wifi_setup();
+    // Switch to default lightmode
+    led_show(led_state);
+    lightmode_switch(config_store.user_settings.fallback_color,
+                     config_store.user_settings.fallback_lightmode,
+                     config_store.user_settings.fallback_repetition_time);
+  }
   lightmode_step(0, led_state);
   led_show(led_state);
   cli_init();

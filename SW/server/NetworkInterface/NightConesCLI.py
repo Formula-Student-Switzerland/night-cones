@@ -13,7 +13,7 @@ class NightConesCLI(cmd.Cmd):
     SEND_LOOP = 100
     COLOR_RED = 191
     COLOR_GREEN = 95
-    COLOR_BLUE = 63
+    COLOR_BLUE = 32
     COLOR_WHITE = 255
     COLOR_YELLOW = 127
     BRIGHTNESS_LOW = 2

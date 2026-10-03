@@ -30,6 +30,7 @@
 #define WIFI_CTS_SET_TYPE 129
 
 int wifi_setup(void);
+void wifi_setup_background(bool ignore_data);
 void wifi_loop(void);
 void wifi_status_transmit(void);
 

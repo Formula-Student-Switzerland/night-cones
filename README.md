@@ -63,6 +63,42 @@ The current housing is designed to be printed out of transparent PETG. It consis
 ## Software
 The current software state includes a running software on the cone (`SW/client`) and a command line tool to control the cones from a computer (`SW/server/NetworkInterface`).
 
+### Fixed color cones
+Cones can run with a fixed color that does not need any WiFi. They show their color right after switching them on and connect to the WiFi in the background, if one is available. Over WiFi, they can be updated over the air and answer status requests, but they ignore colors sent by the server. The fixed color cones are configured in `SW/client/src/fixed_colors_config.h`:
+
+```
+#define FIXED_COLORS_ENABLED 1
+
+const fixed_color_t fixed_colors[] = {
+//   first ID   last ID   color         brightness   mode   repetition time
+    {0,         10,       COLOR_RED,    15,          0,     0},
+    {11,        20,       COLOR_BLUE,   15,          0,     0},
+};
+```
+
+* Every line sets a range of cone IDs to a color, brightness (0-15), light mode and repetition time. All cones not listed work as usual with WiFi.
+* `FIXED_COLORS_ENABLED` must be set to `1`, it is `0` by default.
+* The cone ID is the one stored in the EEPROM of the cone, e.g. set with `NumberAllCones` in the CLI. IDs that were not saved to the EEPROM are lost when the cone is switched off.
+* Blinking and fading modes are not synchronized between the cones.
+* Searching for the WiFi uses some battery, also when no WiFi is available.
+* The firmware must be rebuilt and flashed after every change of the file.
+
+#### Flashing the cones with fixed colors
+1. **Install the tools.** Install [PlatformIO](https://platformio.org/) (VS Code extension or `pip install platformio`). Copy `SW/client/src/_credentials.txt` to `SW/client/src/credentials.h` and fill in the WiFi and OTA credentials. They are needed for the build, even though fixed color cones do not use WiFi.
+2. **Check the cone IDs.** Switch the cones on with their current firmware and open the GUI or CLI (see below). `State` or the cone list shows the ID of every cone. If the IDs are not right yet, set them with `NumberAllCones` in the CLI, which sets the ID to the serial number and saves it to the EEPROM.
+3. **Configure the colors.** In `SW/client/src/fixed_colors_config.h`, set `FIXED_COLORS_ENABLED` to `1` and enter the ID ranges and colors.
+4. **Build the firmware.** In `SW/client`, run:
+   ```
+   pio run -e nodemcuv2_ota
+   ```
+5. **Flash the cones.** Switch the cones on in range of the WiFi and flash them over the air:
+   * All cones (Windows): run `Flash_All_Cones.bat` in `SW/client`. It flashes `Night-cone-000001` to `Night-cone-000100` and requires `espota.py` in the same folder.
+   * A single cone: `pio run -e nodemcuv2_ota -t upload --upload-port Night-cone-000015.local`. The number is the serial number of the cone, not its ID.
+   * Over USB with the programming adapter NC1-3: `pio run -e nodemcuv2 -t upload`.
+6. **Check the cones.** Switch each cone off and on again. It shows blue for half a second and then its fixed color. Over USB, the serial monitor (`pio device monitor -b 115200`) shows `Fixed color cone <ID>`. If the WiFi is available, the GUI and CLI list the fixed color cones with their color. Setting a color for them is reported as not changed, as they ignore it.
+
+To change the colors later, or to go back to normal cones with `FIXED_COLORS_ENABLED 0`, repeat steps 3 to 6. Fixed color cones are flashed over the air the same way as normal cones.
+
 ### Server GUI
 The GUI shows the state of all cones and sets their colors without typing commands. It requires Python 3.10 or newer with Tkinter and the `ifaddr` package (`pip install ifaddr`). Start it in `SW/server/NetworkInterface` with:
 
